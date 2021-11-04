@@ -1,0 +1,39 @@
+/**
+* @name Newcord
+* @version 1.0.1
+* @author Kaido
+* @authorId 789168545488699403
+* @description A colorful theme inspired by the first page of Discord's website.
+* @updateUrl https://raw.githubusercontent.com/Kaiidoo/Newcord/main/src/newcord.theme.css
+* @source https://github.com/kaiidoo/Newcord
+* @donate https://www.buymeacoffee.com/kaiidoo
+* @patreon https://patreon.com/kaiidoo
+**/
+
+@import url(https://kaiidoo.github.io/Newcord/src/main.css);
+
+/* ------------------------------ 🌷 ADD "/*" BEFORE THE "@import" OF THE STUFF THAT YOU DON'T WANT TO USE ------------------------------ */
+
+/* Colorize Discord's boring SVGs */
+@import url(https://nyri4.github.io/Discolored/main.css);
+
+/* Change the images of the friends tabs ("Online", "All", "Pending", "Blocked" and "Add a friend") */
+@import url(https://kaiidoo.github.io/Newcord/src/stuff/assets.css);
+
+/* Add icons on the personal and server settings */
+@import url(https://kaiidoo.github.io/Newcord/src/stuff/icons.css);
+
+/* To center the Discord window and add it an outline */
+@import url(https://kaiidoo.github.io/Newcord/src/stuff/paddingWindow.css);
+
+/* ------------------------------ 🌱 THE FOLLOWING STUFF SHOULDN'T BE REMOVE IF YOU DON'T WANT TO HAVE ANY PROBLEM WITH THE THEME ------------------------------ */
+
+/* You can change the color of many things like the status, Windows buttons (if you use the padding Window) and more ...
+by choosing among the following proposals:
+    → basic
+    → pastel
+    → soft
+Test them all to see witch colors are the best for you ! :D
+
+/*												  Replace this ↓↓↓↓↓			*/
+@import url(https://kaiidoo.github.io/Newcord/src/stuff/colors/basic.colors.css);

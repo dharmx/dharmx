@@ -1,0 +1,25 @@
+#!/usr/bin/env sh
+#
+# Rofi powered menu to change i3's layout.
+# Uses: i3-msg rofi
+
+stacked=''
+tabbed='ﬓ'
+split='﩯'
+
+chosen=$(printf '%s;%s;%s\n' "$stacked" "$tabbed" "$split" \
+    | rofi -theme-str '@import "i3-layout.rasi"' \
+           -dmenu \
+           -sep ';' \
+           -selected-row 1)
+
+case "$chosen" in
+    "$stacked") action='stacked' ;;
+    "$tabbed")  action='tabbed' ;;
+    "$split")   action='toggle split' ;;
+    *)          exit 1 ;;
+esac
+
+# The variable can be used as a command's options, so it shouldn't be quoted.
+# shellcheck disable=2086
+i3-msg layout $action

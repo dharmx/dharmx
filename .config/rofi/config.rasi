@@ -1,0 +1,29 @@
+configuration {
+  show-icons:      true;
+  icon-theme:      "Zafiro-icons-Dark";
+  cycle:           true;
+  disable-history: true;
+  monitor:         "-4";
+  modi:            "drun";
+  display-drun:    "apps";
+}
+
+/* Fixes for rofi 1.7.0 */
+window {
+  border: 0px;
+}
+inputbar {
+  spacing: -4px;
+}
+listview {
+  columns: 1;
+  scrollbar: false;
+  border: 0px;
+}
+element-text,
+element-icon {
+  background-color: transparent;
+}
+
+@import "themes/shared/active-colorscheme.rasi"
+@import "/home/maker/.config/rofi/themes/shared/colorschemes/nord.rasi"

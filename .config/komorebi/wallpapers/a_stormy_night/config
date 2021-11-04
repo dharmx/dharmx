@@ -1,0 +1,23 @@
+[Info]
+WallpaperType=video
+VideoFileName=stormy-night-grey.mp4
+
+[DateTime]
+Visible=true
+Parallax=true
+MarginTop=0
+MarginRight=0
+MarginLeft=0
+MarginBottom=40
+RotationX=0
+RotationY=0
+RotationZ=0
+Position=bottom_center
+Alignment=center
+AlwaysOnTop=false
+Color=#5e81ac
+Alpha=255
+ShadowColor=#2e3440
+ShadowAlpha=255
+TimeFont=GE Inspira Bold 30
+DateFont=GE Inspira 20

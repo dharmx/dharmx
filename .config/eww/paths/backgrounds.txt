@@ -1,0 +1,7 @@
+/home/maker//.config/eww/assets/shuffle/backgrounds/cat.jpg
+/home/maker//.config/eww/assets/shuffle/backgrounds/earth-in-space.jpg
+/home/maker//.config/eww/assets/shuffle/backgrounds/ign-0011.jpg
+/home/maker//.config/eww/assets/shuffle/backgrounds/ign_herakles.jpg
+/home/maker//.config/eww/assets/shuffle/backgrounds/kv9zp2jakht61.jpg
+/home/maker//.config/eww/assets/shuffle/backgrounds/nord_lake.jpg
+/home/maker//.config/eww/assets/shuffle/backgrounds/nord_valley.jpg

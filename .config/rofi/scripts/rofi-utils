@@ -1,0 +1,44 @@
+#!/usr/bin/env sh
+#
+# Bunch of utility commands to interact with rofi's appearance.
+# Uses: dirname ln readlink sed
+#
+# $1 Action to perform.
+# $2 Text for the action to process.
+
+shared="$(dirname "$(readlink --canonicalize "$0")")/../themes/shared"
+
+case "$1" in
+    get-color)
+        color=$(sed -n "s/\s*$2:\s*\(#[[:xdigit:]]\+\);/\1/p" < "$shared/active-colorscheme.rasi")
+
+        if [ -n "$color" ]; then
+            printf '%s\n' "$color"
+
+        else
+            exit 1
+        fi
+        ;;
+
+    set-colorscheme)
+        list="$shared/colorschemes"
+
+        if [ -f "$list/$2.rasi" ]; then
+            ln -sf "$list/$2.rasi" "$shared/active-colorscheme.rasi"
+
+        else
+            printf "Can't find colorscheme '%s', please provide one of the following:\n" "$2"
+            for name in "$list"/*.rasi; do
+                name=${name##*/}
+                printf '  - %s\n' "${name%.rasi}"
+            done
+            exit 1
+        fi
+        ;;
+
+    *)
+        echo 'Unknown action provided, please provide one of the following:'
+        echo '  - get-color <color-name>'
+        echo '  - set-colorscheme <colorscheme-name>'
+        exit 1
+esac

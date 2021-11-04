@@ -1,0 +1,85 @@
+.nav-label-next, .nav-label-prev {
+    font-size: 50px;
+    color: #a3be8c;
+}
+
+.nav-label-prev {
+    padding-left: 35px;
+}
+
+.nav-label-next {
+    padding-right: 30px;
+}
+
+.nav-label-apply {
+    margin-left: 35px;
+    margin-right: 35px;
+    color: #ebcb8b;
+    font-size: 50px;
+    font-weight: 900;
+}
+
+.backlight scale trough {
+  all: unset;
+  background-color: #3d3d4b;
+  border-radius: 50px;
+  min-height: 10px;
+  min-width: 180px;
+  margin-left: 10px;
+  margin-right: 20px;
+}
+
+.backlight scale trough highlight {
+  all: unset;
+  background-color: #ebcb8b;
+  color: #000000;
+  border-radius: 10px;
+}
+
+.backlight {
+  color: #ebcb8b;
+}
+
+.label-backlight {
+    font-size: 15;
+    padding-left: 20px;
+}
+
+.title-label {
+  font-size: 30px;
+  padding-left: 20px;
+  padding-right: 20px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  color: #b5c8ec;
+  font-weight: 900;
+}
+
+.wallpaper-time-label {
+  font-size: 60px;
+  font-weight: 900;
+}
+
+.wallpaper-time-child {
+  padding-top: 10px;
+  padding-bottom: 10px;
+  padding-left: 20px;
+  padding-right: 20px;
+}
+
+.wallpaper-time-label-hr {
+  color: #a3be8c;
+}
+
+.wallpaper-time-label-min {
+  color: #a3be8c;
+}
+
+.wallpaper-time-label-ampm {
+  color: #b5c8ec;
+}
+
+.wallpaper-time-label-sep {
+  color: #b5c8ec;
+  padding-bottom: 10px;
+}

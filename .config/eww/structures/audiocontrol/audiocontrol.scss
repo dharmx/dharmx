@@ -1,0 +1,47 @@
+.control-box {
+  padding: 20px;
+  margin-top: 30px;
+  font-size: 50px;
+}
+
+.control-box scale trough highlight {
+  border-radius: 50px;
+}
+
+.control-volume scale trough highlight {
+    background-color: #5d7eaa;
+}
+
+.control-microphone scale trough highlight {
+    background-color: #5d7eaa;
+}
+
+.control-box scale trough {
+  all: unset;
+  background-color: #3d3d4b;
+  border-radius: 50px;
+  min-height: 20px;
+  min-width: 200px;
+  margin-left: 10px;
+  margin-right: 20px;
+}
+
+.partition-box {
+  font-size: 30px;
+  font-weight: 900;
+  margin: 20px;
+  margin-left: 25px;
+  color: #c3d8f5;
+}
+
+.partition-label {
+  margin-left: 15px;
+}
+
+.partition-hdd {
+  padding-left: 10px;
+}
+
+.partition-phone {
+    padding-left: 40px;
+}

@@ -1,0 +1,32 @@
+.usage-scale trough {
+  all: unset;
+  background-color: #282838;
+  border-radius: 50px;
+  min-height: 20px;
+  min-width: 300px;
+  margin-left: 10px;
+  margin-right: 20px;
+}
+
+.usage-scale trough highlight {
+  all: unset;
+  background-color: #8895d0;
+  color: #000000;
+  border-radius: 10px;
+}
+
+.label-usage, .label-usage-header {
+    font-family: "Iosevka";
+    font-weight: 600;
+    font-size: 20px;
+    color: #8895d0;
+    min-width: 20px;
+}
+
+.usage-scale-all {
+    min-width: 680px;
+}
+
+.usage-box {
+    padding: 5px;
+}

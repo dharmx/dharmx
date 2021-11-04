@@ -1,0 +1,93 @@
+#!/bin/env bash
+
+DUNST="dunstify -u normal -i"
+
+mount_hdd() {
+    if [ -z "$(ls -A /run/media/maker/Data)" ]; then
+        ICON_MOUNTED_PATH=$(readlink -f assets/images/hdd-mount.svg)
+        kitty udisksctl mount -b /dev/nvme0n1p1 &
+        eval "$DUNST $ICON_MOUNTED_PATH 'Mounted' 'Data has been mounted to /run/media/maker'"
+    else
+        ICON_UNMOUNTED_PATH=$(readlink -f assets/images/hdd-unmount.svg)
+        kitty udisksctl unmount -b /dev/nvme0n1p1 &
+        eval "$DUNST $ICON_UNMOUNTED_PATH 'Un-mounted' 'Data has been unmounted from /run/media/maker'"
+    fi
+}
+
+mount_pendrive() {
+    if [ -z "$(ls -A /run/media/maker/MANJARO_KDEM_2114)" ]; then
+        ICON_MOUNTED_PATH=$(readlink -f assets/images/hdd-mount.svg)
+        kitty udisksctl mount -b /dev/sdb1 &
+        eval "$DUNST $ICON_MOUNTED_PATH 'Mounted' 'Data has been mounted to /run/media/maker'"
+    else
+        ICON_UNMOUNTED_PATH=$(readlink -f assets/images/hdd-unmount.svg)
+        kitty udisksctl unmount -b /dev/sdb1 &
+        eval "$DUNST $ICON_UNMOUNTED_PATH 'Un-mounted' 'Data has been unmounted from /run/media/maker'"
+    fi
+}
+
+mount_phone() {
+    if [ -z "$(ls -A ~/phone)" ]; then
+        ICON_MOUNTED_PATH=$(readlink -f assets/images/phone-mount.svg)
+        kitty go-mtpfs ~/Phone &
+        eval "$DUNST $ICON_MOUNTED_PATH 'Mounted' 'Data has been mounted to ~/phone'"
+    else
+        ICON_UNMOUNTED_PATH=$(readlink -f assets/images/phone-unmount.svg)
+        kitty fusermount -u ~/Phone &
+        eval "$DUNST $ICON_UNMOUNTED_PATH 'Un-mounted' 'Data has been mounted to ~/phone'"
+    fi
+}
+
+icon_hdd() {
+    if [ -z "$(ls -A /run/media/maker/Data)" ]; then
+        ICON_MOUNTED_PATH=$(readlink -f assets/images/hdd-unmount-eww.svg)
+        echo "$ICON_MOUNTED_PATH"
+    else
+        ICON_UNMOUNTED_PATH=$(readlink -f assets/images/hdd-mount-eww.svg)
+        echo "$ICON_UNMOUNTED_PATH"
+    fi
+}
+
+icon_phone() {
+    if [ -z "$(ls -A ~/phone)" ]; then
+        ICON_MOUNTED_PATH=$(readlink -f assets/images/phone-unmount-eww.svg)
+        echo "$ICON_MOUNTED_PATH"
+    else
+        ICON_UNMOUNTED_PATH=$(readlink -f assets/images/phone-mount-eww.svg)
+        echo "$ICON_UNMOUNTED_PATH"
+    fi
+}
+
+icon_pendrive() {
+    if [ -z "$(ls -A /run/media/maker/MANJARO_KDEM_2114)" ]; then
+        ICON_MOUNTED_PATH=$(readlink -f assets/images/hdd-unmount-eww.svg)
+        echo "$ICON_MOUNTED_PATH"
+    else
+        ICON_UNMOUNTED_PATH=$(readlink -f assets/images/hdd-mount-eww.svg)
+        echo "$ICON_UNMOUNTED_PATH"
+    fi
+}
+
+case "$1" in 
+    --hdd)
+    mount_hdd
+    ;;
+    --phone)
+    mount_phone
+    ;;
+    --pendrive)
+    mount_pendrive
+    ;;
+    --icon-phone)
+    icon_phone
+    ;;
+    --icon-hdd)
+    icon_hdd
+    ;;
+    --icon-pendrive)
+    icon_pendrive
+    ;;
+    *)
+    echo Invalid Option!
+    ;;
+esac

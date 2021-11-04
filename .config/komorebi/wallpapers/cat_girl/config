@@ -1,0 +1,23 @@
+[Info]
+WallpaperType=video
+VideoFileName=cat-girl.mp4
+
+[DateTime]
+Visible=false
+Parallax=true
+MarginTop=0
+MarginRight=0
+MarginLeft=0
+MarginBottom=0
+RotationX=0
+RotationY=0
+RotationZ=0
+Position=center
+Alignment=center
+AlwaysOnTop=true
+Color=#dd22dd22dd22
+Alpha=255
+ShadowColor=#dd22dd22dd22
+ShadowAlpha=255
+TimeFont=GE Inspira Bold 30
+DateFont=Lato Light 20

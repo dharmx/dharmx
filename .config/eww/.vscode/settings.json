@@ -1,0 +1,14 @@
+{
+    "cSpell.enableFiletypes": [
+        "!plaintext",
+        "!scss",
+        "!sh",
+        "!yuck",
+        "!bash"
+    ],
+    "cSpell.words": [
+        "blgt", 
+        "sysinfo"
+    ],
+    "discord.enabled": false
+}

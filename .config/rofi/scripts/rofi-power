@@ -1,0 +1,43 @@
+#!/usr/bin/env sh
+#
+# A rofi powered menu to execute power related action.
+# Uses: amixer mpc poweroff reboot rofi rofi-prompt
+
+power_off=''
+reboot=''
+lock=''
+suspend='鈴'
+log_out=''
+
+chosen=$(printf '%s;%s;%s;%s;%s\n' "$power_off" "$reboot" "$lock" "$suspend" \
+                                   "$log_out" \
+    | rofi -theme-str '@import "power.rasi"' \
+           -dmenu \
+           -sep ';' \
+           -selected-row 2)
+
+case "$chosen" in
+    "$power_off")
+        /home/maker/.config/rofi/scripts/rofi-prompt --query 'Shutdown?' && poweroff
+        ;;
+
+    "$reboot")
+        /home/maker/.config/rofi/scripts/rofi-prompt --query 'Reboot?' && reboot
+        ;;
+
+    "$lock")
+        betterlockscreen -l dim --off 5
+        ;;
+
+    "$suspend")
+        playerctl pause
+        pactl set-source-mute @DEFAULT_SOURCE@ toggle
+        systemctl suspend
+        ;;
+
+    "$log_out")
+        killall i3; killall bspwm
+        ;;
+
+    *) exit 1 ;;
+esac

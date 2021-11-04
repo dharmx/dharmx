@@ -1,0 +1,10 @@
+#!/bin/env bash
+
+FILE="$XDG_CACHE_HOME/redshift_launch"
+if [[ ! -f "$FILE" ]]; then
+	touch "$FILE"
+	redshift
+else
+	killall redshift &
+	rm "$FILE"
+fi

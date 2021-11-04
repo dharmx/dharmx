@@ -1,0 +1,72 @@
+[global]
+    background = "#2e3440"
+    foreground = "#d8dee9"
+    monitor = 0
+    follow = mouse
+    
+    width = 420
+    height = 300
+
+    progress_bar = true
+    progress_bar_height = 10
+    progress_bar_frame_width = 5
+    progress_bar_min_width = 150
+    progress_bar_max_width = 300
+
+    dmenu = /usr/bin/dmenu -p dunst:
+    browser = /usr/bin/firefox -new-tab
+
+    indicate_hidden = yes
+    shrink = no
+    transparency = 40
+    separator_height = 5
+    padding = 15
+    horizontal_padding = 15
+    frame_width = 0
+    frame_color = "#2e3440"
+    separator_color = "#00000000"
+    sort = no
+    idle_threshold = 30
+    font = GE Inspira 12
+    line_height = 6
+    notification_height = 30
+    markup = full
+
+    format = "<b>%s</b>\n%b"
+    alignment = left
+    show_age_threshold = 30
+    word_wrap = yes
+    ignore_newline = no
+    stack_duplicates = false
+    hide_duplicate_count = yes
+    show_indicators = no
+    icon_position = left
+    max_icon_size= 100
+    sticky_history = no
+    history_length = 3
+    browser = firefox
+    always_run_script = true
+    title = Dunst
+    class = Dunst
+    corner_radius = 0
+
+    ## mouse_left_click = do action
+    ## mouse_middle_click = close_current
+    mouse_right_click = close_all
+
+[urgency_low]
+    timeout = 4
+    background = "#434c5e"
+    foreground = "#d8dee9"
+
+[urgency_normal]
+    timeout = 8
+    background = "#3b4252"
+    foreground = "#d8dee9"
+
+[urgency_critical]
+    timeout = 8
+    background = "#bf5858"
+    foreground = "#d8dee9"
+
+## vim: ft=cfg

@@ -1,0 +1,34 @@
+/**
+ * Settings used in every rofi option menu:
+ *  - i3-layout
+ *  - music
+ *  - power
+ *  - screenshot
+ */
+@import "settings.rasi"
+* {
+  background-color: @background;
+  text-color: @foreground;
+  font: @icon-font;
+}
+#window {
+  children: [ horibox ];
+}
+#horibox {
+  children: [ listview ];
+}
+#listview {
+  layout: horizontal;
+}
+element {
+  padding: @option-element-padding;
+}
+element.normal.normal,
+element.alternate.normal {
+  background-color: @background-light;
+}
+element.selected.normal {
+  background-color: @accent;
+  text-color: @background;
+}
+

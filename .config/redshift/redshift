@@ -1,0 +1,12 @@
+#!/bin/env bash
+
+FILE="$XDG_CACHE_HOME/redshift_launch"
+if [[ ! -f "$FILE" ]]; then
+	touch "$FILE"
+	redshift &
+    $XDG_CONFIG_HOME/redshift/grey.bash "$XDG_CONFIG_HOME/redshift/nightmode-on.svg" "Nightmode" "Nightmode has be turned on"
+else
+	killall redshift &
+	rm "$FILE"
+    $XDG_CONFIG_HOME/redshift/grey.bash "$XDG_CONFIG_HOME/redshift/nightmode-off.svg" "Nightmode" "Nightmode has be turned off"
+fi

@@ -1,0 +1,6 @@
+#!/bin/sh
+
+killall polybar
+polybar -c /home/maker/.config/polybar/placidity/config.ini main &
+exit 0
+

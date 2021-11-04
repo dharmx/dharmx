@@ -1,0 +1,68 @@
+/**
+ * This theme is intended for a 6 items option menu with a headerbar.
+ */
+@import "shared/option-menu.rasi"
+#window {
+  font: @text-font;
+  padding: @music-window-padding;
+  children: [ inputbar, horibox ];
+}
+#inputbar {
+  children: [ textbox-prompt-colon, prompt ];
+  margin: @music-inputbar-margin;
+}
+prompt,
+textbox-prompt-colon {
+  font: @text-font;
+  padding: @music-prompt-padding;
+  border: 2px;
+  border-color: @accent;
+}
+#prompt {
+  margin: @music-prompt-margin;
+  background-color: @background-light;
+  text-color: @accent;
+}
+#textbox-prompt-colon {
+  expand: false;
+  str: "music";
+  background-color: @accent;
+  text-color: @background;
+}
+#horibox {
+  padding: 0px;
+}
+#listview {
+  spacing: @option-6-listview-spacing;
+  lines: 6;
+}
+#element {
+  font: @icon-font;
+  border: @music-element-border;
+  padding: @music-element-padding;
+  border-color: @background-light;
+}
+#element.selected {
+  border-color: @accent;
+}
+element.alternate.active,
+element.normal.active,
+element.selected.urgent {
+  background-color: @on;
+  text-color: @background;
+  border-color: @on;
+}
+element.selected.urgent {
+  border-color: @accent;
+}
+element.alternate.urgent,
+element.normal.urgent,
+element.selected.active {
+  background-color: @off;
+  text-color: @background;
+  border-color: @off;
+}
+element.selected.active {
+  border-color: @accent;
+}
+

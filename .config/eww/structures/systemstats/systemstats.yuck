@@ -1,0 +1,119 @@
+(defpoll CORE1 :interval "1s" "scripts/coreusage --inuse 1")
+(defpoll CORE2 :interval "1s" "scripts/coreusage --inuse 2")
+(defpoll CORE3 :interval "1s" "scripts/coreusage --inuse 3")
+(defpoll CORE4 :interval "1s" "scripts/coreusage --inuse 4")
+(defpoll CORE5 :interval "1s" "scripts/coreusage --inuse 5")
+(defpoll CORE6 :interval "1s" "scripts/coreusage --inuse 6")
+(defpoll CORE7 :interval "1s" "scripts/coreusage --inuse 7")
+(defpoll CORE8 :interval "1s" "scripts/coreusage --inuse 8")
+(defpoll CORE9 :interval "1s" "scripts/coreusage --inuse 9")
+(defpoll CORE10 :interval "1s" "scripts/coreusage --inuse 10")
+(defpoll CORE11 :interval "1s" "scripts/coreusage --inuse 11")
+(defpoll CORE12 :interval "1s" "scripts/coreusage --inuse 12")
+(defpoll COREALL :interval "1s" "scripts/coreusage --inuse --all")
+
+(defwindow systemstats
+           :monitor 0
+           :geometry (geometry :x "10"
+                               :y "-10"
+                               :width "800"
+                               :height "300"
+                               :anchor "bottom left")
+           :stacking "fg"
+           :windowtype "normal"
+           :wm-ignore true
+  (allcores))
+
+(defwidget allcores []
+  (box :class "monitors" 
+       :orientation "v" 
+       :space-evenly false
+       :halign "center"
+       :class "usage-color-all"
+    (label :text "Core Usages"
+           :class "label-usage-header usage-color-all")
+    (usage :text ""
+           :classbox "usage-color-all usage-box-all"
+           :classlabel "label-usage-all"
+           :classscale "usage-scale-all"
+           :value {COREALL})
+    (box :orienation "h"
+         :class "usage-color-all"
+         :space-evenly false
+      (box :orientation "v"
+           :class "usage-color-all"
+        (usage :text "01"
+               :classbox "usage-box-1"
+               :classlabel "label-usage-1"
+               :classscale "usage-scale-1"
+               :value {CORE1})
+        (usage :text "02"
+               :classbox "usage-box-2"
+               :classlabel "label-usage-2"
+               :classscale "usage-scale-2"
+               :value {CORE2})
+        (usage :text "03"
+               :classbox "usage-box-3"
+               :classlabel "label-usage-3"
+               :classscale "usage-scale-3"
+               :value {CORE3})      
+        (usage :text "04"
+               :classbox "usage-box-4"
+               :classlabel "label-usage-4"
+               :classscale "usage-scale-4"
+               :value {CORE4})     
+        (usage :text "05"
+               :classbox "usage-box-5"
+               :classlabel "label-usage-5"
+               :classscale "usage-scale-5"
+               :value {CORE5})    
+        (usage :text "06"
+               :classbox "usage-box-6"
+               :classlabel "label-usage-6"
+               :classscale "usage-scale-6"
+               :value {CORE6}))
+      (box :orientation "v"
+           :class "usage-color-all"
+        (usage :text "07"
+               :classbox "usage-box-7"
+               :classlabel "label-usage-7"
+               :classscale "usage-scale-7"
+               :value {CORE7})
+        (usage :text "08"
+               :classbox "usage-box-8"
+               :classlabel "label-usage-8"
+               :classscale "usage-scale-8"
+               :value {CORE8})       
+        (usage :text "09"
+               :classbox "usage-box-9"
+               :classlabel "label-usage-9"
+               :classscale "usage-scale-9"
+               :value {CORE9})       
+        (usage :text "10"
+               :classbox "usage-box-10"
+               :classlabel "label-usage-10"
+               :classscale "usage-scale-10"
+               :value {CORE10})       
+        (usage :text "11"
+               :classbox "usage-box-11"
+               :classlabel "label-usage-11"
+               :classscale "usage-scale-11"
+               :value {CORE11})
+        (usage :text "12"
+               :classbox "usage-box-12"
+               :classlabel "label-usage-12"
+               :classscale "usage-scale-12"
+               :value {CORE12})))))
+
+(defwidget usage [text classbox classlabel classscale value]
+  (box :orientation "h"
+       :class "usage-color-all usage-box ${classbox}"
+       :space-evenly false
+    (label :class "usage-color-all label-usage ${classlabel}"
+           :text text)
+    (scale :min 0
+           :max 101
+           :active false
+           :value value
+           :draw-value false
+           :class "usage-color-all usage-scale ${classscale}")))

@@ -1,0 +1,57 @@
+#!/usr/bin/env sh
+#
+# Rofi powered menu to control mpd.
+# Uses: grep mpc rofi sed
+
+status=$(mpc status)
+
+previous=''
+printf '%s\n' "$status" | grep -q 'playing' && play_pause='' || play_pause=''
+stop=''
+next=''
+toggle_repeat='凌'
+toggle_random=''
+
+active=''
+urgent=''
+
+# Gets the random and repeat status.
+eval "$(printf '%s\n' "$status" \
+    | sed -n -e 's/.*repeat: \([a-z]\+\).*random: \([a-z]\+\).*/repeat=\1 random=\2/p')"
+
+# Color the entries depending on their statuses.
+# The variables are instanciated by the eval command above.
+# shellcheck disable=2154
+[ "$repeat" = 'on' ] && active='-a 4' || urgent='-u 4'
+# shellcheck disable=2154
+[ "$random" = 'on' ] && active="${active:--a },5" || urgent="${urgent:--u },5"
+
+# Get the current playing song.
+current=$(mpc current --format '%artist% - %title%')
+
+# When no song is playing or that mpd isn't running, still display something.
+[ -z "$current" ] && current='-'
+
+# Some variables are used as a command's options, so they shouldn't be quoted.
+# shellcheck disable=2086
+chosen=$(printf '%s;%s;%s;%s;%s;%s\n' "$previous" "$play_pause" "$stop" "$next" \
+                                      "$toggle_repeat" "$toggle_random" \
+    | rofi -theme-str '@import "music.rasi"' \
+           -p "$current" \
+           -dmenu \
+           -sep ';' \
+           -selected-row 1 \
+           $active \
+           $urgent)
+
+case "$chosen" in
+    "$previous")      action='prev' ;;
+    "$play_pause")    action='toggle' ;;
+    "$stop")          action='stop' ;;
+    "$next")          action='next' ;;
+    "$toggle_repeat") action='repeat' ;;
+    "$toggle_random") action='random' ;;
+    *)                exit 1 ;;
+esac
+
+mpc --quiet "$action"
