@@ -1,7 +1,5 @@
 #!/usr/bin/env bash
 
-# cache paths by "ls path/to/files/* > a_text_file.txt"
-
 line_count () {
     echo -n $(wc -l < "$1")
 }

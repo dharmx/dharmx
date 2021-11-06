@@ -110,7 +110,7 @@ if [ -x "$(command -v exa)" ]; then
 fi
 
 if [ -x "$(command -v neofetch)" ]; then
-    alias nfk="neofetch --source $(~/.config/neofetch/randomize.sh ~/.config/neofetch/paths.txt) --backend kitty"
+    # alias nfk="neofetch --source $(~/.config/neofetch/randomize.sh ~/.config/neofetch/paths.txt) --backend kitty"
     alias nf="neofetch --source $(~/.config/neofetch/randomize.sh ~/.config/neofetch/paths.txt) --backend w3m"
     alias pf="neofetch --config /home/maker/.config/neofetch/config-minimal.conf --ascii ~/.config/neofetch/arch-smol"
     alias uwuf="neofetch --config /home/maker/.config/neofetch/config-minimal-uwu.conf --ascii ~/.config/neofetch/uwu-hd"

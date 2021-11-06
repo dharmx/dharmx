@@ -1,6 +1,6 @@
 #!/bin/env bash
 
-SAVEPATH=$XDG_PICTURES_DIR/$(date).png
+SAVEPATH=~/Pictures/$(date).png
 case "$1" in 
     --selected)
         maim --select "$SAVEPATH" &

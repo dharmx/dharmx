@@ -25,7 +25,7 @@ alias nv "nvim"
 alias fm "ranger"
 
 alias nf "neofetch --source (~/.config/neofetch/randomize.sh ~/.config/neofetch/paths.txt) --backend w3m --loop"
-alias nfk "neofetch --source (~/.config/neofetch/randomize.sh ~/.config/neofetch/paths.txt) --backend kitty"
+# alias nfk "neofetch --source (~/.config/neofetch/randomize.sh ~/.config/neofetch/paths.txt) --backend kitty"
 alias pf "neofetch --config /home/maker/.config/neofetch/config-minimal.conf --ascii ~/.config/neofetch/arch-smol"
 alias uwuf "neofetch --config /home/maker/.config/neofetch/config-minimal-uwu.conf --ascii ~/.config/neofetch/uwu-hd"
 

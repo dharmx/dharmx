@@ -190,6 +190,9 @@ super + shift + f
 super + e
     kitty ranger
 
+super + backslash
+    echo "" >> ~/.config/picom/picom-max-noradius-noshadow.ini
+
 ## launch system monitor htop
 ctrl + shift + Escape 
     kitty /home/maker/.local/bin/bpytop
@@ -200,6 +203,8 @@ ctrl + alt + KP_Delete
 ## night mode
 super + n
     $XDG_CONFIG_HOME/redshift/redshift
+
+
 
 # screenshot configurations
 # fullscreen screenshot save

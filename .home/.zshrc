@@ -148,8 +148,9 @@ fi
 
 if [ -x "$(command -v neofetch)" ]; then
     alias nf="neofetch --source $(~/.config/neofetch/randomize.sh ~/.config/neofetch/paths.txt) --backend w3m --loop"
-    alias nfk="neofetch --source $(~/.config/neofetch/randomize.sh ~/.config/neofetch/paths.txt) --backend kitty"
-    alias pf="neofetch --config /home/maker/.config/neofetch/config-minimal.conf --ascii ~/.config/neofetch/arch-smol"
+    alias nfk="neofetch --config /home/maker/.config/neofetch/config-kitty.conf --source $(~/.config/neofetch/randomize.sh ~/.config/neofetch/paths.txt) --backend kitty --xoffset 25 --yoffset 17 --gap 40"
+    alias nft="neofetch --ascii ~/.config/neofetch/date-a-live"
+    alias pf="neofetch --config /home/maker/.config/neofetch/config-minimal.conf --ascii ~/.config/neofetch/arch-hi-res-smol"
     alias uwuf="neofetch --config /home/maker/.config/neofetch/config-minimal-uwu.conf --ascii ~/.config/neofetch/uwu-hd"
 fi
 

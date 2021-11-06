@@ -40,7 +40,7 @@ bspc rule -a tilda state=floating center=true border=off sticky=on
 bspc rule -a Tilda state=floating center=true border=off sticky=on
 bspc rule -a feh state=floating floating=true manage=on center=true
 
-$XDG_CONFIG_HOME/bspwm/exports &
-$XDG_CONFIG_HOME/bspwm/launcher &
+/home/maker/.config/bspwm/exports &
+/home/maker/.config/bspwm/launcher &
 exit
 

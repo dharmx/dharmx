@@ -31,7 +31,7 @@ c.tabs.favicons.show = "always"
 
 c.tabs.position = "bottom"
 c.completion.shrink = True
-config.set('url.start_pages', ['/home/maker/Templates/startpages/startpage/index.html'])
+config.set('url.start_pages', ['/home/maker/Templates/startpages/custom/nordic-startpage/index.html'])
 config.set('fonts.contextmenu', 'GE Inspira')
 config.set('fonts.default_family', 'GE Inspira')
 config.set('fonts.downloads', 'GE Inspira')
