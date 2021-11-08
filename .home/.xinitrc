@@ -21,10 +21,10 @@ export XDG_PICTURES_DIR=$HOME/Pictures
 export XDG_TEMPLATES_DIR=$HOME/Templates 
 export XDG_VIDEOS_DIR=$HOME/Videos
 
-# export XDG_CONFIG_DIRS=/etc/xdg
-# export XDG_PUBLICSHARE_DIR=$HOME/.local
-# export XDG_RUNTIME_DIR="/run/user/$(id -u)"
-# export XDG_DATA_DIRS=/usr/local/share:/usr/share
+export XDG_CONFIG_DIRS=/etc/xdg
+export XDG_RUNTIME_DIR="/run/user/$(id -u)"
+export XDG_DATA_DIRS=/usr/local/share:/usr/share
+# export XDG_PUBLICSHARE_DIR=
 
 # see https://github.com/NixOS/nixpkgs/issues/14966#issuecomment-520083836
 mkdir -p "$HOME"/.local/share/keyrings

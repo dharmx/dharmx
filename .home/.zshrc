@@ -2,7 +2,7 @@ if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]
   source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
 fi
 
-export ZSH="/home/maker/.oh-my-zsh"
+export ZSH="$HOME/.oh-my-zsh"
 
 ZSH_THEME="powerlevel10k/powerlevel10k"
 
@@ -50,11 +50,11 @@ if [ -x "$(command -v logo-ls)" ]; then
 fi
 
 if [ -x "$(command -v neofetch)" ]; then
-    alias nf="neofetch --source $(~/.config/neofetch/randomize.sh ~/.config/neofetch/paths.txt) --backend w3m --loop"
-    alias nfk="neofetch --config /home/maker/.config/neofetch/config-kitty.conf --source $(~/.config/neofetch/randomize.sh ~/.config/neofetch/paths.txt) --backend kitty --xoffset 25 --yoffset 17 --gap 40"
-    alias nft="neofetch --ascii ~/.config/neofetch/date-a-live"
-    alias pf="neofetch --config /home/maker/.config/neofetch/config-minimal.conf --ascii ~/.config/neofetch/arch-hi-res-smol"
-    alias uwuf="neofetch --config /home/maker/.config/neofetch/config-minimal-uwu.conf --ascii ~/.config/neofetch/uwu-hd"
+    alias nf="neofetch --source $($XDG_CONFIG_HOME/neofetch/randomize.sh $XDG_CONFIG_HOME/neofetch/paths.txt) --backend w3m --loop"
+    alias nfk="neofetch --config $XDG_CONFIG_HOME/neofetch/config-kitty.conf --source $($XDG_CONFIG_HOME/neofetch/randomize.sh $XDG_CONFIG_HOME/neofetch/paths.txt) --backend kitty --xoffset 25 --yoffset 17 --gap 40"
+    alias nft="neofetch --ascii $XDG_CONFIG_HOME/neofetch/date-a-live"
+    alias pf="neofetch --config $XDG_CONFIG_HOME/neofetch/config-minimal.conf --ascii $XDG_CONFIG_HOME/neofetch/arch-hi-res-smol"
+    alias uwuf="neofetch --config $XDG_CONFIG_HOME/neofetch/config-minimal-uwu.conf --ascii $XDG_CONFIG_HOME/neofetch/uwu-hd"
 fi
 
 if [ -x "$(command -v ripgrep)" ]; then
@@ -62,11 +62,11 @@ if [ -x "$(command -v ripgrep)" ]; then
 fi
 
 if [ -x "$(command -v go-mtpfs)" ]; then
-    alias mount-phone="go-mtpfs ~/phone"
+    alias mount-phone="go-mtpfs $HOME/Phone"
 fi
 
 if [ -x "$(command -v fusermount)" ]; then
-    alias umount-phone="fusermount -u ~/phone"
+    alias umount-phone="fusermount -u $HOME/Phone"
 fi
 
 if [ -x "$(command -v udisksctl)" ]; then
@@ -78,7 +78,7 @@ if [ -x "$(command -v udisksctl)" ]; then
 fi
 
 if [ -x "$(command -v betterlockscreen)" ]; then
-    alias lock="betterlockscreen -l dim --off 5"
+    alias lock="betterlockscreen -l"
 fi
 
 if [ -x "$(command -v nvim)" ]; then
@@ -94,15 +94,16 @@ alias suspend="systemctl suspend"
 alias pac="sudo pacman"
 alias cls="clear"
 
-alias pipes1="/home/maker/Dotfiles/lambda-scripts/aesthetic/pipes1"
-alias pipes2="/home/maker/Dotfiles/lambda-scripts/aesthetic/pipes2"
-alias pipes2-slim="/home/maker/Dotfiles/lambda-scripts/aesthetic/pipes2-slim"
-alias rain="/home/maker/Dotfiles/lambda-scripts/aesthetic/rain"
+alias pipes1="$HOME/Dotfiles/lambda-scripts/aesthetic/pipes1"
+alias pipes2="$HOME/Dotfiles/lambda-scripts/aesthetic/pipes2"
+alias pipes2-slim="$HOME/Dotfiles/lambda-scripts/aesthetic/pipes2-slim"
+alias rain="$HOME/Dotfiles/lambda-scripts/aesthetic/rain"
 
 export VISUAL=nvim;
 export EDITOR=nvim;
-export PATH="/home/maker/.local/share/gem/ruby/3.0.0/bin:/home/maker/.jdks/jdk-16.0.1/bin:/home/maker/.bin:/home/maker/.local/bin:$PATH"
+export PATH="$XDG_DATA_HOME/gem/ruby/3.0.0/bin:$HOME/.jdks/jdk-16.0.1/bin:$HOME/.bin:$HOME/.local/bin:$PATH"
 export PS2="❯ "
+# export LD_PRELOAD=/usr/lib/libwcwidth-icons.so
 
 SILENT_JAVA_OPTIONS="$JDK_JAVA_OPTIONS"
 unset JDK_JAVA_OPTIONS
@@ -110,10 +111,10 @@ alias java='java "$SILENT_JAVA_OPTIONS"'
 
 setopt HIST_IGNORE_ALL_DUPS
 
-clear
-/home/maker/Dotfiles/lambda-scripts/aesthetic/crunch-mini
+$HOME/Dotfiles/lambda-scripts/aesthetic/crunch-mini
 printf "\n"
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
+
