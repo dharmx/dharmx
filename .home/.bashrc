@@ -1,4 +1,3 @@
-# Path to your oh-my-bash installation.
 export OSH=/home/maker/.oh-my-bash
 
 OSH_THEME="kitsune"
