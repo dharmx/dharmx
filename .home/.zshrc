@@ -92,12 +92,13 @@ fi
 alias logout="killall bspwm"
 alias suspend="systemctl suspend"
 alias pac="sudo pacman"
+alias commit="git add . && git commit -m"
 alias cls="clear"
 
-alias pipes1="$HOME/Dotfiles/lambda-scripts/aesthetic/pipes1"
-alias pipes2="$HOME/Dotfiles/lambda-scripts/aesthetic/pipes2"
-alias pipes2-slim="$HOME/Dotfiles/lambda-scripts/aesthetic/pipes2-slim"
-alias rain="$HOME/Dotfiles/lambda-scripts/aesthetic/rain"
+alias pipes1="pipes1"
+alias pipes2="pipes2"
+alias pipes2-slim="pipes2-slim"
+alias rain="rain"
 
 export VISUAL=nvim;
 export EDITOR=nvim;
@@ -111,7 +112,7 @@ alias java='java "$SILENT_JAVA_OPTIONS"'
 
 setopt HIST_IGNORE_ALL_DUPS
 
-$HOME/Dotfiles/lambda-scripts/aesthetic/crunch-mini
+crunch-mini
 printf "\n"
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh

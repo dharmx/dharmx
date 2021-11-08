@@ -18,6 +18,8 @@ alias lock "betterlockscreen -l"
 alias suspend "systemctl suspend"
 
 alias pac "sudo pacman"
+alias commit "git add . && git commit -m"
+alias cls "clear"
 alias nv "nvim"
 alias fm "ranger"
 
@@ -26,10 +28,10 @@ alias nfk "neofetch --source ($XDG_CONFIG_HOME/neofetch/randomize.sh $XDG_CONFIG
 alias pf "neofetch --config $XDG_CONFIG_HOME/neofetch/config-minimal.conf --ascii $XDG_CONFIG_HOME/neofetch/arch-smol"
 alias uwuf "neofetch --config $XDG_CONFIG_HOME/neofetch/config-minimal-uwu.conf --ascii $XDG_CONFIG_HOME/neofetch/uwu-hd"
 
-alias pipes1 "$HOME/Dotfiles/lambda-scripts/aesthetic/pipes1"
-alias pipes2 "$HOME/Dotfiles/lambda-scripts/aesthetic/pipes2"
-alias pipes2-slim "$HOME/Dotfiles/lambda-scripts/aesthetic/pipes2-slim"
-alias rain "$HOME/Dotfiles/lambda-scripts/aesthetic/rain"
+alias pipes1 "pipes1"
+alias pipes2 "pipes2"
+alias pipes2-slim "pipes2-slim"
+alias rain "rain"
 
 colorscript exec alpha
 printf "\n"

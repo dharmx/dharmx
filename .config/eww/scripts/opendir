@@ -1,7 +1,7 @@
 #!/bin/bash
 
 if [[ "$1" == "--path" ]]; then
-    pcmanfm "$2"
+    nemo "$2"
 else
     dunstify "No such option!"
 fi
