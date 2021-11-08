@@ -69,6 +69,14 @@ if [ -x "$(command -v fusermount)" ]; then
     alias umount-phone="fusermount -u ~/phone"
 fi
 
+if [ -x "$(command -v udisksctl)" ]; then
+    alias mount-ssd="udisksctl mount -b /dev/nvme0n1p1"
+fi
+
+if [ -x "$(command -v udisksctl)" ]; then
+    alias unmount-ssd="udisksctl unmount -b /dev/nvme0n1p1"
+fi
+
 if [ -x "$(command -v betterlockscreen)" ]; then
     alias lock="betterlockscreen -l dim --off 5"
 fi
