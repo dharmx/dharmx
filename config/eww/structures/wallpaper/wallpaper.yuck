@@ -55,7 +55,7 @@
            :monitor 0
            :geometry (geometry :x "-20"
                                :y "-95"
-                               :width "250"
+                               :width "260"
                                :height "35"
                                :anchor "bottom right")
            :stacking "fg"
@@ -102,7 +102,7 @@
            :monitor 0
            :geometry (geometry :x "40"
                                :y "102"
-                               :width "280"
+                               :width "295"
                                :height "100"
                                :anchor "top left")
            :stacking "fg"

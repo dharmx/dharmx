@@ -60,6 +60,8 @@ alias suspend="systemctl suspend"
 alias pac="sudo pacman"
 alias commit="git add . && git commit -m"
 alias clone="git clone"
+alias push="git push"
+alias pull="git pull"
 alias cls="clear"
 
 alias pipes1="pipes1"
@@ -67,7 +69,7 @@ alias pipes2="pipes2"
 alias pipes2-slim="pipes2-slim"
 alias rain="rain"
 
-export PATH="$XDG_DATA_HOME/gem/ruby/3.0.0/bin:$HOME/.jdks/jdk-16.0.1/bin:$HOME/.bin:$HOME/.local/bin:$PATH"
+export PATH="$XDG_DATA_HOME/gem/ruby/3.0.0/bin:$HOME/.jdks/jdk-16.0.1/bin:$HOME/.local/bin:$PATH"
 export VISUAL=nvim;
 export EDITOR=nvim;
 export PS2="❯ "
@@ -78,9 +80,8 @@ SILENT_JAVA_OPTIONS="$JDK_JAVA_OPTIONS"
 unset JDK_JAVA_OPTIONS
 alias java='java "$SILENT_JAVA_OPTIONS"'
 
-colorscript exec bars
-
 . "$HOME/.cargo/env"
 
 [ -f ~/.fzf.bash ] && source ~/.fzf.bash
+source "$XDG_CACHE_HOME"/wal/colors.sh
 

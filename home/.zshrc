@@ -83,6 +83,8 @@ alias suspend="systemctl suspend"
 alias pac="sudo pacman"
 alias commit="git add . && git commit -m"
 alias clone="git clone"
+alias push="git push"
+alias pull="git pull"
 alias cls="clear"
 
 alias pipes1="pipes1"
@@ -92,7 +94,7 @@ alias rain="rain"
 
 export VISUAL=nvim;
 export EDITOR=nvim;
-export PATH="$XDG_DATA_HOME/gem/ruby/3.0.0/bin:$HOME/.jdks/jdk-16.0.1/bin:$HOME/.bin:$HOME/.local/bin:$PATH"
+export PATH="$XDG_DATA_HOME/gem/ruby/3.0.0/bin:$HOME/.jdks/jdk-16.0.1/bin:$HOME/.local/bin:$PATH"
 export PS2="❯ "
 # export LD_PRELOAD=/usr/lib/libwcwidth-icons.so
 
@@ -101,10 +103,7 @@ unset JDK_JAVA_OPTIONS
 alias java='java "$SILENT_JAVA_OPTIONS"'
 setopt HIST_IGNORE_ALL_DUPS
 
-crunch-mini
-printf "\n"
-
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
-
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
+source "$XDG_CACHE_HOME"/wal/colors.sh
 

@@ -214,3 +214,12 @@ Nov 10 22:43 : update: added Lofi Music/Lofi Beats.mp3
 Nov 10 23:53 : exception: Failed to create /home/maker/.config/mpd/state: No such file or directory
 Nov 11 00:21 : exception: Failed to create /home/maker/.config/mpd/state: No such file or directory
 Nov 11 02:35 : exception: Failed to create /home/maker/.config/mpd/state: No such file or directory
+Nov 11 09:27 : exception: Failed to create /home/maker/.config/mpd/state: No such file or directory
+Nov 11 09:50 : exception: Failed to create /home/maker/.config/mpd/state: No such file or directory
+Nov 11 13:02 : exception: Failed to create /home/maker/.config/mpd/state: No such file or directory
+Nov 11 14:13 : exception: Failed to create /home/maker/.config/mpd/state: No such file or directory
+Nov 11 14:47 : exception: Failed to create /home/maker/.config/mpd/state: No such file or directory
+Nov 11 15:20 : exception: Failed to create /home/maker/.config/mpd/state: No such file or directory
+Nov 11 15:20 : player: played "lofi/Lofi Beats.mp3"
+Nov 11 15:53 : config: option 'buffer_time' on line 21 was not recognized
+Nov 11 16:41 : player: played "Lofi Music/Lofi Beats.mp3"

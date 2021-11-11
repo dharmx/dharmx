@@ -1,21 +1,23 @@
-! Do not re-arrange !
+! Load pywal resources file
+#include "colors.Xresources"
 
 ! URxvt Configuration
 URxvt.font:                       xft:JetBrainsMono Nerd Font Mono:size=14:autohint=true,xft:Noto Color Emoji:pixelsize=12:antialias=false,xft:Monospace:size=11:autohint=true
+Xft.dpi:                          97
 URxvt.geometry:                   84x16
 URxvt.internalBorder:             10
 URxvt.cursorBlink:                false
 URxvt.cursorUnderline:            false
 URxvt.saveLines:                  8192
 URxvt.scrollBar:                  false
-URxvt.scrollBar_right:            true
+URxvt.scrollBar_right:            false
 URxvt.scrollBar_floating:         false
 URxvt.scrollstyle:                plain
 URxvt.scrollWithBuffer:           false
 URxvt.urgentOnBell:               false
-URxvt.depth:                      32
+URxvt.depth:                      10
 URxvt.iso14755:                   false
-!URxvt.iconFile:                   /home/username/.icons/gladient/term.png
+URxvt.iconFile:                   /usr/share/icons/Zafiro-Icons-Dark-Blue-f/apps/scalable/urxvt.svg
 !Uncomment below if too much font spacing
 !URxvt.letterSpace: -1
 
@@ -30,7 +32,7 @@ URxvt.keysym.Control-End:         eval:scroll_to_bottom
 
 ! Tabbedex Ext
 URxvt.tabbedex.no-tabbedex-keys:  yes
-URxvt.tabbedex.new-button:        false
+URxvt.tabbedex.new-button:        true
 URXvt.tabbedex.reopen-on-close:   yes
 URxvt.tabbedex.autohide:          yes
 URxvt.tabbedex.tabbar-fg:         5
@@ -64,46 +66,3 @@ URvxt.url-select.button:          2
 URxvt.url-select.launcher:        qutebrowser
 URxvt.url-select.underline:       true
 
-! Polar Night
-#define nord0 #2E3440
-#define nord1 #3B4252
-#define nord2 #434C5E
-#define nord3 #4C566A
-! Snow Storm
-#define nord4 #D8DEE9
-#define nord5 #E5E9F0
-#define nord6 #ECEFF4
-! Frost
-#define nord7 #8FBCBB
-#define nord8 #88C0D0
-#define nord9 #81A1C1
-#define nord10 #5E81AC
-! Aurora
-#define nord11 #BF616A
-#define nord12 #D08770
-#define nord13 #EBCB8B
-#define nord14 #A3BE8C
-#define nord15 #B48EAD
-
-*.foreground:   nord4
-*.background:   nord0
-*.cursorColor:  nord9
-*fading:        35
-*fadeColor:     nord3
-
-*.color0: nord1
-*.color1: nord12
-*.color2: nord14
-*.color3: nord13
-*.color4: nord8
-*.color5: nord15
-*.color6: nord8
-*.color7: nord5
-*.color8: nord3
-*.color9: nord11
-*.color10: nord14
-*.color11: nord13
-*.color12: nord10
-*.color13: nord15
-*.color14: nord7
-*.color15: nord6
