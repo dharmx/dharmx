@@ -1,0 +1,4 @@
+#!/usr/bin/env bash
+
+picom --config "$XDG_CONFIG_HOME"/picom/picom-max-noradius-noshadow.ini --experimental-backends --backend glx &
+

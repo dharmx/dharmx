@@ -1,7 +1,0 @@
-#!/bin/bash
-
-if [[ "$1" == "--path" ]]; then
-    nemo "$2"
-else
-    dunstify "No such option!"
-fi

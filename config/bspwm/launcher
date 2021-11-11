@@ -1,0 +1,54 @@
+#!/bin/sh
+
+wmname LG3D &
+# wmname compiz &
+
+# set your wallpaper
+# feh --bg-fill "$XDG_PICTURES_DIR"/wallpapers/nord/nord_buildings.png &
+# feh --bg-fill "$XDG_PICTURES_DIR"/wallpapers/nord/nord_roads_warm.png &
+# feh --bg-fill "$XDG_PICTURES_DIR"/wallpapers/nord/ign_nordhills.png &
+# feh --bg-fill "$XDG_PICTURES_DIR"/wallpapers/nord/ign-0011.png &
+feh --bg-fill "$XDG_PICTURES_DIR"/wallpapers/nord/archlinux-darker.png &
+# feh --bg-scale "$XDG_PICTURES_DIR"/wallpapers/nord/ign-scenery-lake-mountains-simple.png &
+# feh --bg-scale "$XDG_PICTURES_DIR"/wallpapers/nord/ign-cold-hill.png &
+# feh --bg-scale "$XDG_PICTURES_DIR"/wallpapers/nord/ign-firewatch-2.png &
+# feh --bg-scale "$XDG_PICTURES_DIR"/wallpapers/nord/ign-valley.png &
+# update the font cache (extra paranoid points if you add the r flag)
+# fc-cache -f &
+
+xsetroot -cursor_name left_ptr &
+
+# start playerctl daemon
+playerctld daemon &
+
+# start polybar
+polybar -c "$XDG_CONFIG_HOME"/polybar/placidity-plus/config.ini main &
+
+# start dunst daemon
+# dunst &
+
+# NetworkManager is the most popular way to manage wireless networks on Linux,
+# and nm-applet is a desktop environment-independent system tray GUI for it.
+# nm-applet &
+
+# wait
+
+# launch a nice aesthetic conky config
+# "$XDG_CONFIG_HOME"/conky/miscellany/conky-startup.sh &
+
+# picom max settings -- not recommended
+# picom --config "$XDG_CONFIG_HOME"/picom/picom-max.ini --experimental-backends --backend glx &
+
+# max settings without rounded corners and shadow
+# picom --config "$XDG_CONFIG_HOME"/picom/picom-max-noradius-noshadow.ini --experimental-backends --backend glx &
+
+# picom minimal settings -- recommended
+# picom --config "$XDG_CONFIG_HOME"/picom/picom-min.ini --experimental-backends --backend glx &
+
+# picom minimal settings no transparency + rounded corners
+# picom --config "$XDG_CONFIG_HOME"/picom/picom-opaque.ini --experimental-backends --backend glx &
+
+# picom --config "$XDG_CONFIG_HOME"/picom/picom-max-noshadow.ini --experimental-backends --backend glx &
+# komorebi &
+exit 0
+

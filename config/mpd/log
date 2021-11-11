@@ -1,0 +1,216 @@
+Nov 09 19:15 : exception: Failed to open '/home/maker/.config/mpd/state': No such file or directory
+Nov 09 19:15 : update: added Taylor Swift - Reputation/15 New Year's Day.mp3
+Nov 09 19:15 : update: added Taylor Swift - Reputation/11 Dancing With Our Hands Tied.mp3
+Nov 09 19:15 : update: added Taylor Swift - Reputation/4 Don't Blame Me.mp3
+Nov 09 19:15 : update: added Taylor Swift - Reputation/6 Look What You Made Me Do.mp3
+Nov 09 19:15 : update: added Taylor Swift - Reputation/14 Call It What You Want.mp3
+Nov 09 19:15 : update: added Taylor Swift - Reputation/10 King Of My Heart.mp3
+Nov 09 19:15 : update: added Taylor Swift - Reputation/8 Gorgeous.mp3
+Nov 09 19:15 : update: added Taylor Swift - Reputation/12 Dress.mp3
+Nov 09 19:15 : update: added Taylor Swift - Reputation/9 Getaway Car.mp3
+Nov 09 19:15 : update: added Taylor Swift - Reputation/2 End Game.mp3
+Nov 09 19:15 : update: added Taylor Swift - Reputation/5 Delicate.mp3
+Nov 09 19:15 : update: added Taylor Swift - Reputation/3 I Did Something Bad.mp3
+Nov 09 19:15 : update: added Taylor Swift - Reputation/7 So It Goes.mp3
+Nov 09 19:15 : update: added Taylor Swift - Reputation/13 This Is Why We Can't Have Nice Things.mp3
+Nov 09 19:15 : update: added Taylor Swift - Reputation/1  ...Ready For It_.mp3
+Nov 09 19:29 : config: option 'buffer_time' on line 21 was not recognized
+Nov 09 19:29 : config: option 'buffer_time' on line 21 was not recognized
+Nov 09 19:29 : config: option 'buffer_time' on line 21 was not recognized
+Nov 09 19:32 : player: played "Taylor Swift - Reputation/1  ...Ready For It_.mp3"
+Nov 09 19:33 : player: played "Taylor Swift - Reputation/11 Dancing With Our Hands Tied.mp3"
+Nov 09 19:33 : exception: Failed to open audio output
+Nov 09 19:34 : player: played "Taylor Swift - Reputation/11 Dancing With Our Hands Tied.mp3"
+Nov 09 19:41 : player: played "Taylor Swift - Reputation/1  ...Ready For It_.mp3"
+Nov 09 19:45 : player: played "Taylor Swift - Reputation/2 End Game.mp3"
+Nov 09 19:49 : player: played "Taylor Swift - Reputation/3 I Did Something Bad.mp3"
+Nov 09 19:53 : player: played "Taylor Swift - Reputation/4 Don't Blame Me.mp3"
+Nov 09 19:56 : player: played "Taylor Swift - Reputation/5 Delicate.mp3"
+Nov 09 19:58 : player: played "Taylor Swift - Reputation/10 King Of My Heart.mp3"
+Nov 09 19:58 : config: option 'buffer_time' on line 21 was not recognized
+Nov 09 21:32 : player: played "Taylor Swift - Reputation/10 King Of My Heart.mp3"
+Nov 09 21:33 : config: option 'buffer_time' on line 21 was not recognized
+[src/libmpg123/parse.c:skip_junk():1276] error: Giving up searching valid MPEG header after 65536 bytes of junk.
+Nov 09 21:38 : mpg123: mpg123_getformat() failed: A generic mpg123 error.
+Nov 09 21:38 : update: added bootleg-boy/hateful - how i feel.mp3
+Nov 09 21:38 : mad: input does not appear to be a mp3 bit stream
+[src/libmpg123/parse.c:skip_junk():1276] error: Giving up searching valid MPEG header after 65536 bytes of junk.
+Nov 09 21:38 : mpg123: mpg123_getformat() failed: A generic mpg123 error.
+Nov 09 21:41 : player: played "bootleg-boy/hateful - how i feel.mp3"
+Nov 09 21:41 : output: Failed to play on "Pulseaudio" (pulse): suspended
+Nov 09 21:44 : player: played "Taylor Swift - Reputation/1  ...Ready For It_.mp3"
+Nov 09 21:48 : player: played "Taylor Swift - Reputation/2 End Game.mp3"
+Nov 09 21:52 : player: played "Taylor Swift - Reputation/3 I Did Something Bad.mp3"
+Nov 09 21:56 : player: played "Taylor Swift - Reputation/4 Don't Blame Me.mp3"
+Nov 09 22:00 : player: played "Taylor Swift - Reputation/5 Delicate.mp3"
+Nov 09 22:04 : player: played "Taylor Swift - Reputation/6 Look What You Made Me Do.mp3"
+Nov 09 22:07 : player: played "Taylor Swift - Reputation/7 So It Goes.mp3"
+Nov 09 22:11 : player: played "Taylor Swift - Reputation/8 Gorgeous.mp3"
+Nov 09 22:15 : player: played "Taylor Swift - Reputation/9 Getaway Car.mp3"
+Nov 09 22:18 : player: played "Taylor Swift - Reputation/10 King Of My Heart.mp3"
+Nov 09 22:22 : mad: input does not appear to be a mp3 bit stream
+[src/libmpg123/parse.c:skip_junk():1276] error: Giving up searching valid MPEG header after 65536 bytes of junk.
+Nov 09 22:22 : mpg123: mpg123_getformat() failed: A generic mpg123 error.
+Nov 09 22:22 : player: played "Taylor Swift - Reputation/13 This Is Why We Can't Have Nice Things.mp3"
+Nov 09 22:24 : player: played "bootleg-boy/hateful - how i feel.mp3"
+Nov 09 22:27 : player: played "Taylor Swift - Reputation/1  ...Ready For It_.mp3"
+Nov 09 22:31 : player: played "Taylor Swift - Reputation/2 End Game.mp3"
+Nov 09 22:35 : player: played "Taylor Swift - Reputation/3 I Did Something Bad.mp3"
+Nov 09 22:39 : player: played "Taylor Swift - Reputation/4 Don't Blame Me.mp3"
+Nov 09 22:43 : player: played "Taylor Swift - Reputation/5 Delicate.mp3"
+Nov 09 22:46 : player: played "Taylor Swift - Reputation/6 Look What You Made Me Do.mp3"
+Nov 09 23:25 : update: removing Taylor Swift - Reputation/15 New Year's Day.mp3
+Nov 09 23:25 : update: removing Taylor Swift - Reputation/14 Call It What You Want.mp3
+Nov 09 23:25 : update: removing Taylor Swift - Reputation/12 Dress.mp3
+Nov 09 23:25 : update: removing Taylor Swift - Reputation/13 This Is Why We Can't Have Nice Things.mp3
+Nov 09 23:25 : update: removing Taylor Swift - Reputation/11 Dancing With Our Hands Tied.mp3
+Nov 09 23:25 : update: removing Taylor Swift - Reputation/10 King Of My Heart.mp3
+Nov 09 23:25 : update: removing Taylor Swift - Reputation/9 Getaway Car.mp3
+Nov 09 23:25 : update: removing Taylor Swift - Reputation/8 Gorgeous.mp3
+Nov 09 23:25 : update: removing Taylor Swift - Reputation/7 So It Goes.mp3
+Nov 09 23:25 : update: removing Taylor Swift - Reputation/6 Look What You Made Me Do.mp3
+Nov 09 23:25 : update: removing Taylor Swift - Reputation/5 Delicate.mp3
+Nov 09 23:25 : update: removing Taylor Swift - Reputation/4 Don't Blame Me.mp3
+Nov 09 23:25 : update: removing Taylor Swift - Reputation/3 I Did Something Bad.mp3
+Nov 09 23:25 : update: removing Taylor Swift - Reputation/2 End Game.mp3
+Nov 09 23:25 : update: removing Taylor Swift - Reputation/1  ...Ready For It_.mp3
+Nov 09 23:25 : update: removing bootleg-boy/hateful - how i feel.mp3
+[src/libmpg123/parse.c:skip_junk():1276] error: Giving up searching valid MPEG header after 65536 bytes of junk.
+Nov 09 23:25 : mpg123: mpg123_getformat() failed: A generic mpg123 error.
+Nov 09 23:25 : update: added lofi/hateful - how i feel.mp3
+Nov 09 23:25 : update: added lofi/Lofi Beats.mp3
+Nov 10 03:03 : player: played "lofi/Lofi Beats.mp3"
+Nov 10 03:06 : player: played "lofi/Lofi Beats.mp3"
+Nov 10 12:11 : update: added Taylor Swift - 1989 (Deluxe)/1989 (Deluxe)/02 Blank Space.mp3
+Nov 10 12:11 : update: added Taylor Swift - 1989 (Deluxe)/1989 (Deluxe)/07 I Wish You Would.mp3
+Nov 10 12:11 : update: added Taylor Swift - 1989 (Deluxe)/1989 (Deluxe)/06 Shake It Off.mp3
+Nov 10 12:11 : update: added Taylor Swift - 1989 (Deluxe)/1989 (Deluxe)/11 This Love.mp3
+Nov 10 12:11 : update: added Taylor Swift - 1989 (Deluxe)/1989 (Deluxe)/18 I Wish You Would - Voice Memos.mp3
+Nov 10 12:11 : update: added Taylor Swift - 1989 (Deluxe)/1989 (Deluxe)/08 Bad Blood.mp3
+Nov 10 12:11 : update: added Taylor Swift - 1989 (Deluxe)/1989 (Deluxe)/05 All You Had To Do Was Stay.mp3
+Nov 10 12:11 : update: added Taylor Swift - 1989 (Deluxe)/1989 (Deluxe)/15 You Are In Love.mp3
+Nov 10 12:11 : update: added Taylor Swift - 1989 (Deluxe)/1989 (Deluxe)/03 Style.mp3
+Nov 10 12:11 : update: added Taylor Swift - 1989 (Deluxe)/1989 (Deluxe)/10 How You Get The Girl.mp3
+Nov 10 12:11 : update: added Taylor Swift - 1989 (Deluxe)/1989 (Deluxe)/01 Welcome To New York.mp3
+Nov 10 12:11 : update: added Taylor Swift - 1989 (Deluxe)/1989 (Deluxe)/14 Wonderland.mp3
+Nov 10 12:11 : update: added Taylor Swift - 1989 (Deluxe)/1989 (Deluxe)/17 I Know Places - Voice Memos.mp3
+Nov 10 12:11 : update: added Taylor Swift - 1989 (Deluxe)/1989 (Deluxe)/12 I Know Places.mp3
+Nov 10 12:11 : update: added Taylor Swift - 1989 (Deluxe)/1989 (Deluxe)/19 Blank Space - Voice Memos.mp3
+Nov 10 12:11 : update: added Taylor Swift - 1989 (Deluxe)/1989 (Deluxe)/04 Out Of The Woods.mp3
+Nov 10 12:11 : update: added Taylor Swift - 1989 (Deluxe)/1989 (Deluxe)/13 Clean.mp3
+Nov 10 12:11 : update: added Taylor Swift - 1989 (Deluxe)/1989 (Deluxe)/09 Wildest Dreams.mp3
+Nov 10 12:11 : update: added Taylor Swift - 1989 (Deluxe)/1989 (Deluxe)/16 New Romantics.mp3
+Nov 10 12:15 : update: added Taylor Swift - Reputation/15 New Year's Day.mp3
+Nov 10 12:15 : update: added Taylor Swift - Reputation/11 Dancing With Our Hands Tied.mp3
+Nov 10 12:15 : update: added Taylor Swift - Reputation/4 Don't Blame Me.mp3
+Nov 10 12:15 : update: added Taylor Swift - Reputation/6 Look What You Made Me Do.mp3
+Nov 10 12:15 : update: added Taylor Swift - Reputation/14 Call It What You Want.mp3
+Nov 10 12:15 : update: added Taylor Swift - Reputation/10 King Of My Heart.mp3
+Nov 10 12:15 : update: added Taylor Swift - Reputation/8 Gorgeous.mp3
+Nov 10 12:15 : update: added Taylor Swift - Reputation/12 Dress.mp3
+Nov 10 12:15 : update: added Taylor Swift - Reputation/9 Getaway Car.mp3
+Nov 10 12:15 : update: added Taylor Swift - Reputation/2 End Game.mp3
+Nov 10 12:15 : update: added Taylor Swift - Reputation/5 Delicate.mp3
+Nov 10 12:15 : update: added Taylor Swift - Reputation/3 I Did Something Bad.mp3
+Nov 10 12:15 : update: added Taylor Swift - Reputation/7 So It Goes.mp3
+Nov 10 12:15 : update: added Taylor Swift - Reputation/13 This Is Why We Can't Have Nice Things.mp3
+Nov 10 12:15 : update: added Taylor Swift - Reputation/1  ...Ready For It_.mp3
+Nov 10 13:01 : player: played "Taylor Swift - 1989 (Deluxe)/1989 (Deluxe)/01 Welcome To New York.mp3"
+Nov 10 13:04 : player: played "Taylor Swift - 1989 (Deluxe)/1989 (Deluxe)/01 Welcome To New York.mp3"
+Nov 10 13:08 : player: played "Taylor Swift - 1989 (Deluxe)/1989 (Deluxe)/01 Welcome To New York.mp3"
+Nov 10 13:11 : player: played "Taylor Swift - 1989 (Deluxe)/1989 (Deluxe)/01 Welcome To New York.mp3"
+Nov 10 13:15 : player: played "Taylor Swift - 1989 (Deluxe)/1989 (Deluxe)/01 Welcome To New York.mp3"
+Nov 10 13:18 : player: played "Taylor Swift - 1989 (Deluxe)/1989 (Deluxe)/01 Welcome To New York.mp3"
+Nov 10 15:13 : player: played "Taylor Swift - 1989 (Deluxe)/1989 (Deluxe)/01 Welcome To New York.mp3"
+Nov 10 15:16 : player: played "Taylor Swift - 1989 (Deluxe)/1989 (Deluxe)/01 Welcome To New York.mp3"
+Nov 10 15:20 : player: played "Taylor Swift - 1989 (Deluxe)/1989 (Deluxe)/01 Welcome To New York.mp3"
+Nov 10 15:21 : player: played "Taylor Swift - 1989 (Deluxe)/1989 (Deluxe)/01 Welcome To New York.mp3"
+Nov 10 15:22 : player: played "Taylor Swift - 1989 (Deluxe)/1989 (Deluxe)/02 Blank Space.mp3"
+Nov 10 15:26 : player: played "Taylor Swift - 1989 (Deluxe)/1989 (Deluxe)/02 Blank Space.mp3"
+Nov 10 15:30 : player: played "Taylor Swift - 1989 (Deluxe)/1989 (Deluxe)/03 Style.mp3"
+Nov 10 15:33 : player: played "Taylor Swift - 1989 (Deluxe)/1989 (Deluxe)/04 Out Of The Woods.mp3"
+Nov 10 15:37 : player: played "Taylor Swift - 1989 (Deluxe)/1989 (Deluxe)/05 All You Had To Do Was Stay.mp3"
+Nov 10 15:40 : player: played "Taylor Swift - 1989 (Deluxe)/1989 (Deluxe)/06 Shake It Off.mp3"
+Nov 10 15:44 : player: played "Taylor Swift - 1989 (Deluxe)/1989 (Deluxe)/07 I Wish You Would.mp3"
+Nov 10 15:47 : player: played "Taylor Swift - 1989 (Deluxe)/1989 (Deluxe)/08 Bad Blood.mp3"
+Nov 10 15:51 : player: played "Taylor Swift - 1989 (Deluxe)/1989 (Deluxe)/09 Wildest Dreams.mp3"
+Nov 10 15:55 : player: played "Taylor Swift - 1989 (Deluxe)/1989 (Deluxe)/10 How You Get The Girl.mp3"
+Nov 10 15:59 : player: played "Taylor Swift - 1989 (Deluxe)/1989 (Deluxe)/11 This Love.mp3"
+Nov 10 16:02 : player: played "Taylor Swift - 1989 (Deluxe)/1989 (Deluxe)/12 I Know Places.mp3"
+Nov 10 16:07 : player: played "Taylor Swift - 1989 (Deluxe)/1989 (Deluxe)/13 Clean.mp3"
+Nov 10 16:11 : player: played "Taylor Swift - 1989 (Deluxe)/1989 (Deluxe)/14 Wonderland.mp3"
+Nov 10 16:15 : player: played "Taylor Swift - 1989 (Deluxe)/1989 (Deluxe)/15 You Are In Love.mp3"
+Nov 10 16:19 : player: played "Taylor Swift - 1989 (Deluxe)/1989 (Deluxe)/16 New Romantics.mp3"
+Nov 10 16:23 : player: played "Taylor Swift - Reputation/1  ...Ready For It_.mp3"
+Nov 10 16:27 : player: played "Taylor Swift - Reputation/2 End Game.mp3"
+Nov 10 16:31 : player: played "Taylor Swift - Reputation/3 I Did Something Bad.mp3"
+Nov 10 16:34 : player: played "Taylor Swift - Reputation/4 Don't Blame Me.mp3"
+Nov 10 16:38 : player: played "Taylor Swift - Reputation/5 Delicate.mp3"
+Nov 10 16:42 : player: played "Taylor Swift - Reputation/6 Look What You Made Me Do.mp3"
+Nov 10 16:46 : player: played "Taylor Swift - Reputation/7 So It Goes.mp3"
+Nov 10 16:49 : player: played "Taylor Swift - Reputation/8 Gorgeous.mp3"
+Nov 10 16:53 : player: played "Taylor Swift - Reputation/9 Getaway Car.mp3"
+Nov 10 16:56 : player: played "Taylor Swift - Reputation/10 King Of My Heart.mp3"
+Nov 10 17:00 : player: played "Taylor Swift - Reputation/13 This Is Why We Can't Have Nice Things.mp3"
+Nov 10 17:04 : player: played "Taylor Swift - Reputation/12 Dress.mp3"
+Nov 10 17:07 : player: played "Taylor Swift - Reputation/14 Call It What You Want.mp3"
+Nov 10 17:11 : player: played "Taylor Swift - Reputation/15 New Year's Day.mp3"
+Nov 10 17:14 : player: played "Taylor Swift - 1989 (Deluxe)/1989 (Deluxe)/01 Welcome To New York.mp3"
+Nov 10 17:18 : player: played "Taylor Swift - 1989 (Deluxe)/1989 (Deluxe)/02 Blank Space.mp3"
+Nov 10 17:22 : player: played "Taylor Swift - 1989 (Deluxe)/1989 (Deluxe)/03 Style.mp3"
+Nov 10 17:26 : player: played "Taylor Swift - 1989 (Deluxe)/1989 (Deluxe)/04 Out Of The Woods.mp3"
+Nov 10 17:29 : player: played "Taylor Swift - 1989 (Deluxe)/1989 (Deluxe)/05 All You Had To Do Was Stay.mp3"
+Nov 10 19:16 : player: played "Taylor Swift - 1989 (Deluxe)/1989 (Deluxe)/07 I Wish You Would.mp3"
+Nov 10 22:42 : update: added Taylor Swift - 1989 (Deluxe)/02 Blank Space.mp3
+Nov 10 22:42 : update: added Taylor Swift - 1989 (Deluxe)/07 I Wish You Would.mp3
+Nov 10 22:42 : update: added Taylor Swift - 1989 (Deluxe)/06 Shake It Off.mp3
+Nov 10 22:42 : update: added Taylor Swift - 1989 (Deluxe)/11 This Love.mp3
+Nov 10 22:42 : update: added Taylor Swift - 1989 (Deluxe)/08 Bad Blood.mp3
+Nov 10 22:42 : update: added Taylor Swift - 1989 (Deluxe)/05 All You Had To Do Was Stay.mp3
+Nov 10 22:42 : update: added Taylor Swift - 1989 (Deluxe)/15 You Are In Love.mp3
+Nov 10 22:42 : update: added Taylor Swift - 1989 (Deluxe)/03 Style.mp3
+Nov 10 22:42 : update: added Taylor Swift - 1989 (Deluxe)/10 How You Get The Girl.mp3
+Nov 10 22:42 : update: added Taylor Swift - 1989 (Deluxe)/01 Welcome To New York.mp3
+Nov 10 22:42 : update: added Taylor Swift - 1989 (Deluxe)/14 Wonderland.mp3
+Nov 10 22:42 : update: added Taylor Swift - 1989 (Deluxe)/12 I Know Places.mp3
+Nov 10 22:42 : update: added Taylor Swift - 1989 (Deluxe)/19 Blank Space - Voice Memos.mp3
+Nov 10 22:42 : update: added Taylor Swift - 1989 (Deluxe)/04 Out Of The Woods.mp3
+Nov 10 22:42 : update: added Taylor Swift - 1989 (Deluxe)/13 Clean.mp3
+Nov 10 22:42 : update: added Taylor Swift - 1989 (Deluxe)/09 Wildest Dreams.mp3
+Nov 10 22:42 : update: added Taylor Swift - 1989 (Deluxe)/16 New Romantics.mp3
+Nov 10 22:42 : update: removing Taylor Swift - 1989 (Deluxe)/1989 (Deluxe)/19 Blank Space - Voice Memos.mp3
+Nov 10 22:42 : update: removing Taylor Swift - 1989 (Deluxe)/1989 (Deluxe)/18 I Wish You Would - Voice Memos.mp3
+Nov 10 22:42 : update: removing Taylor Swift - 1989 (Deluxe)/1989 (Deluxe)/17 I Know Places - Voice Memos.mp3
+Nov 10 22:42 : update: removing Taylor Swift - 1989 (Deluxe)/1989 (Deluxe)/16 New Romantics.mp3
+Nov 10 22:42 : update: removing Taylor Swift - 1989 (Deluxe)/1989 (Deluxe)/15 You Are In Love.mp3
+Nov 10 22:42 : update: removing Taylor Swift - 1989 (Deluxe)/1989 (Deluxe)/14 Wonderland.mp3
+Nov 10 22:42 : update: removing Taylor Swift - 1989 (Deluxe)/1989 (Deluxe)/13 Clean.mp3
+Nov 10 22:42 : update: removing Taylor Swift - 1989 (Deluxe)/1989 (Deluxe)/12 I Know Places.mp3
+Nov 10 22:42 : update: removing Taylor Swift - 1989 (Deluxe)/1989 (Deluxe)/11 This Love.mp3
+Nov 10 22:42 : update: removing Taylor Swift - 1989 (Deluxe)/1989 (Deluxe)/10 How You Get The Girl.mp3
+Nov 10 22:42 : update: removing Taylor Swift - 1989 (Deluxe)/1989 (Deluxe)/09 Wildest Dreams.mp3
+Nov 10 22:42 : update: removing Taylor Swift - 1989 (Deluxe)/1989 (Deluxe)/08 Bad Blood.mp3
+Nov 10 22:42 : update: removing Taylor Swift - 1989 (Deluxe)/1989 (Deluxe)/07 I Wish You Would.mp3
+Nov 10 22:42 : update: removing Taylor Swift - 1989 (Deluxe)/1989 (Deluxe)/06 Shake It Off.mp3
+Nov 10 22:42 : update: removing Taylor Swift - 1989 (Deluxe)/1989 (Deluxe)/05 All You Had To Do Was Stay.mp3
+Nov 10 22:42 : update: removing Taylor Swift - 1989 (Deluxe)/1989 (Deluxe)/04 Out Of The Woods.mp3
+Nov 10 22:42 : update: removing Taylor Swift - 1989 (Deluxe)/1989 (Deluxe)/03 Style.mp3
+Nov 10 22:42 : update: removing Taylor Swift - 1989 (Deluxe)/1989 (Deluxe)/02 Blank Space.mp3
+Nov 10 22:42 : update: removing Taylor Swift - 1989 (Deluxe)/1989 (Deluxe)/01 Welcome To New York.mp3
+Nov 10 22:42 : update: added Taylor Swift - 1989 (Deluxe)/18 I Wish You Would - Voice Memos.mp3
+Nov 10 22:42 : update: added Taylor Swift - 1989 (Deluxe)/17 I Know Places - Voice Memos.mp3
+Nov 10 22:43 : update: removing lofi/Lofi Beats.mp3
+Nov 10 22:43 : update: removing lofi/hateful - how i feel.mp3
+[src/libmpg123/parse.c:skip_junk():1276] error: Giving up searching valid MPEG header after 65536 bytes of junk.
+Nov 10 22:43 : mpg123: mpg123_getformat() failed: A generic mpg123 error.
+Nov 10 22:43 : update: added Lofi/hateful - how i feel.mp3
+Nov 10 22:43 : update: added Lofi/Lofi Beats.mp3
+Nov 10 22:43 : update: removing Lofi/Lofi Beats.mp3
+Nov 10 22:43 : update: removing Lofi/hateful - how i feel.mp3
+[src/libmpg123/parse.c:skip_junk():1276] error: Giving up searching valid MPEG header after 65536 bytes of junk.
+Nov 10 22:43 : mpg123: mpg123_getformat() failed: A generic mpg123 error.
+Nov 10 22:43 : update: added Lofi Music/hateful - how i feel.mp3
+Nov 10 22:43 : update: added Lofi Music/Lofi Beats.mp3
+Nov 10 23:53 : exception: Failed to create /home/maker/.config/mpd/state: No such file or directory
+Nov 11 00:21 : exception: Failed to create /home/maker/.config/mpd/state: No such file or directory
+Nov 11 02:35 : exception: Failed to create /home/maker/.config/mpd/state: No such file or directory
