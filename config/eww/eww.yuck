@@ -9,6 +9,8 @@
 (include "structures/audio/audio.yuck")
 (include "structures/audiocontrol/audiocontrol.yuck")
 (include "structures/systemstats/systemstats.yuck")
-(include "structures/wallpaper/wallpaper.yuck")
 
-; vim: ft=lisp
+; disable noclobber by "set +o noclobber" first
+(include "dummy.yuck")
+
+; vim: ft=yuck

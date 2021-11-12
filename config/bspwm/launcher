@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/usr/bin/env bash 
 
 wmname LG3D &
 # wmname compiz &
@@ -8,12 +8,13 @@ wmname LG3D &
 # feh --bg-fill "$XDG_PICTURES_DIR"/wallpapers/nord/nord_roads_warm.png &
 # feh --bg-fill "$XDG_PICTURES_DIR"/wallpapers/nord/ign_nordhills.png &
 # feh --bg-fill "$XDG_PICTURES_DIR"/wallpapers/nord/ign-0011.png &
-feh --bg-fill "$XDG_PICTURES_DIR"/wallpapers/nord/archlinux-darker.png &
+# feh --bg-fill "$XDG_PICTURES_DIR"/wallpapers/nord/archlinux-darker.png &
 # feh --bg-scale "$XDG_PICTURES_DIR"/wallpapers/nord/ign-scenery-lake-mountains-simple.png &
 # feh --bg-scale "$XDG_PICTURES_DIR"/wallpapers/nord/ign-cold-hill.png &
 # feh --bg-scale "$XDG_PICTURES_DIR"/wallpapers/nord/ign-firewatch-2.png &
 # feh --bg-scale "$XDG_PICTURES_DIR"/wallpapers/nord/ign-valley.png &
 # update the font cache (extra paranoid points if you add the r flag)
+exec "$HOME/.fehbg" &
 # fc-cache -f &
 
 xsetroot -cursor_name left_ptr &

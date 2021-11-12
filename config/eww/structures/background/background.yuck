@@ -1,5 +1,7 @@
-(deflisten BACKGROUND :initial "assets/shuffle/backgrounds/ign-0011.png"
-  "scripts/randomize paths/backgrounds.txt")
+; (deflisten BACKGROUND :initial "assets/shuffle/backgrounds/ign-0011.png"
+;  "scripts/randomize paths/backgrounds.txt")
+
+(defvar BACKGROUND "assets/shuffle/backgrounds/ign_herakles.jpg")
 
 (defwindow background
            :monitor 0

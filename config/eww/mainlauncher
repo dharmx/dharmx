@@ -11,12 +11,11 @@ fi
 
 ## Open widgets 
 run_eww() {
-	eww open-many "background"    \
+	eww open-many "background"    	 \
 					 "time" 	     					 \
 					 "user"		               \
 					 "system" 	     				 \
 					 "uptime"        				 \
-					 "wmanganelo"    				 \
 					 "directories"   				 \
 					 "wshutdown"     				 \
 					 "wreboot"       				 \

@@ -1,4 +1,4 @@
-#!/bin/env bash
+#!/usr/bin/env bash
 
 ## if the microphone is muted then this function will return an image path of a muted microphone icon
 ## otherwise it'll return an image of an un-muted microphone
@@ -6,9 +6,9 @@ status() {
   MUTED=$(pacmd list-sources | awk '/\*/,EOF {print}' | awk '/muted/ {print $2; exit}')
 
   if [ "$MUTED" = "yes" ]; then
-    echo "assets/images/microphone-muted.svg"
+    echo " "
   else
-    echo "assets/images/microphone.svg"
+    echo " "
   fi
 }
 

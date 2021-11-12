@@ -1,4 +1,4 @@
-#!/bin/env bash
+#!/usr/bin/env bash
 
 ## if the sound is muted then this function will return an image path of a muted sound icon
 ## otherwise it'll return an image of an un-muted sound
@@ -6,9 +6,9 @@ status() {
     MUTED=$(pacmd list-sinks | awk '/\*/,EOF {print}' | awk '/muted/ {print $2; exit}')
 
     if [[ "$MUTED" == "yes" ]]; then
-        echo "assets/images/volume-muted.svg"
+        echo "婢 "
     else
-        echo "assets/images/volume.svg" 
+        echo "墳 " 
     fi
 }
 

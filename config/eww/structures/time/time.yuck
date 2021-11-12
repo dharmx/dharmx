@@ -19,7 +19,7 @@
   (box :orientation "h"
        :space-evenly false
        :class "time-parent"
-    (image :path "assets/images/calendar.svg"
+    (label :text "祥"
            :class "time-icon"
            :width 150)
     (box :orientation "v"

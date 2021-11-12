@@ -72,9 +72,8 @@
             :onrightclick onrightclick
             :active true
             :class "control-button control-microphone-button"
-      (image :path image
-             :width 50
-             :class "control-image control-microphone-image"))
+      (label :text image
+             :class "control-label control-microphone-label"))
     (scale :marks true
            :value value
            :active true
@@ -92,9 +91,8 @@
             :onrightclick onrightclick
             :active true
             :class "control-button control-volume-button"
-      (image :path image
-             :width 50
-             :class "control-image control-volume-image"))
+      (label :text image
+             :class "control-label control-volume-label"))
     (scale :marks false
            :value value
            :active true
