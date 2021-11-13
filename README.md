@@ -30,3 +30,30 @@ Any help and suggestions are appreciated. I'm a linux amateur (started using lin
  - [ ] conform to conventions and debug
  - [ ] tune all of the pywal colors 
  - [ ] add pywal wallpaper for each theme
+
+## Pywal caveats
+There's an absurd amount of themes in pywal and setting up even one is a huge pain so I'm limiting it to NvChad's Themes
+
+ - [ ] aquarium
+ - [ ] blossom
+ - [ ] dracula
+ - [ ] doom-chad
+ - [ ] everforest
+ - [ ] gruvbox
+ - [ ] gruvchad
+ - [ ] javacafe
+ - [ ] jellybeans
+ - [ ] lfgruv
+ - [ ] monokai
+ - [ ] mountain
+ - [ ] nord
+ - [ ] onelight
+ - [ ] onedark
+ - [ ] onedark-deep
+ - [ ] onejelly
+ - [ ] onenord
+ - [ ] palenight
+ - [ ] penokai
+ - [ ] tokyonight
+ - [ ] tomorrow-night
+ - [ ] uwu
