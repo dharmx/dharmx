@@ -3,7 +3,7 @@ audio_device_state:1:Pulseaudio
 audio_device_state:1:Visualizer
 state: play
 current: 1
-time: 122.043000
+time: 681.137000
 random: 0
 repeat: 1
 single: 0
