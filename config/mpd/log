@@ -263,3 +263,9 @@ Nov 13 02:40 : player: played "Taylor Swift - 1989 (Deluxe)/12 I Know Places.mp3
 Nov 13 02:44 : player: played "Taylor Swift - 1989 (Deluxe)/13 Clean.mp3"
 Nov 13 02:48 : player: played "Taylor Swift - 1989 (Deluxe)/14 Wonderland.mp3"
 Nov 13 02:51 : player: played "Taylor Swift - 1989 (Deluxe)/15 You Are In Love.mp3"
+Nov 13 16:34 : config: option 'buffer_time' on line 21 was not recognized
+Nov 13 16:58 : update: added Lofi Music/3PM Coding Session - Lofi Hip Hop Mix [Study & Coding Beats].mp3
+Nov 13 16:58 : player: played "Taylor Swift - 1989 (Deluxe)/15 You Are In Love.mp3"
+Nov 13 16:59 : player: played "Lofi Music/Lofi Beats.mp3"
+Nov 13 16:59 : config: option 'buffer_time' on line 21 was not recognized
+Nov 13 18:51 : player: played "Lofi Music/3PM Coding Session - Lofi Hip Hop Mix [Study & Coding Beats].mp3"

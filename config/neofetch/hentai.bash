@@ -32,3 +32,5 @@ printf "[36m[1mNHentai tag: [0m#$id\n"
 rm "$tmpfile" "$tmpfile$format"
 
 [ "$kitty_imagemagick_warn" = "true" ] && echo "WARN: imagemagick is required for kitty image backend"
+# 110971
+
