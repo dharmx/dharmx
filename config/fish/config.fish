@@ -1,8 +1,15 @@
+# No greeting when starting an interactive shell.
+function fish_greeting
+end
+
 export PATH="$XDG_DATA_HOME/gem/ruby/3.0.0/bin:$HOME/.jdks/jdk-16.0.1/bin:$HOME/.local/bin:$PATH"
 export VISUAL=nvim;
 export EDITOR=nvim;
 # export LD_PRELOAD=/usr/lib/libwcwidth-icons.so
-
+    
+# 'l' shows the contents + hidden ones including a header
+# 'll' just shows the contents including a header
+alias li="exa --long --all --group --icons"
 alias ls "exa"
 alias la "exa --long --all --group"
 alias lls="logo-ls"
@@ -31,10 +38,11 @@ alias nf "neofetch --config $XDG_CONFIG_HOME/neofetch/main-config.conf --source 
 alias pf "neofetch --config $XDG_CONFIG_HOME/neofetch/config-minimal.conf --ascii $XDG_CONFIG_HOME/neofetch/arch-smol"
 alias uwuf "neofetch --config $XDG_CONFIG_HOME/neofetch/config-minimal-uwu.conf --ascii $XDG_CONFIG_HOME/neofetch/uwu-hd"
 
-alias pipes1 "pipes1"
-alias pipes2 "pipes2"
-alias pipes2-slim "pipes2-slim"
-alias rain "rain"
+alias pipes1 "lam -e pipes1"
+alias pipes2 "lam -e pipes2"
+alias pipes2-slim "lam -e pipes2-slim"
+alias rain "lam -e rain"
 
+lam -e alpha
 printf "\n"
 

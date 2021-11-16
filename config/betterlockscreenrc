@@ -1,34 +1,37 @@
-display_on=0
-span_image=false
-lock_timeout=10
 fx_list=(dim blur dimblur pixel dimpixel color)
+span_image=false
+quiet=false
+display_on=0
+lock_timeout=300
 dim_level=40
 blur_level=1
-pixel_scale=1
-solid_color=333333
-description=""
-quiet=false
-
-loginbox=2e3440
-loginshadow=2e3440
-locktext="Type password to unlock..."
-font="Iosevka"
-ringcolor=d8dee9
-insidecolor=00000000
-separatorcolor=00000000
-ringvercolor=ebcb8b
-insidevercolor=00000000
-ringwrongcolor=ffffffff
-insidewrongcolor=bf616a
-timecolor=ffffffff
-time_format="%I:%M %p"
-greetercolor=ffffffff
-layoutcolor=ffffffff
-keyhlcolor=d08770
-bshlcolor=d23c3dff
-verifcolor=ffffffff
-wrongcolor=d23c3dff
-modifcolor=d23c3dff
-bgcolor=000000ff
+pixel_scale=10,1000
+solid_color=2e3440
+loginbox=3B4252
+loginshadow=434C5E
+ringcolor=E5E9F0
+insidecolor=3B4252
+separatorcolor=3B4252
+ringvercolor=d8dee9
+insidevercolor=000000
+ringwrongcolor=d8dee9
+insidewrongcolor=BF616A
+timecolor=d8dee9
+greetercolor=d8dee9
+layoutcolor=d8dee9
+keyhlcolor=BF616A
+bshlcolor=BF616A
+verifcolor=E5E9F0
+wrongcolor=BF616A
+modifcolor=BF616A
+bgcolor=434C5E
 wallpaper_cmd="feh --bg-scale"
+
+
+locktext="Type password to unlock..."
+
+
+font="Iosevka Nerd Font"
+
+
 time_format="%I:%M %p"

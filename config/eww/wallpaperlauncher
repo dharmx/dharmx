@@ -1,7 +1,7 @@
-#!/bin/bash
+#!/usr/bin/env bash
 
 ## Files and cmd
-FILE="$HOME/.cache/eww_launch.xyz"
+FILE="$HOME/.cache/eww_launch_wallpaper.xyz"
 
 ## Run eww daemon if not running already
 if [[ ! "$(pidof eww)" ]]; then
@@ -19,6 +19,6 @@ if [[ ! -f "$FILE" ]]; then
 	touch "$FILE"
 	run_eww
 else
-	eww close-all
+	eww close "wallpaper" "change" "backlightwallpaper" "titlebar" "wallpapertime"
 	rm "$FILE"
 fi

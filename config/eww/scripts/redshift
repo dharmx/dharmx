@@ -1,10 +1,34 @@
-#!/bin/env bash
+#!/usr/bin/env bash
 
 FILE="$XDG_CACHE_HOME/redshift_launch"
-if [[ ! -f "$FILE" ]]; then
-	touch "$FILE"
-	redshift
-else
-	killall redshift &
-	rm "$FILE"
-fi
+
+toggle() {
+  if [[ ! -f "$FILE" ]]; then
+  	touch "$FILE"
+  	redshift &
+    exit 0
+  else
+  	rm "$FILE"
+    pkill redshift
+  fi
+}
+
+icon() {
+  if [[ ! -f "$FILE" ]]; then
+    echo ""
+  else 
+    echo ""
+  fi
+}
+
+case "$1" in 
+  --toggle)
+    toggle
+    ;;
+  --icon)
+    icon
+    ;;
+  *)
+    echo "Invalid Option!"
+    ;;
+esac

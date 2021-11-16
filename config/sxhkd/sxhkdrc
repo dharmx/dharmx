@@ -4,7 +4,7 @@
 
 # terminal emulators
 super + ctrl + Return
-    tilda
+    urxvt -e fish
 
 super + Return
 	kitty
@@ -224,14 +224,13 @@ super + shift + s
     maim --select | xclip -selection clipboard -t image/png
 
 # toggle picom
-super + ctrl + space
-	{pkill picom --config ~/.config/picom/picom-opaque.ini --experimental-backends --backend glx ,\
-	picom -b }
+super + backslash
+    exec ~/.config/picom/launch
 
 # show widgets
 super + w
-    exec /home/maker/.config/eww/mainlauncher
+    exec ~/.config/eww/mainlauncher
 
 super + r
-    exec /home/maker/.config/eww/wallpaperlauncher
+    exec ~/.config/eww/wallpaperlauncher
 

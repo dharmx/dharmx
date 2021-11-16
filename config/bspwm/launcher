@@ -23,10 +23,13 @@ xsetroot -cursor_name left_ptr &
 playerctld daemon &
 
 # start polybar
-polybar -c "$XDG_CONFIG_HOME"/polybar/placidity-plus/config.ini main &
+"$XDG_CONFIG_HOME/polybar/launcher" &
 
 # start dunst daemon
-# dunst &
+dunst &
+
+# start mpd daemon (you can systemctl enable it as well BTW)
+mpd &
 
 # NetworkManager is the most popular way to manage wireless networks on Linux,
 # and nm-applet is a desktop environment-independent system tray GUI for it.
@@ -49,7 +52,7 @@ polybar -c "$XDG_CONFIG_HOME"/polybar/placidity-plus/config.ini main &
 # picom minimal settings no transparency + rounded corners
 # picom --config "$XDG_CONFIG_HOME"/picom/picom-opaque.ini --experimental-backends --backend glx &
 
-# picom --config "$XDG_CONFIG_HOME"/picom/picom-max-noshadow.ini --experimental-backends --backend glx &
+picom --config "$XDG_CONFIG_HOME"/picom/picom-max-noshadow.ini --experimental-backends --backend glx &
 # komorebi &
 exit 0
 

@@ -1,6 +1,6 @@
 export OSH=$HOME/.oh-my-bash
 
-OSH_THEME="kitsune"
+OSH_THEME="kitsune-mod"
 ENABLE_CORRECTION="true"
 DISABLE_UNTRACKED_FILES_DIRTY="true"
 
@@ -11,6 +11,9 @@ plugins=(git bashmarks battery progress)
 source $OSH/oh-my-bash.sh
 
 if [ -x "$(command -v exa)" ]; then
+    # 'l' shows the contents + hidden ones including a header
+    # 'll' just shows the contents including a header
+    alias li="exa --long --all --group --icons"
     alias ls="exa"
     alias la="exa --long --all --group"
 fi
@@ -21,6 +24,14 @@ if [ -x "$(command -v neofetch)" ]; then
     alias pf="neofetch --config $XDG_CONFIG_HOME/neofetch/config-minimal.conf --ascii $XDG_CONFIG_HOME/neofetch/arch-smol"
     alias uwuf="neofetch --config $XDG_CONFIG_HOME/neofetch/config-minimal-uwu.conf --ascii $XDG_CONFIG_HOME/neofetch/uwu-hd"
 
+fi
+
+if [ -x "$(command -v ccat)" ]; then
+  alias cat="ccat"
+fi
+
+if [ -x "$(command -v cless)" ]; then
+  alias less="cless"
 fi
 
 if [ -x "$(command -v ripgrep)" ]; then
@@ -84,4 +95,6 @@ alias java='java "$SILENT_JAVA_OPTIONS"'
 
 [ -f ~/.fzf.bash ] && source ~/.fzf.bash
 source "$XDG_CACHE_HOME"/wal/colors.sh
+
+lam -e cl
 
