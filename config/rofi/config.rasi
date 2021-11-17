@@ -1,29 +1,76 @@
 configuration {
-  show-icons:      true;
-  icon-theme:      "Zafiro-icons-Dark";
-  cycle:           true;
-  disable-history: true;
-  monitor:         "-4";
-  modi:            "drun";
-  display-drun:    "apps";
+	modi:				"drun,window,keys,filebrowser,run";
+	font:				"Iosevka 12";
+	display-drun: 			"";
+	drun-display-format:            "{name}";
+	sidebar-mode: 			false;
+        hide-scrollbar:                 true;
 }
 
-/* Fixes for rofi 1.7.0 */
+@theme "/dev/null"
+
+* {
+	bg:				#3B4252;
+	fg:				#D8DEE9;
+	button:				#5E81AC;
+
+	background-color:		@bg;
+	text-color:			@fg;
+}
+
 window {
-  border: 0px;
-}
-inputbar {
-  spacing: -4px;
-}
-listview {
-  columns: 1;
-  scrollbar: false;
-  border: 0px;
-}
-element-text,
-element-icon {
-  background-color: transparent;
+	transparency:                   "real";
+	width:			    	70%;
+        height:                         70%;
 }
 
-@import "themes/shared/active-colorscheme.rasi"
-@import "/home/maker/.config/rofi/themes/shared/colorschemes/nord.rasi"
+prompt { enabled: false; }
+
+entry {
+	placeholder:			"Search";
+	placeholder-color:              @fg;
+	expand:                         true;
+	padding:                        1.0%;
+	border-radius:			8px;
+}
+
+inputbar {
+	children: 			[ prompt, entry ];
+	background-image:               url("img/bg.png");
+	expand:                         false;
+	border-radius:                  0px 0 8px 8px;
+	padding:                        100px 30px 30px 300px;
+}
+
+listview {
+	columns:                        3;
+	lines:	                        5;
+	cycle:                          false;
+	dynamic:                        true;
+	layout:                         vertical;
+	padding:			30px 100px 30px 100px;
+}
+
+mainbox { children: [ inputbar, listview ]; }
+
+element {
+	orientation:                    vertical;
+	padding:                        1.5% 0% 1.5% 0%;
+        margin:                         10px;
+	border-radius:			8px;
+        background-color:               #434C5E;
+}
+
+element-text {
+	expand:                         true;
+	vertical-align:                 0.5;
+	margin:                         0.5% 3% 0% 3%;
+	background-color: 		inherit;
+	text-color:       		inherit;
+}
+
+element selected {
+	background-color:               @button;
+	border-radius:                  8px;
+}
+
