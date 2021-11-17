@@ -43,6 +43,7 @@ display_bitrate = "no"
 external_editor = "nvim"
 main_window_color = "default"
 startup_screen = "playlist"
+allow_for_physical_item_deletion = "yes"
 
 # PROGRESS BAR
 # ---

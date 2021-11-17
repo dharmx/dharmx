@@ -2,6 +2,23 @@
 # coding=UTF-8
 from os import getenv
 from os.path import basename
+from os import listdir
+from getpass import getuser
+
+HOME = f"/home/{getuser()}"
+
+XDG_CONFIG_HOME = getenv("XDG_CONFIG_HOME", f"{HOME}/.config")
+XDG_CACHE_HOME = getenv("XDG_CACHE_HOME", f"{HOME}/.cache")
+
+XDG_DATA_HOME = getenv("XDG_DATA_HOME", f"{HOME}/.local/share")
+XDG_STATE_HOME = getenv("XDG_STATE_HOME", f"{HOME}/.local/state")
+
+XDG_DOCUMENTS_DIR = getenv("XDG_DOCUMENTS_DIR", f"{HOME}/Documents")
+XDG_DOWNLOAD_DIR = getenv("XDG_DOWNLOAD_DIR", f"{HOME}/Downloads")
+XDG_MUSIC_DIR = getenv("XDG_MUSIC_DIR", f"{HOME}/Music")
+XDG_PICTURES_DIR = getenv("XDG_PICTURES_DIR", f"{HOME}/Pictures")
+XDG_TEMPLATES_DIR = getenv("XDG_TEMPLATES_DIR", f"{HOME}/Templates")
+XDG_VIDEOS_DIR = getenv("XDG_VIDEOS_DIR", f"{HOME}/Videos")
 
 # noinspection SpellCheckingInspection
 xdgs_dirs = {path.split('/')[-2]: icon for key, icon in [
@@ -12,7 +29,7 @@ xdgs_dirs = {path.split('/')[-2]: icon for key, icon in [
     ('XDG_PICTURES_DIR', ''),
     ('XDG_PUBLICSHARE_DIR', ''),
     ('XDG_TEMPLATES_DIR', ''),
-    ('XDG_VIDEOS_DIR', ''),
+    ('XDG_VIDEOS_DIR', '')
 ] if (path := getenv(key))}
 
 # noinspection SpellCheckingInspection
@@ -212,6 +229,8 @@ file_node_extensions = {
     'zsh': '',
 }
 
+mounted_dirs = listdir(f"{HOME}/Mounted")
+
 # noinspection SpellCheckingInspection
 dir_node_exact_matches: dict[str: str] = {
     # English
@@ -221,6 +240,7 @@ dir_node_exact_matches: dict[str: str] = {
     '.vscode': '',
     '.config': '',
     '.cache': '',
+    '.nhentai': '',
     'buttercup-vaults': '',
     'wallpapers': '',
     'Desktop': '',
@@ -228,6 +248,7 @@ dir_node_exact_matches: dict[str: str] = {
     'Downloads': '',
     'Dotfiles': '',
     'VirtualBox VMs': '',
+    'VMs': '',
     'Dropbox': '',
     'Music': '',
     'Pictures': '',
@@ -235,7 +256,9 @@ dir_node_exact_matches: dict[str: str] = {
     'Templates': '',
     'Videos': '',
     'Phone': '',
-    'Torrents': '',
+    'Torrents': '',
+    'Mounted': '' if mounted_dirs else '',
+    'Mangas': '',
     # XDG_USER_DIRS
     **xdgs_dirs
 }

@@ -4,7 +4,7 @@
 
 # terminal emulators
 super + ctrl + Return
-    tilda
+    urxvt -e fish
 
 super + Return
 	kitty
@@ -130,27 +130,28 @@ super + {Left,Down,Up,Right}
 super + slash 
     betterlockscreen -l dim --off 5
 
+#XF86WebCam
 # pactl audio configurations
 ## increase volume
 XF86AudioRaiseVolume 
-    pactl set-sink-volume @DEFAULT_SINK@ +5%
+    $XDG_CONFIG_HOME/sxhkd/scripts/volume.bash --increase
 
 ## decrease volume
 XF86AudioLowerVolume 
-    pactl set-sink-volume @DEFAULT_SINK@ -5%
+    $XDG_CONFIG_HOME/sxhkd/scripts/volume.bash --decrease
 
 ## mute vloume
 XF86AudioMute 
-    pactl set-sink-mute @DEFAULT_SINK@ toggle
+    $XDG_CONFIG_HOME/sxhkd/scripts/volume.bash --toggle
 
 ## mic mute
 XF86AudioMicMute 
-    pactl set-source-mute @DEFAULT_SOURCE@ toggle
+    $XDG_CONFIG_HOME/sxhkd/scripts/microphone.bash
 
 # backlight configurations
 ## increase brightness
 XF86MonBrightnessUp 
-    xbacklight -inc 1
+    $XDG_CONFIG_HOME/sxhkd/scripts/brightness.bash -I
 
 # playerctl audio configurations
 ## play
@@ -171,15 +172,19 @@ XF86AudioPrev
 
 ## decrease brightness
 XF86MonBrightnessDown 
-    xbacklight -dec 1
+    $XDG_CONFIG_HOME/sxhkd/scripts/brightness.bash -D
 
 # rofi app menu
 super + d 
-    ~/.config/rofi/scripts/rofi-apps
+    rofi -show
 
 # rofi run prompt
-# super + a
-#     rofi -show run -theme-str '@import "nordtheme.rasi"'
+super + a
+    rofi -show run
+
+# rofi alt Tab
+alt + Tab
+    rofi -show window
 
 # bind some nice apps
 ## launch web browser
@@ -192,7 +197,7 @@ super + e
 
 ## launch system monitor htop
 ctrl + shift + Escape 
-    kitty /home/maker/.local/bin/bpytop
+    kitty $HOME/.local/bin/bpytop
 
 ctrl + alt + KP_Delete
     kitty htop
@@ -206,32 +211,31 @@ super + n
 # screenshot configurations
 # fullscreen screenshot save
 super + Print 
-    ~/.config/sxhkd/screenshot --fullscreen
+    $XDG_CONFIG_HOME/sxhkd/scripts/screenshot --fullscreen
 
 # cropped save
 super + shift + x 
-    ~/.config/sxhkd/screenshot --selected
+    $XDG_CONFIG_HOME/sxhkd/scripts/screenshot --selected
 
 # clipboard fullscreen
 Print 
-    maim | xclip -selection clipboard -t image/png
+    $XDG_CONFIG_HOME/sxhkd/scripts/screenshot --xclip-fullscreen
 
 ctrl + Print
     flameshot gui
 
 # clipboard cropped
 super + shift + s 
-    maim --select | xclip -selection clipboard -t image/png
+    $XDG_CONFIG_HOME/sxhkd/scripts/screenshot --xclip-cropped
 
 # toggle picom
-super + ctrl + space
-	{pkill picom --config ~/.config/picom/picom-opaque.ini --experimental-backends --backend glx ,\
-	picom -b }
+super + backslash
+    exec $XDG_CONFIG_HOME/picom/launch
 
 # show widgets
 super + w
-    exec /home/maker/.config/eww/mainlauncher
+    exec $XDG_CONFIG_HOME/eww/mainlauncher
 
 super + r
-    exec /home/maker/.config/eww/wallpaperlauncher
+    exec $XDG_CONFIG_HOME/eww/wallpaperlauncher
 

@@ -1,5 +1,4 @@
-! Load pywal resources file
-#include "colors.Xresources"
+#include "nord.Xresources"
 
 ! URxvt Configuration
 URxvt.font:                       xft:JetBrainsMono Nerd Font Mono:size=14:autohint=true,xft:Noto Color Emoji:pixelsize=12:antialias=false,xft:Monospace:size=11:autohint=true

@@ -27,10 +27,16 @@ plugins=(
 
 source $ZSH/oh-my-zsh.sh
 
+if [ $TILIX_ID ] || [ $VTE_VERSION ]; then
+        source /etc/profile.d/vte.sh
+fi
+
 if [ -x "$(command -v exa)" ]; then
+    # 'l' shows the contents + hidden ones including a header
+    # 'll' just shows the contents including a header
+    alias li="exa --long --all --group --icons"
     alias ls="exa"
     alias la="exa --long --all --group"
-    alias li="exa --long --all --group --icons"
 fi
 
 if [ -x "$(command -v logo-ls)" ]; then
@@ -87,15 +93,18 @@ alias push="git push"
 alias pull="git pull"
 alias cls="clear"
 
-alias pipes1="pipes1"
-alias pipes2="pipes2"
-alias pipes2-slim="pipes2-slim"
-alias rain="rain"
+alias pipes1="lam -e pipes1"
+alias pipes2="lam -e pipes2"
+alias pipes2-slim="lam -e pipes2-slim"
+alias rain="lam -e rain"
+
+alias cat="ccat"
+alias less="cless"
 
 export VISUAL=nvim;
 export EDITOR=nvim;
 export PATH="$XDG_DATA_HOME/gem/ruby/3.0.0/bin:$HOME/.jdks/jdk-16.0.1/bin:$HOME/.local/bin:$PATH"
-export PS2="❯ "
+export PS2="%2F%3F "
 # export LD_PRELOAD=/usr/lib/libwcwidth-icons.so
 
 SILENT_JAVA_OPTIONS="$JDK_JAVA_OPTIONS"
@@ -106,4 +115,7 @@ setopt HIST_IGNORE_ALL_DUPS
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 source "$XDG_CACHE_HOME"/wal/colors.sh
+
+lam -e crunch-mini
+printf "\n"
 

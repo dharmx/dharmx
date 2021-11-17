@@ -38,6 +38,8 @@ bspc rule -a conky sticky=off manage=off lower=on
 bspc rule -a lxappearance state=floating center=true
 bspc rule -a tilda state=floating center=true border=off sticky=on
 bspc rule -a Tilda state=floating center=true border=off sticky=on
+bspc rule -a tilix state=floating center=true border=off sticky=on
+bspc rule -a Tilix state=floating center=true border=off sticky=on
 bspc rule -a feh state=floating floating=true manage=on center=true
 
 $XDG_CONFIG_HOME/bspwm/exports &

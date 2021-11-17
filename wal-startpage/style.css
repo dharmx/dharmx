@@ -3,7 +3,7 @@
 html, body {
   background: var(--background);
   font-family: "Iosevka";
-  color: var(--color2);
+  color: var(--color1);
   height: 100%;
   width: 100%;
   margin: 0;
@@ -76,7 +76,7 @@ li {
 
 a:link {
   text-decoration: none;
-  color: var(--color3);
+  color: var(--color12);
 }
 
 a:visited {
@@ -84,7 +84,7 @@ a:visited {
 }
 
 a:hover {
-  color: var(--color6);
+  color: var(--color4);
 }
 
 .blinking {

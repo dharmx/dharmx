@@ -1,7 +1,9 @@
 #!/usr/bin/env bash
 
-killall picom
-# picom --config "$XDG_CONFIG_HOME"/picom/picom-max-noradius-noshadow.ini --experimental-backends --backend glx &
-picom --config "$XDG_CONFIG_HOME"/picom/picom-max-noshadow.ini --experimental-backends --backend glx &
-# picom --config "$XDG_CONFIG_HOME"/picom/picom-opaque.ini --experimental-backends --backend glx &
+## Run picom if not running already
+if [[ ! "$(pidof picom)" ]]; then
+  picom --config "$XDG_CONFIG_HOME"/picom/picom-max-noshadow.ini &
+else 
+  pkill picom &
+fi
 

@@ -3,18 +3,20 @@ from os import getenv
 from getpass import getuser
 import json
 
-XDG_CONFIG_HOME = getenv("XDG_CONFIG_HOME", f"/home/{getuser()}/.config")
-XDG_CACHE_HOME = getenv("XDG_CACHE_HOME", f"/home/{getuser()}/.cache")
+HOME = f"/home/{getuser()}"
 
-XDG_DATA_HOME = getenv("XDG_DATA_HOME", f"/home/{getuser()}/.local/share")
-XDG_STATE_HOME = getenv("XDG_STATE_HOME", f"/home/{getuser()}/.local/state")
+XDG_CONFIG_HOME = getenv("XDG_CONFIG_HOME", f"{HOME}/.config")
+XDG_CACHE_HOME = getenv("XDG_CACHE_HOME", f"{HOME}/.cache")
 
-XDG_DOCUMENTS_DIR = getenv("XDG_DOCUMENTS_DIR", f"/home/{getuser()}/Documents")
-XDG_DOWNLOAD_DIR = getenv("XDG_DOWNLOAD_DIR", f"/home/{getuser()}/Downloads")
-XDG_MUSIC_DIR = getenv("XDG_MUSIC_DIR", f"/home/{getuser()}/Music")
-XDG_PICTURES_DIR = getenv("XDG_PICTURES_DIR", f"/home/{getuser()}/Pictures")
-XDG_TEMPLATES_DIR = getenv("XDG_TEMPLATES_DIR", f"/home/{getuser()}/Templates")
-XDG_VIDEOS_DIR = getenv("XDG_VIDEOS_DIR", f"/home/{getuser()}/Videos")
+XDG_DATA_HOME = getenv("XDG_DATA_HOME", f"{HOME}/.local/share")
+XDG_STATE_HOME = getenv("XDG_STATE_HOME", f"{HOME}/.local/state")
+
+XDG_DOCUMENTS_DIR = getenv("XDG_DOCUMENTS_DIR", f"{HOME}/Documents")
+XDG_DOWNLOAD_DIR = getenv("XDG_DOWNLOAD_DIR", f"{HOME}/Downloads")
+XDG_MUSIC_DIR = getenv("XDG_MUSIC_DIR", f"{HOME}/Music")
+XDG_PICTURES_DIR = getenv("XDG_PICTURES_DIR", f"{HOME}/Pictures")
+XDG_TEMPLATES_DIR = getenv("XDG_TEMPLATES_DIR", f"{HOME}/Templates")
+XDG_VIDEOS_DIR = getenv("XDG_VIDEOS_DIR", f"{HOME}/Videos")
 
 XDG_CONFIG_DIRS = getenv("XDG_CONFIG_DIRS", "/etc/xdg")
 
@@ -88,12 +90,14 @@ c.url.default_page = "duckduckgo.com"
 c.url.searchengines = {"DEFAULT": "duckduckgo.com/?q={}"}
 
 with open(f"{XDG_CACHE_HOME}/wal/colors.json", "r") as file:
-    color = json.load(file)["colors"]
+    color_full = json.load(file)
+    color = color_full["colors"]
+    special = color_full["special"]
 
 config.set('colors.contextmenu.menu.fg', color["color4"])
 config.set('colors.contextmenu.menu.bg', color["color0"])
 config.set('colors.contextmenu.disabled.fg', color["color4"])
-config.set('colors.contextmenu.disabled.bg', color["color1"])
+config.set('colors.contextmenu.disabled.bg', color["color8"])
 config.set('colors.contextmenu.selected.fg', color["color4"])
 config.set('colors.contextmenu.selected.bg', color["color10"])
 config.set('colors.completion.category.border.bottom', color["color9"])
@@ -103,20 +107,20 @@ c.colors.completion.category.bg = color['color0']
 c.colors.completion.category.border.bottom = color['color0']
 c.colors.completion.category.border.top = color['color0']
 c.colors.completion.category.fg = color['color5']
-c.colors.completion.even.bg = color['color1']
-c.colors.completion.odd.bg = color['color1']
+c.colors.completion.even.bg = special['background']
+c.colors.completion.odd.bg = special['background']
 c.colors.completion.fg = color['color4']
-c.colors.completion.item.selected.bg = color['color3']
-c.colors.completion.item.selected.border.bottom = color['color3']
-c.colors.completion.item.selected.border.top = color['color3']
-c.colors.completion.item.selected.fg = color['color6']
+c.colors.completion.item.selected.bg = color['color4']
+c.colors.completion.item.selected.border.bottom = color['color4']
+c.colors.completion.item.selected.border.top = color['color4']
+c.colors.completion.item.selected.fg = color['color0']
 c.colors.completion.match.fg = color['color13']
 c.colors.completion.scrollbar.bg = color['color1']
 c.colors.completion.scrollbar.fg = color['color5']
 c.colors.downloads.bar.bg = color['color0']
-c.colors.downloads.error.bg = color['color11']
-c.colors.downloads.error.fg = color['color5']
-c.colors.downloads.stop.bg = color['color15']
+c.colors.downloads.error.bg = color['color1']
+c.colors.downloads.error.fg = color['color7']
+c.colors.downloads.stop.bg = color['color9']
 c.colors.hints.bg = color['color13']
 c.colors.hints.fg = color['color0']
 c.colors.hints.match.fg = color['color10']
@@ -139,25 +143,25 @@ c.colors.prompts.selected.bg = color['color3']
 c.colors.statusbar.caret.bg = color['color15']
 c.colors.statusbar.caret.fg = color['color5']
 c.colors.statusbar.caret.selection.bg = color['color15']
-c.colors.statusbar.caret.selection.fg = color['color5']
+c.colors.statusbar.caret.selection.fg = color['color8']
 c.colors.statusbar.command.bg = color['color2']
-c.colors.statusbar.command.fg = color['color5']
+c.colors.statusbar.command.fg = color['color0']
 c.colors.statusbar.command.private.bg = color['color2']
-c.colors.statusbar.command.private.fg = color['color5']
+c.colors.statusbar.command.private.fg = color['color9']
 c.colors.statusbar.insert.bg = color['color14']
 c.colors.statusbar.insert.fg = color['color1']
 c.colors.statusbar.normal.bg = color['color0']
 c.colors.statusbar.normal.fg = color['color5']
-c.colors.statusbar.passthrough.bg = color['color10']
-c.colors.statusbar.passthrough.fg = color['color5']
+c.colors.statusbar.passthrough.bg = color['color4']
+c.colors.statusbar.passthrough.fg = color['color1']
 c.colors.statusbar.private.bg = color['color3']
-c.colors.statusbar.private.fg = color['color5']
-c.colors.statusbar.progress.bg = color['color5']
+c.colors.statusbar.private.fg = color['color1']
+c.colors.statusbar.progress.bg = color['color0']
 c.colors.statusbar.url.error.fg = color['color11']
-c.colors.statusbar.url.fg = color['color5']
+c.colors.statusbar.url.fg = color['color0']
 c.colors.statusbar.url.hover.fg = color['color8']
-c.colors.statusbar.url.success.http.fg = color['color5']
-c.colors.statusbar.url.success.https.fg = color['color14']
+c.colors.statusbar.url.success.http.fg = color['color9']
+c.colors.statusbar.url.success.https.fg = color['color9']
 c.colors.statusbar.url.warn.fg = color['color12']
 c.colors.tabs.bar.bg = color['color3']
 c.colors.tabs.even.bg = color['color3']

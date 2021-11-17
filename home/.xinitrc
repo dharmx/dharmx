@@ -10,6 +10,6 @@ export SSH_AUTH_SOCK
 
 # see https://github.com/NixOS/nixpkgs/issues/14966#issuecomment-520083836
 mkdir -p "$XDG_DATA_HOME"/keyrings
-xrdb -I$XDG_CACHE_HOME/wal ~/.Xresources
-exec bspwm 
+xrdb -I$HOME/Dotfiles/nordfiles/Xresources-themes/dark $HOME/.Xresources
+exec bspwm
 

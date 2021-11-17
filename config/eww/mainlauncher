@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 
 ## Files and cmd
-FILE="$HOME/.cache/eww_launch.xyz"
+FILE="$HOME/.cache/eww_launch_main.xyz"
 
 ## Run eww daemon if not running already
 if [[ ! "$(pidof eww)" ]]; then
@@ -22,7 +22,7 @@ run_eww() {
 					 "wlogout"       				 \
 					 "wlock"	     					 \
 					 "wsuspend"       			 \
-					 "audio"		 						 \
+					 "mpd"		 						   \
 					 "quicklinks"						 \
 					 "audiocontrol"
 }
@@ -32,6 +32,19 @@ if [[ ! -f "$FILE" ]]; then
 	touch "$FILE"
 	run_eww
 else
-	eww close-all
+	eww close "background"    	 		 \
+					 "time" 	     					 \
+					 "user"		               \
+					 "system" 	     				 \
+					 "uptime"        				 \
+					 "directories"   				 \
+					 "wshutdown"     				 \
+					 "wreboot"       				 \
+					 "wlogout"       				 \
+					 "wlock"	     					 \
+					 "wsuspend"       			 \
+					 "mpd"		 						 	 \
+					 "quicklinks"						 \
+					 "audiocontrol"
 	rm "$FILE"
 fi
