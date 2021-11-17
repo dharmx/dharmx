@@ -101,13 +101,13 @@
     todo                    # todo items (https://github.com/todotxt/todo.txt-cli)
     timewarrior             # timewarrior tracking status (https://timewarrior.net/)
     taskwarrior             # taskwarrior task count (https://taskwarrior.org/)
-    time                  # current time
+    # time                  # current time
     # =========================[ Line #2 ]=========================
     newline
     # ip                    # ip address and bandwidth usage for a specified network interface
     # public_ip             # public IP address
     # proxy                 # system-wide http/https/ftp proxy
-    battery               # internal battery
+    # battery               # internal battery
     wifi                  # wifi speed
     example               # example user-defined segment (see prompt_example function below)
   )
@@ -132,7 +132,7 @@
   typeset -g POWERLEVEL9K_ICON_BEFORE_CONTENT=
 
   # Add an empty line before each prompt.
-  typeset -g POWERLEVEL9K_PROMPT_ADD_NEWLINE=false
+  typeset -g POWERLEVEL9K_PROMPT_ADD_NEWLINE=true
 
   # Connect left prompt lines with these symbols. You'll probably want to use the same color
   # as POWERLEVEL9K_MULTILINE_FIRST_PROMPT_GAP_FOREGROUND below.
@@ -504,7 +504,7 @@
   typeset -g POWERLEVEL9K_STATUS_OK=true
   typeset -g POWERLEVEL9K_STATUS_OK_VISUAL_IDENTIFIER_EXPANSION='✔'
   typeset -g POWERLEVEL9K_STATUS_OK_FOREGROUND=2
-  typeset -g POWERLEVEL9K_STATUS_OK_BACKGROUND=0
+  typeset -g POWERLEVEL9K_STATUS_OK_BACKGROUND=8
 
   # Status when some part of a pipe command fails but the overall exit status is zero. It may look
   # like this: 1|0.
@@ -1617,16 +1617,16 @@
   #####################################[ wifi: wifi speed ]#####################################
   # WiFi color.
   typeset -g POWERLEVEL9K_WIFI_FOREGROUND=0
-  typeset -g POWERLEVEL9K_WIFI_BACKGROUND=8
+  typeset -g POWERLEVEL9K_WIFI_BACKGROUND=3
   # Custom icon.
   # typeset -g POWERLEVEL9K_WIFI_VISUAL_IDENTIFIER_EXPANSION='⭐'
 
   # Use different colors and icons depending on signal strength ($P9K_WIFI_BARS).
   #
   #   # Wifi colors and icons for different signal strength levels (low to high).
-  typeset -g my_wifi_fg=(1 5 3 6 2)                                # <-- change these values
+  typeset -g my_wifi_fg=(1 1 4 4 2)                                # <-- change these values
   # typeset -g my_wifi_icon=('  ' '   ' '    ' '     ' '      ')     # <-- change these values
-  typeset -g my_wifi_icon=('' '' '' '' '')     # <-- change these values
+  typeset -g my_wifi_icon=('' '' '' '' '')     # <-- change these values
   #
   typeset -g POWERLEVEL9K_WIFI_CONTENT_EXPANSION='%F{${my_wifi_fg[P9K_WIFI_BARS+1]}}'
   typeset -g POWERLEVEL9K_WIFI_VISUAL_IDENTIFIER_EXPANSION='%F{${my_wifi_fg[P9K_WIFI_BARS+1]}}${my_wifi_icon[P9K_WIFI_BARS+1]}'
@@ -1647,7 +1647,7 @@
   typeset -g POWERLEVEL9K_TIME_FOREGROUND=0
   typeset -g POWERLEVEL9K_TIME_BACKGROUND=2
   # Format for the current time: 09:51:02. See `man 3 strftime`.
-  typeset -g POWERLEVEL9K_TIME_FORMAT='%D{%I:%M %p}'
+  # typeset -g POWERLEVEL9K_TIME_FORMAT='%D{%I:%M %p}'
   # If set to true, time will update when you hit enter. This way prompts for the past
   # commands will contain the start times of their commands as opposed to the default
   # behavior where they contain the end times of their preceding commands.

@@ -6,6 +6,5 @@
 
 config_version: 2
 settings:
-  content.register_protocol_handler:
-    https://mail.google.com?extsrc=mailto&url=%25s: true
-    https://outlook.office.com?mailtouri=%25s: true
+  content.notifications.enabled:
+    https://meet.google.com: true

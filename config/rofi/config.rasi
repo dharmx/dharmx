@@ -1,10 +1,9 @@
 configuration {
-	modi:				"drun,window,keys,filebrowser,run";
+	modi:				"drun,window,keys,filebrowser,run,combi";
 	font:				"Iosevka 12";
 	display-drun: 			"";
 	drun-display-format:            "{name}";
-	sidebar-mode: 			false;
-        hide-scrollbar:                 true;
+	sidebar-mode: 			true;
 }
 
 @theme "/dev/null"
@@ -24,22 +23,24 @@ window {
         height:                         70%;
 }
 
-prompt { enabled: false; }
+prompt { enabled: true; }
 
 entry {
 	placeholder:			"Search";
 	placeholder-color:              @fg;
 	expand:                         true;
-	padding:                        1.0%;
+	padding:                        2.0%;
 	border-radius:			8px;
+        font:				"Iosevka Bold 14";
 }
 
 inputbar {
 	children: 			[ prompt, entry ];
-	background-image:               url("img/bg.png");
+	background-image:               url("img/bg-sat.jpg");
 	expand:                         false;
 	border-radius:                  0px 0 8px 8px;
 	padding:                        100px 30px 30px 300px;
+        font:				"Iosevka 14";
 }
 
 listview {

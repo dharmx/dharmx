@@ -27,14 +27,14 @@
     separator_color = "#00000000"
     sort = no
     idle_threshold = 30
-    font = GE Inspira 12
+    font = Iosevka Nerd Font 12
     line_height = 6
     notification_height = 30
     markup = full
 
     format = "<b>%s</b>\n%b"
     alignment = left
-    show_age_threshold = 30
+    show_age_threshold = 10
     word_wrap = yes
     ignore_newline = no
     stack_duplicates = false
@@ -44,7 +44,7 @@
     max_icon_size= 100
     sticky_history = no
     history_length = 3
-    browser = firefox
+    browser = qutebrowser
     always_run_script = true
     title = Dunst
     class = Dunst

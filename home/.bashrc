@@ -83,7 +83,7 @@ alias rain="rain"
 export PATH="$XDG_DATA_HOME/gem/ruby/3.0.0/bin:$HOME/.jdks/jdk-16.0.1/bin:$HOME/.local/bin:$PATH"
 export VISUAL=nvim;
 export EDITOR=nvim;
-export PS2="❯ "
+export PS2="${magenta}${yellow}${red} "
 export HISTCONTROL=ignoreboth
 # export LD_PRELOAD=/usr/lib/libwcwidth-icons.so
 

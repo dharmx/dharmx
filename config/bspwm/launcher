@@ -13,8 +13,10 @@ wmname LG3D &
 # feh --bg-scale "$XDG_PICTURES_DIR"/wallpapers/nord/ign-cold-hill.png &
 # feh --bg-scale "$XDG_PICTURES_DIR"/wallpapers/nord/ign-firewatch-2.png &
 # feh --bg-scale "$XDG_PICTURES_DIR"/wallpapers/nord/ign-valley.png &
-# update the font cache (extra paranoid points if you add the r flag)
+# feh --bg-scale "$XDG_PICTURES_DIR"/wallpapers/nord/BirdNordic-Darkest.png &
 exec "$HOME/.fehbg" &
+
+# update the font cache (extra paranoid points if you add the r flag)
 # fc-cache -f &
 
 xsetroot -cursor_name left_ptr &

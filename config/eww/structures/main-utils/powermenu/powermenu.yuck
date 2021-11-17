@@ -1,7 +1,7 @@
 ; vim: ft=lisp
 (defwindow wreboot
            :monitor 0
-           :geometry (geometry :x "715"
+           :geometry (geometry :x "714"
                                :y "-223"
                                :width "80"
                                :height "100"
@@ -13,9 +13,9 @@
 
 (defwindow wshutdown
            :monitor 0
-           :geometry (geometry :x "715"
+           :geometry (geometry :x "714"
                                :y "-82"
-                               :width "100"
+                               :width "99"
                                :height "100"
                                :anchor "center")
            :stacking "fg"
@@ -25,9 +25,9 @@
 
 (defwindow wlogout
            :monitor 0
-           :geometry (geometry :x "715"
+           :geometry (geometry :x "714"
                                :y "59"
-                               :width "100"
+                               :width "141"
                                :height "100"
                                :anchor "center")
            :stacking "fg"
@@ -39,7 +39,7 @@
            :monitor 0
            :geometry (geometry :x "715"
                                :y "200"
-                               :width "100"
+                               :width "142"
                                :height "100"
                                :anchor "center")
            :stacking "fg"
@@ -51,7 +51,7 @@
            :monitor 0
            :geometry (geometry :x "715"
                                :y "342"
-                               :width "100"
+                               :width "142"
                                :height "100"
                                :anchor "center")
            :stacking "fg"

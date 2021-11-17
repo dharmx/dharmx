@@ -79,7 +79,7 @@
 
 .mpd-label-play-pause {
     color: $color4;
-    padding-right: 35px;
+    padding-right: 10px;
     padding-left: 12px;
 }
 
@@ -141,12 +141,13 @@
 }
 
 .mpd-label-seekbackward {
-    padding-right: 15px;
-    padding-left: 20px;
+    margin-left: 15px;
+    padding-right: 2px;
+    padding-left: 10px;
 }
 
 .mpd-label-seekforward {
-    padding-right: 20px;
+    padding-right: 10px;
 }
 
 .bluetooth-box {
@@ -343,8 +344,8 @@
 .logo-reboot, .logo-shutdown, .logo-logout, .logo-lock, .logo-suspend {
     font-size: 90;
     padding: 11px;
-    padding-left: 30px;
-    padding-right: 65px;
+    padding-left: 32px;
+    padding-right: 32px;
 }
 
 .logo-reboot {
@@ -403,8 +404,8 @@
 }
 
 .sysinfo {
-  margin: 15px 10px 15px 25px;
-  font-size: 30px;
+  padding: 15px 10px 15px 25px;
+  font-size: 23px;
 }
 
 .metric scale trough highlight {
@@ -461,7 +462,7 @@
 .metric scale trough {
   background-color: $color8;
   border-radius: 50px;
-  min-height: 25px;
+  min-height: 20px;
   min-width: 150px;
   margin-left: 5px;
   margin-right: 12px;

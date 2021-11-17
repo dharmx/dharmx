@@ -104,7 +104,7 @@ alias less="cless"
 export VISUAL=nvim;
 export EDITOR=nvim;
 export PATH="$XDG_DATA_HOME/gem/ruby/3.0.0/bin:$HOME/.jdks/jdk-16.0.1/bin:$HOME/.local/bin:$PATH"
-export PS2="❯ "
+export PS2="%2F%3F "
 # export LD_PRELOAD=/usr/lib/libwcwidth-icons.so
 
 SILENT_JAVA_OPTIONS="$JDK_JAVA_OPTIONS"
