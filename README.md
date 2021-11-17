@@ -8,22 +8,22 @@ Any help and suggestions are appreciated. I'm a linux amateur (started using lin
 
 ## Todo
 
- - [ ] Add pywal support to eww
- - [ ] Add pywal support to Xresources
- - [ ] Add pywal support to polybar
- - [ ] Add pywal support to kitty
- - [ ] Add pywal support to alacritty
- - [ ] Add pywal support to rxvt-unicode
- - [ ] Add pywal support to qutebrowser
- - [ ] Add pywal support to ranger
+ - [x] Add pywal support to eww
+ - [x] Add pywal support to Xresources
+ - [x] Add pywal support to polybar
+ - [x] Add pywal support to kitty
+ - [x] Add pywal support to alacritty
+ - [x] Add pywal support to rxvt-unicode
+ - [x] Add pywal support to qutebrowser
+ - [x] Add pywal support to ranger
  - [ ] Add pywal support to gtk-2.0
  - [ ] Add pywal support to gtk-3.0
  - [ ] Add pywal support to bashtop/pytop
  - [ ] Add pywal support to firefox
- - [ ] Add pywal support to startpage
- - [ ] Add pywal support to vscode
- - [ ] Add pywal support to tilda
- - [ ] Add pywal support to tilix
+ - [x] Add pywal support to startpage
+ - [x] Add pywal support to vscode
+ - [x] Add pywal support to tilda
+ - [x] Add pywal support to tilix
  - [ ] Add pywal support to spicetify
  - [ ] Add pywal support to discord/BetterDiscord
  - [ ] organinse scripts, files, code
