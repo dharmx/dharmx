@@ -1,3 +1,17 @@
-/plugged/
-/home/maker/Dotfiles/nordfiles/config/eww/.vscode/
+**/__pycache__/
+**/.idea/
+**/.vscode/
 
+/home/maker/Dotfiles/nordfiles/config/bpytop/error.log
+/home/maker/Dotfiles/nordfiles/config/ncmpcpp/error.log
+
+/home/maker/Dotfiles/nordfiles/config/mpd/playlists/
+/home/maker/Dotfiles/nordfiles/config/mpd/database
+/home/maker/Dotfiles/nordfiles/config/mpd/log
+/home/maker/Dotfiles/nordfiles/config/mpd/pid
+/home/maker/Dotfiles/nordfiles/config/mpd/state
+
+/home/maker/Dotfiles/nordfiles/config/qutebrowser/bookmarks
+/home/maker/Dotfiles/nordfiles/config/qutebrowser/qsettings
+/home/maker/Dotfiles/nordfiles/config/qutebrowser/autoconfig.yml
+/home/maker/Dotfiles/nordfiles/config/qutebrowser/quickmarks

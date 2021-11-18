@@ -11,6 +11,7 @@ notify_template() {
 }
 
 notify() {
+  dunstctl close
   MUTED=$(pacmd list-sources | awk '/\*/,EOF {print}' | awk '/muted/ {print $2; exit}')
   DEFAULT_SOURCE=$(pacmd list-sources | awk '/\*/,EOF {print $3; exit}')
 

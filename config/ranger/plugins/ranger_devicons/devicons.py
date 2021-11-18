@@ -259,6 +259,7 @@ dir_node_exact_matches: dict[str: str] = {
     'Torrents': '',
     'Mounted': '' if mounted_dirs else '',
     'Mangas': '',
+    'Coding': '',
     # XDG_USER_DIRS
     **xdgs_dirs
 }
