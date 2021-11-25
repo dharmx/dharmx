@@ -2,6 +2,7 @@
 
 ! URxvt Configuration
 URxvt.font:                       xft:JetBrainsMono Nerd Font Mono:size=14:autohint=true,xft:Noto Color Emoji:pixelsize=12:antialias=false,xft:Monospace:size=11:autohint=true
+Xft.lcdfilter:                    lcddefault
 Xft.dpi:                          97
 URxvt.geometry:                   84x16
 URxvt.internalBorder:             10

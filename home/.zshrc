@@ -7,19 +7,15 @@ export ZSH="$HOME/.oh-my-zsh"
 ZSH_THEME="powerlevel10k/powerlevel10k"
 #ZSH_THEME="simonoff"
 
-# alias-finder archlinux battery catimg command-not-found common-aliases copydir copyfile 
-# aliases cp extract geeknote git-extra history-substring-search python 
+# alias-finder battery catimg common-aliases copydir copyfile 
+# geeknote git-extra history-substring-search python 
+# copyfile aliases colorize history
+# npm archlinux pip node command-not-found cp extract copydir 
 plugins=(
     git
     colored-man-pages
-    colorize
-    history
     man
-    npm
     sudo
-    archlinux
-    pip
-    node
     zsh-syntax-highlighting 
     zsh-autosuggestions
     zsh-autocomplete
@@ -28,7 +24,7 @@ plugins=(
 source $ZSH/oh-my-zsh.sh
 
 if [ $TILIX_ID ] || [ $VTE_VERSION ]; then
-        source /etc/profile.d/vte.sh
+  source /etc/profile.d/vte.sh
 fi
 
 if [ -x "$(command -v exa)" ]; then
@@ -49,7 +45,9 @@ if [ -x "$(command -v neofetch)" ]; then
     alias nfk="neofetch --config $XDG_CONFIG_HOME/neofetch/main-config.conf --source $($XDG_CONFIG_HOME/neofetch/randomize.sh $XDG_CONFIG_HOME/neofetch/paths.txt) --backend kitty --xoffset 25 --yoffset 20 --gap 40"
     alias nfb="neofetch --config $XDG_CONFIG_HOME/neofetch/config-minimal-bars.conf --ascii $XDG_CONFIG_HOME/neofetch/bonsai"
     alias pf="neofetch --config $XDG_CONFIG_HOME/neofetch/config-minimal.conf --ascii $XDG_CONFIG_HOME/neofetch/arch-hi-res-smol"
+    alias imgpf="neofetch --config $XDG_CONFIG_HOME/neofetch/minimal-small.conf  --source $($XDG_CONFIG_HOME/neofetch/randomize.sh $XDG_CONFIG_HOME/neofetch/paths.txt) --backend kitty --xoffset 5 --yoffset 5 --gap 10"
     alias uwuf="neofetch --config $XDG_CONFIG_HOME/neofetch/config-minimal-uwu.conf --ascii $XDG_CONFIG_HOME/neofetch/uwu-hd"
+    alias henf="$XDG_CONFIG_HOME/neofetch/hentai.bash"
 fi
 
 if [ -x "$(command -v ripgrep)" ]; then
@@ -93,13 +91,19 @@ alias push="git push"
 alias pull="git pull"
 alias cls="clear"
 
+alias zedit="nv $HOME/.zshrc"
+alias bedit="nv $HOME/.bashrc"
+alias fedit="nv $XDG_CONFIG_HOME/fish/config.fish"
+alias p10kedit="nv $HOME/.p10k.zsh"
+
 alias pipes1="lam -e pipes1"
 alias pipes2="lam -e pipes2"
 alias pipes2-slim="lam -e pipes2-slim"
 alias rain="lam -e rain"
+alias cclock="watch -t -n1 'date +%T|figlet' | lolcat"
 
-alias cat="ccat"
-alias less="cless"
+# alias cat="ccat"
+# alias less="cless"
 
 export VISUAL=nvim;
 export EDITOR=nvim;
@@ -114,8 +118,14 @@ setopt HIST_IGNORE_ALL_DUPS
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
-source "$XDG_CACHE_HOME"/wal/colors.sh
 
-lam -e crunch-mini
+source "$HOME"/Dotfiles/onedarkfiles/home/colors.sh
+source "$HOME"/Dotfiles/onedarkfiles/home/core.sh
+
+alias cless="cless"
+alias cmore="cmore"
+alias ccat="ccat"
+
+lam -e panes
 printf "\n"
 

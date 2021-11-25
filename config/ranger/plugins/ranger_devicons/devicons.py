@@ -241,6 +241,9 @@ dir_node_exact_matches: dict[str: str] = {
     '.config': '',
     '.cache': '',
     '.nhentai': '',
+    'NSFW': '',
+    '.themes': '',
+    '.icons': '',
     'buttercup-vaults': '',
     'wallpapers': '',
     'Desktop': '',
@@ -257,9 +260,14 @@ dir_node_exact_matches: dict[str: str] = {
     'Videos': '',
     'Phone': '',
     'Torrents': '',
+    'Torrent': '',
     'Mounted': '' if mounted_dirs else '',
     'Mangas': '',
+    'Manga': '',
     'Coding': '',
+    '.oh-my-zsh': '',
+    '.oh-my-bash': '',
+    'omf': '',
     # XDG_USER_DIRS
     **xdgs_dirs
 }

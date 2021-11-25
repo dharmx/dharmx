@@ -1,15 +1,17 @@
+@import "colors.css";
+
 /*===KeyFox by AlfarexGuy2019===*/ 
 
 /*===COLORS===*/
 
 :root {
-  --accent-color: #5E81AC;
-  --tab-color: 240, 240, 244;
-  --tab-text: 0, 0, 0;	
+  --accent-color: var(--color4);
+  --tab-color: var(--background);
+  --tab-text: var(--foreground);	
   --secondary-accent-color: #81A1C1;
   --third-accent-color: 235, 219, 178;
   --light-color: #D8DEE9;
-  --dark-color: #2E3440;
+  --dark-color: var(--color0);
   --url-back: 249, 249, 251;	
   --caption-min-color: 215, 153, 33;
   --caption-max-color: 69, 133, 136;

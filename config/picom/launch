@@ -1,9 +1,0 @@
-#!/usr/bin/env bash
-
-## Run picom if not running already
-if [[ ! "$(pidof picom)" ]]; then
-  picom --config "$XDG_CONFIG_HOME"/picom/picom-max-noshadow.ini &
-else 
-  pkill picom &
-fi
-

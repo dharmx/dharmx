@@ -10,6 +10,8 @@ LEVEL6="$XDG_CONFIG_HOME/sxhkd/images/brightness/twotone_brightness_7_black_48dp
 LEVEL7="$XDG_CONFIG_HOME/sxhkd/images/brightness/twotone_light_mode_black_48dp.png"
 LEVEL8="$XDG_CONFIG_HOME/sxhkd/images/brightness/twotone_flare_black_48dp.png"
 LEVEL9="$XDG_CONFIG_HOME/sxhkd/images/brightness/twotone_new_releases_black_48dp.png"
+LEVEL_OFF="/home/maker/Dotfiles/onedarkfiles/config/sxhkd/images/brightness/twotone_visibility_off_white_48dp.png"
+LEVEL_VERY_LOW="/home/maker/Dotfiles/onedarkfiles/config/sxhkd/images/brightness/twotone_visibility_white_48dp.png"
 
 notify_template() {
   dunstify -u "$1"                \
@@ -17,6 +19,17 @@ notify_template() {
               "$3"                \
               "$4"
 }
+#1e222a#e06c75
+notify_template_very_low() {
+  FRAME="string:frcolor:#00000000"
+  notify-send -h "$1"           \
+            -h "$2"             \
+            -h "$FRAME"         \
+            -i "$3"             \
+            "$4"                \
+            "$5"
+}
+
 
 notify() {
   if [[ "$1" == "-I" ]]; then
@@ -40,7 +53,8 @@ notify() {
     30) notify_template "low" "$LEVEL2" "Brightness" "Brightness changed to 30%";;
     20) notify_template "low" "$LEVEL1" "Brightness" "Brightness changed to 20%";;
     10) notify_template "low" "$LEVEL0" "Brightness" "Brightness changed to 10%";;
-    0) notify_template "Screen is offline";;
+    1) notify_template_very_low "string:bgcolor:#e06c75" "string:fgcolor:#fff" "$LEVEL_VERY_LOW" " Brightness Warning!" "1% brightness is not reccomended";;
+    0) notify_template_very_low "string:bgcolor:#5C6370" "string:fgcolor:#fff" "$LEVEL_OFF" "Brightness" "Screen is offline";;
   esac
 }
 

@@ -37,6 +37,7 @@ M.plugins = {
    status = {
       nvim_tree = true,
       dashboard = true,
+      telescope = true,
   },
 }
 

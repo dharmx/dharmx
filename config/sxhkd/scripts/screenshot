@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-SAVEPATH="$XDG_PICTURES_DIR/Pictures/$(date).png"
+SAVEPATH="$XDG_PICTURES_DIR/$(date).png"
 CLIPBOARD="$XDG_CONFIG_HOME/sxhkd/images/screenshot/clipboard.png"
 
 case "$1" in 

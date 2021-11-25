@@ -3,19 +3,19 @@
 # Monitor settings
 pgrep -x sxhkd > /dev/null || sxhkd &
 
-# bspc monitor -d I II III IV V VI VII VIII IX X
+# Workspaces
 bspc monitor -d 1 2 3 4 5
 
 # Window settings
 bspc config border_width         3
 bspc config window_gap           8
-bspc config top_padding 	     0
+bspc config top_padding 	 0
 
-bspc config focused_border_color "#4c566a"
-bspc config normal_border_color "#4c566a"
-bspc config presel_border_color "#8F3724"
-bspc config urgent_border_color "#504339"
-bspc config focused_private_border_color "#35BF5C"
+bspc config focused_border_color "#bf616a"
+bspc config normal_border_color "#2e3440"
+bspc config presel_border_color "#e5e9f0"
+bspc config urgent_border_color "#ebcb8b"
+bspc config focused_private_border_color "#81a1c1"
 
 bspc config split_ratio          0.5
 bspc config borderless_monocle   false
@@ -33,7 +33,7 @@ bspc rule -a spotify='^5'
 bspc rule -a spotify state=pseudo_tiled
 bspc rule -a TelegramDesktop desktop='^4'
 bspc rule -a Firefox desktop='^2'
-bspc rule -a Zathura state=tiled 
+bspc rule -a Zathura state=floating 
 bspc rule -a conky sticky=off manage=off lower=on
 bspc rule -a lxappearance state=floating center=true
 bspc rule -a tilda state=floating center=true border=off sticky=on
@@ -41,6 +41,8 @@ bspc rule -a Tilda state=floating center=true border=off sticky=on
 bspc rule -a tilix state=floating center=true border=off sticky=on
 bspc rule -a Tilix state=floating center=true border=off sticky=on
 bspc rule -a feh state=floating floating=true manage=on center=true
+bspc rule -a Gpick state=floating floating=true manage=on center=true 
+bspc rule -a jgmenu --unmanage
 
 $XDG_CONFIG_HOME/bspwm/exports &
 $XDG_CONFIG_HOME/bspwm/launcher &

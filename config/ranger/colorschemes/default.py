@@ -99,7 +99,7 @@ class Default(ColorScheme):
                 if context.good:
                     bg = green
             elif context.link:
-                fg = cyan
+                fg = black
             attr |= bold
 
         elif context.in_statusbar:
@@ -123,6 +123,7 @@ class Default(ColorScheme):
                     fg += BRIGHT
             if context.loaded:
                 bg = self.progress_bar_color
+                fg = black
             if context.vcsinfo:
                 fg = blue
                 attr &= ~bold

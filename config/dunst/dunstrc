@@ -1,6 +1,6 @@
 [global]
     background = "#2e3440"
-    foreground = "#d8dee9"
+    foreground = "#e5e9f0"
     monitor = 0
     follow = mouse
     
@@ -29,7 +29,7 @@
     idle_threshold = 30
     font = Iosevka Nerd Font 12
     line_height = 6
-    notification_height = 30
+    # notification_height = 30
     markup = full
 
     format = "<b>%s</b>\n%b"
@@ -52,21 +52,24 @@
 
     ## mouse_left_click = do action
     ## mouse_middle_click = close_current
-    mouse_right_click = close_all
+    mouse_right_click = close
 
 [urgency_low]
     timeout = 4
-    background = "#434c5e"
-    foreground = "#d8dee9"
+    background = "#3b4252"
+    foreground = "#e5e9f0"
+    # new_icon = /home/maker/.config/dunst/notification/twotone_notifications_white_48dp.png
 
 [urgency_normal]
     timeout = 8
-    background = "#3b4252"
-    foreground = "#d8dee9"
+    background = "#4c566a"
+    foreground = "#e5e9f0"
+    # new_icon = /home/maker/.config/dunst/notification/twotone_notifications_white_48dp.png
 
 [urgency_critical]
     timeout = 8
-    background = "#bf5858"
-    foreground = "#d8dee9"
+    background = "#bf616a"
+    foreground = "#e5e9f0"
+    # new_icon = /home/dunst/notification/twotone_notifications_white_48dp.png
 
 ## vim: ft=cfg

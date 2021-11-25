@@ -1,8 +1,8 @@
 ! Custom
 ! Original theme https://github.com/nathanbuchar/atom-one-dark-terminal
 *.foreground:    #ABB2BF
-*.background:    #1E2127
-*.cursorColor:   #5C6370
+*.background:    #1E222A
+*.cursorColor:   #61AFEF
 *.highlightColor:#3A3F4B
 
 ! Negro y gris
@@ -16,7 +16,7 @@
 *.color10:       #98C379
 ! Amarillo
 *.color3:        #D19A66
-*.color11:       #D19A66
+*.color11:       #e5c07b
 ! Azul
 *.color4:        #61AFEF
 *.color12:       #61AFEF

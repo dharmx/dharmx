@@ -1,6 +1,3 @@
-# vim:fileencoding=utf-8:ft=conf
-
-
 set selection-clipboard         "clipboard"
 set guioptions                  "true"
 set highlight-active-color      "#C3AFF7"
@@ -8,32 +5,32 @@ set font                        "Iosevka Nerd Font 11"
 
 #colorscheme
 
-set default-bg                  "#1e212a"
-set default-fg                  "#D8DEE9"
+set default-bg                  "#2e3440"
+set default-fg                  "#e5e9f0"
 
-set statusbar-fg                "#a7bdfb"
-set statusbar-bg                "#272c38"
+set statusbar-fg                "#e5e9f0"
+set statusbar-bg                "#81a1c1"
 
-set inputbar-bg                 "#272c38" 
+set inputbar-bg                 "#2e3440" 
 set inputbar-fg                 "#BF616A"
 
 set notification-warning-bg     "#EBCB8B"
-set notification-warning-fg     "#272c38"
+set notification-warning-fg     "#2e3440"
 
-set highlight-color             "#81A1C1"
-set highlight-active-color      "#81A1C1"
+set highlight-color             "#81a1c1"
+set highlight-active-color      "#88C0D0"
 
 set completion-highlight-fg     "#BF616A"
-set completion-highlight-bg     "#272c38"
+set completion-highlight-bg     "#2e3440"
 
-set completion-bg               "#20242d"
-set completion-fg               "#D8DEE9" 
+set completion-bg               "#A3BE8C"
+set completion-fg               "#2e3440" 
 
-set notification-bg             "#D8DEE9"
-set notification-fg             "#20242d"
+set notification-bg             "#E5E9F0"
+set notification-fg             "#2e3440"
 
-set recolor-darkcolor 		"#D8DEE9" 
-set recolor-lightcolor          "#20242d"
+set recolor-darkcolor 		"#E5E9F0" 
+set recolor-lightcolor          "#2e3440"
 set recolor                     "false"
 
 # setting recolor-keep true will keep any color your pdf has.
@@ -47,3 +44,6 @@ set statusbar-basename          "true"
 
 set window-height               "980"
 set window-width                "850"
+
+# vim:fileencoding=utf-8:ft=conf
+

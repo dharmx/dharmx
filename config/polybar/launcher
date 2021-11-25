@@ -1,6 +1,0 @@
-#!/usr/bin/env bash
-
-killall polybar
-polybar -c "$XDG_CONFIG_HOME/polybar/placidity-plus/config.ini" main &
-exit 0
-

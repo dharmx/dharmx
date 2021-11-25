@@ -37,12 +37,18 @@ alias nfk "neofetch --config $XDG_CONFIG_HOME/neofetch/main-config.conf --source
 alias nf "neofetch --config $XDG_CONFIG_HOME/neofetch/main-config.conf --source ($XDG_CONFIG_HOME/neofetch/randomize.sh $XDG_CONFIG_HOME/neofetch/paths.txt) --backend w3m"
 alias pf "neofetch --config $XDG_CONFIG_HOME/neofetch/config-minimal.conf --ascii $XDG_CONFIG_HOME/neofetch/arch-smol"
 alias uwuf "neofetch --config $XDG_CONFIG_HOME/neofetch/config-minimal-uwu.conf --ascii $XDG_CONFIG_HOME/neofetch/uwu-hd"
+alias henf "$XDG_CONFIG_HOME/.config/neofetch/hentai.bash"
+
+alias fedit "nv $XDG_CONFIG_HOME/fish/config.fish"
+alias zedit "nv $HOME/.zshrc"
+alias bedit "nv $HOME/.bashrc"
+alias p10kedit="nv $HOME/.p10k.zsh"
 
 alias pipes1 "lam -e pipes1"
 alias pipes2 "lam -e pipes2"
 alias pipes2-slim "lam -e pipes2-slim"
 alias rain "lam -e rain"
 
-lam -e alpha
+lam -e crunch
 printf "\n"
 
