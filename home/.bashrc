@@ -14,8 +14,8 @@ if [ -x "$(command -v exa)" ]; then
     # 'l' shows the contents + hidden ones including a header
     # 'll' just shows the contents including a header
     alias li="exa --long --all --group --icons"
-    alias ls="exa"
-    alias la="exa --long --all --group"
+    alias cs="exa"
+    alias ca="exa --long --all --group"
 fi
 
 if [ -x "$(command -v neofetch)" ]; then
@@ -67,6 +67,7 @@ alias clone="git clone"
 alias push="git push"
 alias pull="git pull"
 alias cls="clear"
+alias la="ls -la"
 
 alias bedit="nv $HOME/.bashrc"
 alias zedit="nv $HOME/.zshrc"

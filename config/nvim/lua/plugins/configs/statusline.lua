@@ -5,7 +5,6 @@ local icon_styles = {
    default = {
       left = "",
       right = " ",
-      -- main_icon = "  ",
       main_icon = "  ",
       vi_mode_icon = " ",
       position_icon = " ",
@@ -66,11 +65,11 @@ components.active[1][1] = {
 
    hl = {
       fg = colors.statusline_bg,
-      bg = "#61afef",
+      bg = colors.nord_blue,
    },
 
    right_sep = { str = statusline_style.right, hl = {
-      fg = "#61afef",
+      fg = colors.nord_blue,
       bg = colors.lightbg,
    } },
 }
@@ -81,7 +80,7 @@ components.active[1][2] = {
       local extension = vim.fn.expand "%:e"
       local icon = require("nvim-web-devicons").get_icon(filename, extension)
       if icon == nil then
-         icon = " "
+         icon = " "
          return icon
       end
       return " " .. icon .. " " .. filename .. " "
@@ -255,26 +254,26 @@ components.active[3][3] = {
 }
 
 local mode_colors = {
-   ["n"] = { "NORMAL", "#e06c75" },
-   ["no"] = { "N-PENDING", "#e06c75" },
-   ["i"] = { "INSERT", "#6f2dbd" },
-   ["ic"] = { "INSERT", "#6f2dbd" },
-   ["t"] = { "TERMINAL", "#98c379" },
-   ["v"] = { "VISUAL", "#50a6b2" },
-   ["V"] = { "V-LINE", "#50a6b2" },
-   [""] = { "V-BLOCK", "#50a6b2" },
-   ["R"] = { "REPLACE", "#d19a66" },
-   ["Rv"] = { "V-REPLACE", "#d19a66" },
-   ["s"] = { "SELECT", "#61afef" },
-   ["S"] = { "S-LINE", "#61afef" },
-   [""] = { "S-BLOCK", "#61afef" },
-   ["c"] = { "COMMAND", "#c678dd" },
-   ["cv"] = { "COMMAND", "#c678dd" },
-   ["ce"] = { "COMMAND", "#c678dd" },
-   ["r"] = { "PROMPT", "#2a9d8f" },
-   ["rm"] = { "MORE", "#2a9d8f" },
-   ["r?"] = { "CONFIRM", "#2a9d8f" },
-   ["!"] = { "SHELL", "#98c379" },
+   ["n"] = { "NORMAL", colors.red },
+   ["no"] = { "N-PENDING", colors.red },
+   ["i"] = { "INSERT", colors.dark_purple },
+   ["ic"] = { "INSERT", colors.dark_purple },
+   ["t"] = { "TERMINAL", colors.green },
+   ["v"] = { "VISUAL", colors.cyan },
+   ["V"] = { "V-LINE", colors.cyan },
+   [""] = { "V-BLOCK", colors.cyan },
+   ["R"] = { "REPLACE", colors.orange },
+   ["Rv"] = { "V-REPLACE", colors.orange },
+   ["s"] = { "SELECT", colors.nord_blue },
+   ["S"] = { "S-LINE", colors.nord_blue },
+   [""] = { "S-BLOCK", colors.nord_blue },
+   ["c"] = { "COMMAND", colors.pink },
+   ["cv"] = { "COMMAND", colors.pink },
+   ["ce"] = { "COMMAND", colors.pink },
+   ["r"] = { "PROMPT", colors.teal },
+   ["rm"] = { "MORE", colors.teal },
+   ["r?"] = { "CONFIRM", colors.teal },
+   ["!"] = { "SHELL", colors.green },
 }
 
 local chad_mode_hl = function()

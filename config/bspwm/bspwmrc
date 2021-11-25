@@ -11,11 +11,11 @@ bspc config border_width         3
 bspc config window_gap           8
 bspc config top_padding 	 0
 
-bspc config focused_border_color "#bf616a"
+bspc config focused_border_color "#81A1C1"
 bspc config normal_border_color "#2e3440"
 bspc config presel_border_color "#e5e9f0"
 bspc config urgent_border_color "#ebcb8b"
-bspc config focused_private_border_color "#81a1c1"
+bspc config focused_private_border_color "#BF616A"
 
 bspc config split_ratio          0.5
 bspc config borderless_monocle   false

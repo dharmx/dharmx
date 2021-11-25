@@ -31,8 +31,8 @@ if [ -x "$(command -v exa)" ]; then
     # 'l' shows the contents + hidden ones including a header
     # 'll' just shows the contents including a header
     alias li="exa --long --all --group --icons"
-    alias ls="exa"
-    alias la="exa --long --all --group"
+    alias cs="exa"
+    alias ca="exa --long --all --group"
 fi
 
 if [ -x "$(command -v logo-ls)" ]; then
@@ -90,6 +90,7 @@ alias clone="git clone"
 alias push="git push"
 alias pull="git pull"
 alias cls="clear"
+alias la="ls -la"
 
 alias zedit="nv $HOME/.zshrc"
 alias bedit="nv $HOME/.bashrc"
@@ -100,7 +101,7 @@ alias pipes1="lam -e pipes1"
 alias pipes2="lam -e pipes2"
 alias pipes2-slim="lam -e pipes2-slim"
 alias rain="lam -e rain"
-alias cclock="watch -t -n1 'date +%T|figlet' | lolcat"
+alias cclock="watch -t -n1 'date +%T | figlet' | lolcat"
 
 # alias cat="ccat"
 # alias less="cless"
