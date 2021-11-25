@@ -26,7 +26,7 @@
 
 *.foreground:   nord4
 *.background:   nord0
-*.cursorColor:  nord4
+*.cursorColor:  nord10
 *fading: 0
 *fadeColor: nord3
 
