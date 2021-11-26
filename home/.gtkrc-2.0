@@ -2,7 +2,7 @@ include "/home/maker/.gtkrc-2.0.mine"
 gtk-theme-name="Nordic-v40"
 gtk-icon-theme-name="Breeze-Nord-Dark-Icons"
 gtk-font-name="Roboto Condensed, Light 11"
-gtk-cursor-theme-name="cz-Hickson-Black"
+gtk-cursor-theme-name="Nordzy-cursors"
 gtk-cursor-theme-size=0
 gtk-toolbar-style=GTK_TOOLBAR_BOTH
 gtk-toolbar-icon-size=GTK_ICON_SIZE_LARGE_TOOLBAR

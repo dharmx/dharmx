@@ -48,6 +48,7 @@ if [ -x "$(command -v neofetch)" ]; then
     alias imgpf="neofetch --config $XDG_CONFIG_HOME/neofetch/minimal-small.conf  --source $($XDG_CONFIG_HOME/neofetch/randomize.sh $XDG_CONFIG_HOME/neofetch/paths.txt) --backend kitty --xoffset 5 --yoffset 5 --gap 10"
     alias uwuf="neofetch --config $XDG_CONFIG_HOME/neofetch/config-minimal-uwu.conf --ascii $XDG_CONFIG_HOME/neofetch/uwu-hd"
     alias henf="$XDG_CONFIG_HOME/neofetch/hentai.bash"
+    alias coldfetch="neofetch --config $XDG_CONFIG_HOME/neofetch/coldfetch.conf"
 fi
 
 if [ -x "$(command -v ripgrep)" ]; then
