@@ -1,5 +1,0 @@
-[Default Applications]
-x-scheme-handler/msteams=teams.desktop
-
-[Added Associations]
-text/css=nvim.desktop;

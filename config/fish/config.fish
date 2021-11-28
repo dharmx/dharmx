@@ -39,13 +39,20 @@ alias fm "ranger"
 alias nfk "neofetch --config $XDG_CONFIG_HOME/neofetch/main-config.conf --source ($XDG_CONFIG_HOME/neofetch/randomize.sh $XDG_CONFIG_HOME/neofetch/paths.txt) --backend kitty --xoffset 25 --yoffset 20 --gap 40"
 alias nf "neofetch --config $XDG_CONFIG_HOME/neofetch/main-config.conf --source ($XDG_CONFIG_HOME/neofetch/randomize.sh $XDG_CONFIG_HOME/neofetch/paths.txt) --backend w3m"
 alias pf "neofetch --config $XDG_CONFIG_HOME/neofetch/config-minimal.conf --ascii $XDG_CONFIG_HOME/neofetch/arch-smol"
+
 alias uwuf "neofetch --config $XDG_CONFIG_HOME/neofetch/config-minimal-uwu.conf --ascii $XDG_CONFIG_HOME/neofetch/uwu-hd"
 alias henf "$XDG_CONFIG_HOME/.config/neofetch/hentai.bash"
+
+alias coldfetch="neofetch --config $XDG_CONFIG_HOME/neofetch/coldfetch.conf"
+alias coldasf="neofetch --config $XDG_CONFIG_HOME/neofetch/cold-as-fuck.conf"
+alias foodfetch="neofetch --config $XDG_CONFIG_HOME/neofetch/foodfetch.conf"
+alias skullfetch="neofetch --config $XDG_CONFIG_HOME/neofetch/skullfetch.conf"
 
 alias fedit "nv $XDG_CONFIG_HOME/fish/config.fish"
 alias zedit "nv $HOME/.zshrc"
 alias bedit "nv $HOME/.bashrc"
 alias p10kedit "nv $HOME/.p10k.zsh"
+alias fzf "fzf --prompt ' ' --pointer '->'"
 
 alias pipes1 "lam -e pipes1"
 alias pipes2 "lam -e pipes2"

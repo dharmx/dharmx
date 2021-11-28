@@ -201,7 +201,7 @@ super + e
 
 ## launch system monitor htop
 ctrl + shift + Escape 
-    kitty $HOME/.local/bin/bpytop
+    kitty btop
 
 ctrl + alt + KP_Delete
     kitty htop
@@ -210,7 +210,9 @@ ctrl + alt + KP_Delete
 super + n
     $XDG_CONFIG_HOME/redshift/redshift
 
-
+## jgmenu
+super + button3
+    jgmenu_run &
 
 # screenshot configurations
 # fullscreen screenshot save

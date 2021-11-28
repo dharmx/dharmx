@@ -43,12 +43,18 @@ fi
 if [ -x "$(command -v neofetch)" ]; then
     alias nf="neofetch --config $XDG_CONFIG_HOME/neofetch/main-config.conf --source $($XDG_CONFIG_HOME/neofetch/randomize.sh $XDG_CONFIG_HOME/neofetch/paths.txt) --backend w3m"
     alias nfk="neofetch --config $XDG_CONFIG_HOME/neofetch/main-config.conf --source $($XDG_CONFIG_HOME/neofetch/randomize.sh $XDG_CONFIG_HOME/neofetch/paths.txt) --backend kitty --xoffset 25 --yoffset 20 --gap 40"
+    alias imgpf="neofetch --config $XDG_CONFIG_HOME/neofetch/minimal-small.conf  --source $($XDG_CONFIG_HOME/neofetch/randomize.sh $XDG_CONFIG_HOME/neofetch/paths.txt) --backend kitty --xoffset 5 --yoffset 5 --gap 10"
+    
     alias nfb="neofetch --config $XDG_CONFIG_HOME/neofetch/config-minimal-bars.conf --ascii $XDG_CONFIG_HOME/neofetch/bonsai"
     alias pf="neofetch --config $XDG_CONFIG_HOME/neofetch/config-minimal.conf --ascii $XDG_CONFIG_HOME/neofetch/arch-hi-res-smol"
-    alias imgpf="neofetch --config $XDG_CONFIG_HOME/neofetch/minimal-small.conf  --source $($XDG_CONFIG_HOME/neofetch/randomize.sh $XDG_CONFIG_HOME/neofetch/paths.txt) --backend kitty --xoffset 5 --yoffset 5 --gap 10"
+    
     alias uwuf="neofetch --config $XDG_CONFIG_HOME/neofetch/config-minimal-uwu.conf --ascii $XDG_CONFIG_HOME/neofetch/uwu-hd"
     alias henf="$XDG_CONFIG_HOME/neofetch/hentai.bash"
+
     alias coldfetch="neofetch --config $XDG_CONFIG_HOME/neofetch/coldfetch.conf"
+    alias coldasf="neofetch --config $XDG_CONFIG_HOME/neofetch/cold-as-fuck.conf"
+    alias foodfetch="neofetch --config $XDG_CONFIG_HOME/neofetch/foodfetch.conf"
+    alias skullfetch="neofetch --config $XDG_CONFIG_HOME/neofetch/skullfetch.conf"
 fi
 
 if [ -x "$(command -v ripgrep)" ]; then
@@ -103,6 +109,7 @@ alias pipes2="lam -e pipes2"
 alias pipes2-slim="lam -e pipes2-slim"
 alias rain="lam -e rain"
 alias cclock="watch -t -n1 'date +%T | figlet' | lolcat"
+alias fzf="fzf --prompt ' ' --pointer '->'"
 
 # alias cat="ccat"
 # alias less="cless"
@@ -121,8 +128,8 @@ setopt HIST_IGNORE_ALL_DUPS
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 
-source "$HOME"/Dotfiles/onedarkfiles/home/colors.sh
-source "$HOME"/Dotfiles/onedarkfiles/home/core.sh
+source "$HOME"/Dotfiles/nordfiles/home/colors.sh
+source "$HOME"/Dotfiles/nordfiles/home/core.sh
 
 alias cless="cless"
 alias cmore="cmore"
@@ -130,4 +137,3 @@ alias ccat="ccat"
 
 lam -e panes
 printf "\n"
-
