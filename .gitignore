@@ -11,6 +11,8 @@
 /config/mpd/pid
 /config/mpd/state
 
+/config/tmux/tmuxhistory
+
 /config/qutebrowser/bookmarks
 /config/qutebrowser/qsettings
 /config/qutebrowser/autoconfig.yml

@@ -53,6 +53,7 @@ alias zedit "nv $HOME/.zshrc"
 alias bedit "nv $HOME/.bashrc"
 alias p10kedit "nv $HOME/.p10k.zsh"
 alias fzf "fzf --prompt ' ' --pointer '->'"
+alias yts="ytfzf -t"
 
 alias pipes1 "lam -e pipes1"
 alias pipes2 "lam -e pipes2"

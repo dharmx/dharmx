@@ -110,6 +110,7 @@ alias pipes2-slim="lam -e pipes2-slim"
 alias rain="lam -e rain"
 alias cclock="watch -t -n1 'date +%T | figlet' | lolcat"
 alias fzf="fzf --prompt ' ' --pointer '->'"
+alias yts="ytfzf -t"
 
 # alias cat="ccat"
 # alias less="cless"

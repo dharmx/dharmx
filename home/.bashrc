@@ -84,6 +84,7 @@ alias pipes2="lam -e pipes2"
 alias pipes2-slim="lam -e pipes2-slim"
 alias rain="lam -e rain"
 alias fzf="fzf --prompt ' ' --pointer '->'"
+alias yts="ytfzf -t"
 
 # alias cat="ccat"
 # alias less="cless"
