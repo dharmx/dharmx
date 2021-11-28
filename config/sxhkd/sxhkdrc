@@ -225,14 +225,14 @@ super + shift + x
 
 # clipboard fullscreen
 Print 
-    $XDG_CONFIG_HOME/sxhkd/scripts/screenshot --xclip-fullscreen
+    $XDG_CONFIG_HOME/sxhkd/scripts/screenshot --xsel-fullscreen
 
 ctrl + Print
     flameshot gui
 
 # clipboard cropped
 super + shift + s 
-    $XDG_CONFIG_HOME/sxhkd/scripts/screenshot --xclip-cropped
+    $XDG_CONFIG_HOME/sxhkd/scripts/screenshot --xsel-cropped
 
 # toggle picom
 super + backslash

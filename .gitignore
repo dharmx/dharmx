@@ -12,6 +12,7 @@
 /config/mpd/state
 
 /config/tmux/tmuxhistory
+/config/tmux/plugins
 
 /config/qutebrowser/bookmarks
 /config/qutebrowser/qsettings
