@@ -287,7 +287,7 @@ handle_custom_shortcuts () {
 #############
 
 #when no search is provided, or -s is given, use this prompt
-search_prompt="Search : "
+search_prompt="${c_cyan} "
 
 
 #useragent when using curl on youtube
@@ -306,7 +306,7 @@ enable_search_hist=1
 search_history_file="$cache_dir/ytfzf_search_hst"
 
 #prompt for search history menu
-search_history_prompt="> "
+search_history_prompt="${c_cyan} "
 
 #enable/disable launching menu if search history is empty
 allow_empty_search_hist=0
@@ -322,7 +322,7 @@ subscriptions_file=$YTFZF_CONFIG_DIR/subscriptions
 
 #the text template string to use for the fancy subscriptions divider,
 #the spaces are for centering
-fancy_subscriptions_text="             -------%s-------"
+fancy_subscriptions_text="             ──────────────────────%s──────────────────────"
 
 #this function is called when a video is selected in the menu to send a notification
 #available variables
