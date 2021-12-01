@@ -15,6 +15,9 @@ super + shift + Return
 super + alt + Return
         kitty tmux
 
+super + shift + alt + Return
+        kitty tmux attach-session
+
 # make sxhkd reload its configuration files:
 super + Escape
 	pkill -USR1 -x sxhkd
@@ -131,120 +134,124 @@ super + {Left,Down,Up,Right}
 
 # lockscreen bind
 super + slash 
-    betterlockscreen -l dim --off 5
+        betterlockscreen -l dim --off 5
 
 #XF86WebCam
 # pactl audio configurations
 ## increase volume
 XF86AudioRaiseVolume 
-    $XDG_CONFIG_HOME/sxhkd/scripts/volume.bash --increase
+        $XDG_CONFIG_HOME/sxhkd/scripts/volume.bash --increase
 
 ## decrease volume
 XF86AudioLowerVolume 
-    $XDG_CONFIG_HOME/sxhkd/scripts/volume.bash --decrease
+        $XDG_CONFIG_HOME/sxhkd/scripts/volume.bash --decrease
 
 ## mute vloume
 XF86AudioMute 
-    $XDG_CONFIG_HOME/sxhkd/scripts/volume.bash --toggle
+        $XDG_CONFIG_HOME/sxhkd/scripts/volume.bash --toggle
 
 ## mic mute
 XF86AudioMicMute 
-    $XDG_CONFIG_HOME/sxhkd/scripts/microphone.bash
+        $XDG_CONFIG_HOME/sxhkd/scripts/microphone.bash
 
 # backlight configurations
 ## increase brightness
 XF86MonBrightnessUp 
-    $XDG_CONFIG_HOME/sxhkd/scripts/brightness.bash -I
+        $XDG_CONFIG_HOME/sxhkd/scripts/brightness.bash -I
 
 # playerctl audio configurations
 ## play
 XF86AudioPlay 
-    playerctl play-pause 
+        playerctl play-pause 
 
 ## stop 
 XF86AudioStop 
-    playerctl pause 
+        playerctl pause 
 
 # next audio
 XF86AudioNext 
-    playerctl next
+        playerctl next
 
 # previous audio
 XF86AudioPrev 
-    playerctl previous
+        playerctl previous
 
 ## decrease brightness
 XF86MonBrightnessDown 
-    $XDG_CONFIG_HOME/sxhkd/scripts/brightness.bash -D
+        $XDG_CONFIG_HOME/sxhkd/scripts/brightness.bash -D
 
 ## airplane mode
 XF86RFKill
-    $XDG_CONFIG_HOME/sxhkd/scripts/airplane.bash
+        $XDG_CONFIG_HOME/sxhkd/scripts/airplane.bash
 
 # rofi app menu
 super + d 
-    rofi -show
+        rofi -show
 
 # rofi run prompt
 super + a
-    rofi -show run
+        rofi -show run
 
 # rofi alt Tab
 alt + Tab
-    rofi -show window
+        rofi -show window
 
 # bind some nice apps
 ## launch web browser
 super + shift + f 
-    qutebrowser
+        qutebrowser
 
 ## launch filemanager ranger
 super + e
-    kitty ranger
+        kitty ranger
 
 ## launch system monitor htop
 ctrl + shift + Escape 
-    kitty btop
+        kitty btop
 
 ctrl + alt + KP_Delete
-    kitty htop
+        kitty htop
 
 ## night mode
 super + n
-    $XDG_CONFIG_HOME/redshift/redshift
+        $XDG_CONFIG_HOME/redshift/redshift
 
 ## jgmenu
 super + button3
-    jgmenu_run &
+        jgmenu_run &
 
 # screenshot configurations
 # fullscreen screenshot save
 super + Print 
-    $XDG_CONFIG_HOME/sxhkd/scripts/screenshot --fullscreen
+        $XDG_CONFIG_HOME/sxhkd/scripts/screenshot --fullscreen
 
 # cropped save
 super + shift + x 
-    $XDG_CONFIG_HOME/sxhkd/scripts/screenshot --selected
+        $XDG_CONFIG_HOME/sxhkd/scripts/screenshot --selected
 
 # clipboard fullscreen
 Print 
-    $XDG_CONFIG_HOME/sxhkd/scripts/screenshot --xsel-fullscreen
+        $XDG_CONFIG_HOME/sxhkd/scripts/screenshot --xclip-fullscreen
 
 ctrl + Print
-    flameshot gui
+        flameshot gui
 
 # clipboard cropped
 super + shift + s 
-    $XDG_CONFIG_HOME/sxhkd/scripts/screenshot --xsel-cropped
+        $XDG_CONFIG_HOME/sxhkd/scripts/screenshot --xclip-cropped
 
 # toggle picom
 super + backslash
-    $XDG_CONFIG_HOME/picom/launcher --toggle
+        $XDG_CONFIG_HOME/picom/launcher --toggle
 
 # show widgets
 super + w
-    exec $XDG_CONFIG_HOME/eww/mainlauncher
+        exec $XDG_CONFIG_HOME/eww/mainlauncher
 
 super + r
-    exec $XDG_CONFIG_HOME/eww/wallpaperlauncher
+        exec $XDG_CONFIG_HOME/eww/wallpaperlauncher
 
+# polybar hide/show
+super + shift + slash
+        {polybar-msg cmd hide && bspc config top_padding 0, polybar-msg cmd show}
+    

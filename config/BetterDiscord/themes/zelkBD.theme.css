@@ -33,8 +33,8 @@
   /* direct message box */
   --message: none;
   /* set to 'Inter', sans-serif !important to use Inter font*/
-  --font-primary: Whitney, "Helvetica Neue", Helvetica, Arial, sans-serif;
-  --font-display: Whitney, "Helvetica Neue", Helvetica, Arial, sans-serif !important;
+  --font-primary: "Iosevka Nerd Font", "JetBrainsMono Nerd Font", "JetBrainsMono Nerd Font", "JetBrainsMono Nerd Font", sans-serif;
+  --font-display: "Iosevka Nerd Font", "JetBrainsMono Nerd Font", "JetBrainsMono Nerd Font", "JetBrainsMono Nerd Font", sans-serif !important;
   --border-radius-1: 10px;
   --border-radius-2: 8px;
 }
