@@ -19,17 +19,16 @@ if [ -x "$(command -v exa)" ]; then
 fi
 
 if [ -x "$(command -v neofetch)" ]; then
-  alias nf="neofetch --config $XDG_CONFIG_HOME/neofetch/main-config.conf --source $($XDG_CONFIG_HOME/neofetch/randomize.sh $XDG_CONFIG_HOME/neofetch/paths.txt) --backend w3m"
-  alias nfk="neofetch --config $XDG_CONFIG_HOME/neofetch/main-config.conf --source $($XDG_CONFIG_HOME/neofetch/randomize.sh $XDG_CONFIG_HOME/neofetch/paths.txt) --backend kitty --xoffset 25 --yoffset 20 --gap 40"
-  alias pf="neofetch --config $XDG_CONFIG_HOME/neofetch/config-minimal.conf --ascii $XDG_CONFIG_HOME/neofetch/arch-smol"
-  
-  alias uwuf="neofetch --config $XDG_CONFIG_HOME/neofetch/config-minimal-uwu.conf --ascii $XDG_CONFIG_HOME/neofetch/uwu-hd"
-  alias henf="$XDG_CONFIG_HOME/.config/neofetch/hentai.bash"
+    LAUNCHER="$XDG_CONFIG_HOME/neofetch/launcher"
 
-  alias coldfetch="neofetch --config $XDG_CONFIG_HOME/neofetch/coldfetch.conf"
-  alias coldasf="neofetch --config $XDG_CONFIG_HOME/neofetch/cold-as-fuck.conf"
-  alias foodfetch="neofetch --config $XDG_CONFIG_HOME/neofetch/foodfetch.conf"
-  alias skullfetch="neofetch --config $XDG_CONFIG_HOME/neofetch/skullfetch.conf"
+    alias coldarch="$LAUNCHER --coldarch"
+    alias verycold="$LAUNCHER --verycoldarch"
+    alias foodfetch="$LAUNCHER --food"
+
+    alias floskull="$LAUNCHER --flowerskull"
+    alias fspolar="$LAUNCHER --flowerskull polar"
+    alias fswarm="$LAUNCHER --flowerskull warm"
+    alias fsauro="$LAUNCHER --flowerskull aurorae"
 fi
 
 if [ -x "$(command -v ripgrep)" ]; then

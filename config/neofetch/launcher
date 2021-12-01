@@ -1,0 +1,194 @@
+#!/usr/bin/env bash
+
+CONFIGS="$XDG_CONFIG_HOME/neofetch/configs"
+IMAGES="$XDG_CONFIG_HOME/neofetch/images"
+SCRIPTS="$XDG_CONFIG_HOME/neofetch/scripts"
+ASCIIS="$XDG_CONFIG_HOME/neofetch/asciis"
+
+NEOFETCH="neofetch --config"
+
+help() {
+cat << EOF
+DESCRIPTION: Launcher script for my neofetch configurations.
+
+USAGE: ./launcher [CONFIG] [OPTION]
+  --help                        Print this message.
+  --list                        List all configurations.
+  --[neofetch-config]           Print a neofetch configuration.
+
+CONFIG: --verycoldarch 
+              justarch
+              polararch
+              polararchdimmed
+
+CONFIG: --coldarch
+              justarch
+              polararch
+              polararchdimmed
+
+CONFIG: --foodfetch
+              onigiri
+              chagama
+              sushi
+
+CONFIG: --flowerskull
+              aurorae
+              nordic
+              warm
+              original
+              pinkpolar
+              semipolar
+              polar
+              default
+
+ASCII PRESETS: --preset
+  bonsai
+  bruh
+  chika
+  yamete
+  lmao
+  surprisepika
+  uwu
+  uwuhd
+  yamete
+  ahegao
+  wut
+  saitama
+
+  datealive
+  bunny
+  nezuko
+  weird
+  hostname
+
+EXAMPLES: 
+  1. ./launcher --verycold
+     This will print the verycold neofetch configuration. Note that, this
+     particular configuration will look better if the terminal is in fullscreen
+     mode.
+
+  2. ./launcher --flowerskull semipolar
+     This will print the flowerskull neofetch configuration with the semipolar
+     skull image.
+EOF
+}
+
+eval_flavor_verycoldarch() {
+  VERYCOLDARCH_CONFIG="$CONFIGS/verycoldarch.conf"
+  FLAVORS=(justarch polararchdimmed polararch)
+
+  if echo ${FLAVORS[@]} | grep -qw "$1"; then
+    eval "$NEOFETCH $VERYCOLD_CONFIG --source $IMAGES/$1.png"
+  else 
+    echo "No such flavor exists!"; echo
+    help | head -n11 | tail -n4
+  fi
+}
+
+eval_flavor_coldarch() {
+  COLDARCH_CONFIG="$CONFIGS/coldarch.conf"
+  FLAVORS=(justarch polararchdimmed polararch)
+
+  if echo ${FLAVORS[@]} | grep -qw "$1"; then
+    eval "$NEOFETCH $COLD_CONFIG --source $IMAGES/$1.png"
+  else 
+    echo "No such flavor exists!"; echo
+    help | head -n11 | tail -n4
+  fi
+}
+
+eval_flavor_flowerskull() {
+  FLOWERSKULL_CONFIG="$CONFIGS/flowerskull.conf"
+  FLAVORS=(aurorae nordic warm original pinkpolar semipolar polar default)
+
+  if echo ${FLAVORS[@]} | grep -qw "$1"; then
+    eval "$NEOFETCH $FLOWERSKULL_CONFIG --source $IMAGES/$1-skull.png"
+  else 
+    echo "No such flavor exists!"; echo
+    help | tail -n27 | head -n9
+  fi
+}
+
+eval_flavor_food() {
+  FOOD_CONFIG="$CONFIGS/food.conf"
+  FLAVORS=(onigiri chagama sushi)
+
+  if echo ${FLAVORS[@]} | grep -qw "$1"; then
+    eval "$NEOFETCH $FOOD_CONFIG --source $IMAGES/$1.png"
+  else 
+    echo "No such flavor exists!"; echo
+    help | tail -n32 | head -n4
+  fi
+}
+
+eval_asciis() {
+  case "$1" in
+    bonsai)
+      eval "$NEOFETCH $CONFIGS/bonsai.conf"
+      ;;
+    bruh)
+      eval "$NEOFETCH $CONFIGS/asciisq.conf"
+      ;;
+    ahegao)
+      eval "$NEOFETCH $CONFIGS/asciisq.conf --source $ASCIIS/ahegao"
+      ;;
+    archhd)
+      eval "$NEOFETCH $CONFIGS/asciisq.conf --source $ASCIIS/arch-hi-res"
+      ;;
+    chika)
+      eval "$NEOFETCH $CONFIGS/asciisq.conf --source $ASCIIS/chika"
+      ;;
+    yamete)
+      eval "$NEOFETCH $CONFIGS/asciisq.conf --source $ASCIIS/hentai"
+      ;;
+    *)
+      echo "Invalid preset!"; echo
+      help | tail -n29 | head -n19
+      ;;
+  esac
+}
+
+case "$1" in
+  --verycoldarch)
+    if [[ "$2" == "" ]]; then
+      eval "$NEOFETCH $CONFIGS/verycoldarch.conf"
+    else
+      eval_flavor_verycoldarch "$2"
+    fi
+    ;;
+  --coldarch)
+    if [[ "$2" == "" ]]; then
+      eval "$NEOFETCH $CONFIGS/coldarch.conf"
+    else
+      eval_flavor_coldarch "$2"
+    fi
+    ;; 
+  --flowerskull)
+    if [[ "$2" == "" ]]; then 
+      eval "$NEOFETCH $CONFIGS/flowerskull.conf"
+    else
+      eval_flavor_flowerskull "$2"
+    fi
+    ;;
+  --food)
+    if [[ "$2" == "" ]]; then 
+      eval "$NEOFETCH $CONFIGS/food.conf"
+    else
+      eval_flavor_food "$2"
+    fi
+    ;;
+  --hentai | --degeneracy)
+    eval "$NEOFETCH $SCRIPTS/hentai.bash"
+    ;;
+  --preset)
+    eval_asciis "$2"    
+    ;;
+  --help | -h)
+    help
+    ;;
+  *)
+    echo "No such option!"; echo
+    help | head -n6 | tail -n4
+    ;;
+esac
+
