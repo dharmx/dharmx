@@ -34,10 +34,13 @@ increase() {
   LEVEL=$(pacmd list-sinks | grep -A 7 "\* index" | grep volume | awk -F/ '{print $2}' | tr -d ' ' | sed 's/%$//')
   DEFAULT_SOURCE=$(pacmd list-sinks | awk '/\*/,EOF {print $3; exit}')
   
-  pactl set-sink-volume "$DEFAULT_SOURCE" +5%
-  if [[ "$LEVEL" -ge "65" ]]; then
+  if [[ "$LEVEL" -eq 100 ]]; then
+    notify_template "critical" "$UP" " Volume Warning!" "Abnormal volume level. Level: 100%"
+  elif [[ "$LEVEL" -ge "65" ]]; then
+    pactl set-sink-volume "$DEFAULT_SOURCE" +5%
     notify_template "critical" "$UP" " Volume Warning!" "Abnormal volume level. Level: $(( $LEVEL + 5 ))%"
   else 
+    pactl set-sink-volume "$DEFAULT_SOURCE" +5%
     notify_template "medium" "$UP" "Volume Increased" "Increased volume by 5%. Level: $(( $LEVEL + 5 ))%"
   fi  
 }
@@ -49,7 +52,9 @@ decrease() {
   DEFAULT_SOURCE=$(pacmd list-sinks | awk '/\*/,EOF {print $3; exit}')
   
   pactl set-sink-volume "$DEFAULT_SOURCE" -5%
-  if [[ "$LEVEL" -ge 65 ]]; then
+  if [[ "$LEVEL" -eq 0 ]]; then
+    notify_template "critical" "$DOWN" " Volume Warning!" "Inaudible volume level. Level: 0%"
+  elif [[ "$LEVEL" -ge 65 ]]; then
     notify_template "critical" "$DOWN" " Volume Warning!" "Abnormal volume level. Level: $(( $LEVEL - 5 ))%"
   else 
     notify_template "medium" "$DOWN" "Volume Decreased" "Decreased volume by 5%. Level: $(( $LEVEL - 5 ))%"

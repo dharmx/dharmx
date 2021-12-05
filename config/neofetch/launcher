@@ -59,7 +59,7 @@ ASCII PRESETS: --preset
   bunny
   nezuko
   weird
-  hostname
+  hostname [NOT IMPLEMENTED]
 
 EXAMPLES: 
   1. ./launcher --verycold
@@ -70,6 +70,12 @@ EXAMPLES:
   2. ./launcher --flowerskull semipolar
      This will print the flowerskull neofetch configuration with the semipolar
      skull image.
+  
+  3. ./launcher --preset lmao
+     This will print the lmao ascii text art i.e. located in the asciis directory.
+
+  4. ./launcher --preset list 
+     This will list all of the presets that are currently available.
 EOF
 }
 
@@ -139,11 +145,41 @@ eval_asciis() {
       eval "$NEOFETCH $CONFIGS/asciisq.conf --source $ASCIIS/chika"
       ;;
     yamete)
-      eval "$NEOFETCH $CONFIGS/asciisq.conf --source $ASCIIS/hentai"
+      eval "$NEOFETCH $CONFIGS/asciisq-v2.conf"
+      ;;
+    lmao)
+      eval "$NEOFETCH $CONFIGS/asciisq-v2.conf --source $ASCIIS/lmao"
+      ;;
+    surprisepika)
+      eval "$NEOFETCH $CONFIGS/asciisq-v2.conf --source $ASCIIS/surprise-pikachu"
+      ;;
+    uwu)
+      eval "$NEOFETCH $CONFIGS/asciisq-very-minimal.conf --source $ASCIIS/uwu"
+      ;;
+    uwuhd)
+      eval "$NEOFETCH $CONFIGS/asciisq-v2.conf --source $ASCIIS/uwu-hd"
+      ;;
+    wut)
+      eval "$NEOFETCH $CONFIGS/asciisq-v2.conf --source $ASCIIS/wut"
+      ;;
+    saitama)
+      eval "$NEOFETCH $CONFIGS/asciisq-v2.conf --source $ASCIIS/saitama-arch --separator ' '"
+      ;;
+    datealive)
+      eval "$NEOFETCH $CONFIGS/fullscreen.conf --source $ASCIIS/date-a-live"
+      ;;
+    bunny)
+      eval "$NEOFETCH $CONFIGS/fullscreen-abnormal.conf --source $ASCIIS/bunny-girl"
+      ;;
+    nezuko)
+      eval "$NEOFETCH $CONFIGS/fullscreen.conf --source $ASCIIS/nezuko"
+      ;;
+    list)
+      help | tail -n35 | head -n19
       ;;
     *)
       echo "Invalid preset!"; echo
-      help | tail -n29 | head -n19
+      help | tail -n35 | head -n19
       ;;
   esac
 }

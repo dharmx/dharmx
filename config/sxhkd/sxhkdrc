@@ -184,6 +184,35 @@ XF86MonBrightnessDown
 XF86RFKill
         $XDG_CONFIG_HOME/sxhkd/scripts/airplane.bash
 
+# mpd audio configurations
+## increase volume
+shift + XF86AudioRaiseVolume 
+        mpc volume +5
+
+## decrease volume
+shift + XF86AudioLowerVolume 
+        mpc volume -5
+
+## mute vloume
+shift + XF86AudioMute 
+        mpc volume 0
+
+## play
+shift + XF86AudioPlay 
+        mpc toggle
+
+## stop 
+shift + XF86AudioStop 
+        mpc stop
+
+# next audio
+shift + XF86AudioNext 
+        mpc next
+
+# previous audio
+shift + XF86AudioPrev 
+        mpc prev
+
 # rofi app menu
 super + d 
         rofi -show
@@ -214,7 +243,7 @@ ctrl + alt + KP_Delete
 
 ## night mode
 super + n
-        $XDG_CONFIG_HOME/redshift/redshift
+        $XDG_CONFIG_HOME/sxhkd/scripts/redshift-toggle.bash
 
 ## jgmenu
 super + button3

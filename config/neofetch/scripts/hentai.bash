@@ -20,7 +20,7 @@ if [ "$format" = ".gif" ]; then
 fi
 
 if [ "$TERM" = "xterm-kitty" ]; then
-  command -v convert > /dev/null 2>&1 && neofetch --config "$XDG_CONFIG_HOME/neofetch/config-hentai-minimal.conf" --source "$tmpfile$format" --backend kitty || kitty_imagemagick_warn=true
+  command -v convert > /dev/null 2>&1 && neofetch --config "$XDG_CONFIG_HOME/neofetch/configs/flowerskull.conf" --source "$tmpfile$format" || kitty_imagemagick_warn=true
 else 
   printf "[36m[1mNot Supported[0m\n"
 fi

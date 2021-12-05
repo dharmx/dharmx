@@ -42,6 +42,7 @@ fi
 
 if [ -x "$(command -v neofetch)" ]; then
     LAUNCHER="$XDG_CONFIG_HOME/neofetch/launcher"
+    alias fetch="$LAUNCHER"
 
     alias coldarch="$LAUNCHER --coldarch"
     alias verycold="$LAUNCHER --verycoldarch"
@@ -51,6 +52,7 @@ if [ -x "$(command -v neofetch)" ]; then
     alias fspolar="$LAUNCHER --flowerskull polar"
     alias fswarm="$LAUNCHER --flowerskull warm"
     alias fsauro="$LAUNCHER --flowerskull aurorae"
+    unset LAUNCHER
 fi
 
 if [ -x "$(command -v ripgrep)" ]; then
