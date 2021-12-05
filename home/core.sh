@@ -13,5 +13,5 @@ cless(){
 }
 
 cmore(){
-  pygmentize -g $1 | less
+  pygmentize -g $1 | more
 }
