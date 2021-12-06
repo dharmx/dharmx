@@ -1,26 +1,3 @@
-#include "nord"
-
-! URxvt Configuration
-URxvt.font:                       xft:JetBrainsMono Nerd Font Mono:size=14:autohint=true,xft:Noto Color Emoji:pixelsize=12:antialias=false,xft:Monospace:size=11:autohint=true
-Xft.lcdfilter:                    lcddefault
-Xft.dpi:                          97
-URxvt.geometry:                   84x16
-URxvt.internalBorder:             10
-URxvt.cursorBlink:                false
-URxvt.cursorUnderline:            false
-URxvt.saveLines:                  8192
-URxvt.scrollBar:                  false
-URxvt.scrollBar_right:            false
-URxvt.scrollBar_floating:         false
-URxvt.scrollstyle:                plain
-URxvt.scrollWithBuffer:           false
-URxvt.urgentOnBell:               false
-URxvt.depth:                      10
-URxvt.iso14755:                   false
-URxvt.iconFile:                   /usr/share/icons/Zafiro-Icons-Dark-Blue-f/apps/scalable/urxvt.svg
-!Uncomment below if too much font spacing
-!URxvt.letterSpace: -1
-
 ! URxvt Extensions
 URxvt.perl-ext-common:            default,tabbedex,url-select
 URxvt.keysym.Control-Shift-C:     eval:selection_to_clipboard
@@ -59,10 +36,4 @@ URxvt.keysym.Control-minus:       resize-font:smaller
 URxvt.keysym.Control-plus:        resize-font:bigger
 URxvt.keysym.Control-equal:       resize-font:reset
 URxvt.keysym.Control-question:    resize-font:show
-
-! URL Select Ext
-URxvt.keysym.Control-Shift-U:     url-select:select_next
-URvxt.url-select.button:          2
-URxvt.url-select.launcher:        qutebrowser
-URxvt.url-select.underline:       true
 

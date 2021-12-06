@@ -1,0 +1,30 @@
+#include "nord"
+#include "fonts"
+#include "bindings"
+
+! URxvt Configuration
+Xft.lcdfilter:                    lcddefault
+Xft.dpi:                          97
+URxvt.geometry:                   84x16
+URxvt.internalBorder:             10
+URxvt.cursorBlink:                false
+URxvt.cursorUnderline:            false
+URxvt.saveLines:                  8192
+URxvt.scrollBar:                  false
+URxvt.scrollBar_right:            false
+URxvt.scrollBar_floating:         false
+URxvt.scrollstyle:                plain
+URxvt.scrollWithBuffer:           false
+URxvt.urgentOnBell:               false
+URxvt.depth:                      10
+URxvt.iso14755:                   false
+URxvt.iconFile:                   /usr/share/icons/Zafiro-Icons-Dark-Blue-f/apps/scalable/urxvt.svg
+!Uncomment below if too much font spacing
+!URxvt.letterSpace: -1
+
+! URL Select Ext
+URxvt.keysym.Control-Shift-U:     url-select:select_next
+URvxt.url-select.button:          2
+URxvt.url-select.launcher:        qutebrowser
+URxvt.url-select.underline:       true
+

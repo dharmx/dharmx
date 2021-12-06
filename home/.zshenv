@@ -18,3 +18,6 @@ export XDG_RUNTIME_DIR="/run/user/$(id -u)"
 export XDG_DATA_DIRS=/usr/local/share:/usr/share:/var/lib/flatpak/exports/share:$XDG_DATA_HOME/flatpak/exports/share
 # export XDG_PUBLICSHARE_DIR=
 
+export TERMINAL="kitty"
+export BROWSER="qutebrowser"
+
