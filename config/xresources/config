@@ -18,7 +18,7 @@ URxvt.scrollWithBuffer:           false
 URxvt.urgentOnBell:               false
 URxvt.depth:                      10
 URxvt.iso14755:                   false
-URxvt.iconFile:                   /usr/share/icons/Zafiro-Icons-Dark-Blue-f/apps/scalable/urxvt.svg
+URxvt.iconFile:                   ~/.icons/Zafiro-Icons-Light/apps/scalable/urxvt.svg
 !Uncomment below if too much font spacing
 !URxvt.letterSpace: -1
 

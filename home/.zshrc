@@ -7,10 +7,9 @@ export ZSH="$HOME/.oh-my-zsh"
 ZSH_THEME="powerlevel10k/powerlevel10k"
 #ZSH_THEME="simonoff"
 
-# alias-finder battery catimg common-aliases copydir copyfile 
-# geeknote git-extra history-substring-search python 
-# copyfile aliases colorize history
-# npm archlinux pip node command-not-found cp extract copydir 
+# battery catimg 
+# history-substring-search python 
+# npm pip node  
 plugins=(
     git
     colored-man-pages
@@ -18,7 +17,10 @@ plugins=(
     sudo
     zsh-syntax-highlighting 
     zsh-autosuggestions
+    colorize  
     zsh-autocomplete
+    command-not-found
+    geeknote 
 )
 
 source $ZSH/oh-my-zsh.sh
@@ -94,6 +96,7 @@ alias zedit="nv $HOME/.zshrc"
 alias bedit="nv $HOME/.bashrc"
 alias fedit="nv $XDG_CONFIG_HOME/fish/config.fish"
 alias p10kedit="nv $HOME/.p10k.zsh"
+alias kev="xev -event keyboard"
 
 alias pipes1="lam -e pipes1"
 alias pipes2="lam -e pipes2"
@@ -101,6 +104,7 @@ alias pipes2-slim="lam -e pipes2-slim"
 alias rain="lam -e rain"
 
 alias cclock="watch -t -n1 'date +%T | figlet' | lolcat"
+alias ccbonsai="cbonsai -ilt 0.02 -c '  ,  ,  ,  ,  ' -L 80"
 alias fzf="fzf --prompt ' ' --pointer '->'"
 
 alias yts="ytfzf -t"
@@ -397,6 +401,10 @@ alias -s rar="unrar l"
 alias -s tar="tar tf"
 alias -s tar.gz="echo "
 alias -s ace="unace l"
+
+alias java="$HOME/.jdks/jdk-16.0.1/bin/java"
+alias javac="$HOME/.jdks/jdk-16.0.1/bin/javac"
+alias jshell="$HOME/.jdks/jdk-16.0.1/bin/jshell"
 
 export VISUAL=nvim;
 export EDITOR=nvim;

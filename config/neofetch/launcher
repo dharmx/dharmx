@@ -62,8 +62,8 @@ ASCII PRESETS: --preset
   hostname [NOT IMPLEMENTED]
 
 EXAMPLES: 
-  1. ./launcher --verycold
-     This will print the verycold neofetch configuration. Note that, this
+  1. ./launcher --verycoldarch
+     This will print the verycoldarch neofetch configuration. Note that, this
      particular configuration will look better if the terminal is in fullscreen
      mode.
 
@@ -84,7 +84,8 @@ eval_flavor_verycoldarch() {
   FLAVORS=(justarch polararchdimmed polararch)
 
   if echo ${FLAVORS[@]} | grep -qw "$1"; then
-    eval "$NEOFETCH $VERYCOLD_CONFIG --source $IMAGES/$1.png"
+    echo "$NEOFETCH $VERYCOLDARCH_CONFIG --source $IMAGES/$1.png"
+    eval "$NEOFETCH $VERYCOLDARCH_CONFIG --source $IMAGES/$1.png"
   else 
     echo "No such flavor exists!"; echo
     help | head -n11 | tail -n4
@@ -96,7 +97,7 @@ eval_flavor_coldarch() {
   FLAVORS=(justarch polararchdimmed polararch)
 
   if echo ${FLAVORS[@]} | grep -qw "$1"; then
-    eval "$NEOFETCH $COLD_CONFIG --source $IMAGES/$1.png"
+    eval "$NEOFETCH $COLDARCH_CONFIG --source $IMAGES/$1.png"
   else 
     echo "No such flavor exists!"; echo
     help | head -n11 | tail -n4
@@ -123,7 +124,7 @@ eval_flavor_food() {
     eval "$NEOFETCH $FOOD_CONFIG --source $IMAGES/$1.png"
   else 
     echo "No such flavor exists!"; echo
-    help | tail -n32 | head -n4
+    help | tail -n50 | head -n4
   fi
 }
 
@@ -221,6 +222,13 @@ case "$1" in
     ;;
   --help | -h)
     help
+    ;;
+  --list)
+    echo "CONFIGS:"
+    for file in $(ls $CONFIGS)
+    do
+      echo "    $file"
+    done
     ;;
   *)
     echo "No such option!"; echo

@@ -54,11 +54,18 @@ alias fedit "nv $XDG_CONFIG_HOME/fish/config.fish"
 alias zedit "nv $HOME/.zshrc"
 alias bedit "nv $HOME/.bashrc"
 alias p10kedit "nv $HOME/.p10k.zsh"
+alias kev="xev -event keyboard"
+
 alias fzf "fzf --prompt ' ' --pointer '->'"
+alias ccbonsai="cbonsai -ilt 0.02 -c '  ,  ,  ,  ,  ' -L 80"
 alias yts="ytfzf -t"
 
 alias pipes1 "lam -e pipes1"
 alias pipes2 "lam -e pipes2"
 alias pipes2-slim "lam -e pipes2-slim"
 alias rain "lam -e rain"
+
+alias java="$HOME/.jdks/jdk-16.0.1/bin/java"
+alias javac="$HOME/.jdks/jdk-16.0.1/bin/javac"
+alias jshell="$HOME/.jdks/jdk-16.0.1/bin/jshell"
 

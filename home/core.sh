@@ -1,5 +1,4 @@
-#ccat&cless&cmore
-ccat (){
+function ccat() {
   if $2
   then
       pygmentize -g $1 | cat
@@ -8,10 +7,10 @@ ccat (){
   fi
 }
 
-cless(){
+function cless() {
   pygmentize -g $1 | less
 }
 
-cmore(){
+function cmore() {
   pygmentize -g $1 | more
 }

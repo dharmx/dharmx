@@ -25,7 +25,7 @@ bspc config gapless_monocle      false
 # bspc rule -r *:*
 
 # Program settings 
-bspc rule -a Screenkey --unmanage
+bspc rule -a Screenkey manage=off
 bspc rule -a Gimp desktop='^8' state=floating follow=on
 bspc rule -a Chromium desktop='^2'
 bspc rule -a mplayer2 state=floating
@@ -40,14 +40,12 @@ bspc rule -a Zathura state=floating
 bspc rule -a conky sticky=off manage=off lower=on
 bspc rule -a lxappearance state=floating center=true
 bspc rule -a tilda state=floating center=true border=off sticky=on
-bspc rule -a Tilda state=floating center=true border=off sticky=on
 bspc rule -a tilix state=floating center=true border=off sticky=on
-bspc rule -a Tilix state=floating center=true border=off sticky=on
 bspc rule -a feh state=floating floating=true manage=on center=true
 bspc rule -a Gpick state=floating floating=true manage=on center=true 
 bspc rule -a jgmenu manage=off floating=true state=floating
-
-bspc rule -a kitty state=floating floating=true center=true
+bspc rule -a Pavucontrol state=floating center=true
+bspc rule -a kitty state=tiled floating=false center=true
 
 $XDG_CONFIG_HOME/bspwm/exports &
 $XDG_CONFIG_HOME/bspwm/launcher &
