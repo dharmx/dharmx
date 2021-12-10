@@ -1,6 +1,18 @@
+#-------------------------------------
+# Backgrounds
+# Background 1: Tooltip
+rounded = 10
+border_sides = TBLR
+background_color = #4C566A 0
+border_color = #000000 0
+background_color_hover = #000000 0
+border_color_hover = #000000 0
+background_color_pressed = #000000 0
+border_color_pressed = #000000 0
+
 # Panel
 panel_items = C
-panel_size = 300% 200
+panel_size = 100% 200
 panel_margin = 0 400
 panel_padding = 2 0 2
 wm_menu = 1
@@ -34,4 +46,13 @@ tooltip_show_timeout = 0.5
 tooltip_hide_timeout = 0.1
 tooltip_padding = 4 4
 tooltip_font_color = #dddddd 100
+
+#-------------------------------------
+# Tooltip
+tooltip_show_timeout = 0.5
+tooltip_hide_timeout = 0.1
+tooltip_padding = 2 5
+tooltip_font_color = #d8dee9 100
+tooltip_font = Iosevka 10
+tooltip_background_id = 1
 

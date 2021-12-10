@@ -1,0 +1,113 @@
+#-------------------------------------
+# Backgrounds
+# Background 1: Panel
+rounded = 0
+border_width = 0
+border_sides = TBLR
+border_content_tint_weight = 0
+background_content_tint_weight = 0
+background_color = #000000 0
+border_color = #000000 0
+background_color_hover = #000000 0
+border_color_hover = #000000 0
+background_color_pressed = #000000 0
+border_color_pressed = #000000 0
+
+# Background 2: Tooltip
+rounded = 0
+border_width = 0
+border_sides = TBLR
+border_content_tint_weight = 0
+background_content_tint_weight = 0
+background_color = #3c4253 100
+border_color = #000000 0
+background_color_hover = #000000 0
+border_color_hover = #000000 0
+background_color_pressed = #000000 0
+border_color_pressed = #000000 0
+
+#-------------------------------------
+# Panel
+panel_items = EEEE
+panel_size = 100% 30
+panel_margin = 0 370
+panel_padding = 2 0 2
+panel_background_id = 1
+wm_menu = 1
+panel_position = top center horizontal
+panel_layer = bottom
+panel_monitor = all
+panel_shrink = 1
+strut_policy = none
+panel_window_name = tint2
+disable_transparency = 1
+mouse_effects = 1
+mouse_hover_icon_asb = 100 0 10
+mouse_pressed_icon_asb = 100 0 5
+scale_relative_to_dpi = 0
+
+#-------------------------------------
+# Executor 1
+execp = new
+execp_command = $XDG_CONFIG_HOME/tint2/scripts/free.bash
+execp_interval = 5
+execp_markup = 1
+execp_monitor = primary
+execp_tooltip = Free RAM
+execp_font = Iosevka 13
+execp_font_color = #cdd6e7 90
+execp_padding = 30 0
+execp_background_id = 1
+execp_centered = 1
+
+#-------------------------------------
+# Executor 2
+execp = new
+execp_command = $XDG_CONFIG_HOME/tint2/scripts/updates.bash
+execp_interval = 1000
+execp_markup = 1
+execp_monitor = primary
+execp_tooltip = Number of packages that needs to be updated (AUR + OFFICIAL)
+execp_font = Iosevka 13
+execp_font_color = #000000 100
+execp_padding = 30 0
+execp_background_id = 1
+execp_centered = 1
+
+#-------------------------------------
+# Executor 3
+execp = new
+execp_command = $XDG_CONFIG_HOME/tint2/scripts/temp-cpu-gpu.bash
+execp_interval = 100
+execp_markup = 1
+execp_monitor = primary
+execp_tooltip = Temperatures (GPU Left, CPU Right)
+execp_font = Iosevka 13
+execp_font_color = #000000 100
+execp_padding = 30 0
+execp_background_id = 1
+execp_centered = 1
+
+#-------------------------------------
+# Executor 4
+execp = new
+execp_command = $XDG_CONFIG_HOME/tint2/scripts/loadavg.bash
+execp_interval = 5
+execp_markup = 1
+execp_monitor = all
+execp_tooltip = Average CPU Load
+execp_font = Iosevka 13
+execp_font_color = #000000 100
+execp_padding = 30 0
+execp_background_id = 1
+execp_centered = 1
+
+#-------------------------------------
+# Tooltip
+tooltip_show_timeout = 0.5
+tooltip_hide_timeout = 0.1
+tooltip_padding = 15 10
+tooltip_background_id = 2
+tooltip_font_color = #cdd6e7 90
+tooltip_font = Iosevka 9
+

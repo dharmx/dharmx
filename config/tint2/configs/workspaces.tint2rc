@@ -4,9 +4,19 @@
 rounded = 8
 background_color = #000000 0
 border_color = #000000 0
-background_color_hover = #4c566a 100
 border_color_hover = #000000 0
+background_color_hover = #4c566a 100
 background_color_pressed = #373d4b 100
+border_color_pressed = #000000 0
+
+# Background 2: Tooltip
+rounded = 10
+border_sides = TBLR
+background_color = #4C566A 0
+border_color = #000000 0
+background_color_hover = #000000 0
+border_color_hover = #000000 0
+background_color_pressed = #000000 0
 border_color_pressed = #000000 0
 
 #-------------------------------------
@@ -29,6 +39,7 @@ mouse_pressed_icon_asb = 100 0 0
 
 #-------------------------------------
 # Clock
+clock_tooltip = Time
 time1_format = %H
 time2_format = %M
 time1_font = Iosevka Bold 20
@@ -38,6 +49,7 @@ clock_padding = 5 20
 clock_background_id = 1
 clock_lclick_command = $XDG_CONFIG_HOME/tint2/scripts/notify-time.bash
 clock_rclick_command = $XDG_CONFIG_HOME/tint2/scripts/notify-date.bash
+# button_tooltip = Date and Time
 
 #-------------------------------------
 # Battery
@@ -82,6 +94,7 @@ button_font_color = #5e81ac 100
 button_padding = 35 0
 button_background_id = 1
 button_centered = 1
+button_tooltip = 1
 
 #-------------------------------------
 # Button 2
@@ -93,6 +106,7 @@ button_font_color = #81a1c1 100
 button_padding = 35 0
 button_background_id = 1
 button_centered = 1
+button_tooltip = 2
 
 #-------------------------------------
 # Button 3
@@ -104,6 +118,7 @@ button_font_color = #88c0d0 100
 button_padding = 35 0
 button_background_id = 1
 button_centered = 1
+button_tooltip = 3
 
 #-------------------------------------
 # Button 4
@@ -115,6 +130,7 @@ button_font_color = #8fbcbb 100
 button_padding = 35 0
 button_background_id = 1
 button_centered = 1
+button_tooltip = 4
 
 #-------------------------------------
 # Button 5
@@ -126,6 +142,7 @@ button_font_color = #9fd1c9 100
 button_padding = 35 0
 button_background_id = 1
 button_centered = 1
+button_tooltip = 5
 
 #-------------------------------------
 # Button 6
@@ -137,12 +154,14 @@ button_font_color = #bf616a 100
 button_padding = 4 0
 button_background_id = 1
 button_centered = 1
+button_tooltip = Powermenu (Shutdown, Reboot, Lock, Sleep, Logout)
 
 #-------------------------------------
 # Tooltip
 tooltip_show_timeout = 0.5
 tooltip_hide_timeout = 0.1
-tooltip_padding = 2 2
-tooltip_font_color = #222222 100
-tooltip_font = sans 9
+tooltip_padding = 15 10
+tooltip_font_color = #d8dee9 100
+tooltip_font = Iosevka 10
+tooltip_background_id = 2
 

@@ -9,7 +9,8 @@ if [[ "$(pidof tint2)" != "" ]]; then
 fi
 
 tint2 -c "$CONFIG_DIR/bigtime.tint2rc" &
-tint2 -c "$CONFIG_DIR/hwutils.tint2rc" &
+tint2 -c "$CONFIG_DIR/hwcontrol.tint2rc" &
+tint2 -c "$CONFIG_DIR/hwstats.tint2rc" &
 tint2 -c "$CONFIG_DIR/launcher.tint2rc" &
 tint2 -c "$CONFIG_DIR/workspaces.tint2rc" &
 tint2 -c "$CONFIG_DIR/tasks.tint2rc" &
