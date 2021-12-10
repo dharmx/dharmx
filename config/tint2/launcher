@@ -1,0 +1,15 @@
+#!/usr/bin/env bash
+
+CONFIG_DIR="$XDG_CONFIG_HOME/tint2/configs"
+
+if [[ "$(pidof tint2)" != "" ]]; then 
+  killall tint2
+fi
+
+tint2 -c "$CONFIG_DIR/bigtime.tint2rc" &
+tint2 -c "$CONFIG_DIR/hwutils.tint2rc" &
+tint2 -c "$CONFIG_DIR/launcher.tint2rc" &
+tint2 -c "$CONFIG_DIR/workspaces.tint2rc" &
+tint2 -c "$CONFIG_DIR/tasks.tint2rc" &
+exit 0
+

@@ -52,6 +52,7 @@ if [ -x "$(command -v neofetch)" ]; then
     alias fspolar="$LAUNCHER --flowerskull polar"
     alias fswarm="$LAUNCHER --flowerskull warm"
     alias fsauro="$LAUNCHER --flowerskull aurorae"
+    alias fred="neofetch --config ~/.config/neofetch/configs/flowerskull.conf --source ~/.config/neofetch/images/red.png"
     unset LAUNCHER
 fi
 

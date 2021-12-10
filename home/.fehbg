@@ -1,2 +1,2 @@
 #!/bin/sh
-feh --no-fehbg --bg-scale "$XDG_PICTURES_DIR/wallpapers/nord/covers.png"
+feh --no-fehbg --bg-scale '/home/maker/Pictures/wallpapers/nord/covers.png' 
