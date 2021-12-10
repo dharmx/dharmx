@@ -4,6 +4,8 @@ CONFIG_DIR="$XDG_CONFIG_HOME/tint2/configs"
 
 if [[ "$(pidof tint2)" != "" ]]; then 
   killall tint2
+  bspc config left_padding 0
+  exit 0
 fi
 
 tint2 -c "$CONFIG_DIR/bigtime.tint2rc" &
