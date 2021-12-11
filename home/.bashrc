@@ -65,7 +65,7 @@ if [ -x "$(command -v ranger)" ]; then
 fi    
 
 alias logout="bspc quit"
-alias suspend="systemctl suspend"
+alias suspend="systemctl suspend; locklauncher"
 
 alias cls="clear"
 alias la="ls -la"

@@ -24,7 +24,7 @@ alias unmount-ssd "udisksctl unmount -b /dev/nvme0n1p1"
 
 alias logout "killall bspwm"
 alias lock "betterlockscreen -l"
-alias suspend "systemctl suspend"
+alias suspend "systemctl suspend; locklauncher"
 
 alias pac "sudo pacman"
 alias commit "git add . && git commit -m"
