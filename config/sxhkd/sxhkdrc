@@ -134,7 +134,7 @@ super + {Left,Down,Up,Right}
 
 # lockscreen bind
 super + slash 
-        betterlockscreen -l dim --off 5
+        locklauncher
 
 #XF86WebCam
 # pactl audio configurations
