@@ -41,6 +41,9 @@ CONFIG: --flowerskull
               polar
               default
 
+CONFIG: --waifu 
+              1-30
+
 ASCII PRESETS: --preset
   bonsai
   bruh
@@ -76,6 +79,9 @@ EXAMPLES:
 
   4. ./launcher --preset list 
      This will list all of the presets that are currently available.
+
+  5. ./launcher --waifu 1
+     This will print the waifu neofetch configuration with the 1 flavor.
 EOF
 }
 
@@ -100,7 +106,7 @@ eval_flavor_coldarch() {
     eval "$NEOFETCH $COLDARCH_CONFIG --source $IMAGES/$1.png"
   else 
     echo "No such flavor exists!"; echo
-    help | head -n11 | tail -n4
+    help | head -n16 | tail -n4
   fi
 }
 
@@ -112,7 +118,7 @@ eval_flavor_flowerskull() {
     eval "$NEOFETCH $FLOWERSKULL_CONFIG --source $IMAGES/$1-skull.png"
   else 
     echo "No such flavor exists!"; echo
-    help | tail -n27 | head -n9
+    help | tail -n27 | head -n8
   fi
 }
 
@@ -124,7 +130,23 @@ eval_flavor_food() {
     eval "$NEOFETCH $FOOD_CONFIG --source $IMAGES/$1.png"
   else 
     echo "No such flavor exists!"; echo
-    help | tail -n50 | head -n4
+    help | tail -n56 | head -n4
+  fi
+}
+
+eval_flavor_waifu() {
+  WAIFU_CONFIG="$CONFIGS/waifu.conf"
+  FLAVORS=(
+    1 2 3 4 5 6 7 8 9 10 
+    11 12 13 14 15 16 17 18 19 20
+    21 22 23 24 25 26 27 28 29 30
+  )
+
+  if echo ${FLAVORS[@]} | grep -qw "$1"; then
+    eval "$NEOFETCH $WAIFU_CONFIG --source $IMAGES/waifus/$1.png"
+  else
+    echo "No such flavor exists!"; echo
+    help | tail -n41 | head -n2
   fi
 }
 
@@ -176,11 +198,11 @@ eval_asciis() {
       eval "$NEOFETCH $CONFIGS/fullscreen.conf --source $ASCIIS/nezuko"
       ;;
     list)
-      help | tail -n35 | head -n19
+      help | tail -n38 | head -n19
       ;;
     *)
       echo "Invalid preset!"; echo
-      help | tail -n35 | head -n19
+      help | tail -n38 | head -n19
       ;;
   esac
 }
@@ -205,6 +227,13 @@ case "$1" in
       eval "$NEOFETCH $CONFIGS/flowerskull.conf"
     else
       eval_flavor_flowerskull "$2"
+    fi
+    ;;
+  --waifu)
+    if [[ "$2" == "" ]]; then
+      eval "$NEOFETCH $CONFIGS/waifu.conf"
+    else
+      eval_flavor_waifu "$2"
     fi
     ;;
   --food)

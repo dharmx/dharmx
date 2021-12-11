@@ -44,6 +44,7 @@ alias floskull "$XDG_CONFIG_HOME/neofetch/launcher --flowerskull"
 alias fspolar "$XDG_CONFIG_HOME/neofetch/launcher --flowerskull polar"
 alias fswarm "$XDG_CONFIG_HOME/neofetch/launcher --flowerskull warm"
 alias fsauro "$XDG_CONFIG_HOME/neofetch/launcher --flowerskull aurorae"
+alias fwaifu "$XDG_CONFIG_HOME/neofetch/launcher --waifu"
 
 alias coldfetch="neofetch --config $XDG_CONFIG_HOME/neofetch/coldfetch.conf"
 alias coldasf="neofetch --config $XDG_CONFIG_HOME/neofetch/cold-as-fuck.conf"
@@ -58,6 +59,7 @@ alias kev="xev -event keyboard"
 
 alias fzf "fzf --prompt ' ' --pointer '->'"
 alias ccbonsai="cbonsai -ilt 0.02 -c '  ,  ,  ,  ,  ' -L 80"
+alias tty-clock="tty-clock -S -c -C4 -D -s -n"
 alias yts="ytfzf -t"
 
 alias pipes1 "lam -e pipes1"

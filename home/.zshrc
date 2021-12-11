@@ -52,7 +52,7 @@ if [ -x "$(command -v neofetch)" ]; then
     alias fspolar="$LAUNCHER --flowerskull polar"
     alias fswarm="$LAUNCHER --flowerskull warm"
     alias fsauro="$LAUNCHER --flowerskull aurorae"
-    alias fred="neofetch --config ~/.config/neofetch/configs/flowerskull.conf --source ~/.config/neofetch/images/red.png"
+    alias fwaifu="$LAUNCHER --waifu"
     unset LAUNCHER
 fi
 
@@ -105,6 +105,7 @@ alias pipes2-slim="lam -e pipes2-slim"
 alias rain="lam -e rain"
 
 alias cclock="watch -t -n1 'date +%T | figlet' | lolcat"
+alias tty-clock="tty-clock -S -c -C4 -D -s -n"
 alias ccbonsai="cbonsai -ilt 0.02 -c '  ,  ,  ,  ,  ' -L 80"
 alias fzf="fzf --prompt ' ' --pointer '->'"
 

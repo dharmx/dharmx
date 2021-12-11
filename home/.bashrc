@@ -29,6 +29,7 @@ if [ -x "$(command -v neofetch)" ]; then
     alias fspolar="$LAUNCHER --flowerskull polar"
     alias fswarm="$LAUNCHER --flowerskull warm"
     alias fsauro="$LAUNCHER --flowerskull aurorae"
+    alias fwaifu="$LAUNCHER --waifu"
 fi
 
 if [ -x "$(command -v ripgrep)" ]; then
@@ -83,6 +84,7 @@ alias rain="lam -e rain"
 alias fzf="fzf --prompt ' ' --pointer '->'"
 alias ccbonsai="cbonsai -ilt 0.02 -c '  ,  ,  ,  ,  ' -L 80"
 alias cclock="watch -t -n1 'date +%T | figlet' | lolcat"
+alias tty-clock="tty-clock -S -c -C4 -D -s -n"
 
 alias yts="ytfzf -t"
 alias ani720="ani-cli -q 720"
