@@ -25,5 +25,7 @@ if [[ "$1" == "--launch" ]]; then
   launch 
 elif [[ "$1" == "--toggle-panel" ]]; then
   toggle_panel
+elif [[ "$1" == "--kill" ]]; then
+  killall tint2
 fi
 
