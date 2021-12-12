@@ -67,6 +67,13 @@ alias pipes2 "lam -e pipes2"
 alias pipes2-slim "lam -e pipes2-slim"
 alias rain "lam -e rain"
 
+alias yts "ytfzf -t"
+alias ani720 "ani-cli -q 720"
+alias ani480 "ani-cli -q 480"
+alias pisend "$XDG_CONFIG_HOME/picom/launcher"
+alias polysend "$XDG_CONFIG_HOME/polybar/launcher"
+alias tintsend "$XDG_CONFIG_HOME/tint2/launcher"
+
 alias java="$HOME/.jdks/jdk-16.0.1/bin/java"
 alias javac="$HOME/.jdks/jdk-16.0.1/bin/javac"
 alias jshell="$HOME/.jdks/jdk-16.0.1/bin/jshell"

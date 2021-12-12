@@ -114,6 +114,7 @@ alias ani720="ani-cli -q 720"
 alias ani480="ani-cli -q 480"
 alias pisend="$XDG_CONFIG_HOME/picom/launcher"
 alias polysend="$XDG_CONFIG_HOME/polybar/launcher"
+alias tintsend="$XDG_CONFIG_HOME/tint2/launcher"
 
 alias -='cd -' 2> /dev/null
 alias ...='../..'

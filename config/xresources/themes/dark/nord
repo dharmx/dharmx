@@ -1,5 +1,5 @@
 *fading:       35
-*fadeColor:    nord3
+*fadeColor:    #2e3440
 
 *.foreground:  #d8dee9
 *.background:  #2e3440

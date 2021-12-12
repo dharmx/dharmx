@@ -253,10 +253,12 @@ super + button3
 # fullscreen screenshot save
 super + Print 
         $XDG_CONFIG_HOME/sxhkd/scripts/screenshot --fullscreen
+        dunstify -u normal -i "$XDG_PICTURES_DIR/$(date).png" "Screenshot Saved" "Your screenshot has been saved to ~/Pictures"
 
 # cropped save
 super + shift + x 
         $XDG_CONFIG_HOME/sxhkd/scripts/screenshot --selected
+        dunstify -u normal -i "$XDG_PICTURES_DIR/$(date).png" "Screenshot Saved" "Your screenshot has been saved to ~/Pictures"
 
 # clipboard fullscreen
 Print 
@@ -282,12 +284,55 @@ super + r
 
 # polybar hide/show
 super + shift + slash
-        {polybar-msg cmd hide && bspc config top_padding 0, polybar-msg cmd show}
-    
+        {polybar-msg cmd hide && bspc config top_padding 0,\
+                polybar-msg cmd show}
+
+# hide tint2 panel
+super + shift + backslash
+        $XDG_CONFIG_HOME/tint2/launcher --toggle-panel
+
 # cycle borders
 super + minus
-        {bspc config border_width 0,bspc config border_width 1,bspc config border_width 2,bspc config border_width 3,bspc config border_width 4,bspc config border_width 5,bspc config border_width 6,bspc config border_width 7,bspc config border_width 8,bspc config border_width 9,bspc config border_width 10,bspc config border_width 11,bspc config border_width 12,bspc config border_width 13,bspc config border_width 14,bspc config border_width 15,bspc config border_width 16,bspc config border_width 17,bspc config border_width 18,bspc config border_width 19}
+        {bspc config border_width 0,\
+                bspc config border_width 1,\
+                bspc config border_width 2,\
+                bspc config border_width 3,\
+                bspc config border_width 4,\
+                bspc config border_width 5,\
+                bspc config border_width 6,\
+                bspc config border_width 7,\
+                bspc config border_width 8,\
+                bspc config border_width 9,\
+                bspc config border_width 10,\
+                bspc config border_width 11,\
+                bspc config border_width 12,\
+                bspc config border_width 13,\
+                bspc config border_width 14,\
+                bspc config border_width 15,\
+                bspc config border_width 16,\
+                bspc config border_width 17,\
+                bspc config border_width 18,\
+                bspc config border_width 19}
     
 # cycle borders
 super + shift + minus
-        {bspc config window_gap 0,bspc config window_gap 1,bspc config window_gap 2,bspc config window_gap 3,bspc config window_gap 4,bspc config window_gap 5,bspc config window_gap 6,bspc config window_gap 7,bspc config window_gap 8,bspc config window_gap 9,bspc config window_gap 10,bspc config window_gap 11,bspc config window_gap 12,bspc config window_gap 13,bspc config window_gap 14,bspc config window_gap 15,bspc config window_gap 16,bspc config window_gap 17,bspc config window_gap 18,bspc config window_gap 19}
+        {bspc config window_gap 0,\
+                bspc config window_gap 1,\
+                bspc config window_gap 2,\
+                bspc config window_gap 3,\
+                bspc config window_gap 4,\
+                bspc config window_gap 5,\
+                bspc config window_gap 6,\
+                bspc config window_gap 7,\
+                bspc config window_gap 8,\
+                bspc config window_gap 9,\
+                bspc config window_gap 10,\
+                bspc config window_gap 11,\
+                bspc config window_gap 12,\
+                bspc config window_gap 13,\
+                bspc config window_gap 14,\
+                bspc config window_gap 15,\
+                bspc config window_gap 16,\
+                bspc config window_gap 17,\
+                bspc config window_gap 18,\
+                bspc config window_gap 19}
