@@ -22,6 +22,10 @@ super + shift + alt + Return
 super + Escape
 	pkill -USR1 -x sxhkd
 
+# reset bspwm rules and settings
+super + shift + Escape
+        $XDG_CONFIG_HOME/bspwm/defaults
+
 #
 # bspwm hotkeys
 #
@@ -252,24 +256,23 @@ super + button3
 # screenshot configurations
 # fullscreen screenshot save
 super + Print 
-        $XDG_CONFIG_HOME/sxhkd/scripts/screenshot --fullscreen
-        dunstify -u normal -i "$XDG_PICTURES_DIR/$(date).png" "Screenshot Saved" "Your screenshot has been saved to ~/Pictures"
+        $XDG_CONFIG_HOME/sxhkd/scripts/screenshot --fullscreen &
 
 # cropped save
 super + shift + x 
-        $XDG_CONFIG_HOME/sxhkd/scripts/screenshot --selected
-        dunstify -u normal -i "$XDG_PICTURES_DIR/$(date).png" "Screenshot Saved" "Your screenshot has been saved to ~/Pictures"
+        $XDG_CONFIG_HOME/sxhkd/scripts/screenshot --selected &
 
 # clipboard fullscreen
 Print 
         $XDG_CONFIG_HOME/sxhkd/scripts/screenshot --xclip-fullscreen
 
-ctrl + Print
-        flameshot gui
-
 # clipboard cropped
 super + shift + s 
         $XDG_CONFIG_HOME/sxhkd/scripts/screenshot --xclip-cropped
+
+# flameshot snipping tool
+ctrl + Print
+        flameshot gui
 
 # toggle picom
 super + backslash
@@ -291,48 +294,30 @@ super + shift + slash
 super + shift + backslash
         $XDG_CONFIG_HOME/tint2/launcher --toggle-panel
 
-# cycle borders
-super + minus
-        {bspc config border_width 0,\
-                bspc config border_width 1,\
-                bspc config border_width 2,\
-                bspc config border_width 3,\
-                bspc config border_width 4,\
-                bspc config border_width 5,\
-                bspc config border_width 6,\
-                bspc config border_width 7,\
-                bspc config border_width 8,\
-                bspc config border_width 9,\
-                bspc config border_width 10,\
-                bspc config border_width 11,\
-                bspc config border_width 12,\
-                bspc config border_width 13,\
-                bspc config border_width 14,\
-                bspc config border_width 15,\
-                bspc config border_width 16,\
-                bspc config border_width 17,\
-                bspc config border_width 18,\
-                bspc config border_width 19}
+#
+# dynamic gaps
+#
+
+# decrease gaps
+alt + shift + braceleft
+        {bspc config window_gap $(( $(bspc config -d any window_gap) - 5 ))}
     
-# cycle borders
-super + shift + minus
-        {bspc config window_gap 0,\
-                bspc config window_gap 1,\
-                bspc config window_gap 2,\
-                bspc config window_gap 3,\
-                bspc config window_gap 4,\
-                bspc config window_gap 5,\
-                bspc config window_gap 6,\
-                bspc config window_gap 7,\
-                bspc config window_gap 8,\
-                bspc config window_gap 9,\
-                bspc config window_gap 10,\
-                bspc config window_gap 11,\
-                bspc config window_gap 12,\
-                bspc config window_gap 13,\
-                bspc config window_gap 14,\
-                bspc config window_gap 15,\
-                bspc config window_gap 16,\
-                bspc config window_gap 17,\
-                bspc config window_gap 18,\
-                bspc config window_gap 19}
+# increase gaps
+alt + shift + braceright
+        {bspc config window_gap $(( $(bspc config -d any window_gap) + 5 ))}
+
+#
+# dynamic borders
+#
+
+#increase minus
+alt + shift + parenleft
+        {bspc config border_width $(( $(bspc config -d any border_width) - 1 ))}
+
+# increase borders
+alt + shift + parenright
+        {bspc config border_width $(( $(bspc config -d any border_width) + 1 ))}
+
+# cycle between red + 20px border and default border color for the focused window [mark as important]
+super + shift + i
+        $XDG_CONFIG_HOME/sxhkd/scripts/important-marker.bash

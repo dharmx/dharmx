@@ -5,13 +5,18 @@ CLIPBOARD="$XDG_CONFIG_HOME/sxhkd/images/screenshot/clipboard.png"
 
 case "$1" in 
     --selected)
-        maim --select "$SAVEPATH"
+        maim --select "$SAVEPATH" &> /dev/null &
+        wait
+        dunstify -u normal -i "$SAVEPATH" "Screenshot Saved" "Your screenshot has been saved to $SAVEPATH"
         ;;
     --fullscreen)
-        maim "$SAVEPATH"
+        maim "$SAVEPATH" &> /dev/null &
+        wait
+        dunstify -u normal -i "$SAVEPATH" "Screenshot Saved" "Your screenshot has been saved to $SAVEPATH"
         ;;
     --xclip-cropped)
         maim --select | xclip -selection clipboard -t image/png &
+        wait
         dunstify -u normal -i "$CLIPBOARD" "Screenshot Copied" "Your screenshot has been copied to the clipboard"
         ;;
     --xclip-fullscreen)
