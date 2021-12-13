@@ -306,6 +306,14 @@ alt + shift + braceleft
 alt + shift + braceright
         {bspc config window_gap $(( $(bspc config -d any window_gap) + 5 ))}
 
+# decrease gaps for focused desktop
+alt + super + shift + braceleft
+        {bspc config -n focused window_gap $(( $(bspc config -n focused window_gap) - 5 ))}
+
+# increase gaps for focused desktop
+alt + super + shift + braceright
+        {bspc config -n focused window_gap $(( $(bspc config -n focused window_gap) + 5 ))}
+
 #
 # dynamic borders
 #
@@ -318,6 +326,17 @@ alt + shift + parenleft
 alt + shift + parenright
         {bspc config border_width $(( $(bspc config -d any border_width) + 1 ))}
 
+# increase borders for focused node/window
+alt + super + shift + parenleft
+        {bspc config -n focused border_width $(( $(bspc config -n focused border_width) + 1 ))}
+        
+# increase borders for focused node/window
+alt + super + shift + parenright
+        {bspc config -n focused border_width $(( $(bspc config -n focused border_width) - 1 ))}
+        
 # cycle between red + 20px border and default border color for the focused window [mark as important]
 super + shift + i
         $XDG_CONFIG_HOME/sxhkd/scripts/important-marker.bash
+
+# borderless monocle
+

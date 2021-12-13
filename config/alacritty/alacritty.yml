@@ -1,6 +1,6 @@
 import:
   - ~/.config/alacritty/fonts.yml
-  - ~/.config/alacritty/themes.yml
+  - ~/.config/alacritty/themes/Nord.yml
   - ~/.config/alacritty/bindings.yml
 
 env:

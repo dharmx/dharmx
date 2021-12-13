@@ -8,8 +8,8 @@ ZSH_THEME="powerlevel10k/powerlevel10k"
 #ZSH_THEME="simonoff"
 
 # battery catimg 
-# history-substring-search python 
-# npm pip node  
+# history-substring-search 
+# npm node  
 plugins=(
     git
     colored-man-pages
@@ -21,6 +21,8 @@ plugins=(
     zsh-autocomplete
     command-not-found
     geeknote 
+    pip
+    python
 )
 
 source $ZSH/oh-my-zsh.sh
