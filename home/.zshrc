@@ -435,5 +435,5 @@ alias ccat="ccat"
 # alias cat="ccat"
 # alias less="cless"
 
-lam -e panes
+lam -e panes-nord
 printf "\n"
