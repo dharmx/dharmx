@@ -2,41 +2,10 @@ local colors = require("colors").get()
 local lsp = require "feline.providers.lsp"
 
 local icon_styles = {
-   default = {
-      left = "",
-      right = " ",
-      main_icon = "  ",
-      vi_mode_icon = " ",
-      position_icon = " ",
-   },
-   arrow = {
-      left = "",
-      right = "",
-      main_icon = "  ",
-      vi_mode_icon = " ",
-      position_icon = " ",
-   },
-
-   block = {
-      left = " ",
-      right = " ",
-      main_icon = "   ",
-      vi_mode_icon = "  ",
-      position_icon = "  ",
-   },
-
    round_arch = {
       left = "",
-      right = "",
+      right = "",
       main_icon = "  ",
-      vi_mode_icon = " ",
-      position_icon = " ",
-   },
-
-   slant = {
-      left = " ",
-      right = " ",
-      main_icon = "  ",
       vi_mode_icon = " ",
       position_icon = " ",
    },
