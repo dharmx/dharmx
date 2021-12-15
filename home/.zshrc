@@ -431,6 +431,7 @@ source "$HOME"/Dotfiles/nordfiles/home/core.sh
 alias cless="cless"
 alias cmore="cmore"
 alias ccat="ccat"
+alias rebootwlan="nmcli d c wlp0s20f3"
 
 # alias cat="ccat"
 # alias less="cless"

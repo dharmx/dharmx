@@ -64,5 +64,9 @@ hooks.add("install_plugins", function(use)
   use "vimsence/vimsence"
 
   use "nvim-lua/popup.nvim"
+
+  use "Shatur/neovim-session-manager"
+
+  use "liuchengxu/vim-clap"
 end)
 

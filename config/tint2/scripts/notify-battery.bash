@@ -60,9 +60,10 @@ if [[ "$CURRENT_LEVEL" -ge 96 && ("$CURRENT_STATUS" == "Charging" || "$CURRENT_S
 elif [[ "$CURRENT_LEVEL" -ge 96 && "$CURRENT_STATUS" == "Discharging" ]]; then
   notify_greenv2 "Battery" "Level $CURRENT_LEVEL"
 elif [[ "$CURRENT_LEVEL" -le 25 && ("$CURRENT_STATUS" == "Charging" || "$CURRENT_STATUS" == "Unknown") ]]; then
-  notify_redv2 "Battery" "Level $CHARGING"
+  notify_redv2 "Battery" "Level $CURRENT_LEVEL"
 elif [[ "$CURRENT_LEVEL" -le 25 && "$CURRENT_STATUS" == "Discharging" ]]; then
-  notify_red "Battery" "Level $CHARGING"
+  notify_red "Battery" "Level $CURRENT_LEVEL"
 else
-  notify_gray "Battery" "Level $CHARGING"
+  notify_gray "Battery" "Level $CURRENT_LEVEL"
 fi
+

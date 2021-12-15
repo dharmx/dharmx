@@ -8,8 +8,8 @@ env:
 
 window:
   padding:
-    x: 15
-    y: 15
+    x: 45
+    y: 35
 
   dynamic_padding: false
 

@@ -8,6 +8,7 @@ local M = {}
 
 M.ui = {
    theme = "nord",
+   hl_override = "custom.highlights",
 }
 
 M.plugins = {
@@ -16,12 +17,6 @@ M.plugins = {
     dashboard = true,
     colorizer = true,
     telescope_media = true,
-  },
-
-  default_plugin_config_replace = {
-    vimsence = "custom.vimsence",
-    dashboard = "custom.dashboard",
-    feline = "custom.statusline",
   },
 
   options = {
@@ -37,8 +32,14 @@ M.plugins = {
 
       -- truncate statusline on small screens
       shortline = true,
-      style = "round_arch", 
+      style = "round", 
     }, 
+  },
+
+  default_plugin_config_replace = {
+    vimsence = "custom.vimsence",
+    dashboard = "custom.dashboard",
+    feline = "custom.statusline",
   },
 }
 

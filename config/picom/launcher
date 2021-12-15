@@ -3,13 +3,17 @@
 PICOM_DIR="$XDG_CONFIG_HOME/picom"
 CURRENT_CONFIG="$PICOM_DIR/current_config"
 RESTORE="$(/usr/bin/cat $CURRENT_CONFIG)"
+ON="$XDG_CONFIG_HOME/picom/images/computer-screen.png"
+OFF="$XDG_CONFIG_HOME/picom/images/turn-off.png"
 
 kill_picom() {
   if [[ "$(pidof picom)" != "" ]]; then
     pkill picom
+    dunstify -i "$OFF" "Picom" "The compositer is now disabled. Press Super + Slash to enable it again."
   fi
 }
 
+dunstctl close
 case "$1" in
   --max-noradius-noshadow)
     kill_picom
@@ -51,9 +55,11 @@ case "$1" in
     ;;
   --toggle)
     if [[ "$(pidof picom)" != "" ]]; then
+      dunstify -i "$OFF" "Picom" "The compositer is now disabled. Press Super + Slash to enable it again."
       pkill picom
     else 
       picom --config "$PICOM_DIR/configs/picom-$RESTORE.ini" &
+      dunstify -i "$ON" "Picom" "The compositer is now enabled."
       sleep 1
     fi
     ;;
@@ -62,3 +68,4 @@ case "$1" in
       ;;
 esac
 
+# vim: ft=bash

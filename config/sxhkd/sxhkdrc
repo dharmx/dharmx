@@ -12,6 +12,9 @@ super + Return
 super + shift + Return
 	alacritty
 
+super + ctrl + alt + Return
+	st -e fish
+
 super + alt + Return
         kitty tmux
 
@@ -20,11 +23,13 @@ super + shift + alt + Return
 
 # make sxhkd reload its configuration files:
 super + Escape
-	pkill -USR1 -x sxhkd
+	pkill -USR1 -x sxhkd; \
+	dunstify -i $XDG_CONFIG_HOME/sxhkd/images/reload/export.png "SXHKD" "Reloaded all configurations."
 
 # reset bspwm rules and settings
 super + shift + Escape
-        $XDG_CONFIG_HOME/bspwm/defaults
+        $XDG_CONFIG_HOME/bspwm/defaults; \
+	dunstify -i $XDG_CONFIG_HOME/sxhkd/images/config/configuration.png "BSPWM" "Configurations and rules have been set to default."
 
 #
 # bspwm hotkeys
@@ -138,7 +143,11 @@ super + {Left,Down,Up,Right}
 
 # lockscreen bind
 super + slash 
-        locklauncher
+        locklauncher &
+
+# lockscreen no screen off 
+super + alt + slash
+	locklauncher --no-screen-off &
 
 #XF86WebCam
 # pactl audio configurations
@@ -256,19 +265,19 @@ super + button3
 # screenshot configurations
 # fullscreen screenshot save
 super + Print 
-        $XDG_CONFIG_HOME/sxhkd/scripts/screenshot --fullscreen &
+        $XDG_CONFIG_HOME/sxhkd/scripts/screenshot.bash --fullscreen
 
 # cropped save
 super + shift + x 
-        $XDG_CONFIG_HOME/sxhkd/scripts/screenshot --selected &
+        $XDG_CONFIG_HOME/sxhkd/scripts/screenshot.bash --selected
 
 # clipboard fullscreen
 Print 
-        $XDG_CONFIG_HOME/sxhkd/scripts/screenshot --xclip-fullscreen
+        $XDG_CONFIG_HOME/sxhkd/scripts/screenshot.bash --xclip-fullscreen
 
 # clipboard cropped
 super + shift + s 
-        $XDG_CONFIG_HOME/sxhkd/scripts/screenshot --xclip-cropped
+        $XDG_CONFIG_HOME/sxhkd/scripts/screenshot.bash --xclip-cropped
 
 # flameshot snipping tool
 ctrl + Print
@@ -287,8 +296,8 @@ super + r
 
 # polybar hide/show
 super + shift + slash
-        {polybar-msg cmd hide && bspc config top_padding 0,\
-                polybar-msg cmd show}
+	$XDG_CONFIG_HOME/sxhkd/scripts/panel-polybar.bash
+        
 
 # hide tint2 panel
 super + shift + backslash
@@ -340,3 +349,4 @@ super + shift + i
 
 # borderless monocle
 
+# vim: nowrap

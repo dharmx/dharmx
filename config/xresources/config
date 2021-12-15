@@ -3,10 +3,8 @@
 #include "bindings"
 
 ! URxvt Configuration
-Xft.lcdfilter:                    lcddefault
-Xft.dpi:                          97
 URxvt.geometry:                   84x16
-URxvt.internalBorder:             10
+URxvt.internalBorder:             25
 URxvt.cursorBlink:                false
 URxvt.cursorUnderline:            false
 URxvt.saveLines:                  8192
@@ -28,3 +26,6 @@ URvxt.url-select.button:          2
 URxvt.url-select.launcher:        qutebrowser
 URxvt.url-select.underline:       true
 
+!st configs
+! inner padding
+st.borderpx:          25
