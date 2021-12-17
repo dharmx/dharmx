@@ -1,0 +1,94 @@
+#-------------------------------------
+# Backgrounds
+# Background 1: Tooltip
+rounded = 10
+border_sides = TBLR
+background_color = #4C566A 0
+border_color = #000000 0
+background_color_hover = #000000 0
+border_color_hover = #000000 0
+background_color_pressed = #000000 0
+border_color_pressed = #000000 0
+
+# Background 2: Button
+rounded = 10
+border_sides = TBLR
+background_color = #000000 0
+border_color = #000000 0
+border_color_hover = #000000 0
+border_color_pressed = #000000 0
+background_color_hover = #4c566a 70
+background_color_pressed = #373d4b 70
+
+
+#-------------------------------------
+# Panel
+panel_items = PPP
+panel_size = 100% 100
+panel_margin = 0 370
+panel_padding = 2 0 2
+wm_menu = 1
+panel_position = bottom center horizontal
+panel_layer = bottom
+panel_monitor = all
+panel_shrink = 1
+autohide_hide_timeout = 0.5
+autohide_height = 2
+panel_window_name = tint2
+disable_transparency = 1
+strut_policy = none
+mouse_effects = 1
+mouse_hover_icon_asb = 100 0 10
+mouse_pressed_icon_asb = 100 0 0
+
+#-------------------------------------
+# Button 1
+button = new
+button_text = 
+button_uwheel_command = xbacklight -inc +1
+button_dwheel_command = xbacklight -inc -1
+button_lclick_command = $XDG_CONFIG_HOME/tint2/scripts/redshift.bash
+button_font = Iosevka 40
+button_font_color = #88c0d0 100
+button_background_id = 2
+button_padding = 30 20
+button_centered = 1
+button_tooltip = Brightness Control
+
+#-------------------------------------
+# Button 2
+button = new
+button_text = 墳
+button_lclick_command = pactl set-sink-mute alsa_output.pci-0000_00_1f.3.analog-stereo toggle
+button_uwheel_command = pactl set-sink-volume alsa_output.pci-0000_00_1f.3.analog-stereo +1%
+button_dwheel_command = pactl set-sink-volume alsa_output.pci-0000_00_1f.3.analog-stereo -1%
+button_font = Iosevka 40
+button_font_color = #88c0d0 100
+button_background_id = 2
+button_padding = 35 20
+button_centered = 1
+button_tooltip = Audio Control
+
+#-------------------------------------
+# Button 3
+button = new
+button_text = 
+button_lclick_command = rofi -show drun
+button_rclick_command = rofi -show run
+button_mclick_command = $XDG_CONFIG_HOME/rofi/powermenu.bash
+button_font = Iosevka 40
+button_font_color = #88c0d0 100
+button_background_id = 2
+button_padding = 30 20
+button_centered = 1
+button_tooltip = Rofi Menu
+
+#-------------------------------------
+# Tooltip
+tooltip_show_timeout = 0.5
+tooltip_hide_timeout = 0.1
+tooltip_padding = 15 10
+tooltip_font_color = #d8dee9 100
+tooltip_font = Iosevka 10
+tooltip_background_id = 1
+
