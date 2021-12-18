@@ -348,5 +348,7 @@ super + shift + i
         $XDG_CONFIG_HOME/sxhkd/scripts/important-marker.bash
 
 # borderless monocle
+super + shift + m
+	bspc config borderless_monocle {true,false}
 
 # vim: nowrap
