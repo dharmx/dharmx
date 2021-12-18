@@ -1,6 +1,7 @@
 colors: # Default colors
     primary:
-      background: "#2E3440"
+      # background: "#2E3440"
+      background: "#272d38"
       foreground: "#D8DEE9"
 
     cursor:

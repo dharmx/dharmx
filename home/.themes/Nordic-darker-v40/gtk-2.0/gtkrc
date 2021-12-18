@@ -1,7 +1,7 @@
 # Text/base colors
-gtk-color-scheme = "text_color:#d8dee9\nbase_color:#2e3440"
+gtk-color-scheme = "text_color:#d8dee9\nbase_color:#272d38"
 # Foreground/background colors
-gtk-color-scheme = "fg_color:#d8dee9\nbg_color:#3b4252"
+gtk-color-scheme = "fg_color:#d8dee9\nbg_color:#272d38"
 # Selection colors
 gtk-color-scheme = "selected_fg_color:#d8dee9\nselected_bg_color:#4c566a"
 # Tooltip colors
@@ -23,9 +23,5 @@ gtk-primary-button-warps-slider = 1
 include "main.rc"
 
 # App stylings
-include "apps/chrome.rc"
 include "apps/gimp.rc"
 include "apps/libreoffice.rc"
-include "apps/terminal.rc"
-include "apps/thunar.rc"
-include "apps/xfce.rc"

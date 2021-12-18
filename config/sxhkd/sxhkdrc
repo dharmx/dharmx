@@ -4,22 +4,22 @@
 
 # terminal emulators
 super + ctrl + Return
-    urxvt -e fish
+    	urxvt -e fish
 
 super + Return
-	kitty
+	st -e fish
 
 super + shift + Return
 	alacritty
 
 super + ctrl + alt + Return
-	st -e fish
+	kitty --single-instance
 
 super + alt + Return
-        kitty tmux
+        st -e tmux
 
 super + shift + alt + Return
-        kitty tmux attach-session
+        st -e tmux attach-session
 
 # make sxhkd reload its configuration files:
 super + Escape

@@ -2,7 +2,8 @@
 *fadeColor:    #2e3440
 
 *.foreground:  #d8dee9
-*.background:  #2e3440
+!*.background:  #2e3440
+*.background:  #272d38
 *.cursorColor: #5E81AC
 
 *.color0:      #3B4252

@@ -1,2 +1,2 @@
 #!/bin/sh
-feh --no-fehbg --bg-scale '/home/maker/Pictures/wallpapers/nord/nord_alone_tree.png' 
+feh --no-fehbg --bg-fill '/home/maker/Pictures/wallpapers/nord/ign-cementary-res.png' 

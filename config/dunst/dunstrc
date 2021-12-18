@@ -18,7 +18,7 @@
 
     indicate_hidden = yes
     shrink = no
-    transparency = 40
+    transparency = 0
     separator_height = 5
     padding = 15
     horizontal_padding = 15
