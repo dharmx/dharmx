@@ -140,6 +140,7 @@ eval_flavor_waifu() {
     1 2 3 4 5 6 7 8 9 10 
     11 12 13 14 15 16 17 18 19 20
     21 22 23 24 25 26 27 28 29 30
+    31
   )
 
   if echo ${FLAVORS[@]} | grep -qw "$1"; then
@@ -230,8 +231,13 @@ case "$1" in
     fi
     ;;
   --waifu)
-    if [[ "$2" == "" ]]; then
+    if [[ "$2" == "--hold" || "$2" == "" ]]; then
       eval "$NEOFETCH $CONFIGS/waifu.conf"
+      if [[ "$2" == "--hold" ]]; then
+        bspc node focused -t floating
+        printf '\x1b]12;#2e3440\x1b\\'
+      	read -r 
+      fi
     else
       eval_flavor_waifu "$2"
     fi
@@ -265,3 +271,4 @@ case "$1" in
     ;;
 esac
 
+# vim: nowrap:ft=bash

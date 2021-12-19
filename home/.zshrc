@@ -117,6 +117,7 @@ alias ani480="ani-cli -q 480"
 alias pisend="$XDG_CONFIG_HOME/picom/launcher"
 alias polysend="$XDG_CONFIG_HOME/polybar/launcher"
 alias tintsend="$XDG_CONFIG_HOME/tint2/launcher"
+alias startx='startx -- -keeptty >~/.xorg.log 2>&1'
 
 alias -='cd -' 2> /dev/null
 alias ...='../..'
@@ -391,9 +392,9 @@ alias p='ps -f'
 alias sortnr='sort -n -r'
 alias unexport='unset'
 
-# alias rm='rm -i'
-# alias cp='cp -i'
-# alias mv='mv -i'
+alias rm='rm -i'
+alias cp='cp -i'
+alias mv='mv -i'
 
 alias -s pdf=acroread
 alias -s ps=gv

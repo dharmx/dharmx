@@ -23,7 +23,7 @@ alias mount-ssd "udisksctl mount -b /dev/nvme0n1p1"
 alias unmount-ssd "udisksctl unmount -b /dev/nvme0n1p1"
 
 alias logout "killall bspwm"
-alias lock "betterlockscreen -l"
+alias lock "locklauncher"
 alias suspend "systemctl suspend; locklauncher"
 
 alias pac "sudo pacman"
