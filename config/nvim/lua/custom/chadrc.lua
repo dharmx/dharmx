@@ -17,6 +17,7 @@ M.plugins = {
     dashboard = true,
     colorizer = true,
     telescope_media = true,
+    feline = false,
   },
 
   options = {
@@ -39,8 +40,9 @@ M.plugins = {
   default_plugin_config_replace = {
     vimsence = "custom.vimsence",
     dashboard = "custom.dashboard",
-    feline = "custom.statusline",
   },
 }
+
+require("custom.lualine")
 
 return M

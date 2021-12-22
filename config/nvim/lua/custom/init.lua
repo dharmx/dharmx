@@ -68,5 +68,10 @@ hooks.add("install_plugins", function(use)
   use "Shatur/neovim-session-manager"
 
   use "liuchengxu/vim-clap"
+
+  use {
+    'nvim-lualine/lualine.nvim',
+    requires = {'kyazdani42/nvim-web-devicons', opt = true}
+  }
 end)
 

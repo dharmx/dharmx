@@ -54,7 +54,8 @@ if [ -x "$(command -v neofetch)" ]; then
     alias fspolar="$LAUNCHER --flowerskull polar"
     alias fswarm="$LAUNCHER --flowerskull warm"
     alias fsauro="$LAUNCHER --flowerskull aurorae"
-    alias fwaifu="$LAUNCHER --waifu"
+    alias fswaifu="$LAUNCHER --waifu"
+    alias fsrip="neofetch --config .config/neofetch/configs/rip.conf --source .config/neofetch/images/riparch.png"
     unset LAUNCHER
 fi
 
@@ -432,7 +433,7 @@ source "$HOME"/Dotfiles/nordfiles/home/core.sh
 alias cless="cless"
 alias cmore="cmore"
 alias ccat="ccat"
-alias rebootwlan="nmcli d c wlp0s20f3"
+alias reconnect="nmcli d c wlp0s20f3"
 
 # alias cat="ccat"
 # alias less="cless"

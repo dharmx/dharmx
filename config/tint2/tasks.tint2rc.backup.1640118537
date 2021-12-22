@@ -1,0 +1,104 @@
+#-------------------------------------
+# Backgrounds
+# Background 1: Panel
+rounded = 26
+background_color = #3c4253 100
+border_color = #000000 0
+background_color_hover = #000000 0
+border_color_hover = #000000 0
+background_color_pressed = #000000 0
+border_color_pressed = #000000 0
+
+# Background 2: Separator, Urgent task
+rounded = 26
+background_color = #bf616a 100
+border_color = #000000 0
+background_color_hover = #000000 0
+border_color_hover = #000000 0
+background_color_pressed = #000000 0
+border_color_pressed = #000000 0
+
+# Background 3: Tooltip
+rounded = 10
+border_sides = TBLR
+background_color = #4C566A 0
+border_color = #000000 0
+background_color_hover = #000000 0
+border_color_hover = #000000 0
+background_color_pressed = #000000 0
+border_color_pressed = #000000 0
+
+#-------------------------------------
+# Panel
+panel_items = TS
+panel_size = 1000 80
+panel_margin = 0 8
+panel_padding = 2 0 2
+panel_background_id = 1
+wm_menu = 1
+panel_position = bottom center horizontal
+panel_layer = top
+panel_monitor = all
+panel_shrink = 1
+autohide = 1
+autohide_hide_timeout = 2
+autohide_height = 1
+strut_policy = none
+panel_window_name = tint2
+mouse_effects = 1
+mouse_hover_icon_asb = 100 0 10
+mouse_pressed_icon_asb = 100 0 2
+
+#-------------------------------------
+# Taskbar
+taskbar_mode = single_desktop
+taskbar_padding = 0 10 0
+taskbar_name_padding = 4 2
+taskbar_name_font = Iosevka 15
+taskbar_name_font_color = #e3e3e3 100
+taskbar_name_active_font_color = #ffffff 100
+taskbar_distribute_size = 1
+taskbar_sort_order = title
+task_align = center
+
+#-------------------------------------
+# Task
+task_icon = 1
+task_centered = 1
+urgent_nb_of_blink = 100000
+task_maximum_size = 100 20
+task_padding = 2 2 0
+task_tooltip = 1
+task_thumbnail_size = 200
+task_font_color = #ffffff 100
+task_urgent_background_id = 2
+mouse_left = toggle_iconify
+mouse_middle = maximize_restore
+mouse_right = close
+mouse_scroll_up = prev_task
+mouse_scroll_down = next_task
+
+#-------------------------------------
+# System tray (notification area)
+systray_padding = 30 10 2
+systray_sort = ascending
+systray_icon_size = 36
+systray_icon_asb = 100 -40 -15
+systray_monitor = 1
+
+#-------------------------------------
+# Tooltip
+tooltip_show_timeout = 0.5
+tooltip_hide_timeout = 0.1
+tooltip_padding = 4 4
+tooltip_font_color = #dddddd 100
+
+#-------------------------------------
+# Tooltip
+tooltip_show_timeout = 0.5
+tooltip_hide_timeout = 0.1
+tooltip_padding = 2 5
+tooltip_font_color = #d8dee9 100
+tooltip_font = Iosevka 10
+tooltip_background_id = 3
+

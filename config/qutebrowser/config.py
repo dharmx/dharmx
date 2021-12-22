@@ -57,7 +57,7 @@ c.tabs.favicons.show = "always"
 
 c.tabs.position = "bottom"
 c.completion.shrink = True
-config.set('url.start_pages', [f'{XDG_TEMPLATES_DIR}/startpages/startpage-minimal/index.html'])
+config.set('url.start_pages', [f'{XDG_TEMPLATES_DIR}/startpages/luther/index.html'])
 config.set('fonts.contextmenu', 'Roboto Condensed')
 config.set('fonts.default_family', 'Roboto Condensed')
 config.set('fonts.downloads', 'Roboto Condensed')

@@ -33,6 +33,6 @@ hide_window_decorations yes
 
 
 # BEGIN_KITTY_THEME
-# Nordic Custom
+# Broadcast
 include current-theme.conf
 # END_KITTY_THEME
