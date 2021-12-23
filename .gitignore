@@ -22,3 +22,4 @@
 /config/spotify-tui/.spotify_token_cache.json
 
 /config/neofetch/config.conf
+/config/zsh/.zcompdump**
