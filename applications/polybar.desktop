@@ -1,0 +1,11 @@
+[Desktop Entry]
+Type=Application
+Name=Polybar
+Terminal=false
+Comment=Highly configurable system Bar
+Icon=/home/maker/.icons/Zafiro-Icons-Light/categories/22-Dark/applications-system.svg
+Exec=/home/maker/.config/polybar/launcher --restore
+Categories=Accessories;
+Encoding=UTF-8
+Keywords=Utilities;Explorer;
+

@@ -1,0 +1,11 @@
+[Desktop Entry]
+Type=Application
+Name=Neofetch
+Terminal=false
+Comment=System Fetch
+Icon=/home/maker/.icons/Zafiro-Icons-Light/categories/22-Dark/applications-system.svg
+Exec=kitty /home/maker/.config/neofetch/launcher --waifu --hold
+Categories=System;
+Encoding=UTF-8
+Keywords=System;Fetch;
+

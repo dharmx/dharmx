@@ -437,5 +437,6 @@ alias reconnect="nmcli d c wlp0s20f3"
 # alias cat="ccat"
 # alias less="cless"
 clear
-lam -e panes-nord
+# lam -e panes-nord-reddish
+lam -e blocks2
 printf "\n"
