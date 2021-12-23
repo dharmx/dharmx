@@ -7,7 +7,7 @@ super + ctrl + Return
     	urxvt -e fish
 
 super + Return
-	st -e fish
+	st -e $XDG_CONFIG_HOME/zsh/start-zsh-minimal
 
 super + shift + Return
 	alacritty
@@ -289,10 +289,10 @@ super + backslash
 
 # show widgets
 super + w
-        exec $XDG_CONFIG_HOME/eww/mainlauncher
+        exec $XDG_CONFIG_HOME/eww/structures/main-utils/mainlauncher
 
 super + r
-        exec $XDG_CONFIG_HOME/eww/wallpaperlauncher
+        exec $XDG_CONFIG_HOME/eww/structures/wallpaper/wallauncher
 
 # polybar hide/show
 super + shift + slash
@@ -350,5 +350,13 @@ super + shift + i
 # borderless monocle
 super + shift + m
 	bspc config borderless_monocle {true,false}
+
+# toggle see through (quickhide) -- nsfw hide tihi
+super + shift + o
+	picom-trans -c {0,100}
+
+# cycle through transparency levels
+super + shift + p
+	picom-trans -c {0,5,10,15,20,25,30,35,40,45,50,55,60,65,70,75,80,85,90,95,96,97,98,99,100}
 
 # vim: nowrap

@@ -1,0 +1,8 @@
+#!/usr/bin/env zsh
+
+SAVE="$ZDOTDIR"
+export ZDOTDIR="$XDG_CONFIG_HOME/zsh"
+zsh
+export ZDOTDIR="$SAVE"
+
+# vim:ft=zsh:nowrap

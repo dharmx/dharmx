@@ -1,11 +1,6 @@
-if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]; then
-  source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
-fi
-
 export ZSH="$HOME/.oh-my-zsh"
 
-ZSH_THEME="powerlevel10k/powerlevel10k"
-#ZSH_THEME="simonoff"
+ZSH_THEME="simonoff"
 
 # battery catimg 
 # history-substring-search 
@@ -55,8 +50,7 @@ if [ -x "$(command -v neofetch)" ]; then
     alias fswarm="$LAUNCHER --flowerskull warm"
     alias fsauro="$LAUNCHER --flowerskull aurorae"
     alias fswaifu="$LAUNCHER --waifu"
-    alias fsrip="neofetch --config $XDG_CONFIG_HOME/neofetch/configs/rip.conf --source $XDG_CONFIG_HOME/neofetch/images/riparch.png"
-    alias fscat="neofetch --config $XDG_CONFIG_HOME/neofetch/configs/asciisq-very-minimal-v2.conf --ascii $XDG_CONFIG_HOME/neofetch/asciis/cat"
+    alias fsrip="neofetch --config .config/neofetch/configs/rip.conf --source .config/neofetch/images/riparch.png"
     unset LAUNCHER
 fi
 
@@ -102,7 +96,6 @@ alias bedit="nv $HOME/.bashrc"
 alias fedit="nv $XDG_CONFIG_HOME/fish/config.fish"
 alias p10kedit="nv $HOME/.p10k.zsh"
 alias kev="xev -event keyboard"
-alias visudo="nvim /etc/sudoers"
 
 alias pipes1="lam -e pipes1"
 alias pipes2="lam -e pipes2"
@@ -136,7 +129,7 @@ alias 6='cd -6'
 alias 7='cd -7'
 alias 8='cd -8'
 alias 9='cd -9'
-alias _='sudo'
+alias _='sudo '
 alias afind='ack -il'
 
 alias rd='rmdir'
@@ -414,6 +407,7 @@ alias -s ace="unace l"
 alias java="$HOME/.jdks/jdk-16.0.1/bin/java"
 alias javac="$HOME/.jdks/jdk-16.0.1/bin/javac"
 alias jshell="$HOME/.jdks/jdk-16.0.1/bin/jshell"
+alias visudo="nvim /etc/sudoers"
 
 export VISUAL=nvim;
 export EDITOR=nvim;
@@ -431,7 +425,6 @@ setopt HIST_NO_FUNCTIONS
 setopt HIST_SAVE_NO_DUPS
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
-[[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 
 source "$HOME"/Dotfiles/nordfiles/home/colors.sh
 source "$HOME"/Dotfiles/nordfiles/home/core.sh
@@ -441,19 +434,8 @@ alias cmore="cmore"
 alias ccat="ccat"
 alias reconnect="nmcli d c wlp0s20f3"
 
-function killew() {
-  EWWC_FRAGMENT="eww -c $XDG_CONFIG_HOME/eww/structures"
-  eval "rm $XDG_CACHE_HOME/launch_main.eww &>/dev/null"
-  eval "rm $XDG_CACHE_HOME/launch_wallpaper.eww &>/dev/null"
-  eval "$EWWC_FRAGMENT/main-utils kill &>/dev/null"
-  eval "$EWWC_FRAGMENT/wallpaper kill &>/dev/null"
-  unset EWWC_FRAGMENT
-}
-
 # alias cat="ccat"
 # alias less="cless"
-
+clear
 lam -e panes-nord
 printf "\n"
-
-# vim:ft=zsh:nowrap

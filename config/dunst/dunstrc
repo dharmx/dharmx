@@ -39,7 +39,7 @@
     ignore_newline = no
     stack_duplicates = false
     hide_duplicate_count = yes
-    show_indicators = no
+    show_indicators = yes
     icon_position = left
     max_icon_size= 100
     sticky_history = no
@@ -48,18 +48,18 @@
     always_run_script = true
     title = Dunst
     class = Dunst
-    corner_radius = 0
+    corner_radius = 10
 
-    ## mouse_left_click = do action
-    ## mouse_middle_click = close_current
-    mouse_right_click = close
+    mouse_left = do_action
+    mouse_middle = close_current
+    mouse_right = context_all
 
 [urgency_low]
     timeout = 4
     background = "#3b4252"
     foreground = "#e5e9f0"
     # new_icon = /home/maker/.config/dunst/notification/twotone_notifications_white_48dp.png
-
+    
 [urgency_normal]
     timeout = 8
     background = "#4c566a"
@@ -72,4 +72,4 @@
     foreground = "#e5e9f0"
     # new_icon = /home/dunst/notification/twotone_notifications_white_48dp.png
 
-## vim: ft=cfg
+## vim: ft=cfg:nowrap

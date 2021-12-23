@@ -8,7 +8,7 @@ if [[ "$(bspc config -n focused focused_border_color)" == "$XRDB_BRIGHTBLUE" ]];
   bspc node focused --flag marked=on
 else 
   bspc config -n focused focused_border_color "$XRDB_BRIGHTBLUE"
-  bspc config -n focused border_width 3
+  bspc config -n focused border_width 0
   bspc node focused --flag marked=off
 fi
 

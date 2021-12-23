@@ -1,59 +1,95 @@
+local nordic = require("lualine.themes.nord")
+
+local colors = {
+  blue    = '#81a1c1',
+  cyan    = '#85bfc8',
+  green   = '#a3be8c',
+  black   = '#343a46',
+  white   = '#d8dee9',
+  red     = '#bf616a',
+  magenta = '#b48ead',
+  grey    = '#3b4252',
+  yellow  = '#ebcb8b',
+  light_blue = '#88c0d0',
+  nord_term_bg = '#343a46',
+}
+
+local nordic = {
+  normal = {
+    a = { fg = colors.black, bg = colors.blue },
+    b = { fg = colors.white, bg = colors.grey },
+    c = { fg = colors.blue, bg = colors.nord_term_bg },
+  },
+  insert = { 
+    a = { fg = colors.black, bg = colors.green },
+    c = { fg = colors.blue, bg = colors.nord_term_bg },
+  },
+  visual = { 
+    a = { fg = colors.black, bg = colors.magenta },
+    c = { fg = colors.blue, bg = colors.nord_term_bg },
+  },
+  replace = { 
+    a = { fg = colors.black, bg = colors.cyan },
+    c = { fg = colors.blue, bg = colors.nord_term_bg },
+  },
+  command = {
+    a = {bg = colors.red, fg = colors.black},
+    b = {bg = colors.grey, fg = colors.white},
+    c = {bg = colors.nord_term_bg, fg = colors.blue},
+  },
+  inactive = {
+    a = { fg = colors.white, bg = colors.black },
+    b = { fg = colors.white, bg = colors.black },
+    c = { fg = colors.black, bg = colors.nord_term_bg },
+  },
+}
+
 require('lualine').setup {
   options = {
     icons_enabled = true,
-    theme = 'nord',
-    component_separators = { left = '', right = ''},
-    section_separators = { left = '', right = ''},
+    theme = nordic,
+    component_separators = {left = '', right = ''},
+    section_separators = {left = '', right = ''},
     disabled_filetypes = {},
     always_divide_middle = true,
   },
   sections = {
-    lualine_a = {'mode', 'tabs'},
-    lualine_b = {'branch', 'diff', {
-      'diagnostics',
-      -- table of diagnostic sources, available sources:
-      -- 'nvim_lsp', 'nvim_diagnostic', 'coc', 'ale', 'vim_lsp'
-      -- Or a function that returns a table like
-      --   {error=error_cnt, warn=warn_cnt, info=info_cnt, hint=hint_cnt}
-      sources = {'nvim_diagnostic', 'coc'},
-      -- displays diagnostics from defined severity
-      sections = {'error', 'warn', 'info', 'hint'},
-      diagnostics_color = {
-        -- Same values like general color option can be used here.
-        error = 'DiagnosticError', -- changes diagnostic's error color
-        warn  = 'DiagnosticWarn',  -- changes diagnostic's warn color
-        info  = 'DiagnosticInfo',  -- changes diagnostic's info color
-        hint  = 'DiagnosticHint',  -- changes diagnostic's hint color
-      },
-      symbols = {error = 'E', warn = 'W', info = 'I', hint = 'H'},
-      colored = true, -- displays diagnostics status in color if set to true
-      update_in_insert = false, -- Update diagnostics in insert mode
-      always_visible = false, -- Show diagnostics even if count is 0, boolean or function returning boolean
-    }, 'filesize'},
-    lualine_c = {
+    lualine_a = {
       {
-        'filename',
-        file_status = true,   -- displays file status (readonly status, modified status)
-        path = 0,             -- 0 = just filename, 1 = relative path, 2 = absolute path
-        shorting_target = 40, -- Shortens path to leave 40 space in the window
-                              -- for other components. Terrible name any suggestions?
-        symbols = {
-          modified = '[+]',      -- when the file was modified
-          readonly = '[-]',      -- if the file is not modifiable or readonly
-          unnamed = '[No Name]', -- default display name for unnamed buffers
-        }
+        'mode',
+        separator = { left = '' }, right_padding = 1
       }
     },
-    lualine_x = {'encoding', {
+    lualine_b = {'tabs', 'branch', 'diff', 'diagnostics', 'filesize', 
+      {
+        'filename',
+        file_status = true,   
+        path = 0,             
+        shorting_target = 40, 
+                              
+        symbols = {
+          modified = '[+]',   
+          readonly = '[-]',   
+          unnamed = '[No Name]',
+        },
+      }
+    },
+    lualine_c = {},
+    lualine_x = {},
+    lualine_y = {'filetype', 'encoding', {
       'fileformat',
       symbols = {
-        unix = '', -- e712
-        dos = '', -- e70f
-        mac = '', -- e711
+        unix = '',
+        dos = '', 
+        mac = '', 
       }
-    }, 'hostname', 'filetype'},
-    lualine_y = {'progress'},
-    lualine_z = {'location'},
+    }, 'hostname', 'progress'},
+    lualine_z = {
+      {
+        'location',
+        separator = { right = '' }, left_padding = 1
+      }
+    },
   },
   inactive_sections = {
     lualine_a = {},

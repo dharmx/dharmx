@@ -28,3 +28,4 @@ case "$1" in
         echo "No such option!"
         ;;
 esac
+# vim:ft=bash:nowrap

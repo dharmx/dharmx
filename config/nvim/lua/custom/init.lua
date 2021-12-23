@@ -69,6 +69,8 @@ hooks.add("install_plugins", function(use)
 
   use "liuchengxu/vim-clap"
 
+  use "chrisbra/Colorizer"
+
   use {
     'nvim-lualine/lualine.nvim',
     requires = {'kyazdani42/nvim-web-devicons', opt = true}

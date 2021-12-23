@@ -98,15 +98,6 @@ alias ...=../..
 alias ....=../../..
 alias .....=../../../..
 alias ......=../../../../..
-alias 1='cd -1'
-alias 2='cd -2'
-alias 3='cd -3'
-alias 4='cd -4'
-alias 5='cd -5'
-alias 6='cd -6'
-alias 7='cd -7'
-alias 8='cd -8'
-alias 9='cd -9'
 alias _='sudo '
 alias afind='ack -il'
 
@@ -398,6 +389,15 @@ SILENT_JAVA_OPTIONS="$JDK_JAVA_OPTIONS"
 unset JDK_JAVA_OPTIONS
 alias java='java "$SILENT_JAVA_OPTIONS"'
 
+function killew() {
+  EWWC_FRAGMENT="eww -c $XDG_CONFIG_HOME/eww/structures"
+  eval "rm $XDG_CACHE_HOME/launch_main.eww &> /dev/null"
+  eval "rm $XDG_CACHE_HOME/launch_wallpaper.eww &> /dev/null"
+  eval "$EWWC_FRAGMENT/main-utils kill &>/dev/null"
+  eval "$EWWC_FRAGMENT/wallpaper kill &>/dev/null"
+  unset EWWC_FRAGMENT
+}
+
 . "$HOME/.cargo/env"
 
 [ -f ~/.fzf.bash ] && source ~/.fzf.bash
@@ -406,3 +406,4 @@ source "$HOME"/Dotfiles/nordfiles/home/core.sh
 
 lam -e alpha
 
+# vim:ft=bash:nowrap

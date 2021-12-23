@@ -15,7 +15,7 @@ M.plugins = {
   status = {
     nvim_tree = true,
     dashboard = true,
-    colorizer = true,
+    colorizer = false,
     telescope_media = true,
     feline = false,
   },
