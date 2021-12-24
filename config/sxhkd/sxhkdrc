@@ -16,10 +16,10 @@ super + ctrl + alt + Return
 	kitty --single-instance
 
 super + alt + Return
-        st -e tmux
+        kitty --single-instance tmux
 
 super + shift + alt + Return
-        st -e tmux attach-session
+        kitty --single-instance tmux attach-session
 
 # make sxhkd reload its configuration files:
 super + Escape

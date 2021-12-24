@@ -402,7 +402,23 @@ function killew() {
 
 [ -f ~/.fzf.bash ] && source ~/.fzf.bash
 source "$HOME"/Dotfiles/nordfiles/home/colors.sh
-source "$HOME"/Dotfiles/nordfiles/home/core.sh
+
+ccat() {
+  if $2
+  then
+      pygmentize -g $1 | cat
+  else
+      pygmentize -g $2 | cat $1
+  fi
+}
+
+cless() {
+  pygmentize -g $1 | less
+}
+
+cmore() {
+  pygmentize -g $1 | more
+}
 
 lam -e alpha
 

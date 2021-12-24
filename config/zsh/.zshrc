@@ -1,6 +1,7 @@
 export ZSH="$HOME/.oh-my-zsh"
 
-ZSH_THEME="simonoff"
+# ZSH_THEME="simonoff"
+ZSH_THEME="3den"
 
 # battery catimg 
 # history-substring-search 
@@ -94,6 +95,7 @@ alias la="ls -la"
 alias zedit="nv $HOME/.zshrc"
 alias bedit="nv $HOME/.bashrc"
 alias fedit="nv $XDG_CONFIG_HOME/fish/config.fish"
+alias zedit2="nv $XDG_CONFIG_HOME/zsh/.zshrc"
 alias p10kedit="nv $HOME/.p10k.zsh"
 alias kev="xev -event keyboard"
 
@@ -427,16 +429,46 @@ setopt HIST_SAVE_NO_DUPS
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
 source "$HOME"/Dotfiles/nordfiles/home/colors.sh
-source "$HOME"/Dotfiles/nordfiles/home/core.sh
+
+function ccat() {
+  if $2
+  then
+      pygmentize -g $1 | cat
+  else
+      pygmentize -g $2 | cat $1
+  fi
+}
+
+function cless() {
+  pygmentize -g $1 | less
+}
+
+function cmore() {
+  pygmentize -g $1 | more
+}
 
 alias cless="cless"
 alias cmore="cmore"
 alias ccat="ccat"
 alias reconnect="nmcli d c wlp0s20f3"
+alias rofisc="wmctrl -s 2; rofi -show & sleep 1 && maim lol.png"
+alias nvconfig="fm ~/.config/nvim/lua/"
+alias tping="ping -c5 google.com"
+
+function killew() {
+  EWWC_FRAGMENT="eww -c $XDG_CONFIG_HOME/eww/structures"
+  eval "rm $XDG_CACHE_HOME/launch_main.eww &>/dev/null"
+  eval "rm $XDG_CACHE_HOME/launch_wallpaper.eww &>/dev/null"
+  eval "$EWWC_FRAGMENT/main-utils kill &>/dev/null"
+  eval "$EWWC_FRAGMENT/wallpaper kill &>/dev/null"
+  unset EWWC_FRAGMENT
+}
 
 # alias cat="ccat"
 # alias less="cless"
-clear
 # lam -e panes-nord-reddish
-lam -e blocks2
+cls
+# lam -e blocks2
+lam -e blocks1
 printf "\n"
+
