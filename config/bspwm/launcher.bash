@@ -20,7 +20,7 @@ xsetroot -cursor_name left_ptr &
 
 # start polybar
 # "$XDG_CONFIG_HOME/polybar/launcher" --placidity-plus &
-"$XDG_CONFIG_HOME/polybar/launcher" --restore &
+"$XDG_CONFIG_HOME/polybar/launch.bash" --restore &
 
 # start dunst daemon
 # dunst &

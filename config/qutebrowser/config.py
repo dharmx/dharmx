@@ -58,18 +58,18 @@ c.tabs.favicons.show = "always"
 c.tabs.position = "bottom"
 c.completion.shrink = True
 config.set('url.start_pages', [f'{XDG_TEMPLATES_DIR}/startpages/luther/index.html'])
-config.set('fonts.contextmenu', 'Roboto Condensed')
-config.set('fonts.default_family', 'Roboto Condensed')
-config.set('fonts.downloads', 'Roboto Condensed')
-config.set('fonts.hints', 'Roboto Condensed')
+config.set('fonts.contextmenu', 'Iosevka Nerd Font')
+config.set('fonts.default_family', 'Iosevka Nerd Font')
+config.set('fonts.downloads', 'Iosevka Nerd Font')
+config.set('fonts.hints', 'Iosevka Nerd Font')
 config.set('fonts.web.family.fixed', 'JetBrainsMono Nerd Font')
-config.set('fonts.web.family.serif', 'Roboto Condensed')
-config.set('fonts.web.family.standard', 'Roboto')
+config.set('fonts.web.family.serif', 'Iosevka Nerd Font')
+config.set('fonts.web.family.standard', 'Iosevka Nerd Font')
 config.set('completion.scrollbar.width', 8)
 
 c.downloads.location.directory = f"{XDG_DOWNLOAD_DIR}"
 c.downloads.location.prompt = False
-c.editor.command = ["kitty", "nvim '{}'"]
+c.editor.command = ["st -e", "nvim '{}'"]
 
 c.hints.chars = "asdfghjklie"
 c.input.insert_mode.auto_leave = True
@@ -174,3 +174,5 @@ c.colors.tabs.selected.even.bg = color['color0']
 c.colors.tabs.selected.even.fg = color['color5']
 c.colors.tabs.selected.odd.bg = color['color0']
 c.colors.tabs.selected.odd.fg = color['color5']
+
+# vim:ft=python:nowrap

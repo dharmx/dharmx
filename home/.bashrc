@@ -90,7 +90,7 @@ alias yts="ytfzf -t"
 alias ani720="ani-cli -q 720"
 alias ani480="ani-cli -q 480"
 alias pisend="$XDG_CONFIG_HOME/picom/launcher"
-alias polysend="$XDG_CONFIG_HOME/polybar/launcher"
+alias polysend="$XDG_CONFIG_HOME/polybar/launch.bash"
 alias tintsend="$XDG_CONFIG_HOME/tint2/launcher"
 
 alias -='cd -' 2> /dev/null
@@ -388,6 +388,20 @@ export HISTCONTROL=ignoreboth
 SILENT_JAVA_OPTIONS="$JDK_JAVA_OPTIONS"
 unset JDK_JAVA_OPTIONS
 alias java='java "$SILENT_JAVA_OPTIONS"'
+
+alias rofisc="wmctrl -s 2; rofi -show & sleep 1 && maim lol.png"
+alias nvconfig="fm ~/.config/nvim/lua/"
+alias tping="ping -c5 google.com"
+
+alias yta-mp3="youtube-dl --extract-audio --audio-format mp3"
+alias ytv-best="youtube-dl -f bestvideo+bestaudio "
+alias killconk="killall conky"
+
+alias upgrub="sudo grub-mkconfig -o /boot/grub/grub.cfg"
+alias upfont='sudo fc-cache -fv'
+
+alias kittythemes="kitty +kitten themes"
+alias nvupd="nv +PackerSync"
 
 function killew() {
   EWWC_FRAGMENT="eww -c $XDG_CONFIG_HOME/eww/structures"

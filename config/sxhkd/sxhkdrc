@@ -245,14 +245,14 @@ super + shift + f
 
 ## launch filemanager ranger
 super + e
-        kitty ranger
+        st -e ranger
 
 ## launch system monitor htop
 ctrl + shift + Escape 
-        kitty btop
+        st -e btop
 
 ctrl + alt + KP_Delete
-        kitty htop
+        st -e htop
 
 ## night mode
 super + n

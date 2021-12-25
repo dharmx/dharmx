@@ -208,6 +208,7 @@ eval_asciis() {
   esac
 }
 
+wmname BSPWM
 case "$1" in
   --verycoldarch)
     if [[ "$2" == "" ]]; then
@@ -270,5 +271,6 @@ case "$1" in
     help | head -n6 | tail -n4
     ;;
 esac
+wmname LG3D
 
 # vim: nowrap:ft=bash

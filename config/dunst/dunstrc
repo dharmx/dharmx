@@ -72,4 +72,87 @@
     foreground = "#e5e9f0"
     # new_icon = /home/dunst/notification/twotone_notifications_white_48dp.png
 
+# SCRIPTING
+# You can specify a script that gets run when the rule matches by
+# setting the "script" option.
+# The script will be called as follows:
+#   script appname summary body icon urgency
+# where urgency can be "LOW", "NORMAL" or "CRITICAL".
+#
+# NOTE: if you don't want a notification to be displayed, set the format
+# to "".
+# NOTE: It might be helpful to run dunst -print in a terminal in order
+# to find fitting options for rules.
+
+# Disable the transient hint so that idle_threshold cannot be bypassed from the
+# client
+#[transient_disable]
+#    match_transient = yes
+#    set_transient = no
+#
+# Make the handling of transient notifications more strict by making them not
+# be placed in history.
+#[transient_history_ignore]
+#    match_transient = yes
+#    history_ignore = yes
+
+# fullscreen values
+# show: show the notifications, regardless if there is a fullscreen window opened
+# delay: displays the new notification, if there is no fullscreen window active
+#        If the notification is already drawn, it won't get undrawn.
+# pushback: same as delay, but when switching into fullscreen, the notification will get
+#           withdrawn from screen again and will get delayed like a new notification
+#[fullscreen_delay_everything]
+#    fullscreen = delay
+#[fullscreen_show_critical]
+#    msg_urgency = critical
+#    fullscreen = show
+
+#[espeak]
+#    summary = "*"
+#    script = dunst_espeak.sh
+
+#[script-test]
+#    summary = "*script*"
+#    script = dunst_test.sh
+
+#[ignore]
+#    # This notification will not be displayed
+#    summary = "foobar"
+#    format = ""
+
+#[history-ignore]
+#    # This notification will not be saved in history
+#    summary = "foobar"
+#    history_ignore = yes
+
+#[skip-display]
+#    # This notification will not be displayed, but will be included in the history
+#    summary = "foobar"
+#    skip_display = yes
+
+#[signed_on]
+#    appname = Pidgin
+#    summary = "*signed on*"
+#    urgency = low
+#
+#[signed_off]
+#    appname = Pidgin
+#    summary = *signed off*
+#    urgency = low
+#
+#[says]
+#    appname = Pidgin
+#    summary = *says*
+#    urgency = critical
+#
+#[twitter]
+#    appname = Pidgin
+#    summary = *twitter.com*
+#    urgency = normal
+#
+#[stack-volumes]
+#    appname = "some_volume_notifiers"
+#    set_stack_tag = "volume"
+#
 ## vim: ft=cfg:nowrap

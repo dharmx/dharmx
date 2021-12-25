@@ -1,7 +1,10 @@
 #!/usr/bin/env bash
 
-$XDG_CONFIG_HOME/bspwm/defaults &
-$XDG_CONFIG_HOME/bspwm/exports &
-$XDG_CONFIG_HOME/bspwm/launcher &
+export XDG_CURRENT_DESKTOP="bspwm"
+
+$XDG_CONFIG_HOME/bspwm/defaults.bash &
+$XDG_CONFIG_HOME/bspwm/exports.bash &
+$XDG_CONFIG_HOME/bspwm/launcher.bash &
 exit 0
 
+# vim:ft=bash:nowrap

@@ -9,7 +9,7 @@ bspc monitor -d 1 2 3 4 5
 # Window settings
 bspc config border_width         0
 bspc config window_gap           10
-bspc config top_padding 	 0
+bspc config top_padding 	       0
 
 bspc config focused_border_color "#81A1C1"
 bspc config normal_border_color "#4c566a"
