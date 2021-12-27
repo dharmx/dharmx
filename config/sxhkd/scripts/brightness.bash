@@ -14,49 +14,47 @@ LEVEL_OFF="/home/maker/Dotfiles/onedarkfiles/config/sxhkd/images/brightness/twot
 LEVEL_VERY_LOW="/home/maker/Dotfiles/onedarkfiles/config/sxhkd/images/brightness/twotone_visibility_white_48dp.png"
 
 notify_template() {
-  dunstify -u "$1"                \
-              -i "$2"             \
-              "$3"                \
-              "$4"
+	dunstify -u "$1" \
+		-i "$2" \
+		"$3" \
+		"$4"
 }
 #1e222a#e06c75
 notify_template_very_low() {
-  FRAME="string:frcolor:#00000000"
-  notify-send -h "$1"           \
-            -h "$2"             \
-            -h "$FRAME"         \
-            -i "$3"             \
-            "$4"                \
-            "$5"
+	FRAME="string:frcolor:#00000000"
+	notify-send -h "$1" \
+		-h "$2" \
+		-h "$FRAME" \
+		-i "$3" \
+		"$4" \
+		"$5"
 }
 
-
 notify() {
-  if [[ "$1" == "-I" ]]; then
-    xbacklight -inc 1
-  elif [[ "$1" == "-D" ]]; then
-    xbacklight -dec 1
-  else 
-    echo "${red}Invalid Command!"
-    exit 1
-  fi
-  
-  BRIGHTNESS=$(xbacklight -get)
-  case "$BRIGHTNESS" in 
-    100) notify_template "critical" "$LEVEL9" " Brightness Warning!" "100% brightness is not reccomended";;
-    90) notify_template "critical" "$LEVEL8" " Brightness" "90% brightnes is not reccomended";;
-    80) notify_template "normal" "$LEVEL7" "Brightness" "Brightness changed to 80%";;
-    70) notify_template "normal" "$LEVEL6" "Brightness" "Brightness changed to 70%";;
-    60) notify_template "normal" "$LEVEL5" "Brightness" "Brightness changed to 60%";;
-    50) notify_template "normal" "$LEVEL4" "Brightness" "Brightness changed to 50%";;
-    40) notify_template "normal" "$LEVEL3" "Brightness" "Brightness changed to 40%";;
-    30) notify_template "low" "$LEVEL2" "Brightness" "Brightness changed to 30%";;
-    20) notify_template "low" "$LEVEL1" "Brightness" "Brightness changed to 20%";;
-    10) notify_template "low" "$LEVEL0" "Brightness" "Brightness changed to 10%";;
-    1) notify_template_very_low "string:bgcolor:#e06c75" "string:fgcolor:#fff" "$LEVEL_VERY_LOW" " Brightness Warning!" "1% brightness is not reccomended";;
-    0) notify_template_very_low "string:bgcolor:#5C6370" "string:fgcolor:#fff" "$LEVEL_OFF" "Brightness" "Screen is offline";;
-  esac
+	if [[ "$1" == "-I" ]]; then
+		xbacklight -inc 1
+	elif [[ "$1" == "-D" ]]; then
+		xbacklight -dec 1
+	else
+		echo "${red}Invalid Command!"
+		exit 1
+	fi
+
+	BRIGHTNESS=$(xbacklight -get)
+	case "$BRIGHTNESS" in
+	100) notify_template "critical" "$LEVEL9" " Brightness Warning!" "100% brightness is not recommended" ;;
+	90) notify_template "critical" "$LEVEL8" " Brightness" "90% brightnes is not recommended" ;;
+	80) notify_template "normal" "$LEVEL7" "Brightness" "Brightness changed to 80%" ;;
+	70) notify_template "normal" "$LEVEL6" "Brightness" "Brightness changed to 70%" ;;
+	60) notify_template "normal" "$LEVEL5" "Brightness" "Brightness changed to 60%" ;;
+	50) notify_template "normal" "$LEVEL4" "Brightness" "Brightness changed to 50%" ;;
+	40) notify_template "normal" "$LEVEL3" "Brightness" "Brightness changed to 40%" ;;
+	30) notify_template "low" "$LEVEL2" "Brightness" "Brightness changed to 30%" ;;
+	20) notify_template "low" "$LEVEL1" "Brightness" "Brightness changed to 20%" ;;
+	10) notify_template "low" "$LEVEL0" "Brightness" "Brightness changed to 10%" ;;
+	1) notify_template_very_low "string:bgcolor:#e06c75" "string:fgcolor:#fff" "$LEVEL_VERY_LOW" " Brightness Warning!" "1% brightness is not recommended" ;;
+	0) notify_template_very_low "string:bgcolor:#5C6370" "string:fgcolor:#fff" "$LEVEL_OFF" "Brightness" "Screen is offline" ;;
+	esac
 }
 
 notify "$1"
-

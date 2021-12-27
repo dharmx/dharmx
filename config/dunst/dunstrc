@@ -3,7 +3,7 @@
     foreground = "#e5e9f0"
     monitor = 0
     follow = mouse
-    
+
     width = 420
     height = 300
 
@@ -48,7 +48,7 @@
     always_run_script = true
     title = Dunst
     class = Dunst
-    corner_radius = 10
+    ; corner_radius = 10
 
     mouse_left = do_action
     mouse_middle = close_current
@@ -59,7 +59,7 @@
     background = "#3b4252"
     foreground = "#e5e9f0"
     # new_icon = /home/maker/.config/dunst/notification/twotone_notifications_white_48dp.png
-    
+
 [urgency_normal]
     timeout = 8
     background = "#4c566a"

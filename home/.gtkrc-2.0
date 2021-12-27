@@ -1,5 +1,8 @@
+# DO NOT EDIT! This file will be overwritten by LXAppearance.
+# Any customization should be done in ~/.gtkrc-2.0.mine instead.
+
 include "/home/maker/.gtkrc-2.0.mine"
-gtk-theme-name="Nordic-v40"
+gtk-theme-name="Nordic"
 gtk-icon-theme-name="Zafiro-Icons-Light"
 gtk-font-name="Roboto Condensed, Light 11"
 gtk-cursor-theme-name="cz-Hickson-Black"
@@ -12,4 +15,5 @@ gtk-enable-event-sounds=1
 gtk-enable-input-feedback-sounds=1
 gtk-xft-antialias=1
 gtk-xft-hinting=1
-gtk-xft-hintstyle="hintfull"
+gtk-xft-hintstyle="hintslight"
+gtk-xft-rgba="rgb"

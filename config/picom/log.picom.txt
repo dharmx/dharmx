@@ -1,0 +1,452 @@
+[ 12/27/2021 22:05:04.741 atom_getter DEBUG ] Atom _NET_WM_WINDOW_OPACITY is 441
+[ 12/27/2021 22:05:04.742 atom_getter DEBUG ] Atom _NET_FRAME_EXTENTS is 375
+[ 12/27/2021 22:05:04.742 atom_getter DEBUG ] Atom WM_STATE is 423
+[ 12/27/2021 22:05:04.742 atom_getter DEBUG ] Atom _NET_WM_NAME is 359
+[ 12/27/2021 22:05:04.742 atom_getter DEBUG ] Atom _NET_WM_PID is 371
+[ 12/27/2021 22:05:04.742 atom_getter DEBUG ] Atom WM_NAME is 39
+[ 12/27/2021 22:05:04.742 atom_getter DEBUG ] Atom WM_CLASS is 67
+[ 12/27/2021 22:05:04.742 atom_getter DEBUG ] Atom WM_TRANSIENT_FOR is 68
+[ 12/27/2021 22:05:04.742 atom_getter DEBUG ] Atom WM_WINDOW_ROLE is 446
+[ 12/27/2021 22:05:04.742 atom_getter DEBUG ] Atom WM_CLIENT_LEADER is 445
+[ 12/27/2021 22:05:04.742 atom_getter DEBUG ] Atom _NET_ACTIVE_WINDOW is 348
+[ 12/27/2021 22:05:04.742 atom_getter DEBUG ] Atom _COMPTON_SHADOW is 440
+[ 12/27/2021 22:05:04.742 atom_getter DEBUG ] Atom _NET_WM_WINDOW_TYPE is 364
+[ 12/27/2021 22:05:04.742 atom_getter DEBUG ] Atom _NET_WM_WINDOW_TYPE_DESKTOP is 384
+[ 12/27/2021 22:05:04.742 atom_getter DEBUG ] Atom _NET_WM_WINDOW_TYPE_DOCK is 385
+[ 12/27/2021 22:05:04.742 atom_getter DEBUG ] Atom _NET_WM_WINDOW_TYPE_TOOLBAR is 386
+[ 12/27/2021 22:05:04.742 atom_getter DEBUG ] Atom _NET_WM_WINDOW_TYPE_MENU is 387
+[ 12/27/2021 22:05:04.742 atom_getter DEBUG ] Atom _NET_WM_WINDOW_TYPE_UTILITY is 388
+[ 12/27/2021 22:05:04.742 atom_getter DEBUG ] Atom _NET_WM_WINDOW_TYPE_SPLASH is 389
+[ 12/27/2021 22:05:04.742 atom_getter DEBUG ] Atom _NET_WM_WINDOW_TYPE_DIALOG is 390
+[ 12/27/2021 22:05:04.742 atom_getter DEBUG ] Atom _NET_WM_WINDOW_TYPE_NORMAL is 397
+[ 12/27/2021 22:05:04.742 atom_getter DEBUG ] Atom _NET_WM_WINDOW_TYPE_DROPDOWN_MENU is 391
+[ 12/27/2021 22:05:04.742 atom_getter DEBUG ] Atom _NET_WM_WINDOW_TYPE_POPUP_MENU is 392
+[ 12/27/2021 22:05:04.742 atom_getter DEBUG ] Atom _NET_WM_WINDOW_TYPE_TOOLTIP is 393
+[ 12/27/2021 22:05:04.742 atom_getter DEBUG ] Atom _NET_WM_WINDOW_TYPE_NOTIFICATION is 394
+[ 12/27/2021 22:05:04.742 atom_getter DEBUG ] Atom _NET_WM_WINDOW_TYPE_COMBO is 395
+[ 12/27/2021 22:05:04.742 atom_getter DEBUG ] Atom _NET_WM_WINDOW_TYPE_DND is 396
+[ 12/27/2021 22:05:04.742 atom_getter DEBUG ] Atom _NET_WM_STATE is 365
+[ 12/27/2021 22:05:04.742 atom_getter DEBUG ] Atom _NET_WM_STATE_FULLSCREEN is 406
+[ 12/27/2021 22:05:04.742 atom_getter DEBUG ] Atom _NET_WM_BYPASS_COMPOSITOR is 476
+[ 12/27/2021 22:05:04.742 atom_getter DEBUG ] Atom COMPTON_VERSION is 477
+[ 12/27/2021 22:05:04.742 atom_getter DEBUG ] Atom _NET_WM_CM_S0 is 422
+[ 12/27/2021 22:05:04.743 init_overlay DEBUG ] overlay = 0x000000de
+[ 12/27/2021 22:05:04.743 file_watch_init DEBUG ] Starting watching for file changes
+[ 12/27/2021 22:05:04.743 file_watch_add DEBUG ] Adding "/home/maker/.config/picom/configs/picom-min-opaque.ini" to watched files
+[ 12/27/2021 22:05:04.743 add_win DEBUG ] Adding window 0x00400003
+[ 12/27/2021 22:05:04.743 add_win DEBUG ] Adding window 0x00a00002
+[ 12/27/2021 22:05:04.743 add_win DEBUG ] Adding window 0x00a0000b
+[ 12/27/2021 22:05:04.743 add_win DEBUG ] Adding window 0x00400000
+[ 12/27/2021 22:05:04.743 add_win DEBUG ] Adding window 0x00400001
+[ 12/27/2021 22:05:04.743 add_win DEBUG ] Adding window 0x00a00000
+[ 12/27/2021 22:05:04.743 add_win DEBUG ] Adding window 0x01000004
+[ 12/27/2021 22:05:04.743 add_win DEBUG ] Adding window 0x0140002d
+[ 12/27/2021 22:05:04.743 add_win DEBUG ] Adding window 0x01a00006
+[ 12/27/2021 22:05:04.743 add_win DEBUG ] Adding window 0x00c00006
+[ 12/27/2021 22:05:04.743 add_win DEBUG ] Adding window 0x01400004
+[ 12/27/2021 22:05:04.743 add_win DEBUG ] Adding window 0x01600001
+[ 12/27/2021 22:05:04.743 add_win DEBUG ] Adding window 0x0140002f
+[ 12/27/2021 22:05:04.743 add_win DEBUG ] Adding window 0x01400073
+[ 12/27/2021 22:05:04.743 add_win DEBUG ] Adding window 0x01000002
+[ 12/27/2021 22:05:04.743 add_win DEBUG ] Adding window 0x02000001
+[ 12/27/2021 22:05:04.743 add_win DEBUG ] Adding window 0x01c00002
+[ 12/27/2021 22:05:04.743 session_init DEBUG ] Initial stack:
+[ 12/27/2021 22:05:04.743 session_init DEBUG ] 0x01c00002
+[ 12/27/2021 22:05:04.743 session_init DEBUG ] 0x02000001
+[ 12/27/2021 22:05:04.743 session_init DEBUG ] 0x01000002
+[ 12/27/2021 22:05:04.743 session_init DEBUG ] 0x01400073
+[ 12/27/2021 22:05:04.743 session_init DEBUG ] 0x0140002f
+[ 12/27/2021 22:05:04.743 session_init DEBUG ] 0x01600001
+[ 12/27/2021 22:05:04.743 session_init DEBUG ] 0x01400004
+[ 12/27/2021 22:05:04.743 session_init DEBUG ] 0x00c00006
+[ 12/27/2021 22:05:04.743 session_init DEBUG ] 0x01a00006
+[ 12/27/2021 22:05:04.743 session_init DEBUG ] 0x0140002d
+[ 12/27/2021 22:05:04.743 session_init DEBUG ] 0x01000004
+[ 12/27/2021 22:05:04.743 session_init DEBUG ] 0x00a00000
+[ 12/27/2021 22:05:04.743 session_init DEBUG ] 0x00400001
+[ 12/27/2021 22:05:04.743 session_init DEBUG ] 0x00400000
+[ 12/27/2021 22:05:04.743 session_init DEBUG ] 0x00a0000b
+[ 12/27/2021 22:05:04.743 session_init DEBUG ] 0x00a00002
+[ 12/27/2021 22:05:04.743 session_init DEBUG ] 0x00400003
+[ 12/27/2021 22:05:04.743 handle_pending_updates DEBUG ] Delayed handling of events, entering critical section
+[ 12/27/2021 22:05:04.743 fill_win DEBUG ] Managing window 0x01c00002
+[ 12/27/2021 22:05:04.743 fill_win DEBUG ] Managing window 0x02000001
+[ 12/27/2021 22:05:04.743 fill_win DEBUG ] Managing window 0x01000002
+[ 12/27/2021 22:05:04.744 fill_win DEBUG ] Managing window 0x01400073
+[ 12/27/2021 22:05:04.744 fill_win DEBUG ] Managing window 0x0140002f
+[ 12/27/2021 22:05:04.744 fill_win DEBUG ] Managing window 0x01600001
+[ 12/27/2021 22:05:04.744 fill_win DEBUG ] Managing window 0x01400004
+[ 12/27/2021 22:05:04.744 fill_win DEBUG ] Managing window 0x00c00006
+[ 12/27/2021 22:05:04.744 map_win_start DEBUG ] Mapping (0x00c00006 "(null)")
+[ 12/27/2021 22:05:04.744 win_determine_shadow DEBUG ] Determining shadow of window 0x00c00006 ((null))
+[ 12/27/2021 22:05:04.744 win_set_shadow DEBUG ] Updating shadow property of window 0x00c00006 ((null)) to 1
+[ 12/27/2021 22:05:04.744 win_determine_shadow DEBUG ] Determining shadow of window 0x00c00006 (picom-min-opaque.ini (~/Dotfiles...iles/config/picom/configs) - NVIM)
+[ 12/27/2021 22:05:04.744 map_win_start DEBUG ] Window (0x00c00006) has type normal
+[ 12/27/2021 22:05:04.744 win_determine_shadow DEBUG ] Determining shadow of window 0x00c00006 (picom-min-opaque.ini (~/Dotfiles...iles/config/picom/configs) - NVIM)
+[ 12/27/2021 22:05:04.744 map_win_start DEBUG ] Window 0x00c00006 has opacity 0.000000, opacity target is 0.990000
+[ 12/27/2021 22:05:04.744 win_determine_shadow DEBUG ] Determining shadow of window 0x00c00006 (picom-min-opaque.ini (~/Dotfiles...iles/config/picom/configs) - NVIM)
+[ 12/27/2021 22:05:04.744 win_skip_fading DEBUG ] Skipping fading process of window 0x00c00006 (picom-min-opaque.ini (~/Dotfiles...iles/config/picom/configs) - NVIM)
+[ 12/27/2021 22:05:04.744 fill_win DEBUG ] Managing window 0x01a00006
+[ 12/27/2021 22:05:04.744 map_win_start DEBUG ] Mapping (0x01a00006 "(null)")
+[ 12/27/2021 22:05:04.744 win_determine_shadow DEBUG ] Determining shadow of window 0x01a00006 ((null))
+[ 12/27/2021 22:05:04.744 win_set_shadow DEBUG ] Updating shadow property of window 0x01a00006 ((null)) to 1
+[ 12/27/2021 22:05:04.744 win_determine_shadow DEBUG ] Determining shadow of window 0x01a00006 (picom)
+[ 12/27/2021 22:05:04.744 map_win_start DEBUG ] Window (0x01a00006) has type normal
+[ 12/27/2021 22:05:04.744 win_determine_shadow DEBUG ] Determining shadow of window 0x01a00006 (picom)
+[ 12/27/2021 22:05:04.744 map_win_start DEBUG ] Window 0x01a00006 has opacity 0.000000, opacity target is 0.990000
+[ 12/27/2021 22:05:04.744 win_determine_shadow DEBUG ] Determining shadow of window 0x01a00006 (picom)
+[ 12/27/2021 22:05:04.744 win_skip_fading DEBUG ] Skipping fading process of window 0x01a00006 (picom)
+[ 12/27/2021 22:05:04.744 fill_win DEBUG ] Managing window 0x0140002d
+[ 12/27/2021 22:05:04.744 map_win_start DEBUG ] Mapping (0x0140002d "(null)")
+[ 12/27/2021 22:05:04.744 win_determine_shadow DEBUG ] Determining shadow of window 0x0140002d ((null))
+[ 12/27/2021 22:05:04.744 win_set_shadow DEBUG ] Updating shadow property of window 0x0140002d ((null)) to 1
+[ 12/27/2021 22:05:04.744 win_determine_shadow DEBUG ] Determining shadow of window 0x0140002d (dotfiles/picom.conf at master · siduck/dotfiles - qutebrowser)
+[ 12/27/2021 22:05:04.744 map_win_start DEBUG ] Window (0x0140002d) has type normal
+[ 12/27/2021 22:05:04.744 win_determine_shadow DEBUG ] Determining shadow of window 0x0140002d (dotfiles/picom.conf at master · siduck/dotfiles - qutebrowser)
+[ 12/27/2021 22:05:04.744 map_win_start DEBUG ] Window 0x0140002d has opacity 0.000000, opacity target is 0.990000
+[ 12/27/2021 22:05:04.745 win_determine_shadow DEBUG ] Determining shadow of window 0x0140002d (dotfiles/picom.conf at master · siduck/dotfiles - qutebrowser)
+[ 12/27/2021 22:05:04.745 win_skip_fading DEBUG ] Skipping fading process of window 0x0140002d (dotfiles/picom.conf at master · siduck/dotfiles - qutebrowser)
+[ 12/27/2021 22:05:04.745 fill_win DEBUG ] Managing window 0x01000004
+[ 12/27/2021 22:05:04.745 fill_win DEBUG ] Managing window 0x00a00000
+[ 12/27/2021 22:05:04.745 map_win_start DEBUG ] Mapping (0x00a00000 "(null)")
+[ 12/27/2021 22:05:04.745 win_determine_shadow DEBUG ] Determining shadow of window 0x00a00000 ((null))
+[ 12/27/2021 22:05:04.745 win_set_shadow DEBUG ] Updating shadow property of window 0x00a00000 ((null)) to 1
+[ 12/27/2021 22:05:04.745 win_determine_shadow DEBUG ] Determining shadow of window 0x00a00000 ((null))
+[ 12/27/2021 22:05:04.745 map_win_start DEBUG ] Window (0x00a00000) has type normal
+[ 12/27/2021 22:05:04.745 win_determine_shadow DEBUG ] Determining shadow of window 0x00a00000 ((null))
+[ 12/27/2021 22:05:04.745 map_win_start DEBUG ] Window 0x00a00000 has opacity 0.000000, opacity target is 0.990000
+[ 12/27/2021 22:05:04.745 win_determine_shadow DEBUG ] Determining shadow of window 0x00a00000 ((null))
+[ 12/27/2021 22:05:04.745 win_skip_fading DEBUG ] Skipping fading process of window 0x00a00000 ((null))
+[ 12/27/2021 22:05:04.745 fill_win DEBUG ] Managing window 0x00400001
+[ 12/27/2021 22:05:04.745 fill_win DEBUG ] Managing window 0x00400000
+[ 12/27/2021 22:05:04.745 fill_win DEBUG ] Managing window 0x00a0000b
+[ 12/27/2021 22:05:04.745 fill_win DEBUG ] Managing window 0x00a00002
+[ 12/27/2021 22:05:04.745 map_win_start DEBUG ] Mapping (0x00a00002 "(null)")
+[ 12/27/2021 22:05:04.745 win_determine_shadow DEBUG ] Determining shadow of window 0x00a00002 ((null))
+[ 12/27/2021 22:05:04.745 win_set_shadow DEBUG ] Updating shadow property of window 0x00a00002 ((null)) to 1
+[ 12/27/2021 22:05:04.745 win_determine_shadow DEBUG ] Determining shadow of window 0x00a00002 (bspwm)
+[ 12/27/2021 22:05:04.745 map_win_start DEBUG ] Window (0x00a00002) has type dock
+[ 12/27/2021 22:05:04.745 win_determine_shadow DEBUG ] Determining shadow of window 0x00a00002 (bspwm)
+[ 12/27/2021 22:05:04.745 map_win_start DEBUG ] Window 0x00a00002 has opacity 0.000000, opacity target is 0.900000
+[ 12/27/2021 22:05:04.745 win_determine_shadow DEBUG ] Determining shadow of window 0x00a00002 (bspwm)
+[ 12/27/2021 22:05:04.745 win_skip_fading DEBUG ] Skipping fading process of window 0x00a00002 (bspwm)
+[ 12/27/2021 22:05:04.745 fill_win DEBUG ] Managing window 0x00400003
+[ 12/27/2021 22:05:04.745 win_skip_fading DEBUG ] Skipping fading process of window 0x00c00006 (picom-min-opaque.ini (~/Dotfiles...iles/config/picom/configs) - NVIM)
+[ 12/27/2021 22:05:04.745 win_determine_shadow DEBUG ] Determining shadow of window 0x00c00006 (picom-min-opaque.ini (~/Dotfiles...iles/config/picom/configs) - NVIM)
+[ 12/27/2021 22:05:04.745 handle_pending_updates DEBUG ] Exited critical section
+[ 12/27/2021 22:05:04.745 redirect_start DEBUG ] Redirecting the screen.
+[ 12/27/2021 22:05:04.778 gl_has_extension INFO ] Missing GL extension GL_GREMEDY_string_marker.
+[ 12/27/2021 22:05:04.778 gl_init DEBUG ] GL_VENDOR = Intel
+[ 12/27/2021 22:05:04.778 initialize_backend DEBUG ] Marking window 0x00c00006 (picom-min-opaque.ini (~/Dotfiles...iles/config/picom/configs) - NVIM) for update after redirection
+[ 12/27/2021 22:05:04.780 glx_find_fbconfig DEBUG ] Looking for FBConfig for RGBA8888, depth 32
+[ 12/27/2021 22:05:04.783 glx_bind_pixmap DEBUG ] depth 32, rgba 1
+[ 12/27/2021 22:05:04.784 win_bind_shadow DEBUG ] New shadow for 0x00c00006 (picom-min-opaque.ini (~/Dotfiles...iles/config/picom/configs) - NVIM)
+[ 12/27/2021 22:05:04.784 initialize_backend DEBUG ] Marking window 0x01a00006 (picom) for update after redirection
+[ 12/27/2021 22:05:04.785 glx_find_fbconfig DEBUG ] Looking for FBConfig for RGBA8888, depth 32
+[ 12/27/2021 22:05:04.788 glx_bind_pixmap DEBUG ] depth 32, rgba 1
+[ 12/27/2021 22:05:04.789 win_bind_shadow DEBUG ] New shadow for 0x01a00006 (picom)
+[ 12/27/2021 22:05:04.789 initialize_backend DEBUG ] Marking window 0x0140002d (dotfiles/picom.conf at master · siduck/dotfiles - qutebrowser) for update after redirection
+[ 12/27/2021 22:05:04.790 glx_find_fbconfig DEBUG ] Looking for FBConfig for RGBA8888, depth 32
+[ 12/27/2021 22:05:04.793 glx_bind_pixmap DEBUG ] depth 32, rgba 1
+[ 12/27/2021 22:05:04.794 win_bind_shadow DEBUG ] New shadow for 0x0140002d (dotfiles/picom.conf at master · siduck/dotfiles - qutebrowser)
+[ 12/27/2021 22:05:04.794 initialize_backend DEBUG ] Marking window 0x00a00000 ((null)) for update after redirection
+[ 12/27/2021 22:05:04.795 glx_find_fbconfig DEBUG ] Looking for FBConfig for RGBA8888, depth 32
+[ 12/27/2021 22:05:04.798 glx_bind_pixmap DEBUG ] depth 32, rgba 1
+[ 12/27/2021 22:05:04.798 win_bind_shadow DEBUG ] New shadow for 0x00a00000 ((null))
+[ 12/27/2021 22:05:04.798 initialize_backend DEBUG ] Marking window 0x00a00002 (bspwm) for update after redirection
+[ 12/27/2021 22:05:04.799 glx_find_fbconfig DEBUG ] Looking for FBConfig for RGBA8888, depth 32
+[ 12/27/2021 22:05:04.802 glx_bind_pixmap DEBUG ] depth 32, rgba 1
+[ 12/27/2021 22:05:04.802 win_bind_shadow DEBUG ] New shadow for 0x00a00002 (bspwm)
+[ 12/27/2021 22:05:04.802 atom_getter DEBUG ] Atom _XROOTPMAP_ID is 437
+[ 12/27/2021 22:05:04.802 glx_find_fbconfig DEBUG ] Looking for FBConfig for RGBA8880, depth 24
+[ 12/27/2021 22:05:04.806 glx_bind_pixmap DEBUG ] depth 24, rgba 0
+[ 12/27/2021 22:05:04.806 redirect_start DEBUG ] Screen redirected.
+[ 12/27/2021 22:05:04.806 _draw_callback DEBUG ] Re-run _draw_callback
+[ 12/27/2021 22:05:04.806 handle_pending_updates DEBUG ] Delayed handling of events, entering critical section
+[ 12/27/2021 22:05:04.806 ev_handle DEBUG ] event  MapNotify serial 0x000000ef window 0x000000de "(Overlay)"
+[ 12/27/2021 22:05:04.806 ev_handle DEBUG ] event     Expose serial 0x000000ef window 0x000000de "(Overlay)"
+[ 12/27/2021 22:05:04.806 win_bind_pixmap DEBUG ] New named pixmap for 0x00c00006 (picom-min-opaque.ini (~/Dotfiles...iles/config/picom/configs) - NVIM) : 0x01c0004f
+[ 12/27/2021 22:05:04.806 glx_find_fbconfig DEBUG ] Looking for FBConfig for RGBA8888, depth 32
+[ 12/27/2021 22:05:04.809 glx_bind_pixmap DEBUG ] depth 32, rgba 1
+[ 12/27/2021 22:05:04.809 win_bind_pixmap DEBUG ] New named pixmap for 0x01a00006 (picom) : 0x01c00053
+[ 12/27/2021 22:05:04.809 glx_find_fbconfig DEBUG ] Looking for FBConfig for RGBA8888, depth 32
+[ 12/27/2021 22:05:04.812 glx_bind_pixmap DEBUG ] depth 32, rgba 1
+[ 12/27/2021 22:05:04.812 win_bind_pixmap DEBUG ] New named pixmap for 0x0140002d (dotfiles/picom.conf at master · siduck/dotfiles - qutebrowser) : 0x01c00057
+[ 12/27/2021 22:05:04.812 glx_find_fbconfig DEBUG ] Looking for FBConfig for RGBA8880, depth 24
+[ 12/27/2021 22:05:04.816 glx_bind_pixmap DEBUG ] depth 24, rgba 0
+[ 12/27/2021 22:05:04.817 win_bind_pixmap DEBUG ] New named pixmap for 0x00a00000 ((null)) : 0x01c0005b
+[ 12/27/2021 22:05:04.817 glx_find_fbconfig DEBUG ] Looking for FBConfig for RGBA8880, depth 24
+[ 12/27/2021 22:05:04.821 glx_bind_pixmap DEBUG ] depth 24, rgba 0
+[ 12/27/2021 22:05:04.822 win_bind_pixmap DEBUG ] New named pixmap for 0x00a00002 (bspwm) : 0x01c0005f
+[ 12/27/2021 22:05:04.822 glx_find_fbconfig DEBUG ] Looking for FBConfig for RGBA8888, depth 32
+[ 12/27/2021 22:05:04.824 glx_bind_pixmap DEBUG ] depth 32, rgba 1
+[ 12/27/2021 22:05:04.825 handle_pending_updates DEBUG ] Exited critical section
+[ 12/27/2021 22:05:06.991 ev_handle DEBUG ] event PropertyNo serial 0x0000022e window 0x000007ce "(Root window)"
+[ 12/27/2021 22:05:06.992 atom_getter DEBUG ] Atom _XSETROOT_ID is 438
+[ 12/27/2021 22:05:06.992 ev_handle DEBUG ] event ConfigureN serial 0x0000022e window 0x01a00006 "picom"
+[ 12/27/2021 22:05:06.992 ev_configure_notify DEBUG ] { send_event: 1998, id: 0x01a00006, above: 0x00c00006, override_redirect: 0 }
+[ 12/27/2021 22:05:06.992 restack_above DEBUG ] Restack 0x01a00006 (picom), old_below: 0x0140002d, new_below: 0x00c00006
+[ 12/27/2021 22:05:06.992 ev_handle DEBUG ] event PropertyNo serial 0x0000022e window 0x000007ce "(Root window)"
+[ 12/27/2021 22:05:06.992 ev_handle DEBUG ] event   FocusOut serial 0x0000022e window 0x00c00006 "picom-min-opaque.ini (~/Dotfiles...iles/config/picom/configs) - NVIM"
+[ 12/27/2021 22:05:06.992 ev_focus_out DEBUG ] { mode: NotifyNormal, detail: NotifyNonlinear }
+
+[ 12/27/2021 22:05:06.992 ev_handle DEBUG ] event    FocusIn serial 0x0000022e window 0x01a00006 "picom"
+[ 12/27/2021 22:05:06.992 ev_focus_in DEBUG ] { mode: NotifyNormal, detail: NotifyNonlinear }
+
+[ 12/27/2021 22:05:06.992 ev_handle DEBUG ] event PropertyNo serial 0x0000022f window 0x01a00006 "picom"
+[ 12/27/2021 22:05:06.992 handle_pending_updates DEBUG ] Delayed handling of events, entering critical section
+[ 12/27/2021 22:05:06.993 win_determine_shadow DEBUG ] Determining shadow of window 0x00c00006 (picom-min-opaque.ini (~/Dotfiles...iles/config/picom/configs) - NVIM)
+[ 12/27/2021 22:05:06.993 win_determine_shadow DEBUG ] Determining shadow of window 0x01a00006 (picom)
+[ 12/27/2021 22:05:06.993 handle_pending_updates DEBUG ] Exited critical section
+[ 12/27/2021 22:05:09.353 exit_enable INFO ] picom is quitting...
+[ 12/27/2021 22:05:09.353 unredirect DEBUG ] Unredirecting the screen.
+[ 12/27/2021 22:05:09.353 win_release_pixmap DEBUG ] Releasing pixmap of window 0x01a00006 (picom)
+[ 12/27/2021 22:05:09.353 win_release_shadow DEBUG ] Releasing shadow of window 0x01a00006 (picom)
+[ 12/27/2021 22:05:09.353 win_release_pixmap DEBUG ] Releasing pixmap of window 0x00c00006 (picom-min-opaque.ini (~/Dotfiles...iles/config/picom/configs) - NVIM)
+[ 12/27/2021 22:05:09.353 win_release_shadow DEBUG ] Releasing shadow of window 0x00c00006 (picom-min-opaque.ini (~/Dotfiles...iles/config/picom/configs) - NVIM)
+[ 12/27/2021 22:05:09.353 win_release_pixmap DEBUG ] Releasing pixmap of window 0x0140002d (dotfiles/picom.conf at master · siduck/dotfiles - qutebrowser)
+[ 12/27/2021 22:05:09.353 win_release_shadow DEBUG ] Releasing shadow of window 0x0140002d (dotfiles/picom.conf at master · siduck/dotfiles - qutebrowser)
+[ 12/27/2021 22:05:09.353 win_release_pixmap DEBUG ] Releasing pixmap of window 0x00a00000 ((null))
+[ 12/27/2021 22:05:09.353 win_release_shadow DEBUG ] Releasing shadow of window 0x00a00000 ((null))
+[ 12/27/2021 22:05:09.353 win_release_pixmap DEBUG ] Releasing pixmap of window 0x00a00002 (bspwm)
+[ 12/27/2021 22:05:09.354 win_release_shadow DEBUG ] Releasing shadow of window 0x00a00002 (bspwm)
+[ 12/27/2021 22:05:09.360 unredirect DEBUG ] Screen unredirected.
+[ 12/27/2021 22:05:09.360 file_watch_destroy DEBUG ] Stopping watching for file changes
+[ 12/27/2021 22:05:13.671 atom_getter DEBUG ] Atom _NET_WM_WINDOW_OPACITY is 441
+[ 12/27/2021 22:05:13.671 atom_getter DEBUG ] Atom _NET_FRAME_EXTENTS is 375
+[ 12/27/2021 22:05:13.671 atom_getter DEBUG ] Atom WM_STATE is 423
+[ 12/27/2021 22:05:13.671 atom_getter DEBUG ] Atom _NET_WM_NAME is 359
+[ 12/27/2021 22:05:13.671 atom_getter DEBUG ] Atom _NET_WM_PID is 371
+[ 12/27/2021 22:05:13.671 atom_getter DEBUG ] Atom WM_NAME is 39
+[ 12/27/2021 22:05:13.671 atom_getter DEBUG ] Atom WM_CLASS is 67
+[ 12/27/2021 22:05:13.671 atom_getter DEBUG ] Atom WM_TRANSIENT_FOR is 68
+[ 12/27/2021 22:05:13.671 atom_getter DEBUG ] Atom WM_WINDOW_ROLE is 446
+[ 12/27/2021 22:05:13.671 atom_getter DEBUG ] Atom WM_CLIENT_LEADER is 445
+[ 12/27/2021 22:05:13.671 atom_getter DEBUG ] Atom _NET_ACTIVE_WINDOW is 348
+[ 12/27/2021 22:05:13.671 atom_getter DEBUG ] Atom _COMPTON_SHADOW is 440
+[ 12/27/2021 22:05:13.671 atom_getter DEBUG ] Atom _NET_WM_WINDOW_TYPE is 364
+[ 12/27/2021 22:05:13.671 atom_getter DEBUG ] Atom _NET_WM_WINDOW_TYPE_DESKTOP is 384
+[ 12/27/2021 22:05:13.671 atom_getter DEBUG ] Atom _NET_WM_WINDOW_TYPE_DOCK is 385
+[ 12/27/2021 22:05:13.671 atom_getter DEBUG ] Atom _NET_WM_WINDOW_TYPE_TOOLBAR is 386
+[ 12/27/2021 22:05:13.671 atom_getter DEBUG ] Atom _NET_WM_WINDOW_TYPE_MENU is 387
+[ 12/27/2021 22:05:13.671 atom_getter DEBUG ] Atom _NET_WM_WINDOW_TYPE_UTILITY is 388
+[ 12/27/2021 22:05:13.671 atom_getter DEBUG ] Atom _NET_WM_WINDOW_TYPE_SPLASH is 389
+[ 12/27/2021 22:05:13.671 atom_getter DEBUG ] Atom _NET_WM_WINDOW_TYPE_DIALOG is 390
+[ 12/27/2021 22:05:13.671 atom_getter DEBUG ] Atom _NET_WM_WINDOW_TYPE_NORMAL is 397
+[ 12/27/2021 22:05:13.671 atom_getter DEBUG ] Atom _NET_WM_WINDOW_TYPE_DROPDOWN_MENU is 391
+[ 12/27/2021 22:05:13.671 atom_getter DEBUG ] Atom _NET_WM_WINDOW_TYPE_POPUP_MENU is 392
+[ 12/27/2021 22:05:13.671 atom_getter DEBUG ] Atom _NET_WM_WINDOW_TYPE_TOOLTIP is 393
+[ 12/27/2021 22:05:13.671 atom_getter DEBUG ] Atom _NET_WM_WINDOW_TYPE_NOTIFICATION is 394
+[ 12/27/2021 22:05:13.671 atom_getter DEBUG ] Atom _NET_WM_WINDOW_TYPE_COMBO is 395
+[ 12/27/2021 22:05:13.671 atom_getter DEBUG ] Atom _NET_WM_WINDOW_TYPE_DND is 396
+[ 12/27/2021 22:05:13.671 atom_getter DEBUG ] Atom _NET_WM_STATE is 365
+[ 12/27/2021 22:05:13.671 atom_getter DEBUG ] Atom _NET_WM_STATE_FULLSCREEN is 406
+[ 12/27/2021 22:05:13.671 atom_getter DEBUG ] Atom _NET_WM_BYPASS_COMPOSITOR is 476
+[ 12/27/2021 22:05:13.672 atom_getter DEBUG ] Atom COMPTON_VERSION is 477
+[ 12/27/2021 22:05:13.672 atom_getter DEBUG ] Atom _NET_WM_CM_S0 is 422
+[ 12/27/2021 22:05:13.673 init_overlay DEBUG ] overlay = 0x000000de
+[ 12/27/2021 22:05:13.673 file_watch_init DEBUG ] Starting watching for file changes
+[ 12/27/2021 22:05:13.673 file_watch_add DEBUG ] Adding "/home/maker/.config/picom/configs/picom-min-opaque.ini" to watched files
+[ 12/27/2021 22:05:13.673 add_win DEBUG ] Adding window 0x00400003
+[ 12/27/2021 22:05:13.673 add_win DEBUG ] Adding window 0x00a00002
+[ 12/27/2021 22:05:13.673 add_win DEBUG ] Adding window 0x00a0000b
+[ 12/27/2021 22:05:13.673 add_win DEBUG ] Adding window 0x00400000
+[ 12/27/2021 22:05:13.673 add_win DEBUG ] Adding window 0x00400001
+[ 12/27/2021 22:05:13.673 add_win DEBUG ] Adding window 0x00a00000
+[ 12/27/2021 22:05:13.673 add_win DEBUG ] Adding window 0x01000004
+[ 12/27/2021 22:05:13.673 add_win DEBUG ] Adding window 0x0140002d
+[ 12/27/2021 22:05:13.673 add_win DEBUG ] Adding window 0x00c00006
+[ 12/27/2021 22:05:13.673 add_win DEBUG ] Adding window 0x01a00006
+[ 12/27/2021 22:05:13.673 add_win DEBUG ] Adding window 0x01400004
+[ 12/27/2021 22:05:13.673 add_win DEBUG ] Adding window 0x01600001
+[ 12/27/2021 22:05:13.673 add_win DEBUG ] Adding window 0x0140002f
+[ 12/27/2021 22:05:13.673 add_win DEBUG ] Adding window 0x01400073
+[ 12/27/2021 22:05:13.673 add_win DEBUG ] Adding window 0x01000002
+[ 12/27/2021 22:05:13.673 add_win DEBUG ] Adding window 0x02000001
+[ 12/27/2021 22:05:13.673 add_win DEBUG ] Adding window 0x01c00002
+[ 12/27/2021 22:05:13.673 session_init DEBUG ] Initial stack:
+[ 12/27/2021 22:05:13.673 session_init DEBUG ] 0x01c00002
+[ 12/27/2021 22:05:13.673 session_init DEBUG ] 0x02000001
+[ 12/27/2021 22:05:13.673 session_init DEBUG ] 0x01000002
+[ 12/27/2021 22:05:13.673 session_init DEBUG ] 0x01400073
+[ 12/27/2021 22:05:13.673 session_init DEBUG ] 0x0140002f
+[ 12/27/2021 22:05:13.673 session_init DEBUG ] 0x01600001
+[ 12/27/2021 22:05:13.673 session_init DEBUG ] 0x01400004
+[ 12/27/2021 22:05:13.673 session_init DEBUG ] 0x01a00006
+[ 12/27/2021 22:05:13.673 session_init DEBUG ] 0x00c00006
+[ 12/27/2021 22:05:13.673 session_init DEBUG ] 0x0140002d
+[ 12/27/2021 22:05:13.673 session_init DEBUG ] 0x01000004
+[ 12/27/2021 22:05:13.673 session_init DEBUG ] 0x00a00000
+[ 12/27/2021 22:05:13.673 session_init DEBUG ] 0x00400001
+[ 12/27/2021 22:05:13.673 session_init DEBUG ] 0x00400000
+[ 12/27/2021 22:05:13.673 session_init DEBUG ] 0x00a0000b
+[ 12/27/2021 22:05:13.673 session_init DEBUG ] 0x00a00002
+[ 12/27/2021 22:05:13.673 session_init DEBUG ] 0x00400003
+[ 12/27/2021 22:05:13.673 handle_pending_updates DEBUG ] Delayed handling of events, entering critical section
+[ 12/27/2021 22:05:13.673 fill_win DEBUG ] Managing window 0x01c00002
+[ 12/27/2021 22:05:13.673 fill_win DEBUG ] Managing window 0x02000001
+[ 12/27/2021 22:05:13.674 fill_win DEBUG ] Managing window 0x01000002
+[ 12/27/2021 22:05:13.674 fill_win DEBUG ] Managing window 0x01400073
+[ 12/27/2021 22:05:13.674 fill_win DEBUG ] Managing window 0x0140002f
+[ 12/27/2021 22:05:13.674 fill_win DEBUG ] Managing window 0x01600001
+[ 12/27/2021 22:05:13.674 fill_win DEBUG ] Managing window 0x01400004
+[ 12/27/2021 22:05:13.674 fill_win DEBUG ] Managing window 0x01a00006
+[ 12/27/2021 22:05:13.674 map_win_start DEBUG ] Mapping (0x01a00006 "(null)")
+[ 12/27/2021 22:05:13.674 win_determine_shadow DEBUG ] Determining shadow of window 0x01a00006 ((null))
+[ 12/27/2021 22:05:13.674 win_set_shadow DEBUG ] Updating shadow property of window 0x01a00006 ((null)) to 1
+[ 12/27/2021 22:05:13.674 win_determine_shadow DEBUG ] Determining shadow of window 0x01a00006 (picom)
+[ 12/27/2021 22:05:13.674 map_win_start DEBUG ] Window (0x01a00006) has type normal
+[ 12/27/2021 22:05:13.674 win_determine_shadow DEBUG ] Determining shadow of window 0x01a00006 (picom)
+[ 12/27/2021 22:05:13.674 map_win_start DEBUG ] Window 0x01a00006 has opacity 0.000000, opacity target is 0.990000
+[ 12/27/2021 22:05:13.674 win_determine_shadow DEBUG ] Determining shadow of window 0x01a00006 (picom)
+[ 12/27/2021 22:05:13.674 win_skip_fading DEBUG ] Skipping fading process of window 0x01a00006 (picom)
+[ 12/27/2021 22:05:13.674 fill_win DEBUG ] Managing window 0x00c00006
+[ 12/27/2021 22:05:13.674 map_win_start DEBUG ] Mapping (0x00c00006 "(null)")
+[ 12/27/2021 22:05:13.674 win_determine_shadow DEBUG ] Determining shadow of window 0x00c00006 ((null))
+[ 12/27/2021 22:05:13.674 win_set_shadow DEBUG ] Updating shadow property of window 0x00c00006 ((null)) to 1
+[ 12/27/2021 22:05:13.674 win_determine_shadow DEBUG ] Determining shadow of window 0x00c00006 (picom-min-opaque.ini (~/Dotfiles...iles/config/picom/configs) - NVIM)
+[ 12/27/2021 22:05:13.674 map_win_start DEBUG ] Window (0x00c00006) has type normal
+[ 12/27/2021 22:05:13.674 win_determine_shadow DEBUG ] Determining shadow of window 0x00c00006 (picom-min-opaque.ini (~/Dotfiles...iles/config/picom/configs) - NVIM)
+[ 12/27/2021 22:05:13.674 map_win_start DEBUG ] Window 0x00c00006 has opacity 0.000000, opacity target is 0.990000
+[ 12/27/2021 22:05:13.674 win_determine_shadow DEBUG ] Determining shadow of window 0x00c00006 (picom-min-opaque.ini (~/Dotfiles...iles/config/picom/configs) - NVIM)
+[ 12/27/2021 22:05:13.674 win_skip_fading DEBUG ] Skipping fading process of window 0x00c00006 (picom-min-opaque.ini (~/Dotfiles...iles/config/picom/configs) - NVIM)
+[ 12/27/2021 22:05:13.674 fill_win DEBUG ] Managing window 0x0140002d
+[ 12/27/2021 22:05:13.674 map_win_start DEBUG ] Mapping (0x0140002d "(null)")
+[ 12/27/2021 22:05:13.674 win_determine_shadow DEBUG ] Determining shadow of window 0x0140002d ((null))
+[ 12/27/2021 22:05:13.674 win_set_shadow DEBUG ] Updating shadow property of window 0x0140002d ((null)) to 1
+[ 12/27/2021 22:05:13.674 win_determine_shadow DEBUG ] Determining shadow of window 0x0140002d (dotfiles/picom.conf at master · siduck/dotfiles - qutebrowser)
+[ 12/27/2021 22:05:13.674 map_win_start DEBUG ] Window (0x0140002d) has type normal
+[ 12/27/2021 22:05:13.674 win_determine_shadow DEBUG ] Determining shadow of window 0x0140002d (dotfiles/picom.conf at master · siduck/dotfiles - qutebrowser)
+[ 12/27/2021 22:05:13.674 map_win_start DEBUG ] Window 0x0140002d has opacity 0.000000, opacity target is 0.990000
+[ 12/27/2021 22:05:13.675 win_determine_shadow DEBUG ] Determining shadow of window 0x0140002d (dotfiles/picom.conf at master · siduck/dotfiles - qutebrowser)
+[ 12/27/2021 22:05:13.675 win_skip_fading DEBUG ] Skipping fading process of window 0x0140002d (dotfiles/picom.conf at master · siduck/dotfiles - qutebrowser)
+[ 12/27/2021 22:05:13.675 fill_win DEBUG ] Managing window 0x01000004
+[ 12/27/2021 22:05:13.675 fill_win DEBUG ] Managing window 0x00a00000
+[ 12/27/2021 22:05:13.675 map_win_start DEBUG ] Mapping (0x00a00000 "(null)")
+[ 12/27/2021 22:05:13.675 win_determine_shadow DEBUG ] Determining shadow of window 0x00a00000 ((null))
+[ 12/27/2021 22:05:13.675 win_set_shadow DEBUG ] Updating shadow property of window 0x00a00000 ((null)) to 1
+[ 12/27/2021 22:05:13.675 win_determine_shadow DEBUG ] Determining shadow of window 0x00a00000 ((null))
+[ 12/27/2021 22:05:13.675 map_win_start DEBUG ] Window (0x00a00000) has type normal
+[ 12/27/2021 22:05:13.675 win_determine_shadow DEBUG ] Determining shadow of window 0x00a00000 ((null))
+[ 12/27/2021 22:05:13.675 map_win_start DEBUG ] Window 0x00a00000 has opacity 0.000000, opacity target is 0.990000
+[ 12/27/2021 22:05:13.675 win_determine_shadow DEBUG ] Determining shadow of window 0x00a00000 ((null))
+[ 12/27/2021 22:05:13.675 win_skip_fading DEBUG ] Skipping fading process of window 0x00a00000 ((null))
+[ 12/27/2021 22:05:13.675 fill_win DEBUG ] Managing window 0x00400001
+[ 12/27/2021 22:05:13.675 fill_win DEBUG ] Managing window 0x00400000
+[ 12/27/2021 22:05:13.675 fill_win DEBUG ] Managing window 0x00a0000b
+[ 12/27/2021 22:05:13.675 fill_win DEBUG ] Managing window 0x00a00002
+[ 12/27/2021 22:05:13.675 map_win_start DEBUG ] Mapping (0x00a00002 "(null)")
+[ 12/27/2021 22:05:13.675 win_determine_shadow DEBUG ] Determining shadow of window 0x00a00002 ((null))
+[ 12/27/2021 22:05:13.675 win_set_shadow DEBUG ] Updating shadow property of window 0x00a00002 ((null)) to 1
+[ 12/27/2021 22:05:13.675 win_determine_shadow DEBUG ] Determining shadow of window 0x00a00002 (bspwm)
+[ 12/27/2021 22:05:13.675 map_win_start DEBUG ] Window (0x00a00002) has type dock
+[ 12/27/2021 22:05:13.675 win_determine_shadow DEBUG ] Determining shadow of window 0x00a00002 (bspwm)
+[ 12/27/2021 22:05:13.675 map_win_start DEBUG ] Window 0x00a00002 has opacity 0.000000, opacity target is 0.900000
+[ 12/27/2021 22:05:13.675 win_determine_shadow DEBUG ] Determining shadow of window 0x00a00002 (bspwm)
+[ 12/27/2021 22:05:13.675 win_skip_fading DEBUG ] Skipping fading process of window 0x00a00002 (bspwm)
+[ 12/27/2021 22:05:13.675 fill_win DEBUG ] Managing window 0x00400003
+[ 12/27/2021 22:05:13.675 win_skip_fading DEBUG ] Skipping fading process of window 0x01a00006 (picom)
+[ 12/27/2021 22:05:13.675 win_determine_shadow DEBUG ] Determining shadow of window 0x01a00006 (picom)
+[ 12/27/2021 22:05:13.675 handle_pending_updates DEBUG ] Exited critical section
+[ 12/27/2021 22:05:13.675 redirect_start DEBUG ] Redirecting the screen.
+[ 12/27/2021 22:05:13.716 glx_has_extension INFO ] Found GLX extension GLX_SGI_video_sync.
+[ 12/27/2021 22:05:13.716 glx_has_extension INFO ] Found GLX extension GLX_SGI_swap_control.
+[ 12/27/2021 22:05:13.716 glx_has_extension INFO ] Found GLX extension GLX_OML_sync_control.
+[ 12/27/2021 22:05:13.716 glx_has_extension INFO ] Found GLX extension GLX_MESA_swap_control.
+[ 12/27/2021 22:05:13.716 glx_has_extension INFO ] Found GLX extension GLX_EXT_swap_control.
+[ 12/27/2021 22:05:13.716 glx_has_extension INFO ] Found GLX extension GLX_EXT_texture_from_pixmap.
+[ 12/27/2021 22:05:13.716 glx_has_extension INFO ] Found GLX extension GLX_ARB_create_context.
+[ 12/27/2021 22:05:13.716 glx_has_extension INFO ] Found GLX extension GLX_EXT_buffer_age.
+[ 12/27/2021 22:05:13.728 gl_has_extension INFO ] Missing GL extension GL_GREMEDY_string_marker.
+[ 12/27/2021 22:05:13.728 gl_init DEBUG ] GL_VENDOR = Intel
+[ 12/27/2021 22:05:13.728 initialize_backend DEBUG ] Marking window 0x01a00006 (picom) for update after redirection
+[ 12/27/2021 22:05:13.730 glx_find_fbconfig DEBUG ] Looking for FBConfig for RGBA8888, depth 32
+[ 12/27/2021 22:05:13.732 glx_bind_pixmap DEBUG ] depth 32, rgba 1
+[ 12/27/2021 22:05:13.733 win_bind_shadow DEBUG ] New shadow for 0x01a00006 (picom)
+[ 12/27/2021 22:05:13.733 initialize_backend DEBUG ] Marking window 0x00c00006 (picom-min-opaque.ini (~/Dotfiles...iles/config/picom/configs) - NVIM) for update after redirection
+[ 12/27/2021 22:05:13.735 glx_find_fbconfig DEBUG ] Looking for FBConfig for RGBA8888, depth 32
+[ 12/27/2021 22:05:13.737 glx_bind_pixmap DEBUG ] depth 32, rgba 1
+[ 12/27/2021 22:05:13.738 win_bind_shadow DEBUG ] New shadow for 0x00c00006 (picom-min-opaque.ini (~/Dotfiles...iles/config/picom/configs) - NVIM)
+[ 12/27/2021 22:05:13.738 initialize_backend DEBUG ] Marking window 0x0140002d (dotfiles/picom.conf at master · siduck/dotfiles - qutebrowser) for update after redirection
+[ 12/27/2021 22:05:13.740 glx_find_fbconfig DEBUG ] Looking for FBConfig for RGBA8888, depth 32
+[ 12/27/2021 22:05:13.743 glx_bind_pixmap DEBUG ] depth 32, rgba 1
+[ 12/27/2021 22:05:13.744 win_bind_shadow DEBUG ] New shadow for 0x0140002d (dotfiles/picom.conf at master · siduck/dotfiles - qutebrowser)
+[ 12/27/2021 22:05:13.744 initialize_backend DEBUG ] Marking window 0x00a00000 ((null)) for update after redirection
+[ 12/27/2021 22:05:13.744 glx_find_fbconfig DEBUG ] Looking for FBConfig for RGBA8888, depth 32
+[ 12/27/2021 22:05:13.747 glx_bind_pixmap DEBUG ] depth 32, rgba 1
+[ 12/27/2021 22:05:13.747 win_bind_shadow DEBUG ] New shadow for 0x00a00000 ((null))
+[ 12/27/2021 22:05:13.747 initialize_backend DEBUG ] Marking window 0x00a00002 (bspwm) for update after redirection
+[ 12/27/2021 22:05:13.748 glx_find_fbconfig DEBUG ] Looking for FBConfig for RGBA8888, depth 32
+[ 12/27/2021 22:05:13.751 glx_bind_pixmap DEBUG ] depth 32, rgba 1
+[ 12/27/2021 22:05:13.751 win_bind_shadow DEBUG ] New shadow for 0x00a00002 (bspwm)
+[ 12/27/2021 22:05:13.751 atom_getter DEBUG ] Atom _XROOTPMAP_ID is 437
+[ 12/27/2021 22:05:13.751 glx_find_fbconfig DEBUG ] Looking for FBConfig for RGBA8880, depth 24
+[ 12/27/2021 22:05:13.755 glx_bind_pixmap DEBUG ] depth 24, rgba 0
+[ 12/27/2021 22:05:13.755 redirect_start DEBUG ] Screen redirected.
+[ 12/27/2021 22:05:13.755 _draw_callback DEBUG ] Re-run _draw_callback
+[ 12/27/2021 22:05:13.755 handle_pending_updates DEBUG ] Delayed handling of events, entering critical section
+[ 12/27/2021 22:05:13.755 ev_handle DEBUG ] event  MapNotify serial 0x000000f0 window 0x000000de "(Overlay)"
+[ 12/27/2021 22:05:13.755 ev_handle DEBUG ] event     Expose serial 0x000000f0 window 0x000000de "(Overlay)"
+[ 12/27/2021 22:05:13.755 win_bind_pixmap DEBUG ] New named pixmap for 0x01a00006 (picom) : 0x01c0004f
+[ 12/27/2021 22:05:13.755 glx_find_fbconfig DEBUG ] Looking for FBConfig for RGBA8888, depth 32
+[ 12/27/2021 22:05:13.758 glx_bind_pixmap DEBUG ] depth 32, rgba 1
+[ 12/27/2021 22:05:13.758 win_bind_pixmap DEBUG ] New named pixmap for 0x00c00006 (picom-min-opaque.ini (~/Dotfiles...iles/config/picom/configs) - NVIM) : 0x01c00053
+[ 12/27/2021 22:05:13.758 glx_find_fbconfig DEBUG ] Looking for FBConfig for RGBA8888, depth 32
+[ 12/27/2021 22:05:13.760 glx_bind_pixmap DEBUG ] depth 32, rgba 1
+[ 12/27/2021 22:05:13.761 win_bind_pixmap DEBUG ] New named pixmap for 0x0140002d (dotfiles/picom.conf at master · siduck/dotfiles - qutebrowser) : 0x01c00057
+[ 12/27/2021 22:05:13.761 glx_find_fbconfig DEBUG ] Looking for FBConfig for RGBA8880, depth 24
+[ 12/27/2021 22:05:13.764 glx_bind_pixmap DEBUG ] depth 24, rgba 0
+[ 12/27/2021 22:05:13.765 win_bind_pixmap DEBUG ] New named pixmap for 0x00a00000 ((null)) : 0x01c0005b
+[ 12/27/2021 22:05:13.765 glx_find_fbconfig DEBUG ] Looking for FBConfig for RGBA8880, depth 24
+[ 12/27/2021 22:05:13.769 glx_bind_pixmap DEBUG ] depth 24, rgba 0
+[ 12/27/2021 22:05:13.769 win_bind_pixmap DEBUG ] New named pixmap for 0x00a00002 (bspwm) : 0x01c0005f
+[ 12/27/2021 22:05:13.769 glx_find_fbconfig DEBUG ] Looking for FBConfig for RGBA8888, depth 32
+[ 12/27/2021 22:05:13.772 glx_bind_pixmap DEBUG ] depth 32, rgba 1
+[ 12/27/2021 22:05:13.772 handle_pending_updates DEBUG ] Exited critical section
+[ 12/27/2021 22:05:17.913 ev_handle DEBUG ] event PropertyNo serial 0x0000022a window 0x000007ce "(Root window)"
+[ 12/27/2021 22:05:17.914 atom_getter DEBUG ] Atom _XSETROOT_ID is 438
+[ 12/27/2021 22:05:17.914 ev_handle DEBUG ] event ConfigureN serial 0x0000022a window 0x00c00006 "picom-min-opaque.ini (~/Dotfiles...iles/config/picom/configs) - NVIM"
+[ 12/27/2021 22:05:17.914 ev_configure_notify DEBUG ] { send_event: 1998, id: 0x00c00006, above: 0x01a00006, override_redirect: 0 }
+[ 12/27/2021 22:05:17.914 restack_above DEBUG ] Restack 0x00c00006 (picom-min-opaque.ini (~/Dotfiles...iles/config/picom/configs) - NVIM), old_below: 0x0140002d, new_below: 0x01a00006
+[ 12/27/2021 22:05:17.914 ev_handle DEBUG ] event PropertyNo serial 0x0000022a window 0x000007ce "(Root window)"
+[ 12/27/2021 22:05:17.914 ev_handle DEBUG ] event   FocusOut serial 0x0000022a window 0x01a00006 "picom"
+[ 12/27/2021 22:05:17.914 ev_focus_out DEBUG ] { mode: NotifyNormal, detail: NotifyNonlinear }
+
+[ 12/27/2021 22:05:17.914 ev_handle DEBUG ] event    FocusIn serial 0x0000022a window 0x00c00006 "picom-min-opaque.ini (~/Dotfiles...iles/config/picom/configs) - NVIM"
+[ 12/27/2021 22:05:17.914 ev_focus_in DEBUG ] { mode: NotifyNormal, detail: NotifyNonlinear }
+
+[ 12/27/2021 22:05:17.914 ev_handle DEBUG ] event PropertyNo serial 0x0000022b window 0x00c00006 "picom-min-opaque.ini (~/Dotfiles...iles/config/picom/configs) - NVIM"
+[ 12/27/2021 22:05:17.914 handle_pending_updates DEBUG ] Delayed handling of events, entering critical section
+[ 12/27/2021 22:05:17.915 win_determine_shadow DEBUG ] Determining shadow of window 0x01a00006 (picom)
+[ 12/27/2021 22:05:17.915 win_determine_shadow DEBUG ] Determining shadow of window 0x00c00006 (picom-min-opaque.ini (~/Dotfiles...iles/config/picom/configs) - NVIM)
+[ 12/27/2021 22:05:17.915 handle_pending_updates DEBUG ] Exited critical section
+[ 12/27/2021 22:05:19.180 ev_handle DEBUG ] event PropertyNo serial 0x00000243 window 0x000007ce "(Root window)"
+[ 12/27/2021 22:05:19.180 ev_handle DEBUG ] event ConfigureN serial 0x00000243 window 0x01a00006 "picom"
+[ 12/27/2021 22:05:19.180 ev_configure_notify DEBUG ] { send_event: 1998, id: 0x01a00006, above: 0x00c00006, override_redirect: 0 }
+[ 12/27/2021 22:05:19.180 restack_above DEBUG ] Restack 0x01a00006 (picom), old_below: 0x0140002d, new_below: 0x00c00006
+[ 12/27/2021 22:05:19.180 ev_handle DEBUG ] event PropertyNo serial 0x00000243 window 0x000007ce "(Root window)"
+[ 12/27/2021 22:05:19.180 ev_handle DEBUG ] event   FocusOut serial 0x00000243 window 0x00c00006 "picom-min-opaque.ini (~/Dotfiles...iles/config/picom/configs) - NVIM"
+[ 12/27/2021 22:05:19.180 ev_focus_out DEBUG ] { mode: NotifyNormal, detail: NotifyNonlinear }
+
+[ 12/27/2021 22:05:19.181 ev_handle DEBUG ] event    FocusIn serial 0x00000243 window 0x01a00006 "picom"
+[ 12/27/2021 22:05:19.181 ev_focus_in DEBUG ] { mode: NotifyNormal, detail: NotifyNonlinear }
+
+[ 12/27/2021 22:05:19.181 handle_pending_updates DEBUG ] Delayed handling of events, entering critical section
+[ 12/27/2021 22:05:19.181 win_determine_shadow DEBUG ] Determining shadow of window 0x00c00006 (picom-min-opaque.ini (~/Dotfiles...iles/config/picom/configs) - NVIM)
+[ 12/27/2021 22:05:19.181 win_determine_shadow DEBUG ] Determining shadow of window 0x01a00006 (picom)
+[ 12/27/2021 22:05:19.182 handle_pending_updates DEBUG ] Exited critical section
+[ 12/27/2021 22:05:19.195 ev_handle DEBUG ] event PropertyNo serial 0x0000024b window 0x01a00006 "picom"
+[ 12/27/2021 22:05:21.071 exit_enable INFO ] picom is quitting...
+[ 12/27/2021 22:05:21.072 unredirect DEBUG ] Unredirecting the screen.
+[ 12/27/2021 22:05:21.072 win_release_pixmap DEBUG ] Releasing pixmap of window 0x01a00006 (picom)
+[ 12/27/2021 22:05:21.072 win_release_shadow DEBUG ] Releasing shadow of window 0x01a00006 (picom)
+[ 12/27/2021 22:05:21.072 win_release_pixmap DEBUG ] Releasing pixmap of window 0x00c00006 (picom-min-opaque.ini (~/Dotfiles...iles/config/picom/configs) - NVIM)
+[ 12/27/2021 22:05:21.072 win_release_shadow DEBUG ] Releasing shadow of window 0x00c00006 (picom-min-opaque.ini (~/Dotfiles...iles/config/picom/configs) - NVIM)
+[ 12/27/2021 22:05:21.072 win_release_pixmap DEBUG ] Releasing pixmap of window 0x0140002d (dotfiles/picom.conf at master · siduck/dotfiles - qutebrowser)
+[ 12/27/2021 22:05:21.072 win_release_shadow DEBUG ] Releasing shadow of window 0x0140002d (dotfiles/picom.conf at master · siduck/dotfiles - qutebrowser)
+[ 12/27/2021 22:05:21.072 win_release_pixmap DEBUG ] Releasing pixmap of window 0x00a00000 ((null))
+[ 12/27/2021 22:05:21.072 win_release_shadow DEBUG ] Releasing shadow of window 0x00a00000 ((null))
+[ 12/27/2021 22:05:21.072 win_release_pixmap DEBUG ] Releasing pixmap of window 0x00a00002 (bspwm)
+[ 12/27/2021 22:05:21.072 win_release_shadow DEBUG ] Releasing shadow of window 0x00a00002 (bspwm)
+[ 12/27/2021 22:05:21.078 unredirect DEBUG ] Screen unredirected.
+[ 12/27/2021 22:05:21.078 file_watch_destroy DEBUG ] Stopping watching for file changes

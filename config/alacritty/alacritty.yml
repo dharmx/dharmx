@@ -45,5 +45,4 @@ cursor:
 live_config_reload: true
 
 shell:
-  program: /bin/bash
-
+  program: /usr/bin/bash

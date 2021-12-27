@@ -3,33 +3,24 @@
 #
 
 # terminal emulators
-super + ctrl + Return
-    	urxvt -e fish
+# minimal zsh for st,fish urxvt,alacritty with bash
+super + {_,ctrl,shift} + Return
+				{st -e $XDG_CONFIG_HOME/zsh/start.zsh 3den,urxvt -e fish,alacritty}
 
-super + Return
-	st -e $XDG_CONFIG_HOME/zsh/start-zsh-minimal
+# start a new tmux session with st,open a shared kitty instance,attach to the latest tmux session with st
+super + alt + {_,ctrl,shift} + Return
+				{st -e tmux,kitty --single-instance,st -e tmux attach-session}
 
-super + shift + Return
-	alacritty
+super + alt + shift + ctrl + Return
+				tym
 
-super + ctrl + alt + Return
-	kitty --single-instance
-
-super + alt + Return
-        kitty --single-instance tmux
-
-super + shift + alt + Return
-        kitty --single-instance tmux attach-session
-
-# make sxhkd reload its configuration files:
-super + Escape
-	pkill -USR1 -x sxhkd; \
-	dunstify -i $XDG_CONFIG_HOME/sxhkd/images/reload/export.png "SXHKD" "Reloaded all configurations."
-
-# reset bspwm rules and settings
-super + shift + Escape
-        $XDG_CONFIG_HOME/bspwm/defaults; \
-	dunstify -i $XDG_CONFIG_HOME/sxhkd/images/config/configuration.png "BSPWM" "Configurations and rules have been set to default."
+# make sxhkd reload its configuration files
+super + {_,shift} + Escape
+				dunstctl close; {pkill -USR1 -x sxhkd;\
+					dunstify -i $XDG_CONFIG_HOME/sxhkd/images/reload/export.png "SXHKD" "Reloaded all configurations.",\
+					$XDG_CONFIG_HOME/bspwm/defaults;\
+					dunstify -i $XDG_CONFIG_HOME/sxhkd/images/config/configuration.png \
+					"BSPWM" "Configurations and rules have been set to default."}
 
 #
 # bspwm hotkeys
@@ -37,27 +28,23 @@ super + shift + Escape
 
 # quit/restart bspwm
 super + alt + {q,r}
-	bspc {quit,wm -r}
+				bspc {quit,wm -r}
 
 # close and kill
 super + {_,shift + }q
-	bspc node -{c,k}
+				bspc node -{c,k}
 
 # just close
 ctrl + q
-	bspc node --close
+				bspc node --close
 
-# alternate between the tiled and monocle layout
-super + m
-	bspc desktop -l next
-
-# send the newest marked node to the newest preselected node
-super + y
-	bspc node newest.marked.local -n newest.!automatic.local
-
-# swap the current node and the biggest window
-super + g
-	bspc node -s biggest.window
+# m - alternate between the tiled and monocle layout
+# y - send the newest marked node to the newest preselected node
+# g - swap the current node and the biggest window
+super + {m,y,g}
+				bspc {desktop -l next,\
+					node newest.marked.local -n newest.!automatic.local,\
+					node -s biggest.window}
 
 #
 # state/flags
@@ -65,11 +52,11 @@ super + g
 
 # set the window state
 super + {t,shift + t,s,f}
-	bspc node -t {tiled,pseudo_tiled,floating,fullscreen}
+				bspc node -t {tiled,pseudo_tiled,floating,fullscreen}
 
 # set the node flags
 super + ctrl + {m,x,y,z}
-	bspc node -g {marked,locked,sticky,private}
+				bspc node -g {marked,locked,sticky,private}
 
 #
 # focus/swap
@@ -77,33 +64,33 @@ super + ctrl + {m,x,y,z}
 
 # focus the node in the given direction
 super + {_,shift + }{h,j,k,l}
-	bspc node -{f,s} {west,south,north,east}
+				bspc node -{f,s} {west,south,north,east}
 
 # focus the node for the given path jump
 super + {p,b,comma,period}
-	bspc node -f @{parent,brother,first,second}
+				bspc node -f @{parent,brother,first,second}
 
 # focus the next/previous window in the current desktop
 super + {_,shift + }c
-	bspc node -f {next,prev}.local.!hidden.window
+				bspc node -f {next,prev}.local.!hidden.window
 
 # focus the next/previous desktop in the current monitor
 super + bracket{left,right}
-	bspc desktop -f {prev,next}.local
+				bspc desktop -f {prev,next}.local
 
 # focus the last node/desktop
 super + {grave,Tab}
-	bspc {node,desktop} -f last
+				bspc {node,desktop} -f last
 
 # focus the older or newer node in the focus history
 super + {o,i}
-	bspc wm -h off; \
-	bspc node {older,newer} -f; \
-	bspc wm -h on
+				bspc wm -h off; \
+				bspc node {older,newer} -f; \
+				bspc wm -h on
 
 # focus or send to the given desktop
 super + {_,shift + }{1-9,0}
-	bspc {desktop -f,node -d} '^{1-9,10}'
+				bspc {desktop -f,node -d} '^{1-9,10}'
 
 #
 # preselect
@@ -111,19 +98,19 @@ super + {_,shift + }{1-9,0}
 
 # preselect the direction
 super + ctrl + {h,j,k,l}
-	bspc node -p {west,south,north,east}
+				bspc node -p {west,south,north,east}
 
 # preselect the ratio
 super + ctrl + {1-9}
-	bspc node -o 0.{1-9}
+				bspc node -o 0.{1-9}
 
 # cancel the preselection for the focused node
 super + ctrl + space
-	bspc node -p cancel
+				bspc node -p cancel
 
 # cancel the preselection for the focused desktop
 super + ctrl + shift + space
-	bspc query -N -d | xargs -I id -n 1 bspc node id -p cancel
+				bspc query -N -d | xargs -I id -n 1 bspc node id -p cancel
 
 #
 # move/resize
@@ -131,108 +118,68 @@ super + ctrl + shift + space
 
 # expand a window by moving one of its side outward
 super + alt + {h,j,k,l}
-	bspc node -z {left -20 0,bottom 0 20,top 0 -20,right 20 0}
+				bspc node -z {left -20 0,bottom 0 20,top 0 -20,right 20 0}
 
 # contract a window by moving one of its side inward
 super + alt + shift + {h,j,k,l}
-	bspc node -z {right -20 0,top 0 20,bottom 0 -20,left 20 0}
+				bspc node -z {right -20 0,top 0 20,bottom 0 -20,left 20 0}
 
 # move a floating window
 super + {Left,Down,Up,Right}
-	bspc node -v {-20 0,0 20,0 -20,20 0}
-
-# lockscreen bind
-super + slash 
-        locklauncher &
-
-# lockscreen no screen off 
-super + alt + slash
-	locklauncher --no-screen-off &
+				bspc node -v {-20 0,0 20,0 -20,20 0}
 
 #XF86WebCam
 # pactl audio configurations
 ## increase volume
-XF86AudioRaiseVolume 
-        $XDG_CONFIG_HOME/sxhkd/scripts/volume.bash --increase
+XF86Audio{Raise,Lower}Volume
+        $XDG_CONFIG_HOME/sxhkd/scripts/volume.bash --{increase,decrease}
 
-## decrease volume
-XF86AudioLowerVolume 
-        $XDG_CONFIG_HOME/sxhkd/scripts/volume.bash --decrease
-
-## mute vloume
-XF86AudioMute 
-        $XDG_CONFIG_HOME/sxhkd/scripts/volume.bash --toggle
-
-## mic mute
-XF86AudioMicMute 
-        $XDG_CONFIG_HOME/sxhkd/scripts/microphone.bash
+## mute voloume/mic
+XF86Audio{_,Mic}Mute
+        $XDG_CONFIG_HOME/sxhkd/scripts/{volume.bash --toggle,microphone.bash}
 
 # backlight configurations
-## increase brightness
-XF86MonBrightnessUp 
-        $XDG_CONFIG_HOME/sxhkd/scripts/brightness.bash -I
+## inc/dec brightness
+XF86MonBrightness{Up,Down}
+        $XDG_CONFIG_HOME/sxhkd/scripts/brightness.bash -{I,D}
 
 # playerctl audio configurations
-## play
-XF86AudioPlay 
-        playerctl play-pause 
-
-## stop 
-XF86AudioStop 
-        playerctl pause 
-
-# next audio
-XF86AudioNext 
-        playerctl next
-
-# previous audio
-XF86AudioPrev 
-        playerctl previous
-
-## decrease brightness
-XF86MonBrightnessDown 
-        $XDG_CONFIG_HOME/sxhkd/scripts/brightness.bash -D
+## play,pause,next,prev
+XF86Audio{Play,Stop,Next,Prev}
+        playerctl {play-pause,pause,next,previous}
 
 ## airplane mode
 XF86RFKill
         $XDG_CONFIG_HOME/sxhkd/scripts/airplane.bash
 
 # mpd audio configurations
-## increase volume
-shift + XF86AudioRaiseVolume 
-        mpc volume +5
-
-## decrease volume
-shift + XF86AudioLowerVolume 
-        mpc volume -5
+## inc/dec volume
+shift + XF86Audio{Raise,Lower}Volume
+        mpc volume {+,-}5
 
 ## mute vloume
-shift + XF86AudioMute 
+shift + XF86AudioMute
         mpc volume 0
 
 ## play
-shift + XF86AudioPlay 
+shift + XF86AudioPlay
         mpc toggle
 
-## stop 
-shift + XF86AudioStop 
+## stop
+shift + XF86AudioStop
         mpc stop
 
 # next audio
-shift + XF86AudioNext 
+shift + XF86AudioNext
         mpc next
 
 # previous audio
-shift + XF86AudioPrev 
+shift + XF86AudioPrev
         mpc prev
 
-# rofi app menu
-super + d 
-        rofi -show
-
-# rofi run prompt
-super + a
-        rofi -show run
+# rofi app menu + run prompt
+super + {d,a}
+        rofi -show {_,run}
 
 # rofi alt Tab
 alt + Tab
@@ -240,19 +187,12 @@ alt + Tab
 
 # bind some nice apps
 ## launch web browser
-super + shift + f 
-        qutebrowser
+super + {shift + f,e}
+        {qutebrowser,st -e ranger}
 
-## launch filemanager ranger
-super + e
-        st -e ranger
-
-## launch system monitor htop
-ctrl + shift + Escape 
-        st -e btop
-
-ctrl + alt + KP_Delete
-        st -e htop
+## launch system monitor htop & btop
+ctrl + {shift + Escape, alt + KP_Delete}
+        st -e {btop,htop}
 
 ## night mode
 super + n
@@ -261,102 +201,70 @@ super + n
 ## jgmenu
 super + button3
         jgmenu_run &
+#
+# Screenshot
+#
 
-# screenshot configurations
-# fullscreen screenshot save
-super + Print 
-        $XDG_CONFIG_HOME/sxhkd/scripts/screenshot.bash --fullscreen
+# fullscreen save
+{ctrl,_,super} + Print
+        {flameshot gui,\
+					$XDG_CONFIG_HOME/sxhkd/scripts/screenshot.bash --xclip-fullscreen,\
+					$XDG_CONFIG_HOME/sxhkd/scripts/screenshot.bash --fullscreen}
 
 # cropped save
-super + shift + x 
-        $XDG_CONFIG_HOME/sxhkd/scripts/screenshot.bash --selected
+super + shift + {x,s}
+        $XDG_CONFIG_HOME/sxhkd/scripts/screenshot.bash --{selected,xclip-cropped}
 
-# clipboard fullscreen
-Print 
-        $XDG_CONFIG_HOME/sxhkd/scripts/screenshot.bash --xclip-fullscreen
-
-# clipboard cropped
-super + shift + s 
-        $XDG_CONFIG_HOME/sxhkd/scripts/screenshot.bash --xclip-cropped
-
-# flameshot snipping tool
-ctrl + Print
-        flameshot gui
-
-# toggle picom
-super + backslash
-        $XDG_CONFIG_HOME/picom/launcher --toggle
+# toggle picom, screenlock and lockscreen no screen off
+super + {alt + ,_,back}slash
+        {locklauncher --no-screen-off &,locklauncher &,$XDG_CONFIG_HOME/picom/launcher --toggle}
 
 # show widgets
-super + w
-        exec $XDG_CONFIG_HOME/eww/structures/main-utils/mainlauncher
+super + {w,r}
+        exec $XDG_CONFIG_HOME/eww/structures/{main-utils/main,wallpaper/wal}launcher
 
-super + r
-        exec $XDG_CONFIG_HOME/eww/structures/wallpaper/wallauncher
-
-# polybar hide/show
-super + shift + slash
-	$XDG_CONFIG_HOME/sxhkd/scripts/panel-polybar.bash
-        
-
-# hide tint2 panel
-super + shift + backslash
-        $XDG_CONFIG_HOME/tint2/launcher --toggle-panel
+# polybar/tint2 hide/show
+super + shift + {_,back}slash
+				$XDG_CONFIG_HOME/{sxhkd/scripts/panel-polybar.bash,tint2/launcher --toggle-panel}
 
 #
 # dynamic gaps
 #
 
-# decrease gaps
-alt + shift + braceleft
-        {bspc config window_gap $(( $(bspc config -d any window_gap) - 5 ))}
-    
-# increase gaps
-alt + shift + braceright
-        {bspc config window_gap $(( $(bspc config -d any window_gap) + 5 ))}
+# inc/dec gaps
+alt + shift + brace{left,right}
+        bspc config window_gap $(( $(bspc config -d any window_gap) {-,+} 5 ))
 
-# decrease gaps for focused desktop
-alt + super + shift + braceleft
-        {bspc config -n focused window_gap $(( $(bspc config -n focused window_gap) - 5 ))}
-
-# increase gaps for focused desktop
-alt + super + shift + braceright
-        {bspc config -n focused window_gap $(( $(bspc config -n focused window_gap) + 5 ))}
+# inc/dec gaps for focused desktop
+alt + super + shift + brace{left,right}
+      	bspc config -n focused window_gap $(( $(bspc config -n focused window_gap) {-,+} 5 ))
 
 #
 # dynamic borders
 #
 
-#increase minus
-alt + shift + parenleft
-        {bspc config border_width $(( $(bspc config -d any border_width) - 1 ))}
-
-# increase borders
-alt + shift + parenright
-        {bspc config border_width $(( $(bspc config -d any border_width) + 1 ))}
+# inc/dec borders
+alt + shift + paren{left,right}
+        {bspc config border_width $(( $(bspc config -d any border_width) {-,+} 1 ))}
 
 # increase borders for focused node/window
-alt + super + shift + parenleft
-        {bspc config -n focused border_width $(( $(bspc config -n focused border_width) + 1 ))}
-        
-# increase borders for focused node/window
-alt + super + shift + parenright
-        {bspc config -n focused border_width $(( $(bspc config -n focused border_width) - 1 ))}
-        
+alt + super + shift + paren{left,right}
+        {bspc config -n focused border_width $(( $(bspc config -n focused border_width) {-,+} 1 ))}
+
 # cycle between red + 20px border and default border color for the focused window [mark as important]
 super + shift + i
         $XDG_CONFIG_HOME/sxhkd/scripts/important-marker.bash
 
 # borderless monocle
 super + shift + m
-	bspc config borderless_monocle {true,false}
+				bspc config borderless_monocle {true,false}
 
 # toggle see through (quickhide) -- nsfw hide tihi
 super + shift + o
-	picom-trans -c {0,100}
+				picom-trans -c {0,100}
 
 # cycle through transparency levels
 super + shift + p
-	picom-trans -c {0,5,10,15,20,25,30,35,40,45,50,55,60,65,70,75,80,85,90,95,96,97,98,99,100}
+				picom-trans -c {0,5,10,15,20,25,30,35,40,45,50,55,60,65,70,75,80,85,90,95,96,97,98,99,100}
 
-# vim: nowrap
+# vim:nowrap
