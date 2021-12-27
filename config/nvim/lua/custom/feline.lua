@@ -26,10 +26,10 @@ local icon_styles = {
         position_icon = "  "
     },
 
-    round = {
+    round_mod = {
         left = "",
         right = "",
-        main_icon = "  ",
+        main_icon = "  ",
         vi_mode_icon = " ",
         position_icon = " "
     },

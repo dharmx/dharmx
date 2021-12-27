@@ -62,7 +62,7 @@ fi
 
 if [ -x "$(command -v ranger)" ]; then
   alias fm="ranger"
-fi    
+fi
 
 alias logout="bspc quit"
 alias suspend="systemctl suspend; locklauncher"
@@ -75,6 +75,7 @@ alias zedit="nv $HOME/.zshrc"
 alias fedit="nv $XDG_CONFIG_HOME/fish/config.fish"
 alias p10kedit="nv $HOME/.p10k.zsh"
 alias kev="xev -event keyboard"
+alias zshalias="nv $XDG_CONFIG_HOME/zsh/overlap.zsh"
 
 alias pipes1="lam -e pipes1"
 alias pipes2="lam -e pipes2"
@@ -90,7 +91,6 @@ alias yts="ytfzf -t"
 alias ani720="ani-cli -q 720"
 alias ani480="ani-cli -q 480"
 alias pisend="$XDG_CONFIG_HOME/picom/launcher"
-alias polysend="$XDG_CONFIG_HOME/polybar/launch.bash"
 alias tintsend="$XDG_CONFIG_HOME/tint2/launcher"
 
 alias -='cd -' 2> /dev/null
@@ -352,7 +352,7 @@ alias h='history'
 alias hgrep="fc -El 0 | grep"
 alias help='man'
 alias p='ps -f'
-alias sortnr='sort -n -r'
+alias sorter='sort -n -r'
 alias unexport='unset'
 
 # alias rm='rm -i'
@@ -432,6 +432,11 @@ cless() {
 
 cmore() {
   pygmentize -g $1 | more
+}
+
+nordbar() {
+  killall polybar
+  polybar -q -c "$XDG_CONFIG_HOME/polybar/configs/antartica/$1.ini" main & disown
 }
 
 lam -e alpha

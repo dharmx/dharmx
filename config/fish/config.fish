@@ -1,20 +1,20 @@
 # No greeting when starting an interactive shell.
 function fish_greeting
-  lam -e crunch
-  printf "\n"
+    lam -e crunch
+    printf "\n"
 end
 
 export PATH="$XDG_DATA_HOME/gem/ruby/3.0.0/bin:$HOME/.jdks/jdk-16.0.1/bin:$HOME/.local/bin:$PATH"
-export VISUAL=nvim;
-export EDITOR=nvim;
+export VISUAL=nvim
+export EDITOR=nvim
 # export LD_PRELOAD=/usr/lib/libwcwidth-icons.so
-    
+
 alias l 'ls -lah'
 alias ll 'ls -lh'
 alias li "exa --long --all --group --icons"
-alias cs "exa"
+alias cs exa
 alias ca "exa --long --all --group"
-alias lls "logo-ls"
+alias lls logo-ls
 alias lla "logo-ls -l --all"
 
 alias mount-phone "go-mtpfs $HOME/Phone"
@@ -23,7 +23,7 @@ alias mount-ssd "udisksctl mount -b /dev/nvme0n1p1"
 alias unmount-ssd "udisksctl unmount -b /dev/nvme0n1p1"
 
 alias logout "killall bspwm"
-alias lock "locklauncher"
+alias lock locklauncher
 alias suspend "systemctl suspend; locklauncher"
 
 alias pac "sudo pacman"
@@ -31,10 +31,10 @@ alias commit "git add . && git commit -m"
 alias clone "git clone"
 alias push "git push"
 alias pull "git pull"
-alias cls "clear"
-alias nv "nvim"
+alias cls clear
+alias nv nvim
 alias la "ls -la"
-alias fm "ranger"
+alias fm ranger
 
 alias coldarch "$XDG_CONFIG_HOME/neofetch/launcher --coldarch"
 alias verycold "$XDG_CONFIG_HOME/neofetch/launcher --verycoldarch"
@@ -57,6 +57,7 @@ alias bedit "nv $HOME/.bashrc"
 alias p10kedit "nv $HOME/.p10k.zsh"
 alias kev="xev -event keyboard"
 alias visudo="nvim /etc/sudoers"
+alias zshalias="nv $XDG_CONFIG_HOME/zsh/overlap.zsh"
 
 alias fzf "fzf --prompt ' ' --pointer '->'"
 alias ccbonsai="cbonsai -ilt 0.02 -c '  ,  ,  ,  ,  ' -L 80"
@@ -72,7 +73,6 @@ alias yts "ytfzf -t"
 alias ani720 "ani-cli -q 720"
 alias ani480 "ani-cli -q 480"
 alias pisend "$XDG_CONFIG_HOME/picom/launcher"
-alias polysend "$XDG_CONFIG_HOME/polybar/launch.bash"
 alias tintsend "$XDG_CONFIG_HOME/tint2/launcher"
 
 alias java "$HOME/.jdks/jdk-16.0.1/bin/java"
@@ -127,22 +127,22 @@ alias ace "unace l"
 alias grepin 'grep -i'
 alias grep 'grep --color'
 
-alias rd 'rmdir'
-alias run-help 'man'
+alias rd rmdir
+alias run-help man
 
 alias startx 'startx -- -keeptty >~/.xorg.log 2>&1'
 alias reconnect "nmcli d c wlp0s20f3"
 
-alias _ 'sudo'
+alias _ sudo
 alias afind 'ack -il'
 
 function killew
-  set EWWC_FRAGMENT "eww -c $XDG_CONFIG_HOME/eww/structures"
-  eval "rm $XDG_CACHE_HOME/launch_main.eww &> /dev/null"
-  eval "rm $XDG_CACHE_HOME/launch_wallpaper.eww &> /dev/null"
-  eval "$EWWC_FRAGMENT/main-utils kill &>/dev/null"
-  eval "$EWWC_FRAGMENT/wallpaper kill &>/dev/null"
-  set EWWC_FRAGMENT ""
+    set EWWC_FRAGMENT "eww -c $XDG_CONFIG_HOME/eww/structures"
+    eval "rm $XDG_CACHE_HOME/launch_main.eww &> /dev/null"
+    eval "rm $XDG_CACHE_HOME/launch_wallpaper.eww &> /dev/null"
+    eval "$EWWC_FRAGMENT/main-utils kill &>/dev/null"
+    eval "$EWWC_FRAGMENT/wallpaper kill &>/dev/null"
+    set EWWC_FRAGMENT ""
 end
 
 alias rofisc "wmctrl -s 2; rofi -show & sleep 1 && maim lol.png"
@@ -158,5 +158,10 @@ alias upfont 'sudo fc-cache -fv'
 
 alias kittythemes "kitty +kitten themes"
 alias nvupd "nv +PackerSync"
+
+function nordbar
+    killall polybar
+    polybar -q -c "$XDG_CONFIG_HOME/polybar/configs/antartica/$1.ini" main & disown
+end
 
 # vim:ft=fish:nowrap

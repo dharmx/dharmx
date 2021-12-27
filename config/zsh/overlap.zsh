@@ -57,7 +57,7 @@ if [ -x "$(command -v ripgrep)" ]; then
 fi
 
 if [ -x "$(command -v go-mtpfs)" ]; then
-    alias mount-phone="go-mtpfs $HOME/Phone"
+    alias mount-phone="go-mtpfs $HOME/Phone &>/dev/null & disown"
 fi
 
 if [ -x "$(command -v fusermount)" ]; then
@@ -95,6 +95,7 @@ alias fedit="nv $XDG_CONFIG_HOME/fish/config.fish"
 alias zedit2="nv $XDG_CONFIG_HOME/zsh/.zshrc"
 alias p10kedit="nv $HOME/.p10k.zsh"
 alias kev="xev -event keyboard"
+alias zshalias="nv $XDG_CONFIG_HOME/zsh/overlap.zsh"
 
 alias pipes1="lam -e pipes1"
 alias pipes2="lam -e pipes2"
@@ -110,7 +111,6 @@ alias yts="ytfzf -t"
 alias ani720="ani-cli -q 720"
 alias ani480="ani-cli -q 480"
 alias pisend="$XDG_CONFIG_HOME/picom/launcher"
-alias polysend="$XDG_CONFIG_HOME/polybar/launch.bash"
 alias tintsend="$XDG_CONFIG_HOME/tint2/launcher"
 alias startx='startx -- -keeptty >~/.xorg.log 2>&1'
 
@@ -442,6 +442,11 @@ function cless() {
 
 function cmore() {
   pygmentize -g $1 | more
+}
+
+function nordbar() {
+  killall polybar
+  polybar -q -c "$XDG_CONFIG_HOME/polybar/configs/antartica/$1.ini" main & disown
 }
 
 alias cless="cless"

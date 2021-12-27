@@ -8,6 +8,20 @@ end)
 hooks.add("install_plugins", function(use)
     use "rinx/nvim-minimap"
 
+    use '9mm/vim-closer'
+
+    use {
+        'tpope/vim-dispatch',
+        opt = true,
+        cmd = {'Dispatch', 'Make', 'Focus', 'Start'}
+    }
+
+    use {
+        'iamcco/markdown-preview.nvim',
+        run = 'cd app && yarn install',
+        cmd = 'MarkdownPreview'
+    }
+
     use {
         "karb94/neoscroll.nvim",
         opt = true,
@@ -45,9 +59,7 @@ hooks.add("install_plugins", function(use)
     use {
         "Pocco81/TrueZen.nvim",
         cmd = {"TZAtaraxis", "TZMinimalist", "TZFocus"},
-        config = function()
-            -- check https://github.com/Pocco81/TrueZen.nvim#setup-configuration (init.lua version)
-        end
+        disable = true
     }
 
     use "nathom/filetype.nvim"
@@ -59,13 +71,14 @@ hooks.add("install_plugins", function(use)
 
     use "nvim-lua/popup.nvim"
 
-    use "Shatur/neovim-session-manager"
+    use {"Shatur/neovim-session-manager", disable = true}
 
     use "chrisbra/Colorizer"
 
     use {
         'nvim-lualine/lualine.nvim',
-        requires = {'kyazdani42/nvim-web-devicons', opt = true}
+        requires = {'kyazdani42/nvim-web-devicons', opt = true},
+        disable = true
     }
 
     use "elkowar/yuck.vim"
@@ -74,17 +87,7 @@ hooks.add("install_plugins", function(use)
 
     use "rcarriga/nvim-notify"
 
-    use {
-        "folke/trouble.nvim",
-        requires = "kyazdani42/nvim-web-devicons",
-        config = function()
-            require("trouble").setup {
-                -- your configuration comes here
-                -- or leave it empty to use the default settings
-                -- refer to the configuration section below
-            }
-        end
-    }
+    use {"folke/trouble.nvim", requires = "kyazdani42/nvim-web-devicons"}
 
     use 'andweeb/presence.nvim'
 
@@ -118,6 +121,7 @@ hooks.add("install_plugins", function(use)
         run = 'make',
         disable = true
     }
+
 end)
 
 -- vim:ft=lua:nowrap

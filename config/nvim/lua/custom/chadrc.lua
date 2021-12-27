@@ -19,7 +19,7 @@ M.plugins = {
 
             -- truncate statusline on small screens
             shortline = true,
-            style = "round"
+            style = "round_mod"
         }
     },
 

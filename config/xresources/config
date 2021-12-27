@@ -18,7 +18,7 @@ URxvt.depth:                      10
 URxvt.iso14755:                   false
 URxvt.iconFile:                   ~/.icons/Zafiro-Icons-Light/apps/scalable/urxvt.svg
 !Uncomment below if too much font spacing
-!URxvt.letterSpace: -1
+URxvt.letterSpace: -1
 
 ! URL Select Ext
 URxvt.keysym.Control-Shift-U:     url-select:select_next

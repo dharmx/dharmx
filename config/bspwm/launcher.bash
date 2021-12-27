@@ -1,6 +1,6 @@
-#!/usr/bin/env bash 
+#!/usr/bin/env bash
 
-# the display system that is written in Java and coincidentally(?) it is the 
+# the display system that is written in Java and coincidentally(?) it is the
 # only one that is whitelisted by Java apps
 # If you don't use Java then comment/remove it
 wmname LG3D &
@@ -19,8 +19,7 @@ xsetroot -cursor_name left_ptr &
 # playerctld daemon &
 
 # start polybar
-# "$XDG_CONFIG_HOME/polybar/launcher" --placidity-plus &
-"$XDG_CONFIG_HOME/polybar/launch.bash" --restore &
+polybar -q -c "$XDG_CONFIG_HOME/polybar/configs/antartica/nordic.ini" main &
 
 # start dunst daemon
 # dunst &
@@ -40,4 +39,3 @@ xsetroot -cursor_name left_ptr &
 # Launch live wallpaper app
 # komorebi &
 exit 0
-
