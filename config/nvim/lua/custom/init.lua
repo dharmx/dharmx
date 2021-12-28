@@ -3,6 +3,11 @@ local hooks = require "core.hooks"
 hooks.add("setup_mappings", function(map)
     map("n", "<leader>cc", ":Telescope <CR>", opt)
     map("n", "<leader>q", ":q <CR>", opt)
+    map("n", "<leader>sn", "<Plug>(SpotifySkip)", {silent = true})
+    map("n", "<leader>sp", "<Plug>(SpotifyPause)", {silent = true})
+    map("n", "<leader>ss", "<Plug>(SpotifySave)", {silent = true})
+    map("n", "<leader>so", ":Spotify<CR>", {silent = true})
+    map("n", "<leader>sd", ":SpotifyDevices<CR>", {silent = true})
 end)
 
 hooks.add("install_plugins", function(use)
@@ -114,14 +119,17 @@ hooks.add("install_plugins", function(use)
         requires = 'nvim-telescope/telescope.nvim',
         config = function()
             local spotify = require 'nvim-spotify'
+
             spotify.setup {
-                refresh_token = "AQAp3kFcxfmzV3zUHmaT8JkSG6dNmYbhDJ33NQChNJP5RWSHjaQDt5SL2PKFwKd0B-KdXw7TaHDlKf9JKIFp6fuhzyPlX5qN8PwhOchf7kFEJW-H-ji8vvHjUQsvdd-F1mw"
+                -- default opts
+                status = {
+                    update_interval = 10000, -- the interval (ms) to check for what's currently playing
+                    format = '%s %t by %a' -- spotify-tui --format argument
+                }
             }
         end,
-        run = 'make',
-        disable = true
+        run = 'make'
     }
-
 end)
 
 -- vim:ft=lua:nowrap
