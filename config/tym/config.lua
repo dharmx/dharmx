@@ -26,7 +26,7 @@ tym.set_config({
     shell = xdg.config .. '/zsh/start.zsh pi',
     cursor_shape = 'block',
     autohide = true,
-    padding_horizontal = 20,
+    padding_horizontal = 25,
     padding_vertical = 20,
     term = 'xterm-256color',
     cjk_width = 'narrow'
@@ -65,31 +65,22 @@ tym.set_hook('scroll', function(dx, dy, x, y)
     end
 end)
 
--- also can set keymap
 tym.set_keymap('<Ctrl><Shift>o', function()
     local h = tym.get('height')
     tym.set('height', h + 1)
     tym.notify('Set window height :' .. h)
 end)
 
--- set by table
-tym.set_keymaps({
-    ['<Ctrl><Shift>t'] = function()
-        tym.reload()
-        tym.notify('reload config')
-    end,
-    ['<Ctrl><Shift>r'] = function()
-        -- reload and notify
-        tym.send_key('<Ctrl><Shift>t')
-    end,
+tym.set_keymap('<Ctrl><Shift>p', function()
+    local w = tym.get('width')
+    tym.set('width', w + 1)
+    tym.notify('Set window width :' .. w)
+end)
 
-    ['<Shift>y'] = function()
-        tym.notify('Y has been pressed')
-        return true -- notification is shown and `Y` will be inserted
-    end,
-    ['<Shift>w'] = function()
-        tym.notify('W has been pressed')
-        -- notification is shown but `W` is not inserted
+tym.set_keymaps({
+    ['<Ctrl><Shift>r'] = function()
+        tym.reload()
+        tym.notify('Reloaded configurations!', "TYM Terminal")
     end
 })
 

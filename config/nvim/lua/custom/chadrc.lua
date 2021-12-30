@@ -30,9 +30,9 @@ M.plugins = {
     }
 }
 
--- require("custom.lualine")
 require("custom.presence")
 -- require("custom.vimsence")
 require("custom.null")
+-- require("custom.lualine")
 
 return M

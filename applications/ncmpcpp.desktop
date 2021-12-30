@@ -1,0 +1,10 @@
+[Desktop Entry]
+Type=Application
+Name=NCMPCPP
+Terminal=true
+Comment=NCURSES Interface for the Music Player Daemon [MPD]
+Icon=/home/maker/.icons/Zafiro-Icons-Light/apps/scalable/applications-multimedia-svg
+Exec=/home/maker/.config/ncmpcpp/ncmpcpp-launch.bash
+Categories=Media;
+Encoding=UTF-8
+Keywords=Media;Music;

@@ -3,11 +3,6 @@ local hooks = require "core.hooks"
 hooks.add("setup_mappings", function(map)
     map("n", "<leader>cc", ":Telescope <CR>", opt)
     map("n", "<leader>q", ":q <CR>", opt)
-    map("n", "<leader>sn", "<Plug>(SpotifySkip)", {silent = true})
-    map("n", "<leader>sp", "<Plug>(SpotifyPause)", {silent = true})
-    map("n", "<leader>ss", "<Plug>(SpotifySave)", {silent = true})
-    map("n", "<leader>so", ":Spotify<CR>", {silent = true})
-    map("n", "<leader>sd", ":SpotifyDevices<CR>", {silent = true})
 end)
 
 hooks.add("install_plugins", function(use)
@@ -128,8 +123,11 @@ hooks.add("install_plugins", function(use)
                 }
             }
         end,
-        run = 'make'
+        run = 'make',
+        disable = true
     }
+
+    use 'b3nj5m1n/kommentary'
 end)
 
 -- vim:ft=lua:nowrap

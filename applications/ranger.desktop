@@ -1,10 +1,10 @@
 [Desktop Entry]
 Type=Application
 Name=Ranger
-Terminal=false
+Terminal=true
 Comment=Vim-like file manager
 Icon=/home/maker/.icons/Zafiro-Icons-Light/categories/22-Dark/applications-system.svg
-Exec=st -e ranger
+Exec=ranger
 Categories=Accessories;
 Encoding=UTF-8
 Keywords=Utilities;Explorer;

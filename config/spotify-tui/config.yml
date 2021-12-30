@@ -36,7 +36,7 @@ behavior:
   shuffle_icon: 咽
   repeat_track_icon: 綾
   repeat_context_icon: 凌
-  playing_icon:  
+  playing_icon: 
   paused_icon: 
   # Sets the window title to "spt - Spotify TUI" via ANSI escape code.
   set_window_title: true
@@ -71,4 +71,3 @@ keybindings:
   jump_to_context: "o"
   basic_view: "B"
   add_item_to_queue: "z"
-

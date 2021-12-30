@@ -35,7 +35,7 @@ if [ -x "$(command -v logo-ls)" ]; then
 fi
 
 if [ -x "$(command -v neofetch)" ]; then
-    LAUNCHER="$XDG_CONFIG_HOME/neofetch/launcher"
+    LAUNCHER="$XDG_CONFIG_HOME/neofetch/launch.bash"
     alias fetch="$LAUNCHER"
 
     alias coldarch="$LAUNCHER --coldarch"
@@ -455,7 +455,9 @@ alias ccat="ccat"
 alias reconnect="nmcli d c wlp0s20f3"
 alias rofisc="wmctrl -s 2; rofi -show & sleep 1 && maim lol.png"
 alias nvconfig="fm ~/.config/nvim/lua/"
+
 alias tping="ping -c5 google.com"
+alias iping="ping google.com"
 
 alias yta-mp3="youtube-dl --extract-audio --audio-format mp3"
 alias ytv-best="youtube-dl -f bestvideo+bestaudio "

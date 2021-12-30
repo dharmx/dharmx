@@ -36,15 +36,15 @@ alias nv nvim
 alias la "ls -la"
 alias fm ranger
 
-alias coldarch "$XDG_CONFIG_HOME/neofetch/launcher --coldarch"
-alias verycold "$XDG_CONFIG_HOME/neofetch/launcher --verycoldarch"
-alias foodfetch "$XDG_CONFIG_HOME/neofetch/launcher --food"
+alias coldarch "$XDG_CONFIG_HOME/neofetch/launch.bash --coldarch"
+alias verycold "$XDG_CONFIG_HOME/neofetch/launch.bash --verycoldarch"
+alias foodfetch "$XDG_CONFIG_HOME/neofetch/launch.bash --food"
 
-alias floskull "$XDG_CONFIG_HOME/neofetch/launcher --flowerskull"
-alias fspolar "$XDG_CONFIG_HOME/neofetch/launcher --flowerskull polar"
-alias fswarm "$XDG_CONFIG_HOME/neofetch/launcher --flowerskull warm"
-alias fsauro "$XDG_CONFIG_HOME/neofetch/launcher --flowerskull aurorae"
-alias fwaifu "$XDG_CONFIG_HOME/neofetch/launcher --waifu"
+alias floskull "$XDG_CONFIG_HOME/neofetch/launch.bash --flowerskull"
+alias fspolar "$XDG_CONFIG_HOME/neofetch/launch.bash --flowerskull polar"
+alias fswarm "$XDG_CONFIG_HOME/neofetch/launch.bash --flowerskull warm"
+alias fsauro "$XDG_CONFIG_HOME/neofetch/launcher.bash --flowerskull aurorae"
+alias fwaifu "$XDG_CONFIG_HOME/neofetch/launcher.bash --waifu"
 
 alias coldfetch "neofetch --config $XDG_CONFIG_HOME/neofetch/coldfetch.conf"
 alias coldasf "neofetch --config $XDG_CONFIG_HOME/neofetch/cold-as-fuck.conf"
@@ -147,7 +147,9 @@ end
 
 alias rofisc "wmctrl -s 2; rofi -show & sleep 1 && maim lol.png"
 alias nvconfig "fm ~/.config/nvim/lua/"
+
 alias tping "ping -c5 google.com"
+alias iping "ping google.com"
 
 alias yta-mp3 "youtube-dl --extract-audio --audio-format mp3"
 alias ytv-best "youtube-dl -f bestvideo+bestaudio "
