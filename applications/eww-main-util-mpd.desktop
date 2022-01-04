@@ -1,0 +1,11 @@
+[Desktop Entry]
+Type=Application
+Name=EWW MPD Centric Widgets
+Terminal=false
+Comment=Very useful widget with the MPD music player as the main attraction
+Icon=/home/maker/.icons/Zafiro-Icons-Light/apps/scalable/music.svg
+Exec=/home/maker/.config/eww/structs/main-utils/mainlauncher
+Categories=System;
+Encoding=UTF-8
+Keywords=Tools;System
+

@@ -1,10 +1,10 @@
 [Desktop Entry]
 Type=Application
 Name=Neofetch
-Terminal=true
+Terminal=false
 Comment=System Fetch
 Icon=/home/maker/.icons/Zafiro-Icons-Light/categories/22-Dark/applications-system.svg
-Exec=/home/maker/.config/rofi/launchers/neofetch.bash
+Exec=kitty /home/maker/.config/rofi/launchers/neofetch.bash
 Categories=System;
 Encoding=UTF-8
 Keywords=System;Fetch;

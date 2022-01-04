@@ -2,7 +2,7 @@ source "$HOME/.cargo/env"
 
 # export LC_ALL=C
 
-export TERMINAL="kitty"
+export TERMINAL="st"
 export BROWSER="qutebrowser"
 export VISUAL="nvim";
 export EDITOR="nvim";

@@ -1,0 +1,11 @@
+[Desktop Entry]
+Type=Application
+Name=EWW Wallpaper Browser
+Terminal=false
+Comment=A sleek and minimal wallaper browser. Powered by EWW
+Icon=/home/maker/.icons/Zafiro-Icons-Light/apps/scalable/background.svg
+Exec=/home/maker/.config/eww/structs/wallpaper/wallauncher
+Categories=Accessories;
+Encoding=UTF-8
+Keywords=Wallpaper;Background;Screen;Widget
+

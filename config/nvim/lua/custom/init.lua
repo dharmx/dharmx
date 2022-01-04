@@ -128,6 +128,8 @@ hooks.add("install_plugins", function(use)
     }
 
     use 'b3nj5m1n/kommentary'
+
+    use 'simrat39/symbols-outline.nvim'
 end)
 
 -- vim:ft=lua:nowrap

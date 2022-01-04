@@ -10,8 +10,8 @@ LEVEL6="$XDG_CONFIG_HOME/sxhkd/images/brightness/twotone_brightness_7_black_48dp
 LEVEL7="$XDG_CONFIG_HOME/sxhkd/images/brightness/twotone_light_mode_black_48dp.png"
 LEVEL8="$XDG_CONFIG_HOME/sxhkd/images/brightness/twotone_flare_black_48dp.png"
 LEVEL9="$XDG_CONFIG_HOME/sxhkd/images/brightness/twotone_new_releases_black_48dp.png"
-LEVEL_OFF="/home/maker/Dotfiles/onedarkfiles/config/sxhkd/images/brightness/twotone_visibility_off_white_48dp.png"
-LEVEL_VERY_LOW="/home/maker/Dotfiles/onedarkfiles/config/sxhkd/images/brightness/twotone_visibility_white_48dp.png"
+LEVEL_OFF="$XDG_CONFIG_HOME/sxhkd/images/brightness/twotone_visibility_off_white_48dp.png"
+LEVEL_VERY_LOW="$XDG_CONFIG_HOME/sxhkd/images/brightness/twotone_visibility_white_48dp.png"
 
 notify_template() {
 	dunstify -u "$1" \

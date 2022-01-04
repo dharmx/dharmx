@@ -92,7 +92,6 @@ alias la="ls -la"
 alias zedit="nv $HOME/.zshrc"
 alias bedit="nv $HOME/.bashrc"
 alias fedit="nv $XDG_CONFIG_HOME/fish/config.fish"
-alias zedit2="nv $XDG_CONFIG_HOME/zsh/.zshrc"
 alias p10kedit="nv $HOME/.p10k.zsh"
 alias kev="xev -event keyboard"
 alias zshalias="nv $XDG_CONFIG_HOME/zsh/overlap.zsh"
@@ -425,7 +424,7 @@ setopt HIST_SAVE_NO_DUPS
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
-source "$HOME"/Dotfiles/nordfiles/home/colors.sh
+source "$HOME/.colors.sh"
 
 function ccat() {
   if $2
@@ -470,7 +469,7 @@ alias kittythemes="kitty +kitten themes"
 alias nvupd="nv +PackerSync"
 
 function killew() {
-  EWWC_FRAGMENT="eww -c $XDG_CONFIG_HOME/eww/structures"
+  EWWC_FRAGMENT="eww -c $XDG_CONFIG_HOME/eww/structs"
   eval "rm $XDG_CACHE_HOME/launch_main.eww &>/dev/null"
   eval "rm $XDG_CACHE_HOME/launch_wallpaper.eww &>/dev/null"
   eval "$EWWC_FRAGMENT/main-utils kill &>/dev/null"
@@ -480,5 +479,7 @@ function killew() {
 
 # alias cat="ccat"
 # alias less="cless"
-cls
 
+# zmodload zsh/zle
+
+# vim:ft=zsh:nowrap

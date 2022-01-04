@@ -7,8 +7,7 @@ wmname LG3D &
 # wmname compiz &
 
 # set your wallpaper
-# feh --bg-scale "$XDG_PICTURES_DIR/wallpapers/BirdOneDarker.png"
-exec "$HOME/.fehbg" &
+feh --bg-scale "$XDG_PICTURES_DIR/wallpapers/nord/ign-cementary-res.png" &
 
 # update the font cache
 # fc-cache -fr &> /dev/null &
@@ -19,7 +18,7 @@ xsetroot -cursor_name left_ptr &
 # playerctld daemon &
 
 # start polybar
-polybar -q -c "$XDG_CONFIG_HOME/polybar/configs/antartica/nordic.ini" main &
+polybar -q -c "$XDG_CONFIG_HOME"/polybar/configs/antartica/nordic.ini main &
 
 # start dunst daemon
 # dunst &
@@ -33,8 +32,6 @@ polybar -q -c "$XDG_CONFIG_HOME/polybar/configs/antartica/nordic.ini" main &
 
 # Start blueman applet for bluetooth
 # blueman-applet &
-
-# "$XDG_CONFIG_HOME/picom/launcher" --restore &
 
 # Launch live wallpaper app
 # komorebi &

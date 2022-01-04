@@ -32,9 +32,9 @@ if [ -x "$(command -v neofetch)" ]; then
     alias fwaifu="$LAUNCHER --waifu"
 fi
 
-if [ -x "$(command -v ripgrep)" ]; then
-  alias grep="ripgrep"
-fi
+# if [ -x "$(command -v ripgrep)" ]; then
+  # alias grep="ripgrep"
+# fi
 
 if [ -x "$(command -v go-mtpfs)" ]; then
   alias mount-phone="go-mtpfs ~/Phone"
@@ -415,7 +415,7 @@ function killew() {
 . "$HOME/.cargo/env"
 
 [ -f ~/.fzf.bash ] && source ~/.fzf.bash
-source "$HOME"/Dotfiles/nordfiles/home/colors.sh
+source "$HOME/.colors.sh"
 
 ccat() {
   if $2

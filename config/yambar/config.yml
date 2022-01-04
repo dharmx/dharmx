@@ -1,0 +1,310 @@
+# Typical laptop setup, with wifi, brightness, battery etc, for
+# i3/Sway.
+
+# For X11/i3, you'll want to replace calls to swaymsg with i3-msg, and
+# the sway-xkb module with the xkb module.
+
+# fonts we'll be re-using here and there
+awesome: &awesome Font Awesome 5 Free:style=solid:pixelsize=14
+awesome_brands: &awesome_brands Font Awesome 5 Brands:pixelsize=16
+
+std_underline: &std_underline {underline: { size: 2, color: ff0000ff}}
+
+# This is THE bar configuration
+bar:
+  height: 26
+  location: top
+  spacing: 5
+  margin: 7
+
+  # Default font
+  font: Adobe Helvetica:pixelsize=12
+
+  foreground: ffffffff
+  background: 111111cc
+
+  border:
+    width: 1
+    color: 999999cc
+    margin: 5
+    top-margin: 0
+
+  left:
+    - i3:
+        anchors: # Not used (directly) by f00bar; used here to avoid duplication
+          - string: &i3_common {margin: 5, on-click: "swaymsg --quiet workspace {name}"}
+          - string: &default {<<: *i3_common, text: "? {name}"}
+          - string: &main    {<<: *i3_common, text: , font: *awesome}
+          - string: &surfing {<<: *i3_common, text: , font: *awesome_brands}
+          - string: &misc    {<<: *i3_common, text: , font: *awesome}
+          - string: &mail    {<<: *i3_common, text: , font: *awesome}
+          - string: &music   {<<: *i3_common, text: , font: *awesome}
+          - focused: &focused
+              deco: {stack: [background: {color: ffa0a04c}, <<: *std_underline]}
+          - invisible: &invisible {foreground: ffffff55}
+          - urgent: &urgent
+              foreground: 000000ff
+              deco: {stack: [background: {color: bc2b3fff}, <<: *std_underline]}
+          - map: &i3_mode
+              tag: mode
+              default:
+                - string:
+                    margin: 5
+                    text: "{mode}"
+                    deco: {background: {color: cc421dff}}
+                - empty: {right-margin: 7}
+              values:
+                default: {empty: {}}
+        content:
+          "":
+            map:
+              tag: state
+              values:
+                focused:   {string: {<<: [*default, *focused]}}
+                unfocused: {string: {<<: *default}}
+                invisible: {string: {<<: [*default, *invisible]}}
+                urgent:    {string: {<<: [*default, *urgent]}}
+          main:
+            map:
+              tag: state
+              values:
+                focused:   {string: {<<: [*main, *focused]}}
+                unfocused: {string: {<<: *main}}
+                invisible: {string: {<<: [*main, *invisible]}}
+                urgent:    {string: {<<: [*main, *urgent]}}
+          surfing:
+            map:
+              tag: state
+              values:
+                focused: {string: {<<: [*surfing, *focused]}}
+                unfocused: {string: {<<: *surfing}}
+                invisible: {string: {<<: [*surfing, *invisible]}}
+                urgent:    {string: {<<: [*surfing, *urgent]}}
+          misc:
+            map:
+              tag: state
+              values:
+                focused: {string: {<<: [*misc, *focused]}}
+                unfocused: {string: {<<: *misc}}
+                invisible: {string: {<<: [*misc, *invisible]}}
+                urgent:    {string: {<<: [*misc, *urgent]}}
+
+          mail:
+            map:
+              tag: state
+              values:
+                focused: {string: {<<: [*mail, *focused]}}
+                unfocused: {string: {<<: *mail}}
+                invisible: {string: {<<: [*mail, *invisible]}}
+                urgent:    {string: {<<: [*mail, *urgent]}}
+          music:
+            map:
+              tag: state
+              values:
+                focused: {string: {<<: [*music, *focused]}}
+                unfocused: {string: {<<: *music}}
+                invisible: {string: {<<: [*music, *invisible]}}
+                urgent:    {string: {<<: [*music, *urgent]}}
+
+    - foreign-toplevel:
+        content:
+          map:
+            tag: activated
+            values:
+              false: {empty: {}}
+              true:
+                - string: {text: "{app-id}", foreground: ffa0a0ff}
+                - string: {text: ": {title}"}
+  center:
+    - mpd:
+        host: /run/mpd/socket
+        anchors:
+          list: &artist_album_title
+            spacing: 0
+            items:
+              - map:
+                  tag: state
+                  values:
+                    playing: {string: {text: "{artist}"}}
+                    paused: {string: {text: "{artist}", foreground: ffffff66}}
+              - string: {text: " | ", foreground: ffffff66}
+              - map:
+                  tag: state
+                  values:
+                    playing: {string: {text: "{album}"}}
+                    paused: {string: {text: "{album}", foreground: ffffff66}}
+              - string: {text: " | ", foreground: ffffff66}
+              - map:
+                  tag: state
+                  values:
+                    playing: {string: {text: "{title}", foreground: ffa0a0ff}}
+                    paused: {string: {text: "{title}", foreground: ffffff66}}
+
+        content:
+          map:
+            margin: 10
+            tag: state
+            values:
+              offline: {string: {text: offline, foreground: ff0000ff}}
+              stopped: {string: {text: stopped}}
+              paused: {list: *artist_album_title}
+              playing: {list: *artist_album_title}
+
+  right:
+    - removables:
+        anchors:
+          drive: &drive { text: , font: *awesome}
+          optical: &optical {text: , font: *awesome}
+        spacing: 5
+        content:
+          map:
+            tag: mounted
+            values:
+              false:
+                map:
+                  tag: optical
+                  on-click: udisksctl mount -b {device}
+                  values:
+                    false: [{string: *drive}, {string: {text: "{label}"}}]
+                    true: [{string: *optical}, {string: {text: "{label}"}}]
+              true:
+                map:
+                  tag: optical
+                  on-click: udisksctl unmount -b {device}
+                  values:
+                    false:
+                      - string: {<<: *drive, deco: *std_underline}
+                      - string: {text: "{label}"}
+                    true:
+                      - string: {<<: *optical, deco: *std_underline}
+                      - string: {text: "{label}"}
+    - sway-xkb:
+        identifiers: [1:1:AT_Translated_Set_2_keyboard]
+        content:
+          - string: {text: , font: *awesome}
+          - string: {text: "{layout}"}
+    - network:
+        name: enp1s0
+        content:
+          map:
+            tag: carrier
+            values:
+              false: {empty: {}}
+              true:
+                map:
+                  tag: state
+                  default: {string: {text: , font: *awesome, foreground: ffffff66}}
+                  values:
+                    up:
+                      map:
+                        tag: ipv4
+                        default: {string: {text: , font: *awesome}}
+                        values:
+                          "": {string: {text: , font: *awesome, foreground: ffffff66}}
+    - network:
+        name: wlp2s0
+        content:
+          map:
+            tag: state
+            default: {string: {text: , font: *awesome, foreground: ffffff66}}
+            values:
+              down: {string: {text: , font: *awesome, foreground: ff0000ff}}
+              up:
+                map:
+                  tag: ipv4
+                  default:
+                    - string: {text: , font: *awesome}
+                    - string: {text: "{ssid}"}
+                  values:
+                    "":
+                      - string: {text: , font: *awesome, foreground: ffffff66}
+                      - string: {text: "{ssid}", foreground: ffffff66}
+    - alsa:
+        card: hw:PCH
+        mixer: Master
+        content:
+          map:
+            tag: online
+            values:
+              false: {string: {text: , font: *awesome, foreground: ff0000ff}}
+              true:
+                map:
+                  on-click: /bin/sh -c "amixer -q sset Speaker unmute && amixer -q sset Headphone unmute && amixer -q sset Master toggle"
+                  tag: muted
+                  values:
+                    true: {string: {text: , font: *awesome, foreground: ffffff66}}
+                    false:
+                      ramp:
+                        tag: volume
+                        items:
+                          - string: {text: , font: *awesome}
+                          - string: {text: , font: *awesome}
+                          - string: {text: , font: *awesome}
+                          - string: {text: , font: *awesome}
+                          - string: {text: , font: *awesome}
+    - backlight:
+        name: intel_backlight
+        content: [ string: {text: , font: *awesome}, string: {text: "{percent}%"}]
+    - battery:
+        name: BAT0
+        poll-interval: 30
+        anchors:
+          discharging: &discharging
+            list:
+              items:
+                - ramp:
+                    tag: capacity
+                    items:
+                      - string: {text: , foreground: ff0000ff, font: *awesome}
+                      - string: {text: , foreground: ffa600ff, font: *awesome}
+                      - string: {text: , font: *awesome}
+                      - string: {text: , font: *awesome}
+                      - string: {text: , font: *awesome}
+                      - string: {text: , font: *awesome}
+                      - string: {text: , font: *awesome}
+                      - string: {text: , font: *awesome}
+                      - string: {text: , font: *awesome}
+                      - string: {text: , foreground: 00ff00ff, font: *awesome}
+                - string: {text: "{capacity}% {estimate}"}
+        content:
+          map:
+            tag: state
+            values:
+              unknown:
+                <<: *discharging
+              discharging:
+                <<: *discharging
+              charging:
+                - string: {text: , foreground: 00ff00ff, font: *awesome}
+                - string: {text: "{capacity}% {estimate}"}
+              full:
+                - string: {text: , foreground: 00ff00ff, font: *awesome}
+                - string: {text: "{capacity}% full"}
+              not charging:
+                - ramp:
+                    tag: capacity
+                    items:
+                      - string: {text:  , foreground: ff0000ff, font: *awesome}
+                      - string: {text:  , foreground: ffa600ff, font: *awesome}
+                      - string: {text:  , foreground: 00ff00ff, font: *awesome}
+                      - string: {text:  , foreground: 00ff00ff, font: *awesome}
+                      - string: {text:  , foreground: 00ff00ff, font: *awesome}
+                      - string: {text:  , foreground: 00ff00ff, font: *awesome}
+                      - string: {text:  , foreground: 00ff00ff, font: *awesome}
+                      - string: {text:  , foreground: 00ff00ff, font: *awesome}
+                      - string: {text:  , foreground: 00ff00ff, font: *awesome}
+                      - string: {text:  , foreground: 00ff00ff, font: *awesome}
+                - string: {text: "{capacity}%"}
+    - clock:
+        time-format: "%H:%M %Z"
+        content:
+          - string: {text: , font: *awesome}
+          - string: {text: "{date}", right-margin: 5}
+          - string: {text: , font: *awesome}
+          - string: {text: "{time}"}
+    - label:
+        content:
+          string:
+            on-click: loginctl poweroff
+            text: 
+            font: *awesome

@@ -2,7 +2,7 @@
 
 SAVE="$ZDOTDIR"
 export ZDOTDIR="$XDG_CONFIG_HOME/zsh/$1"
-zsh --vi
+zsh
 export ZDOTDIR="$SAVE"
 
 # vim:ft=zsh:nowrap

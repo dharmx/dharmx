@@ -12,5 +12,6 @@ export SSH_AUTH_SOCK
 mkdir -p "$XDG_DATA_HOME"/keyrings
 
 xrdb -I$XDG_CONFIG_HOME/xresources/themes/dark -I$XDG_CONFIG_HOME/xresources $XDG_CONFIG_HOME/xresources/config
-exec bspwm
 
+# exec i3 -c "$XDG_CONFIG_HOME/i3/config.conf"
+exec bspwm

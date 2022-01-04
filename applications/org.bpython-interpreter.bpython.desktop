@@ -1,0 +1,10 @@
+[Desktop Entry]
+Icon=bpython
+Name=bpython
+Comment=A fancy interface to the python interpreter!
+Exec=st -e /usr/bin/bpython
+Terminal=false
+Type=Application
+Categories=Development;Utility;ConsoleOnly;
+StartupNotify=true
+Keywords=Python;REPL;interpreter;
