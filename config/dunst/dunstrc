@@ -1,76 +1,86 @@
 [global]
-    background = "#2e3440"
-    foreground = "#e5e9f0"
-    monitor = 0
-    follow = mouse
+background = "#2e3440"
+foreground = "#e5e9f0"
+monitor = 0
+follow = mouse
 
-    width = 420
-    height = 300
+width = 480
+height = 380
 
-    progress_bar = true
-    progress_bar_height = 10
-    progress_bar_frame_width = 5
-    progress_bar_min_width = 150
-    progress_bar_max_width = 300
+progress_bar = true
+progress_bar_height = 15
+progress_bar_frame_width = 5
+progress_bar_min_width = 150
+progress_bar_max_width = 300
 
-    dmenu = /usr/bin/dmenu -p dunst:
-    browser = /usr/bin/firefox -new-tab
+dmenu = /usr/bin/dmenu
+browser = /usr/bin/qutebrowser
 
-    indicate_hidden = yes
-    shrink = no
-    transparency = 5
-    separator_height = 5
-    padding = 15
-    horizontal_padding = 15
-    frame_width = 0
-    frame_color = "#2e3440"
-    separator_color = "#00000000"
-    sort = no
-    idle_threshold = 30
-    font = Iosevka Nerd Font 12
-    line_height = 6
-    # notification_height = 30
-    markup = full
+indicate_hidden = true
+shrink = false
+transparency = 5
+separator_height = 10
+padding = 10
+horizontal_padding = 10
+frame_width = 3
+frame_color = "#81a1c1"
+separator_color = "#00000000"
+sort = true
+idle_threshold = 0
+font = Iosevka Nerd Font 12
+line_height = 2
+markup = full
 
-    format = "<b>%s</b>\n%b"
-    alignment = left
-    show_age_threshold = 10
-    word_wrap = yes
-    ignore_newline = no
-    stack_duplicates = false
-    hide_duplicate_count = yes
-    show_indicators = yes
-    icon_position = left
-    max_icon_size= 100
-    sticky_history = no
-    history_length = 3
-    browser = qutebrowser
-    always_run_script = true
-    title = Dunst
-    class = Dunst
-    ; corner_radius = 10
+origin = "bottom-right"
+offset = "20x20"
 
-    mouse_left = do_action
-    mouse_middle = close_current
-    mouse_right = context_all
+format = "<b>%s</b>\n%b\n%p"
+alignment = left
+show_age_threshold = 60
+word_wrap = true
+ignore_newline = false
+stack_duplicates = false
+hide_duplicate_count = true
+show_indicators = true
+
+icon_position = left
+max_icon_size = 120
+min_icon_size = 90
+icon_theme = "Zafiro-Icons-Light"
+enable_recursive_icon_lookup = true
+
+sticky_history = true
+history_length = 10
+browser = qutebrowser
+always_run_script = true
+title = Dunst
+class = Dunst
+corner_radius = 10
+notification_limit = 1
+
+mouse_left_click = do_action
+mouse_middle_click = close_current
+mouse_right_click = context_all
+
+ignore_dbusclose = true
 
 [urgency_low]
-    timeout = 4
-    background = "#3b4252"
-    foreground = "#e5e9f0"
-    # new_icon = /home/maker/.config/dunst/notification/twotone_notifications_white_48dp.png
+timeout = 4
+background = "#303542"
+foreground = "#e5e9f0"
+# new_icon = /home/maker/.config/dunst/notification/twotone_notifications_white_48dp.png
 
 [urgency_normal]
-    timeout = 8
-    background = "#4c566a"
-    foreground = "#e5e9f0"
-    # new_icon = /home/maker/.config/dunst/notification/twotone_notifications_white_48dp.png
+timeout = 8
+background = "#3b4252"
+foreground = "#e5e9f0"
+# new_icon = /home/maker/.config/dunst/notification/twotone_notifications_white_48dp.png
 
 [urgency_critical]
-    timeout = 8
-    background = "#bf616a"
-    foreground = "#e5e9f0"
-    # new_icon = /home/dunst/notification/twotone_notifications_white_48dp.png
+timeout = 8
+background = "#bf616a"
+foreground = "#e5e9f0"
+# new_icon = /home/dunst/notification/twotone_notifications_white_48dp.png
 
 # SCRIPTING
 # You can specify a script that gets run when the rule matches by
@@ -104,9 +114,9 @@
 #           withdrawn from screen again and will get delayed like a new notification
 #[fullscreen_delay_everything]
 #    fullscreen = delay
-#[fullscreen_show_critical]
-#    msg_urgency = critical
-#    fullscreen = show
+[fullscreen_show_critical]
+msg_urgency = critical
+fullscreen = pushback
 
 #[espeak]
 #    summary = "*"
@@ -131,28 +141,10 @@
 #    summary = "foobar"
 #    skip_display = yes
 
-#[signed_on]
-#    appname = Pidgin
-#    summary = "*signed on*"
-#    urgency = low
-#
-#[signed_off]
-#    appname = Pidgin
-#    summary = *signed off*
-#    urgency = low
-#
-#[says]
-#    appname = Pidgin
-#    summary = *says*
-#    urgency = critical
-#
-#[twitter]
-#    appname = Pidgin
-#    summary = *twitter.com*
-#    urgency = normal
-#
-#[stack-volumes]
-#    appname = "some_volume_notifiers"
-#    set_stack_tag = "volume"
-#
-## vim: ft=cfg:nowrap
+[pulseaudio]
+appname = sxhkd
+summary = "System Audio"
+urgency = critical
+set_stack_tag = "volume"
+
+# vim: ft=dosini:nowrap
