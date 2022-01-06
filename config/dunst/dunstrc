@@ -120,6 +120,7 @@ fullscreen = pushback
 
 #[espeak]
 #    summary = "*"
+#    urgency = critical
 #    script = dunst_espeak.sh
 
 #[script-test]
@@ -144,7 +145,6 @@ fullscreen = pushback
 [pulseaudio]
 appname = sxhkd
 summary = "System Audio"
-urgency = critical
 set_stack_tag = "volume"
 
 # vim: ft=dosini:nowrap
