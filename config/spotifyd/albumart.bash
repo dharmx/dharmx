@@ -26,13 +26,11 @@ hit_eval() {
   view="$cache/$save"
 }
 
-dunstctl close
 if [[ "$current_art" != "" ]]; then
   hit_eval
-  dunstify -i "$view" "$current_title" "$current_artist - $current_album"
+  dunstify -a "spotify" -i "$view" "$current_title" "$current_artist - $current_album"
 else
-  dunstify -i "$view" "Spotifyd isn't running properly!"
+  dunstify -a "spotify" -i "$view" "Spotifyd isn't running properly!"
 fi
-
 
 # vim:ft=bash:nowrap

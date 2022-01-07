@@ -1,7 +1,13 @@
 #!/usr/bin/env zsh
 
 SAVE="$ZDOTDIR"
-export ZDOTDIR="$XDG_CONFIG_HOME/zsh/$1"
+
+if [[ "$1" == "" ]]; then
+    export ZDOTDIR="$XDG_CONFIG_HOME/zsh/darkblood"
+else
+    export ZDOTDIR="$XDG_CONFIG_HOME/zsh/$1"
+fi
+
 zsh
 export ZDOTDIR="$SAVE"
 

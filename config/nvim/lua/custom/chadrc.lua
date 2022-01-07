@@ -8,7 +8,8 @@ M.plugins = {
         dashboard = true,
         colorizer = false,
         telescope_media = true,
-        feline = true
+        feline = true,
+        autopairs = false
     },
 
     options = {

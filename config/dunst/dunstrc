@@ -8,10 +8,11 @@ width = 480
 height = 380
 
 progress_bar = true
-progress_bar_height = 15
-progress_bar_frame_width = 5
-progress_bar_min_width = 150
-progress_bar_max_width = 300
+progress_bar_height = 25
+progress_bar_frame_width = 3
+progress_bar_min_width = 460
+progress_bar_max_width = 480
+highlight = "#5e81ac"
 
 dmenu = /usr/bin/dmenu
 browser = /usr/bin/qutebrowser
@@ -34,7 +35,7 @@ markup = full
 origin = "bottom-right"
 offset = "20x20"
 
-format = "<b>%s</b>\n%b\n%p"
+format = "<b>%s</b>\n%b <b>%n</b>"
 alignment = left
 show_age_threshold = 60
 word_wrap = true
@@ -67,84 +68,77 @@ ignore_dbusclose = true
 [urgency_low]
 timeout = 4
 background = "#303542"
+frame_color = "#88c0d0"
 foreground = "#e5e9f0"
-# new_icon = /home/maker/.config/dunst/notification/twotone_notifications_white_48dp.png
 
 [urgency_normal]
 timeout = 8
 background = "#3b4252"
+frame_color = "#81a1c1"
 foreground = "#e5e9f0"
-# new_icon = /home/maker/.config/dunst/notification/twotone_notifications_white_48dp.png
 
 [urgency_critical]
 timeout = 8
 background = "#bf616a"
+frame_color = "#a3be8c"
 foreground = "#e5e9f0"
-# new_icon = /home/dunst/notification/twotone_notifications_white_48dp.png
 
-# SCRIPTING
-# You can specify a script that gets run when the rule matches by
-# setting the "script" option.
-# The script will be called as follows:
-#   script appname summary body icon urgency
-# where urgency can be "LOW", "NORMAL" or "CRITICAL".
-#
-# NOTE: if you don't want a notification to be displayed, set the format
-# to "".
-# NOTE: It might be helpful to run dunst -print in a terminal in order
-# to find fitting options for rules.
-
-# Disable the transient hint so that idle_threshold cannot be bypassed from the
-# client
-#[transient_disable]
-#    match_transient = yes
-#    set_transient = no
-#
-# Make the handling of transient notifications more strict by making them not
-# be placed in history.
-#[transient_history_ignore]
-#    match_transient = yes
-#    history_ignore = yes
-
-# fullscreen values
-# show: show the notifications, regardless if there is a fullscreen window opened
-# delay: displays the new notification, if there is no fullscreen window active
-#        If the notification is already drawn, it won't get undrawn.
-# pushback: same as delay, but when switching into fullscreen, the notification will get
-#           withdrawn from screen again and will get delayed like a new notification
-#[fullscreen_delay_everything]
-#    fullscreen = delay
 [fullscreen_show_critical]
 msg_urgency = critical
 fullscreen = pushback
 
-#[espeak]
-#    summary = "*"
-#    urgency = critical
-#    script = dunst_espeak.sh
-
-#[script-test]
-#    summary = "*script*"
-#    script = dunst_test.sh
-
-#[ignore]
-#    # This notification will not be displayed
-#    summary = "foobar"
-#    format = ""
-
-#[history-ignore]
-#    # This notification will not be saved in history
-#    summary = "foobar"
-#    history_ignore = yes
-
-#[skip-display]
-#    # This notification will not be displayed, but will be included in the history
-#    summary = "foobar"
-#    skip_display = yes
-
-[pulseaudio]
-appname = sxhkd
-summary = "System Audio"
+[volume]
+appname = "volume"
+summary = "*"
 set_stack_tag = "volume"
+format = "<b>%s</b>\n%b <b>%n</b>%"
+
+[microphone]
+appname = "microphone"
+summary = "*"
+set_stack_tag = "microphone"
+format = "<b>%s</b>\n%b"
+
+[brightness]
+appname = "brightness"
+summary = "*"
+set_stack_tag = "brightness"
+format = "<b>%s</b>\n%b <b>%n</b>%"
+
+[screenshot]
+appname = "screenshot"
+summary = "*"
+set_stack_tag = "screenshot"
+format = "<b>%s</b>\n%b"
+
+[bar]
+appname = "bar"
+summary = "*"
+set_stack_tag = "bar"
+format = "<b>%s</b>\n%b"
+
+[nightmode]
+appname = "nightmode"
+summary = "*"
+set_stack_tag = "nightmode"
+format = "<b>%s</b>\n%b"
+
+[sxhkd]
+appname = "sxhkd"
+summary = "*"
+set_stack_tag = "sxhkd"
+format = "<b>%s</b>\n%b"
+
+[picom]
+appname = "picom"
+summary = "*"
+set_stack_tag = "picom"
+format = "<b>%s</b>\n%b"
+
+[spotify]
+appname = "spotify"
+summary = "*"
+set_stack_tag = "spotify"
+format = "<b>%s</b>\n%b"
 
 # vim: ft=dosini:nowrap

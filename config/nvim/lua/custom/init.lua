@@ -98,7 +98,8 @@ hooks.add("install_plugins", function(use)
     use({
         "jose-elias-alvarez/null-ls.nvim",
         config = function() require("null-ls").setup() end,
-        requires = {"nvim-lua/plenary.nvim"}
+        requires = {"nvim-lua/plenary.nvim"},
+        disable = false
     })
 
     use {
@@ -125,6 +126,22 @@ hooks.add("install_plugins", function(use)
         end,
         run = 'make',
         disable = true
+    }
+
+    use {
+        "nvim-telescope/telescope-media-files.nvim",
+        after = "telescope.nvim",
+        config = function()
+            require("telescope").setup {
+                extensions = {
+                    media_files = {
+                        filetypes = {"png", "webp", "jpg", "jpeg"},
+                        find_cmd = "rg" -- find command (defaults to `fd`)
+                    }
+                }
+            }
+            require("telescope").load_extension "media_files"
+        end
     }
 
     use 'b3nj5m1n/kommentary'

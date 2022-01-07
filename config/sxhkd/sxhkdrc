@@ -16,10 +16,10 @@ super + alt + shift + ctrl + Return
 
 # make sxhkd reload its configuration files
 super + {_,shift} + Escape
-				dunstctl close; {pkill -USR1 -x sxhkd;\
-					dunstify -i $XDG_CONFIG_HOME/sxhkd/images/reload/export.png "SXHKD" "Reloaded all configurations.",\
+				{pkill -USR1 -x sxhkd;\
+					dunstify -a "sxhkd" -i "export" "SXHKD" "Reloaded all configurations.",\
 					$XDG_CONFIG_HOME/bspwm/defaults;\
-					dunstify -i $XDG_CONFIG_HOME/sxhkd/images/config/configuration.png \
+					dunstify -a "sxhkd" -i "configuration" \
 					"BSPWM" "Configurations and rules have been set to default."}
 
 #
@@ -217,7 +217,7 @@ super + shift + {x,s}
 
 # toggle picom, screenlock and lockscreen no screen off
 super + {alt + ,_,back}slash
-        {locklauncher --no-screen-off &,locklauncher &,$XDG_CONFIG_HOME/picom/launcher --toggle}
+        {locklauncher --no-screen-off &,locklauncher &,$XDG_CONFIG_HOME/picom/launch.bash --toggle}
 
 # show widgets
 super + {w,r}
@@ -228,7 +228,7 @@ super + x
 
 # polybar/tint2 hide/show
 super + shift + {_,back}slash
-				exec $XDG_CONFIG_HOME/{sxhkd/scripts/panel-polybar.bash,tint2/launcher --toggle-panel}
+				exec $XDG_CONFIG_HOME/{polybar/panel-polybar.bash,tint2/launch.bash --toggle-panel}
 
 #
 # dynamic gaps

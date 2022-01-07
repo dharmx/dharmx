@@ -109,8 +109,8 @@ alias fzf="fzf --prompt ' ' --pointer '->'"
 alias yts="ytfzf -t"
 alias ani720="ani-cli -q 720"
 alias ani480="ani-cli -q 480"
-alias pisend="$XDG_CONFIG_HOME/picom/launcher"
-alias tintsend="$XDG_CONFIG_HOME/tint2/launcher"
+alias pisend="$XDG_CONFIG_HOME/picom/launch.bash"
+alias tintsend="$XDG_CONFIG_HOME/tint2/launch.bash"
 alias startx='startx -- -keeptty >~/.xorg.log 2>&1'
 
 alias -='cd -' 2> /dev/null

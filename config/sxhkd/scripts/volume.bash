@@ -1,64 +1,70 @@
 #!/usr/bin/env bash
 
-OFF="$XDG_CONFIG_HOME/sxhkd/images/volume/twotone_volume_off_white_48dp.png"
-ON="$XDG_CONFIG_HOME/sxhkd/images/volume/twotone_volume_mute_white_48dp.png"
-DOWN="$XDG_CONFIG_HOME/sxhkd/images/volume/twotone_volume_down_white_48dp.png"
-UP="$XDG_CONFIG_HOME/sxhkd/images/volume/twotone_volume_up_white_48dp.png"
+MUTED=""
+DEFAULT_SOURCE=""
+LEVEL=""
 
-notify_template() {
-	dunstify -a "sxhkd" \
-		-u "$1" \
-		-i "$2" \
-		"$3" \
-		"$4"
+get_level() {
+	refetch
+	if [[ "$MUTED" == "yes" ]]; then
+		echo "audio-volume-muted-blocked-panel"
+	else
+		if [[ "$LEVEL" -le "10" ]]; then
+			echo "audio-volume-off"
+		elif [[ "$LEVEL" -le "40" ]]; then
+			echo "audio-volume-low"
+		elif [[ "$LEVEL" -le "70" ]]; then
+			echo "audio-volume-medium"
+		else
+			echo "audio-volume-high"
+		fi
+	fi
 }
 
-toggle() {
-	dunstctl close
-
+refetch() {
 	MUTED=$(pacmd list-sinks | awk '/\*/,EOF {print}' | awk '/muted/ {print $2; exit}')
 	DEFAULT_SOURCE=$(pacmd list-sinks | awk '/\*/,EOF {print $3; exit}')
 	LEVEL=$(pacmd list-sinks | grep -A 7 "\* index" | grep volume | awk -F/ '{print $2}' | tr -d ' ' | sed 's/%$//')
+}
 
-	if [ "$MUTED" = "yes" ]; then
+notify_template() {
+	dunstify -a "volume" -i "$(get_level)" -u "$1" -h "int:value:$2" "$3" "$4"
+}
+
+toggle() {
+	refetch
+	if [[ "$MUTED" == "yes" ]]; then
 		pactl set-sink-mute "$DEFAULT_SOURCE" 0
-		notify_template "low" "$ON" "Volume" "Volume has been unmuted. Level $LEVEL%"
+		notify_template "low" "$LEVEL" "Volume" "Volume has been unmuted"
 	else
 		pactl set-sink-mute "$DEFAULT_SOURCE" 1
-		notify_template "low" "$OFF" "Volume" "Volume has been muted."
+		notify_template "low" "0" "Volume" "Volume has been muted"
 	fi
 }
 
 increase() {
-	dunstctl close
-
-	LEVEL=$(pacmd list-sinks | grep -A 7 "\* index" | grep volume | awk -F/ '{print $2}' | tr -d ' ' | sed 's/%$//')
-	DEFAULT_SOURCE=$(pacmd list-sinks | awk '/\*/,EOF {print $3; exit}')
-
+	refetch
 	if [[ "$LEVEL" -eq 100 ]]; then
-		notify_template "critical" "$UP" " Volume Warning!" "Abnormal volume level. Level: 100%"
-	elif [[ "$LEVEL" -ge "65" ]]; then
+		notify_template "critical" "$LEVEL" " Volume Warning!" "Abnormal volume level"
+	elif [[ "$LEVEL" -ge "75" ]]; then
 		pactl set-sink-volume "$DEFAULT_SOURCE" +5%
-		notify_template "critical" "$UP" " Volume Warning!" "Abnormal volume level. Level: $((LEVEL + 5))%"
+		notify_template "critical" "$((LEVEL + 5))" " Volume Warning!" "Abnormal volume level"
 	else
 		pactl set-sink-volume "$DEFAULT_SOURCE" +5%
-		notify_template "medium" "$UP" "Volume Increased" "Increased volume by 5%. Level: $((LEVEL + 5))%"
+		notify_template "normal" "$((LEVEL + 5))" "Volume Increased" "Increased volume"
 	fi
 }
 
 decrease() {
-	dunstctl close
-
-	LEVEL=$(pacmd list-sinks | grep -A 7 "\* index" | grep volume | awk -F/ '{print $2}' | tr -d ' ' | sed 's/%$//')
-	DEFAULT_SOURCE=$(pacmd list-sinks | awk '/\*/,EOF {print $3; exit}')
-
-	pactl set-sink-volume "$DEFAULT_SOURCE" -5%
+	refetch
 	if [[ "$LEVEL" -eq 0 ]]; then
-		notify_template "critical" "$DOWN" " Volume Warning!" "Inaudible volume level. Level: 0%"
-	elif [[ "$LEVEL" -ge 65 ]]; then
-		notify_template "critical" "$DOWN" " Volume Warning!" "Abnormal volume level. Level: $((LEVEL - 5))%"
+		notify_template "critical" " Volume Warning!" "Inaudible volume level"
+	elif [[ "$LEVEL" -ge 70 ]]; then
+		pactl set-sink-volume "$DEFAULT_SOURCE" -5%
+		notify_template "critical" "$((LEVEL - 5))" " Volume Warning!" "Abnormal volume level"
 	else
-		notify_template "medium" "$DOWN" "Volume Decreased" "Decreased volume by 5%. Level: $((LEVEL - 5))%"
+		pactl set-sink-volume "$DEFAULT_SOURCE" -5%
+		notify_template "normal" "$((LEVEL - 5))" "Volume Decreased" "Decreased volume"
 	fi
 }
 

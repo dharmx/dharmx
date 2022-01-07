@@ -1,28 +1,22 @@
 #!/usr/bin/env bash
 
-STATE_MUTED="$XDG_CONFIG_HOME/sxhkd/images/microphone/baseline_mic_off_white_48dp.png"
-STATE_UNMUTED="$XDG_CONFIG_HOME/sxhkd/images/microphone/baseline_mic_white_48dp.png"
-
 notify_template() {
-  dunstify -u "$1"                \
-              -i "$2"             \
-              "$3"                \
-              "$4"
+	dunstify -a "microphone" -i "$1" "$2" "$3"
 }
 
 notify() {
-  dunstctl close
-  MUTED=$(pacmd list-sources | awk '/\*/,EOF {print}' | awk '/muted/ {print $2; exit}')
-  DEFAULT_SOURCE=$(pacmd list-sources | awk '/\*/,EOF {print $3; exit}')
+	MUTED=$(pacmd list-sources | awk '/\*/,EOF {print}' | awk '/muted/ {print $2; exit}')
+	DEFAULT_SOURCE=$(pacmd list-sources | awk '/\*/,EOF {print $3; exit}')
 
-  if [ "$MUTED" = "yes" ]; then
-      pactl set-source-mute "$DEFAULT_SOURCE" 0
-      notify_template "normal" "$STATE_UNMUTED" "Microphone" "The microphone has been unmuted."
-  else
-      pactl set-source-mute "$DEFAULT_SOURCE" 1
-      notify_template "normal" "$STATE_MUTED" "Microphone" "The microphone has been muted."
-  fi
+	if [ "$MUTED" = "yes" ]; then
+		pactl set-source-mute "$DEFAULT_SOURCE" 0
+		notify_template "mic-off" "Microphone" "The microphone has been unmuted."
+	else
+		pactl set-source-mute "$DEFAULT_SOURCE" 1
+		notify_template "mic-on" "Microphone" "The microphone has been muted."
+	fi
 }
-    
+
 notify
 
+# vim:ft=bash:nowrap

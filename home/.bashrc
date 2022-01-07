@@ -90,8 +90,8 @@ alias tty-clock="tty-clock -S -c -C4 -D -s -n"
 alias yts="ytfzf -t"
 alias ani720="ani-cli -q 720"
 alias ani480="ani-cli -q 480"
-alias pisend="$XDG_CONFIG_HOME/picom/launcher"
-alias tintsend="$XDG_CONFIG_HOME/tint2/launcher"
+alias pisend="$XDG_CONFIG_HOME/picom/launch.bash"
+alias tintsend="$XDG_CONFIG_HOME/tint2/launch.bash"
 
 alias -='cd -' 2> /dev/null
 alias ...=../..
