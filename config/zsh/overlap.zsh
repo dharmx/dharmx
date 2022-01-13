@@ -461,7 +461,7 @@ alias ytv-best="youtube-dl -f bestvideo+bestaudio "
 alias killconk="killall conky"
 
 alias upgrub="sudo grub-mkconfig -o /boot/grub/grub.cfg"
-alias upfont='sudo fc-cache -fv'
+alias upfnt='sudo fc-cache -fv'
 
 alias kittythemes="kitty +kitten themes"
 alias nvupd="nv +PackerSync"

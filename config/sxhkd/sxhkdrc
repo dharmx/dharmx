@@ -220,11 +220,8 @@ super + {alt + ,_,back}slash
         {locklauncher --no-screen-off &,locklauncher &,$XDG_CONFIG_HOME/picom/launch.bash --toggle}
 
 # show widgets
-super + {w,r}
-        exec $XDG_CONFIG_HOME/eww/structs/{main-utils/main,wallpaper/wal}launcher
-
-super + x
-			  eww -c "$XDG_CONFIG_HOME/eww/structs/side-utils" {open,close} sidecard
+super + {w,r,x}
+        exec $XDG_CONFIG_HOME/eww/structs/{main-utils/main,wallpaper/wal,side-utils/side}launcher
 
 # polybar/tint2 hide/show
 super + shift + {_,back}slash

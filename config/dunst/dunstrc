@@ -141,4 +141,22 @@ summary = "*"
 set_stack_tag = "spotify"
 format = "<b>%s</b>\n%b"
 
+[notify_send]
+appname = notify-send
+new_icon = ~/.icons/Zafiro-Icons-Light/apps/scalable/preferences-desktop-notification-bell.svg
+
+[firefox]
+appname = firefox
+new_icon = ~/.icons/Zafiro-Icons-Light/apps/scalable/firefox.svg
+
+# Deprecated
+# [shortcuts]
+# close = ctrl+space
+# close_all = ctrl+shift+space
+# context = ctrl+shift+period
+# context_all = ctrl+shift+alt+period
+# history = ctrl+comma
+# open_url = ctrl+slash
+# close_current = ctrl+backslash
+
 # vim: ft=dosini:nowrap
