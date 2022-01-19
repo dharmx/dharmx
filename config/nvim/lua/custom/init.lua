@@ -1,27 +1,3 @@
-local hooks = require "core.hooks"
-
-hooks.add("setup_mappings", function(map)
-    map("n", "<leader>cc", ":Telescope <CR>", opt)
-    map("n", "<leader>q", ":q <CR>", opt)
-end)
-
-hooks.add("install_plugins", function(use)
-    use "rinx/nvim-minimap"
-
-    use '9mm/vim-closer'
-
-    use {
-        'tpope/vim-dispatch',
-        opt = true,
-        cmd = {'Dispatch', 'Make', 'Focus', 'Start'}
-    }
-
-    use {
-        'iamcco/markdown-preview.nvim',
-        run = 'cd app && yarn install',
-        cmd = 'MarkdownPreview'
-    }
-
     use {
         "karb94/neoscroll.nvim",
         opt = true,
@@ -61,46 +37,6 @@ hooks.add("install_plugins", function(use)
         cmd = {"TZAtaraxis", "TZMinimalist", "TZFocus"},
         disable = true
     }
-
-    use "nathom/filetype.nvim"
-
-    use {
-        "luukvbaal/stabilize.nvim",
-        config = function() require("stabilize").setup() end
-    }
-
-    use "nvim-lua/popup.nvim"
-
-    use {"Shatur/neovim-session-manager", disable = true}
-
-    use "chrisbra/Colorizer"
-
-    use {
-        'nvim-lualine/lualine.nvim',
-        requires = {'kyazdani42/nvim-web-devicons', opt = true},
-        disable = true
-    }
-
-    use "elkowar/yuck.vim"
-
-    use "wakatime/vim-wakatime"
-
-    use "rcarriga/nvim-notify"
-
-    use {"folke/trouble.nvim", requires = "kyazdani42/nvim-web-devicons"}
-
-    use 'andweeb/presence.nvim'
-
-    use {'vimsence/vimsence', disable = true}
-
-    use 'sheerun/vim-polyglot'
-
-    use({
-        "jose-elias-alvarez/null-ls.nvim",
-        config = function() require("null-ls").setup() end,
-        requires = {"nvim-lua/plenary.nvim"},
-        disable = false
-    })
 
     use {
         'sudormrfbin/cheatsheet.nvim',
@@ -143,10 +79,5 @@ hooks.add("install_plugins", function(use)
             require("telescope").load_extension "media_files"
         end
     }
-
-    use 'b3nj5m1n/kommentary'
-
-    use 'simrat39/symbols-outline.nvim'
-end)
 
 -- vim:ft=lua:nowrap

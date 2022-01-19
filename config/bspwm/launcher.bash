@@ -7,7 +7,7 @@ wmname LG3D &
 # wmname compiz &
 
 # set your wallpaper
-feh --bg-scale "$XDG_PICTURES_DIR/wallpapers/nord/ign-cementary-res.png" &
+feh --bg-scale "$XDG_PICTURES_DIR/wallpapers/nord/ign-flower-real-nord.png" &
 
 # update the font cache
 # fc-cache -fr &> /dev/null &
