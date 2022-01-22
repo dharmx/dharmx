@@ -407,7 +407,7 @@ alias visudo="nvim /etc/sudoers"
 
 export VISUAL=nvim;
 export EDITOR=nvim;
-export PATH="$XDG_DATA_HOME/gem/ruby/3.0.0/bin:$HOME/.jdks/jdk-16.0.1/bin:$HOME/.local/bin:$PATH"
+export PATH="$XDG_DATA_HOME/gem/ruby/3.0.0/bin:$HOME/.jdks/jdk-16.0.1/bin:$HOME/.local/bin:$XDG_DATA_HOME/nvim/lsp_servers/jedi_language_server/venv/bin:$XDG_DATA_HOME/nvim/lsp_servers/pylsp/venv/bin:$XDG_DATA_HOME/nvim/lsp_servers/python/node_modules/.bin:$PATH"
 export PS2="%2F%3F "
 # export LD_PRELOAD=/usr/lib/libwcwidth-icons.so
 

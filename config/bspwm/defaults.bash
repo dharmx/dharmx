@@ -49,3 +49,7 @@ bspc rule -a Pavucontrol state=floating center=true
 bspc rule -a kitty state=tiled floating=false center=true
 bspc rule -a Peek state=floating floating=true center=true
 bspc rule -a ksnip state=floating floating=true center=true
+bspc rule -a blueman-manager state=floating floating=true center=true
+bspc rule -a Blueman-manager state=floating floating=true center=true
+bspc rule -a blueman-adapters state=floating floating=true center=true
+bspc rule -a Blueman-adapters state=floating floating=true center=true

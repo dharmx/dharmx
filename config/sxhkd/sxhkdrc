@@ -152,6 +152,12 @@ XF86Audio{Play,Stop,Next,Prev}
 XF86RFKill
         $XDG_CONFIG_HOME/sxhkd/scripts/airplane.bash
 
+XF86Search
+				rofi -show run
+
+super + Menu
+				jgmenu_run &
+
 # mpd audio configurations
 ## inc/dec volume
 shift + XF86Audio{Raise,Lower}Volume
@@ -225,7 +231,7 @@ super + {w,r,x}
 
 # polybar/tint2 hide/show
 super + shift + {_,back}slash
-				exec $XDG_CONFIG_HOME/{polybar/panel-polybar.bash,tint2/launch.bash --toggle-panel}
+				exec $XDG_CONFIG_HOME/{polybar/configs/evilnord/panel-polybar.bash,tint2/launch.bash --toggle-panel}
 
 #
 # dynamic gaps
@@ -267,4 +273,4 @@ super + shift + o
 super + shift + p
 				picom-trans -c {0,5,10,15,20,25,30,35,40,45,50,55,60,65,70,75,80,85,90,95,96,97,98,99,100}
 
-# vim:nowrap
+# vim:nowrap:ft=sxhkdrc:number

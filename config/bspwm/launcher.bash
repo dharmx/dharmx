@@ -18,13 +18,13 @@ xsetroot -cursor_name left_ptr &
 # playerctld daemon &
 
 # start polybar
-polybar -q -c "$XDG_CONFIG_HOME"/polybar/configs/antartica/nordic.ini main &
+eval "$XDG_CONFIG_HOME/polybar/configs/evilnord/launch.bash" &
 
 # start dunst daemon
-# dunst &
+dunst &
 
 # start mpd daemon
-# mpd &
+mpd &
 
 # NetworkManager is the most popular way to manage wireless networks on Linux,
 # and nm-applet is a desktop environment-independent system tray GUI for it.
