@@ -23,3 +23,9 @@
 
 /config/neofetch/config.conf
 **/.zcompdump*
+
+**/Acri/
+**/Dark/
+**/Acri.qss
+**/Dark.qss
+**/System.qss
