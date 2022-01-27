@@ -19,7 +19,23 @@ wmname LG3D &
 #*) ;;
 #esac
 
-feh --bg-fill "$XDG_PICTURES_DIR/wallpapers/nord/$(python -c 'print(__import__("random").choice(["ign-unsplash-flower-7-dark-res", "ign-unsplash-flower-3-dark", "ign-unsplash-flower-8-dark-res", "ign-unsplash-lotus-dark-res", "ign-unsplash-flower-5-dark-res", "ign-pedro-saraiva-flower-dark", "ign-joey-flower-dark", "ign-flower-real-nord", "ign-unsplash-flower-9-dark-res", "ign-unsplash-flower-4-dark"]))').jpg"
+wallpapers=(
+	"ign-unsplash-flower-7-dark-res"
+	"ign-unsplash-flower-3-dark"
+	"ign-unsplash-flower-8-dark-res"
+	"ign-unsplash-lotus-dark-res"
+	"ign-unsplash-flower-5-dark-res"
+	"ign-pedro-saraiva-flower-dark"
+	"ign-joey-flower-dark"
+	"ign-flower-real-nord"
+	"ign-unsplash-flower-9-dark-res"
+	"ign-unsplash-flower-4-dark"
+)
+choice=${wallpapers["$((1 + RANDOM % 10))"]}
+feh --bg-fill "$XDG_PICTURES_DIR/wallpapers/nord/$choice.jpg"
+
+unset wallpapers
+unset choice
 
 #
 #

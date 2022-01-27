@@ -1,2 +1,2 @@
 #!/bin/sh
-feh --no-fehbg --bg-fill '/home/maker/Pictures/wallpapers/nord/ign-unsplash-flower-7-dark-res.jpg' 
+feh --no-fehbg --bg-scale '/home/maker/Pictures/wallpapers/nord/ign-flower-real-nord.png' 
