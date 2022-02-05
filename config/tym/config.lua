@@ -92,4 +92,4 @@ remap('<Alt>l', '<Alt>Right')
 remap('<Alt><Shift>h', '<Alt><Shift>Left')
 remap('<Alt><Shift>l', '<Alt><Shift>Right')
 
--- vim:ft=lua:nowrap
+-- vim:ft=lua:nowrap:number

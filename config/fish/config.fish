@@ -159,7 +159,7 @@ alias upgrub "sudo grub-mkconfig -o /boot/grub/grub.cfg"
 alias upfont 'sudo fc-cache -fv'
 
 alias kittythemes "kitty +kitten themes"
-alias nvupd "nv +PackerSync"
+alias nvupd="nvim --headless -c 'autocmd User PackerComplete quitall' -c 'PackerSync'"
 
 function nordbar
     killall polybar

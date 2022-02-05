@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-SAVEPATH="$XDG_PICTURES_DIR/$(date).png"
+SAVEPATH="$XDG_PICTURES_DIR/screenshot-$(date +%s).png"
 
 case "$1" in
     --selected)

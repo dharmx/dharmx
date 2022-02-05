@@ -1,7 +1,6 @@
-# battery catimg
-# history-substring-search
 plugins=(
     git
+    catimg
     npm
     node
     colored-man-pages
@@ -10,6 +9,7 @@ plugins=(
     zsh-syntax-highlighting
     zsh-autosuggestions
     colorize
+    history-substring-search
     zsh-autocomplete
     command-not-found
     geeknote
@@ -20,7 +20,7 @@ plugins=(
 source $ZSH/oh-my-zsh.sh
 
 if [ $TILIX_ID ] || [ $VTE_VERSION ]; then
-  source /etc/profile.d/vte.sh
+    source /etc/profile.d/vte.sh
 fi
 
 if [ -x "$(command -v exa)" ]; then
@@ -127,7 +127,7 @@ alias 6='cd -6'
 alias 7='cd -7'
 alias 8='cd -8'
 alias 9='cd -9'
-alias _='sudo '
+alias _='sudo'
 alias afind='ack -il'
 
 alias rd='rmdir'
@@ -464,7 +464,7 @@ alias upgrub="sudo grub-mkconfig -o /boot/grub/grub.cfg"
 alias upfnt='sudo fc-cache -fv'
 
 alias kittythemes="kitty +kitten themes"
-alias nvupd="nv +PackerSync"
+alias nvupd="nvim --headless -c 'autocmd User PackerComplete quitall' -c 'PackerSync'"
 
 function killew() {
   EWWC_FRAGMENT="eww -c $XDG_CONFIG_HOME/eww/structs"

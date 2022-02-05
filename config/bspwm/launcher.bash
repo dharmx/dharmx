@@ -1,8 +1,7 @@
 #!/usr/bin/env bash
 
-# the display system that is written in Java and coincidentally(?) it is the
-# only one that is whitelisted by Java apps
-# If you don't use Java then comment/remove it
+sleep 2
+
 wmname LG3D &
 # wmname compiz &
 
@@ -29,9 +28,13 @@ wallpapers=(
 	"ign-joey-flower-dark"
 	"ign-flower-real-nord"
 	"ign-unsplash-flower-9-dark-res"
-	"ign-unsplash-flower-4-dark"
+    "ign-jinen-shah-unsplash-dark"
+    "ign-bady-abbas-unsplash-dark"
+    "ign-xuan-nguyen-unsplash-dark"
+    "ign-xuan-nguyen-Gg-unsplash-dark"
 )
-choice=${wallpapers["$((1 + RANDOM % 10))"]}
+
+choice=${wallpapers["$((1 + RANDOM % 12))"]}
 feh --bg-fill "$XDG_PICTURES_DIR/wallpapers/nord/$choice.jpg"
 
 unset wallpapers
