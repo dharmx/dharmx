@@ -23,7 +23,7 @@ tym.set('font', 'JetBrainsMono Nerd Font 14')
 
 -- set by table
 tym.set_config({
-    shell = xdg.config .. '/zsh/start.zsh pi',
+    shell = '/usr/bin/fish',
     cursor_shape = 'block',
     autohide = true,
     padding_horizontal = 25,

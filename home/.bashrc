@@ -1,40 +1,8 @@
-export OSH=$HOME/.oh-my-bash
-
-OSH_THEME="kitsune-mod"
-ENABLE_CORRECTION="true"
-DISABLE_UNTRACKED_FILES_DIRTY="true"
-
-completions=(git composer)
-aliases=(general chmod ls misc)
-plugins=(git bashmarks battery progress)
-
-source $OSH/oh-my-bash.sh
-
 if [ -x "$(command -v exa)" ]; then
-  # 'l' shows the contents + hidden ones including a header
-  # 'll' just shows the contents including a header
   alias li="exa --long --all --group --icons"
-  alias cs="exa"
-  alias ca="exa --long --all --group"
+  alias ls="exa"
+  alias la="exa --long --all --group"
 fi
-
-if [ -x "$(command -v neofetch)" ]; then
-    LAUNCHER="$XDG_CONFIG_HOME/neofetch/launcher"
-
-    alias coldarch="$LAUNCHER --coldarch"
-    alias verycold="$LAUNCHER --verycoldarch"
-    alias foodfetch="$LAUNCHER --food"
-
-    alias floskull="$LAUNCHER --flowerskull"
-    alias fspolar="$LAUNCHER --flowerskull polar"
-    alias fswarm="$LAUNCHER --flowerskull warm"
-    alias fsauro="$LAUNCHER --flowerskull aurorae"
-    alias fwaifu="$LAUNCHER --waifu"
-fi
-
-# if [ -x "$(command -v ripgrep)" ]; then
-  # alias grep="ripgrep"
-# fi
 
 if [ -x "$(command -v go-mtpfs)" ]; then
   alias mount-phone="go-mtpfs ~/Phone"
@@ -45,15 +13,10 @@ if [ -x "$(command -v fusermount)" ]; then
 fi
 
 if [ -x "$(command -v udisksctl)" ]; then
+  alias mount-iso="udisksctl loop-setup -r -f"
+  alias unmount-iso="udisksctl loop-delete -b"
   alias mount-ssd="udisksctl mount -b /dev/nvme0n1p1"
-fi
-
-if [ -x "$(command -v udisksctl)" ]; then
   alias unmount-ssd="udisksctl unmount -b /dev/nvme0n1p1"
-fi
-
-if [ -x "$(command -v betterlockscreen)" ]; then
-  alias lock="betterlockscreen -l"
 fi
 
 if [ -x "$(command -v nvim)" ]; then
@@ -64,6 +27,24 @@ if [ -x "$(command -v ranger)" ]; then
   alias fm="ranger"
 fi
 
+if [ -x "$(command -v neofetch)" ]; then
+    LAUNCHER="$XDG_CONFIG_HOME/neofetch/launch.bash"
+    alias fetch="$LAUNCHER"
+
+    alias coldarch="$LAUNCHER --coldarch"
+    alias verycold="$LAUNCHER --verycoldarch"
+    alias foodfetch="$LAUNCHER --food"
+
+    alias floskull="$LAUNCHER --flowerskull"
+    alias fspolar="$LAUNCHER --flowerskull polar"
+    alias fswarm="$LAUNCHER --flowerskull warm"
+    alias fsauro="$LAUNCHER --flowerskull aurorae"
+    alias fswaifu="$LAUNCHER --waifu"
+    alias fsrip="neofetch --config .config/neofetch/configs/rip.conf --source .config/neofetch/images/riparch.png"
+    alias fscat="neofetch --config $XDG_CONFIG_HOME/neofetch/configs/asciisq-very-minimal-v2.conf --ascii $XDG_CONFIG_HOME/neofetch/asciis/cat"
+    unset LAUNCHER
+fi
+
 alias logout="bspc quit"
 alias suspend="systemctl suspend; locklauncher"
 
@@ -71,25 +52,15 @@ alias cls="clear"
 alias la="ls -la"
 
 alias bedit="nv $HOME/.bashrc"
-alias zedit="nv $HOME/.zshrc"
+alias zedit="nv $XDG_CONFIG_HOME/zsh/.zshrc"
 alias fedit="nv $XDG_CONFIG_HOME/fish/config.fish"
-alias p10kedit="nv $HOME/.p10k.zsh"
 alias kev="xev -event keyboard"
-alias zshalias="nv $XDG_CONFIG_HOME/zsh/overlap.zsh"
-
-alias pipes1="lam -e pipes1"
-alias pipes2="lam -e pipes2"
-alias pipes2-slim="lam -e pipes2-slim"
-alias rain="lam -e rain"
-
 alias fzf="fzf --prompt ' ' --pointer '->'"
 alias ccbonsai="cbonsai -ilt 0.02 -c '  ,  ,  ,  ,  ' -L 80"
 alias cclock="watch -t -n1 'date +%T | figlet' | lolcat"
 alias tty-clock="tty-clock -S -c -C4 -D -s -n"
 
 alias yts="ytfzf -t"
-alias ani720="ani-cli -q 720"
-alias ani480="ani-cli -q 480"
 alias pisend="$XDG_CONFIG_HOME/picom/launch.bash"
 alias tintsend="$XDG_CONFIG_HOME/tint2/launch.bash"
 
@@ -355,9 +326,9 @@ alias p='ps -f'
 alias sorter='sort -n -r'
 alias unexport='unset'
 
-# alias rm='rm -i'
-# alias cp='cp -i'
-# alias mv='mv -i'
+alias rm='rm -i'
+alias cp='cp -i'
+alias mv='mv -i'
 
 alias pdf=acroread
 alias ps=gv
@@ -371,19 +342,9 @@ alias tar="tar tf"
 alias tar.gz="echo "
 alias ace="unace l"
 
-alias java="$HOME/.jdks/jdk-16.0.1/bin/java"
-alias javac="$HOME/.jdks/jdk-16.0.1/bin/javac"
-alias jshell="$HOME/.jdks/jdk-16.0.1/bin/jshell"
-
-# alias cat="ccat"
-# alias less="cless"
-
-export PATH="$XDG_DATA_HOME/gem/ruby/3.0.0/bin:$HOME/.jdks/jdk-16.0.1/bin:$HOME/.local/bin:$PATH"
-export VISUAL=nvim;
-export EDITOR=nvim;
+export PATH="$XDG_DATA_HOME/gem/ruby/3.0.0/bin:$HOME/.local/bin:$PATH"
 export PS2="${magenta}${yellow}${red} "
 export HISTCONTROL=ignoreboth
-# export LD_PRELOAD=/usr/lib/libwcwidth-icons.so
 
 SILENT_JAVA_OPTIONS="$JDK_JAVA_OPTIONS"
 unset JDK_JAVA_OPTIONS
@@ -403,20 +364,6 @@ alias upfont='sudo fc-cache -fv'
 alias kittythemes="kitty +kitten themes"
 alias nvupd="nvim --headless -c 'autocmd User PackerComplete quitall' -c 'PackerSync'"
 
-function killew() {
-  EWWC_FRAGMENT="eww -c $XDG_CONFIG_HOME/eww/structures"
-  eval "rm $XDG_CACHE_HOME/launch_main.eww &> /dev/null"
-  eval "rm $XDG_CACHE_HOME/launch_wallpaper.eww &> /dev/null"
-  eval "$EWWC_FRAGMENT/main-utils kill &>/dev/null"
-  eval "$EWWC_FRAGMENT/wallpaper kill &>/dev/null"
-  unset EWWC_FRAGMENT
-}
-
-. "$HOME/.cargo/env"
-
-[ -f ~/.fzf.bash ] && source ~/.fzf.bash
-source "$HOME/.colors.sh"
-
 ccat() {
   if $2
   then
@@ -434,11 +381,15 @@ cmore() {
   pygmentize -g $1 | more
 }
 
-nordbar() {
-  killall polybar
-  polybar -q -c "$XDG_CONFIG_HOME/polybar/configs/antartica/$1.ini" main & disown
+pacopt() {
+  if [[ "$@" == "" ]]; then
+    echo "Enter at least one package name!"
+  else
+    sudo pacman -S --asdeps --needed $(pacman -Si $1 | sed -n '/^Opt/,/^Conf/p' | sed '$d' | sed 's/^Opt.*://g' | sed 's/^\s*//g' | tr '\n' ' ')
+  fi
 }
 
-lam -e alpha
-
-# vim:ft=bash:nowrap
+source "$HOME/.colors.sh"
+# BEGIN_KITTY_SHELL_INTEGRATION
+if test -n "$KITTY_INSTALLATION_DIR" -a -e "$KITTY_INSTALLATION_DIR/shell-integration/bash/kitty.bash"; then source "$KITTY_INSTALLATION_DIR/shell-integration/bash/kitty.bash"; fi
+# END_KITTY_SHELL_INTEGRATION

@@ -1,13 +1,12 @@
 # No greeting when starting an interactive shell.
 function fish_greeting
-    lam -e crunch
-    printf "\n"
 end
 
-export PATH="$XDG_DATA_HOME/gem/ruby/3.0.0/bin:$HOME/.jdks/jdk-16.0.1/bin:$HOME/.local/bin:$PATH"
-export VISUAL=nvim
-export EDITOR=nvim
-# export LD_PRELOAD=/usr/lib/libwcwidth-icons.so
+function pacopt
+  sudo pacman -S --asdeps --needed (pacman -Si $1 | sed -n '/^Opt/,/^Conf/p' | sed '$d' | sed 's/^Opt.*://g' | sed 's/^\s*//g' | tr '\n' ' ')
+end
+
+export PATH="$XDG_DATA_HOME/gem/ruby/3.0.0/bin:$HOME/.local/bin:$HOME/.cargo/bin:$PATH"
 
 alias l 'ls -lah'
 alias ll 'ls -lh'
@@ -21,6 +20,8 @@ alias mount-phone "go-mtpfs $HOME/Phone"
 alias unmount-phone "fusermount -u $HOME/Phone"
 alias mount-ssd "udisksctl mount -b /dev/nvme0n1p1"
 alias unmount-ssd "udisksctl unmount -b /dev/nvme0n1p1"
+alias mount-iso "udisksctl loop-setup -r -f"
+alias unmount-iso "udisksctl loop-delete -b"
 
 alias logout "killall bspwm"
 alias lock locklauncher
@@ -52,32 +53,18 @@ alias foodfetch "neofetch --config $XDG_CONFIG_HOME/neofetch/foodfetch.conf"
 alias skullfetch "neofetch --config $XDG_CONFIG_HOME/neofetch/skullfetch.conf"
 
 alias fedit "nv $XDG_CONFIG_HOME/fish/config.fish"
-alias zedit "nv $HOME/.zshrc"
+alias zedit "nv $XDG_CONFIG_HOME/zsh/.zshrc"
 alias bedit "nv $HOME/.bashrc"
-alias p10kedit "nv $HOME/.p10k.zsh"
 alias kev="xev -event keyboard"
 alias visudo="nvim /etc/sudoers"
-alias zshalias="nv $XDG_CONFIG_HOME/zsh/overlap.zsh"
 
 alias fzf "fzf --prompt ' ' --pointer '->'"
 alias ccbonsai="cbonsai -ilt 0.02 -c '  ,  ,  ,  ,  ' -L 80"
 alias tty-clock="tty-clock -S -c -C4 -D -s -n"
-alias yts="ytfzf -t"
-
-alias pipes1 "lam -e pipes1"
-alias pipes2 "lam -e pipes2"
-alias pipes2-slim "lam -e pipes2-slim"
-alias rain "lam -e rain"
 
 alias yts "ytfzf -t"
-alias ani720 "ani-cli -q 720"
-alias ani480 "ani-cli -q 480"
 alias pisend "$XDG_CONFIG_HOME/picom/launcher"
 alias tintsend "$XDG_CONFIG_HOME/tint2/launcher"
-
-alias java "$HOME/.jdks/jdk-16.0.1/bin/java"
-alias javac "$HOME/.jdks/jdk-16.0.1/bin/javac"
-alias jshell "$HOME/.jdks/jdk-16.0.1/bin/jshell"
 
 alias pac "sudo pacman"
 alias pacupg 'sudo pacman -Syu'
@@ -145,7 +132,7 @@ function killew
     set EWWC_FRAGMENT ""
 end
 
-alias rofisc "wmctrl -s 2; rofi -show & sleep 1 && maim lol.png"
+alias rofisc "wmctrl -s 2; rofi -show & sleep 1 && maim rofi-screenshot-(date +%s).png"
 alias nvconfig "fm ~/.config/nvim/lua/"
 
 alias tping "ping -c5 google.com"
@@ -160,10 +147,5 @@ alias upfont 'sudo fc-cache -fv'
 
 alias kittythemes "kitty +kitten themes"
 alias nvupd="nvim --headless -c 'autocmd User PackerComplete quitall' -c 'PackerSync'"
-
-function nordbar
-    killall polybar
-    polybar -q -c "$XDG_CONFIG_HOME/polybar/configs/antartica/$1.ini" main & disown
-end
 
 # vim:ft=fish:nowrap

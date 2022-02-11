@@ -1,5 +1,3 @@
-source "$HOME/.cargo/env"
-
 # export LC_ALL=C
 
 export TERMINAL="st"
@@ -27,6 +25,7 @@ export XDG_MUSIC_DIR="$HOME/Music"
 export XDG_PICTURES_DIR="$HOME/Pictures"
 export XDG_VIDEOS_DIR="$HOME/Videos"
 
-export JAVA_HOME="$HOME/.jdks/jdk-16.0.1"
-export QT_QPA_PLATFORMTHEME="qt5ct"
+export ZDOTDIR="$XDG_CONFIG_HOME/zsh"
+source "$HOME/.cargo/env"
 
+# vim:ft=zsh:nowrap

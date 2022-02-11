@@ -5,14 +5,11 @@
 # terminal emulators
 # minimal zsh for st,fish urxvt,alacritty with bash
 super + {_,ctrl,shift} + Return
-				{st -e $XDG_CONFIG_HOME/zsh/start.zsh 3den,urxvt -e fish,alacritty}
+				{st,tym,kitty}
 
 # start a new tmux session with st,open a shared kitty instance,attach to the latest tmux session with st
-super + alt + {_,ctrl,shift} + Return
-				{st -e tmux,kitty --single-instance,st -e tmux attach-session}
-
-super + alt + shift + ctrl + Return
-				tym
+super + alt + {_,ctrl} + Return
+				{st -e tmux,st -e tmux attach-session}
 
 # make sxhkd reload its configuration files
 super + {_,shift} + Escape
@@ -196,9 +193,9 @@ alt + Tab
 super + {shift + f,e}
         {qutebrowser,st -e ranger}
 
-## launch system monitor htop & btop
-ctrl + {shift + Escape, alt + KP_Delete}
-        st -e {btop,htop}
+## launch system monitor btop
+ctrl + shift + Escape
+        st -e btop
 
 ## night mode
 super + n
@@ -256,10 +253,6 @@ alt + shift + paren{left,right}
 # increase borders for focused node/window
 alt + super + shift + paren{left,right}
         {bspc config -n focused border_width $(( $(bspc config -n focused border_width) {-,+} 1 ))}
-
-# cycle between red + 20px border and default border color for the focused window [mark as important]
-super + shift + i
-        $XDG_CONFIG_HOME/sxhkd/scripts/important-marker.bash
 
 # borderless monocle
 super + shift + m

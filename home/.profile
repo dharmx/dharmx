@@ -1,5 +1,3 @@
-source "$HOME/.cargo/env"
-
 # export LC_ALL=C
 
 export XDG_CONFIG_HOME="$HOME/.config"
@@ -22,10 +20,10 @@ export XDG_MUSIC_DIR="$HOME/Music"
 export XDG_PICTURES_DIR="$HOME/Pictures"
 export XDG_VIDEOS_DIR="$HOME/Videos"
 
-export TERMINAL="kitty"
+export TERMINAL="st"
 export BROWSER="qutebrowser"
 export VISUAL="nvim"
 export EDITOR="nvim"
+export SHELL="/usr/bin/zsh"
 
-export JAVA_HOME="$HOME/.jdks/jdk-16.0.1"
-export QT_QPA_PLATFORMTHEME="qt5ct"
+source "$HOME/.cargo/env"

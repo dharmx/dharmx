@@ -12,37 +12,13 @@ kill_picom() {
 }
 
 case "$1" in
-  --max-noradius-noshadow)
+--min-opaque-no-radius)
     kill_picom
     sleep 1
-    picom --config "$PICOM_DIR/configs/picom-max-noradius-noshadow.ini" &
-    echo "max-noradius-noshadow" > "$CURRENT_CONFIG"
+    picom --config "$PICOM_DIR/configs/picom-min-opaque-no-radius.ini" &
+    echo "min-opaque-no-radius" > "$CURRENT_CONFIG"
     ;;
-  --max-noshadow)
-    kill_picom
-    sleep 1
-    picom --config "$PICOM_DIR/configs/picom-max-noshadow.ini" &
-    echo "max-noshadow" > "$CURRENT_CONFIG"
-    ;;
-  --max)
-    kill_picom
-    sleep 1
-    picom --config "$PICOM_DIR/configs/picom-max.ini" &
-    echo "max" > "$CURRENT_CONFIG"
-    ;;
-  --min)
-    kill_picom
-    sleep 1
-    picom --config "$PICOM_DIR/configs/picom-minimal.ini" &
-    echo "min" > "$CURRENT_CONFIG"
-    ;;
-  --opaque)
-    kill_picom
-    sleep 1
-    picom --config "$PICOM_DIR/configs/picom-opaque.ini" &
-    echo "opaque" > "$CURRENT_CONFIG"
-    ;;
-  --min-opaque)
+ --min-opaque)
     kill_picom
     sleep 1
     picom --config "$PICOM_DIR/configs/picom-min-opaque.ini" &

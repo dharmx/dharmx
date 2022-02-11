@@ -78,7 +78,7 @@ config.set("fonts.downloads", "Roboto Condensed")
 config.set("fonts.hints", "Roboto Condensed")
 config.set("fonts.web.family.fixed", "JetBrainsMono Nerd Font")
 config.set("fonts.web.family.serif", "Roboto Condensed")
-config.set("fonts.web.family.standard", "Roboto Condensed ")
+config.set("fonts.web.family.standard", "Roboto Condensed")
 config.set("completion.scrollbar.width", 8)
 
 c.downloads.location.directory = f"{XDG_DOWNLOAD_DIR}"

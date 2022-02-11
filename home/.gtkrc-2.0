@@ -1,7 +1,3 @@
-# DO NOT EDIT! This file will be overwritten by LXAppearance.
-# Any customization should be done in ~/.gtkrc-2.0.mine instead.
-
-include "/home/maker/.gtkrc-2.0.mine"
 gtk-theme-name="Nordic"
 gtk-icon-theme-name="Zafiro-Icons-Light"
 gtk-font-name="Roboto Condensed, Light 11"

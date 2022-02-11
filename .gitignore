@@ -1,25 +1,23 @@
 **/__pycache__/
 **/.idea/
 **/.vscode/
+**/*.log
 
-/config/bpytop/error.log
-/config/ncmpcpp/error.log
+config/mpd/playlists/
+config/mpd/database
+config/mpd/log
+config/mpd/pid
+config/mpd/state
 
-/config/mpd/playlists/
-/config/mpd/database
-/config/mpd/log
-/config/mpd/pid
-/config/mpd/state
+config/tmux/tmuxhistory
+config/tmux/plugins
 
-/config/tmux/tmuxhistory
-/config/tmux/plugins
-
-/config/qutebrowser/bookmarks
-/config/qutebrowser/qsettings
-/config/qutebrowser/autoconfig.yml
-/config/qutebrowser/quickmarks
-/config/spotify-tui/client.yml
-/config/spotify-tui/.spotify_token_cache.json
+config/qutebrowser/bookmarks
+config/qutebrowser/qsettings
+config/qutebrowser/autoconfig.yml
+config/qutebrowser/quickmarks
+config/spotify-tui/client.yml
+config/spotify-tui/.spotify_token_cache.json
 
 /config/neofetch/config.conf
 **/.zcompdump*
@@ -29,3 +27,16 @@
 **/Acri.qss
 **/Dark.qss
 **/System.qss
+
+**/fish/completions/
+**/fish/conf.d/
+**/fish/functions/
+**/fish/fish_variables
+
+config/fontconfig/conf.d/
+
+config/zsh/zsh-autosuggestions
+config/zsh/powerlevel10k
+config/zsh/zsh-autocomplete
+config/zsh/zsh-syntax-highlighting
+config/zsh/fast-syntax-highlighting
