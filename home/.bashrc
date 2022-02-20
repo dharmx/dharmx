@@ -27,24 +27,6 @@ if [ -x "$(command -v ranger)" ]; then
   alias fm="ranger"
 fi
 
-if [ -x "$(command -v neofetch)" ]; then
-    LAUNCHER="$XDG_CONFIG_HOME/neofetch/launch.bash"
-    alias fetch="$LAUNCHER"
-
-    alias coldarch="$LAUNCHER --coldarch"
-    alias verycold="$LAUNCHER --verycoldarch"
-    alias foodfetch="$LAUNCHER --food"
-
-    alias floskull="$LAUNCHER --flowerskull"
-    alias fspolar="$LAUNCHER --flowerskull polar"
-    alias fswarm="$LAUNCHER --flowerskull warm"
-    alias fsauro="$LAUNCHER --flowerskull aurorae"
-    alias fswaifu="$LAUNCHER --waifu"
-    alias fsrip="neofetch --config .config/neofetch/configs/rip.conf --source .config/neofetch/images/riparch.png"
-    alias fscat="neofetch --config $XDG_CONFIG_HOME/neofetch/configs/asciisq-very-minimal-v2.conf --ascii $XDG_CONFIG_HOME/neofetch/asciis/cat"
-    unset LAUNCHER
-fi
-
 alias logout="bspc quit"
 alias suspend="systemctl suspend; locklauncher"
 
@@ -64,12 +46,23 @@ alias yts="ytfzf -t"
 alias pisend="$XDG_CONFIG_HOME/picom/launch.bash"
 alias tintsend="$XDG_CONFIG_HOME/tint2/launch.bash"
 
+alias ~='cd' 2> /dev/null
 alias -='cd -' 2> /dev/null
-alias ...=../..
-alias ....=../../..
-alias .....=../../../..
-alias ......=../../../../..
-alias _='sudo '
+alias ..='cd ../'
+alias ...='cd ../..'
+alias ....='cd ../../..'
+alias .....='cd ../../../..'
+alias ......='cd ../../../../..'
+alias 1='cd -1'
+alias 2='cd -2'
+alias 3='cd -3'
+alias 4='cd -4'
+alias 5='cd -5'
+alias 6='cd -6'
+alias 7='cd -7'
+alias 8='cd -8'
+alias 9='cd -9'
+alias _='sudo'
 alias afind='ack -il'
 
 alias rd=rmdir

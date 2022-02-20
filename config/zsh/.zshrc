@@ -20,24 +20,6 @@ if [ -x "$(command -v logo-ls)" ]; then
     alias lla="logo-ls -l --all"
 fi
 
-if [ -x "$(command -v neofetch)" ]; then
-    LAUNCHER="$XDG_CONFIG_HOME/neofetch/launch.bash"
-    alias fetch="$LAUNCHER"
-
-    alias coldarch="$LAUNCHER --coldarch"
-    alias verycold="$LAUNCHER --verycoldarch"
-    alias foodfetch="$LAUNCHER --food"
-
-    alias floskull="$LAUNCHER --flowerskull"
-    alias fspolar="$LAUNCHER --flowerskull polar"
-    alias fswarm="$LAUNCHER --flowerskull warm"
-    alias fsauro="$LAUNCHER --flowerskull aurorae"
-    alias fswaifu="$LAUNCHER --waifu"
-    alias fsrip="neofetch --config .config/neofetch/configs/rip.conf --source .config/neofetch/images/riparch.png"
-    alias fscat="neofetch --config $XDG_CONFIG_HOME/neofetch/configs/asciisq-very-minimal-v2.conf --ascii $XDG_CONFIG_HOME/neofetch/asciis/cat"
-    unset LAUNCHER
-fi
-
 if [ -x "$(command -v ripgrep)" ]; then
     alias grep="ripgrep"
 fi
@@ -88,10 +70,11 @@ alias startx='startx -- -keeptty >~/.xorg.log 2>&1'
 
 alias ~='cd' 2> /dev/null
 alias -='cd -' 2> /dev/null
-alias ...='../..'
-alias ....='../../..'
-alias .....='../../../..'
-alias ......='../../../../..'
+alias ..='cd ../'
+alias ...='cd ../..'
+alias ....='cd ../../..'
+alias .....='cd ../../../..'
+alias ......='cd ../../../../..'
 alias 1='cd -1'
 alias 2='cd -2'
 alias 3='cd -3'
