@@ -2,7 +2,7 @@
 
 sleep 2
 
-wmname LG3D &
+# wmname LG3D &
 # wmname compiz &
 
 # set your wallpaper
@@ -19,19 +19,19 @@ wmname LG3D &
 #esac
 
 wallpapers=(
-	"ign-unsplash-flower-7-dark-res"
-	"ign-unsplash-flower-3-dark"
-	"ign-unsplash-flower-8-dark-res"
-	"ign-unsplash-lotus-dark-res"
-	"ign-unsplash-flower-5-dark-res"
-	"ign-pedro-saraiva-flower-dark"
-	"ign-joey-flower-dark"
-	"ign-flower-real-nord"
-	"ign-unsplash-flower-9-dark-res"
-    "ign-jinen-shah-unsplash-dark"
-    "ign-bady-abbas-unsplash-dark"
-    "ign-xuan-nguyen-unsplash-dark"
-    "ign-xuan-nguyen-Gg-unsplash-dark"
+"ign-unsplash-flower-7-dark-res"
+"ign-unsplash-flower-3-dark"
+"ign-unsplash-flower-8-dark-res"
+"ign-unsplash-lotus-dark-res"
+"ign-unsplash-flower-5-dark-res"
+"ign-pedro-saraiva-flower-dark"
+"ign-joey-flower-dark"
+"ign-flower-real-nord"
+"ign-unsplash-flower-9-dark-res"
+"ign-jinen-shah-unsplash-dark"
+"ign-bady-abbas-unsplash-dark"
+"ign-xuan-nguyen-unsplash-dark"
+"ign-xuan-nguyen-Gg-unsplash-dark"
 )
 
 choice=${wallpapers["$((1 + RANDOM % 12))"]}
@@ -58,6 +58,9 @@ dunst &
 
 # start mpd daemon
 mpd &
+
+# start system tray 
+stalonetray &
 
 # NetworkManager is the most popular way to manage wireless networks on Linux,
 # and nm-applet is a desktop environment-independent system tray GUI for it.

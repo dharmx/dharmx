@@ -37,7 +37,8 @@ alias bedit="nv $HOME/.bashrc"
 alias zedit="nv $XDG_CONFIG_HOME/zsh/.zshrc"
 alias fedit="nv $XDG_CONFIG_HOME/fish/config.fish"
 alias kev="xev -event keyboard"
-alias fzf="fzf --prompt ' ' --pointer '->'"
+alias fzf="fzf --layout=reverse --prompt ' ' --pointer '->' --preview='less {}' --bind shift-up:preview-page-up,shift-down:preview-page-down"
+alias fzfimg="$HOME/.fzfimg.sh"
 alias ccbonsai="cbonsai -ilt 0.02 -c '  ,  ,  ,  ,  ' -L 80"
 alias cclock="watch -t -n1 'date +%T | figlet' | lolcat"
 alias tty-clock="tty-clock -S -c -C4 -D -s -n"
@@ -386,3 +387,5 @@ source "$HOME/.colors.sh"
 # BEGIN_KITTY_SHELL_INTEGRATION
 if test -n "$KITTY_INSTALLATION_DIR" -a -e "$KITTY_INSTALLATION_DIR/shell-integration/bash/kitty.bash"; then source "$KITTY_INSTALLATION_DIR/shell-integration/bash/kitty.bash"; fi
 # END_KITTY_SHELL_INTEGRATION
+
+[ -f ~/.fzf.bash ] && source ~/.fzf.bash

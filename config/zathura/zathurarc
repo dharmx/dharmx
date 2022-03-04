@@ -29,7 +29,7 @@ set completion-fg               "#2e3440"
 set notification-bg             "#E5E9F0"
 set notification-fg             "#2e3440"
 
-set recolor-darkcolor 		"#E5E9F0" 
+set recolor-darkcolor           "#E5E9F0" 
 set recolor-lightcolor          "#2e3440"
 set recolor                     "false"
 
@@ -46,4 +46,3 @@ set window-height               "980"
 set window-width                "850"
 
 # vim:fileencoding=utf-8:ft=conf
-

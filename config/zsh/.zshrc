@@ -61,7 +61,8 @@ alias kev="xev -event keyboard"
 alias cclock="watch -t -n1 'date +%T | figlet' | lolcat"
 alias tty-clock="tty-clock -S -c -C4 -D -s -n"
 alias ccbonsai="cbonsai -ilt 0.02 -c '  ,  ,  ,  ,  ' -L 5"
-alias fzf="fzf --prompt ' ' --pointer '->'"
+alias fzfimg="$HOME/.fzfimg.sh"
+alias fzf="fzf --layout=reverse --prompt ' ' --pointer '->' --preview='less {}' --bind shift-up:preview-page-up,shift-down:preview-page-down"
 
 alias yts="ytfzf -t"
 alias pisend="$XDG_CONFIG_HOME/picom/launch.bash"
@@ -422,13 +423,12 @@ export PS2="%2F%3F "
 source "$XDG_CONFIG_HOME/zsh/powerlevel10k/powerlevel10k.zsh-theme"
 
 # ZSH_HIGHLIGHT_HIGHLIGHTERS=(main brackets pattern cursor)
-# source "$XDG_CONFIG_HOME/zsh/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh"
+# source "$ZDOTDIR/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh"
 
-# ZSH_AUTOSUGGEST_STRATEGY=(history completion match_prev_cmd)
-# ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE="fg=black,bg=green,bold"
-# source "$XDG_CONFIG_HOME/zsh/zsh-autosuggestions/zsh-autosuggestions.zsh"
-
-source "$XDG_CONFIG_HOME/zsh/fast-syntax-highlighting/fast-syntax-highlighting.plugin.zsh"
+ZSH_AUTOSUGGEST_STRATEGY=(history completion match_prev_cmd)
+ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE="fg=black,bg=green,bold"
+source "$ZDOTDIR/zsh-autosuggestions/zsh-autosuggestions.zsh"
+source "$ZDOTDIR/fast-syntax-highlighting/fast-syntax-highlighting.plugin.zsh"
 
 export HISTFILE="$HOME/.zhistory"
 export HISTSIZE=10000
@@ -446,5 +446,8 @@ setopt HIST_REDUCE_BLANKS
 
 eval "$HOME/Dotfiles/util-scripts/scripts/panes-nord"; echo
 [[ ! -f "$XDG_CONFIG_HOME/zsh/.p10k.zsh" ]] || source "$XDG_CONFIG_HOME/zsh/.p10k.zsh"
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+
+
 
 # vim:ft=zsh:nowrap
