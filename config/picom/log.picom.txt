@@ -198,3 +198,23 @@
 [ 03/03/2022 22:24:04.560 glx_has_extension INFO ] Found GLX extension GLX_ARB_create_context.
 [ 03/03/2022 22:24:04.560 glx_has_extension INFO ] Found GLX extension GLX_EXT_buffer_age.
 [ 03/03/2022 22:24:04.579 gl_has_extension INFO ] Missing GL extension GL_GREMEDY_string_marker.
+[ 03/05/2022 14:03:31.972 glx_has_extension INFO ] Found GLX extension GLX_SGI_video_sync.
+[ 03/05/2022 14:03:31.972 glx_has_extension INFO ] Found GLX extension GLX_SGI_swap_control.
+[ 03/05/2022 14:03:31.972 glx_has_extension INFO ] Found GLX extension GLX_OML_sync_control.
+[ 03/05/2022 14:03:31.972 glx_has_extension INFO ] Found GLX extension GLX_MESA_swap_control.
+[ 03/05/2022 14:03:31.972 glx_has_extension INFO ] Found GLX extension GLX_EXT_swap_control.
+[ 03/05/2022 14:03:31.972 glx_has_extension INFO ] Found GLX extension GLX_EXT_texture_from_pixmap.
+[ 03/05/2022 14:03:31.972 glx_has_extension INFO ] Found GLX extension GLX_ARB_create_context.
+[ 03/05/2022 14:03:31.972 glx_has_extension INFO ] Found GLX extension GLX_EXT_buffer_age.
+[ 03/05/2022 14:03:32.721 gl_has_extension INFO ] Missing GL extension GL_GREMEDY_string_marker.
+[ 03/05/2022 18:24:16.373 glx_has_extension INFO ] Found GLX extension GLX_SGI_video_sync.
+[ 03/05/2022 18:24:16.373 glx_has_extension INFO ] Found GLX extension GLX_SGI_swap_control.
+[ 03/05/2022 18:24:16.373 glx_has_extension INFO ] Found GLX extension GLX_OML_sync_control.
+[ 03/05/2022 18:24:16.373 glx_has_extension INFO ] Found GLX extension GLX_MESA_swap_control.
+[ 03/05/2022 18:24:16.373 glx_has_extension INFO ] Found GLX extension GLX_EXT_swap_control.
+[ 03/05/2022 18:24:16.373 glx_has_extension INFO ] Found GLX extension GLX_EXT_texture_from_pixmap.
+[ 03/05/2022 18:24:16.373 glx_has_extension INFO ] Found GLX extension GLX_ARB_create_context.
+[ 03/05/2022 18:24:16.373 glx_has_extension INFO ] Found GLX extension GLX_EXT_buffer_age.
+[ 03/05/2022 18:24:16.386 gl_has_extension INFO ] Missing GL extension GL_GREMEDY_string_marker.
+[ 03/05/2022 18:31:12.529 reset_enable INFO ] picom is resetting...
+[ 03/05/2022 18:31:12.574 gl_has_extension INFO ] Missing GL extension GL_GREMEDY_string_marker.
