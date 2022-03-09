@@ -7,13 +7,12 @@ pgrep -x sxhkd >/dev/null || sxhkd &
 bspc monitor -d 0 1 2 3 4 5 6 7 8 9
 
 # Window settings
-bspc config border_width 0
+bspc config border_width 8
 bspc config window_gap 10
 bspc config top_padding 0
 
-# bspc config focused_border_color "#81A1C1"
 bspc config focused_border_color "#3b4356"
-bspc config normal_border_color "#3b4356"
+bspc config normal_border_color "#333947"
 bspc config presel_border_color "#3b4252"
 bspc config presel_feedback_color "#81a1c1"
 bspc config urgent_border_color "#ebcb8b"

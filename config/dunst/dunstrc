@@ -56,7 +56,7 @@ browser = qutebrowser
 always_run_script = true
 title = Dunst
 class = Dunst
-corner_radius = 10
+corner_radius = 0
 notification_limit = 1
 
 mouse_left_click = do_action
@@ -159,4 +159,4 @@ new_icon = ~/.icons/Zafiro-Icons-Light/apps/scalable/firefox.svg
 # open_url = ctrl+slash
 # close_current = ctrl+backslash
 
-# vim: ft=dosini:nowrap
+# vim:ft=dosini:nowrap
