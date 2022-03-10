@@ -1,20 +1,15 @@
-from abc import ABC
-from ranger.container.fsobject import FileSystemObject
-
-from ranger.api import register_linemode
+import os
+import ranger.api
 from ranger.core.linemode import LinemodeBase
+from .devicons import *
 
-from os import getenv
-from .devicons import devicon
+SEPARATOR = os.getenv('RANGER_DEVICONS_SEPARATOR', ' ')
 
-SEPARATOR: str = getenv('RANGER_DEVICONS_SEPARATOR', ' ')
+@ranger.api.register_linemode
+class DevIconsLinemode(LinemodeBase):
+  name = "devicons"
 
+  uses_metadata = False
 
-@register_linemode
-class DevIconsLineMode(LinemodeBase, ABC):
-    name: str = "devicons"
-    uses_metadata: bool = False
-
-    # noinspection SpellCheckingInspection
-    def filetitle(self, file: FileSystemObject, metadata: str) -> str:
-        return devicon(file) + SEPARATOR + file.relative_path
+  def filetitle(self, file, metadata):
+    return devicon(file) + SEPARATOR + file.relative_path
