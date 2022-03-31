@@ -31,10 +31,6 @@ super + alt + {q,r}
 super + {_,shift + }q
 				bspc node -{c,k}
 
-# just close
-ctrl + q
-				bspc node --close
-
 # m - alternate between the tiled and monocle layout
 # y - send the newest marked node to the newest preselected node
 # g - swap the current node and the biggest window
@@ -225,10 +221,6 @@ super + {alt + ,_,back}slash
 # show widgets
 super + {w,r,x}
         exec $XDG_CONFIG_HOME/eww/structs/{main-utils/main,wallpaper/wal,side-utils/side}launcher
-
-# polybar/tint2 hide/show
-super + shift + {_,back}slash
-				exec $XDG_CONFIG_HOME/{polybar/configs/evilnord/panel-polybar.bash,tint2/launch.bash --toggle-panel}
 
 #
 # dynamic gaps

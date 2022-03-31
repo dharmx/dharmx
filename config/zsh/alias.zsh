@@ -1,51 +1,61 @@
 if [ -x "$(command -v exa)" ]; then
-  alias li="exa --long --all --group --icons"
-  alias ls="exa"
-  alias la="exa --long --all --group"
+    alias li="exa --long --all --group --icons"
+    alias ls="exa"
+    alias la="exa --long --all --group"
+fi
+
+if [ -x "$(command -v logo-ls)" ]; then
+    alias lls="logo-ls"
+    alias lla="logo-ls -l --all"
+fi
+
+if [ -x "$(command -v ripgrep)" ]; then
+    alias grep="ripgrep"
 fi
 
 if [ -x "$(command -v go-mtpfs)" ]; then
-  alias mount-phone="go-mtpfs ~/Phone"
+    alias mount-phone="go-mtpfs $HOME/Phone &>/dev/null & disown"
 fi
 
 if [ -x "$(command -v fusermount)" ]; then
-  alias unmount-phone="fusermount -u ~/Phone"
+    alias unmount-phone="fusermount -u $HOME/Phone"
 fi
 
 if [ -x "$(command -v udisksctl)" ]; then
-  alias mount-iso="udisksctl loop-setup -r -f"
-  alias unmount-iso="udisksctl loop-delete -b"
-  alias mount-ssd="udisksctl mount -b /dev/nvme0n1p1"
-  alias unmount-ssd="udisksctl unmount -b /dev/nvme0n1p1"
+    alias mount-iso="udisksctl loop-setup -r -f"
+    alias unmount-iso="udisksctl loop-delete -b"
+    alias mount-ssd="udisksctl mount -b /dev/nvme0n1p1"
+    alias unmount-ssd="udisksctl unmount -b /dev/nvme0n1p1"
 fi
 
 if [ -x "$(command -v nvim)" ]; then
-  alias nv="nvim"
+    alias nv="nvim"
 fi
 
 if [ -x "$(command -v ranger)" ]; then
-  alias fm="ranger"
+    alias fm="ranger"
 fi
 
 alias logout="bspc quit"
 alias suspend="systemctl suspend; locklauncher"
-
 alias cls="clear"
 alias la="ls -la"
 
-alias bedit="nv $HOME/.bashrc"
 alias zedit="nv $XDG_CONFIG_HOME/zsh/.zshrc"
+alias bedit="nv $HOME/.bashrc"
 alias fedit="nv $XDG_CONFIG_HOME/fish/config.fish"
 alias kev="xev -event keyboard"
-alias fzf="fzf --layout=reverse --prompt ' ' --pointer '->' --preview='less {}' --bind shift-up:preview-page-up,shift-down:preview-page-down"
-alias fzfimg="$HOME/.fzfimg.sh"
-alias ccbonsai="cbonsai -ilt 0.02 -c '  ,  ,  ,  ,  ' -L 80"
+
 alias cclock="watch -t -n1 'date +%T | figlet' | lolcat"
 alias tty-clock="tty-clock -S -c -C4 -D -s -n"
+alias ccbonsai="cbonsai -ilt 0.02 -c '  ,  ,  ,  ,  ' -L 5"
+alias fzfimg="$HOME/.fzfimg.sh"
+alias fzf="fzf --layout=reverse --prompt ' ' --pointer '->' --preview='less {}' --bind shift-up:preview-page-up,shift-down:preview-page-down"
 
 alias yts="ytfzf -t"
 alias pisend="$XDG_CONFIG_HOME/picom/launch.bash"
 alias tintsend="$XDG_CONFIG_HOME/tint2/launch.bash"
+alias startx='startx -- -keeptty >~/.xorg.log 2>&1'
 
 alias cd..='cd ../'
 alias cd...='cd ../../'
@@ -55,10 +65,10 @@ alias cd......='cd ../../../../../'
 alias ~='cd' 2> /dev/null
 alias -='cd -' 2> /dev/null
 alias ..='cd ../'
-alias ...='cd ../..'
-alias ....='cd ../../..'
-alias .....='cd ../../../..'
-alias ......='cd ../../../../..'
+alias ...='cd ../../'
+alias ....='cd ../../../'
+alias .....='cd ../../../../'
+alias ......='cd ../../../../../'
 alias 1='cd -1'
 alias 2='cd -2'
 alias 3='cd -3'
@@ -71,8 +81,8 @@ alias 9='cd -9'
 alias _='sudo'
 alias afind='ack -il'
 
-alias rd=rmdir
-alias run-help=man
+alias rd='rmdir'
+alias run-help='man'
 
 alias pac="sudo pacman"
 alias pacupg='sudo pacman -Syu'
@@ -97,7 +107,7 @@ alias upgrade='sudo pacman -Syu'
 
 alias yaconf='yay -Pg'
 alias yaupg='yay -Syu'
-alias yasu='yay -Syu --noconfirm'
+alias yas='yay -Syu --noconfirm'
 alias yain='yay -S'
 alias yains='yay -U'
 alias yare='yay -R'
@@ -302,20 +312,20 @@ alias sgrep='grep -R -n -H -C 5 --exclude-dir={.git,.svn,CVS} '
 alias t='tail -f'
 
 # Command line head / tail shortcuts
-alias H='| head'
-alias T='| tail'
-alias G='| grep'
-alias L="| less"
-alias M="| most"
-alias LL="2>&1 | less"
-alias CA="2>&1 | cat -A"
-alias NE="2> /dev/null"
-alias NUL="> /dev/null 2>&1"
-alias P="2>&1| pygmentize -l pytb"
+alias -g H='| head'
+alias -g T='| tail'
+alias -g G='| grep'
+alias -g L="| less"
+alias -g M="| most"
+alias -g LL="2>&1 | less"
+alias -g CA="2>&1 | cat -A"
+alias -g NE="2> /dev/null"
+alias -g NUL="> /dev/null 2>&1"
+alias -g P="2>&1| pygmentize -l pytb"
 
 alias dud='du -d 1 -h'
 alias duf='du -sh *'
-alias fd='find . -type d -name'
+(( $+commands[fd] )) || alias fd='find . -type d -name'
 alias ff='find . -type f -name'
 
 alias h='history'
@@ -329,41 +339,21 @@ alias rm='rm -i'
 alias cp='cp -i'
 alias mv='mv -i'
 
-alias pdf=acroread
-alias ps=gv
-alias dvi=xdvi
-alias chm=xchm
-alias djvu=djview
+alias -s pdf=acroread
+alias -s ps=gv
+alias -s dvi=xdvi
+alias -s chm=xchm
+alias -s djvu=djview
 
-alias zip="unzip -l"
-alias rar="unrar l"
-alias tar="tar tf"
-alias tar.gz="echo "
-alias ace="unace l"
+alias -s zip="unzip -l"
+alias -s rar="unrar l"
+alias -s tar="tar tf"
+alias -s tar.gz="echo "
+alias -s ace="unace l"
 
-export PATH="$XDG_DATA_HOME/gem/ruby/3.0.0/bin:$HOME/.local/bin:$PATH"
-export PS2="${magenta}${yellow}${red} "
-export HISTCONTROL=ignoreboth
+alias visudo="nvim /etc/sudoers"
 
-SILENT_JAVA_OPTIONS="$JDK_JAVA_OPTIONS"
-unset JDK_JAVA_OPTIONS
-alias java='java "$SILENT_JAVA_OPTIONS"'
-
-alias rofisc="wmctrl -s 2; rofi -show & sleep 1 && maim lol.png"
-alias nvconfig="fm ~/.config/nvim"
-alias tping="ping -c5 google.com"
-
-alias yta-mp3="youtube-dl --extract-audio --audio-format mp3"
-alias ytv-best="youtube-dl -f bestvideo+bestaudio "
-alias killconk="killall conky"
-
-alias upgrub="sudo grub-mkconfig -o /boot/grub/grub.cfg"
-alias upfont='sudo fc-cache -fv'
-
-alias kittythemes="kitty +kitten themes"
-alias nvupd="nvim --headless -c 'autocmd User PackerComplete quitall' -c 'PackerSync'"
-
-ccat() {
+function ccat() {
   if $2
   then
       pygmentize -g $1 | cat
@@ -372,11 +362,11 @@ ccat() {
   fi
 }
 
-cless() {
+function cless() {
   pygmentize -g $1 | less
 }
 
-cmore() {
+function cmore() {
   pygmentize -g $1 | more
 }
 
@@ -388,8 +378,29 @@ pacopt() {
   fi
 }
 
-source "$HOME/.colors.sh"
-if test -n "$KITTY_INSTALLATION_DIR" -a -e "$KITTY_INSTALLATION_DIR/shell-integration/bash/kitty.bash"; then source "$KITTY_INSTALLATION_DIR/shell-integration/bash/kitty.bash"; fi
-[ -f ~/.fzf.bash ] && source ~/.fzf.bash
+alias cless="cless"
+alias cmore="cmore"
+alias ccat="ccat"
+alias reconnect="nmcli d c wlp0s20f3"
+alias rofisc="wmctrl -s 2; rofi -show & sleep 2 && maim lol.png"
+alias rofifl="wmctrl -s 2; rofi -show & sleep 2 && flameshot full"
+alias nvconfig="fm ~/.config/nvim/"
 
-source /home/maker/.config/broot/launcher/bash/br
+alias tping="ping -c5 google.com"
+alias iping="ping google.com"
+
+alias yta-mp3="youtube-dl --extract-audio --audio-format mp3"
+alias ytv-best="youtube-dl -f bestvideo+bestaudio "
+alias killconk="killall conky"
+
+alias upgrub="sudo grub-mkconfig -o /boot/grub/grub.cfg"
+alias upfnt='sudo fc-cache -fv'
+
+alias kittythemes="kitty +kitten themes"
+alias nvupd="nvim --headless -c 'autocmd User PackerComplete quitall' -c 'PackerSync'"
+alias nvst="nvim --startuptime $XDG_DOCUMENTS_DIR/nvim-startuptime-'$(date)' +quitall"
+
+SILENT_JAVA_OPTIONS="$JDK_JAVA_OPTIONS"
+unset JDK_JAVA_OPTIONS
+alias java='java "$SILENT_JAVA_OPTIONS"'
+

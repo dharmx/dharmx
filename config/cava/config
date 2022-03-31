@@ -14,14 +14,14 @@ method = ncurses
 background = default
 foreground = default
 gradient = 10
-gradient_count = 6 
+gradient_count = 6
 
-gradient_color_1 = '#4C566A'
-gradient_color_2 = '#5E81AC'
-gradient_color_3 = '#81A1C1'
-gradient_color_4 = '#88C0D0'
-gradient_color_5 = '#D8DEE9'
-gradient_color_6 = '#E5E9F0'
+gradient_color_1 = '#36c692'
+gradient_color_2 = '#70c0ba'
+gradient_color_3 = '#79dcaa'
+gradient_color_4 = '#54ced6'
+gradient_color_5 = '#7ab0df'
+gradient_color_6 = '#f87070'
 
 [smoothing]
 integral = 50

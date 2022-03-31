@@ -28,6 +28,8 @@ tym.set_config({
     autohide = true,
     padding_horizontal = 25,
     padding_vertical = 20,
+    -- color_window_background = 'rgba(0, 255, 0, 0.5)',
+    -- color_background = 'rgba(0, 255, 0, 0.5)',
     term = 'xterm-256color',
     cjk_width = 'narrow'
 })

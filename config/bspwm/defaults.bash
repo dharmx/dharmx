@@ -7,16 +7,16 @@ pgrep -x sxhkd >/dev/null || sxhkd &
 bspc monitor -d 0 1 2 3 4 5 6 7 8 9
 
 # Window settings
-bspc config border_width 8
+bspc config border_width 5
 bspc config window_gap 10
 bspc config top_padding 0
 
-bspc config focused_border_color "#3b4356"
-bspc config normal_border_color "#333947"
-bspc config presel_border_color "#3b4252"
-bspc config presel_feedback_color "#81a1c1"
-bspc config urgent_border_color "#ebcb8b"
-bspc config focused_private_border_color "#BF616A"
+bspc config focused_border_color "#70c0ba"
+bspc config normal_border_color "#949494"
+bspc config presel_border_color "#54ced6"
+bspc config presel_feedback_color "#79dcaa"
+bspc config urgent_border_color "#ffe59e"
+bspc config focused_private_border_color "#f87070"
 
 bspc config split_ratio 0.5
 bspc config borderless_monocle false
@@ -53,3 +53,4 @@ bspc rule -a blueman-manager state=floating floating=true center=true
 bspc rule -a Blueman-manager state=floating floating=true center=true
 bspc rule -a blueman-adapters state=floating floating=true center=true
 bspc rule -a Blueman-adapters state=floating floating=true center=true
+bspc rule -a Arandr state=floating floating=true center=true

@@ -3,6 +3,10 @@
 **/.vscode/
 **/*.log
 
+config/lazygit/state.yml
+config/gh/hosts.yml
+config/cheat/cheatsheets/community/
+config/broot/launcher/
 config/mpd/playlists/
 config/mpd/database
 config/mpd/log
@@ -21,6 +25,8 @@ config/spotify-tui/.spotify_token_cache.json
 
 /config/neofetch/config.conf
 **/.zcompdump*
+config/zsh/bin/
+config/zsh/zplug/
 
 **/Acri/
 **/Dark/

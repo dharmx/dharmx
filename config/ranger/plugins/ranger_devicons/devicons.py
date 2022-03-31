@@ -250,6 +250,7 @@ dir_node_exact_matches = {
     '.cache': '',
     '.nhentai': '',
     'NSFW': '',
+    'Scratch': '',
     '.themes': '',
     '.icons': '',
     'buttercup-vaults': '',

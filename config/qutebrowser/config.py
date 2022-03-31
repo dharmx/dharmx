@@ -103,7 +103,7 @@ c.tabs.select_on_remove = "prev"
 c.url.default_page = "duckduckgo.com"
 c.url.searchengines = {"DEFAULT": "duckduckgo.com/?q={}"}
 
-with open(f"{XDG_CONFIG_HOME}/qutebrowser/colors.json", "r") as file:
+with open(f"{XDG_CONFIG_HOME}/qutebrowser/theme.json", "r") as file:
     color_full = json.load(file)
     color = color_full["colors"]
     special = color_full["special"]
