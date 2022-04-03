@@ -2,26 +2,15 @@
 
 sleep 2
 
-# wmname LG3D &
-# wmname compiz &
+# wmname LG3D
+# wmname compiz
 
 feh --bg-fill "$XDG_PICTURES_DIR/wallpapers/abstract/wallhaven-39lvjd.png"
 
-#
-#
-# update the font cache
-# fc-cache -fr &> /dev/null &
-
-xsetroot -cursor_name left_ptr &
-
-# start playerctl daemon
-# playerctld daemon &
+xsetroot -cursor_name left_ptr
 
 # start polybar
-eval "$XDG_CONFIG_HOME/polybar/configs/evilnord/launch.bash" &
-
-# start dunst daemon
-dunst &
+eval "$XDG_CONFIG_HOME/polybar/configs/evilnord/launch.bash"
 
 # start mpd-discord-rpc
 # mpd-discord-rpc &
@@ -36,6 +25,6 @@ stalonetray &
 # Start blueman applet for bluetooth
 # blueman-applet &
 
-exit 0
+mpv --keep-open=no --really-quiet "$HOME/.sounds/Smooth/stereo/system-ready.ogg" &
 
 # vim:number:nowrap

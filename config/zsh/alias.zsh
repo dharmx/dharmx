@@ -53,8 +53,6 @@ alias fzfimg="$HOME/.fzfimg.sh"
 alias fzf="fzf --layout=reverse --prompt ' ' --pointer '->' --preview='less {}' --bind shift-up:preview-page-up,shift-down:preview-page-down"
 
 alias yts="ytfzf -t"
-alias pisend="$XDG_CONFIG_HOME/picom/launch.bash"
-alias tintsend="$XDG_CONFIG_HOME/tint2/launch.bash"
 alias startx='startx -- -keeptty >~/.xorg.log 2>&1'
 
 alias cd..='cd ../'

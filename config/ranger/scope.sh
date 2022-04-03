@@ -39,9 +39,26 @@ FILE_EXTENSION="${FILE_PATH##*.}"
 FILE_EXTENSION_LOWER="$(printf "%s" "${FILE_EXTENSION}" | tr '[:upper:]' '[:lower:]')"
 
 ## Settings
+# HIGHLIGHT_STYLE themes
+# base16             clarity.theme              easter.theme             edit-vim.theme    molokai.theme       relaxedgreen.theme
+# acid.theme         dante.theme                edit-anjuta.theme        edit-xcode.theme  moria.theme         rootwater.theme
+# aiseered.theme     darkblue.theme             edit-bbedit.theme        ekvoli.theme      navajo-night.theme  seashell.theme
+# andes.theme        darkbone.theme             edit-eclipse.theme       fine_blue.theme   navy.theme          solarized-dark.theme
+# anotherdark.theme  darkness.theme             edit-emacs.theme         freya.theme       neon.theme          solarized-light.theme
+# autumn.theme       darkplus.theme             edit-fasm.theme          fruit.theme       night.theme         sourceforge.theme
+# baycomb.theme      darkslategray.theme        edit-flashdevelop.theme  github.theme      nightshimmer.theme  tabula.theme
+# bclear.theme       darkspectrum.theme         edit-gedit.theme         golden.theme      nuvola.theme        tcsoft.theme
+# biogoo.theme       denim.theme                edit-godot.theme         greenlcd.theme    olive.theme         the.theme
+# bipolar.theme      duotone-dark-earth.theme   edit-jedit.theme         kellys.theme      orion.theme         vampire.theme
+# blacknblue.theme   duotone-dark-forest.theme  edit-kwrite.theme        leo.theme         oxygenated.theme    whitengrey.theme
+# bluegreen.theme    duotone-dark-sea.theme     edit-matlab.theme        lucretia.theme    pablo.theme         xoria256.theme
+# breeze.theme       duotone-dark-sky.theme     edit-msvs2008.theme      manxome.theme     peaksea.theme       zellner.theme
+# bright.theme       duotone-dark-space.theme   edit-nedit.theme         maroloccio.theme  print.theme         zenburn.theme
+# camo.theme         dusk.theme                 edit-purebasic.theme     matrix.theme      rand01.theme        zmrok.theme
+# candy.theme        earendel.theme             edit-vim-dark.theme      moe.theme         rdark.theme
 HIGHLIGHT_SIZE_MAX=262143  # 256KiB
-HIGHLIGHT_TABWIDTH=${HIGHLIGHT_TABWIDTH:-8}
-HIGHLIGHT_STYLE=${HIGHLIGHT_STYLE:-padblo}
+HIGHLIGHT_TABWIDTH=${HIGHLIGHT_TABWIDTH:-2}
+HIGHLIGHT_STYLE=${HIGHLIGHT_STYLE:-candy}
 HIGHLIGHT_OPTIONS="--replace-tabs=${HIGHLIGHT_TABWIDTH} --style=${HIGHLIGHT_STYLE} ${HIGHLIGHT_OPTIONS:-}"
 PYGMENTIZE_STYLE=${PYGMENTIZE_STYLE:-autumn}
 OPENSCAD_IMGSIZE=${RNGR_OPENSCAD_IMGSIZE:-1000,1000}

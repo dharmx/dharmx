@@ -1,0 +1,11 @@
+[Desktop Entry]
+Type=Application
+Name=Picom
+Terminal=false
+Comment=Enable compositors
+Icon=video-television
+Exec=/home/maker/.scripts/launch/picom.bash --restore
+Categories=System;
+Encoding=UTF-8
+Keywords=lock;security
+

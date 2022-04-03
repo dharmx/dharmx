@@ -10,8 +10,10 @@ if [ $TILIX_ID ] || [ $VTE_VERSION ]; then
 fi
 
 source "$XDG_CONFIG_HOME/zsh/alias.zsh"
-source "$HOME/.colors.sh"
+source "$HOME/.scripts/base/colors.sh"
 if test -n "$KITTY_INSTALLATION_DIR" -a -e "$KITTY_INSTALLATION_DIR/shell-integration/bash/kitty.bash"; then source "$KITTY_INSTALLATION_DIR/shell-integration/bash/kitty.bash"; fi
+
+zstyle ':completion:*' list-colors ${(s.:.)LS_COLORS}
 
 zmodload zsh/zle
 zmodload zsh/zpty
@@ -35,7 +37,7 @@ setopt HIST_EXPIRE_DUPS_FIRST
 setopt HIST_SAVE_NO_DUPS
 setopt HIST_REDUCE_BLANKS
 
-eval "$HOME/Dotfiles/util-scripts/scripts/panes-nord"; echo
+eval "$HOME/.scripts/misc/panes-nord"; echo
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 [ -f "$XDG_CONFIG_HOME/zsh/plug.zsh" ] && source "$XDG_CONFIG_HOME/zsh/plug.zsh"
 
