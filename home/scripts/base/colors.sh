@@ -36,7 +36,7 @@ color15='#ffffff'
 
 # FZF colors
 export FZF_DEFAULT_OPTS="$FZF_DEFAULT_OPTS
-    --color fg:$color7,bg:$color0,hl:$color1,fg+:$color0,bg+:$color12,hl+:$color5
+    --color fg:$color7,bg:$color0,hl:$color1,fg+:$color13,bg+:$color0,hl+:$color5
     --color info:$color2,prompt:$color12,spinner:$color12,pointer:$color3,marker:$color3
 "
 
