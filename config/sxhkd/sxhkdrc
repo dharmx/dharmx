@@ -14,9 +14,9 @@ super + alt + {_,ctrl} + Return
 # make sxhkd reload its configuration files
 super + {_,shift} + Escape
 				{pkill -USR1 -x sxhkd;\
-					dunstify -a "sxhkd" -i "export" "SXHKD" "Reloaded all configurations.",\
+					notify-send -a "sxhkd" -i "export" "SXHKD" "Reloaded all configurations.",\
 					$XDG_CONFIG_HOME/bspwm/defaults;\
-					dunstify -a "sxhkd" -i "configuration" \
+					notify-send -a "sxhkd" -i "configuration" \
 					"BSPWM" "Configurations and rules have been set to default."}
 
 #
@@ -205,14 +205,13 @@ super + button3
 #
 
 # fullscreen save
-{ctrl,_,super} + Print
-        {flameshot gui,\
-					$HOME/.scripts/notify/screenshot.bash --xclip-fullscreen,\
+{_,super} + Print
+        {$HOME/.scripts/notify/screenshot.bash --xclip-fullscreen,\
 					$HOME/.scripts/notify/screenshot.bash --fullscreen}
 
 # cropped save
 super + shift + {x,s}
-        $HOME/.scripts/screenshot.bash --{selected,xclip-cropped}
+        $HOME/.scripts/notify/screenshot.bash --{selected,xclip-cropped}
 
 # toggle picom, screenlock and lockscreen no screen off
 super + {alt + ,_,back}slash

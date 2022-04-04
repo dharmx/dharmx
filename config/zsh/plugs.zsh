@@ -7,7 +7,6 @@ export ZPLUG_THREADS=10
 if [ ! -d "$ZPLUG_HOME" ]; then
     echo "ZPLUG not found. Cloning..."
     git clone https://github.com/zplug/zplug "$ZPLUG_HOME"
-    export ZPLUG_FRESH=1
 fi
 
 source "$ZPLUG_HOME/init.zsh"
@@ -22,9 +21,15 @@ zplug "hlissner/zsh-autopair", "depth:1"
 
 zplug "zsh-users/zsh-autosuggestions", "depth:1"
 
-if [[ "$ZPLUG_FRESH" == "1" ]]; then
-    zplug install
-    unset ZPLUG_FRESH
+zplug "junegunn/fzf-bin", from:gh-r, as:command, rename-to:fzf
+
+if ! zplug check --verbose; then
+    printf "Install? [y/N]: "
+    if read -q; then
+        echo; zplug install
+    fi
 fi
 
 zplug load
+
+# vim:ft=zsh

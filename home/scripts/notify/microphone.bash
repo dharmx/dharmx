@@ -1,8 +1,7 @@
 #!/usr/bin/env bash
+# shellcheck disable=1091
 
-notify_template() {
-	dunstify -a "microphone" -i "$1" "$2" "$3"
-}
+source "$HOME/.scripts/notify/factory.bash"
 
 notify() {
 	MUTED=$(pacmd list-sources | awk '/\*/,EOF {print}' | awk '/muted/ {print $2; exit}')
@@ -10,13 +9,13 @@ notify() {
 
 	if [ "$MUTED" = "yes" ]; then
 		pactl set-source-mute "$DEFAULT_SOURCE" 0
-		notify_template "mic-off" "Microphone" "The microphone has been unmuted."
+		microphone "mic" "Microphone" "The microphone has been unmuted."
 	else
 		pactl set-source-mute "$DEFAULT_SOURCE" 1
-		notify_template "mic-on" "Microphone" "The microphone has been muted."
+		microphone "mic-off" "Microphone" "The microphone has been muted."
 	fi
 }
 
 notify
 
-# vim:ft=bash:nowrap
+# vim:ft=sh:nowrap

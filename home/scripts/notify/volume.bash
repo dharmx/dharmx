@@ -4,6 +4,8 @@ MUTED=""
 DEFAULT_SOURCE=""
 LEVEL=""
 
+source "$HOME/.scripts/notify/factory.bash"
+
 get_level() {
 	refetch
 	if [[ "$MUTED" == "yes" ]]; then
@@ -27,44 +29,40 @@ refetch() {
 	LEVEL=$(pacmd list-sinks | grep -A 7 "\* index" | grep volume | awk -F/ '{print $2}' | tr -d ' ' | sed 's/%$//')
 }
 
-notify_template() {
-	dunstify -a "volume" -i "$(get_level)" -u "$1" -h "int:value:$2" "$3" "$4"
-}
-
 toggle() {
 	refetch
 	if [[ "$MUTED" == "yes" ]]; then
 		pactl set-sink-mute "$DEFAULT_SOURCE" 0
-		notify_template "low" "$LEVEL" "Volume" "Volume has been unmuted"
+		volume "low" "$LEVEL" "Volume" "Volume has been unmuted" "$(get_level)"
 	else
 		pactl set-sink-mute "$DEFAULT_SOURCE" 1
-		notify_template "low" "0" "Volume" "Volume has been muted"
+		volume "low" "0" "Volume" "Volume has been muted" "$(get_level)"
 	fi
 }
 
 increase() {
 	refetch
 	if [[ "$LEVEL" -eq 100 ]]; then
-		notify_template "critical" "$LEVEL" " Volume Warning!" "Abnormal volume level"
+		volume "critical" "$LEVEL" " Volume Warning!" "Abnormal volume level" "$(get_level)"
 	elif [[ "$LEVEL" -ge "75" ]]; then
 		pactl set-sink-volume "$DEFAULT_SOURCE" +5%
-		notify_template "critical" "$((LEVEL + 5))" " Volume Warning!" "Abnormal volume level"
+		volume "critical" "$((LEVEL + 5))" " Volume Warning!" "Abnormal volume level" "$(get_level)"
 	else
 		pactl set-sink-volume "$DEFAULT_SOURCE" +5%
-		notify_template "normal" "$((LEVEL + 5))" "Volume Increased" "Increased volume"
+		volume "normal" "$((LEVEL + 5))" "Volume Increased" "Increased volume" "$(get_level)"
 	fi
 }
 
 decrease() {
 	refetch
 	if [[ "$LEVEL" -eq 0 ]]; then
-		notify_template "critical" " Volume Warning!" "Inaudible volume level"
+		volume "critical" " Volume Warning!" "Inaudible volume level" "$(get_level)"
 	elif [[ "$LEVEL" -ge 70 ]]; then
 		pactl set-sink-volume "$DEFAULT_SOURCE" -5%
-		notify_template "critical" "$((LEVEL - 5))" " Volume Warning!" "Abnormal volume level"
+		volume "critical" "$((LEVEL - 5))" " Volume Warning!" "Abnormal volume level" "$(get_level)"
 	else
 		pactl set-sink-volume "$DEFAULT_SOURCE" -5%
-		notify_template "normal" "$((LEVEL - 5))" "Volume Decreased" "Decreased volume"
+		volume "normal" "$((LEVEL - 5))" "Volume Decreased" "Decreased volume" "$(get_level)"
 	fi
 }
 
