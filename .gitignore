@@ -15,8 +15,8 @@ config/mpd/state
 
 config/tmux/tmuxhistory
 config/tmux/.tmuxhistory
-config/tmux/zhistory
-config/tmux/.zhistory
+config/zsh/zhistory
+config/zsh/.zhistory
 config/tmux/plugins
 
 config/qutebrowser/bookmarks
