@@ -139,7 +139,7 @@ format = "<b>%s</b>\n%b"
 appname = "spotify"
 summary = "*"
 set_stack_tag = "spotify"
-format = "<span size='x-large' font_desc='Iosevka Nerd Font 10' weight='bold' foreground='#79dcaa'>%s</span>\n\n%b"
+format = "<span size='x-large' font_desc='Iosevka Nerd Font 10' weight='bold' foreground='#79dcaa'>%s</span>\n%b"
 
 [notify_send]
 appname = notify-send
@@ -149,4 +149,4 @@ new_icon = bell
 appname = firefox
 new_icon = firefox-default
 
-# vim:ft=dosini:nowrap
+# vim:ft=cfg:nowrap

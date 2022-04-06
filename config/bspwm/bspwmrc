@@ -1,9 +1,7 @@
-#!/usr/bin/env bash
+#!/usr/bin/env zsh
 
 export XDG_CURRENT_DESKTOP="bspwm"
+source "$XDG_CONFIG_HOME/bspwm/defaults.zsh"
+source "$XDG_CONFIG_HOME/bspwm/launcher.zsh"
 
-source "$XDG_CONFIG_HOME/bspwm/defaults.bash"
-source "$XDG_CONFIG_HOME/bspwm/exports.bash"
-source "$XDG_CONFIG_HOME/bspwm/launcher.bash"
-
-# vim:ft=bash:nowrap
+# vim:ft=zsh:number:nowrap

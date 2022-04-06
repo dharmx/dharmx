@@ -49,8 +49,8 @@ alias kev="xev -event keyboard"
 alias cclock="watch -t -n1 'date +%T | figlet' | lolcat"
 alias tty-clock="tty-clock -S -c -C4 -D -s -n"
 alias ccbonsai="cbonsai -ilt 0.02 -c '  ,  ,  ,  ,  ' -L 5"
-alias fzfimg="$HOME/.fzfimg.sh"
-alias fzf="fzf --layout=reverse --prompt ' ' --pointer '->' --preview='less {}' --bind shift-up:preview-page-up,shift-down:preview-page-down"
+alias fzi="$HOME/.fzfimg.sh"
+alias fzf="fzf --layout=reverse --prompt ' ' --pointer '=>' --preview='less {}' --bind shift-up:preview-page-up,shift-down:preview-page-down"
 
 alias yts="ytfzf -t"
 alias startx='startx -- -keeptty >~/.xorg.log 2>&1'
@@ -399,7 +399,6 @@ alias nvupd="nvim --headless -c 'autocmd User PackerComplete quitall' -c 'Packer
 alias nvst="nvim --startuptime $XDG_DOCUMENTS_DIR/nvim-startuptime-'$(date)' +quitall"
 
 SILENT_JAVA_OPTIONS="$JDK_JAVA_OPTIONS"
-unset JDK_JAVA_OPTIONS
 alias java='java "$SILENT_JAVA_OPTIONS"'
 alias nhist="dbus-monitor \"interface='org.freedesktop.Notifications'\" | grep --line-buffered \"member=Notify\|string\""
 alias strel="xrdb -I$XDG_CONFIG_HOME/Xresources $XDG_CONFIG_HOME/Xresources/config.Xresources && kill -USR1 $(pidof st)"
@@ -415,5 +414,20 @@ function compress-pdf() {
     fi
     gs -sDEVICE=pdfwrite -dCompatibilityLevel=1.4 -dPDFSETTINGS=/"$level" -dNOPAUSE -dQUIET -dBATCH -sOutputFile="$2.pdf" "$1.pdf"
 }
+
+function redditdw() {
+    ffmpeg -i $(wget -qO- "https://api.reddit.com/api/info/?id=t3_$(echo $1| cut -d'/' -f 7)" | jq -r '.data.children[0].data.secure_media.reddit_video.dash_url') -c copy $(echo $1| cut -d'/' -f 8).mp4
+}
+
+function compile-hentai() {
+    for file in *; do
+        cd "$file"
+        convert "*.jpg" convert "$file.pdf"
+        mv "$file.pdf" "../$file.pdf"
+        cd ..
+    done
+}
+
+alias fet.sh="$HOME/.scripts/misc/fet.sh"
 
 # vim:ft=zsh

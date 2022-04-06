@@ -198,7 +198,7 @@ super + n
         $HOME/.scripts/notify/redshift.bash
 
 ## jgmenu
-super + button3
+super + ctrl + button3
         jgmenu_run &
 #
 # Screenshot
@@ -215,7 +215,11 @@ super + shift + {x,s}
 
 # toggle picom, screenlock and lockscreen no screen off
 super + {alt + ,_,back}slash
-        {lock --no-screen-off &,lock &,$HOME/.scripts/launch/picom.bash --toggle}
+        {lock --no-screen-off &,lock &,$HOME/.scripts/launch/picom.bash}
+
+# toggle polybar
+super + shift + slash
+        {$HOME/.scripts/notify/polybar.bash}
 
 # show widgets
 super + {w,r,x}

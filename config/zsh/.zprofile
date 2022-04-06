@@ -36,4 +36,9 @@ export LESS_TERMCAP_so=$'\e[01;33m'
 export LESS_TERMCAP_ue=$'\e[0m'
 export LESS_TERMCAP_us=$'\e[1;4;31m'
 
+export AWT_TOOLKIT="MToolkit"
+export _JAVA_AWT_WM_NONREPARENTING=1
+export JDK_JAVA_OPTIONS='-Dawt.useSystemAAFontSettings=on -Dswing.aatext=true -Dswing.defaultlaf=com.sun.java.swing.plaf.gtk.GTKLookAndFeel -Djdk.gtk.version=2.2 -Dsun.java2d.opengl=true'
+export RANGER_DEVICONS_SEPARATOR=" "
+
 # vim:ft=zsh:nowrap
