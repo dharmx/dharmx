@@ -14,7 +14,7 @@ targets() {
 		normal)  bspc query -N -n .\!focused.\!fullscreen
 	esac
 }
-bspc config border_width 13
+bspc config border_width 20
 
 draw() { chwb2 -I "$inner" -O "$outer" -i "3" -o "12" $*; }
 
