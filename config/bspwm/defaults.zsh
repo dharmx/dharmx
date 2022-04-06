@@ -1,5 +1,3 @@
-#!/usr/bin/env bash
-
 # Monitor settings
 pgrep -x sxhkd >/dev/null || sxhkd &
 
@@ -7,19 +5,22 @@ pgrep -x sxhkd >/dev/null || sxhkd &
 bspc monitor -d 0 1 2 3 4 5 6 7 8 9
 
 # Window settings
-bspc config border_width 5
-bspc config window_gap 10
+bspc config border_width 0
+bspc config window_gap 0
 bspc config top_padding 0
 
-bspc config focused_border_color "#70c0ba"
-bspc config normal_border_color "#949494"
-bspc config presel_border_color "#54ced6"
-bspc config presel_feedback_color "#79dcaa"
-bspc config urgent_border_color "#ffe59e"
-bspc config focused_private_border_color "#f87070"
+source "$HOME/.scripts/base/colors.sh"
+bspc config focused_border_color "$color6"
+bspc config normal_border_color "$color8"
+bspc config presel_border_color "$color14"
+bspc config presel_feedback_color "$color2"
+bspc config urgent_border_color "$color3"
+bspc config focused_private_border_color "$color1"
+
+"$HOME"/.scripts/base/borders.bash &
 
 bspc config split_ratio 0.5
-bspc config borderless_monocle false
+bspc config borderless_monocle true
 bspc config gapless_monocle false
 
 # removed default rules
@@ -54,3 +55,5 @@ bspc rule -a Blueman-manager state=floating floating=true center=true
 bspc rule -a blueman-adapters state=floating floating=true center=true
 bspc rule -a Blueman-adapters state=floating floating=true center=true
 bspc rule -a Arandr state=floating floating=true center=true
+
+# vim:ft=zsh:number:nowrap

@@ -3,6 +3,7 @@
 **/.vscode/
 **/*.log
 
+config/mpd/log
 config/lazygit/state.yml
 config/gh/hosts.yml
 config/cheat/cheatsheets/community/

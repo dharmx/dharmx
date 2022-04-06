@@ -1,17 +1,18 @@
-#!/bin/sh
+#!/usr/bin/env zsh
 
-# see https://unix.stackexchange.com/a/295652/332452
+# SEE: https://unix.stackexchange.com/a/295652/332452
 # shellcheck source=/dev/null
-. /etc/X11/xinit/xinitrc.d/50-systemd-user.sh
+source "/etc/X11/xinit/xinitrc.d/50-systemd-user.sh"
 
 # see https://wiki.archlinux.org/title/GNOME/Keyring#xinitrc
 eval "$(/usr/bin/gnome-keyring-daemon --start)"
 export SSH_AUTH_SOCK
 
-# see https://github.com/NixOS/nixpkgs/issues/14966#issuecomment-520083836
-mkdir -p "$XDG_DATA_HOME"/keyrings
+# SEE: https://github.com/NixOS/nixpkgs/issues/14966#issuecomment-520083836
+mkdir -p "$XDG_DATA_HOME/keyrings"
 
 xrdb -I$XDG_CONFIG_HOME/Xresources $XDG_CONFIG_HOME/Xresources/config.Xresources
 
-# exec i3 -c "$XDG_CONFIG_HOME/i3/config.conf"
 exec bspwm
+
+# vim:ft=zsh
