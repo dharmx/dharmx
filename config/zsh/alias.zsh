@@ -60,7 +60,7 @@ alias cd...='cd ../../'
 alias cd....='cd ../../../'
 alias cd.....='cd ../../../../'
 alias cd......='cd ../../../../../'
-alias ~='cd' 2> /dev/null
+alias ~='cd ~' 2> /dev/null
 alias -='cd -' 2> /dev/null
 alias ..='cd ../'
 alias ...='cd ../../'
@@ -403,5 +403,17 @@ unset JDK_JAVA_OPTIONS
 alias java='java "$SILENT_JAVA_OPTIONS"'
 alias nhist="dbus-monitor \"interface='org.freedesktop.Notifications'\" | grep --line-buffered \"member=Notify\|string\""
 alias strel="xrdb -I$XDG_CONFIG_HOME/Xresources $XDG_CONFIG_HOME/Xresources/config.Xresources && kill -USR1 $(pidof st)"
+
+function compress-pdf-gray() {
+    gs -sDEVICE=pdfwrite -dCompatibilityLevel=1.4 -dPDFSETTINGS=/screen -dNOPAUSE -dQUIET -dBATCH -sOutputFile="$2.pdf" "$1.pdf"
+}
+
+function compress-pdf() {
+    local level="screen"
+    if [[ "$3" != "" ]]; then 
+        level="$3"
+    fi
+    gs -sDEVICE=pdfwrite -dCompatibilityLevel=1.4 -dPDFSETTINGS=/"$level" -dNOPAUSE -dQUIET -dBATCH -sOutputFile="$2.pdf" "$1.pdf"
+}
 
 # vim:ft=zsh

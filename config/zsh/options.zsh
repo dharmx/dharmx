@@ -1,18 +1,37 @@
 umask 022
 
-zstyle ':completion:*' list-colors ${(s.:.)LS_COLORS}
-
 zmodload zsh/zle
 zmodload zsh/zpty
-zle -N sudo-command-line
 
-export HISTFILE="$XDG_CONFIG_HOME/zsh/.zhistory"
-export HISTSIZE=10000
-export SAVEHIST=10000
+autoload _vi_search_fix
+zle -N _vi_search_fix
+
+zle -N _sudo_command_line
+
+zstyle ':completion:*' list-colors ${(s.:.)LS_COLORS}
+zstyle ':completion:*' matcher-list 'r:|=*' 'l:|=* r:|=*'
+
+HISTFILE="$XDG_CACHE_HOME/zsh/.zhistory"
+HISTSIZE=10000
+SAVEHIST=10000
+
+ZSH_HIGHLIGHT_MAXLENGTH=100  
+ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE="fg=$color8,bold"
+
+setopt AUTO_LIST
+setopt AUTO_MENU
+setopt AUTO_PARAM_SLASH
+setopt COMPLETE_IN_WORD
+setopt NO_MENU_COMPLETE
+setopt HASH_LIST_ALL
+setopt ALWAYS_TO_END
 
 setopt NOTIFY
 setopt NOHUP
 setopt MAILWARN
+
+setopt INTERACTIVE_COMMENTS
+setopt NOBEEP
 
 setopt APPEND_HISTORY
 setopt SHARE_HISTORY

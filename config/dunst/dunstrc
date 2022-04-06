@@ -78,7 +78,7 @@ frame_color = "#36c692"
 foreground = "#d4d4d5"
 
 [urgency_critical]
-timeout = 8
+timeout = 30
 background = "#f87070"
 frame_color = "#c397d8"
 foreground = "#d4d4d5"
@@ -139,7 +139,7 @@ format = "<b>%s</b>\n%b"
 appname = "spotify"
 summary = "*"
 set_stack_tag = "spotify"
-format = "<b>%s</b>\n%b"
+format = "<span size='x-large' font_desc='Iosevka Nerd Font 10' weight='bold' foreground='#79dcaa'>%s</span>\n\n%b"
 
 [notify_send]
 appname = notify-send

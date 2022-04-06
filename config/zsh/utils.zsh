@@ -7,7 +7,7 @@ function _smooth_fzf() {
     cd $current_dir
 }
 
-function __sudo-replace-buffer() {
+function _sudo_replace_buffer() {
   local old=$1 new=$2 space=${2:+ }
 
   # if the cursor is positioned in the $old part of the text, make
@@ -21,7 +21,7 @@ function __sudo-replace-buffer() {
   fi
 }
 
-function sudo-command-line() {
+function _sudo_command_line() {
   # If line is empty, get the last run command from history
   [[ -z $BUFFER ]] && LBUFFER="$(fc -ln -1)"
 
@@ -40,8 +40,8 @@ function sudo-command-line() {
     # If $EDITOR is not set, just toggle the sudo prefix on and off
     if [[ -z "$EDITOR" ]]; then
       case "$BUFFER" in
-        sudo\ -e\ *) __sudo-replace-buffer "sudo -e" "" ;;
-        sudo\ *) __sudo-replace-buffer "sudo" "" ;;
+        sudo\ -e\ *) _sudo_replace_buffer "sudo -e" "" ;;
+        sudo\ *) _sudo_replace_buffer "sudo" "" ;;
         *) LBUFFER="sudo $LBUFFER" ;;
       esac
       return
@@ -71,16 +71,16 @@ function sudo-command-line() {
     if [[ "$realcmd" = (\$EDITOR|$editorcmd|${editorcmd:c}) \
       || "${realcmd:c}" = ($editorcmd|${editorcmd:c}) ]] \
       || builtin which -a "$realcmd" | command grep -Fx -q "$editorcmd"; then
-      __sudo-replace-buffer "$cmd" "sudo -e"
+      _sudo_replace_buffer "$cmd" "sudo -e"
       return
     fi
 
     # Check for editor commands in the typed command and replace accordingly
     case "$BUFFER" in
-      $editorcmd\ *) __sudo-replace-buffer "$editorcmd" "sudo -e" ;;
-      \$EDITOR\ *) __sudo-replace-buffer '$EDITOR' "sudo -e" ;;
-      sudo\ -e\ *) __sudo-replace-buffer "sudo -e" "$EDITOR" ;;
-      sudo\ *) __sudo-replace-buffer "sudo" "" ;;
+      $editorcmd\ *) _sudo_replace_buffer "$editorcmd" "sudo -e" ;;
+      \$EDITOR\ *) _sudo_replace_buffer '$EDITOR' "sudo -e" ;;
+      sudo\ -e\ *) _sudo_replace_buffer "sudo -e" "$EDITOR" ;;
+      sudo\ *) _sudo_replace_buffer "sudo" "" ;;
       *) LBUFFER="sudo $LBUFFER" ;;
     esac
   } always {
@@ -90,6 +90,11 @@ function sudo-command-line() {
     # Redisplay edit buffer (compatibility with zsh-syntax-highlighting)
     zle redisplay
   }
+}
+
+function _vi_search_fix() {
+  zle vi-cmd-mode
+  zle .vi-history-search-backward
 }
 
 # vim:ft=zsh

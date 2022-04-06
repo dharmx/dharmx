@@ -8,8 +8,7 @@ export XDG_STATE_HOME="$HOME/.local/state"
 export XDG_CONFIG_DIRS="/etc/xdg"
 export XDG_DATA_DIRS="/usr/local/share:/usr/share:/var/lib/flatpak/exports/share:$XDG_DATA_HOME/flatpak/exports/share"
 
-user="$(id -u)"
-export XDG_RUNTIME_DIR="/run/user/$user"
+export XDG_RUNTIME_DIR="/run/user/$(id -u)"
 
 export XDG_DESKTOP_DIR="$HOME/Desktop"
 export XDG_DOWNLOAD_DIR="$HOME/Downloads"
@@ -24,6 +23,6 @@ export TERMINAL="st"
 export BROWSER="qutebrowser"
 export VISUAL="nvim"
 export EDITOR="nvim"
-export SHELL="/usr/bin/zsh"
+export SHELL="/usr/bin/bash"
 
 source "$HOME/.cargo/env"
