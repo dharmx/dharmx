@@ -217,6 +217,10 @@ super + shift + {x,s}
 super + {alt + ,_,back}slash
         {lock --no-screen-off &,lock &,$HOME/.scripts/launch/picom.bash}
 
+# toggle polybar
+super + shift + slash
+        {$HOME/.scripts/notify/polybar.bash}
+
 # show widgets
 super + {w,r,x}
         exec $XDG_CONFIG_HOME/eww/structs/{main-utils/,wallpaper/,side-utils/}launch.bash

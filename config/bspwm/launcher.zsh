@@ -4,7 +4,7 @@ sleep 2
 # wmname compiz
 
 if [ ! -x "$HOME/.fehbg" ]; then
-  feh --bg-fill "$XDG_PICTURES_DIR/wallpapers/abstract/wallhaven-39lvjd.png"
+  feh --bg-fill "$XDG_PICTURES_DIR/wallpapers/abstract/night.jpg"
 else
   source "$HOME/.fehbg"
 fi
