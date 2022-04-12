@@ -1,0 +1,138 @@
+@theme "/dev/null"
+@import "theme.rasi"
+@import "mappings.rasi"
+
+configuration {
+  font: "Iosevka Nerd Font 14";
+  disable-history: true;
+  sidebar-mode: false;
+}
+
+
+* {
+  background-color: @bg;
+  text-color: @color12;
+}
+
+window {
+  transparency: "real";
+  border: 10px;
+  border-color: @color12;
+  // border-radius: 15px;
+  location: center;
+  width: 1200px;
+  height: 410px;
+  x-offset: 0px;
+  y-offset: 0px;
+}
+
+prompt {
+  enabled: true;
+  padding: 20px 10px 20px 10px;
+  background-color: @color0;
+  text-color: @color12;
+  border: 2px 2px 3px 2px;
+  // border-radius: 0px 8px 8px 0px;
+  border-color: @color12;
+}
+
+textbox-prompt-colon {
+  expand: false;
+  str: " System ";
+  background-color: @color12;
+  text-color: @bg;
+  padding: 22px 10px 20px 10px;
+  font: "Iosevka Nerd Font Bold 14";
+}
+
+inputbar {
+  children: [ textbox-prompt-colon, prompt ];
+  spacing: 0px;
+  background-color: @bg;
+  text-color: @color12;
+  expand: false;
+  border: 0px;
+  // border-radius: 8px;
+  border-color: @color12;
+  margin: 0px 0px 0px 0px;
+  padding: 0px;
+  position: center;
+}
+
+listview {
+  columns: 5;
+  lines: 1;
+  spacing: 15px;
+  cycle: true;
+  dynamic: true;
+  layout: vertical;
+}
+
+mainbox {
+  background-color: @bg;
+  children: [ inputbar, listview ];
+  spacing: 15px;
+  margin: 40px;
+}
+
+element {
+  background-color: @color0;
+  text-color: @color12;
+  orientation: vertical;
+  // border-radius: 0px;
+}
+
+element-text {
+  font: "feather 60";
+  background-color: @color0;
+  expand: true;
+  horizontal-align: 0.5;
+  vertical-align: 0;
+  margin: 70px 0px 70px 0px;
+}
+
+element normal {
+  // border-radius: 8px;
+}
+
+element alternate {
+  // border-radius: 8px;
+}
+
+element normal.urgent,
+element alternate.urgent {
+  background-color: @color12;
+  text-color: @color12;
+}
+
+element normal.active,
+element alternate.active {
+  background-color: @color2;
+  text-color: @color12;
+}
+
+element selected {
+  background-color: @color12;
+  text-color: @bg;
+  border: 0px;
+  // border-radius: 8px;
+  border-color: @border;
+}
+
+element selected.urgent {
+  background-color: @color2;
+  text-color: @color12;
+}
+
+element selected.active {
+  background-color: @color12;
+  color: @bg;
+}
+element-text selected {
+  background-color: @color12;
+  color: @bg;
+}
+
+/*
+  vim:ft=rasi
+*/
