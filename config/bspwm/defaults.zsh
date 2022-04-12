@@ -6,14 +6,14 @@ bspc monitor -d 0 1 2 3 4 5 6 7 8 9
 
 # Window settings
 bspc config border_width 0
-bspc config window_gap 0
+bspc config window_gap 10
 bspc config top_padding 0
 
 source "$HOME/.scripts/base/colors.sh"
-bspc config focused_border_color "$color6"
-bspc config normal_border_color "$color8"
-bspc config presel_border_color "$color14"
-bspc config presel_feedback_color "$color2"
+bspc config focused_border_color "$color10"
+bspc config normal_border_color "$color4"
+bspc config presel_border_color "$color2"
+bspc config presel_feedback_color "$color6"
 bspc config urgent_border_color "$color3"
 bspc config focused_private_border_color "$color1"
 

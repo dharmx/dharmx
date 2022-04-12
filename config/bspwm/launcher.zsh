@@ -12,10 +12,7 @@ fi
 xsetroot -cursor_name left_ptr
 
 # start polybar
-eval "$XDG_CONFIG_HOME/polybar/configs/evilnord/launch.bash"
-
-# start mpd-discord-rpc
-# mpd-discord-rpc &
+eval "$XDG_CONFIG_HOME/polybar/launch.zsh"
 
 # start system tray
 # stalonetray &

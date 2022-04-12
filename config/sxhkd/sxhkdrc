@@ -198,7 +198,7 @@ super + n
         $HOME/.scripts/notify/redshift.bash
 
 ## jgmenu
-super + button3
+super + ctrl + button3
         jgmenu_run &
 #
 # Screenshot
