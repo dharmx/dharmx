@@ -430,4 +430,10 @@ function compile-hentai() {
 
 alias fet.sh="$HOME/.scripts/misc/fet.sh"
 
+function color-list() {
+    for i in {0..255}; do print -Pn "%K{$i}  %k%F{$i}${(l:3::0:)i}%f " ${${(M)$((i%6)):#3}:+$'\n'}; done
+}
+
+alias resrc="source $ZDOTDIR/.zshrc"
+
 # vim:ft=zsh

@@ -1,1 +1,1 @@
-themes/nord.lua
+themes/night.lua

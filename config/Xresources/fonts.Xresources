@@ -1,4 +1,4 @@
-URxvt.font:	              xft:JetBrainsMono Nerd Font Mono:size=14:autohint=true,xft:Noto Color Emoji:pixelsize=12:antialias=false,xft:Monospace:size=11:autohint=true
+URxvt.font:	              xft:Iosevka Nerd Font Mono:size=14:autohint=true,xft:Noto Color Emoji:pixelsize=12:antialias=false,xft:Monospace:size=11:autohint=true
 
 Xft.antialias:            1
 Xft.hinting:              1
@@ -9,5 +9,5 @@ Xft.lcdfilter:            lcddefault
 Xft.dpi:                  97
 
 st.alpha:                 1.0
-st.font:                  JetBrainsMono Nerd Font:pixelsize=19
+st.font:                  Iosevka Nerd Font:pixelsize=19
 
