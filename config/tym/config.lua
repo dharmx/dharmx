@@ -8,13 +8,14 @@ tym.set('font', 'Iosevka Nerd Font 14')
 
 -- set by table
 tym.set_config({
-    shell = '/usr/bin/fish',
+    shell = '/usr/bin/hilbish',
     cursor_shape = 'block',
     autohide = true,
     padding_horizontal = 25,
     padding_vertical = 20,
     term = 'xterm-256color',
-    cjk_width = 'narrow'
+    cjk_width = 'narrow',
+    cursor_blink_mode = "off"
 })
 
 function update_alpha(delta)

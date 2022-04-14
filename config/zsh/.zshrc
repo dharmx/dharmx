@@ -1,9 +1,14 @@
-source "$HOME/.cargo/env"
-source "$HOME/.scripts/base/colors.sh"
+[ -f "$HOME/.cargo/env" ] && source "$HOME/.cargo/env"
 
-files=("utils" "opts" "alias" "plugs" "keys" "prompt")
+files=("theme" "env" "alias" "utils" "opts" "plugs" "keys" "prompt")
 for file in $files[*]; do source "$ZDOTDIR/$file.zsh"; done
 unset files
-eval "$HOME/.scripts/misc/bloks b; echo"
+
+greet="xbl"
+greet_path="$HOME/.scripts/misc/$greet"
+[ -f "$greet_path" ] && eval "$greet_path" || _default_greeter
+unset greet_path greet
 
 # vim:ft=zsh:nowrap
+
+alias luamake=/home/maker/.opt/lua-language-server/3rd/luamake/luamake

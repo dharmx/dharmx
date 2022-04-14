@@ -1,5 +1,11 @@
-# shellcheck disable=2148
-source "$HOME/Dotfiles/nordfiles/home/alias.bash"
-source "$HOME/.scripts/base/colors.sh"
-# shellcheck disable=1091
-if test -n "$KITTY_INSTALLATION_DIR" -a -e "$KITTY_INSTALLATION_DIR/shell-integration/bash/kitty.bash"; then source "$KITTY_INSTALLATION_DIR/shell-integration/bash/kitty.bash"; fi
+[ -f "$HOME/.cargo/env" ] && source "$HOME/.cargo/env"
+
+files=("env" "theme" "alias" "utils" "opts" "prompt")
+for file in "${files[@]}"; do source "$XDG_CONFIG_HOME/bash/$file.bash"; done
+files=""
+
+greet="cl"
+greet_path="$HOME/.scripts/misc/$greet"
+[ -f "$greet_path" ] && eval "$greet_path" || _default_greeter
+greet_path=""
+greet=""

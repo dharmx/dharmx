@@ -14,7 +14,7 @@ alias use="zplug"
 
 use "zsh-users/zsh-history-substring-search", "depth:1"
 
-use "zdharma-continuum/fast-syntax-highlighting", "depth:1"
+use "zsh-users/zsh-syntax-highlighting", "depth:1"
 
 use "marlonrichert/zsh-autocomplete", "depth:1"
 

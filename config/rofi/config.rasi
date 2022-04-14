@@ -3,24 +3,20 @@
 @import "configs/mappings.rasi"
 
 configuration {
-  modi: "drun,window,filebrowser,run,Power:~/.config/rofi/scripts/power.bash";
+  modi: "drun,window,run";
   font: "Iosevka Nerd Font 14";
   drun-display-format: "{name}";
   sidebar-mode: true;
   matching: "fuzzy";
   scroll-method: 0;
   disable-history: false;
-  display-drun: "   Menu ";
-  display-Power: " ⏼  Power ";
-  display-run: "   Run ";
-  display-window: "   Window ";
-  display-windowcd: "   Window+ ";
-  display-keys: "   Keys ";
-  display-filebrowser: "   Browse ";
-  display-combi: "   Binds ";
+  display-drun: " ";
+  display-run: " ";
+  display-window: " ";
   window-thumbnail: true;
   sort: true;
   sorting-method: "normal";
+  hover-select: true;
 
   timeout {
     action: "kb-cancel";
@@ -42,62 +38,21 @@ configuration {
   text-color: @fg;
 }
 
-element-text, element-icon, mode-switcher {
-  background-color: inherit;
-  text-color: inherit;
-}
-
 window {
-  transparency: "real";
-  width: 60%;
-  border: 10px;
-  // border-radius: 15px;
-  border-color: @color12;
-  height: 70%;
-}
-
-prompt {
-  enabled: true;
-  background-color: @bg;
-  padding: 20px 15px 5px 15px;
-  text-color: @color12;
-  // border-radius: 50%;
-  expand: true;
-  font: "Iosevka Nerd Font Bold 14";
-}
-
-textbox-prompt-colon {
-  expand: false;
-  padding: 1% 1% 0% 1%;
-  margin: 0% 0.3% 0% 1%;
-  font: "feather 30";
-  // border-radius: 50%;
-  str: "";
-  text-color: @color12;
-}
-
-entry {
-  placeholder: "Search";
-  placeholder-color: @color12;
-  text-color: @color12;
-  expand: true;
-  padding: 2.0%;
-  // border-radius: 50%;
-  font: "Iosevka Nerd Font Bold 14";
+  location: north west;
+  width: 25%;
+  height: 100%;
+  spacing: 0;
+  orientation: horizontal;
 }
 
 inputbar {
-  children: [ prompt, textbox-prompt-colon, entry ];
-  background-image: url("img/bg.jpg");
+  children: [ entry ];
   expand: false;
-  // border-radius: 10px 10px 0px 0px;
-  font: "Iosevka Nerd Font 14";
-  margin: 0px 0px 20px 0px;
-  padding: 200px 20px 20px 20px;
 }
 
 listview {
-  columns: 3;
+  columns: 1;
   lines: 2;
   cycle: false;
   dynamic: true;
@@ -108,55 +63,53 @@ listview {
 
 mainbox { children: [ inputbar, listview, mode-switcher ]; }
 
-element {
-  orientation: vertical;
-  padding: 5% 2% 2% 0%;
-  font: "Iosevka Nerd Font 14";
-  margin: 5px 5px 5px 5px;
-  // border-radius: 10px;
-  background-color: @color0;
-  text-color: @color12;
-}
-
-element-text {
+entry {
+  placeholder: " Search...";
+  font: "Iosevka Nerd Font Bold 15";
+  text-color: @color2;
   expand: true;
-  vertical-align: 0.5;
-  margin: 0% 1% 0% 1%;
-  font: "Iosevka Nerd Font 14";
-  background-color: inherit;
-  text-color: inherit;
-}
-
-element selected {
-  background-color: @color12;
-  font: "Iosevka Nerd Font Bold 14";
-  text-color: @bg;
-  // border-radius: 10px;
+  padding: 2em 0 1em 1.5em;
 }
 
 mode-switcher {
-  spacing: 0px;
-  // border-radius: 10px;
-  margin: 0px 20px 20px 20px;
+  spacing: 0.5em;
+  margin: 0 2em 2em 2em;
+  background-color: @bg;
 }
 
 button {
-  padding: 15px;
-  margin: 0px;
-  font: "Iosevka Nerd Font Bold 14";
-  background-color: @color6;
-  text-color: @color0;
+  padding: 0.5em;
+  font: "Iosevka Nerd Font Bold 20";
+  background-color: @color0;
+  text-color: @color4;
   vertical-align: 0.5;
   horizontal-align: 0.5;
+  border: 0 0 0.3em 0;
+  border-color: @color4;
 }
 
 button selected {
-  padding: 15px;
-  background-color: @color0;
-  text-color: @color12;
+  padding: 0.5em;
+  text-color: @color2;
+  border-color: @color2;
+  border: 0 0 0.5em 0;
+}
 
-  border: 0px 0px 5px 0px;
-  border-color: @color0;
+element {
+  text-color: @fg;
+  padding: 1em;
+}
+
+element selected {
+  text-color: @color4;
+  background-color: @color0;
+  border-color: @color4;
+  border: 0 0 0 0.3em;
+}
+
+element-text, element-icon {
+  background-color: inherit;
+  text-color: inherit;
 }
 
 /*

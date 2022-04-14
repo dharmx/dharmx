@@ -1,6 +1,6 @@
 * {
   fg: #d4d4d5;
-  bg: #101317;
+  bg: #121519;
 
   color0: #23242A;
   color8: #949494;
@@ -24,7 +24,7 @@
   color14: #f87070;
   
   color7:  #d4d4d5;
-  color15: #ffffff;
+  color15: #35363a;
 }
 
 /*
