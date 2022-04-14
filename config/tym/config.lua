@@ -1,24 +1,9 @@
 local tym = require('tym')
 
--- xdg vars
-local xdg = {
-    config = os.getenv('XDG_CONFIG_HOME'),
-    cache = os.getenv('XDG_CACHE_HOME'),
-    desktop = os.getenv('XDG_DESKTOP_DIR'),
-    download = os.getenv('XDG_DOWNLOAD_DIR'),
-    templates = os.getenv('XDG_TEMPLATES_DIR'),
-    public = os.getenv('XDG_PUBLICSHARE_DIR'),
-    documents = os.getenv('XDG_DOCUMENTS_DIR'),
-    music = os.getenv('XDG_MUSIC_DIR'),
-    pictures = os.getenv('XDG_PICTURES_DIR'),
-    videos = os.getenv('XDG_VIDEOS_DIR')
-}
-
 -- set individually
 tym.set('width', 80)
 tym.set('height', 20)
 
-local font_size = '14'
 tym.set('font', 'Iosevka Nerd Font 14')
 
 -- set by table
@@ -28,8 +13,6 @@ tym.set_config({
     autohide = true,
     padding_horizontal = 25,
     padding_vertical = 20,
-    -- color_window_background = 'rgba(0, 255, 0, 0.5)',
-    -- color_background = 'rgba(0, 255, 0, 0.5)',
     term = 'xterm-256color',
     cjk_width = 'narrow'
 })
@@ -50,7 +33,7 @@ tym.set_keymaps({
 })
 
 -- font scaling
-tym.set_hook('scroll', function(dx, dy, x, y)
+tym.set_hook('scroll', function(_, dy, _, _)
     if tym.check_mod_state('<Ctrl>') then
         if dy > 0 then
             s = tym.get('scale') - 10
