@@ -13,6 +13,6 @@ mkdir -p "$XDG_DATA_HOME/keyrings"
 
 xrdb -I$XDG_CONFIG_HOME/Xresources $XDG_CONFIG_HOME/Xresources/config.Xresources
 
-exec bspwm
+bspwm -c "$XDG_CONFIG_HOME/bspwm/config.zsh"
 
 # vim:ft=zsh

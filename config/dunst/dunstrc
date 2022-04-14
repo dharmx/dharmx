@@ -32,7 +32,7 @@ font = Iosevka Nerd Font 12
 line_height = 2
 markup = full
 
-origin = "bottom-right"
+origin = "top-right"
 offset = "20x20"
 
 format = "<b>%s</b>\n%b <b>%n</b>"

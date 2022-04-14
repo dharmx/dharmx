@@ -19,7 +19,7 @@ tym.set('width', 80)
 tym.set('height', 20)
 
 local font_size = '14'
-tym.set('font', 'JetBrainsMono Nerd Font 14')
+tym.set('font', 'Iosevka Nerd Font 14')
 
 -- set by table
 tym.set_config({

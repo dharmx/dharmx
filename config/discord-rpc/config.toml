@@ -1,9 +1,0 @@
-id = 677226551607033903
-hosts = ["localhost:6600"]
-
-[format]
-details = "$title"
-state = "$artist - $album"
-timestamp = "elapsed"
-large_image = "notes"
-small_image = "notes"

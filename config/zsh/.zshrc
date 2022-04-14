@@ -1,13 +1,9 @@
 source "$HOME/.cargo/env"
 source "$HOME/.scripts/base/colors.sh"
 
-source "$ZDOTDIR/utils.zsh"
-source "$ZDOTDIR/options.zsh"
-source "$ZDOTDIR/prompt.zsh"
-source "$ZDOTDIR/alias.zsh"
-source "$ZDOTDIR/plugs.zsh"
-source "$ZDOTDIR/keys.zsh"
-
-eval "$HOME/.scripts/misc/panes-nord; echo"
+files=("utils" "opts" "alias" "plugs" "keys" "prompt")
+for file in $files[*]; do source "$ZDOTDIR/$file.zsh"; done
+unset files
+eval "$HOME/.scripts/misc/bloks b; echo"
 
 # vim:ft=zsh:nowrap

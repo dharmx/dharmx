@@ -1,10 +1,10 @@
 sleep 2
 
-# wmname LG3D
-# wmname compiz
+# wmname LG3D/compiz
+wmname bspwm
 
 if [ ! -x "$HOME/.fehbg" ]; then
-  feh --bg-fill "$XDG_PICTURES_DIR/wallpapers/abstract/night.jpg"
+  feh --bg-fill "$XDG_PICTURES_DIR/wallpapers/monochrome/wallhaven-x8ye3z.jpg"
 else
   source "$HOME/.fehbg"
 fi
@@ -26,4 +26,4 @@ eval "$XDG_CONFIG_HOME/polybar/launch.zsh"
 
 mpv --keep-open=no --really-quiet "$HOME/.sounds/Smooth/stereo/system-ready.ogg" &
 
-# vim:ft=zsh:number:nowrap
+# vim:ft=zsh
