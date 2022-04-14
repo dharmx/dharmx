@@ -1,5 +1,3 @@
-# export LC_ALL=C
-
 export TERMINAL="st"
 export BROWSER="qutebrowser"
 export VISUAL="nvim"

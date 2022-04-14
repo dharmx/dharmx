@@ -1,4 +1,5 @@
 typeset -g PROMPT2="%F{0}%(0?.%K{3}  .%K{1} )%K{0}%f  %k%b "
+typeset -g PS3='%K{4} %K{0}%B select %b%k '
 
 # Temporarily change options.
 'builtin' 'local' '-a' 'p10k_config_opts'
@@ -95,8 +96,8 @@ typeset -g PROMPT2="%F{0}%(0?.%K{3}  .%K{1} )%K{0}%f  %k%b "
   # OS identifier color.
   typeset -g POWERLEVEL9K_OS_ICON_FOREGROUND=0
   typeset -g POWERLEVEL9K_OS_ICON_BACKGROUND=4
-  # Custom icon. הּ
-  typeset -g POWERLEVEL9K_OS_ICON_CONTENT_EXPANSION='﮼ '
+  # Custom icon. הּ ﮼  
+  typeset -g POWERLEVEL9K_OS_ICON_CONTENT_EXPANSION='ﬦ'
 
   ##################################[ dir: current directory ]##################################
   # Current directory background color.
@@ -199,7 +200,7 @@ typeset -g PROMPT2="%F{0}%(0?.%K{3}  .%K{1} )%K{0}%f  %k%b "
       '~/work(|/*)'  WORK     ''
       '~(|/*)'       HOME     ''
       '*'            DEFAULT  '')
-  
+
   #####################################[ vcs: git status ]######################################
   # Version control system colors.
   typeset -g POWERLEVEL9K_VCS_CLEAN_BACKGROUND=0
@@ -209,7 +210,7 @@ typeset -g PROMPT2="%F{0}%(0?.%K{3}  .%K{1} )%K{0}%f  %k%b "
   typeset -g POWERLEVEL9K_VCS_LOADING_BACKGROUND=0
 
   # Branch icon. Set this parameter to '\uF126 ' for the popular Powerline branch icon.
-  typeset -g POWERLEVEL9K_VCS_BRANCH_ICON=' '
+  typeset -g POWERLEVEL9K_VCS_BRANCH_ICON=' '
 
   # Untracked files icon. It's really a question mark, your font isn't broken.
   # Change the value of this parameter to show a different icon.
