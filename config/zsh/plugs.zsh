@@ -10,24 +10,27 @@ if [ ! -d "$ZPLUG_HOME" ]; then
 fi
 
 source "$ZPLUG_HOME/init.zsh"
+alias use="zplug"
 
-zplug "zsh-users/zsh-history-substring-search", "depth:1"
+use "zsh-users/zsh-history-substring-search", "depth:1"
 
-zplug "zdharma-continuum/fast-syntax-highlighting", "depth:1"
+use "zdharma-continuum/fast-syntax-highlighting", "depth:1"
 
-zplug "marlonrichert/zsh-autocomplete", "depth:1"
+use "marlonrichert/zsh-autocomplete", "depth:1"
 
-zplug "hlissner/zsh-autopair", "depth:1"
+use "hlissner/zsh-autopair", "depth:1"
 
-zplug "zsh-users/zsh-autosuggestions", "depth:1"
+use "zsh-users/zsh-autosuggestions", "depth:1"
 
-zplug "junegunn/fzf-bin", "from:gh-r", "as:command", "rename-to:fzf"
+use "junegunn/fzf-bin", "from:gh-r", "as:command", "rename-to:fzf"
 
-zplug "romkatv/gitstatus", "depth:1"
+use "romkatv/gitstatus", "depth:1"
 
-zplug "MichaelAquilina/zsh-you-should-use", "depth:1"
+use "MichaelAquilina/zsh-you-should-use", "depth:1"
 
-zplug "romkatv/powerlevel10k", "as:theme", "depth:1"
+use "romkatv/powerlevel10k", "as:theme", "depth:1"
+
+unalias use
 
 if ! zplug check --verbose; then
     printf "Install? [y/N]: "
