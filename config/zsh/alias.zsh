@@ -316,7 +316,7 @@ alias -g G='| grep'
 alias -g L="| less"
 alias -g M="| most"
 alias -g LL="2>&1 | less"
-alias -g CA="2>&1 | cat -A"
+alias -g CA="2>&1 | bat -A"
 alias -g NE="2> /dev/null"
 alias -g NUL="> /dev/null 2>&1"
 alias -g P="2>&1| pygmentize -l pytb"
@@ -385,7 +385,7 @@ alias rofifl="wmctrl -s 2; rofi -show & sleep 2 && flameshot full"
 alias nvconfig="fm ~/.config/nvim/"
 
 alias tping="ping -c5 google.com"
-alias iping="ping google.com"
+alias iping="gping google.com"
 
 alias yta-mp3="youtube-dl --extract-audio --audio-format mp3"
 alias ytv-best="youtube-dl -f bestvideo+bestaudio "
@@ -435,5 +435,9 @@ function color-list() {
 }
 
 alias resrc="source $ZDOTDIR/.zshrc"
+
+function dw-tarball() {
+    curl -Lk "https://api.github.com/repos/$1/tarball" | tar zx
+}
 
 # vim:ft=zsh

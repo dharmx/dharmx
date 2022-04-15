@@ -643,7 +643,7 @@ typeset -g PS3='%K{4} %K{0}%B select %b%k '
   ##############################[ node_version: node.js version ]###############################
   # Node version color.
   typeset -g POWERLEVEL9K_NODE_VERSION_FOREGROUND=0
-  typeset -g POWERLEVEL9K_NODE_VERSION_BACKGROUND=3
+  typeset -g POWERLEVEL9K_NODE_VERSION_BACKGROUND=12
   # Show node version only when in a directory tree containing package.json.
   typeset -g POWERLEVEL9K_NODE_VERSION_PROJECT_ONLY=true
   # Custom icon.
