@@ -73,7 +73,7 @@ typeset -g PS3='%K{4} %K{0}%B select %b%k '
   # Add an empty line before each prompt.
   typeset -g POWERLEVEL9K_PROMPT_ADD_NEWLINE=false
 
-    # Separator between same-color segments on the left.
+  # Separator between same-color segments on the left.
   typeset -g POWERLEVEL9K_LEFT_SUBSEGMENT_SEPARATOR='█'
   # Separator between same-color segments on the right.
   typeset -g POWERLEVEL9K_RIGHT_SUBSEGMENT_SEPARATOR='█'
