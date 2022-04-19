@@ -1,8 +1,11 @@
-source "$HOME/.scripts/base/colors.sh"
+[ -f "$HOME/.cargo/env" ] && source "$HOME/.cargo/env"
 
-source "$HOME/Dotfiles/nordfiles/home/alias.bash"
-source "$HOME/Dotfiles/nordfiles/home/utils.bash"
-source "$HOME/Dotfiles/nordfiles/home/prompt.bash"
+files=("env" "theme" "alias" "utils" "opts" "prompt")
+for file in "${files[@]}"; do source "$XDG_CONFIG_HOME/bash/$file.bash"; done
+files=""
 
-if test -n "$KITTY_INSTALLATION_DIR" -a -e "$KITTY_INSTALLATION_DIR/shell-integration/bash/kitty.bash"; then source "$KITTY_INSTALLATION_DIR/shell-integration/bash/kitty.bash"; fi
-eval "$HOME/.scripts/misc/lil-blok; echo"
+greet="cl"
+greet_path="$HOME/.scripts/misc/$greet"
+[ -f "$greet_path" ] && eval "$greet_path" || _default_greeter
+greet_path=""
+greet=""

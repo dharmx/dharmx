@@ -122,6 +122,7 @@ alias yaupd="yay -Sy"
 alias upgrade='yay -Syu'
 
 alias commit="git add . && git commit -m"
+alias clone="git clone"
 alias push="git push"
 alias pull="git pull"
 
@@ -163,9 +164,7 @@ alias gcasm='git commit -a -s -m'
 alias gcb='git checkout -b'
 alias gcd='git checkout $(git_develop_branch)'
 alias gcf='git config --list'
-alias gclr='git clone --recurse-submodules'
-alias gcl='git clone'
-alias gcld='git clone --depth'
+alias gcl='git clone --recurse-submodules'
 alias gclean='git clean -id'
 alias gcm='git checkout $(git_main_branch)'
 alias gcmsg='git commit -m'
@@ -442,3 +441,4 @@ function dw-tarball() {
 }
 
 # vim:ft=zsh
+

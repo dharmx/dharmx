@@ -21,7 +21,7 @@ bspc config focused_private_border_color "$color1"
 
 bspc config split_ratio 0.5
 bspc config borderless_monocle true
-bspc config gapless_monocle false
+bspc config gapless_monocle true
 
 # removed default rules
 # bspc rule -r *:*

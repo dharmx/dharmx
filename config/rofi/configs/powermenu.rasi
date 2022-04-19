@@ -8,7 +8,6 @@ configuration {
   sidebar-mode: false;
 }
 
-
 * {
   background-color: @bg;
   text-color: @color12;

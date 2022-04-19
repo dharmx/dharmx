@@ -24,5 +24,6 @@ export BROWSER="qutebrowser"
 export VISUAL="nvim"
 export EDITOR="nvim"
 export SHELL="/usr/bin/bash"
+export PATH="$PATH:/usr/local/go/bin"
 
 source "$HOME/.cargo/env"
