@@ -104,7 +104,7 @@ element selected {
   text-color: @color4;
   background-color: @color0;
   border-color: @color4;
-  border: 0 0 0 0.3em;
+  border: 0 0 0 0.4em;
 }
 
 element-text, element-icon {

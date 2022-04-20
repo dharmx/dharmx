@@ -11,7 +11,6 @@
 window {
   width: 360px;
   padding: 25px;
-  border: 3px;
   // border-radius: 8px;
   border-color: @color12;
   location: center;
