@@ -39,7 +39,7 @@ confirm_exit() {
 
 # Message
 msg() {
-    rofi -theme "$XDG_CONFIG_HOME/rofi/configs/message.rasi" -e "Available Options  -  yes / y / no / n"
+    rofi -theme "$XDG_CONFIG_HOME/rofi/configs/message.rasi" -e "Available Options  -  Yup / Nope"
 }
 
 # Variable passed to rofi

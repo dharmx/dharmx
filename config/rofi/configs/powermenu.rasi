@@ -15,9 +15,7 @@ configuration {
 
 window {
   transparency: "real";
-  border: 10px;
   border-color: @color12;
-  // border-radius: 15px;
   location: center;
   width: 1200px;
   height: 410px;
@@ -29,16 +27,14 @@ prompt {
   enabled: true;
   padding: 20px 10px 20px 10px;
   background-color: @color0;
-  text-color: @color12;
-  border: 2px 2px 3px 2px;
-  // border-radius: 0px 8px 8px 0px;
   border-color: @color12;
+  text-color: @color14;
 }
 
 textbox-prompt-colon {
   expand: false;
   str: " System ";
-  background-color: @color12;
+  background-color: @color2;
   text-color: @bg;
   padding: 22px 10px 20px 10px;
   font: "Iosevka Nerd Font Bold 14";
@@ -50,8 +46,6 @@ inputbar {
   background-color: @bg;
   text-color: @color12;
   expand: false;
-  border: 0px;
-  // border-radius: 8px;
   border-color: @color12;
   margin: 0px 0px 0px 0px;
   padding: 0px;
@@ -76,13 +70,14 @@ mainbox {
 
 element {
   background-color: @color0;
-  text-color: @color12;
   orientation: vertical;
-  // border-radius: 0px;
+  border: 0 0 0.8em 0;
+  border-color: @color4;
 }
 
 element-text {
   font: "feather 60";
+  text-color: @color4;
   background-color: @color0;
   expand: true;
   horizontal-align: 0.5;
@@ -90,46 +85,10 @@ element-text {
   margin: 70px 0px 70px 0px;
 }
 
-element normal {
-  // border-radius: 8px;
-}
-
-element alternate {
-  // border-radius: 8px;
-}
-
-element normal.urgent,
-element alternate.urgent {
-  background-color: @color12;
-  text-color: @color12;
-}
-
-element normal.active,
-element alternate.active {
-  background-color: @color2;
-  text-color: @color12;
-}
-
 element selected {
-  background-color: @color12;
-  text-color: @bg;
-  border: 0px;
-  // border-radius: 8px;
-  border-color: @border;
-}
-
-element selected.urgent {
-  background-color: @color2;
-  text-color: @color12;
-}
-
-element selected.active {
-  background-color: @color12;
-  color: @bg;
-}
-element-text selected {
-  background-color: @color12;
-  color: @bg;
+  border-color: @color2;
+  text-color: @color2;
+  border: 0 0 1.2em 0;
 }
 
 /*
