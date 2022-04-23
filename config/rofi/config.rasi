@@ -4,7 +4,7 @@
 
 configuration {
   modi: "drun,window,run";
-  font: "Iosevka Nerd Font 14";
+  font: "VictorMono Nerd Font 14";
   drun-display-format: "{name}";
   sidebar-mode: true;
   matching: "fuzzy";
@@ -64,8 +64,8 @@ listview {
 mainbox { children: [ inputbar, listview, mode-switcher ]; }
 
 entry {
-  placeholder: " Search...";
-  font: "Iosevka Nerd Font Bold 15";
+  placeholder: "Search...";
+  font: "VictorMono Nerd Font Italic Bold 18";
   text-color: @color2;
   expand: true;
   padding: 2em 0 1em 1.5em;
@@ -79,7 +79,7 @@ mode-switcher {
 
 button {
   padding: 0.5em;
-  font: "Iosevka Nerd Font Bold 20";
+  font: "VictorMono Nerd Font Bold 20";
   background-color: @color0;
   text-color: @color4;
   vertical-align: 0.5;

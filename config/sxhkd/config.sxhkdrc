@@ -145,8 +145,8 @@ XF86Audio{Play,Stop,Next,Prev}
 XF86RFKill
         $HOME/.scripts/airplane.bash
 
-XF86Search
-				rofi -show run
+{XF86Search,super + XF86AudioPlay}
+				{rofi -show run,$XDG_CONFIG_HOME/rofi/scripts/player.py}
 
 super + Menu
 				jgmenu_run &
@@ -155,26 +155,6 @@ super + Menu
 ## inc/dec volume
 shift + XF86Audio{Raise,Lower}Volume
         mpc volume {+,-}5
-
-## mute vloume
-shift + XF86AudioMute
-        mpc volume 0
-
-## play
-shift + XF86AudioPlay
-        mpc toggle
-
-## stop
-shift + XF86AudioStop
-        mpc stop
-
-# next audio
-shift + XF86AudioNext
-        mpc next
-
-# previous audio
-shift + XF86AudioPrev
-        mpc prev
 
 # rofi app menu + run prompt
 super + {d,a}

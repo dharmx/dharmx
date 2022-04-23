@@ -141,6 +141,12 @@ summary = "*"
 set_stack_tag = "spotify"
 format = "<span size='x-large' font_desc='Iosevka Nerd Font 10' weight='bold' foreground='#79dcaa'>%s</span>\n%b"
 
+[mpd]
+appname = "mpd"
+summary = "*"
+set_stack_tag = "mpd"
+format = "<span size='x-large' font_desc='Iosevka Nerd Font 10' weight='bold' foreground='#79dcaa'>%s</span>\n%b"
+
 [notify_send]
 appname = notify-send
 new_icon = bell

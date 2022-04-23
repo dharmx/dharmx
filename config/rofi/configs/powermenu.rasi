@@ -3,7 +3,7 @@
 @import "mappings.rasi"
 
 configuration {
-  font: "Iosevka Nerd Font 14";
+  font: "VictorMono Nerd Font 14";
   disable-history: true;
   sidebar-mode: false;
 }
@@ -37,7 +37,7 @@ textbox-prompt-colon {
   background-color: @color2;
   text-color: @bg;
   padding: 22px 10px 20px 10px;
-  font: "Iosevka Nerd Font Bold 14";
+  font: "VictorMono Nerd Font Bold 14";
 }
 
 inputbar {

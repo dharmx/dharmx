@@ -72,13 +72,13 @@ c.tabs.position = "bottom"
 c.completion.shrink = True
 ## config.set("url.start_pages", [f"{XDG_TEMPLATES_DIR}/startpages/luther/index.html"])
 config.set("url.start_pages", ["https://duckduckgo.com"])
-config.set("fonts.contextmenu", "Roboto Condensed")
-config.set("fonts.default_family", "Roboto Condensed")
-config.set("fonts.downloads", "Roboto Condensed")
-config.set("fonts.hints", "Roboto Condensed")
-config.set("fonts.web.family.fixed", "Iosevka Nerd Font")
-config.set("fonts.web.family.serif", "Roboto Condensed")
-config.set("fonts.web.family.standard", "Roboto Condensed")
+config.set("fonts.contextmenu", "VictorMono Nerd Font")
+config.set("fonts.default_family", "VictorMono Nerd Font")
+config.set("fonts.downloads", "VictorMono Nerd Font")
+config.set("fonts.hints", "VictorMono Nerd Font")
+config.set("fonts.web.family.fixed", "VictorMono Nerd Font")
+config.set("fonts.web.family.serif", "VictorMono Nerd Font")
+config.set("fonts.web.family.standard", "VictorMono Nerd Font")
 config.set("completion.scrollbar.width", 8)
 
 c.downloads.location.directory = f"{XDG_DOWNLOAD_DIR}"

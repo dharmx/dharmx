@@ -5,7 +5,7 @@
 * {
   background-color: @bg;
   text-color: @color12;
-  font: "Iosevka Nerd Font Bold 12";
+  font: "VictorMono Nerd Font Bold 12";
 }
 
 window {

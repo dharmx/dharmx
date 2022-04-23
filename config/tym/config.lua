@@ -4,7 +4,7 @@ local tym = require('tym')
 tym.set('width', 80)
 tym.set('height', 20)
 
-tym.set('font', 'Iosevka Nerd Font 14')
+tym.set('font', 'VictorMono Nerd Font 14')
 
 -- set by table
 tym.set_config({

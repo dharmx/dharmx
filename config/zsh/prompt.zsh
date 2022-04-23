@@ -52,9 +52,6 @@ typeset -g PS3='%K{4} %K{0}%B select %b%k '
     vim_shell               # vim shell indicator (:sh)
     nix_shell               # nix shell (https://nixos.org/nixos/nix-pills/developing-with-nix-shell.html)
     vi_mode                 # vi mode (you don't need this if you've enabled prompt_char)
-    todo                    # todo items (https://github.com/todotxt/todo.txt-cli)
-    timewarrior             # timewarrior tracking status (https://timewarrior.net/)
-    taskwarrior             # taskwarrior task count (https://taskwarrior.org/)
     # example               # example user-defined segment (see prompt_example function below)
     vcs                     # git status
   )

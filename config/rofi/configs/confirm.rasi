@@ -5,14 +5,13 @@
 * {
   background-color: @bg;
   text-color: @fg;
-  font: "Iosevka Nerd Font Bold 12";
+  font: "VictorMono Nerd Font Bold 12";
 }
 
 window {
   width: 225px;
   padding: 25px;
   border: 3px;
-  // border-radius: 8px;
   border-color: @color12;
   location: center;
   y-offset: -20px;
