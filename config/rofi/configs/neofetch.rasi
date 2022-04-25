@@ -1,6 +1,5 @@
 @theme "/dev/null"
 @import "theme.rasi"
-@import "mappings.rasi"
 
 * {
   background-color: @bg;

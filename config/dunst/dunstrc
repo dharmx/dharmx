@@ -47,6 +47,7 @@ show_indicators = true
 icon_position = left
 max_icon_size = 120
 min_icon_size = 90
+icon_size = 100
 icon_theme = "Papirus"
 enable_recursive_icon_lookup = true
 

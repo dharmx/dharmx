@@ -441,4 +441,12 @@ function dw-tarball() {
     curl -Lk "https://api.github.com/repos/$1/tarball" | tar zx
 }
 
+function stylua-fmt() {
+    local current="$PWD"
+    cd "$1"
+    stylua .
+    cd "$current"
+    unset current
+}
+
 # vim:ft=zsh

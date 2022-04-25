@@ -1,6 +1,5 @@
 @theme "/dev/null"
 @import "theme.rasi"
-@import "mappings.rasi"
 
 configuration {
   font: "VictorMono Nerd Font 14";
@@ -37,7 +36,7 @@ textbox-prompt-colon {
   background-color: @color2;
   text-color: @bg;
   padding: 22px 10px 20px 10px;
-  font: "VictorMono Nerd Font Bold 14";
+  font: "VictorMono Nerd Font Bold Italic 14";
 }
 
 inputbar {
@@ -83,6 +82,10 @@ element-text {
   horizontal-align: 0.5;
   vertical-align: 0;
   margin: 70px 0px 70px 0px;
+}
+
+element-text selected {
+  text-color: @color2;
 }
 
 element selected {

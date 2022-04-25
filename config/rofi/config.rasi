@@ -1,18 +1,17 @@
 @theme "/dev/null"
 @import "configs/theme.rasi"
-@import "configs/mappings.rasi"
 
 configuration {
   modi: "drun,window,run";
-  font: "VictorMono Nerd Font 14";
+  font: "VictorMono Nerd Font 13";
   drun-display-format: "{name}";
   sidebar-mode: true;
   matching: "fuzzy";
   scroll-method: 0;
   disable-history: false;
-  display-drun: " ";
-  display-run: " ";
-  display-window: " ";
+  display-drun: " ";
+  display-run: " ";
+  display-window: " ";
   window-thumbnail: true;
   sort: true;
   sorting-method: "normal";
@@ -42,7 +41,6 @@ window {
   location: north west;
   width: 25%;
   height: 100%;
-  spacing: 0;
   orientation: horizontal;
 }
 
@@ -52,59 +50,62 @@ inputbar {
 }
 
 listview {
+  margin: 0 1em;
   columns: 1;
   lines: 2;
   cycle: false;
-  dynamic: true;
+  dynamic: false;
   layout: vertical;
-  padding: 0px 15px 0px 15px;
   scrollbar: false;
 }
 
 mainbox { children: [ inputbar, listview, mode-switcher ]; }
 
 entry {
-  placeholder: "Search...";
-  font: "VictorMono Nerd Font Italic Bold 18";
+  background-image: url("./img/comets.jpg");
+  placeholder: "Sniff...";
+  margin: 1em;
+  border-radius: 0.5em;
+  font: "VictorMono Nerd Font Bold Italic 20";
   text-color: @color2;
   expand: true;
-  padding: 2em 0 1em 1.5em;
+  padding: 9em 1em 1em 1em;
 }
 
 mode-switcher {
-  spacing: 0.5em;
-  margin: 0 2em 2em 2em;
-  background-color: @bg;
+  border-radius: 0.5em;
+  margin: 1em;
 }
 
 button {
-  padding: 0.5em;
+  padding: 1.1em 0.2em 1.1em 0.2em;
   font: "VictorMono Nerd Font Bold 20";
   background-color: @color0;
   text-color: @color4;
-  vertical-align: 0.5;
-  horizontal-align: 0.5;
-  border: 0 0 0.3em 0;
-  border-color: @color4;
+  border: 0 0 0.4em 0;
+  border-color: @color0;
+  border-radius: 0 0 0.4em 0.4em;
 }
 
 button selected {
-  padding: 0.5em;
-  text-color: @color2;
-  border-color: @color2;
-  border: 0 0 0.5em 0;
+  text-color: @color4;
+  border-color: @color4;
+  border: 0 0 0.4em 0;
 }
 
 element {
   text-color: @fg;
-  padding: 1em;
+  padding: 1.48em;
+  background-color: @color0;
+  border: 0 0.5em 0 0;
+  margin: 0.1em;
+  border-radius: 0.5em;
+  border-color: @color0;
 }
 
 element selected {
   text-color: @color4;
-  background-color: @color0;
   border-color: @color4;
-  border: 0 0 0 0.4em;
 }
 
 element-text, element-icon {
