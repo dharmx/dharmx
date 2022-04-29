@@ -24,6 +24,6 @@ eval "$XDG_CONFIG_HOME/polybar/launch.zsh"
 # Start blueman applet for bluetooth
 # blueman-applet &
 
-mpv --keep-open=no --really-quiet "$HOME/.sounds/Smooth/stereo/system-ready.ogg" &
+mpv --keep-open=no --really-quiet "/usr/share/sounds/Smooth/stereo/desktop-login.oga"
 
 # vim:ft=zsh

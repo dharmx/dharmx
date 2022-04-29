@@ -3,9 +3,9 @@
 dir="$XDG_CONFIG_HOME/rofi/configs"
 rofi_command="rofi -theme $dir/powermenu.rasi"
 
-uptime=$(uptime -p | sed -e 's/up //g')
-cpu=$(~/.config/rofi/scripts/usedcpu.bash)
-memory=$(~/.config/rofi/scripts/usedram.bash)
+uptime="$(uptime -p | sed -e 's/up //g')"
+cpu="$(~/.config/rofi/scripts/usedcpu.bash)"
+memory="$(~/.config/rofi/scripts/usedram.bash)"
 installed=$(yay -Qd | wc -l)
 
 # Notification icons
@@ -47,7 +47,7 @@ options="$shutdown\n$reboot\n$lock\n$suspend\n$logout"
 
 chosen="$(echo -e "$options" | $rofi_command -p "  $uptime |  $cpu | ﬙ $memory |  $installed " -dmenu -selected-row 0)"
 case $chosen in
-    $shutdown)
+    "$shutdown")
         ans=$(confirm_exit &)
         if [[ $ans == "Yup" ]]; then
           notify_red "$SHUTDOWN_ICON" "Shutting down" "Powering off your computer in 3 seconds"
@@ -59,7 +59,7 @@ case $chosen in
           msg
         fi
     ;;
-    $reboot)
+    "$reboot")
         ans=$(confirm_exit &)
         if [[ $ans == "Yup" ]]; then
           notify_red "$REBOOT_ICON" "Rebooting" "Rebooting your computer in 3 seconds"
@@ -71,12 +71,12 @@ case $chosen in
           msg
         fi
     ;;
-    $lock)
+    "$lock")
         notify_red "$LOCK_ICON" "Locking" "Screenlocking your computer"
         sleep 2
         lock
     ;;
-    $suspend)
+    "$suspend")
         ans=$(confirm_exit &)
         if [[ $ans == "Yup" ]]; then
           mpc -q pause
@@ -90,7 +90,7 @@ case $chosen in
           msg
         fi
     ;;
-    $logout)
+    "$logout")
         ans=$(confirm_exit &)
         if [[ $ans == "Yup" ]]; then
           notify_red "$LOGOUT_ICON" "Logging out" "Logging out of $(whoami) in 3 seconds"

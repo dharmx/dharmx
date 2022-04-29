@@ -62,18 +62,20 @@ listview {
 mainbox { children: [ inputbar, listview, mode-switcher ]; }
 
 entry {
-  background-image: url("./img/comets.jpg");
-  placeholder: "Sniff...";
+  placeholder: "Find..";
   margin: 1em;
-  border-radius: 0.5em;
-  font: "VictorMono Nerd Font Bold Italic 20";
-  text-color: @color2;
+  border: 0 0 0 0.5em;
+  border-color: @color4;
+  background-color: @color0;
+  // border-radius: 0.5em;
+  font: "VictorMono Nerd Font ExtraBold 20";
+  text-color: @color4;
   expand: true;
-  padding: 9em 1em 1em 1em;
+  padding: 1em 1em 1em 1em;
 }
 
 mode-switcher {
-  border-radius: 0.5em;
+  // border-radius: 0.5em;
   margin: 1em;
 }
 
@@ -84,7 +86,7 @@ button {
   text-color: @color4;
   border: 0 0 0.4em 0;
   border-color: @color0;
-  border-radius: 0 0 0.4em 0.4em;
+  // border-radius: 0 0 0.4em 0.4em;
 }
 
 button selected {
@@ -95,11 +97,11 @@ button selected {
 
 element {
   text-color: @fg;
-  padding: 1.48em;
+  padding: 1.45em;
   background-color: @color0;
   border: 0 0.5em 0 0;
   margin: 0.1em;
-  border-radius: 0.5em;
+  // border-radius: 0.5em;
   border-color: @color0;
 }
 

@@ -425,7 +425,7 @@ typeset -g PS3='%K{4} %K{0}%B select %b%k '
   ###########################[ vim_shell: vim shell indicator (:sh) ]###########################
   # Vim shell indicator color.
   typeset -g POWERLEVEL9K_VIM_SHELL_FOREGROUND=0
-  typeset -g POWERLEVEL9K_VIM_SHELL_BACKGROUND=6
+  typeset -g POWERLEVEL9K_VIM_SHELL_BACKGROUND=3
   # Custom icon.
   # typeset -g POWERLEVEL9K_VIM_SHELL_VISUAL_IDENTIFIER_EXPANSION='⭐'
 
