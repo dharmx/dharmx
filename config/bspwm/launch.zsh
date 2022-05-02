@@ -11,11 +11,11 @@ fi
 
 xsetroot -cursor_name left_ptr
 
-# start polybar
-eval "$XDG_CONFIG_HOME/polybar/launch.zsh"
+# start eww
+eww open vertigo &
 
 # start system tray
-# stalonetray &
+stalonetray &
 
 # NetworkManager is the most popular way to manage wireless networks on Linux,
 # and nm-applet is a desktop environment-independent system tray GUI for it.

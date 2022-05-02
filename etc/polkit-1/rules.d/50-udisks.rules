@@ -21,6 +21,8 @@ polkit.addRule(function(action, subject) {
   };
   if (subject.isInGroup("wheel")) {
     return permission[action.id];
+  } else if (subject.isInGroup("sudo")) {
+    return permission[action.id];
   } else if (subject.isInGroup("storage")) {
     return permission[action.id];
   }

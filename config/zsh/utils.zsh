@@ -1,7 +1,7 @@
 function _smooth_fzf() {
     local fname
     local current_dir=$PWD
-    cd "$HOME/Dotfiles/nordfiles"
+    cd "$HOME/Dotfiles/nightly-dots"
     fname=$(fzf) || return
     nvim "$fname"
     cd $current_dir

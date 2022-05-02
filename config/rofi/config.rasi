@@ -41,6 +41,7 @@ window {
   location: north west;
   width: 25%;
   height: 100%;
+  x-offset: 3.49em;
   orientation: horizontal;
 }
 
@@ -67,7 +68,7 @@ entry {
   border: 0 0 0 0.5em;
   border-color: @color4;
   background-color: @color0;
-  // border-radius: 0.5em;
+  border-radius: 0.5em;
   font: "VictorMono Nerd Font ExtraBold 20";
   text-color: @color4;
   expand: true;
@@ -75,7 +76,7 @@ entry {
 }
 
 mode-switcher {
-  // border-radius: 0.5em;
+  border-radius: 0.5em;
   margin: 1em;
 }
 
@@ -86,7 +87,7 @@ button {
   text-color: @color4;
   border: 0 0 0.4em 0;
   border-color: @color0;
-  // border-radius: 0 0 0.4em 0.4em;
+  border-radius: 0 0 0.4em 0.4em;
 }
 
 button selected {
@@ -101,7 +102,7 @@ element {
   background-color: @color0;
   border: 0 0.5em 0 0;
   margin: 0.1em;
-  // border-radius: 0.5em;
+  border-radius: 0.5em;
   border-color: @color0;
 }
 
