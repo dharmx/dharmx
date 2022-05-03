@@ -1,0 +1,121 @@
+@theme "/dev/null"
+@import "configs/theme.rasi"
+
+configuration {
+  modi: "drun,window,run";
+  font: "Iosevka Nerd Font 13";
+  drun-display-format: "{name}";
+  sidebar-mode: true;
+  matching: "fuzzy";
+  scroll-method: 0;
+  disable-history: false;
+  display-drun: " ";
+  display-run: " ";
+  display-window: " ";
+  window-thumbnail: true;
+  sort: true;
+  sorting-method: "normal";
+  hover-select: true;
+
+  timeout {
+    action: "kb-cancel";
+    delay: 0;
+  }
+
+  filebrowser {
+    directories-first: true;
+    sorting-method: "name";
+  }
+
+  inputchange {
+    action: "kb-row-first";
+  }
+}
+
+* {
+  background-color: @bg;
+  text-color: @fg;
+}
+
+window {
+  location: north west;
+  width: 25%;
+  height: 100%;
+  x-offset: 3.49em;
+  orientation: horizontal;
+}
+
+inputbar {
+  children: [ entry ];
+  expand: false;
+}
+
+listview {
+  margin: 0 1em;
+  columns: 1;
+  lines: 2;
+  cycle: false;
+  dynamic: false;
+  layout: vertical;
+  scrollbar: false;
+}
+
+mainbox { children: [ inputbar, listview, mode-switcher ]; }
+
+entry {
+  placeholder: "Find..";
+  margin: 1em;
+  border: 0 0 0 0.8em;
+  border-color: @color4;
+  background-color: @color0;
+  border-radius: 0.5em;
+  font: "Iosevka Nerd Font ExtraBold 20";
+  text-color: @color4;
+  expand: true;
+  padding: 1em 1em 1em 1em;
+}
+
+mode-switcher {
+  border-radius: 0.5em;
+  margin: 1em;
+}
+
+button {
+  padding: 1.1em 0.2em 1.1em 0.2em;
+  font: "Iosevka Nerd Font Bold 20";
+  background-color: @color0;
+  text-color: @color4;
+  border: 0 0 0.6em 0;
+  border-color: @color0;
+  border-radius: 0 0 0.4em 0.4em;
+}
+
+button selected {
+  text-color: @color4;
+  border-color: @color4;
+  border: 0 0 0.6em 0;
+}
+
+element {
+  text-color: @fg;
+  padding: 1.45em;
+  background-color: @color0;
+  border: 0 0.8em 0 0;
+  margin: 0.1em;
+  border-radius: 0.5em;
+  border-color: @color0;
+}
+
+element selected {
+  text-color: @color4;
+  border-color: @color4;
+}
+
+element-text, element-icon {
+  background-color: inherit;
+  text-color: inherit;
+}
+
+/*
+  vim:ft=rasi:nowrap
+*/

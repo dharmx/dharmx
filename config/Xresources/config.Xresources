@@ -1,37 +1,9 @@
 #include "theme.Xresources"
 #include "fonts.Xresources"
-#include "mappings.Xresources"
-
-! URxvt Configuration
-URxvt.geometry:                   84x16
-URxvt.internalBorder:             25
-URxvt.cursorBlink:                false
-URxvt.cursorUnderline:            false
-URxvt.saveLines:                  8192
-URxvt.scrollBar:                  false
-URxvt.scrollBar_right:            false
-URxvt.scrollBar_floating:         false
-URxvt.scrollstyle:                plain
-URxvt.scrollWithBuffer:           false
-URxvt.urgentOnBell:               false
-URxvt.depth:                      10
-URxvt.iso14755:                   false
-URxvt.iconFile:                   ~/.icons/Zafiro-Icons-Light/apps/scalable/urxvt.svg
-
-!Uncomment below if too much font spacing
-URxvt.letterSpace: -1
-
-! URL Select Ext
-URxvt.keysym.Control-Shift-U:     url-select:select_next
-URvxt.url-select.button:          2
-URxvt.url-select.launcher:        qutebrowser
-URxvt.url-select.underline:       true
 
 !st configs
-! inner padding
+!inner padding
 st.borderpx:                      20
-!st.borderpx:                      0
 st.cursorColor:                   #5E81AC
-st.url-select.launcher:        qutebrowser
-st.url-select.underline:       true
-
+st.url-select.launcher:           qutebrowser
+st.url-select.underline:          true

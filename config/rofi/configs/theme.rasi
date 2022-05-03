@@ -1,0 +1,33 @@
+* {
+  fg: #d4d4d5;
+  bg: #121519;
+
+  color0: #23242A;
+  color8: #949494;
+  
+  color1: #f87070;
+  color9: #7ab0df;
+  
+  color2:  #79dcaa;
+  color10: #7ab0df;
+  
+  color3:  #ffe59e;
+  color11: #ffe59e;
+  
+  color4:  #36c692;
+  color12: #70c0ba;
+  
+  color5:  #c397d8;
+  color13: #b77ee0;
+  
+  color6:  #54ced6;
+  color14: #f87070;
+  
+  color7:  #d4d4d5;
+  color15: #35363a;
+}
+
+/*
+  vim:ft=rasi:nowrap
+*/
+

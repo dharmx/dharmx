@@ -3,6 +3,7 @@
 **/.vscode/
 **/*.log
 
+config/mpd/log
 config/lazygit/state.yml
 config/gh/hosts.yml
 config/cheat/cheatsheets/community/
@@ -14,6 +15,9 @@ config/mpd/pid
 config/mpd/state
 
 config/tmux/tmuxhistory
+config/tmux/.tmuxhistory
+config/zsh/zhistory
+config/zsh/.zhistory
 config/tmux/plugins
 
 config/qutebrowser/bookmarks

@@ -6,11 +6,11 @@
     "ignore": [],
     "position": "fixed",
     "persist": false,
-    "font_desc": "JetBrainsMono Nerd Font 10",
-    "font_size": "small",
+    "font_desc": "Iosevka Medium 10",
+    "font_size": "large",
     "font_color": "#ca73d622f4e7",
-    "bg_color": "#3fd444585709",
-    "opacity": 0.7,
+    "bg_color": "#232324242a2a",
+    "opacity": 0.6,
     "key_mode": "composed",
     "bak_mode": "normal",
     "mods_mode": "normal",
@@ -19,14 +19,14 @@
     "vis_shift": false,
     "vis_space": false,
     "geometry": [
-        785,
-        908,
-        357,
-        117
+        1438,
+        32,
+        446,
+        159
     ],
     "screen": 0,
     "start_disabled": false,
-    "mouse": true,
+    "mouse": false,
     "button_hide_duration": 1.0,
     "window": null
 }

@@ -49,12 +49,10 @@ alias kev="xev -event keyboard"
 alias cclock="watch -t -n1 'date +%T | figlet' | lolcat"
 alias tty-clock="tty-clock -S -c -C4 -D -s -n"
 alias ccbonsai="cbonsai -ilt 0.02 -c '  ,  ,  ,  ,  ' -L 5"
-alias fzfimg="$HOME/.fzfimg.sh"
-alias fzf="fzf --layout=reverse --prompt ' ' --pointer '->' --preview='less {}' --bind shift-up:preview-page-up,shift-down:preview-page-down"
+alias fzi="$HOME/.fzfimg.sh"
+alias fzf="fzf --layout=reverse --prompt ' ' --pointer '=>' --preview='less {}' --bind shift-up:preview-page-up,shift-down:preview-page-down"
 
 alias yts="ytfzf -t"
-alias pisend="$XDG_CONFIG_HOME/picom/launch.bash"
-alias tintsend="$XDG_CONFIG_HOME/tint2/launch.bash"
 alias startx='startx -- -keeptty >~/.xorg.log 2>&1'
 
 alias cd..='cd ../'
@@ -62,7 +60,7 @@ alias cd...='cd ../../'
 alias cd....='cd ../../../'
 alias cd.....='cd ../../../../'
 alias cd......='cd ../../../../../'
-alias ~='cd' 2> /dev/null
+alias ~='cd ~' 2> /dev/null
 alias -='cd -' 2> /dev/null
 alias ..='cd ../'
 alias ...='cd ../../'
@@ -124,7 +122,6 @@ alias yaupd="yay -Sy"
 alias upgrade='yay -Syu'
 
 alias commit="git add . && git commit -m"
-alias clone="git clone"
 alias push="git push"
 alias pull="git pull"
 
@@ -166,7 +163,9 @@ alias gcasm='git commit -a -s -m'
 alias gcb='git checkout -b'
 alias gcd='git checkout $(git_develop_branch)'
 alias gcf='git config --list'
-alias gcl='git clone --recurse-submodules'
+alias gclr='git clone --recurse-submodules'
+alias gcl='git clone'
+alias gcld='git clone --depth'
 alias gclean='git clean -id'
 alias gcm='git checkout $(git_main_branch)'
 alias gcmsg='git commit -m'
@@ -318,7 +317,7 @@ alias -g G='| grep'
 alias -g L="| less"
 alias -g M="| most"
 alias -g LL="2>&1 | less"
-alias -g CA="2>&1 | cat -A"
+alias -g CA="2>&1 | bat -A"
 alias -g NE="2> /dev/null"
 alias -g NUL="> /dev/null 2>&1"
 alias -g P="2>&1| pygmentize -l pytb"
@@ -387,7 +386,7 @@ alias rofifl="wmctrl -s 2; rofi -show & sleep 2 && flameshot full"
 alias nvconfig="fm ~/.config/nvim/"
 
 alias tping="ping -c5 google.com"
-alias iping="ping google.com"
+alias iping="gping google.com"
 
 alias yta-mp3="youtube-dl --extract-audio --audio-format mp3"
 alias ytv-best="youtube-dl -f bestvideo+bestaudio "
@@ -401,6 +400,52 @@ alias nvupd="nvim --headless -c 'autocmd User PackerComplete quitall' -c 'Packer
 alias nvst="nvim --startuptime $XDG_DOCUMENTS_DIR/nvim-startuptime-'$(date)' +quitall"
 
 SILENT_JAVA_OPTIONS="$JDK_JAVA_OPTIONS"
-unset JDK_JAVA_OPTIONS
 alias java='java "$SILENT_JAVA_OPTIONS"'
+alias nhist="dbus-monitor \"interface='org.freedesktop.Notifications'\" | grep --line-buffered \"member=Notify\|string\""
+alias strel="xrdb -I$XDG_CONFIG_HOME/Xresources $XDG_CONFIG_HOME/Xresources/config.Xresources && kill -USR1 $(pidof st)"
 
+function compress-pdf-gray() {
+    gs -sDEVICE=pdfwrite -dCompatibilityLevel=1.4 -dPDFSETTINGS=/screen -dNOPAUSE -dQUIET -dBATCH -sOutputFile="$2.pdf" "$1.pdf"
+}
+
+function compress-pdf() {
+    local level="screen"
+    if [[ "$3" != "" ]]; then 
+        level="$3"
+    fi
+    gs -sDEVICE=pdfwrite -dCompatibilityLevel=1.4 -dPDFSETTINGS=/"$level" -dNOPAUSE -dQUIET -dBATCH -sOutputFile="$2.pdf" "$1.pdf"
+}
+
+function redditdw() {
+    ffmpeg -i $(wget -qO- "https://api.reddit.com/api/info/?id=t3_$(echo $1| cut -d'/' -f 7)" | jq -r '.data.children[0].data.secure_media.reddit_video.dash_url') -c copy $(echo $1| cut -d'/' -f 8).mp4
+}
+
+function compile-hentai() {
+    for file in *; do
+        cd "$file"
+        convert "*.jpg" convert "$file.pdf"
+        mv "$file.pdf" "../$file.pdf"
+        cd ..
+    done
+}
+
+alias fet.sh="$HOME/.scripts/misc/fet.sh"
+
+function color-list() {
+    for i in {0..255}; do print -Pn "%K{$i}  %k%F{$i}${(l:3::0:)i}%f " ${${(M)$((i%6)):#3}:+$'\n'}; done
+}
+
+alias resrc="source $ZDOTDIR/.zshrc"
+
+function dw-tarball() {
+    curl -Lk "https://api.github.com/repos/$1/tarball" | tar zx
+}
+
+function stylua-fmt() {
+    local current="$PWD"
+    cd "$1"
+    stylua .
+    cd "$current"
+}
+
+# vim:ft=zsh

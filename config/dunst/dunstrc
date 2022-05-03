@@ -1,6 +1,6 @@
 [global]
-background = "#2e3440"
-foreground = "#e5e9f0"
+background = "#101317"
+foreground = "#d4d4d5"
 monitor = 0
 follow = mouse
 
@@ -12,27 +12,27 @@ progress_bar_height = 25
 progress_bar_frame_width = 3
 progress_bar_min_width = 460
 progress_bar_max_width = 480
-highlight = "#5e81ac"
+highlight = "#36c692"
 
 dmenu = /usr/bin/dmenu
 browser = /usr/bin/qutebrowser
 
 indicate_hidden = true
-shrink = false
+shrink = true
 transparency = 5
 separator_height = 10
 padding = 10
 horizontal_padding = 10
 frame_width = 3
-frame_color = "#81a1c1"
+frame_color = "#79dcaa"
 separator_color = "#00000000"
 sort = true
 idle_threshold = 0
-font = Iosevka Nerd Font 12
+font = Zilla Slab 14
 line_height = 2
 markup = full
 
-origin = "bottom-right"
+origin = "top-right"
 offset = "20x20"
 
 format = "<b>%s</b>\n%b <b>%n</b>"
@@ -47,7 +47,8 @@ show_indicators = true
 icon_position = left
 max_icon_size = 120
 min_icon_size = 90
-icon_theme = "Zafiro-Icons-Light"
+icon_size = 100
+icon_theme = "Papirus"
 enable_recursive_icon_lookup = true
 
 sticky_history = true
@@ -67,21 +68,21 @@ ignore_dbusclose = true
 
 [urgency_low]
 timeout = 4
-background = "#303542"
-frame_color = "#88c0d0"
-foreground = "#e5e9f0"
+background = "#23242A"
+frame_color = "#79dcaa"
+foreground = "#d4d4d5"
 
 [urgency_normal]
 timeout = 8
-background = "#3b4252"
-frame_color = "#81a1c1"
-foreground = "#e5e9f0"
+background = "#19191c"
+frame_color = "#36c692"
+foreground = "#d4d4d5"
 
 [urgency_critical]
-timeout = 8
-background = "#bf616a"
-frame_color = "#a3be8c"
-foreground = "#e5e9f0"
+timeout = 30
+background = "#f87070"
+frame_color = "#c397d8"
+foreground = "#d4d4d5"
 
 [fullscreen_show_critical]
 msg_urgency = critical
@@ -139,24 +140,20 @@ format = "<b>%s</b>\n%b"
 appname = "spotify"
 summary = "*"
 set_stack_tag = "spotify"
-format = "<b>%s</b>\n%b"
+format = "<span size='x-large' font_desc='Zilla Slab 12' weight='bold' foreground='#79dcaa'>%s</span>\n%b"
+
+[mpd]
+appname = "mpd"
+summary = "*"
+set_stack_tag = "mpd"
+format = "<span size='x-large' font_desc='Zilla Slab Font 12' weight='bold' foreground='#79dcaa'>%s</span>\n%b"
 
 [notify_send]
 appname = notify-send
-new_icon = ~/.icons/Zafiro-Icons-Light/apps/scalable/preferences-desktop-notification-bell.svg
+new_icon = bell
 
 [firefox]
 appname = firefox
-new_icon = ~/.icons/Zafiro-Icons-Light/apps/scalable/firefox.svg
+new_icon = firefox-default
 
-# Deprecated
-# [shortcuts]
-# close = ctrl+space
-# close_all = ctrl+shift+space
-# context = ctrl+shift+period
-# context_all = ctrl+shift+alt+period
-# history = ctrl+comma
-# open_url = ctrl+slash
-# close_current = ctrl+backslash
-
-# vim:ft=dosini:nowrap
+# vim:ft=cfg:nowrap
