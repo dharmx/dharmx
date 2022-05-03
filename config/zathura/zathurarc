@@ -1,7 +1,7 @@
 set selection-clipboard         "clipboard"
 set guioptions                  "true"
 set highlight-active-color      "#c397d8"
-set font                        "VictorMono Nerd Font 11"
+set font                        "Iosevka 11"
 
 #colorscheme
 

@@ -7,5 +7,5 @@ Xft.lcdfilter:            lcddefault
 Xft.dpi:                  97
 
 st.alpha:                 1.0
-st.font:                  VictorMono Nerd Font:pixelsize=19
-st.chscale:               1.5
+st.font:                  Iosevka Nerd Font:pixelsize=19
+! st.chscale:               1.5
