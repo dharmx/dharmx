@@ -18,7 +18,7 @@ dmenu = /usr/bin/dmenu
 browser = /usr/bin/qutebrowser
 
 indicate_hidden = true
-shrink = false
+shrink = true
 transparency = 5
 separator_height = 10
 padding = 10
@@ -28,7 +28,7 @@ frame_color = "#79dcaa"
 separator_color = "#00000000"
 sort = true
 idle_threshold = 0
-font = Iosevka Nerd Font 12
+font = Zilla Slab 14
 line_height = 2
 markup = full
 
@@ -140,13 +140,13 @@ format = "<b>%s</b>\n%b"
 appname = "spotify"
 summary = "*"
 set_stack_tag = "spotify"
-format = "<span size='x-large' font_desc='Iosevka Nerd Font 10' weight='bold' foreground='#79dcaa'>%s</span>\n%b"
+format = "<span size='x-large' font_desc='Zilla Slab 12' weight='bold' foreground='#79dcaa'>%s</span>\n%b"
 
 [mpd]
 appname = "mpd"
 summary = "*"
 set_stack_tag = "mpd"
-format = "<span size='x-large' font_desc='Iosevka Nerd Font 10' weight='bold' foreground='#79dcaa'>%s</span>\n%b"
+format = "<span size='x-large' font_desc='Zilla Slab Font 12' weight='bold' foreground='#79dcaa'>%s</span>\n%b"
 
 [notify_send]
 appname = notify-send

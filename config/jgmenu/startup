@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/usr/bin/env zsh
 
 gtktheme () {
     while IFS='=' read -r key value; do
@@ -6,10 +6,10 @@ gtktheme () {
             printf '%s' "${value}"
             return 0
         fi
-    done < "$HOME/.config/gtk-3.0/settings.ini"
+    done < "$XDG_CONFIG_HOME/gtk-3.0/settings.ini"
 }
 
-old=$(cat ~/.cache/jgmenu/.last-gtktheme)
+old=$(cat $XDG_CACHE_HOME/jgmenu/.last-gtktheme)
 new=$(gtktheme)
 
 if ! [ "${old}" = "${new}" ]; then
