@@ -3,7 +3,7 @@
 
 configuration {
   modi: "drun,window,run";
-  font: "VictorMono Nerd Font 13";
+  font: "Iosevka Nerd Font 13";
   drun-display-format: "{name}";
   sidebar-mode: true;
   matching: "fuzzy";
@@ -65,11 +65,11 @@ mainbox { children: [ inputbar, listview, mode-switcher ]; }
 entry {
   placeholder: "Find..";
   margin: 1em;
-  border: 0 0 0 0.5em;
+  border: 0 0 0 0.8em;
   border-color: @color4;
   background-color: @color0;
   border-radius: 0.5em;
-  font: "VictorMono Nerd Font ExtraBold 20";
+  font: "Iosevka Nerd Font ExtraBold 20";
   text-color: @color4;
   expand: true;
   padding: 1em 1em 1em 1em;
@@ -82,10 +82,10 @@ mode-switcher {
 
 button {
   padding: 1.1em 0.2em 1.1em 0.2em;
-  font: "VictorMono Nerd Font Bold 20";
+  font: "Iosevka Nerd Font Bold 20";
   background-color: @color0;
   text-color: @color4;
-  border: 0 0 0.4em 0;
+  border: 0 0 0.6em 0;
   border-color: @color0;
   border-radius: 0 0 0.4em 0.4em;
 }
@@ -93,14 +93,14 @@ button {
 button selected {
   text-color: @color4;
   border-color: @color4;
-  border: 0 0 0.4em 0;
+  border: 0 0 0.6em 0;
 }
 
 element {
   text-color: @fg;
   padding: 1.45em;
   background-color: @color0;
-  border: 0 0.5em 0 0;
+  border: 0 0.8em 0 0;
   margin: 0.1em;
   border-radius: 0.5em;
   border-color: @color0;

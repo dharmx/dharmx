@@ -2,7 +2,7 @@
 @import "theme.rasi"
 
 configuration {
-  font: "VictorMono Nerd Font 14";
+  font: "Iosevka Nerd Font 14";
   disable-history: true;
   sidebar-mode: false;
 }
@@ -27,6 +27,7 @@ prompt {
   padding: 20px 10px 20px 10px;
   background-color: @color0;
   border-color: @color12;
+  border-radius: 0 10% 10% 0;
   text-color: @color14;
 }
 
@@ -36,7 +37,7 @@ textbox-prompt-colon {
   background-color: @color2;
   text-color: @bg;
   padding: 22px 10px 20px 10px;
-  font: "VictorMono Nerd Font Bold Italic 14";
+  font: "Iosevka Nerd Font Bold Italic 14";
 }
 
 inputbar {
@@ -72,6 +73,7 @@ element {
   orientation: vertical;
   border: 0 0 0.8em 0;
   border-color: @color4;
+  border-radius: 0 0 2% 1%;
 }
 
 element-text {

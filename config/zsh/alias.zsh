@@ -446,7 +446,6 @@ function stylua-fmt() {
     cd "$1"
     stylua .
     cd "$current"
-    unset current
 }
 
 # vim:ft=zsh
