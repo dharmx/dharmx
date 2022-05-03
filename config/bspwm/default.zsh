@@ -2,7 +2,7 @@
 pgrep -x sxhkd >/dev/null || sxhkd -c "$XDG_CONFIG_HOME/sxhkd/config.sxhkdrc" &
 
 # Workspaces
-bspc monitor -d 1 2 3
+bspc monitor -d 1 2
 
 # Window settings
 bspc config border_width 0
