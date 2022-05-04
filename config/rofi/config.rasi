@@ -3,7 +3,7 @@
 
 configuration {
   modi: "drun,window,run";
-  font: "Iosevka Nerd Font 13";
+  font: "Iosevka Nerd Font 14";
   drun-display-format: "{name}";
   sidebar-mode: true;
   matching: "fuzzy";
@@ -33,15 +33,15 @@ configuration {
 }
 
 * {
-  background-color: @bg;
-  text-color: @fg;
+  background-color: @shade09;
+  text-color: @base05;
 }
 
 window {
   location: north west;
-  width: 25%;
+  width: 26%;
   height: 100%;
-  x-offset: 3.49em;
+  x-offset: 3.079em;
   orientation: horizontal;
 }
 
@@ -66,11 +66,11 @@ entry {
   placeholder: "Find..";
   margin: 1em;
   border: 0 0 0 0.8em;
-  border-color: @color4;
-  background-color: @color0;
+  border-color: @base12;
+  background-color: @shade08;
   border-radius: 0.5em;
   font: "Iosevka Nerd Font ExtraBold 20";
-  text-color: @color4;
+  text-color: @base12;
   expand: true;
   padding: 1em 1em 1em 1em;
 }
@@ -83,32 +83,32 @@ mode-switcher {
 button {
   padding: 1.1em 0.2em 1.1em 0.2em;
   font: "Iosevka Nerd Font Bold 20";
-  background-color: @color0;
-  text-color: @color4;
+  background-color: @shade08;
+  text-color: @base12;
   border: 0 0 0.6em 0;
-  border-color: @color0;
+  border-color: @shade08;
   border-radius: 0 0 0.4em 0.4em;
 }
 
 button selected {
-  text-color: @color4;
-  border-color: @color4;
+  text-color: @base12;
+  border-color: @base12;
   border: 0 0 0.6em 0;
 }
 
 element {
-  text-color: @fg;
-  padding: 1.45em;
-  background-color: @color0;
+  text-color: @base05;
+  padding: 1.16em 1.4em 1.16em 1.4em;
+  background-color: @shade08;
   border: 0 0.8em 0 0;
   margin: 0.1em;
   border-radius: 0.5em;
-  border-color: @color0;
+  border-color: @shade08;
 }
 
 element selected {
-  text-color: @color4;
-  border-color: @color4;
+  text-color: @base12;
+  border-color: @base12;
 }
 
 element-text, element-icon {

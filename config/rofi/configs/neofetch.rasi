@@ -2,8 +2,8 @@
 @import "theme.rasi"
 
 * {
-  background-color: @bg;
-  text-color: @fg;
+  background-color: @base01;
+  text-color: @base05;
 }
 
 element-text {
@@ -23,7 +23,7 @@ element-icon {
 window {
   transparency: "real";
   width: 20.0000% ;
-  border-color: @color12;
+  border-color: @base08;
   border: 10px;
   // border-radius: 10px;
   height: 45.5%;
@@ -32,10 +32,10 @@ window {
 prompt {
   padding: 20px 15px 5px ;
   enabled: true;
-  background-color: @color12;
+  background-color: @base08;
   expand: true;
   font: "Iosevka Nerd Font Bold 14";
-  text-color: @fg;
+  text-color: @base05;
 }
 
 textbox-prompt-colon {
@@ -44,19 +44,19 @@ textbox-prompt-colon {
   margin: 5px 0px 0px 5px;
   font: "feather 30";
   str: "";
-  background-color: @color12;
-  text-color: @bg;
+  background-color: @base08;
+  text-color: @base01;
 }
 
 entry {
   padding: 2.0000%;
   margin: 5px 5px 0px 0px;
-  text-color: @color12;
+  text-color: @base08;
   expand: true;
   font: "Iosevka Nerd Font Bold 14";
   placeholder: "Search";
-  placeholder-color: @color12;
-  background-color: @color0;
+  placeholder-color: @base08;
+  background-color: @shade08;
 }
 
 inputbar {
@@ -84,14 +84,14 @@ element {
   padding: 2.0000% 2.0000% 2.0000% 0.0000% ;
   margin: 2px 5px 2px 5px;
   font: "Iosevka Nerd Font 14";
-  background-color: @color0;
-  text-color: @color12;
+  background-color: @shade08;
+  text-color: @base08;
 }
 
 element selected {
-  background-color: @color12;
+  background-color: @base08;
   font: "Iosevka Nerd Font Bold 14";
-  text-color: @bg;
+  text-color: @base01;
 }
 
 /*
