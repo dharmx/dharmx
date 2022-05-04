@@ -1,30 +1,36 @@
 * {
-  fg: #d4d4d5;
-  bg: #121519;
+  base00: #101317;
+  base01: #171C21;
+  base02: #1c2026;
+  base03: #20252b;
 
-  color0: #23242A;
-  color8: #949494;
-  
-  color1: #f87070;
-  color9: #7ab0df;
-  
-  color2:  #79dcaa;
-  color10: #7ab0df;
-  
-  color3:  #ffe59e;
-  color11: #ffe59e;
-  
-  color4:  #36c692;
-  color12: #70c0ba;
-  
-  color5:  #c397d8;
-  color13: #b77ee0;
-  
-  color6:  #54ced6;
-  color14: #f87070;
-  
-  color7:  #d4d4d5;
-  color15: #35363a;
+  base04: #949494;
+  base05: #d4d4d5;
+  base06: #ffffff;
+
+  base07: #54ced6;
+  base08: #70c0ba;
+  base09: #7ab0df;
+  base10: #b77ee0;
+
+  base11: #f87070;
+  base12: #36c692;
+  base13: #ffe59e;
+  base14: #79dcaa;
+  base15: #c397d8;
+
+  shade00: #333c44;
+  shade01: #262d33;
+  shade02: #252528;
+  shade03: #1b2026;
+  shade04: #1e1e21;
+  shade05: #171b20;
+  shade06: #14171c;
+  shade07: #151a1e;
+  shade08: #14181c;
+  shade09: #121519;
+  shade10: #141416;
+  shade11: #121214;
 }
 
 /*

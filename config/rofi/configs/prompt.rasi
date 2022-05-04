@@ -2,8 +2,8 @@
 @import "theme.rasi"
 
 * {
-  background-color: @bg;
-  text-color: @fg;
+  background-color: @base01;
+  text-color: @base05;
 }
 
 element-text {
@@ -41,27 +41,27 @@ element {
   margin: 2px 5px 2px 5px;
   font: "Iosevka Nerd Font 14";
   border-radius: 20%;
-  background-color: @color0;
-  text-color: @color12;
+  background-color: @shade08;
+  text-color: @base08;
 }
 
 element selected {
-  background-color: @color1;
+  background-color: @base11;
   font: "Iosevka Nerd Font Bold 14";
-  text-color: @color0;
+  text-color: @shade08;
 }
 
 textbox-prompt-colon {
   expand: false;
   str: "Are you sure?";
-  background-color: @color0;
-  text-color: @color1;
+  background-color: @shade08;
+  text-color: @base11;
   font: "Iosevka Nerd Font Bold 24";
 }
 
 inputbar {
   children: [textbox-prompt-colon];
-  background-color: @color0;
+  background-color: @shade08;
   padding: 4% 3% 4% 9%;
   position: center;
 }
