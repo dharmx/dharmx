@@ -141,10 +141,6 @@ XF86MonBrightness{Up,Down}
 XF86Audio{Play,Stop,Next,Prev}
         playerctl {play-pause,pause,next,previous}
 
-## airplane mode
-XF86RFKill
-        $HOME/.scripts/airplane.bash
-
 {XF86Search,super + XF86AudioPlay}
 				{rofi -show run,$XDG_CONFIG_HOME/rofi/scripts/player.py}
 
