@@ -1,2 +1,2 @@
 #!/bin/sh
-feh --no-fehbg --bg-fill '/home/maker/Pictures/wallpapers/night/comets.png' 
+feh --no-fehbg --bg-fill '/home/maker/Pictures/temp/comets.png' 

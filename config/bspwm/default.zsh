@@ -2,7 +2,7 @@
 pgrep -x sxhkd >/dev/null || sxhkd -c "$XDG_CONFIG_HOME/sxhkd/config.sxhkdrc" &
 
 # Workspaces
-bspc monitor -d 1 2
+bspc monitor -d 1 2 3 4 5 6
 
 # Window settings
 bspc config border_width 0
@@ -20,8 +20,8 @@ bspc config focused_private_border_color "$color1"
 "$HOME"/.scripts/base/borders.bash &
 
 bspc config split_ratio 0.5
-bspc config borderless_monocle true
-bspc config gapless_monocle true
+bspc config borderless_monocle false
+bspc config gapless_monocle false
 
 # removed default rules
 # bspc rule -r *:*

@@ -3,7 +3,7 @@
 foreground='#d4d4d5'
 background='#101317'
 
-color0='#23242A'
+color0='#171c21'
 color8='#949494'
 
 # red
