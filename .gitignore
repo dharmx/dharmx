@@ -3,6 +3,7 @@
 **/.vscode/
 **/*.log
 
+config/obs-studio/logs/
 config/mpd/log
 config/lazygit/state.yml
 config/gh/hosts.yml
