@@ -448,4 +448,6 @@ function stylua-fmt() {
     cd "$current"
 }
 
+alias luamake=/home/maker/.opt/lua-language-server/3rd/luamake/luamake
+
 # vim:ft=zsh

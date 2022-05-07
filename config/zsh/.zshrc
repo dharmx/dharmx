@@ -10,5 +10,3 @@ greet_path="$HOME/.scripts/misc/$greet"
 unset greet_path greet
 
 # vim:ft=zsh:nowrap
-
-alias luamake=/home/maker/.opt/lua-language-server/3rd/luamake/luamake

@@ -28,7 +28,7 @@ frame_color = "#79dcaa"
 separator_color = "#00000000"
 sort = true
 idle_threshold = 0
-font = Zilla Slab 14
+font = Iosevka Nerd Font 14
 line_height = 2
 markup = full
 
