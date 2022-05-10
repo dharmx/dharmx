@@ -638,3 +638,26 @@
 [ 05/07/2022 17:48:04.291 glx_has_extension INFO ] Found GLX extension GLX_EXT_buffer_age.
 [ 05/07/2022 17:48:04.291 glx_has_extension INFO ] Found GLX extension GLX_MESA_query_renderer.
 [ 05/07/2022 17:48:04.315 gl_has_extension INFO ] Missing GL extension GL_GREMEDY_string_marker.
+[ 05/10/2022 01:19:46.794 glx_has_extension INFO ] Found GLX extension GLX_SGI_video_sync.
+[ 05/10/2022 01:19:46.794 glx_has_extension INFO ] Found GLX extension GLX_SGI_swap_control.
+[ 05/10/2022 01:19:46.794 glx_has_extension INFO ] Found GLX extension GLX_OML_sync_control.
+[ 05/10/2022 01:19:46.794 glx_has_extension INFO ] Found GLX extension GLX_MESA_swap_control.
+[ 05/10/2022 01:19:46.794 glx_has_extension INFO ] Found GLX extension GLX_EXT_swap_control.
+[ 05/10/2022 01:19:46.794 glx_has_extension INFO ] Found GLX extension GLX_EXT_texture_from_pixmap.
+[ 05/10/2022 01:19:46.794 glx_has_extension INFO ] Found GLX extension GLX_ARB_create_context.
+[ 05/10/2022 01:19:46.794 glx_has_extension INFO ] Found GLX extension GLX_EXT_buffer_age.
+[ 05/10/2022 01:19:46.794 glx_has_extension INFO ] Found GLX extension GLX_MESA_query_renderer.
+[ 05/10/2022 01:19:46.820 gl_has_extension INFO ] Missing GL extension GL_GREMEDY_string_marker.
+[ 05/10/2022 02:30:48.935 glx_has_extension INFO ] Found GLX extension GLX_SGI_video_sync.
+[ 05/10/2022 02:30:48.935 glx_has_extension INFO ] Found GLX extension GLX_SGI_swap_control.
+[ 05/10/2022 02:30:48.935 glx_has_extension INFO ] Found GLX extension GLX_OML_sync_control.
+[ 05/10/2022 02:30:48.935 glx_has_extension INFO ] Found GLX extension GLX_MESA_swap_control.
+[ 05/10/2022 02:30:48.935 glx_has_extension INFO ] Found GLX extension GLX_EXT_swap_control.
+[ 05/10/2022 02:30:48.935 glx_has_extension INFO ] Found GLX extension GLX_EXT_texture_from_pixmap.
+[ 05/10/2022 02:30:48.935 glx_has_extension INFO ] Found GLX extension GLX_ARB_create_context.
+[ 05/10/2022 02:30:48.935 glx_has_extension INFO ] Found GLX extension GLX_EXT_buffer_age.
+[ 05/10/2022 02:30:48.935 glx_has_extension INFO ] Found GLX extension GLX_MESA_query_renderer.
+[ 05/10/2022 02:30:48.972 gl_has_extension INFO ] Missing GL extension GL_GREMEDY_string_marker.
+[ 05/10/2022 02:30:53.958 glx_bind_pixmap ERROR ] Failed to query info of pixmap 0x01600251.
+[ 05/10/2022 02:30:53.958 paint_one ERROR ] Failed to bind texture for window 0x010ac97c.
+[ 05/10/2022 02:30:53.958 paint_one ERROR ] Window 0x010ac97c is missing painting data.

@@ -1,9 +1,0 @@
-#include "theme.Xresources"
-#include "fonts.Xresources"
-
-!st configs
-!inner padding
-st.borderpx:                      20
-st.cursorColor:                   #5E81AC
-st.url-select.launcher:           qutebrowser
-st.url-select.underline:          true

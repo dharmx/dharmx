@@ -27,6 +27,7 @@ if [ -x "$(command -v ranger)" ]; then
   alias fm="ranger"
 fi
 
+alias strel="xrdb -I$XDG_CONFIG_HOME/Xresources $XDG_CONFIG_HOME/Xresources/config.x && kill -USR1 $(pidof st)"
 alias logout="bspc quit"
 alias suspend="systemctl suspend; locklauncher"
 
