@@ -1,12 +1,12 @@
 #include "theme.x"
 
 Xft.antialias:                    1
-Xft.hinting:                      1
-Xft.autohint:                     1
-Xft.hintstyle:                    hintfull
+Xft.hinting:                      true
+Xft.autohint:                     false
+Xft.hintstyle:                    hintslight
 Xft.rgba:                         rgb
 Xft.lcdfilter:                    lcddefault
-Xft.dpi:                          97
+Xft.dpi:                          96
 
 st.chscale:                       1
 st.borderpx:                      20
