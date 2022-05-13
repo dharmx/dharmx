@@ -32,7 +32,7 @@ font = Iosevka Nerd Font 14
 line_height = 2
 markup = full
 
-origin = "top-right"
+origin = "bottom-right"
 offset = "20x20"
 
 format = "<b>%s</b>\n%b <b>%n</b>"
@@ -47,7 +47,7 @@ show_indicators = true
 icon_position = left
 max_icon_size = 120
 min_icon_size = 90
-icon_size = 100
+# icon_size = 100
 icon_theme = "Papirus"
 enable_recursive_icon_lookup = true
 
@@ -83,6 +83,10 @@ timeout = 30
 background = "#f87070"
 frame_color = "#c397d8"
 foreground = "#d4d4d5"
+
+[logger]
+summary = "*"
+script = "~/.config/dunst/logger.zsh"
 
 [fullscreen_show_critical]
 msg_urgency = critical

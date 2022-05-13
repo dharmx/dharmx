@@ -1,10 +1,10 @@
 function _smooth_fzf() {
     local fname
     local current_dir=$PWD
-    cd "$HOME/Dotfiles/nightly-dots"
-    fname=$(fzf) || return
-    nvim "$fname"
-    cd $current_dir
+    cd "$HOME/Dotfiles/nightly"
+    fname="$(fzf)" || return
+    $EDITOR "$fname"
+    cd "$current_dir"
 }
 
 function _sudo_replace_buffer() {
