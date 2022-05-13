@@ -2,6 +2,6 @@
 	path = config/nvim
 	url = https://github.com/pagankeymaster/KrakeNvim.git
 
-[submodule "config/nvim"]
+[submodule "config/eww"]
 	path = config/eww
 	url = https://github.com/pagankeymaster/vile.git
