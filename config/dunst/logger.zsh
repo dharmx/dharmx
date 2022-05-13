@@ -1,1 +1,1 @@
-/home/maker/Dotfiles/nightly/config/eww/script/logger.zsh
+../eww/script/logger.zsh
