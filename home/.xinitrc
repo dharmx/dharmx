@@ -1,6 +1,6 @@
 #!/usr/bin/env zsh
 
-xset b off &
+xset b off
 xrdb -I$XDG_CONFIG_HOME/Xresources $XDG_CONFIG_HOME/Xresources/config.x
 
 # SEE: https://unix.stackexchange.com/a/295652/332452
@@ -14,6 +14,6 @@ export SSH_AUTH_SOCK
 # SEE: https://github.com/NixOS/nixpkgs/issues/14966#issuecomment-520083836
 mkdir -p "$XDG_DATA_HOME/keyrings"
 
-exec bspwm -c "$XDG_CONFIG_HOME/bspwm/config.zsh"
+bspwm -c "$XDG_CONFIG_HOME/bspwm/config.zsh"
 
 # vim:ft=zsh
