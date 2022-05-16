@@ -193,10 +193,6 @@ super + shift + {x,s}
 super + backslash
         $HOME/.scripts/launch/picom.bash
 
-# toggle polybar
-super + shift + slash
-        {$HOME/.scripts/notify/polybar.bash}
-
 #
 # dynamic gaps
 #
