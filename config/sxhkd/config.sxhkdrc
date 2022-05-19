@@ -229,4 +229,12 @@ super + shift + o
 super + shift + p
 				picom-trans -c {0,5,10,15,20,25,30,35,40,45,50,55,60,65,70,75,80,85,90,95,96,97,98,99,100}
 
+
+# NOTE: temp hotkeys: do not forget to remove them later!
+super + w ; 1
+                eww open --toggle avatar
+
+super + w ; 2
+                eww open --toggle disclose
+
 # vim:ft=sxhkdrc
