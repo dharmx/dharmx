@@ -8,7 +8,7 @@ Xft.rgba:                         rgb
 Xft.lcdfilter:                    lcddefault
 Xft.dpi:                          96
 
-st.chscale:                       1
+st.chscale:                       1.2
 st.borderpx:                      20
 st.cursorColor:                   #5E81AC
 st.url-select.launcher:           qutebrowser
