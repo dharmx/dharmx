@@ -1,9 +1,9 @@
 [submodule "config/nvim"]
-  path = config/nvim
+  path = config/_standalone/nvim
   url = https://github.com/pagankeymaster/KrakeNvim.git
 
 [submodule "config/eww"]
-  path = config/eww
+  path = config/_secured/eww
   url = https://github.com/pagankeymaster/vile.git
 
 [submodule "home/.themes"]
