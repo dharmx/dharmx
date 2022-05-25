@@ -191,7 +191,7 @@ super + shift + {x,s}
 
 # toggle picom, screenlock and lockscreen no screen off
 super + backslash
-  $HOME/.scripts/launch/picom.bash
+  $HOME/.scripts/launch/picom.zsh
 
 #
 # dynamic gaps

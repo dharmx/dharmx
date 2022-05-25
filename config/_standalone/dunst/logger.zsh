@@ -1,1 +1,1 @@
-../eww/script/logger.zsh
+../../_secured/eww/script/logger.zsh
