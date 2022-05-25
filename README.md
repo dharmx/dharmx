@@ -4,6 +4,9 @@ Bleeding-edge dots[.](https://blog.aktsbot.in/better-font-rendering-linux.html) 
 ## GNU Stow
 I use stow to manage my dotfiles. Hence, the weird yet weirdly sensible file structure
 ```bash
+cd "${HOME}/Dotfiles/nightly/etc/X11"
+sudo stow --target=/etc/X11/xorg.conf.d xorg.conf.d
+
 cd "${HOME}/Dotfiles/nightly/etc/udev"
 sudo stow --target="/etc/udev/rules.d" rules.d
 
