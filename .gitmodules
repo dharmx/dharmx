@@ -1,11 +1,11 @@
 [submodule "config/nvim"]
   path = config/_standalone/nvim
   url = https://github.com/pagankeymaster/KrakeNvim.git
-
 [submodule "config/eww"]
   path = config/_secured/eww
   url = https://github.com/pagankeymaster/vile.git
+[submodule "home/.themes/phocus"]
+  url = https://github.com/pagankeymaster/phocus-phork.git
+  path = home/.themes/phocus
 
-[submodule "home/.themes"]
-  path = home/.themes
-  url = https://github.com/pagankeymaster/phocused.git
+; vim:filetype=gitconfig

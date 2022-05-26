@@ -1,0 +1,16 @@
+[Unit]
+Description=Lock screen when going to sleep or suspend
+Before=sleep.target
+Before=suspend.target
+
+[Service]
+Type=forking
+User=%I
+Environment=DISPLAY=:0
+ExecStart=/usr/bin/i3lock --blur 0.5 --verif-color '#00000000' --pointer=default --ignore-empty-password --radius 40 --verif-color '#00000000' --no-modkey-text --pass-media-keys --pass-screen-keys --pass-volume-keys --pass-power-keys
+TimeoutSec=infinity
+ExecStartPost=/usr/bin/sleep 1
+
+[Install]
+WantedBy=sleep.target
+WantedBy=suspend.target

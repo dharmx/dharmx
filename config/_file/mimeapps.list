@@ -1,0 +1,28 @@
+[Added Associations]
+text/css=nvim.desktop;
+image/png=feh.desktop;
+
+[Default Applications]
+x-scheme-handler/msteams=teams.desktop
+image/png=feh.desktop
+image/jpg=feh.desktop
+application/xml=org.qutebrowser.qutebrowser.desktop
+application/xhtml+xml=org.qutebrowser.qutebrowser.desktop
+text/csv=nvim.desktop
+text/x-makefile=nvim.desktop
+text/x-java=nvim.desktop
+text/tcl=nvim.desktop
+text/x-c++src=nvim.desktop
+text/plain=nvim.desktop
+text/x-pascal=nvim.desktop
+text/x-c++hdr=nvim.desktop
+text/tab-separated-values=nvim.desktop
+text/x-chdr=nvim.desktop
+text/x-moc=nvim.desktop
+text/x-csrc=nvim.desktop
+text/x-tex=nvim.desktop
+text/html=org.qutebrowser.qutebrowser.desktop
+x-scheme-handler/http=org.qutebrowser.qutebrowser.desktop
+x-scheme-handler/https=org.qutebrowser.qutebrowser.desktop
+x-scheme-handler/about=org.qutebrowser.qutebrowser.desktop
+x-scheme-handler/unknown=org.qutebrowser.qutebrowser.desktop

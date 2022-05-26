@@ -1,0 +1,31 @@
+#!/usr/bin/env zsh
+# double borders
+# needs chwb2 from wmutils/opt
+
+source "$XDG_CONFIG_HOME/bspwm/theme.zsh"
+
+typeset -g outer="0x$(echo "$background" | tr --delete '#')"   # outer
+typeset -g inner1="0x$(echo "$black" | tr --delete '#')"  # focused
+typeset -g inner2="0x$(echo "$black" | tr --delete '#')"  # normal
+
+trap 'bspc config border_width 0; kill -9 -$$' INT TERM
+
+function targets() {
+  case $1 in
+    focused) bspc query -N -n .local.focused.\!fullscreen;;
+    normal)  bspc query -N -n .\!focused.\!fullscreen
+  esac
+}
+
+function draw() { chwb2 -I "$inner" -O "$outer" -i "5" -o "15" $*; }
+
+bspc config border_width 20
+# initial draw, and then subscribe to events
+{ echo; bspc subscribe node_geometry node_focus; } |
+  while read -r _; do
+    [ "$v" ] || v='abcdefg'
+    inner=$inner1 draw $(targets focused)
+    inner=$inner2 draw $(targets  normal)
+  done
+
+# vim:ft=zsh

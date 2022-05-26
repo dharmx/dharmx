@@ -1,0 +1,8 @@
+[Desktop Entry]
+Type=Application
+Name=MaimRofi
+Comment=Screenshot with maim and ROFI.
+Icon=folder-pictures
+Exec=/home/maker/.scripts/notify/screenshot.bash --xclip-cropped
+Categories=Utilities
+Keywords=Utilities;Pictures

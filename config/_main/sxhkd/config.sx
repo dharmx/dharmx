@@ -1,0 +1,220 @@
+#
+# wm independent hotkeys
+#
+
+# terminal emulators
+# minimal zsh for st,fish urxvt,alacritty with bash
+super + {_,ctrl,shift} + Return
+  {st,tym,kitty}
+
+# start a new tmux session with st,open a shared kitty instance,attach to the latest tmux session with st
+super + alt + {_,ctrl} + Return
+  {st -e tmux,st -e tmux attach-session}
+
+# make sxhkd reload its configuration files
+super + {_,shift} + Escape
+  {pkill -USR1 -x sxhkd;\
+    notify-send -a "sxhkd" -i "export" "SXHKD" "Reloaded all configurations.",\
+    $XDG_CONFIG_HOME/bspwm/defaults;\
+    notify-send -a "sxhkd" -i "configuration" \
+    "BSPWM" "Configurations and rules have been set to default."}
+
+#
+# bspwm hotkeys
+#
+
+# quit/restart bspwm
+super + alt + {q,r}
+  bspc {quit,wm -r}
+
+# close and kill
+super + {_,shift + }q
+  bspc node -{c,k}
+
+# m - alternate between the tiled and monocle layout
+# y - send the newest marked node to the newest preselected node
+# g - swap the current node and the biggest window
+super + {m,y,g}
+  bspc {desktop -l next,\
+    node newest.marked.local -n newest.!automatic.local,\
+    node -s biggest.window}
+
+#
+# state/flags
+#
+
+# set the window state
+super + {t,shift + t,s,f}
+  bspc node -t {tiled,pseudo_tiled,floating,fullscreen}
+
+# set the node flags
+super + ctrl + {m,x,y,z}
+  bspc node -g {marked,locked,sticky,private}
+
+#
+# focus/swap
+#
+
+# focus the node in the given direction
+super + {_,shift + }{h,j,k,l}
+  bspc node -{f,s} {west,south,north,east}
+
+# focus the node for the given path jump
+super + {p,b,comma,period}
+  bspc node -f @{parent,brother,first,second}
+
+# focus the next/previous window in the current desktop
+super + {_,shift + }c
+  bspc node -f {next,prev}.local.!hidden.window
+
+# focus the next/previous desktop in the current monitor
+super + bracket{left,right}
+  bspc desktop -f {prev,next}.local
+
+# focus the last node/desktop
+super + {grave,Tab}
+  bspc {node,desktop} -f last
+
+# focus the older or newer node in the focus history
+super + {o,i}
+  bspc wm -h off; \
+  bspc node {older,newer} -f; \
+  bspc wm -h on
+
+# focus or send to the given desktop
+super + {_,shift + }{1-9,0}
+  bspc {desktop -f,node -d} '^{1-9,10}'
+
+#
+# preselect
+#
+
+# preselect the direction
+super + ctrl + {h,j,k,l}
+  bspc node -p {west,south,north,east}
+
+# preselect the ratio
+super + ctrl + {1-9}
+  bspc node -o 0.{1-9}
+
+# cancel the preselection for the focused node
+super + ctrl + space
+  bspc node -p cancel
+
+# cancel the preselection for the focused desktop
+super + ctrl + shift + space
+  bspc query -N -d | xargs -I id -n 1 bspc node id -p cancel
+
+#
+# move/resize
+#
+
+# expand a window by moving one of its side outward
+super + alt + {h,j,k,l}
+  bspc node -z {left -20 0,bottom 0 20,top 0 -20,right 20 0}
+
+# contract a window by moving one of its side inward
+super + alt + shift + {h,j,k,l}
+  bspc node -z {right -20 0,top 0 20,bottom 0 -20,left 20 0}
+
+# move a floating window
+super + {Left,Down,Up,Right}
+  bspc node -v {-20 0,0 20,0 -20,20 0}
+
+#XF86WebCam
+# pactl audio configurations
+## increase volume
+XF86Audio{Raise,Lower}Volume
+  $HOME/.bin/notify/volume.bash --{increase,decrease}
+
+## mute voloume/mic
+XF86Audio{_,Mic}Mute
+  $HOME/.bin/notify/{volume.bash --toggle,microphone.bash}
+
+# backlight configurations
+## inc/dec brightness
+XF86MonBrightness{Up,Down}
+  $HOME/.bin/notify/brightness.bash -{I,D}
+
+# playerctl audio configurations
+## play,pause,next,prev
+XF86Audio{Play,Stop,Next,Prev}
+  playerctl {play-pause,pause,next,previous}
+
+{XF86Search,super + XF86AudioPlay}
+  {rofi -show run,$XDG_CONFIG_HOME/rofi.bin/player.zsh}
+
+# mpd audio configurations
+## inc/dec volume
+shift + XF86Audio{Raise,Lower}Volume
+  mpc volume {+,-}5
+
+# rofi app menu + run prompt
+super + d
+  rofi -show
+
+# bind some nice apps
+## launch web browser
+super + {shift + f,e}
+  {qutebrowser,st -e ranger}
+
+## launch system monitor btop
+ctrl + shift + Escape
+  st -e btop
+
+## night mode
+super + n
+  $HOME/.bin/notify/redshift.bash
+
+#
+# Screenshot
+#
+
+# fullscreen save
+{_,super} + Print
+  $HOME/.bin/notify/screenshot.bash --{xclip-,_}fullscreen
+
+# cropped save
+super + shift + {x,s}
+  $HOME/.bin/notify/screenshot.bash --{selected,xclip-cropped}
+
+# toggle picom
+super + backslash
+  $XDG_CONFIG_HOME/picom/picom.zsh
+
+# toggle borderless monocle
+super + x ; 1
+  bspc config -n focused borderless_monocle {true,false}
+
+# toggle borderless floating
+super + x ; 2
+  $XDG_CONFIG_HOME/sxhkd/script/noborders.zsh {start,stop}
+
+# toggle borderless singleton
+super + x ; 3
+  bspc config -n focused borderless_singleton {true,false}
+
+# gapless monocle
+super + x ; 4
+  bspc config -n focused gapless_monocle {true,false}
+
+super + w ; 1
+  eww windows | grep '*vertigo' && eww close vertigo && bspc config left_padding 0 || eww open vertigo
+
+super + w ; 2
+  eww open --toggle disclose
+
+super + w ; 3
+  eww open --toggle avatar
+
+# lock screen
+super + shift + slash
+  i3lock --blur 0.5 --bar-indicator --verif-color '#00000000' --greeter-text 'Bye.' --greeter-font 'Cooper Hewitt Bold' --greeter-color '#79DCAAFF' --pointer=default --ignore-empty-password --radius 40 --verif-color '#00000000' --no-modkey-text --pass-media-keys --pass-screen-keys --pass-volume-keys --pass-power-keys
+
+~Escape
+  eval "[ $(bspc query --tree --node | jq .client.className) = Pavucontrol ] && bspc node --close"
+
+~button3
+  xqp 0 $(xdo id -N bspwm -n root) && jgmenu_run
+
+# vim:ft=sxhkdrc

@@ -1,0 +1,207 @@
+[ 06/08/2022 17:31:30.771 glx_bind_pixmap ERROR ] Failed to query info of pixmap 0x01800286.
+[ 06/08/2022 17:31:30.771 paint_one ERROR ] Failed to bind texture for window 0x01200240.
+[ 06/08/2022 17:31:30.771 paint_one ERROR ] Window 0x01200240 is missing painting data.
+[ 06/08/2022 17:34:06.668 glx_bind_pixmap ERROR ] Failed to query info of pixmap 0x01800438.
+[ 06/08/2022 17:34:06.668 paint_one ERROR ] Failed to bind texture for window 0x012009d0.
+[ 06/08/2022 17:34:06.668 paint_one ERROR ] Window 0x012009d0 is missing painting data.
+[ 06/08/2022 17:34:18.999 glx_bind_pixmap ERROR ] Failed to query info of pixmap 0x018004b2.
+[ 06/08/2022 17:34:18.999 paint_one ERROR ] Failed to bind texture for window 0x012009d0.
+[ 06/08/2022 17:34:18.999 paint_one ERROR ] Window 0x012009d0 is missing painting data.
+[ 06/08/2022 17:34:23.470 glx_bind_pixmap ERROR ] Failed to query info of pixmap 0x018005c1.
+[ 06/08/2022 17:34:23.470 paint_one ERROR ] Failed to bind texture for window 0x012009d0.
+[ 06/08/2022 17:34:23.470 paint_one ERROR ] Window 0x012009d0 is missing painting data.
+[ 06/08/2022 17:35:17.121 glx_bind_pixmap ERROR ] Failed to query info of pixmap 0x01800918.
+[ 06/08/2022 17:35:17.121 paint_one ERROR ] Failed to bind texture for window 0x012009d0.
+[ 06/08/2022 17:35:17.121 paint_one ERROR ] Window 0x012009d0 is missing painting data.
+[ 06/08/2022 17:35:26.600 glx_bind_pixmap ERROR ] Failed to query info of pixmap 0x01800a6b.
+[ 06/08/2022 17:35:26.600 paint_one ERROR ] Failed to bind texture for window 0x012009d0.
+[ 06/08/2022 17:35:26.600 paint_one ERROR ] Window 0x012009d0 is missing painting data.
+[ 06/08/2022 17:49:57.895 handle_queued_x_events FATAL ERROR ] X11 server connection broke (error 1)
+[ 06/08/2022 18:09:27.409 glx_bind_pixmap ERROR ] Failed to query info of pixmap 0x01e009ee.
+[ 06/08/2022 18:09:27.410 paint_one ERROR ] Failed to bind texture for window 0x012003df.
+[ 06/08/2022 18:09:27.410 paint_one ERROR ] Window 0x012003df is missing painting data.
+[ 06/08/2022 18:25:25.083 glx_bind_pixmap ERROR ] Failed to query info of pixmap 0x01e00739.
+[ 06/08/2022 18:25:25.084 paint_one ERROR ] Failed to bind texture for window 0x01200342.
+[ 06/08/2022 18:25:25.084 paint_one ERROR ] Window 0x01200342 is missing painting data.
+[ 06/08/2022 18:30:52.756 glx_bind_pixmap ERROR ] Failed to query info of pixmap 0x01e00673.
+[ 06/08/2022 18:30:52.757 paint_one ERROR ] Failed to bind texture for window 0x01200342.
+[ 06/08/2022 18:30:52.757 paint_one ERROR ] Window 0x01200342 is missing painting data.
+[ 06/08/2022 18:30:53.539 glx_bind_pixmap ERROR ] Failed to query info of pixmap 0x01e00674.
+[ 06/08/2022 18:30:53.539 paint_one ERROR ] Failed to bind texture for window 0x01200342.
+[ 06/08/2022 18:30:53.539 paint_one ERROR ] Window 0x01200342 is missing painting data.
+[ 06/08/2022 18:30:54.445 glx_bind_pixmap ERROR ] Failed to query info of pixmap 0x01e00675.
+[ 06/08/2022 18:30:54.445 paint_one ERROR ] Failed to bind texture for window 0x01200342.
+[ 06/08/2022 18:30:54.445 paint_one ERROR ] Window 0x01200342 is missing painting data.
+[ 06/08/2022 18:32:29.839 glx_bind_pixmap ERROR ] Failed to query info of pixmap 0x01e008db.
+[ 06/08/2022 18:32:29.839 paint_one ERROR ] Failed to bind texture for window 0x01200342.
+[ 06/08/2022 18:32:29.839 paint_one ERROR ] Window 0x01200342 is missing painting data.
+[ 06/08/2022 19:04:37.077 glx_bind_pixmap ERROR ] Failed to query info of pixmap 0x01e00c00.
+[ 06/08/2022 19:04:37.077 paint_one ERROR ] Failed to bind texture for window 0x01a00072.
+[ 06/08/2022 19:04:37.077 paint_one ERROR ] Window 0x01a00072 is missing painting data.
+[ 06/08/2022 19:11:24.076 glx_bind_pixmap ERROR ] Failed to query info of pixmap 0x01e00cbe.
+[ 06/08/2022 19:11:24.077 paint_one ERROR ] Failed to bind texture for window 0x01200342.
+[ 06/08/2022 19:11:24.077 paint_one ERROR ] Window 0x01200342 is missing painting data.
+[ 06/08/2022 19:48:55.758 glx_bind_pixmap ERROR ] Failed to query info of pixmap 0x01e0126c.
+[ 06/08/2022 19:48:55.758 paint_one ERROR ] Failed to bind texture for window 0x01200342.
+[ 06/08/2022 19:48:55.758 paint_one ERROR ] Window 0x01200342 is missing painting data.
+[ 06/08/2022 20:00:05.333 glx_bind_pixmap ERROR ] Failed to query info of pixmap 0x01e00a7e.
+[ 06/08/2022 20:00:05.333 paint_one ERROR ] Failed to bind texture for window 0x01200342.
+[ 06/08/2022 20:00:05.333 paint_one ERROR ] Window 0x01200342 is missing painting data.
+[ 06/08/2022 20:15:43.894 session_init FATAL ERROR ] Another composite manager is already running
+[ 06/08/2022 20:16:43.170 session_init FATAL ERROR ] Another composite manager is already running
+[ 06/08/2022 20:18:55.201 session_init FATAL ERROR ] Another composite manager is already running
+[ 06/08/2022 20:22:50.513 glx_bind_pixmap ERROR ] Failed to query info of pixmap 0x00e00293.
+[ 06/08/2022 20:22:50.514 paint_one ERROR ] Failed to bind texture for window 0x01400212.
+[ 06/08/2022 20:22:50.514 paint_one ERROR ] Window 0x01400212 is missing painting data.
+[ 06/08/2022 20:35:18.657 glx_bind_pixmap ERROR ] Failed to query info of pixmap 0x00e003a7.
+[ 06/08/2022 20:35:18.657 paint_one ERROR ] Failed to bind texture for window 0x01c00098.
+[ 06/08/2022 20:35:18.657 paint_one ERROR ] Window 0x01c00098 is missing painting data.
+[ 06/08/2022 22:31:23.332 glx_bind_pixmap ERROR ] Failed to query info of pixmap 0x00e00c12.
+[ 06/08/2022 22:31:23.332 paint_one ERROR ] Failed to bind texture for window 0x01a000b4.
+[ 06/08/2022 22:31:23.332 paint_one ERROR ] Window 0x01a000b4 is missing painting data.
+[ 06/09/2022 00:07:37.534 glx_bind_pixmap ERROR ] Failed to query info of pixmap 0x00e01c27.
+[ 06/09/2022 00:07:37.675 paint_one ERROR ] Failed to bind texture for window 0x01a00067.
+[ 06/09/2022 00:07:37.675 paint_one ERROR ] Window 0x01a00067 is missing painting data.
+[ 06/09/2022 00:26:20.034 handle_queued_x_events FATAL ERROR ] X11 server connection broke (error 1)
+[ 06/09/2022 01:50:23.532 glx_bind_pixmap ERROR ] Failed to query info of pixmap 0x00e00317.
+[ 06/09/2022 01:50:23.532 paint_one ERROR ] Failed to bind texture for window 0x01a05783.
+[ 06/09/2022 01:50:23.532 paint_one ERROR ] Window 0x01a05783 is missing painting data.
+[ 06/09/2022 02:17:15.860 glx_bind_pixmap ERROR ] Failed to query info of pixmap 0x00e004e2.
+[ 06/09/2022 02:17:15.860 paint_one ERROR ] Failed to bind texture for window 0x01200220.
+[ 06/09/2022 02:17:15.860 paint_one ERROR ] Window 0x01200220 is missing painting data.
+[ 06/09/2022 02:17:16.078 glx_bind_pixmap ERROR ] Failed to query info of pixmap 0x00e004e3.
+[ 06/09/2022 02:17:16.078 paint_one ERROR ] Failed to bind texture for window 0x01200220.
+[ 06/09/2022 02:17:16.078 paint_one ERROR ] Window 0x01200220 is missing painting data.
+[ 06/09/2022 02:17:19.691 glx_bind_pixmap ERROR ] Failed to query info of pixmap 0x00e004f3.
+[ 06/09/2022 02:17:19.691 paint_one ERROR ] Failed to bind texture for window 0x01200220.
+[ 06/09/2022 02:17:19.691 paint_one ERROR ] Window 0x01200220 is missing painting data.
+[ 06/09/2022 05:18:34.628 glx_bind_pixmap ERROR ] Failed to query info of pixmap 0x00e00d14.
+[ 06/09/2022 05:18:34.629 paint_one ERROR ] Failed to bind texture for window 0x01200220.
+[ 06/09/2022 05:18:34.629 paint_one ERROR ] Window 0x01200220 is missing painting data.
+[ 06/09/2022 05:18:34.631 glx_bind_pixmap ERROR ] Failed to query info of pixmap 0x00e00d14.
+[ 06/09/2022 05:18:34.631 paint_one ERROR ] Failed to bind texture for window 0x01200220.
+[ 06/09/2022 05:18:34.631 paint_one ERROR ] Window 0x01200220 is missing painting data.
+[ 06/09/2022 05:20:46.908 glx_bind_pixmap ERROR ] Failed to query info of pixmap 0x00e00dd0.
+[ 06/09/2022 05:20:46.908 paint_one ERROR ] Failed to bind texture for window 0x01c00064.
+[ 06/09/2022 05:20:46.908 paint_one ERROR ] Window 0x01c00064 is missing painting data.
+[ 06/09/2022 05:24:56.236 glx_bind_pixmap ERROR ] Failed to query info of pixmap 0x00e00e2c.
+[ 06/09/2022 05:24:56.237 paint_one ERROR ] Failed to bind texture for window 0x01c00064.
+[ 06/09/2022 05:24:56.237 paint_one ERROR ] Window 0x01c00064 is missing painting data.
+[ 06/09/2022 05:40:55.544 glx_bind_pixmap ERROR ] Failed to query info of pixmap 0x00e01198.
+[ 06/09/2022 05:40:55.544 paint_one ERROR ] Failed to bind texture for window 0x0120217e.
+[ 06/09/2022 05:40:55.544 paint_one ERROR ] Window 0x0120217e is missing painting data.
+[ 06/09/2022 05:40:56.313 glx_bind_pixmap ERROR ] Failed to query info of pixmap 0x00e0119c.
+[ 06/09/2022 05:40:56.313 paint_one ERROR ] Failed to bind texture for window 0x01200212.
+[ 06/09/2022 05:40:56.313 paint_one ERROR ] Window 0x01200212 is missing painting data.
+[ 06/09/2022 06:25:25.724 glx_bind_pixmap ERROR ] Failed to query info of pixmap 0x00e02339.
+[ 06/09/2022 06:25:25.724 paint_one ERROR ] Failed to bind texture for window 0x01200212.
+[ 06/09/2022 06:25:25.724 paint_one ERROR ] Window 0x01200212 is missing painting data.
+[ 06/09/2022 06:25:25.732 glx_bind_pixmap ERROR ] Failed to query info of pixmap 0x00e02339.
+[ 06/09/2022 06:25:25.732 paint_one ERROR ] Failed to bind texture for window 0x01200212.
+[ 06/09/2022 06:25:25.732 paint_one ERROR ] Window 0x01200212 is missing painting data.
+[ 06/09/2022 06:25:33.087 glx_bind_pixmap ERROR ] Failed to query info of pixmap 0x00e0240a.
+[ 06/09/2022 06:25:33.087 paint_one ERROR ] Failed to bind texture for window 0x01200212.
+[ 06/09/2022 06:25:33.087 paint_one ERROR ] Window 0x01200212 is missing painting data.
+[ 06/09/2022 08:27:58.776 glx_bind_pixmap ERROR ] Failed to query info of pixmap 0x00e02b4f.
+[ 06/09/2022 08:27:58.776 paint_one ERROR ] Failed to bind texture for window 0x01a1879d.
+[ 06/09/2022 08:27:58.776 paint_one ERROR ] Window 0x01a1879d is missing painting data.
+[ 06/09/2022 08:27:58.777 glx_bind_pixmap ERROR ] Failed to query info of pixmap 0x00e02b4f.
+[ 06/09/2022 08:27:58.777 paint_one ERROR ] Failed to bind texture for window 0x01a1879d.
+[ 06/09/2022 08:27:58.777 paint_one ERROR ] Window 0x01a1879d is missing painting data.
+[ 06/09/2022 08:27:58.792 glx_bind_pixmap ERROR ] Failed to query info of pixmap 0x00e02b4f.
+[ 06/09/2022 08:27:58.792 paint_one ERROR ] Failed to bind texture for window 0x01a1879d.
+[ 06/09/2022 08:27:58.792 paint_one ERROR ] Window 0x01a1879d is missing painting data.
+[ 06/09/2022 08:27:58.809 glx_bind_pixmap ERROR ] Failed to query info of pixmap 0x00e02b4f.
+[ 06/09/2022 08:27:58.809 paint_one ERROR ] Failed to bind texture for window 0x01a1879d.
+[ 06/09/2022 08:27:58.809 paint_one ERROR ] Window 0x01a1879d is missing painting data.
+[ 06/09/2022 08:28:31.217 glx_bind_pixmap ERROR ] Failed to query info of pixmap 0x00e02b94.
+[ 06/09/2022 08:28:31.217 paint_one ERROR ] Failed to bind texture for window 0x01a18d71.
+[ 06/09/2022 08:28:31.217 paint_one ERROR ] Window 0x01a18d71 is missing painting data.
+[ 06/09/2022 08:28:31.227 glx_bind_pixmap ERROR ] Failed to query info of pixmap 0x00e02b94.
+[ 06/09/2022 08:28:31.227 paint_one ERROR ] Failed to bind texture for window 0x01a18d71.
+[ 06/09/2022 08:28:31.227 paint_one ERROR ] Window 0x01a18d71 is missing painting data.
+[ 06/10/2022 01:12:39.670 glx_bind_pixmap ERROR ] Failed to query info of pixmap 0x00e00a8b.
+[ 06/10/2022 01:12:39.670 paint_one ERROR ] Failed to bind texture for window 0x016001a5.
+[ 06/10/2022 01:12:39.670 paint_one ERROR ] Window 0x016001a5 is missing painting data.
+[ 06/10/2022 01:51:52.482 glx_bind_pixmap ERROR ] Failed to query info of pixmap 0x01c003cd.
+[ 06/10/2022 01:51:52.483 paint_one ERROR ] Failed to bind texture for window 0x00e07491.
+[ 06/10/2022 01:51:52.483 paint_one ERROR ] Window 0x00e07491 is missing painting data.
+[ 06/10/2022 02:14:58.709 glx_bind_pixmap ERROR ] Failed to query info of pixmap 0x01c00649.
+[ 06/10/2022 02:14:58.709 paint_one ERROR ] Failed to bind texture for window 0x016001a5.
+[ 06/10/2022 02:14:58.709 paint_one ERROR ] Window 0x016001a5 is missing painting data.
+[ 06/10/2022 02:55:58.479 glx_bind_pixmap ERROR ] Failed to query info of pixmap 0x01c00aa0.
+[ 06/10/2022 02:55:58.479 paint_one ERROR ] Failed to bind texture for window 0x016001a5.
+[ 06/10/2022 02:55:58.479 paint_one ERROR ] Window 0x016001a5 is missing painting data.
+[ 06/10/2022 03:06:36.958 session_init FATAL ERROR ] Another composite manager is already running
+[ 06/10/2022 03:08:20.076 handle_queued_x_events FATAL ERROR ] X11 server connection broke (error 1)
+[ 06/10/2022 03:21:09.797 handle_queued_x_events FATAL ERROR ] X11 server connection broke (error 1)
+[ 06/10/2022 03:34:30.607 session_init FATAL ERROR ] Another composite manager is already running
+[ 06/10/2022 03:37:33.114 session_init FATAL ERROR ] Another composite manager is already running
+[ 06/10/2022 04:09:54.569 session_init FATAL ERROR ] Another composite manager is already running
+[ 06/10/2022 04:15:28.731 glx_bind_pixmap ERROR ] Failed to query info of pixmap 0x0100070d.
+[ 06/10/2022 04:15:28.731 paint_one ERROR ] Failed to bind texture for window 0x006003c3.
+[ 06/10/2022 04:15:28.731 paint_one ERROR ] Window 0x006003c3 is missing painting data.
+[ 06/11/2022 01:29:56.705 glx_bind_pixmap ERROR ] Failed to query info of pixmap 0x0260032b.
+[ 06/11/2022 01:29:56.706 paint_one ERROR ] Failed to bind texture for window 0x00e06237.
+[ 06/11/2022 01:29:56.706 paint_one ERROR ] Window 0x00e06237 is missing painting data.
+[ 06/11/2022 01:55:45.401 glx_bind_pixmap ERROR ] Failed to query info of pixmap 0x01a005cd.
+[ 06/11/2022 01:55:45.401 paint_one ERROR ] Failed to bind texture for window 0x010000ac.
+[ 06/11/2022 01:55:45.401 paint_one ERROR ] Window 0x010000ac is missing painting data.
+[ 06/11/2022 02:22:47.670 glx_bind_pixmap ERROR ] Failed to query info of pixmap 0x01a00d0d.
+[ 06/11/2022 02:22:47.670 paint_one ERROR ] Failed to bind texture for window 0x00e00099.
+[ 06/11/2022 02:22:47.670 paint_one ERROR ] Window 0x00e00099 is missing painting data.
+[ 06/11/2022 02:22:53.342 glx_bind_pixmap ERROR ] Failed to query info of pixmap 0x01a00d1f.
+[ 06/11/2022 02:22:53.342 paint_one ERROR ] Failed to bind texture for window 0x00e00099.
+[ 06/11/2022 02:22:53.342 paint_one ERROR ] Window 0x00e00099 is missing painting data.
+[ 06/11/2022 02:39:39.436 glx_bind_pixmap ERROR ] Failed to query info of pixmap 0x01a0151f.
+[ 06/11/2022 02:39:39.436 paint_one ERROR ] Failed to bind texture for window 0x02200616.
+[ 06/11/2022 02:39:39.436 paint_one ERROR ] Window 0x02200616 is missing painting data.
+[ 06/11/2022 03:43:13.645 session_init FATAL ERROR ] Another composite manager is already running
+[ 06/11/2022 04:10:19.103 glx_bind_pixmap ERROR ] Failed to query info of pixmap 0x0220045c.
+[ 06/11/2022 04:10:19.103 paint_one ERROR ] Failed to bind texture for window 0x00e00099.
+[ 06/11/2022 04:10:19.103 paint_one ERROR ] Window 0x00e00099 is missing painting data.
+[ 06/11/2022 04:12:45.694 glx_bind_pixmap ERROR ] Failed to query info of pixmap 0x022004fa.
+[ 06/11/2022 04:12:45.694 paint_one ERROR ] Failed to bind texture for window 0x00e00099.
+[ 06/11/2022 04:12:45.694 paint_one ERROR ] Window 0x00e00099 is missing painting data.
+[ 06/11/2022 04:13:35.306 glx_bind_pixmap ERROR ] Failed to query info of pixmap 0x0220050c.
+[ 06/11/2022 04:13:35.306 paint_one ERROR ] Failed to bind texture for window 0x00e00099.
+[ 06/11/2022 04:13:35.306 paint_one ERROR ] Window 0x00e00099 is missing painting data.
+[ 06/11/2022 04:26:20.381 glx_bind_pixmap ERROR ] Failed to query info of pixmap 0x02200660.
+[ 06/11/2022 04:26:20.382 paint_one ERROR ] Failed to bind texture for window 0x00e00099.
+[ 06/11/2022 04:26:20.382 paint_one ERROR ] Window 0x00e00099 is missing painting data.
+[ 06/11/2022 04:42:37.158 glx_bind_pixmap ERROR ] Failed to query info of pixmap 0x0220078e.
+[ 06/11/2022 04:42:37.158 paint_one ERROR ] Failed to bind texture for window 0x00e00099.
+[ 06/11/2022 04:42:37.159 paint_one ERROR ] Window 0x00e00099 is missing painting data.
+[ 06/11/2022 14:34:00.622 glx_bind_pixmap ERROR ] Failed to query info of pixmap 0x01c0091b.
+[ 06/11/2022 14:34:00.622 paint_one ERROR ] Failed to bind texture for window 0x00e000dc.
+[ 06/11/2022 14:34:00.622 paint_one ERROR ] Window 0x00e000dc is missing painting data.
+[ 06/11/2022 19:06:41.496 glx_bind_pixmap ERROR ] Failed to query info of pixmap 0x01c01008.
+[ 06/11/2022 19:06:41.496 paint_one ERROR ] Failed to bind texture for window 0x00e00099.
+[ 06/11/2022 19:06:41.496 paint_one ERROR ] Window 0x00e00099 is missing painting data.
+[ 06/12/2022 12:42:44.536 glx_bind_pixmap ERROR ] Failed to query info of pixmap 0x02400396.
+[ 06/12/2022 12:42:44.536 paint_one ERROR ] Failed to bind texture for window 0x00e01f0a.
+[ 06/12/2022 12:42:44.536 paint_one ERROR ] Window 0x00e01f0a is missing painting data.
+[ 06/14/2022 12:53:04.795 glx_bind_pixmap ERROR ] Failed to query info of pixmap 0x02800381.
+[ 06/14/2022 12:53:04.795 paint_one ERROR ] Failed to bind texture for window 0x0140006c.
+[ 06/14/2022 12:53:04.795 paint_one ERROR ] Window 0x0140006c is missing painting data.
+[ 06/14/2022 13:21:34.719 glx_bind_pixmap ERROR ] Failed to query info of pixmap 0x01600428.
+[ 06/14/2022 13:21:34.719 paint_one ERROR ] Failed to bind texture for window 0x01a00450.
+[ 06/14/2022 13:21:34.719 paint_one ERROR ] Window 0x01a00450 is missing painting data.
+[ 06/14/2022 13:21:38.027 glx_bind_pixmap ERROR ] Failed to query info of pixmap 0x01600485.
+[ 06/14/2022 13:21:38.027 paint_one ERROR ] Failed to bind texture for window 0x01a00450.
+[ 06/14/2022 13:21:38.027 paint_one ERROR ] Window 0x01a00450 is missing painting data.
+[ 06/14/2022 13:21:39.830 glx_bind_pixmap ERROR ] Failed to query info of pixmap 0x0160048e.
+[ 06/14/2022 13:21:39.830 paint_one ERROR ] Failed to bind texture for window 0x0240018a.
+[ 06/14/2022 13:21:39.830 paint_one ERROR ] Window 0x0240018a is missing painting data.
+[ 06/14/2022 13:22:35.144 handle_queued_x_events FATAL ERROR ] X11 server connection broke (error 1)
+[ 06/14/2022 13:39:00.607 handle_queued_x_events FATAL ERROR ] X11 server connection broke (error 1)
+[ 06/14/2022 16:29:26.030 glx_bind_pixmap ERROR ] Failed to query info of pixmap 0x012010a0.
+[ 06/14/2022 16:29:26.030 paint_one ERROR ] Failed to bind texture for window 0x02800083.
+[ 06/14/2022 16:29:26.030 paint_one ERROR ] Window 0x02800083 is missing painting data.
+[ 06/14/2022 16:42:02.661 glx_bind_pixmap ERROR ] Failed to query info of pixmap 0x01201274.
+[ 06/14/2022 16:42:02.661 paint_one ERROR ] Failed to bind texture for window 0x0080945b.
+[ 06/14/2022 16:42:02.661 paint_one ERROR ] Window 0x0080945b is missing painting data.
+[ 06/14/2022 16:55:54.445 session_init FATAL ERROR ] Another composite manager is already running
+[ 06/15/2022 15:31:16.637 glx_bind_pixmap ERROR ] Failed to query info of pixmap 0x0120051c.
+[ 06/15/2022 15:31:16.637 paint_one ERROR ] Failed to bind texture for window 0x02000075.
+[ 06/15/2022 15:31:16.637 paint_one ERROR ] Window 0x02000075 is missing painting data.

@@ -1,1 +1,0 @@
-../../_secured/eww/script/logger.zsh

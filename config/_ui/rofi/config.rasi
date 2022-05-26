@@ -1,0 +1,106 @@
+configuration {
+  modi: "drun,run,window";
+  lines: 5;
+  font: "Cooper Hewitt 15";
+  show-icons: true;
+  icon-theme: "Papirus";
+  terminal: "st";
+  drun-display-format: "{icon} {name}";
+  run-display-format: "{name}";
+  location: 0;
+  disable-history: false;
+  hide-scrollbar: true;
+  display-drun: " Apps ";
+  display-run: " Run ";
+  display-window: " Window ";
+  sidebar-mode: true;
+}
+
+@theme "theme"
+
+element-text,
+element-icon,
+mode-switcher {
+  background-color: inherit;
+  text-color: inherit;
+}
+
+mode-switcher {
+  padding-bottom: 10em;
+}
+
+window {
+  height: 50%;
+  width: 40%;
+  border: 0.2em;
+  border-color: @border-col;
+  background-color: @bg-col;
+}
+
+mainbox {
+  background-color: @bg-col;
+}
+
+inputbar {
+  children: [prompt,entry];
+  background-color: @bg-col;
+  border-radius: 0.3em;
+  padding: 2px;
+}
+
+prompt {
+  background-color: @blue;
+  padding: 16px 16px 14px 16px;
+  text-color: @bg-col;
+  border-radius: 2px;
+  margin: 20px 0px 0px 20px;
+}
+
+entry {
+  vertical-align: 0.5;
+  margin: 25px 0px 0px 0.5em;
+  text-color: @fg-col;
+  background-color: @bg-col;
+}
+
+listview {
+  padding: 25px;
+  columns: 2;
+  background-color: @bg-col;
+}
+
+element {
+  padding: 25px;
+  background-color: @bg-col;
+  text-color: @fg-col  ;
+}
+
+element-text {
+  vertical-align: 0.5;
+}
+
+element-icon {
+  size: 3em;
+}
+
+element selected {
+  background-color:  @selected-col ;
+  text-color: @fg-col2  ;
+}
+
+mode-switcher {
+  spacing: 0;
+}
+
+button {
+  padding: 10px;
+  background-color: @bg-col-light;
+  text-color: @grey;
+  vertical-align: 0.5; 
+  horizontal-align: 0.5;
+}
+
+button selected {
+  background-color: @bg-col;
+  text-color: @blue;
+}
