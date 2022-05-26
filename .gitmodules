@@ -9,3 +9,6 @@
 [submodule "home/.themes"]
   path = home/.themes
   url = https://github.com/pagankeymaster/phocused.git
+[submodule "home/.mozilla/profiles/Minimal/chrome"]
+	path = home/.mozilla/profiles/Minimal/chrome
+	url = https://github.com/pagankeymaster/nightfall.git
