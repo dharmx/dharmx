@@ -1,7 +1,7 @@
 function _smooth_fzf() {
     local fname
     local current_dir=$PWD
-    cd "$HOME/Dotfiles/nightly"
+    cd "${XDG_CONFIG_HOME:-HOME/.config}"
     fname="$(fzf)" || return
     $EDITOR "$fname"
     cd "$current_dir"
