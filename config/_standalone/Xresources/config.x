@@ -7,6 +7,7 @@ Xft.hintstyle:                    hintslight
 Xft.rgba:                         rgb
 Xft.lcdfilter:                    lcddefault
 Xft.dpi:                          96
+*.Xcursor.size:                   24
 
 st.chscale:                       1.2
 st.borderpx:                      20
