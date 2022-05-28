@@ -142,7 +142,7 @@ XF86Audio{Play,Stop,Next,Prev}
   playerctl {play-pause,pause,next,previous}
 
 {XF86Search,super + XF86AudioPlay}
-  {rofi -show run,$XDG_CONFIG_HOME/rofi/scripts/player.py}
+  {rofi -show run,$XDG_CONFIG_HOME/rofi/scripts/player.zsh}
 
 super + Menu
   jgmenu_run &
@@ -173,9 +173,6 @@ ctrl + shift + Escape
 super + n
   $HOME/.scripts/notify/redshift.bash
 
-## jgmenu
-super + ctrl + button3
-  jgmenu_run &
 #
 # Screenshot
 #
@@ -239,5 +236,9 @@ super + w ; 1
 
 super + w ; 2
   eww open --toggle disclose
+
+~button3
+  bspc query -D -d focused.!occupied && jgmenu_run
+  # xqp 0 $(xdo id -N bspwm -n root) && jgmenu_run
 
 # vim:ft=sxhkdrc

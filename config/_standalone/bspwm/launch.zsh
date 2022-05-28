@@ -13,6 +13,10 @@ fi
 xsetroot -cursor_name left_ptr
 
 # start eww
+bspc subscribe node_state | while read -r _ _ _ _ state flag; do
+    [ $ $state = fullscreen ] && continue
+    [ $flag = on ] && xdo lower -N eww-vertigo || xdo raise -N eww-vertigo
+done &
 eww open vertigo &
 
 # start system tray

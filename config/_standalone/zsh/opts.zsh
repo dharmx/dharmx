@@ -1,6 +1,6 @@
 YTFZF_CONFIG_DIR="$XDG_CONFIG_HOME/ytfzf"
 YTFZF_CONFIG_FILE="$YTFZF_CONFIG_DIR/conf.sh"
-MANPAGER='nvim +Man! +"set nocul" +"set noshowcmd" +"set noruler" +"set noshowmode" +"set laststatus=0"'
+MANPAGER='nvim +Man! +"set nocul" +"set noshowcmd" +"set noruler" +"set noshowmode" +"set laststatus=0" +"set showtabline=0" +"set nonumber"'
 
 umask 022
 zmodload zsh/zle

@@ -1,6 +1,6 @@
 #!/usr/bin/env zsh
 
-typeset -g CACHE_PATH="${XDG_CACHE_HOME:-HOME/.cache}/bspwm_floating.check"
+typeset -g CACHE_PATH="${XDG_CACHE_HOME:-~/.cache}/bspwm_floating.check"
 
 function start() {
   print > "$CACHE_PATH"

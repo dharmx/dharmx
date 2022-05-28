@@ -1,5 +1,5 @@
-# Monitor settings
-pgrep -x sxhkd >/dev/null || sxhkd -c "$XDG_CONFIG_HOME/sxhkd/config.sxhkdrc" &
+# Start keyboard daemon
+pgrep -x sxhkd >/dev/null || sxhkd -c "$XDG_CONFIG_HOME/sxhkd/config.sx" &
 
 # Workspaces
 bspc monitor -d 1 2 3

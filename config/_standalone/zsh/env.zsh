@@ -4,6 +4,7 @@ typeset -gx VISUAL="nvim"
 typeset -gx EDITOR="nvim"
 typeset -gx MANPAGER="less -s -M +Gg"
 typeset -gx LESS="--RAW-CONTROL-CHARS"
+typeset -gx XDG_SESSION_TYPE="x11"
 
 typeset -gx XDG_CONFIG_HOME="$HOME/.config"
 typeset -gx XDG_CACHE_HOME="$HOME/.cache"
