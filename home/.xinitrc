@@ -6,6 +6,7 @@ xrdb -I$XDG_CONFIG_HOME/Xresources $XDG_CONFIG_HOME/Xresources/config.x
 # SEE: https://unix.stackexchange.com/a/295652/332452
 # shellcheck source=/dev/null
 source "/etc/X11/xinit/xinitrc.d/50-systemd-user.sh"
+typeset -gx XDG_SESSION_TYPE="x11"
 
 # see https://wiki.archlinux.org/title/GNOME/Keyring#xinitrc
 eval "$(/usr/bin/gnome-keyring-daemon --start)"
