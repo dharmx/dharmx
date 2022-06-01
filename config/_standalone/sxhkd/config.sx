@@ -243,14 +243,7 @@ super + slash
 
 # lock screen
 super + shift + slash
-  /usr/bin/i3lock --beep --image="$XDG_PICTURES_DIR/wallpapers/radium/geo-night.jpg" \
-    --max --pointer=default --ignore-empty-password --show-failed-attempts \
-    --radius 40 --wrong-text=" " --wrong-font="Iosevka Nerd Font" \
-    --wrong-pos 955:200 --wrong-size="100" --greeter-text=" " \
-    --greeter-font="Iosevka Nerd Font" --greeter-size="80" --greeter-pos 955:950 \
-    --no-modkey-text --bar-indicator --bar-direction=2 --bar-base-width 40 \
-    --bar-pos 0:1085 --bar-count 10 \
-    --pass-media-keys --pass-screen-keys --pass-volume-keys --pass-power-keys
+  i3lock --blur 0.5 --pointer=default --ignore-empty-password --radius 40 --no-modkey-text --pass-media-keys --pass-screen-keys --pass-volume-keys --pass-power-keys
 
 ~Escape
   eval "[ $(bspc query --tree --node | jq .client.className) = Pavucontrol ] && bspc node --close"
