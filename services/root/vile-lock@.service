@@ -1,0 +1,16 @@
+[Unit]
+Description=Lock screen when going to sleep or suspend
+Before=sleep.target
+Before=suspend.target
+
+[Service]
+Type=forking
+User=%I
+Environment=DISPLAY=:0
+ExecStart=/usr/bin/i3lock --beep --image="/home/maker/Pictures/wallpapers/radium/geo-night.jpg" --max --pointer=default --ignore-empty-password --show-failed-attempts --radius 40 --wrong-text=" " --wrong-font="Iosevka Nerd Font" --wrong-pos 955:200 --wrong-size="100" --greeter-text=" " --greeter-font="Iosevka Nerd Font" --greeter-size="80" --greeter-pos 955:950 --no-modkey-text --bar-indicator --bar-direction=2 --bar-base-width 40 --bar-pos 0:1085 --bar-count 10 --pass-media-keys --pass-screen-keys --pass-volume-keys --pass-power-keys
+TimeoutSec=infinity
+ExecStartPost=/usr/bin/sleep 1
+
+[Install]
+WantedBy=sleep.target
+WantedBy=suspend.target

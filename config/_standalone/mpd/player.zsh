@@ -1,0 +1,1 @@
+../../_secured/eww/script/player.zsh

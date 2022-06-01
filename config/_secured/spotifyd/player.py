@@ -1,0 +1,1 @@
+../eww/script/player.py

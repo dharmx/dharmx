@@ -12,18 +12,18 @@ fi
 
 xsetroot -cursor_name left_ptr
 
-# start eww
+# monitor and keep eww bar below all windows
 bspc subscribe node_state | while read -r _ _ _ _ state flag; do
-    [ $ $state = fullscreen ] && continue
-    [ $flag = on ] && xdo lower -N eww-vertigo || xdo raise -N eww-vertigo
+    [ $state = fullscreen ] && [ $flag = on ] && xdo lower -N eww-vertigo
 done &
-eww open vertigo &
+
+# open eww bar
+# eww open vertigo &
 
 # start system tray
 stalonetray &
 
-# NetworkManager is the most popular way to manage wireless networks on Linux,
-# and nm-applet is a desktop environment-independent system tray GUI for it.
+# start nm-applet for managing networks
 # nm-applet &
 
 # Start blueman applet for bluetooth
