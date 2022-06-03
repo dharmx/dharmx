@@ -74,7 +74,7 @@ def _draw_right_status(screen: Screen, is_last: bool) -> int:
     date = datetime.datetime.now().strftime("  %H:%M")
     utc_date = datetime.datetime.now(datetime.timezone.utc).strftime(" (UTC %H:%M)")
 
-    right_status_length = calc_draw_spaces(date + " " + utc_date + " ")
+    right_status_length = calc_draw_spaces(f"{date} {utc_date} ")
 
     draw_spaces = screen.columns - screen.cursor.x - right_status_length
     if draw_spaces > 0:

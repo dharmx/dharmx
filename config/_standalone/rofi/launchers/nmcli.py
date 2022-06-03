@@ -38,12 +38,17 @@ def run_rofi(alts, prompt="Settings", strip=True, force_alts=False, max_lines=20
     """
     lines = max(min(max_lines, len(alts)), 1);
 
-    rofi = Popen(["rofi", "-i", "-dmenu", "-l", str(lines), "-p", prompt + ": "], stdout=PIPE, stdin=PIPE)
+    rofi = Popen(
+        ["rofi", "-i", "-dmenu", "-l", str(lines), "-p", f"{prompt}: "],
+        stdout=PIPE,
+        stdin=PIPE,
+    )
+
     selected = rofi.communicate("\n".join(alts).encode("utf-8"))[0].decode("utf-8")
 
     if strip:
         selected = selected.strip();
-    
+
     return selected;
 
 
@@ -53,13 +58,13 @@ def choose_adapter(client):
     """
     devices = client.get_devices()
     devices = [i for i in devices if i.get_device_type() == NM.DeviceType.WIFI]
-    if len(devices) == 0:
+    if not devices:
         return None
     elif len(devices) == 1:
         return devices[0]
 
     sel = run_rofi([d.get_iface() for d in devices], "Choose Adapter")
-    
+
     if not sel:
         sys.exit()
 
@@ -76,10 +81,14 @@ def create_other_actions(client):
     networking_action = "Disable" if networking_enabled else "Enable"
     wifi_enabled = client.wireless_get_enabled()
     wifi_action = "Disable" if wifi_enabled else "Enable"
-    return [Action("{} Wifi".format(wifi_action), toggle_wifi,
-                   not wifi_enabled),
-            Action("{} Networking".format(networking_action),
-                   toggle_networking, not networking_enabled)]
+    return [
+        Action(f"{wifi_action} Wifi", toggle_wifi, not wifi_enabled),
+        Action(
+            f"{networking_action} Networking",
+            toggle_networking,
+            not networking_enabled,
+        ),
+    ]
 
 
 def ssid_to_utf8(ap):
@@ -106,7 +115,7 @@ def ap_security(ap):
         sec_str += " 802.1X"
 
     # If there is no security use "--"
-    if sec_str == "":
+    if not sec_str:
         sec_str = "--"
     return sec_str.lstrip()
 
@@ -147,10 +156,7 @@ def process_ap(ap, is_active):
         if len(con) == 1:
             client.activate_connection_async(con[0])
         else:
-            if ap_security(ap) != "--":
-                password = get_passphrase()
-            else:
-                password = ""
+            password = get_passphrase() if ap_security(ap) != "--" else ""
             set_new_connection(ssid_to_utf8(ap), password)
 
 
@@ -165,9 +171,9 @@ def create_ap_actions(aps, active_ap, active_connection):
     active_ap_bssid = active_ap.get_bssid() if active_ap is not None else ""
 
     names = [ssid_to_utf8(ap) for ap in aps]
-    max_len_name = max([len(name) for name in names]) if names else 0
+    max_len_name = max((len(name) for name in names), default=0)
     secs = [ap_security(ap) for ap in aps]
-    max_len_sec = max([len(sec) for sec in secs]) if secs else 0
+    max_len_sec = max((len(sec) for sec in secs), default=0)
 
     ap_actions = []
 
@@ -204,7 +210,7 @@ def _create_vpngsm_actions(cons, active_cons, label):
     for con in cons:
         is_active = con.get_id() in active_con_ids
         active_flag = "**" if is_active else "  "
-        action_name = "{} {}:{}".format(active_flag, con.get_id(), label)
+        action_name = f"{active_flag} {con.get_id()}:{label}"
         if is_active:
             active_connection = [a for a in active_cons
                                  if a.get_id() == con.get_id()]
@@ -246,7 +252,7 @@ def get_selection(client, aps, vpns, gsms, others):
 
 
     inp_bytes = "\n".join([str(i) for i in inp]) 
-         
+
     inp_bytes = inp_bytes.encode(ENC)
     sel = run_rofi([str(i) for i in inp], strip=False)
 
@@ -255,7 +261,7 @@ def get_selection(client, aps, vpns, gsms, others):
 
     action = [i for i in aps + vpns + gsms + others
               if str(i) == sel.rstrip("\n")]
-    assert len(action) == 1, "Selection was ambiguous: {}, {}".format(str(sel), str(action))
+    assert len(action) == 1, f"Selection was ambiguous: {str(sel)}, {action}"
     return action[0]
 
 
@@ -310,9 +316,7 @@ def set_new_connection(ssid, pw):
 def run():
     active = client.get_active_connections()
 
-    adapter = choose_adapter(client)
-
-    if adapter:
+    if adapter := choose_adapter(client):
         aps = sorted(adapter.get_access_points(),
                      key=lambda a: a.get_strength(), reverse=True)
         active_ap = adapter.get_active_access_point()

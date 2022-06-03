@@ -3,6 +3,7 @@
 Uses OpenWeather API
 """
 
+
 import sys
 from datetime import datetime
 from json import dumps, loads
@@ -15,7 +16,7 @@ from requests import get
 xdg_config: str = getenv("XDG_CONFIG_HOME")
 xdg_cache: str = getenv("XDG_CACHE_HOME")
 
-date: str = datetime.today().strftime("%Y-%m-%d")
+date: str = datetime.now().strftime("%Y-%m-%d")
 cache: str = f"{xdg_cache}/weather"
 
 
@@ -30,19 +31,15 @@ def cachedirexists() -> None:
 
 def checkrecord(cachedate: str = date) -> bool:
     """Checks if today's weather has already been cached"""
-    if f"weather-{cachedate}.json" in listdir(f"{cache}"):
-        return True
-    return False
+    return f"weather-{cachedate}.json" in listdir(f"{cache}")
 
 
 def validatecache(cachedate: str = date) -> bool:
     """Sees if the specific cache is valid or, has been rate-limited"""
-    if not f"weather-{cachedate}.json" in listdir(f"{cache}"):
+    if f"weather-{cachedate}.json" not in listdir(f"{cache}"):
         return False
     with open(f"{cache}/weather-{cachedate}.json", encoding="utf-8") as file:
-        if '"message"' in file.read():
-            return False
-        return True
+        return '"message"' not in file.read()
 
 
 def preparelink() -> str:

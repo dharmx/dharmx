@@ -242,7 +242,7 @@ file_node_extensions = {
 
 mounted_dirs = listdir(f"{HOME}/Mounted")
 dir_node_exact_matches = {
-# English
+    # English
     '.local': '',
     '.npm': '',
     '.vscode': '',
@@ -268,71 +268,66 @@ dir_node_exact_matches = {
     '.oh-my-zsh': '',
     '.oh-my-bash': '',
     'omf': '',
-    '.git'                             : '',
-    'Desktop'                          : '',
-    'Documents'                        : '',
-    'Downloads'                        : '',
-    'Dropbox'                          : '',
-    'Music'                            : '',
-    'Pictures'                         : '',
-    'Public'                           : '',
-    'Templates'                        : '',
-    'Videos'                           : '',
-# Spanish
-    'Escritorio'                       : '',
-    'Documentos'                       : '',
-    'Descargas'                        : '',
-    'Música'                           : '',
-    'Imágenes'                         : '',
-    'Público'                          : '',
-    'Plantillas'                       : '',
-    'Vídeos'                           : '',
-# French
-    'Bureau'                           : '',
-    'Documents'                        : '',
-    'Images'                           : '',
-    'Musique'                          : '',
-    'Publique'                         : '',
-    'Téléchargements'                  : '',
-    'Vidéos'                           : '',
-# Portuguese
-    'Documentos'                       : '',
-    'Imagens'                          : '',
-    'Modelos'                          : '',
-    'Música'                           : '',
-    'Público'                          : '',
-    'Vídeos'                           : '',
-    'Área de trabalho'                 : '',
-# Italian
-    'Documenti'                        : '',
-    'Immagini'                         : '',
-    'Modelli'                          : '',
-    'Musica'                           : '',
-    'Pubblici'                         : '',
-    'Scaricati'                        : '',
-    'Scrivania'                        : '',
-    'Video'                            : '',
-# German
-    'Bilder'                           : '',
-    'Dokumente'                        : '',
-    'Musik'                            : '',
-    'Schreibtisch'                     : '',
-    'Vorlagen'                         : '',
-    'Öffentlich'                       : '',
-# Hungarian
-    'Dokumentumok'                     : '',
-    'Képek'                            : '',
-    'Modelli'                          : '',
-    'Zene'                             : '',
-    'Letöltések'                       : '',
-    'Számítógép'                       : '',
-    'Videók'                           : '',
-}
-
-# Python 2.x-3.4 don't support unpacking syntex `{**dict}`
-# XDG_USER_DIRS
-dir_node_exact_matches.update(xdgs_dirs)
-
+    '.git': '',
+    'Desktop': '',
+    'Documents': '',
+    'Downloads': '',
+    'Dropbox': '',
+    'Music': '',
+    'Pictures': '',
+    'Public': '',
+    'Templates': '',
+    'Videos': '',
+    # Spanish
+    'Escritorio': '',
+    'Documentos': '',
+    'Descargas': '',
+    'Música': '',
+    'Imágenes': '',
+    'Público': '',
+    'Plantillas': '',
+    'Vídeos': '',
+    # French
+    'Bureau': '',
+    'Documents': '',
+    'Images': '',
+    'Musique': '',
+    'Publique': '',
+    'Téléchargements': '',
+    'Vidéos': '',
+    # Portuguese
+    'Documentos': '',
+    'Imagens': '',
+    'Modelos': '',
+    'Música': '',
+    'Público': '',
+    'Vídeos': '',
+    'Área de trabalho': '',
+    # Italian
+    'Documenti': '',
+    'Immagini': '',
+    'Modelli': '',
+    'Musica': '',
+    'Pubblici': '',
+    'Scaricati': '',
+    'Scrivania': '',
+    'Video': '',
+    # German
+    'Bilder': '',
+    'Dokumente': '',
+    'Musik': '',
+    'Schreibtisch': '',
+    'Vorlagen': '',
+    'Öffentlich': '',
+    # Hungarian
+    'Dokumentumok': '',
+    'Képek': '',
+    'Modelli': '',
+    'Zene': '',
+    'Letöltések': '',
+    'Számítógép': '',
+    'Videók': '',
+} | xdgs_dirs
 
 file_node_exact_matches = {
     '.bash_aliases'                    : '',
