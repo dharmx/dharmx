@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 # shellcheck disable=2154,1091
 
-source "$HOME/.scripts/notify/factory.bash"
+source "$HOME/.bin/notify/factory.bash"
 
 _cases() {
 	BRIGHTNESS=$(xbacklight -get)

@@ -1,4 +1,4 @@
-source "$HOME/.scripts/base/colors.sh"
+source "$HOME/.bin/base/colors.sh"
 
 notify_backlight() {
 	if [[ "$5" == "warn" ]]; then

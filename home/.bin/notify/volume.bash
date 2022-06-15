@@ -4,7 +4,7 @@ MUTED=""
 DEFAULT_SOURCE=""
 LEVEL=""
 
-source "$HOME/.scripts/notify/factory.bash"
+source "$HOME/.bin/notify/factory.bash"
 
 get_level() {
 	refetch
