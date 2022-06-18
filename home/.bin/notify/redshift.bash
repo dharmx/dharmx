@@ -1,14 +1,12 @@
 #!/bin/env bash
 
-source "$HOME/.bin/notify/factory.bash"
-
-FILE="$XDG_CACHE_HOME/redshift_launch"
-if [[ ! -f "$FILE" ]]; then
-	touch "$FILE"
+on="$(pidof redshift)"
+if [ ! "$on" ]; then
 	redshift &
-	night "nightmode-on" "Nightmode" "Nightmode has been turned on"
+	notify-send -a "nightmode" -i "night-light-symbolic" "Nightmode" "Nightmode has been turned on"
 else
-	killall redshift &
-	rm "$FILE"
-	night "nightmode-off" "Nightmode" "Nightmode has been turned off"
+    kill "$on"
+	notify-send -a "nightmode" -i "night-light-disabled-symbolic" "Nightmode" "Nightmode has been turned off"
 fi
+
+# vim:filetype=sh

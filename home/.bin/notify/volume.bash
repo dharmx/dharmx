@@ -4,7 +4,9 @@ MUTED=""
 DEFAULT_SOURCE=""
 LEVEL=""
 
-source "$HOME/.bin/notify/factory.bash"
+volume() {
+	notify-send -a "volume" -u "$1" -h "int:value:$2" "$3" "$4" -i "$5"
+}
 
 get_level() {
 	refetch

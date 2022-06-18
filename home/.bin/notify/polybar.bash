@@ -11,3 +11,5 @@ else
 	polybar-msg cmd hide && bspc config bottom_padding 0 && notify-send -a "bar" -i "visible" "Polybar" "Polybar is now hidden. Unhide with Super + Shift + Slash."
 	rm "$FILE"
 fi
+
+# vim:filetype=sh
