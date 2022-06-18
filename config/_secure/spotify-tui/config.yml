@@ -9,7 +9,7 @@ theme:
   hint: Blue # hint text in errors
   hovered: Green # hovered pane border
   inactive: Cyan # borders of inactive panes
-  playbar_background: Grey # background of progress bar
+  playbar_background: Gray # background of progress bar
   playbar_progress: LightBlue # filled-in part of the progress bar
   playbar_progress_text: Yellow # song length and time played/left indicator in the progress bar
   playbar_text: White # artist name in player pane

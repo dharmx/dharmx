@@ -1,17 +1,17 @@
 /* =========================== Color Palette ============================= */
-/* #242830      - Blue-gray (Main Background)                              */
-/* #38393F      - Light Blue-gray                                          */
+/* #1c2026      - Blue-gray (Main Background)                              */
+/* #54ced6      - Light Blue-gray                                          */
 /* #d4d4d5      - "White"                                                  */
-/* #23242A      - Lighter Gray                                             */
+/* #171C21      - Lighter Gray                                             */
 /* #949494      - Light Grey                                               */
-/* #27282D      - Gray                                                     */
+/* #20252b      - Gray                                                     */
 /* #101317      - Dark Gray                                                */
 /* #7ab0df      - Cyan (Primary)                                           */
-/* #36C692      - Light Cyan (Primary Light - unused)                      */
+/* #36c692      - Light Cyan (Primary Light - unused)                      */
 /* #70c0ba      - Dark Cyan (Primary Dark)                                 */
-/* #79DCAA      - Pink (Secondary)                                         */
+/* #79dcaa      - Pink (Secondary)                                         */
 /* #f87070      - Light Pink (Secondary Light)                             */
-/* #B77EE0      - Dark Pink (Secondary Dark)                               */
+/* #b77ee0      - Dark Pink (Secondary Dark)                               */
 /* ======================================================================= */
 
 
@@ -20,25 +20,25 @@
 /************************/
 
 OBSTheme {
-	window: #242830; /* Blue-gray */
+	window: #1c2026; /* Blue-gray */
 	windowText: #d4d4d5; /* White */
 	base: #70c0ba; /* Dark Cyan (Primary Dark) */
-	alternateBase: #B77EE0; /* Dark Pink (Secondary Dark) */
-	text: #23242A; /* White */
-	button: #36C692; /* Cyan (Primary) */
-	buttonText: #23242A; /* White */
+	alternateBase: #b77ee0; /* Dark Pink (Secondary Dark) */
+	text: #171C21; /* White */
+	button: #36c692; /* Cyan (Primary) */
+	buttonText: #171C21; /* White */
 	brightText: #f87070; /* Light Pink (Secondary Light) */
 
-	light: #23242A; /* Lighter Gray */
+	light: #171C21; /* Lighter Gray */
 	mid: #949494; /* Light Grey */
-	dark: #27282D; /* Gray */
+	dark: #20252b; /* Gray */
 	shadow: #101317; /* Dark Gray */
 
-	highlight: #36C692; /* Light Cyan (Primary Light) */
+	highlight: #36c692; /* Light Cyan (Primary Light) */
 	highlightedText: rgb(0,0,0);
 
-	link: #36C692; /* Light Cyan (Primary Light) */
-	linkVisited: #36C692; /* Light Cyan (Primary Light) */
+	link: #36c692; /* Light Cyan (Primary Light) */
+	linkVisited: #36c692; /* Light Cyan (Primary Light) */
 }
 
 OBSTheme::disabled {
@@ -59,7 +59,7 @@ OBSTheme::inactive {
 
 SourceTree::item:selected:!active {
 	color: palette(window-text);
-	background-color: #79DCAA; /* Light Pink (Secondary Light) */
+	background-color: #79dcaa; /* Light Pink (Secondary Light) */
 	border: none;
 }
 
@@ -102,7 +102,7 @@ QWidget {
 }
 
 QWidget::disabled {
-	color: 2px solid #79DCAA; /* Light Pink (Secondary Light) */
+	color: 2px solid #79dcaa; /* Light Pink (Secondary Light) */
 }
 
 QWidget:item:hover {
@@ -142,7 +142,7 @@ QListWidget QLineEdit {
 
 QListWidget::item:selected:!active {
 	color: palette(window-text);
-	background-color: #79DCAA; /* Light Pink (Secondary Light) */
+	background-color: #79dcaa; /* Light Pink (Secondary Light) */
 	border: none;
 }
 
@@ -170,7 +170,7 @@ QDockWidget {
 
 QDockWidget {
 	background: palette(window);
-	border: 1px solid #38393F; /* Light Blue-gray */
+	border: 1px solid #54ced6; /* Light Blue-gray */
 }
 
 QDockWidget::title {
@@ -187,12 +187,12 @@ QDockWidget::close-button, QDockWidget::float-button {
 }
 
 QDockWidget::close-button:hover, QDockWidget::float-button:hover {
-	background: #79DCAA; /* Light Pink (Secondary Light) */
+	background: #79dcaa; /* Light Pink (Secondary Light) */
 }
 
 QDockWidget::close-button:pressed, QDockWidget::float-button:pressed {
 	padding: 1px -1px -1px 1px;
-	background: #79DCAA; /* Light Pink (Secondary Light) */
+	background: #79dcaa; /* Light Pink (Secondary Light) */
 }
 
 
@@ -209,7 +209,7 @@ QGroupBox {
 }
 
 QGroupBox::title {
-	color: #79DCAA; /* Pink (Secondary) */
+	color: #79dcaa; /* Pink (Secondary) */
 	left: 20px;
 	top: -7px;
 	padding-left: 5px;
@@ -455,7 +455,7 @@ QToolButton:hover {
 }
 
 QToolButton:pressed {
-	background-color: #79DCAA; /* Pink (Secondary) */
+	background-color: #79dcaa; /* Pink (Secondary) */
 	border-radius: 2px;
 }
 
@@ -610,7 +610,7 @@ QCheckBox {
 }
 
 QCheckBox:hover, QCheckBox:focus {
-	color: #79DCAA; /* Pink (Secondary) */
+	color: #79dcaa; /* Pink (Secondary) */
 }
 
 QCheckBox:disabled {
@@ -828,13 +828,13 @@ QPushButton:hover {
 }
 
 QPushButton:pressed {
-	background-color: #79DCAA; /* Pink (Secondary) */
-	border: 1px solid #79DCAA; /* Pink (Secondary) */
+	background-color: #79dcaa; /* Pink (Secondary) */
+	border: 1px solid #79dcaa; /* Pink (Secondary) */
 }
 
 QPushButton:checked:pressed {
-	background-color: #79DCAA; /* Pink (Secondary) */
-	border: 1px solid #79DCAA; /* Pink (Secondary) */
+	background-color: #79dcaa; /* Pink (Secondary) */
+	border: 1px solid #79dcaa; /* Pink (Secondary) */
 }
 
 QPushButton:checked {
@@ -877,7 +877,7 @@ QDialogButtonBox QPushButton:hover {
 }
 
 QDialogButtonBox QPushButton:pressed {
-	background-color: #79DCAA; /* Pink (Secondary) */
+	background-color: #79dcaa; /* Pink (Secondary) */
 }
 
 QDialogButtonBox QPushButton:disabled {
@@ -927,8 +927,8 @@ QPushButton:pressed[themeID="replayBufferButton"],
 QPushButton:pressed#modeSwitch,
 QPushButton:pressed#settingsButton,
 QPushButton:pressed#exitButton {
-	background-color: #79DCAA; /* Pink (Secondary) */
-	border: 1px solid #79DCAA; /* Pink (Secondary) */
+	background-color: #79dcaa; /* Pink (Secondary) */
+	border: 1px solid #79dcaa; /* Pink (Secondary) */
 }
 
 QPushButton:checked#streamButton,
@@ -1006,7 +1006,7 @@ QLabel#scenesLabel,
 QLabel#sourcesLabel,
 QLabel#mixerLabel,
 QLabel#sceneTransitionsLabel {
-	color: #79DCAA; /* Pink (Secondary) */
+	color: #79dcaa; /* Pink (Secondary) */
 	margin-top: 5px;
 }
 
@@ -1165,7 +1165,7 @@ QHeaderView::section {
 
 /* Highlight linked hotkeys */
 OBSHotkeyLabel[hotkeyPairHover=true] {
-	color: #79DCAA; /* Pink (Secondary) */
+	color: #79dcaa; /* Pink (Secondary) */
 }
 
 /* Workaround so frame borders in dark themes don't look like poop */
@@ -1204,7 +1204,7 @@ QAbstractItemView {
 QToolTip {
 	border: 1px solid palette(mid);
 	background-color: palette(window);
-	color: #79DCAA; /* Pink (Secondary) */
+	color: #79dcaa; /* Pink (Secondary) */
 }
 
 /* About dialog */
@@ -1331,7 +1331,7 @@ QPushButton#extraPanelDelete:hover {
 }
 
 QPushButton#extraPanelDelete:pressed {
-     background-color: #79DCAA;
+     background-color: #79dcaa;
 }
 
 OBSMissingFiles {
@@ -1460,7 +1460,7 @@ OBSYoutubeActions {
 }
 
 #ytEventList QLabel[isSelectedEvent=true] {
-	background-color: #79DCAA; /* Pink (Secondary) */
+	background-color: #79dcaa; /* Pink (Secondary) */
     border: 1px solid rgba(191, 97, 106, 0.5); /* Pink (Secondary) */
 }
 
@@ -1556,8 +1556,8 @@ QCalendarWidget QToolButton:hover {
 }
 
 QCalendarWidget QToolButton:pressed {
-    background-color: #79DCAA; /* Pink (Secondary) */
-	border: 1px solid #79DCAA; /* Pink (Secondary) */
+    background-color: #79dcaa; /* Pink (Secondary) */
+	border: 1px solid #79dcaa; /* Pink (Secondary) */
 }
 
 /* Year spinbox */

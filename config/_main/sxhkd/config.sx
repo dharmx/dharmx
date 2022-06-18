@@ -166,17 +166,9 @@ ctrl + shift + Escape
 super + n
   $HOME/.bin/notify/redshift.bash
 
-#
-# Screenshot
-#
-
-# fullscreen save
-{_,super} + Print
-  $HOME/.bin/notify/screenshot.bash --{xclip-,_}fullscreen
-
-# cropped save
-super + shift + {x,s}
-  $HOME/.bin/notify/screenshot.bash --{selected,xclip-cropped}
+## screenshot
+super + shift + s
+  $XDG_CONFIG_HOME/sxhkd/script/shot.bash
 
 # toggle picom
 super + backslash

@@ -1,3 +1,5 @@
+alias xclip='xclip -selection clipboard'
+
 if [ -x "$(command -v exa)" ]; then
   alias li="exa --long --all --group --icons"
   alias ls="exa"

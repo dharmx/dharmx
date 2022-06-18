@@ -11,7 +11,9 @@ Xft.hintstyle:                    hintslight
 Xft.rgba:                         rgb
 Xft.lcdfilter:                    lcddefault
 Xft.dpi:                          96
-*.Xcursor.size:                   24
+
+Xcursor.theme:                    phinger-cursors
+Xcursor.size:                     32
 
 st.chscale:                       1.2
 st.borderpx:                      20

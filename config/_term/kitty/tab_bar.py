@@ -13,10 +13,10 @@ timer_id = None
 
 def calc_draw_spaces(*args) -> int:
     length = 0
-    for i in args:
-        if not isinstance(i, str):
-            i = str(i)
-        length += len(i)
+    for index in args:
+        if not isinstance(index, str):
+            index = str(index)
+        length += len(index)
     return length
 
 
@@ -124,3 +124,5 @@ def draw_tab(
     )
 
     return screen.cursor.x
+
+# vim:filetype=python

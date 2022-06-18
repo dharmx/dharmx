@@ -1,0 +1,1 @@
+../../../_secure/eww/src/shell/shot.bash
