@@ -1,6 +1,6 @@
 #!/bin/env bash
 
-source "$HOME/.scripts/notify/factory.bash"
+source "$HOME/.bin/notify/factory.bash"
 
 FILE="$XDG_CACHE_HOME/redshift_launch"
 if [[ ! -f "$FILE" ]]; then
