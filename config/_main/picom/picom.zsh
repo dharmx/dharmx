@@ -1,6 +1,6 @@
 #!/usr/bin/env zsh
 
-if [[ "$(pidof picom)" != "" ]]; then
+if [ "$(pidof picom)" ]; then
   pkill picom
   notify-send -a "picom" -i "computer-fail" -u critical "Picom" "The compositer is now disabled. Press Super + Slash to enable it again."
 else
@@ -8,5 +8,5 @@ else
   notify-send -a "picom" -i "computer" "Picom" "The compositer is now enabled."
 fi
 
-# vim: ft=bash
+# vim:filetype=sh
 
