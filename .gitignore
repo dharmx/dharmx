@@ -11,6 +11,7 @@
 **/Dark.qss
 **/System.qss
 
+config/_main/picom/log.picom.txt
 config/_secure/gh/hosts.yml
 
 config/_man/obs-studio/logs/
