@@ -1,81 +1,115 @@
 #!/usr/bin/env bash
 
-MUTED=""
-DEFAULT_SOURCE=""
-LEVEL=""
+muted="$(pamixer --get-mute)"
+level="$(pamixer --get-volume)"
+icon=''
+urgency=''
 
-volume() {
-	notify-send -a "volume" -u "$1" -h "int:value:$2" "$3" "$4" -i "$5"
+function fetch() {
+  if [ $level -eq 0 ]; then
+    icon=volume-level-none
+    urgency=low
+  elif [ $level -le 5 ]; then
+    icon=volume-level-low
+  elif [ $level -le 10 ]; then
+    icon=volume-level-low
+    urgency=low
+  elif [ $level -le 15 ]; then
+    icon=volume-level-low
+    urgency=low
+  elif [ $level -le 20 ]; then
+    icon=volume-level-low
+    urgency=low
+  elif [ $level -le 25 ]; then
+    icon=volume-level-low
+    urgency=low
+  elif [ $level -le 30 ]; then
+    icon=volume-level-medium
+    urgency=normal
+  elif [ $level -le 35 ]; then
+    icon=volume-level-medium
+    urgency=normal
+  elif [ $level -le 40 ]; then
+    icon=volume-level-medium
+    urgency=normal
+  elif [ $level -le 45 ]; then
+    icon=volume-level-medium
+    urgency=normal
+  elif [ $level -le 50 ]; then
+    icon=volume-level-medium
+    urgency=normal
+  elif [ $level -le 55 ]; then
+    icon=volume-level-medium
+    urgency=normal
+  elif [ $level -le 60 ]; then
+    icon=volume-level-medium
+    urgency=normal
+  elif [ $level -le 65 ]; then
+    icon=volume-level-medium
+    urgency=normal
+  elif [ $level -le 70 ]; then
+    icon=volume-level-medium
+    urgency=normal
+  elif [ $level -le 75 ]; then
+    icon=volume-level-medium
+    urgency=normal
+  elif [ $level -le 80 ]; then
+    icon=volume-level-high
+    urgency=critical
+  elif [ $level -le 85 ]; then
+    icon=volume-level-high
+    urgency=critical
+  elif [ $level -le 90 ]; then
+    icon=volume-level-high
+    urgency=critical
+  elif [ $level -le 95 ]; then
+    icon=volume-level-high
+    urgency=critical
+  elif [ $level -le 100 ]; then
+    icon=volume-level-high
+    urgency=critical
+  fi
 }
 
-get_level() {
-	refetch
-	if [[ "$MUTED" == "yes" ]]; then
-		echo "audio-volume-muted-blocked-panel"
-	else
-		if [[ "$LEVEL" -le "10" ]]; then
-			echo "audio-volume-off"
-		elif [[ "$LEVEL" -le "40" ]]; then
-			echo "audio-volume-low"
-		elif [[ "$LEVEL" -le "70" ]]; then
-			echo "audio-volume-medium"
-		else
-			echo "audio-volume-high"
-		fi
-	fi
+function notify() {
+  eval "notify-send -a volume -u $urgency -i $1 $2 '$3' '$4'"
 }
 
-refetch() {
-	MUTED=$(pacmd list-sinks | awk '/\*/,EOF {print}' | awk '/muted/ {print $2; exit}')
-	DEFAULT_SOURCE=$(pacmd list-sinks | awk '/\*/,EOF {print $3; exit}')
-	LEVEL=$(pacmd list-sinks | grep -A 7 "\* index" | grep volume | awk -F/ '{print $2}' | tr -d ' ' | sed 's/%$//')
+function toggle() {
+  fetch
+  if [ $muted = true ]; then
+    notify $icon "-h int:value:$level" Pulseaudio 'Volume has been unmuted.'
+  else
+    notify audio-volume-muted-blocked-panel "" Pulseaudio 'Volume has been muted.'
+  fi
+  pamixer --toggle-mute
 }
 
-toggle() {
-	refetch
-	if [[ "$MUTED" == "yes" ]]; then
-		pactl set-sink-mute "$DEFAULT_SOURCE" 0
-		volume "low" "$LEVEL" "Volume" "Volume has been unmuted" "$(get_level)"
-	else
-		pactl set-sink-mute "$DEFAULT_SOURCE" 1
-		volume "low" "0" "Volume" "Volume has been muted" "$(get_level)"
-	fi
+function increase() {
+  pamixer --increase 5
+  fetch
+  notify $icon "-h int:value:$level" Pulseaudio "Volume increased to $level%."
 }
 
-increase() {
-	refetch
-	if [[ "$LEVEL" -eq 100 ]]; then
-		volume "critical" "$LEVEL" " Volume Warning!" "Abnormal volume level" "$(get_level)"
-	elif [[ "$LEVEL" -ge "75" ]]; then
-		pactl set-sink-volume "$DEFAULT_SOURCE" +5%
-		volume "critical" "$((LEVEL + 5))" " Volume Warning!" "Abnormal volume level" "$(get_level)"
-	else
-		pactl set-sink-volume "$DEFAULT_SOURCE" +5%
-		volume "normal" "$((LEVEL + 5))" "Volume Increased" "Increased volume" "$(get_level)"
-	fi
-}
-
-decrease() {
-	refetch
-	if [[ "$LEVEL" -eq 0 ]]; then
-		volume "critical" " Volume Warning!" "Inaudible volume level" "$(get_level)"
-	elif [[ "$LEVEL" -ge 70 ]]; then
-		pactl set-sink-volume "$DEFAULT_SOURCE" -5%
-		volume "critical" "$((LEVEL - 5))" " Volume Warning!" "Abnormal volume level" "$(get_level)"
-	else
-		pactl set-sink-volume "$DEFAULT_SOURCE" -5%
-		volume "normal" "$((LEVEL - 5))" "Volume Decreased" "Decreased volume" "$(get_level)"
-	fi
+function decrease() {
+  pamixer --decrease 5
+  fetch
+  notify $icon "-h int:value:$level" Pulseaudio "Volume decreased to $level%."
 }
 
 case "$1" in
---toggle)
+--toggle|-T)
 	toggle
 	;;
---increase)
+--increase|-I)
 	increase
 	;;
---decrease)
+--decrease|-D)
 	decrease
 	;;
+*)
+    echo 'Unsupported action!'
+    ;;
 esac
+
+# vim:filetype=sh

@@ -15,7 +15,7 @@ prompt
 EOF
 
 greet="xbl"
-greet_path="$HOME/.bin/misc/$greet"
+greet_path="$HOME/.bin/eyecandy/$greet"
 [ -f "$greet_path" ] && eval "$greet_path" || _default_greeter
 unset greet_path greet
 
