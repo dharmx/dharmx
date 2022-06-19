@@ -7,10 +7,14 @@ do
 done &
 
 declare -a apps=('stalonetray' 'Plank' 'GIMP Startup')
+peek='false'
 bspc subscribe node_add | while read -r _
 do
   xdo lower -N stalonetray
   xdo raise -N Plank
+  if [ $peek = 'false' ]; then
+    peek='true'
+  fi
 done &
 
 while sleep 3

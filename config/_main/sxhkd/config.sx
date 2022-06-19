@@ -125,16 +125,16 @@ super + {Left,Down,Up,Right}
 # pactl audio configurations
 ## increase volume
 XF86Audio{Raise,Lower}Volume
-  $HOME/.bin/notify/volume.bash --{increase,decrease}
+    pamixer --{in,de}crease 5
 
 ## mute voloume/mic
 XF86Audio{_,Mic}Mute
-  $HOME/.bin/notify/{volume.bash --toggle,microphone.bash}
+  {pamixer --toggle-mute,$HOME/.bin/notify/microphone.bash}
 
 # backlight configurations
 ## inc/dec brightness
 XF86MonBrightness{Up,Down}
-  $HOME/.bin/notify/brightness.bash -{I,D}
+  xbacklight -{in,de}c 5
 
 # playerctl audio configurations
 ## play,pause,next,prev
@@ -189,6 +189,9 @@ super + x ; 3
 # gapless monocle
 super + x ; 4
   bspc config -n focused gapless_monocle {true,false}
+
+super + x ; 5
+  bspc config center_pseudo_tiled {true,false}
 
 super + w ; 1
   eww windows | grep '*vertigo' && eww close vertigo && bspc config left_padding 0 || eww open vertigo
