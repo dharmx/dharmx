@@ -151,7 +151,7 @@ shift + XF86Audio{Raise,Lower}Volume
 
 # rofi app menu + run prompt
 super + d
-  rofi -show
+  rofi -show drun
 
 # bind some nice apps
 ## launch web browser

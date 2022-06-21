@@ -12,6 +12,8 @@ function preboot() {
   fi
 }
 
+xmodmap "$XDG_CONFIG_HOME/xmodmap/config"
+
 # launch some nice apps
 killall python bspc 2>/dev/null
 preboot plank --name bottom-dock &

@@ -106,8 +106,8 @@ function subscribe() {
 		fi
 		
         if [[ "$newhead" != "$oldhead" ]]; then
-			[ "$newhead" = no ] && notify-send -i emblem-remove -u critical -a volume Pulseaudio 'Headphones unplugged.'
-			[ "$newhead" = yes ] && notify-send -i emblem-added -u low -a volume Pulseaudio 'Headphones plugged.'
+			[ "$newhead" = no ] && notify-send -i emblem-remove -u critical -a audiojack Pulseaudio 'Headphones unplugged.'
+			[ "$newhead" = yes ] && notify-send -i emblem-added -u low -a audiojack Pulseaudio 'Headphones plugged.'
 			oldhead="$newhead"
         fi
 	done

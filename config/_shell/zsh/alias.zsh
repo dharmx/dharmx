@@ -481,7 +481,9 @@ function reload_gtk_theme() {
 alias rel-xsettingsd="pkill -HUP xsettingsd"
 alias fontcfg="font-config-info"
 
-## TODO: add montage snippets
+function montage-shot() {
+  montage -background '#79dcaa' -geometry x$((1080*2))+15+15 -shadow $* montage.png
+}
 
 alias luamake="$HOME/.opt/lua-language-server/3rd/luamake/luamake"
 

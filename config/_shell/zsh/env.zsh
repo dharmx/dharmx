@@ -24,7 +24,7 @@ typeset -gx XDG_MUSIC_DIR="$HOME/Music"
 typeset -gx XDG_PICTURES_DIR="$HOME/Pictures"
 typeset -gx XDG_VIDEOS_DIR="$HOME/Videos"
 
-typeset -gx PATH="$PATH:$XDG_DATA_HOME/gem/ruby/3.0.0/bin:$HOME/.local/bin"
+typeset -gx PATH="$PATH:$XDG_DATA_HOME/gem/ruby/3.0.0/bin:$HOME/.local/bin:$HOME/.bin/util"
 
 typeset -gx LESS_TERMCAP_mb=$'\e[1;32m'
 typeset -gx LESS_TERMCAP_md=$'\e[1;32m'

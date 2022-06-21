@@ -18,7 +18,7 @@ rule blueman-manager state=floating state=floating center=on
 rule blueman-adapters state=floating state=floating center=on
 rule Rofi border=off manage=off layer=above
 rule nm-connection-editor='^1' state=floating 
-rule dconf-editor state=floating center=on
+rule Dconf-editor state=floating center=on
 rule Git-gui state=floating center=on
 rule Org.gnome.Nautilus state=floating center=on
 rule Gimp-2.10:gimp-2.10 border=off
