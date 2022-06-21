@@ -3,6 +3,8 @@ local tym = require('tym')
 -- set individually
 tym.set('width', 80)
 tym.set('height', 20)
+tym.set('cell_height', 125)
+-- tym.set('cell_width', 50)
 
 tym.set('font', 'Iosevka Nerd Font 14')
 
