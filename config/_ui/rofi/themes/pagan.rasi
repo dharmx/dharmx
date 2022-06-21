@@ -17,11 +17,11 @@ configuration {
 * {
   text-color: @fg-col;
   background-color: @bg-col;
-  font: "PTSans,Iosevka Nerd Font 14";
+  font: "Dosis,Iosevka Nerd Font 14";
 }
 
 window {
-  border-radius: 1em;
+  // border-radius: 1em;
   width: 900;
   height: 650;
   anchor: center;

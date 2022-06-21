@@ -53,6 +53,6 @@ configuration {
   }
 }
 
-@theme "pagan"
+@theme "dishonest"
 
 // vim:filetype=rasi

@@ -3,7 +3,7 @@
 * {
   text-color: @fg-col;
   background-color: @bg-col;
-  font: "Nunito,Iosevka Nerd Font 14";
+  font: "Dosis,Iosevka Nerd Font 14";
 }
 
 window {
@@ -48,6 +48,7 @@ entry {
   expand: true;
   cursor: pointer;
   margin: 1em 1em 0 0;
+  font: "Dosis,Iosevka Nerd Font Bold 17";
   padding: 1em;
   text-color: @fg-col2;
   vertical-align: center;
@@ -100,11 +101,13 @@ button {
   background-color: @bg-col;
   text-color: @fg-col;
   horizontal-align: center;
+  font: "Dosis,Iosevka Nerd Font 17";
   padding: 0.5em 0.4em 0.5em 0.4em;
   border-radius: 0.4em;
 }
 
 button selected {
+  font: "Dosis,Iosevka Nerd Font Bold 17";
   background-color: @blue;
   border: 0.1em;
   border-color: @fg-col2;
