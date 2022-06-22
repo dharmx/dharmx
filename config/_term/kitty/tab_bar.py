@@ -2,13 +2,14 @@
 
 import datetime
 
+from kitty.config import load_config, prepare_config_file_for_editing
 from kitty.fast_data_types import Screen
-from kitty.rgb import Color
 from kitty.tab_bar import (DrawData, ExtraData, Formatter, TabBarData, as_rgb,
                            draw_attributed_string, draw_title)
 from kitty.utils import color_as_int
 
 timer_id = None
+full_config = load_config(prepare_config_file_for_editing())
 
 
 def calc_draw_spaces(*args) -> int:
@@ -25,8 +26,8 @@ def _draw_icon(screen: Screen, index: int, symbol: str = "") -> int:
         return 0
 
     fg, bg = screen.cursor.fg, screen.cursor.bg
-    screen.cursor.fg = as_rgb(color_as_int(Color(18, 21, 26)))
-    screen.cursor.bg = as_rgb(color_as_int(Color(121, 174, 221)))
+    screen.cursor.fg = as_rgb(color_as_int(full_config.tab_bar_background))
+    screen.cursor.bg = as_rgb(color_as_int(full_config.selection_foreground))
     screen.draw(symbol)
     screen.cursor.fg, screen.cursor.bg = fg, bg
     screen.cursor.x = len(symbol)
@@ -81,8 +82,8 @@ def _draw_right_status(screen: Screen, is_last: bool) -> int:
         screen.draw(" " * draw_spaces)
 
     cells = [
-        (Color(121, 220, 170), date),
-        (Color(248, 112, 112), utc_date),
+        (full_config.active_tab_background, date),
+        (full_config.color1, utc_date),
     ]
 
     screen.cursor.fg = 0
@@ -124,5 +125,6 @@ def draw_tab(
     )
 
     return screen.cursor.x
+
 
 # vim:filetype=python

@@ -482,7 +482,7 @@ alias rel-xsettingsd="pkill -HUP xsettingsd"
 alias fontcfg="font-config-info"
 
 function montage-shot() {
-  montage -background '#79dcaa' -geometry x$((1080*2))+15+15 -shadow $* montage.png
+  montage -background '#949490' -geometry x$((1080*2))+15+15 -shadow $* montage.png
 }
 
 alias luamake="$HOME/.opt/lua-language-server/3rd/luamake/luamake"

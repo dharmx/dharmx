@@ -167,34 +167,53 @@ super + n
   $HOME/.bin/notify/redshift.bash
 
 ## screenshot
-super + shift + s
+super + shift + d
   $XDG_CONFIG_HOME/sxhkd/script/shot.bash
 
 # toggle picom
 super + backslash
   $XDG_CONFIG_HOME/picom/picom.zsh
 
+# TODO: turn these into subscribes
 # toggle borderless monocle
 super + x ; 1
-  bspc config -n focused borderless_monocle {true,false}
+  bspc config -n focused borderless_monocle {true,false};\
+    notify-send -a bspwm Layouts "Borderless monocle has been $(\
+      [ $(bspc config -n focused borderless_monocle) = true ] \
+      && echo enabled || echo disabled)."
 
 # toggle borderless floating
 super + x ; 2
-  $XDG_CONFIG_HOME/sxhkd/script/noborders.zsh {start,stop}
+  $XDG_CONFIG_HOME/sxhkd/script/noborders.zsh {start,stop};\
+    notify-send -a bspwm Layouts "Borderless floating has been $(\
+      [ -f ~/.cache/bspwm-floating.lock ] && echo enabled \
+      || echo disabled)."
 
 # toggle borderless singleton
 super + x ; 3
-  bspc config -n focused borderless_singleton {true,false}
+  bspc config -n focused borderless_singleton {true,false};\
+    notify-send -a bspwm Layouts "Borderless singleton has been $(\
+      [ $(bspc config -n focused borderless_singleton) = true ] \
+      && echo enabled || echo disabled)."
 
 # gapless monocle
 super + x ; 4
-  bspc config -n focused gapless_monocle {true,false}
+  bspc config -n focused gapless_monocle {true,false};\
+    notify-send -a bspwm Layouts "Gapless monocle has been $(\
+      [ $(bspc config -n focused gapless_monocle) = true ] \
+      && echo enabled || echo disabled)."
 
 super + x ; 5
-  bspc config center_pseudo_tiled {true,false}
+  bspc config center_pseudo_tiled {true,false};\
+    notify-send -a bspwm Layouts "Center pseudo has been $(\
+      [ $(bspc config -n focused center_pseudo_tiled) = true ] \
+      && echo enabled || echo disabled)."
 
 super + w ; 1
-  eww windows | grep '*vertigo' && eww close vertigo && bspc config left_padding 0 || eww open vertigo
+  eww windows | grep '*vertigo' && eww close vertigo && bspc config left_padding 0 || eww open vertigo;\
+    eww windows | grep '*vertigo' \
+      && notify-send -a bar -u low EWW 'Opened eww-vertigo.' \
+      || notify-send -a bar -u critical EWW 'Closed eww-vertigo.'
 
 super + w ; 2
   eww open --toggle disclose
@@ -212,4 +231,10 @@ super + shift + slash
 ~button3
   xqp 0 $(xdo id -N bspwm -n root) && jgmenu_run
 
-# vim:ft=sxhkdrc
+super + shift + n
+  $XDG_CONFIG_HOME/sxhkd/script/center.bash
+
+# super + equal
+#   xmodmap -e {'pointer = 1 3 2','pointer = 1 2 3'}
+
+# vim:filetype=sxhkd

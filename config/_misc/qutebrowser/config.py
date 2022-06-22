@@ -73,13 +73,13 @@ c.tabs.position = "bottom"
 c.completion.shrink = True
 ## config.set("url.start_pages", [f"{XDG_TEMPLATES_DIR}/startpages/luther/index.html"])
 config.set("url.start_pages", ["https://duckduckgo.com"])
-config.set("fonts.contextmenu", "Cooper Hewitt")
-config.set("fonts.default_family", "Cooper Hewitt")
-config.set("fonts.downloads", "Cooper Hewitt")
-config.set("fonts.hints", "Cooper Hewitt")
+config.set("fonts.contextmenu", "Dosis")
+config.set("fonts.default_family", "Dosis")
+config.set("fonts.downloads", "Dosis")
+config.set("fonts.hints", "Dosis")
 config.set("fonts.web.family.fixed", "Iosevka Nerd Font")
-config.set("fonts.web.family.serif", "Cooper Hewitt")
-config.set("fonts.web.family.standard", "Cooper Hewitt")
+config.set("fonts.web.family.serif", "Dosis")
+config.set("fonts.web.family.standard", "Dosis")
 config.set("completion.scrollbar.width", 8)
 
 c.downloads.location.directory = f"{XDG_DOWNLOAD_DIR}"

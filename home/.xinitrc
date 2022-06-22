@@ -1,6 +1,5 @@
 #!/usr/bin/env zsh
 
-
 function init_session() {
   xset b off
 

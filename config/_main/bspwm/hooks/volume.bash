@@ -99,17 +99,15 @@ function subscribe() {
 			old=$new
 		fi
 
-		if [[ "$mutenew" != "$muteold" ]]; then
-			[ "$mutenew" = false ] && notify "$icon" "-h int:value:$level" Pulseaudio 'Volume has been unmuted.'
-			[ "$mutenew" = true ] && notify audio-volume-muted-blocked-panel "" Pulseaudio 'Volume has been muted.'
-			muteold="$mutenew"
-		fi
-		
         if [[ "$newhead" != "$oldhead" ]]; then
 			[ "$newhead" = no ] && notify-send -i emblem-remove -u critical -a audiojack Pulseaudio 'Headphones unplugged.'
 			[ "$newhead" = yes ] && notify-send -i emblem-added -u low -a audiojack Pulseaudio 'Headphones plugged.'
 			oldhead="$newhead"
-        fi
+        elif [[ "$mutenew" != "$muteold" ]]; then
+			[ "$mutenew" = false ] && notify "$icon" "-h int:value:$level" Pulseaudio 'Volume has been unmuted.'
+			[ "$mutenew" = true ] && notify audio-volume-muted-blocked-panel "" Pulseaudio 'Volume has been muted.'
+			muteold="$mutenew"
+		fi
 	done
 }
 

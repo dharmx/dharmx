@@ -47,9 +47,9 @@ csv_i18n = 1
 csv_no_duplicates = 1
 
 sep_height = 5
-font = Cooper Hewitt 15px
+font = Dosis 15px
 icon_size = 30
-icon_theme = Papirus
+icon_theme = McMuse-green
 arrow_string = 
 
 color_menu_bg = #171C21 100

@@ -1,8 +1,9 @@
 #!/usr/bin/env zsh
 
-xrdb -I "$XDG_CONFIG_HOME/Xresources" "$XDG_CONFIG_HOME/Xresources/config.x" &
-
 typeset -gx XDG_CURRENT_DESKTOP="bspwm"
+xrdb -I "$XDG_CONFIG_HOME/Xresources" "$XDG_CONFIG_HOME/Xresources/config.x" &
+xmodmap "$XDG_CONFIG_HOME/xmodmap/config"
+
 source "$XDG_CONFIG_HOME/bspwm/default.zsh"
 source "$XDG_CONFIG_HOME/bspwm/rules.zsh"
 source "$XDG_CONFIG_HOME/bspwm/launch.zsh"
@@ -13,7 +14,7 @@ wmname bspwm &
 # set root cursor
 xsetroot -cursor_name left_ptr &
 
-# restore wallpaper and play cringe login sound
+# restore wallpaper and play a cringe login sound
 [ -x "$HOME/.fehbg" ] && source "$HOME/.fehbg" || feh --bg-fill "$XDG_PICTURES_DIR/wallpapers/centered/wp4047981-minimalism-wallpapers.jpg" &
 mpv --keep-open=no --really-quiet "/usr/share/sounds/Smooth/stereo/desktop-login.oga"
 

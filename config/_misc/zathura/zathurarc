@@ -4,7 +4,7 @@
 
 set selection-clipboard         "clipboard"
 set guioptions                  "true"
-set font                        "Cooper Hewitt 12"
+set font                        "Dosis 12"
 
 set highlight-active-color      "#c397d8"
 
