@@ -1,7 +1,7 @@
 export SUDO_PROMPT="pass: "
 export TERMINAL="st"
 export BROWSER="qutebrowser"
-export VISUAL="neovide"
+export VISUAL="nvim"
 export EDITOR="nvim"
 
 export XDG_CONFIG_HOME="$HOME/.config"

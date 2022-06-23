@@ -4,7 +4,7 @@ function preboot() {
   local args=($*)
   local running="$(pgrep -x "$args[1]")"
   [ "$running" ] && kill "$running" 2>/dev/null
-  eval "$1 $args[2,-1]"
+  eval "$1 ${args[2,-1]}"
 }
 
 # launch some nice apps

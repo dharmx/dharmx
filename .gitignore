@@ -55,3 +55,8 @@ config/_shell/zsh/zplug/
 
 config/_secure/spotify-tui/client.yml
 config/_secure/spotify-tui/.spotify_token_cache.json
+config/_secure/ncspot/userstate.cbor
+config/_misc/spicetify/Backup
+config/_misc/spicetify/Extracted
+config/_misc/spicetify/Extensions
+config/_misc/spicetify/CustomApps

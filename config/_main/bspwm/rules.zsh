@@ -22,11 +22,13 @@ rule nm-connection-editor='^1' state=floating
 rule Dconf-editor state=floating center=on
 rule Git-gui state=floating center=on
 rule Org.gnome.Nautilus state=floating center=on
+rule Nemo state=floating center=on
 rule Gimp-2.10:gimp-2.10 border=off
-rule Shotwell:shotwell state=floating center=on rectangle=1080x784+416+145
+rule Shotwell state=floating center=on
 rule firefox:Places state=floating center=on
 rule stalonetray manage=off locked=on border=off layer=above focus=off state=floating
 rule Plank manage=off locked=on border=off layer=above focus=off state=floating
+rule Spotify state=floating center=on rectangle=1080x784+416+145
 
 unalias rule
 
