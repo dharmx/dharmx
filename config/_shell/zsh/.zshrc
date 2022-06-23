@@ -1,6 +1,6 @@
 [ -f "$HOME/.cargo/env" ] && source "$HOME/.cargo/env"
 
-while read -r file
+while read file
 do 
   source "$ZDOTDIR/$file.zsh"
 done <<-EOF

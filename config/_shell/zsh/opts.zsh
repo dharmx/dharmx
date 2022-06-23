@@ -1,6 +1,5 @@
 YTFZF_CONFIG_DIR="$XDG_CONFIG_HOME/ytfzf"
 YTFZF_CONFIG_FILE="$YTFZF_CONFIG_DIR/conf.sh"
-MANPAGER='nvim +Man! +"set nocul" +"set noshowcmd" +"set noruler" +"set noshowmode" +"set laststatus=0" +"set showtabline=0" +"set nonumber"'
 
 umask 022
 zmodload zsh/zle
@@ -83,5 +82,8 @@ EQUALS
 EOF
 
 eval "$(zoxide init zsh)"
+
+## comment this out if you do not want vi-mode
+## bindkey -e # revert to emacs binds
 
 # vim:ft=zsh:nowrap
