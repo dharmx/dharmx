@@ -1,36 +1,21 @@
-ZPLUG_CACHE_DIR="$XDG_CACHE_HOME/zsh/zplug"
-ZPLUG_REPOS="$XDG_DATA_HOME/zsh/zplug"
-ZPLUG_HOME="$ZDOTDIR/zplug"
-ZPLUG_BIN="$ZDOTDIR/bin"
-ZPLUG_THREADS=10
-
-if [ ! -d "$ZPLUG_HOME" ]; then
-    echo "ZPLUG not found. Cloning..."
-    git clone --depth 1 https://github.com/zplug/zplug "$ZPLUG_HOME"
-fi
-
-source "$ZPLUG_HOME/init.zsh"
-alias use="zplug"
-use "zsh-users/zsh-history-substring-search", "depth:1"
-use "zsh-users/zsh-syntax-highlighting", "depth:1"
-use "marlonrichert/zsh-autocomplete", "depth:1"
-use "hlissner/zsh-autopair", "depth:1"
-use "zsh-users/zsh-autosuggestions", "depth:1"
-use "junegunn/fzf-bin", "from:gh-r", "as:command", "rename-to:fzf"
-use "romkatv/gitstatus", "depth:1"
-use "MichaelAquilina/zsh-you-should-use", "depth:1"
-use "romkatv/powerlevel10k", "as:theme", "depth:1"
-unalias use
-
-if ! zplug check --verbose
+ZNAP_PLUGIN_DIR="$XDG_DATA_HOME/zsh/plugins/zsh-snap"
+if [ ! -f "$ZNAP_PLUGIN_DIR/znap.zsh" ]
 then
-    print -n "Install? [y/N]: "
-    if read -q
-    then
-        echo; zplug install
-    fi
+    echo "ZNAP not found. Cloning..."
+    git clone --depth 1 https://github.com/marlonrichert/zsh-snap.git "$ZNAP_PLUGIN_DIR"
 fi
 
-zplug load
+source "$ZNAP_PLUGIN_DIR/znap.zsh"
+zstyle ':znap:*:*' git-maintenance on
+zstyle ':znap:*' auto-compile yes
+
+znap prompt romkatv/powerlevel10k
+
+znap source zsh-users/zsh-history-substring-search
+znap source zsh-users/zsh-syntax-highlighting
+znap source marlonrichert/zsh-autocomplete
+znap source hlissner/zsh-autopair
+znap source zsh-users/zsh-autosuggestions
+znap source MichaelAquilina/zsh-you-should-use
 
 # vim:ft=zsh
