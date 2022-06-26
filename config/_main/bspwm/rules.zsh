@@ -27,7 +27,7 @@ rule Gimp-2.10:gimp-2.10 border=off
 rule Shotwell state=floating center=on
 rule firefox:Places state=floating center=on
 rule stalonetray manage=off locked=on border=off layer=above focus=off state=floating
-rule Plank manage=off locked=on border=off layer=above focus=off state=floating
+rule Plank manage=off layer=above focus=off
 rule Spotify state=floating center=on rectangle=1080x784+416+145
 rule Seahorse state=floating center=on
 
