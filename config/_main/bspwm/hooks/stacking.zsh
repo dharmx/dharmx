@@ -10,6 +10,8 @@ bspc subscribe node_add | while read -r _
 do
   xdo lower -N stalonetray
   xdo raise -N Plank
+  xdo raise -N eww-disclose
+  xdo raise -N eww-avatar
 done &
 
 # vim:ft=zsh

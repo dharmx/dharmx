@@ -1,10 +1,10 @@
 function _smooth_fzf() {
-    local fname
-    local current_dir=$PWD
-    cd "${XDG_CONFIG_HOME:-~/.config}"
-    fname="$(fzf)" || return
-    $EDITOR "$fname"
-    cd "$current_dir"
+  local fname
+  local current_dir="$PWD"
+  cd "${XDG_CONFIG_HOME:-~/.config}"
+  fname="$(fzf)" || return
+  $EDITOR "$fname"
+  cd "$current_dir"
 }
 
 function _sudo_replace_buffer() {

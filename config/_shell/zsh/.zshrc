@@ -1,4 +1,3 @@
-source ~/.local/share/zsh/plugins/zsh-snap/znap.zsh
 [ -f "$HOME/.cargo/env" ] && source "$HOME/.cargo/env"
 
 while read file

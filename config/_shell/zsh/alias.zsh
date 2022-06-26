@@ -432,7 +432,7 @@ function compile-hentai() {
     done
 }
 
-alias fet.sh="$HOME/.bin/misc/fet.sh"
+alias fet.sh="$HOME/.bin/eyecandy/fet.sh"
 
 function color-list() {
     for i in {0..255}; do print -Pn "%K{$i}  %k%F{$i}${(l:3::0:)i}%f " ${${(M)$((i%6)):#3}:+$'\n'}; done
@@ -485,6 +485,7 @@ function montage-shot() {
   montage -background '#949490' -geometry x$((1080*2))+15+15 -shadow $* montage.png
 }
 
+alias spotifyd="spotifyd --config-path '$XDG_CONFIG_HOME/spotifyd/spotifyd.conf' --no-daemon"
 alias luamake="$HOME/.opt/lua-language-server/3rd/luamake/luamake"
 
 # vim:ft=zsh

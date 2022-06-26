@@ -1,21 +1,37 @@
-ZNAP_PLUGIN_DIR="$XDG_DATA_HOME/zsh/plugins/zsh-snap"
-if [ ! -f "$ZNAP_PLUGIN_DIR/znap.zsh" ]
+ZINIT_HOME="$XDG_DATA_HOME/zsh/zinit"
+if [ ! -d "$ZINIT_HOME" ]
 then
-    echo "ZNAP not found. Cloning..."
-    git clone --depth 1 https://github.com/marlonrichert/zsh-snap.git "$ZNAP_PLUGIN_DIR"
+    echo "ZINIT not found. Cloning..."
+    git clone --depth 1 https://github.com/zdharma-continuum/zinit.git "$ZINIT_HOME"
 fi
 
-source "$ZNAP_PLUGIN_DIR/znap.zsh"
-zstyle ':znap:*:*' git-maintenance on
-zstyle ':znap:*' auto-compile yes
+source "$ZINIT_HOME/zinit.zsh"
+alias use='zinit light'
+alias snip='zinit snippet'
+alias ice='zinit ice'
+alias load='zinit load'
 
-znap prompt romkatv/powerlevel10k
+ice depth"1"
+use zsh-users/zsh-completions
 
-znap source zsh-users/zsh-history-substring-search
-znap source zsh-users/zsh-syntax-highlighting
-znap source marlonrichert/zsh-autocomplete
-znap source hlissner/zsh-autopair
-znap source zsh-users/zsh-autosuggestions
-znap source MichaelAquilina/zsh-you-should-use
+autoload compinit
+compinit
+
+use romkatv/powerlevel10k 
+use marlonrichert/zsh-autocomplete 
+use hlissner/zsh-autopair 
+use zdharma-continuum/fast-syntax-highlighting
+use MichaelAquilina/zsh-you-should-use 
+use zsh-users/zsh-autosuggestions
+
+ice wait'3' lucid
+load zsh-users/zsh-history-substring-search 
+
+ice wait'2' lucid
+load zdharma-continuum/history-search-multi-word
+
+# ice wait'5' lucid
+# snip https://gist.githubusercontent.com/hightemp/5071909/raw/
+unalias use snip ice load
 
 # vim:ft=zsh

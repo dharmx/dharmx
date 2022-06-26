@@ -2,8 +2,8 @@ sw_volume: 62
 audio_device_state:1:Pulseaudio
 audio_device_state:1:Visualizer
 state: pause
-current: 0
-time: 59.039000
+current: 4
+time: 2.567000
 random: 1
 repeat: 1
 single: 0
@@ -16,4 +16,5 @@ playlist_begin
 1:Fifth Dawn - Duality/Allure.mp3
 2:Fifth Dawn - Duality/Defying Symmetry.mp3
 3:Fifth Dawn - Duality/High Towers.mp3
+4:Cravemob, Dazbee - Where The Stars Fall (Up All Night).mp3
 playlist_end
