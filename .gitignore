@@ -11,6 +11,7 @@
 **/Dark.qss
 **/System.qss
 
+local/share/fonts/**/.uuid
 config/_main/picom/log.picom.txt
 config/_secure/gh/hosts.yml
 
@@ -60,4 +61,4 @@ config/_misc/spicetify/Backup
 config/_misc/spicetify/Extracted
 config/_misc/spicetify/Extensions
 config/_misc/spicetify/CustomApps
-local/share/fonts/**/.uuid
+config/_misc/zim/accelmap

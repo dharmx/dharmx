@@ -55,4 +55,8 @@ if [ -d "$XDG_CONFIG_HOME/adb-fastboot/platform-tools" ]; then
  export PATH="$PATH:$XDG_CONFIG_HOME/adb-fastboot/platform-tools"
 fi
 
+if [ -d "$HOME/.bin/regen/bin" ]; then
+  export PATH="$PATH:$HOME/.bin/regen/bin"
+fi
+
 # vim:ft=zsh:nowrap
