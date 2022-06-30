@@ -1,0 +1,72 @@
+{
+  "wallpapers": [
+    "$XDG_PICTURES_DIR/wallpapers/mountain/rocky.jpg",
+    "$XDG_PICTURES_DIR/wallpapers/mountain/mtn.jpg",
+    "$XDG_PICTURES_DIR/wallpapers/monochrome/1jznxzg7jaw81.jpg"
+  ],
+  "common": {
+    "base08": "#ac8a8c",
+    "base04": "#42484e",
+    "base07": "#b0b0b0",
+    "base05": "#bebebe",
+    "base06": "#bbbbbb",
+    "base15": "#ac8a8c",
+    "base01": "#21272d",
+    "base09": "#C9938A",
+    "base14": "#948fb1",
+    "base00": "#1a2026",
+    "base13": "#7797b7",
+    "base10": "#aca98a",
+    "base12": "#8aabac",
+    "base11": "#8aac8b",
+    "base02": "#292f35",
+    "base03": "#2e343a"
+  },
+  "syntax": {
+    "color08": "#c4c19e",
+    "color10": "#aca98a",
+    "color11": "#c7ae95",
+    "color18": "#cbd0d5",
+    "color14": "#747c84",
+    "color07": "#c7ccd1",
+    "color16": "#9aafe6",
+    "color09": "#a39ec4",
+    "color00": "#c795ae",
+    "color03": "#8f8aac",
+    "color02": "#9ec49f",
+    "color19": "#8aac8b",
+    "color17": "#70b2a0",
+    "color20": "#7d9fc1",
+    "color13": "#e0987f",
+    "color01": "#cc707d",
+    "color05": "#ae9FcF",
+    "color12": "#b8d19f",
+    "color15": "#b1ca98",
+    "color04": "#aec795",
+    "color06": "#c795ae"
+  },
+  "rainbow": {
+    "orange": "#e28e6a",
+    "purple": "#ad8cce",
+    "cobalt": "#7ea4c9",
+    "pink": "#cc707d",
+    "cyan": "#87c6a7",
+    "green": "#77ad9F",
+    "yellow": "#c9a47e"
+  },
+  "shades": {
+    "shade03": "#42484e",
+    "shade12": "#14181b",
+    "shade04": "#2e343a",
+    "shade05": "#292f35",
+    "shade07": "#20262c",
+    "shade06": "#242a30",
+    "shade08": "#212528",
+    "shade00": "#565c62",
+    "shade09": "#1c2023",
+    "shade01": "#50565c",
+    "shade10": "#151b21",
+    "shade02": "#474d53",
+    "shade11": "#161a1d"
+  }
+}

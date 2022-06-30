@@ -44,9 +44,9 @@ ZSH_HIGHLIGHT_HIGHLIGHTERS=(main brackets pattern cursor regexp root line)
 ZSH_HIGHLIGHT_MAXLENGTH=512
 ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE="fg=$color8,bold"
 
-while read -r opt
+while read -r option
 do 
-  setopt $opt
+  setopt $option
 done <<-EOF
 AUTOCD
 AUTO_MENU
@@ -72,9 +72,9 @@ HIST_SAVE_NO_DUPS
 HIST_REDUCE_BLANKS
 EOF
 
-while read -r opt
-do 
-  unsetopt $opt
+while read -r option
+do
+  unsetopt $option
 done <<-EOF
 FLOWCONTROL
 NOMATCH

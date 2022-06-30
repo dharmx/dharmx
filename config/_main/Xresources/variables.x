@@ -22,18 +22,18 @@
 #define base14 #79dcaa
 #define base15 #c397d8
 
-#define shade00 #3d464e
-#define shade01 #2b3238
-#define shade02 #24292e
-#define shade03 #1f2429
-#define shade04 #1c2126
-#define shade05 #191e23
-#define shade06 #161b20
-#define shade07 #151a1f
-#define shade08 #13181d
-#define shade09 #11161b
-#define shade10 #0e1115
-#define shade11 #0c0f13
-#define shade12 #0a0d11
+shades.shade00: #3d464e
+shades.shade01: #2b3238
+shades.shade02: #24292e
+shades.shade03: #1f2429
+shades.shade04: #1c2126
+shades.shade05: #191e23
+shades.shade06: #161b20
+shades.shade07: #151a1f
+shades.shade08: #13181d
+shades.shade09: #11161b
+shades.shade10: #0e1115
+shades.shade11: #0c0f13
+shades.shade12: #0a0d11
 
 ! vim:filetype=config

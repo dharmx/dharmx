@@ -174,12 +174,11 @@ super + shift + d
 super + backslash
   $XDG_CONFIG_HOME/picom/picom.zsh
 
-# TODO: turn these into subscribes
 # toggle borderless monocle
 super + x ; 1
-  bspc config -n focused borderless_monocle {true,false};\
+  bspc config borderless_monocle {true,false};\
     notify-send -a bspwm Layouts "Borderless monocle has been $(\
-      [ $(bspc config -n focused borderless_monocle) = true ] \
+      [ $(bspc config borderless_monocle) = true ] \
       && echo enabled || echo disabled)."
 
 # toggle borderless floating
@@ -191,23 +190,44 @@ super + x ; 2
 
 # toggle borderless singleton
 super + x ; 3
-  bspc config -n focused borderless_singleton {true,false};\
+  bspc config borderless_singleton {true,false};\
     notify-send -a bspwm Layouts "Borderless singleton has been $(\
-      [ $(bspc config -n focused borderless_singleton) = true ] \
+      [ $(bspc config borderless_singleton) = true ] \
       && echo enabled || echo disabled)."
 
 # gapless monocle
 super + x ; 4
-  bspc config -n focused gapless_monocle {true,false};\
+  bspc config gapless_monocle {true,false};\
     notify-send -a bspwm Layouts "Gapless monocle has been $(\
-      [ $(bspc config -n focused gapless_monocle) = true ] \
+      [ $(bspc config gapless_monocle) = true ] \
       && echo enabled || echo disabled)."
 
 super + x ; 5
   bspc config center_pseudo_tiled {true,false};\
-    notify-send -a bspwm Layouts "Center pseudo has been $(\
-      [ $(bspc config -n focused center_pseudo_tiled) = true ] \
+    notify-send -a bspwm Layouts "Centered pseudo has been $(\
+      [ $(bspc config center_pseudo_tiled) = true ] \
       && echo enabled || echo disabled)."
+
+super + x ; 6
+  bspc config single_monocle {true,false};\
+    notify-send -a bspwm Layouts "Single monocle has been $(\
+      [ $(bspc config single_monocle) = true ] \
+      && echo enabled || echo disabled)."
+
+super + x ; c
+  $XDG_CONFIG_HOME/sxhkd/script/center.bash
+
+super + x ; comma
+  bspc config automatic_scheme {alternate,longest_side,spiral};\
+  notify-send -a layouts LayoutCTL "Automatic scheme has been set to $(bspc config automatic_scheme)"
+
+super + x ; period
+  bspc config initial_polarity {first_child,second_child};\
+  notify-send -a layouts LayoutCTL "Initial polarity has been set to $(bspc config initial_polarity)"
+
+super + x ; slash
+  bspc config directional_focus_tightness {high,low};\
+  notify-send -a layouts LayoutCTL "Tightness has been set to $(bspc config directional_focus_tightness)"
 
 super + w ; 1
   eww windows | grep '*vertigo' && eww close vertigo && bspc config left_padding 0 || eww open vertigo;\
@@ -223,7 +243,7 @@ super + w ; 3
 
 # lock screen
 super + shift + slash
-  i3lock --blur 0.5 --bar-indicator --verif-color '#00000000' --greeter-text 'Bye.' --greeter-font 'Cooper Hewitt Bold' --greeter-color '#79DCAAFF' --pointer=default --ignore-empty-password --radius 40 --verif-color '#00000000' --no-modkey-text --pass-media-keys --pass-screen-keys --pass-volume-keys --pass-power-keys
+  i3lock --blur 0.5 --bar-indicator --verif-color '#00000000' --greeter-text 'Bye.' --greeter-font 'Dosis Bold' --greeter-color '#79DCAAFF' --pointer=default --ignore-empty-password --radius 40 --verif-color '#00000000' --no-modkey-text --pass-media-keys --pass-screen-keys --pass-volume-keys --pass-power-keys
 
 ~Escape
   eval "[ $(bspc query --tree --node | jq .client.className) = Pavucontrol ] && bspc node --close"
@@ -231,10 +251,12 @@ super + shift + slash
 ~button3
   xqp 0 $(xdo id -N bspwm -n root) && jgmenu_run
 
-super + shift + n
-  $XDG_CONFIG_HOME/sxhkd/script/center.bash
+super + {semicolon,apostrophe}
+  source "$XDG_CONFIG_HOME/bspwm/theme.zsh";\
+  bsp-layout {previous,next}; notify-send -a layouts BSP-LAYOUTS \
+    "Currently, set to <span font_weight='bold' foreground='$cyan'>$(bsp-layout get)</span>."
 
-# super + equal
-#   xmodmap -e {'pointer = 1 3 2','pointer = 1 2 3'}
+super + equal
+  "$XDG_CONFIG_HOME"/sxhkd/script/xmodmap.bash 'pointer = 1 {3 2,2 3}'
 
 # vim:filetype=sxhkd

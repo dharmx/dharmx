@@ -1,0 +1,72 @@
+{
+    "wallpapers": [
+        "$XDG_PICTURES_DIR/wallpapers/nord/flowers.png",
+        "$XDG_PICTURES_DIR/wallpapers/nord/ign-depression-dark.png",
+        "$XDG_PICTURES_DIR/wallpapers/nord/ign-unsplash-flower-8-dark-res.jpg"
+    ],
+    "shades": {
+        "shade09": "#252A33",
+        "shade10": "#252B37",
+        "shade02": "#484d61",
+        "shade06": "#333947",
+        "shade01": "#505A63",
+        "shade12": "#242a36",
+        "shade03": "#414754",
+        "shade04": "#333947",
+        "shade05": "#393f4C",
+        "shade07": "#2e333d",
+        "shade11": "#262c38",
+        "shade08": "#292e39",
+        "shade00": "#505763"
+    },
+    "rainbow": {
+        "cobalt": "#AFC2E5",
+        "pink": "#C48EAD",
+        "purple": "#C0A0F0",
+        "cyan": "#DDBBB1",
+        "orange": "#D08770",
+        "green": "#AFBE8C",
+        "yellow": "#FFBB8B"
+    },
+    "syntax": {
+        "color15": "#A3BE8C",
+        "color04": "#99BB8B",
+        "color06": "#B48EAD",
+        "color08": "#B08F90",
+        "color10": "#EBCB8B",
+        "color11": "#EBCBAB",
+        "color18": "#333947",
+        "color16": "#88C0D0",
+        "color09": "#8FBCBB",
+        "color00": "#81A1C1",
+        "color03": "#7797B7",
+        "color02": "#6F8EAD",
+        "color19": "#5E81AC",
+        "color17": "#BF616A",
+        "color20": "#D08770",
+        "color07": "#D8DEE9",
+        "color13": "#C08770",
+        "color01": "#de878f",
+        "color05": "#de878f",
+        "color14": "#434C5E",
+        "color12": "#AFBE8C"
+    },
+        "common": {
+        "base14": "#A3BE8C",
+        "base15": "#B48EAD",
+        "base13": "#EBCB8B",
+        "base12": "#D08770",
+        "base11": "#BF616A",
+        "base00": "#2E3440",
+        "base10": "#5E81AC",
+        "base03": "#4C566A",
+        "base08": "#88C0D0",
+        "base04": "#D8DEE9",
+        "base09": "#81A1C1",
+        "base05": "#E5E9F0",
+        "base02": "#434C5E",
+        "base06": "#ECEFF4",
+        "base01": "#3B4252",
+        "base07": "#8FBCBB"
+    }
+}

@@ -60,3 +60,4 @@ config/_misc/spicetify/Backup
 config/_misc/spicetify/Extracted
 config/_misc/spicetify/Extensions
 config/_misc/spicetify/CustomApps
+local/share/fonts/**/.uuid

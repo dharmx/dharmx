@@ -1,5 +1,5 @@
 # removed default rules
-bspc rule --remove *:*
+bspc rule --remove '*:*'
 
 alias rule='bspc rule --add'
 
@@ -28,8 +28,13 @@ rule Shotwell state=floating center=on
 rule firefox:Places state=floating center=on
 rule stalonetray manage=off locked=on border=off layer=above focus=off state=floating
 rule Plank manage=off layer=above focus=off
-rule Spotify state=floating center=on rectangle=1080x784+416+145
 rule Seahorse state=floating center=on
+rule Qalculate-gtk state=floating center=on
+rule aft-linux-qt state=floating center=on
+rule qBittorrent state=floating center=on desktop=3
+rule Ghostscript state=floating center=on rectangle=1173x812+370+131
+rule Gmtp state=floating center=on
+rule Zim state=floating sticky=on rectangle=445x426+1422+38
 
 unalias rule
 

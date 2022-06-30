@@ -1,40 +1,40 @@
 alias xclip='xclip -selection clipboard'
 
-if [ -x "$(command -v exa)" ]; then
+if [ $(command -v exa) ]; then
     alias li="exa --long --all --group --icons"
     alias ls="exa"
     alias la="exa --long --all --group"
 fi
 
-if [ -x "$(command -v logo-ls)" ]; then
+if [ $(command -v logo-ls) ]; then
     alias lls="logo-ls"
     alias lla="logo-ls -l --all"
 fi
 
-if [ -x "$(command -v ripgrep)" ]; then
+if [ $(command -v ripgrep) ]; then
     alias grep="ripgrep"
 fi
 
-if [ -x "$(command -v go-mtpfs)" ]; then
+if [ $(command -v go-mtpfs) ]; then
     alias mount-phone="go-mtpfs $HOME/Phone &>/dev/null & disown"
 fi
 
-if [ -x "$(command -v fusermount)" ]; then
+if [ $(command -v fusermount) ]; then
     alias unmount-phone="fusermount -u $HOME/Phone"
 fi
 
-if [ -x "$(command -v udisksctl)" ]; then
+if [ $(command -v udisksctl) ]; then
     alias mount-iso="udisksctl loop-setup -r -f"
     alias unmount-iso="udisksctl loop-delete -b"
     alias mount-ssd="udisksctl mount -b /dev/nvme0n1p1"
     alias unmount-ssd="udisksctl unmount -b /dev/nvme0n1p1"
 fi
 
-if [ -x "$(command -v nvim)" ]; then
+if [ $(command -v nvim) ]; then
     alias nv="nvim"
 fi
 
-if [ -x "$(command -v ranger)" ]; then
+if [ $(command -v ranger) ]; then
     alias fm="ranger"
 fi
 
@@ -343,7 +343,7 @@ alias rm='rm -i'
 alias cp='cp -i'
 alias mv='mv -i'
 
-alias -s pdf=acroread
+alias -s pdf=zathura
 alias -s ps=gv
 alias -s dvi=xdvi
 alias -s chm=xchm
@@ -382,9 +382,6 @@ pacopt() {
   fi
 }
 
-alias cless="cless"
-alias cmore="cmore"
-alias ccat="ccat"
 alias reconnect="nmcli d c wlp0s20f3"
 alias nvconfig="fm ~/.config/nvim/"
 
@@ -408,28 +405,39 @@ alias nhist="dbus-monitor \"interface='org.freedesktop.Notifications'\" | grep -
 alias strel="xrdb -I$XDG_CONFIG_HOME/Xresources $XDG_CONFIG_HOME/Xresources/config.x && kill -USR1 $(pidof st)"
 
 function compress-pdf-gray() {
-    gs -sDEVICE=pdfwrite -dCompatibilityLevel=1.4 -dPDFSETTINGS=/screen -dNOPAUSE -dQUIET -dBATCH -sOutputFile="$2.pdf" "$1.pdf"
+  [ $(command -v gs) ] \
+    && gs -sDEVICE=pdfwrite -dCompatibilityLevel=1.4 -dPDFSETTINGS=/screen -dNOPAUSE -dQUIET -dBATCH -sOutputFile="$2.pdf" "$1.pdf" \
+    || echo 'Ghostscript - gs needs to be installed.'
 }
 
 function compress-pdf() {
-    local level="screen"
-    if [[ "$3" != "" ]]; then 
-        level="$3"
-    fi
-    gs -sDEVICE=pdfwrite -dCompatibilityLevel=1.4 -dPDFSETTINGS=/"$level" -dNOPAUSE -dQUIET -dBATCH -sOutputFile="$2.pdf" "$1.pdf"
+  local level="screen"
+  [[ "$3" != "" ]] && level="$3"
+  [ $(command -v gs) ] \
+    && gs -sDEVICE=pdfwrite -dCompatibilityLevel=1.4 -dPDFSETTINGS=/"$level" -dNOPAUSE -dQUIET -dBATCH -sOutputFile="$2.pdf" "$1.pdf" \
+    || echo 'Ghostscript - gs needs to be installed.'
 }
 
 function redditdw() {
-    ffmpeg -i $(wget -qO- "https://api.reddit.com/api/info/?id=t3_$(echo $1| cut -d'/' -f 7)" | jq -r '.data.children[0].data.secure_media.reddit_video.dash_url') -c copy $(echo $1| cut -d'/' -f 8).mp4
+  local name="$(echo $1 | cut -d '/' -f 7)"
+  local plus="$(echo $1 | cut -d'/' -f 8)"
+  [ $(command -v ffmpeg) ] \
+    && ffmpeg -i "$(
+    wget -qO- "https://api.reddit.com/api/info/?id=t3_$name" \
+      | jq -r .data.children[0].data.secure_media.reddit_video.dash_url \
+    )" -c copy "$plus.mp4" \
+    || echo 'ffmpeg needs to be installed.'
 }
 
-function compile-hentai() {
-    for file in *; do
-        cd "$file"
-        convert "*.jpg" convert "$file.pdf"
-        mv "$file.pdf" "../$file.pdf"
-        cd ..
-    done
+function henc() {
+  pushd "$1"
+  for file in *; do
+    pushd "$file"
+    convert "*.jpg" "$file.pdf"
+    mv "$file.pdf" "../$file.pdf"
+    popd
+  done
+  popd
 }
 
 alias fet.sh="$HOME/.bin/eyecandy/fet.sh"
@@ -447,7 +455,9 @@ function dw-tarball() {
 function stylua-fmt() {
     local current="$PWD"
     cd "$1"
-    stylua .
+    [ $(command -v stylua) ] \
+      && stylua . \
+      || echo 'stylua is not installed'
     cd "$current"
 }
 
@@ -483,6 +493,17 @@ alias fontcfg="font-config-info"
 
 function montage-shot() {
   montage -background '#949490' -geometry x$((1080*2))+15+15 -shadow $* montage.png
+}
+
+function adbwifi() {
+  command -v adb &>/dev/null || return
+  adb devices
+  echo -n "SERIAL: "
+  read serial
+  adb -s $serial tcpip 5555
+  echo -n "IP: "
+  read ip
+  adb connect $ip:5555
 }
 
 alias spotifyd="spotifyd --config-path '$XDG_CONFIG_HOME/spotifyd/spotifyd.conf' --no-daemon"

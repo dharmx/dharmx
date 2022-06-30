@@ -270,6 +270,7 @@ dir_node_exact_matches = {
     'omf': '',
     '.git'                             : '',
     'Desktop'                          : '',
+    'Notebooks'                        : '',
     'Documents'                        : '',
     'Downloads'                        : '',
     'Dropbox'                          : '',
