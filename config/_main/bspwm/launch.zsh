@@ -5,6 +5,7 @@ function preboot() {
   local running="$(pgrep -x "$args[1]")"
   [ "$running" ] && kill "$running" 2>/dev/null
   eval "$1 ${args[2,-1]} &>/dev/null"
+  echo -e "$(tput setf 1)INFO\e[0m: Restarted $args[1]!"
 }
 
 # launch some nice apps

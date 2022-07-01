@@ -246,7 +246,7 @@ super + shift + slash
   i3lock --blur 0.5 --bar-indicator --verif-color '#00000000' --greeter-text 'Bye.' --greeter-font 'Dosis Bold' --greeter-color '#79DCAAFF' --pointer=default --ignore-empty-password --radius 40 --verif-color '#00000000' --no-modkey-text --pass-media-keys --pass-screen-keys --pass-volume-keys --pass-power-keys
 
 ~Escape
-  eval "[ $(bspc query --tree --node | jq .client.className) = Pavucontrol ] && bspc node --close"
+  eval "$XDG_CONFIG_HOME/sxhkd/script/close.bash"
 
 ~button3
   xqp 0 $(xdo id -N bspwm -n root) && jgmenu_run
@@ -258,5 +258,9 @@ super + {semicolon,apostrophe}
 
 super + equal
   "$XDG_CONFIG_HOME"/sxhkd/script/xmodmap.bash 'pointer = 1 {3 2,2 3}'
+
+super + a
+  wid="$(xdotool search Zim | sed -n 1p)";\
+  [[ "$wid" != "" ]] && bspc node "$wid" --flag hidden={on,off}
 
 # vim:filetype=sxhkd
