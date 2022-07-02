@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 
 # shellcheck disable=1091
-source "$XDG_CONFIG_HOME/bspwm/theme.zsh"
+source "$XDG_CONFIG_HOME/bspwm/theme.bash"
 lockfile="$XDG_CACHE_HOME/bspwm_all_$1.lock"
 
 function mod_node() {

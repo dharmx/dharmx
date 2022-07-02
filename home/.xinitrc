@@ -1,4 +1,4 @@
-#!/usr/bin/env zsh
+#!/usr/bin/env bash
 
 function init_session() {
   xset b off
@@ -6,7 +6,6 @@ function init_session() {
   # SEE: https://unix.stackexchange.com/a/295652/332452
   # shellcheck source=/dev/null
   source "/etc/X11/xinit/xinitrc.d/50-systemd-user.sh"
-  typeset -gx XDG_SESSION_TYPE="x11"
 
   # see https://wiki.archlinux.org/title/GNOME/Keyring#xinitrc
   eval "$(/usr/bin/gnome-keyring-daemon --start)"
@@ -16,12 +15,11 @@ function init_session() {
   mkdir -p "$XDG_DATA_HOME/keyrings"
 
   systemctl --user import-environment DISPLAY XAUTHORITY
-
   if which dbus-update-activation-environment >/dev/null 2>&1; then
     dbus-update-activation-environment DISPLAY XAUTHORITY
   fi
 
-  exec bspwm -c "$XDG_CONFIG_HOME/bspwm/config.zsh"
+  exec bspwm -c "$XDG_CONFIG_HOME/bspwm/config.bash"
 }
 
 if [ ! "$PWD" = "$HOME" ]
@@ -33,4 +31,4 @@ else
   init_session
 fi
 
-# vim:ft=zsh
+# vim:ft=sh

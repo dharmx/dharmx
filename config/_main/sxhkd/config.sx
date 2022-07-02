@@ -176,10 +176,7 @@ super + backslash
 
 # toggle borderless monocle
 super + x ; 1
-  bspc config borderless_monocle {true,false};\
-    notify-send -a bspwm Layouts "Borderless monocle has been $(\
-      [ $(bspc config borderless_monocle) = true ] \
-      && echo enabled || echo disabled)."
+  bspc config borderless_monocle {true,false}
 
 # toggle borderless floating
 super + x ; 2
@@ -190,44 +187,29 @@ super + x ; 2
 
 # toggle borderless singleton
 super + x ; 3
-  bspc config borderless_singleton {true,false};\
-    notify-send -a bspwm Layouts "Borderless singleton has been $(\
-      [ $(bspc config borderless_singleton) = true ] \
-      && echo enabled || echo disabled)."
+  bspc config borderless_singleton {true,false}
 
 # gapless monocle
 super + x ; 4
-  bspc config gapless_monocle {true,false};\
-    notify-send -a bspwm Layouts "Gapless monocle has been $(\
-      [ $(bspc config gapless_monocle) = true ] \
-      && echo enabled || echo disabled)."
+  bspc config gapless_monocle {true,false}
 
 super + x ; 5
-  bspc config center_pseudo_tiled {true,false};\
-    notify-send -a bspwm Layouts "Centered pseudo has been $(\
-      [ $(bspc config center_pseudo_tiled) = true ] \
-      && echo enabled || echo disabled)."
+  bspc config center_pseudo_tiled {true,false}
 
 super + x ; 6
-  bspc config single_monocle {true,false};\
-    notify-send -a bspwm Layouts "Single monocle has been $(\
-      [ $(bspc config single_monocle) = true ] \
-      && echo enabled || echo disabled)."
+  bspc config single_monocle {true,false}
 
 super + x ; c
   $XDG_CONFIG_HOME/sxhkd/script/center.bash
 
 super + x ; comma
-  bspc config automatic_scheme {alternate,longest_side,spiral};\
-  notify-send -a layouts LayoutCTL "Automatic scheme has been set to $(bspc config automatic_scheme)"
+  bspc config automatic_scheme {alternate,longest_side,spiral}
 
 super + x ; period
-  bspc config initial_polarity {first_child,second_child};\
-  notify-send -a layouts LayoutCTL "Initial polarity has been set to $(bspc config initial_polarity)"
+  bspc config initial_polarity {first_child,second_child}
 
 super + x ; slash
-  bspc config directional_focus_tightness {high,low};\
-  notify-send -a layouts LayoutCTL "Tightness has been set to $(bspc config directional_focus_tightness)"
+  bspc config directional_focus_tightness {high,low}
 
 super + w ; 1
   eww windows | grep '*vertigo' && eww close vertigo && bspc config left_padding 0 || eww open vertigo;\
@@ -252,7 +234,7 @@ super + shift + slash
   xqp 0 $(xdo id -N bspwm -n root) && jgmenu_run
 
 super + {semicolon,apostrophe}
-  source "$XDG_CONFIG_HOME/bspwm/theme.zsh";\
+  source "$XDG_CONFIG_HOME/bspwm/theme.bash";\
   bsp-layout {previous,next}; notify-send -a layouts BSP-LAYOUTS \
     "Currently, set to <span font_weight='bold' foreground='$cyan'>$(bsp-layout get)</span>."
 

@@ -1,5 +1,0 @@
-#!/usr/bin/env zsh
-
-xwinwrap -fs -fdt -ni -b -nf -- mpv --keep-open=no --really-quiet --loop --no-audio --wid=%WID "$1"
-
-# vim:ft=zsh

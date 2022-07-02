@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-source "$XDG_CONFIG_HOME/bspwm/theme.zsh"
+source "$XDG_CONFIG_HOME/bspwm/theme.sh"
 
 IFS='x' read -r w h < <(xdpyinfo | awk '/dimensions/ {print $2}')
 eval "$(xdotool getactivewindow getwindowgeometry --shell)"
