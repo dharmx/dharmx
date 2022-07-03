@@ -3,7 +3,9 @@
 # removed all / default / prev rules
 bspc rule --remove '*:*'
 
-alias rule='bspc rule --add'
+function rule() {
+  bspc rule --add "$@"
+}
 
 # Program settings
 rule glava state=floating manage=off layer=below
@@ -37,7 +39,5 @@ rule qBittorrent state=floating center=on desktop=3
 rule Ghostscript state=floating center=on rectangle=1173x812+370+131
 rule Gmtp state=floating center=on
 rule Zim state=floating sticky=on rectangle=445x426+1422+38
-
-unalias rule
 
 # vim:ft=sh
