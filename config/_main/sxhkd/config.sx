@@ -7,9 +7,8 @@
 super + {_,ctrl,shift} + Return
   {st,tym,kitty}
 
-# start a new tmux session with st,open a shared kitty instance,attach to the latest tmux session with st
-super + alt + {_,ctrl} + Return
-  {st -e tmux,st -e tmux attach-session}
+super + alt + Return
+  bspc rule -a St -o state=floating rectangle=$(slop) && st
 
 # make sxhkd reload its configuration files
 super + {_,shift} + Escape
