@@ -510,6 +510,22 @@ function adbwifi() {
   adb connect $ip:5555
 }
 
+function regen-theme() {
+  pushd "$HOME/.bin/regen" || return
+  [ "$1" ] || regen "radium" &>/dev/null && regen "$1" &>/dev/null
+  popd || return
+}
+
+function fclist() {
+  fc-list \
+    | awk -F '[:,]' '{gsub("^ ", "", $2); print $2}' \
+    | sort \
+    | uniq \
+    | rofi -dmenu -p 'Fonts' \
+    | tr -d '\n' \
+    | xclip
+}
+
 alias spotifyd="spotifyd --config-path '$XDG_CONFIG_HOME/spotifyd/spotifyd.conf' --no-daemon"
 alias luamake="$HOME/.opt/lua-language-server/3rd/luamake/luamake"
 

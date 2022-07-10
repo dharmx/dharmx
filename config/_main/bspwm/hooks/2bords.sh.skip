@@ -13,7 +13,7 @@ BORD_OUTER=15
 BORD_TOTAL=$((BORD_INNER + BORD_OUTER))
 
 INNER_NORM="$(xrdb -query | awk '{if($1=="*.color0:"){gsub("#","");print$2}}')"
-INNER_FOCUS="$(xrdb -query | awk '{if($1=="*.color2:"){gsub("#","");print$2}}')"
+INNER_FOCUS="$(xrdb -query | awk '{if($1=="shades.shade04:"){gsub("#","");print$2}}')"
 OUTER="$(xrdb -query | awk '{if($1=="*.background:"){gsub("#","");print$2}}')"
 
 bspc config border_width $BORD_TOTAL

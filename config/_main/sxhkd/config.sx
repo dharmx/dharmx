@@ -210,6 +210,9 @@ super + x ; period
 super + x ; slash
   bspc config directional_focus_tightness {high,low}
 
+super + x ; m
+  bspc node --flag hidden=on
+
 super + w ; 1
   eww windows | grep '*vertigo' && eww close vertigo && bspc config left_padding 0 || eww open vertigo;\
     eww windows | grep '*vertigo' \
@@ -243,5 +246,14 @@ super + equal
 super + a
   wid="$(xdotool search Zim | sed -n 1p)";\
   [[ "$wid" != "" ]] && bspc node "$wid" --flag hidden={on,off}
+
+super + alt + {Up,Down,Left,Right}
+  "$XDG_CONFIG_HOME"/sxhkd/script/bsize.bash --{yaxis --expand,yaxis --contract,xaxis --expand,xaxis --contract} 20
+
+super + ctrl + {Up,Down}
+  "$XDG_CONFIG_HOME"/sxhkd/script/bsize.bash --all --{expand,contract} 20
+
+super + alt + {m,n}
+  "$XDG_CONFIG_HOME"/sxhkd/script/skunk.bash --{hide-loop,unhide-all}
 
 # vim:filetype=sxhkd

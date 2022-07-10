@@ -2,17 +2,17 @@
 # shellcheck disable=2016
 
 function preboot() {
-  local args=("$*")
   local running
-  running="$(pgrep -x "${args[1]}")"
+  running="$(pgrep -x "$1")"
   [ "$running" ] && kill "$running" 2>/dev/null
   eval "$* &>/dev/null &"
-  echo -e "$(tput setf 1)INFO\e[0m: Restarted ${args[1]}!"
+  echo -e "$(tput setf 1)INFO\e[0m: Restarted $1."
 }
 
 # launch some nice apps
 killall python bspc 2>/dev/null
-preboot sxhkd -c '$XDG_CONFIG_HOME/sxhkd/config.sx'
+preboot sxhkd -c '$XDG_CONFIG_HOME/sxhkd/config.sx' -s /tmp/sxhkd.fifo
+
 preboot ksuperkey -t 100 -e "'Super_L=Super_L|d'"
 preboot eww open vertigo
 preboot stalonetray --config '$XDG_CONFIG_HOME/tray/config.conf'
