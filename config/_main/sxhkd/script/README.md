@@ -86,8 +86,9 @@ Dor example you can assert that, all of the nodes in workspace one shall be in a
 
 #### xmodmap.bash
 
+Swap keyboard mappings.
+
 ##### Dependencies
 
 - xmodmap
 
-Swap keyboard mappings.
