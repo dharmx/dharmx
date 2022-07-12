@@ -8,7 +8,7 @@ while sleep 0.5; do
   new_todo="$(todo raw todo | wc --lines)"
   [ $new_todo -eq $old_todo ] || old_todo=$new_todo
   [ $new_done -eq $old_done ] || {
-    notify-send -a todo Todo "$new_done tasks done and $((new_done + new_todo)) are remaining."
+    notify-send -a todo -i to-do-list Todo "$new_done tasks done and $((new_done + new_todo)) are remaining."
     old_done=$new_done
   }
 done

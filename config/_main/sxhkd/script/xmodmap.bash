@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 
 xmodmap -e "$1"
-notify-send -a sxhkd Xmodmap -i mouse -u normal "Current: $(
+notify-send -a sxhkd Xmodmap -i custom-work -u normal "Current: $(
   xmodmap -pp \
   | head -n7 \
   | tail -n3 \

@@ -496,7 +496,7 @@ function montage-vert() {
 }
 
 function montage-shot() {
-  montage -background '#949490' -geometry x$((1080*2))+15+15 -shadow $* montage.png
+  montage -shadow -background '#c397d8' -geometry +20+20 -tile 2x *.png montage.png
 }
 
 function adbwifi() {
@@ -516,12 +516,22 @@ function regen-theme() {
   popd || return
 }
 
-function fclist() {
+function fcrofi() {
   fc-list \
     | awk -F '[:,]' '{gsub("^ ", "", $2); print $2}' \
     | sort \
     | uniq \
     | rofi -dmenu -p 'Fonts' \
+    | tr -d '\n' \
+    | xclip
+}
+
+function fcfzf() {
+  fc-list \
+    | awk -F '[:,]' '{gsub("^ ", "", $2); print $2}' \
+    | sort \
+    | uniq \
+    | fzf \
     | tr -d '\n' \
     | xclip
 }

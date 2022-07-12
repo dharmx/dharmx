@@ -13,9 +13,9 @@ super + alt + Return
 # make sxhkd reload its configuration files
 super + {_,shift} + Escape
   {pkill -USR1 -x sxhkd;\
-    notify-send -a "sxhkd" -i cs-keyboard "SXHKD" "Reloaded all configurations.",\
+    notify-send -a "sxhkd" -i keyboard "SXHKD" "Reloaded all configurations.",\
     $XDG_CONFIG_HOME/bspwm/defaults.zsh;\
-    notify-send -a "sxhkd" -i desktop \
+    notify-send -a "sxhkd" -i custom-windows-round \
     "BSPWM" "Configurations and rules have been set to default."}
 
 #
@@ -171,7 +171,7 @@ super + shift + d
 
 # toggle picom
 super + backslash
-  $XDG_CONFIG_HOME/picom/picom.zsh
+  $XDG_CONFIG_HOME/picom/picom.sh
 
 # toggle borderless monocle
 super + x ; 1
@@ -179,10 +179,7 @@ super + x ; 1
 
 # toggle borderless floating
 super + x ; 2
-  $XDG_CONFIG_HOME/sxhkd/script/noborders.zsh {start,stop};\
-    notify-send -a bspwm Layouts "Borderless floating has been $(\
-      [ -f ~/.cache/bspwm-floating.lock ] && echo enabled \
-      || echo disabled)."
+  $XDG_CONFIG_HOME/sxhkd/script/noborders.zsh {start,stop}
 
 # toggle borderless singleton
 super + x ; 3
@@ -216,8 +213,8 @@ super + x ; m
 super + w ; 1
   eww windows | grep '*vertigo' && eww close vertigo && bspc config left_padding 0 || eww open vertigo;\
     eww windows | grep '*vertigo' \
-      && notify-send -a bar -u low EWW 'Opened eww-vertigo.' \
-      || notify-send -a bar -u critical EWW 'Closed eww-vertigo.'
+      && notify-send -a bar -i filter -u low EWW 'Opened eww-vertigo.' \
+      || notify-send -a bar -i filter -u critical EWW 'Closed eww-vertigo.'
 
 super + w ; 2
   eww open --toggle disclose
