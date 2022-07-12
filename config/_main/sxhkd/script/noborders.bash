@@ -1,12 +1,12 @@
-#!/usr/bin/env zsh
+#!/usr/bin/env bash
 
-typeset -g cache="${XDG_CACHE_HOME:-~/.cache}/bspwm-floating.lock"
-typeset -g default="$(bspc config -m focused border_width)"
+cache="${XDG_CACHE_HOME:-~/.cache}/bspwm-floating.lock"
+default="$(bspc config -m focused border_width)"
 
 function floating() {
   [[ "$1" == "floating" && "$2" == "on" ]] \
-    && bspc config -n focused border_width 0      \
-    || bspc config -n focused border_width "$default"
+    || bspc config -n focused border_width "$default"   \
+    && bspc config -n focused border_width 0
 }
 
 function start() {
@@ -19,6 +19,7 @@ function start() {
 }
 
 function stop() {
+  echo "$cache"
   rm --force "$cache"
   bspc config -n focused border_width "$default"
   exit 0
@@ -31,4 +32,4 @@ esac
 
 unset cache
 
-# vim:filetype=zsh
+# vim:filetype=sh

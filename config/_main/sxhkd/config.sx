@@ -178,7 +178,7 @@ super + x ; 1
 
 # toggle borderless floating
 super + x ; 2
-  $XDG_CONFIG_HOME/sxhkd/script/noborders.zsh {start,stop}
+  $XDG_CONFIG_HOME/sxhkd/script/noborders.bash {start,stop}
 
 # toggle borderless singleton
 super + x ; 3
