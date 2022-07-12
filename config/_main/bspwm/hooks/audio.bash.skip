@@ -92,20 +92,21 @@ function subscribe() {
 		mutenew="$muted"
         newhead="$headset"
 		if [ "$new" -gt "$old" ]; then
-			notify "$icon" "-h int:value:$level" Pulseaudio "Volume increased to $level%."
+			# notify "$icon" "-h int:value:$level" Pulseaudio "Volume increased to $level%."
+			notify custom-volume-up "-h int:value:$level" Pulseaudio "Volume increased to $level%."
 			old=$new
 		elif [ "$new" -lt "$old" ]; then
-			notify "$icon" "-h int:value:$level" Pulseaudio "Volume decreased to $level%."
+			notify custom-volume-down "-h int:value:$level" Pulseaudio "Volume decreased to $level%."
 			old=$new
 		fi
 
         if [[ "$newhead" != "$oldhead" ]]; then
-			[ "$newhead" = no ] && notify-send -i emblem-remove -u critical -a audiojack Pulseaudio 'Headphones unplugged.'
-			[ "$newhead" = yes ] && notify-send -i emblem-added -u low -a audiojack Pulseaudio 'Headphones plugged.'
+			[ "$newhead" = no ] && notify-send -i custom-minus-sign -u critical -a audiojack Pulseaudio 'Headphones unplugged.'
+			[ "$newhead" = yes ] && notify-send -i custom-add-sign -u low -a audiojack Pulseaudio 'Headphones plugged.'
 			oldhead="$newhead"
         elif [[ "$mutenew" != "$muteold" ]]; then
-			[ "$mutenew" = false ] && notify "$icon" "-h int:value:$level" Pulseaudio 'Volume has been unmuted.'
-			[ "$mutenew" = true ] && notify audio-volume-muted-blocked-panel "" Pulseaudio 'Volume has been muted.'
+			[ "$mutenew" = false ] && notify custom-volume-unmute "-h int:value:$level" Pulseaudio 'Volume has been unmuted.'
+			[ "$mutenew" = true ] && notify custom-volume-mute "" Pulseaudio 'Volume has been muted.'
 			muteold="$mutenew"
 		fi
 	done

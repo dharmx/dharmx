@@ -16,19 +16,19 @@ inten=""
 
 # notify and view screenshot
 function notify_view() {
-	notify-send -i completed-task -a shot_icon -u low Screenshot "Copied to clipboard."
+	notify-send -i custom-list -a shot_icon -u low Screenshot "Copied to clipboard."
 	xdg-open "$dir/$file"
 	if [[ -e "$dir/$file" ]]; then
 		notify-send -i "$dir/$file" -a shot -u low Screenshot "Screenshot Saved."
 	else
-		notify-send -i custom-delete -a shot_icon -u low Screenshot "Screenshot Deleted."
+		notify-send -i custom-trash-bin -a shot_icon -u low Screenshot "Screenshot Deleted."
 	fi
 }
 
 # countdown
 function countdown() {
 	for sec in $(seq "$1" -1 1); do
-		notify-send -i wall-clock -a shot_icon -t 1000 Screenshot "Taking shot in $sec..."
+		notify-send -i custom-clock-blue -a shot_icon -t 1000 Screenshot "Taking shot in $sec..."
 		sleep 1
 	done
 }
@@ -68,7 +68,7 @@ function shotarea() {
 		echo "$bytes" | base64 --decode | tee "$file" | xclip -selection clipboard -t image/png
 		notify_view
 	else
-		notify-send -i no-results-win -a shot_icon -u low Screenshot "Operation Cancelled."
+		notify-send -i custom-cancel -a shot_icon -u low Screenshot "Operation Cancelled."
 	fi
 }
 

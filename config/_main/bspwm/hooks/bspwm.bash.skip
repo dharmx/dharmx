@@ -89,7 +89,7 @@ function raw_subscribe() {
 }
 
 function notify_choice() {
-  notify-send -a layouts LayoutCTL "<span foreground='$yellow'>$1</span> has been set from <span font_weight='bold' foreground='$red'>$2</span> to <span font_weight='bold' foreground='$green'>$3</span>"
+  notify-send -a layouts -i custom-sliders LayoutCTL "<span foreground='$yellow'>$1</span> has been set from <span font_weight='bold' foreground='$red'>$2</span> to <span font_weight='bold' foreground='$green'>$3</span>"
 }
 
 function echo_choice () {

@@ -13,10 +13,9 @@ super + alt + Return
 # make sxhkd reload its configuration files
 super + {_,shift} + Escape
   {pkill -USR1 -x sxhkd;\
-    notify-send -a "sxhkd" -i keyboard "SXHKD" "Reloaded all configurations.",\
+    notify-send -a sxhkd -i custom-keyboard-blue SXHKD "Reloaded all configurations.",\
     $XDG_CONFIG_HOME/bspwm/defaults.zsh;\
-    notify-send -a "sxhkd" -i custom-windows-round \
-    "BSPWM" "Configurations and rules have been set to default."}
+    notify-send -a sxhkd -i custom-keyboard-blue BSPWM "Configurations and rules have been set to default."}
 
 #
 # bspwm hotkeys
@@ -213,8 +212,8 @@ super + x ; m
 super + w ; 1
   eww windows | grep '*vertigo' && eww close vertigo && bspc config left_padding 0 || eww open vertigo;\
     eww windows | grep '*vertigo' \
-      && notify-send -a bar -i filter -u low EWW 'Opened eww-vertigo.' \
-      || notify-send -a bar -i filter -u critical EWW 'Closed eww-vertigo.'
+      && notify-send -a bar -i custom-sliders -u low EWW 'Opened eww-vertigo.' \
+      || notify-send -a bar -i custom-sliders -u critical EWW 'Closed eww-vertigo.'
 
 super + w ; 2
   eww open --toggle disclose
@@ -234,7 +233,7 @@ super + shift + slash
 
 super + {semicolon,apostrophe}
   source "$XDG_CONFIG_HOME/bspwm/theme.bash";\
-  bsp-layout {previous,next}; notify-send -a layouts BSP-LAYOUTS \
+  bsp-layout {previous,next}; notify-send -a layouts -i custom-color LayoutCTL \
     "Currently, set to <span font_weight='bold' foreground='$cyan'>$(bsp-layout get)</span>."
 
 super + equal

@@ -23,14 +23,14 @@ case "$1" in
 
     null="$(echo "$ROFI_ITEMS" | tr --delete '\t\n ')"
     [ "$null" ] || {
-      notify-send -a layouts -u critical Maximize 'No hidden windows open!'
+      notify-send -a layouts -u critical -i custom-cancel Maximize 'No hidden windows open!'
       exit 1
     }
 
     read -r index < <(echo -e "$ROFI_ITEMS" | rofi -format 'i' -dmenu -p MiniSL)
 
     [ "$index" ] || {
-      notify-send -a layouts -u critical Maximize 'Selection Cancelled.'
+      notify-send -a layouts -u critical -i custom-cancel Maximize 'Selection Cancelled.'
       exit 1
     }
 
@@ -42,14 +42,14 @@ case "$1" in
 
     null="$(echo "$ROFI_ITEMS" | tr --delete '\t\n ')"
     [ "$null" ] || {
-      notify-send -a layouts -u critical Minimize 'No windows open!'
+      notify-send -a layouts -u critical -i custom-cancel Minimize 'No windows open!'
       exit 1
     }
  
     read -r index < <(echo -e "$ROFI_ITEMS" | rofi -format 'i' -dmenu -p MiniSL)
 
     [ "$index" ] || {
-      notify-send -a layouts -u critical Minimize 'Selection Cancelled.'
+      notify-send -a layouts -u critical -i custom-cancel Minimize 'Selection Cancelled.'
       exit 1
     }
 

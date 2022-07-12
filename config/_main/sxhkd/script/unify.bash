@@ -15,10 +15,10 @@ function mod_node() {
 
 if [ -f "$lockfile" ]; then
   # shellcheck disable=2154
-  notify-send -a bspwm "Layout Unifier" "Reverted from <span foreground='$magenta'>$1</span> state."
+  notify-send -a bspwm -i custom-color "Layout Unifier" "Reverted from <span foreground='$magenta'>$1</span> state."
   rm "$lockfile"
 else
-  notify-send -a bspwm "Layout Unifier" "Unified to <span foreground='$magenta'>$1</span> state."
+  notify-send -a bspwm -i custom-color "Layout Unifier" "Unified to <span foreground='$magenta'>$1</span> state."
   touch "$lockfile"
   { echo; bspc subscribe node_add; } | while read -r _; do 
     current_desktop="$(bspc query --desktops --desktop focused --names)"
