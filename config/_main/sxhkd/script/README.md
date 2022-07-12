@@ -1,5 +1,5 @@
 <div align="center">
-  <h2>Module: BSPWM.</h1>
+  <h2>Module: SXHKD.</h1>
   Brief description of how this sub configuration actually works.
 </div>
 
