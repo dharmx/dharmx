@@ -33,9 +33,9 @@ case "$1" in
   --one-shot-kill|-d) xdotool selectwindow | xargs --replace=++ bspc node ++ --close ;;
 
   --help|-h) echo -e "$(tput setb 3) $(tput setf 0)USAGE \e[0m Brief script options
-  slunk -{s,c,a}
-  slunk -{x,d}
-  slunk -{sw,cw,aw}
+  skunk -{s,c,a}
+  skunk -{x,d}
+  skunk -{sw,cw,aw}
 
 $(tput setb 3) $(tput setf 0)DESCR \e[0m Options and their descriptions
 $(tput setf 5) :: bspwm only \e[0m
@@ -54,9 +54,9 @@ $(tput setf 5) :: one time only \e[0m
   " ;;
 
   *) echo -e "$(tput setb 1) $(tput setf 0)INFO \e[0m Usage examples
-  slunk -{s,c,a}
-  slunk -{x,d}
-  slunk -{sw,cw,aw}
+  skunk -{s,c,a}
+  skunk -{x,d}
+  skunk -{sw,cw,aw}
 Use -h to see more." ;;
 esac
 
