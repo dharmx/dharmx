@@ -1,0 +1,72 @@
+{
+  "wallpapers": [
+    "$XDG_PICTURES_DIR/wallpapers/centered/98 - BU5WdYL.jpg",
+    "$XDG_PICTURES_DIR/wallpapers/monokai/r2uhg0vjl2t81.png",
+    "$XDG_PICTURES_DIR/wallpapers/other/1621516202_21-phonoteka_org-p-fon-nyu-york-ulitsa-34.jpg"
+  ],
+  "common": {
+    "base08": "#568C3B",
+    "base13": "#8A8A0F",
+    "base03": "#282D2F",
+    "base05": "#7EA2B4",
+    "base09": "#257FAD",
+    "base15": "#5D5DB1",
+    "base01": "#1A1F21",
+    "base07": "#2D8F6F",
+    "base14": "#2D8F6F",
+    "base00": "#161B1D",
+    "base02": "#1E2325",
+    "base10": "#5D5DB1",
+    "base04": "#5A7B8C",
+    "base11": "#D22D72",
+    "base06": "#EBF8FF",
+    "base12": "#568C3B"
+  },
+  "syntax": {
+    "color08": "#949419",
+    "color10": "#8A8A0F",
+    "color11": "#808005",
+    "color18": "#5A7B8C",
+    "color14": "#507182",
+    "color07": "#7EA2B4",
+    "color16": "#257FAD",
+    "color09": "#5D5DB1",
+    "color00": "#D22D72",
+    "color03": "#4E4EA2",
+    "color02": "#477D2C",
+    "color19": "#2D8F6F",
+    "color17": "#1E8060",
+    "color20": "#16709E",
+    "color13": "#D73277",
+    "color01": "#BE195E",
+    "color05": "#0A6C4C",
+    "color12": "#477D2C",
+    "color15": "#477D2C",
+    "color04": "#659B4A",
+    "color06": "#D83378"
+  },
+  "rainbow": {
+    "orange": "#DA5252",
+    "purple": "#9165A6",
+    "cobalt": "#3F3F93",
+    "pink": "#E13C81",
+    "cyan": "#339575",
+    "green": "#5C9241",
+    "yellow": "#929217"
+  },
+  "shades": {
+    "shade00": "#272C2E",
+    "shade01": "#222729",
+    "shade02": "#1E2325",
+    "shade03": "#1C2123",
+    "shade04": "#181D1F",
+    "shade05": "#151A1C",
+    "shade06": "#13181A",
+    "shade07": "#101517",
+    "shade08": "#0E1315",
+    "shade09": "#0C1113",
+    "shade10": "#0A0F11",
+    "shade11": "#080D0F",
+    "shade12": "#050A0C"
+  }
+}

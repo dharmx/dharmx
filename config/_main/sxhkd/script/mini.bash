@@ -56,7 +56,7 @@ case "$1" in
     eval "bspc node ${INDICES[$index]} --flag hidden=on"
     echo "hidden=on node=${INDICES[$index]}"
     ;;
-  *) echo -e "$(tput setb 1) $(tput setf 0)INFO \e[0m mini-sl {--unhide|-x,--hide|-c}" ;;
+  *) echo -e "$(tput setb 1) $(tput setf 0)INFO \e[0m mini {--unhide|-x,--hide|-c}" ;;
 esac
 
 unset ROFI_ITEMS INDICES PADDING desktop_name node_name class_name node_id

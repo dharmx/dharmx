@@ -18,11 +18,14 @@ autoload compinit
 compinit
 
 use romkatv/powerlevel10k 
-use marlonrichert/zsh-autocomplete 
 use hlissner/zsh-autopair 
 use zdharma-continuum/fast-syntax-highlighting
 use MichaelAquilina/zsh-you-should-use 
 use zsh-users/zsh-autosuggestions
+use Aloxaf/fzf-tab
+
+# FZF tab is better. Fight me.
+# use marlonrichert/zsh-autocomplete 
 
 ice wait'3' lucid
 load zsh-users/zsh-history-substring-search 

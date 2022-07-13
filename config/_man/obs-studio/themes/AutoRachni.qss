@@ -1,17 +1,17 @@
 /* =========================== Color Palette ============================= */
-/* #1c2026      - Blue-gray (Main Background)                              */
-/* #54ced6      - Light Blue-gray                                          */
-/* #d4d4d5      - "White"                                                  */
-/* #171C21      - Lighter Gray                                             */
-/* #949494      - Light Grey                                               */
-/* #20252b      - Gray                                                     */
-/* #101317      - Dark Gray                                                */
-/* #7ab0df      - Cyan (Primary)                                           */
-/* #36c692      - Light Cyan (Primary Light - unused)                      */
-/* #70c0ba      - Dark Cyan (Primary Dark)                                 */
-/* #79dcaa      - Pink (Secondary)                                         */
-/* #f87070      - Light Pink (Secondary Light)                             */
-/* #b77ee0      - Dark Pink (Secondary Dark)                               */
+/* #292F35      - Blue-gray (Main Background)                              */
+/* #B0B0B0      - Light Blue-gray                                          */
+/* #BEBEBE      - "White"                                                  */
+/* #2C3035      - Lighter Gray                                             */
+/* #42484E      - Light Grey                                               */
+/* #2E343A      - Gray                                                     */
+/* #151A1F      - Dark Gray                                                */
+/* #c9938a      - Cyan (Primary)                                           */
+/* #8AABAC      - Light Cyan (Primary Light - unused)                      */
+/* #AC8A8C      - Dark Cyan (Primary Dark)                                 */
+/* #948FB1      - Pink (Secondary)                                         */
+/* #8AAC8B      - Light Pink (Secondary Light)                             */
+/* #ACA98A      - Dark Pink (Secondary Dark)                               */
 /* ======================================================================= */
 
 
@@ -20,36 +20,36 @@
 /************************/
 
 OBSTheme {
-	window: #1c2026; /* Blue-gray */
-	windowText: #d4d4d5; /* White */
-	base: #70c0ba; /* Dark Cyan (Primary Dark) */
-	alternateBase: #b77ee0; /* Dark Pink (Secondary Dark) */
-	text: #171C21; /* White */
-	button: #36c692; /* Cyan (Primary) */
-	buttonText: #171C21; /* White */
-	brightText: #f87070; /* Light Pink (Secondary Light) */
+	window: #292F35; /* Blue-gray */
+	windowText: #BEBEBE; /* White */
+	base: #AC8A8C; /* Dark Cyan (Primary Dark) */
+	alternateBase: #ACA98A; /* Dark Pink (Secondary Dark) */
+	text: #2C3035; /* White */
+	button: #8AABAC; /* Cyan (Primary) */
+	buttonText: #2C3035; /* White */
+	brightText: #8AAC8B; /* Light Pink (Secondary Light) */
 
-	light: #171C21; /* Lighter Gray */
-	mid: #949494; /* Light Grey */
-	dark: #20252b; /* Gray */
-	shadow: #101317; /* Dark Gray */
+	light: #2C3035; /* Lighter Gray */
+	mid: #42484E; /* Light Grey */
+	dark: #2E343A; /* Gray */
+	shadow: #151A1F; /* Dark Gray */
 
-	highlight: #36c692; /* Light Cyan (Primary Light) */
+	highlight: #8AABAC; /* Light Cyan (Primary Light) */
 	highlightedText: rgb(0,0,0);
 
-	link: #36c692; /* Light Cyan (Primary Light) */
-	linkVisited: #36c692; /* Light Cyan (Primary Light) */
+	link: #8AABAC; /* Light Cyan (Primary Light) */
+	linkVisited: #8AABAC; /* Light Cyan (Primary Light) */
 }
 
 OBSTheme::disabled {
-	text: #949494; /* Light Gray */
-	buttonText: #949494; /* Light Gray */
-	brightText: #949494; /* Light Gray */
+	text: #42484E; /* Light Gray */
+	buttonText: #42484E; /* Light Gray */
+	brightText: #42484E; /* Light Gray */
 }
 
 OBSTheme::inactive {
-	highlight: #7ab0df; /* Cyan (Primary) */
-	highlightedText: #d4d4d5; /* White */
+	highlight: #c9938a; /* Cyan (Primary) */
+	highlightedText: #BEBEBE; /* White */
 }
 
 
@@ -59,7 +59,7 @@ OBSTheme::inactive {
 
 SourceTree::item:selected:!active {
 	color: palette(window-text);
-	background-color: #79dcaa; /* Light Pink (Secondary Light) */
+	background-color: #948FB1; /* Light Pink (Secondary Light) */
 	border: none;
 }
 
@@ -102,7 +102,7 @@ QWidget {
 }
 
 QWidget::disabled {
-	color: 2px solid #79dcaa; /* Light Pink (Secondary Light) */
+	color: 2px solid #948FB1; /* Light Pink (Secondary Light) */
 }
 
 QWidget:item:hover {
@@ -142,7 +142,7 @@ QListWidget QLineEdit {
 
 QListWidget::item:selected:!active {
 	color: palette(window-text);
-	background-color: #79dcaa; /* Light Pink (Secondary Light) */
+	background-color: #948FB1; /* Light Pink (Secondary Light) */
 	border: none;
 }
 
@@ -170,7 +170,7 @@ QDockWidget {
 
 QDockWidget {
 	background: palette(window);
-	border: 1px solid #54ced6; /* Light Blue-gray */
+	border: 1px solid #B0B0B0; /* Light Blue-gray */
 }
 
 QDockWidget::title {
@@ -187,12 +187,12 @@ QDockWidget::close-button, QDockWidget::float-button {
 }
 
 QDockWidget::close-button:hover, QDockWidget::float-button:hover {
-	background: #79dcaa; /* Light Pink (Secondary Light) */
+	background: #948FB1; /* Light Pink (Secondary Light) */
 }
 
 QDockWidget::close-button:pressed, QDockWidget::float-button:pressed {
 	padding: 1px -1px -1px 1px;
-	background: #79dcaa; /* Light Pink (Secondary Light) */
+	background: #948FB1; /* Light Pink (Secondary Light) */
 }
 
 
@@ -209,7 +209,7 @@ QGroupBox {
 }
 
 QGroupBox::title {
-	color: #79dcaa; /* Pink (Secondary) */
+	color: #948FB1; /* Pink (Secondary) */
 	left: 20px;
 	top: -7px;
 	padding-left: 5px;
@@ -455,7 +455,7 @@ QToolButton:hover {
 }
 
 QToolButton:pressed {
-	background-color: #79dcaa; /* Pink (Secondary) */
+	background-color: #948FB1; /* Pink (Secondary) */
 	border-radius: 2px;
 }
 
@@ -610,7 +610,7 @@ QCheckBox {
 }
 
 QCheckBox:hover, QCheckBox:focus {
-	color: #79dcaa; /* Pink (Secondary) */
+	color: #948FB1; /* Pink (Secondary) */
 }
 
 QCheckBox:disabled {
@@ -828,13 +828,13 @@ QPushButton:hover {
 }
 
 QPushButton:pressed {
-	background-color: #79dcaa; /* Pink (Secondary) */
-	border: 1px solid #79dcaa; /* Pink (Secondary) */
+	background-color: #948FB1; /* Pink (Secondary) */
+	border: 1px solid #948FB1; /* Pink (Secondary) */
 }
 
 QPushButton:checked:pressed {
-	background-color: #79dcaa; /* Pink (Secondary) */
-	border: 1px solid #79dcaa; /* Pink (Secondary) */
+	background-color: #948FB1; /* Pink (Secondary) */
+	border: 1px solid #948FB1; /* Pink (Secondary) */
 }
 
 QPushButton:checked {
@@ -877,7 +877,7 @@ QDialogButtonBox QPushButton:hover {
 }
 
 QDialogButtonBox QPushButton:pressed {
-	background-color: #79dcaa; /* Pink (Secondary) */
+	background-color: #948FB1; /* Pink (Secondary) */
 }
 
 QDialogButtonBox QPushButton:disabled {
@@ -927,8 +927,8 @@ QPushButton:pressed[themeID="replayBufferButton"],
 QPushButton:pressed#modeSwitch,
 QPushButton:pressed#settingsButton,
 QPushButton:pressed#exitButton {
-	background-color: #79dcaa; /* Pink (Secondary) */
-	border: 1px solid #79dcaa; /* Pink (Secondary) */
+	background-color: #948FB1; /* Pink (Secondary) */
+	border: 1px solid #948FB1; /* Pink (Secondary) */
 }
 
 QPushButton:checked#streamButton,
@@ -1006,7 +1006,7 @@ QLabel#scenesLabel,
 QLabel#sourcesLabel,
 QLabel#mixerLabel,
 QLabel#sceneTransitionsLabel {
-	color: #79dcaa; /* Pink (Secondary) */
+	color: #948FB1; /* Pink (Secondary) */
 	margin-top: 5px;
 }
 
@@ -1165,7 +1165,7 @@ QHeaderView::section {
 
 /* Highlight linked hotkeys */
 OBSHotkeyLabel[hotkeyPairHover=true] {
-	color: #79dcaa; /* Pink (Secondary) */
+	color: #948FB1; /* Pink (Secondary) */
 }
 
 /* Workaround so frame borders in dark themes don't look like poop */
@@ -1204,7 +1204,7 @@ QAbstractItemView {
 QToolTip {
 	border: 1px solid palette(mid);
 	background-color: palette(window);
-	color: #79dcaa; /* Pink (Secondary) */
+	color: #948FB1; /* Pink (Secondary) */
 }
 
 /* About dialog */
@@ -1331,7 +1331,7 @@ QPushButton#extraPanelDelete:hover {
 }
 
 QPushButton#extraPanelDelete:pressed {
-     background-color: #79dcaa;
+     background-color: #948FB1;
 }
 
 OBSMissingFiles {
@@ -1445,10 +1445,10 @@ OBSYoutubeActions {
 }
 
 #ytEventList QLabel {
-    background-color: #7ab0df;; /* Cyan (Primary) */
-	color: #d4d4d5; /* White */
+    background-color: #c9938a;; /* Cyan (Primary) */
+	color: #BEBEBE; /* White */
 	border-radius: 2px;
-	border: 1px solid #7ab0df; /* Cyan (Primary) */
+	border: 1px solid #c9938a; /* Cyan (Primary) */
 	padding: 4px;
 	padding-left: 15px;
 	padding-right: 15px;
@@ -1460,7 +1460,7 @@ OBSYoutubeActions {
 }
 
 #ytEventList QLabel[isSelectedEvent=true] {
-	background-color: #79dcaa; /* Pink (Secondary) */
+	background-color: #948FB1; /* Pink (Secondary) */
     border: 1px solid rgba(191, 97, 106, 0.5); /* Pink (Secondary) */
 }
 
@@ -1470,8 +1470,8 @@ OBSYoutubeActions {
 
 /* Calendar Widget */
 QDateTimeEdit {
-	background-color: #101317; /* Dark Gray */
-	border: 1px solid #949494; /* Light Gray */
+	background-color: #151A1F; /* Dark Gray */
+	border: 1px solid #42484E; /* Light Gray */
 	border-radius: 2px;
 	padding: 5px;
 	min-width: 75px;
@@ -1519,10 +1519,10 @@ QCalendarWidget QWidget#qt_calendar_navigationbar {
 
 /* Calendar Top Bar Buttons */
 QCalendarWidget QToolButton {
-    background-color: #7ab0df;; /* Cyan (Primary) */
-	color: #d4d4d5; /* White */
+    background-color: #c9938a;; /* Cyan (Primary) */
+	color: #BEBEBE; /* White */
 	border-radius: 2px;
-	border: 1px solid #7ab0df; /* Cyan (Primary) */
+	border: 1px solid #c9938a; /* Cyan (Primary) */
 	padding: 2px;
 	padding-left: 15px;
 	padding-right: 15px;
@@ -1556,16 +1556,16 @@ QCalendarWidget QToolButton:hover {
 }
 
 QCalendarWidget QToolButton:pressed {
-    background-color: #79dcaa; /* Pink (Secondary) */
-	border: 1px solid #79dcaa; /* Pink (Secondary) */
+    background-color: #948FB1; /* Pink (Secondary) */
+	border: 1px solid #948FB1; /* Pink (Secondary) */
 }
 
 /* Year spinbox */
 QCalendarWidget QSpinBox {
     padding: 5px;
-	border: 1px solid #949494; /* Light Gray */
-	background-color: #101317; /* Dark Gray */
-	color: #d4d4d5; /* White */
+	border: 1px solid #42484E; /* Light Gray */
+	background-color: #151A1F; /* Dark Gray */
+	color: #BEBEBE; /* White */
 	border-radius: 2px;
 	min-width: 0px;
 }

@@ -52,10 +52,10 @@ icon_size = 30
 icon_theme = McMuse-green
 arrow_string = 
 
-color_menu_bg = #171C21 100
-color_menu_border = #7ab0df
-color_norm_bg = #79dcaa 0
-color_norm_fg = #949494 100
-color_sel_bg = #7ab0df 100
-color_sel_fg = #1c2026 100
-color_sep_fg = #c397d8 80
+color_menu_bg = #2C3035 100
+color_menu_border = #c9938a
+color_norm_bg = #948FB1 0
+color_norm_fg = #42484E 100
+color_sel_bg = #c9938a 100
+color_sel_fg = #292F35 100
+color_sep_fg = #AC8A8C 80

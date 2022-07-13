@@ -492,7 +492,7 @@ alias rel-xsettingsd="pkill -HUP xsettingsd"
 alias fontcfg="font-config-info"
 
 function montage-vert() {
-  montage -shadow -background '#c397d8' -geometry +20+20 -tile 1x *.png montage.png
+  montage -shadow -background '#c397d8' -geometry +30+30 -tile 1x *.png montage.png
 }
 
 function montage-shot() {

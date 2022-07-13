@@ -2,10 +2,10 @@
 TopRoundness = 10
 BottomRoundness = 0
 LineWidth = 3
-OuterStrokeColor = 36;;41;;46;;210
-FillStartColor = 23;;28;;33;;210
-FillEndColor = 31;;36;;41;;210
-InnerStrokeColor = 31;;36;;41;;210
+OuterStrokeColor = 71;;77;;83;;210
+FillStartColor = 44;;48;;53;;210
+FillEndColor = 66;;72;;78;;210
+InnerStrokeColor = 66;;72;;78;;210
 
 [PlankDockTheme]
 HorizPadding = 1
@@ -30,5 +30,5 @@ GlowPulseTime = 2000
 UrgentHueShift = 150
 ItemMoveTime = 450
 CascadeHide = true
-BadgeColor = 121;;220;;170;;210
+BadgeColor = 148;;143;;177;;210
 

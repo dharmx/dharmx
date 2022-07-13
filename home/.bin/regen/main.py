@@ -222,6 +222,18 @@ def genspices() -> None:
     pathlib.Path(os.path.expandvars("$XDG_CONFIG_HOME/spicetify/Themes/Sleek/color.ini")).write_text(changed)
 
 
+def genzsh() -> None:
+    changed = pathlib.Path("./template/zshell.zsh").read_text()
+    changed = changed % colors["common"]
+    pathlib.Path(os.path.expandvars("$XDG_CONFIG_HOME/zsh/theme.zsh")).write_text(changed)
+
+
+def genbash() -> None:
+    changed = pathlib.Path("./template/boune_shell.bash").read_text()
+    changed = changed % colors["common"]
+    pathlib.Path(os.path.expandvars("$XDG_CONFIG_HOME/bash/theme.bash")).write_text(changed)
+
+
 def setwallpaper() -> None:
     wall_choice = os.path.expandvars(choice(colors["wallpapers"]))
     os.system(f"feh --bg-fill '{wall_choice}'")
@@ -247,6 +259,8 @@ genkitty()
 genrofi()
 gencava()
 genstylus()
+genzsh()
+genbash()
 
 # order matters here
 relxresource()

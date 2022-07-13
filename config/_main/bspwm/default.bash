@@ -1,14 +1,12 @@
 #!/usr/bin/env bash
 # shellcheck disable=1091,2154
 
-function wm() {
-  bspc config "$@"
-}
+function wm() { bspc config "$@"; }
 
 bspc monitor eDP-1 --reset-desktops 1 2 3
 
 wm border_width 4
-wm window_gap 10
+wm window_gap 13
 wm top_padding 0
 
 source "$XDG_CONFIG_HOME/bspwm/theme.bash"

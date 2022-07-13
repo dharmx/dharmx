@@ -2,38 +2,38 @@
 !! Changes may be overwritten the next time 
 !! configs are re-generated
 
-#define base00 #101317
-#define base01 #171C21
-#define base02 #1c2026
-#define base03 #20252b
+#define base00 #151A1F
+#define base01 #2C3035
+#define base02 #292F35
+#define base03 #2E343A
 
-#define base04 #949494
-#define base05 #d4d4d5
-#define base06 #ffffff
+#define base04 #42484E
+#define base05 #BEBEBE
+#define base06 #BBBBBB
 
-#define base07 #54ced6
-#define base08 #70c0ba
-#define base09 #7ab0df
+#define base07 #B0B0B0
+#define base08 #AC8A8C
+#define base09 #c9938a
 
-#define base10 #b77ee0
-#define base11 #f87070
-#define base12 #36c692
-#define base13 #ffe59e
-#define base14 #79dcaa
-#define base15 #c397d8
+#define base10 #ACA98A
+#define base11 #8AAC8B
+#define base12 #8AABAC
+#define base13 #7797B7
+#define base14 #948FB1
+#define base15 #AC8A8C
 
-shades.shade00: #3d464e
-shades.shade01: #2b3238
-shades.shade02: #24292e
-shades.shade03: #1f2429
-shades.shade04: #1c2126
-shades.shade05: #191e23
-shades.shade06: #161b20
-shades.shade07: #151a1f
-shades.shade08: #13181d
-shades.shade09: #11161b
-shades.shade10: #0e1115
-shades.shade11: #0c0f13
-shades.shade12: #0a0d11
+shades.shade00: #565C62
+shades.shade01: #50565C
+shades.shade02: #474D53
+shades.shade03: #42484E
+shades.shade04: #2E343A
+shades.shade05: #292F35
+shades.shade06: #242A30
+shades.shade07: #20262C
+shades.shade08: #212528
+shades.shade09: #1C2023
+shades.shade10: #151B21
+shades.shade11: #1A1F22
+shades.shade12: #14181B
 
 ! vim:filetype=config

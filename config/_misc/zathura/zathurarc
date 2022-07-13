@@ -6,34 +6,34 @@ set selection-clipboard         "clipboard"
 set guioptions                  "true"
 set font                        "Dosis 12"
 
-set highlight-active-color      "#c397d8"
+set highlight-active-color      "#AC8A8C"
 
-set default-bg                  "#101317"
-set default-fg                  "#d4d4d5"
+set default-bg                  "#151A1F"
+set default-fg                  "#BEBEBE"
 
-set statusbar-fg                "#d4d4d5"
-set statusbar-bg                "#79dcaa"
+set statusbar-fg                "#BEBEBE"
+set statusbar-bg                "#948FB1"
 
-set inputbar-bg                 "#101317" 
-set inputbar-fg                 "#f87070"
+set inputbar-bg                 "#151A1F" 
+set inputbar-fg                 "#8AAC8B"
 
-set notification-warning-bg     "#ffe59e"
-set notification-warning-fg     "#101317"
+set notification-warning-bg     "#7797B7"
+set notification-warning-fg     "#151A1F"
 
-set highlight-color             "#79dcaa"
-set highlight-active-color      "#54ced6"
+set highlight-color             "#948FB1"
+set highlight-active-color      "#B0B0B0"
 
-set completion-highlight-fg     "#f87070"
-set completion-highlight-bg     "#101317"
+set completion-highlight-fg     "#8AAC8B"
+set completion-highlight-bg     "#151A1F"
 
-set completion-bg               "#36c692"
-set completion-fg               "#101317" 
+set completion-bg               "#8AABAC"
+set completion-fg               "#151A1F" 
 
-set notification-bg             "#d4d4d5"
-set notification-fg             "#101317"
+set notification-bg             "#BEBEBE"
+set notification-fg             "#151A1F"
 
-set recolor-darkcolor           "#d4d4d5" 
-set recolor-lightcolor          "#101317"
+set recolor-darkcolor           "#BEBEBE" 
+set recolor-lightcolor          "#151A1F"
 set recolor                     "false"
 
 # setting recolor-keep true will keep any color your pdf has.

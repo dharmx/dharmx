@@ -59,4 +59,8 @@ if [ -d "$HOME/.bin/regen/bin" ]; then
   export PATH="$PATH:$HOME/.bin/regen/bin"
 fi
 
+if [ -d "$HOME/.bin/util" ]; then
+  export PATH="$PATH:$HOME/.bin/util"
+fi
+
 # vim:ft=zsh:nowrap

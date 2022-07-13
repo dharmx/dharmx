@@ -3,15 +3,15 @@
 // configs are re-generated
 
 * {
-    bg-col: #13181d;
-    bg-col-light: #151a1f;
-    border-col: #191e23;
-    selected-col: #161b20;
-    blue: #79dcaa;
-    fg-col: #d4d4d5;
-    fg-col2: #7ab0df;
-    grey: #b77ee0;
-    red: #f87070;
+    bg-col: #212528;
+    bg-col-light: #20262C;
+    border-col: #292F35;
+    selected-col: #242A30;
+    blue: #948FB1;
+    fg-col: #BEBEBE;
+    fg-col2: #c9938a;
+    grey: #ACA98A;
+    red: #8AAC8B;
 }
 
 // vim:filetype=rasi

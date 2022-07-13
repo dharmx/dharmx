@@ -19,12 +19,12 @@ background = default
 foreground = default
 gradient = 10
 gradient_count = 6
-gradient_color_1 = '#161b20'
-gradient_color_2 = '#171C21'
-gradient_color_3 = '#1c2126'
-gradient_color_4 = '#7ab0df'
-gradient_color_5 = '#7ab0df'
-gradient_color_6 = '#f87070'
+gradient_color_1 = '#242A30'
+gradient_color_2 = '#2C3035'
+gradient_color_3 = '#2E343A'
+gradient_color_4 = '#c9938a'
+gradient_color_5 = '#c9938a'
+gradient_color_6 = '#8AAC8B'
 
 [smoothing]
 integral = 50
