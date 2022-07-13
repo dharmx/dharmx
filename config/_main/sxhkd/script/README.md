@@ -3,7 +3,7 @@
   Brief description of how this sub configuration actually works.
 </div>
 
-### Scripts
+## Scripts
 
 Brief explanation and information on the script's functionality and its dependencies.
 
@@ -59,7 +59,7 @@ A neat script for taking screenshots. Doesn't capture pointers.
 #### skunk.bash
 
 Similar script to that of `mini.bash` but the only difference is that it uses a pointer to select the node that needs
-to be minimized. Additionaly as a bonus option it also allows you to close nodes as well.
+to be minimized. Additionaly as a bonus option it also allows you to close nodes as well. Note, you'd need to press right click to cancel selection!
 
 ##### Dependencies
 
