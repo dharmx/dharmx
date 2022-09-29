@@ -1,0 +1,28 @@
+[Added Associations]
+text/css=neovide.desktop;
+image/png=shotwell.desktop;
+
+[Default Applications]
+x-scheme-handler/msteams=teams.desktop
+image/png=shotwell.desktop
+image/jpg=shotwell.desktop
+application/xml=org.qutebrowser.qutebrowser.desktop
+application/xhtml+xml=org.qutebrowser.qutebrowser.desktop
+text/csv=neovide.desktop
+text/x-makefile=neovide.desktop
+text/x-java=neovide.desktop
+text/tcl=neovide.desktop
+text/x-c++src=neovide.desktop
+text/plain=neovide.desktop
+text/x-pascal=neovide.desktop
+text/x-c++hdr=neovide.desktop
+text/tab-separated-values=neovide.desktop
+text/x-chdr=neovide.desktop
+text/x-moc=neovide.desktop
+text/x-csrc=neovide.desktop
+text/x-tex=neovide.desktop
+text/html=org.qutebrowser.qutebrowser.desktop
+x-scheme-handler/http=org.qutebrowser.qutebrowser.desktop
+x-scheme-handler/https=org.qutebrowser.qutebrowser.desktop
+x-scheme-handler/about=org.qutebrowser.qutebrowser.desktop
+x-scheme-handler/unknown=org.qutebrowser.qutebrowser.desktop

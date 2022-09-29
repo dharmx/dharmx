@@ -1,0 +1,68 @@
+configuration {
+  modes: [ run, drun, window ];
+  combi-modes: [ window, drun, run ];
+  dpi: 96;
+  terminal: "st";
+  click-to-exit: true;
+  disable-history: false;
+  show-icons: true;
+  drun-match-fields: "all";
+  no-lazy-grab: true;
+  scroll-method: 0;
+  no-drun-show-actions: true;
+
+  drun-display-format: "{icon} {name} {generic}";
+  // drun-display-format: "{icon} {name}";
+
+  inputchange {
+    action: "kb-row-first";
+  }
+
+  timeout {
+    delay: 15;
+    action: "kb-cancel";
+  }
+
+  run {
+    display-name: "Commands";
+  }
+
+  drun {
+    fallback-icon: "network";
+    display-name: "Apps";
+    delay: 5;
+    action: "kb-cancel";
+    match-fields: "name,generic,exec,categories,keywords";
+
+    parse-user: true;
+    parse-system: true;
+  }
+
+  window {
+    display-name: "Active";
+    close-on-delete: false;
+    thumbnail: true;
+  }
+
+  windowcd {
+    display-name: "Desktop";
+    close-on-delete: false;
+  }
+
+  file-browser {
+    display-name: "Explore";
+    directory: "~/";
+    sorting-method: "mtime";
+    directories-first: true;
+  }
+
+  // append more using comma
+  icon-theme: "custom";
+
+  // SEE: config/sxhkd/config.sx -- super + d
+  kb-cancel: "Super_L-d,Escape";
+}
+
+@theme "dishonest"
+
+// vim:filetype=rasi

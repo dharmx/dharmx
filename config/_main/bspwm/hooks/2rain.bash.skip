@@ -1,0 +1,26 @@
+#!/usr/bin/env bash
+
+## Depends on wmutils core and opt
+## yay -S wmutils-git
+
+DEFAULT="$(bspc config border_width)"
+LOCK="$XDG_CACHE_HOME/bspwm_dual_rainbow_borders.lock"
+
+COLORS=(00CC9C 00CC97 00CB91 00CB8B 00CB85 13CA7F 29CA79)
+FREQ=${FREQ:-0.1}
+
+INNER=5
+OUTER=15
+TOTAL=$((INNER + OUTER))
+
+bspc config border_width $TOTAL
+[ ! -f "$LOCK" ] && touch "$LOCK"
+while [ -f "$LOCK" ]; do
+  for color in "${COLORS[@]}"; do
+    chwb2 -I "0x$color" -O "0x101317" -i 5 -o 15 "$(bspc query -N -n .local.focused.\!fullscreen)"
+    sleep "$FREQ"
+  done
+done
+bspc config border_width "$DEFAULT"
+
+# vim:filetype=sh

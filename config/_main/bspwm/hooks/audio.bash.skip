@@ -1,0 +1,117 @@
+#!/usr/bin/env bash
+
+muted=''
+level=''
+icon=''
+urgency=''
+headset=''
+
+function fetch() {
+  muted=$(pamixer --get-mute)
+  level=$(pamixer --get-volume)
+    headset="$(pacmd list-sinks | grep 'analog-output-headphones: Headphones (priority 9900, latency offset 0 usec, available:' | awk '{print $NF}' | tr --delete ')')"
+  if [ "$level" -eq 0 ]; then
+    icon=volume-level-none
+    urgency=low
+  elif [ "$level" -le 5 ]; then
+    icon=volume-level-low
+  elif [ "$level" -le 10 ]; then
+    icon=volume-level-low
+    urgency=low
+  elif [ "$level" -le 15 ]; then
+    icon=volume-level-low
+    urgency=low
+  elif [ "$level" -le 20 ]; then
+    icon=volume-level-low
+    urgency=low
+  elif [ "$level" -le 25 ]; then
+    icon=volume-level-low
+    urgency=low
+  elif [ "$level" -le 30 ]; then
+    icon=volume-level-medium
+    urgency=normal
+  elif [ "$level" -le 35 ]; then
+    icon=volume-level-medium
+    urgency=normal
+  elif [ "$level" -le 40 ]; then
+    icon=volume-level-medium
+    urgency=normal
+  elif [ "$level" -le 45 ]; then
+    icon=volume-level-medium
+    urgency=normal
+  elif [ "$level" -le 50 ]; then
+    icon=volume-level-medium
+    urgency=normal
+  elif [ "$level" -le 55 ]; then
+    icon=volume-level-medium
+    urgency=normal
+  elif [ "$level" -le 60 ]; then
+    icon=volume-level-medium
+    urgency=normal
+  elif [ "$level" -le 65 ]; then
+    icon=volume-level-medium
+    urgency=normal
+  elif [ "$level" -le 70 ]; then
+    icon=volume-level-medium
+    urgency=normal
+  elif [ "$level" -le 75 ]; then
+    icon=volume-level-medium
+    urgency=normal
+  elif [ "$level" -le 80 ]; then
+    icon=volume-level-high
+    urgency=critical
+  elif [ "$level" -le 85 ]; then
+    icon=volume-level-high
+    urgency=critical
+  elif [ "$level" -le 90 ]; then
+    icon=volume-level-high
+    urgency=critical
+  elif [ "$level" -le 95 ]; then
+    icon=volume-level-high
+    urgency=critical
+  elif [ "$level" -le 100 ]; then
+    icon=volume-level-high
+    urgency=critical
+  fi
+  echo "$icon:$urgency:$level:$muted:$headset"
+}
+
+function notify() {
+  eval "notify-send -a volume -u $urgency -i $1 $2 '$3' '$4'"
+}
+
+function subscribe() {
+  local old new mutenew muteold newhead oldhead
+  fetch
+  old="$level"
+  muteold="$muted"
+    oldhead="$headset"
+  while sleep 0.1; do
+    fetch
+    new="$level"
+    mutenew="$muted"
+        newhead="$headset"
+    if [ "$new" -gt "$old" ]; then
+      # notify "$icon" "-h int:value:$level" Pulseaudio "Volume increased to $level%."
+      notify custom-volume-up "-h int:value:$level" Pulseaudio "Volume increased to $level%."
+      old=$new
+    elif [ "$new" -lt "$old" ]; then
+      notify custom-volume-down "-h int:value:$level" Pulseaudio "Volume decreased to $level%."
+      old=$new
+    fi
+
+        if [[ "$newhead" != "$oldhead" ]]; then
+      [ "$newhead" = no ] && notify-send -i custom-minus-sign -u critical -a audiojack Pulseaudio 'Headphones unplugged.'
+      [ "$newhead" = yes ] && notify-send -i custom-add-sign -u low -a audiojack Pulseaudio 'Headphones plugged.'
+      oldhead="$newhead"
+    elif     [[ "$mutenew" != "$muteold" ]]; then
+      [ "$mutenew" = false ] && notify custom-volume-unmute "-h int:value:$level" Pulseaudio 'Volume has been unmuted.'
+      [ "$mutenew" = true ] && notify-send -i custom-volume-mute Pulseaudio 'Volume has been muted.'
+      muteold="$mutenew"
+    fi
+  done
+}
+
+subscribe
+
+# vim:filetype=sh

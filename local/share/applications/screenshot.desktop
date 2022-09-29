@@ -1,0 +1,8 @@
+[Desktop Entry]
+Type=Application
+Name=MaimRofi
+Comment=Screenshot with maim and ROFI.
+Icon=folder-pictures
+Exec=/home/maker/.config/sxhkd/script/shot.bash
+Categories=Utilities
+Keywords=Utilities;Pictures

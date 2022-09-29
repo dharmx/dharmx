@@ -1,0 +1,121 @@
+@theme "theme"
+
+* {
+  text-color: @fg-col;
+  background-color: @bg-col;
+  font: "Dosis,Iosevka Nerd Font 14";
+}
+
+window {
+  border-radius: 1em;
+  width: 800;
+  height: 654;
+  anchor: center;
+  location: center;
+  fullscreen: false;
+}
+
+mainbox {
+  children: [ inputbar, mode-switcher, listview ];
+  layout: horizontal;
+  spacing: 1.5%;
+}
+
+textbox {
+  width: 2.5em;
+  margin: 1em 0.3em 0 1em;
+  border: 0.1em;
+  border-color: @fg-col2;
+  expand: false;
+  width: 4.4em;
+  height: 4em;
+  text-color: @bg-col-light;
+  background-color: @grey;
+  content: "";
+  font: "Iosevka Nerd Font 25";
+  border-radius: 0.5em;
+  vertical-align: 0.5;
+  horizontal-align: 0.5;
+}
+
+inputbar {
+  children: [ textbox, entry ];
+  enabled: true;
+}
+
+entry {
+  placeholder: "Search...";
+  expand: true;
+  cursor: pointer;
+  margin: 1em 1em 0 0;
+  font: "Dosis,Iosevka Nerd Font Bold 17";
+  padding: 1em;
+  text-color: @fg-col2;
+  vertical-align: center;
+  border-radius: 0.3em;
+  border-color: @border-col;
+  border: 0.1em;
+}
+
+listview {
+  lines: 5;
+  columns: 2;
+  padding: 0 1em 1em 1em;
+  dynamic: false;
+}
+
+element {
+  orientation: horizontal;
+  children: [ element-icon, element-text ];
+  spacing: 1em;
+  padding: 1em;
+  border-radius: 0.5em;
+}
+
+element-icon {
+  size: 2em;
+  vertical-align: 0.5;
+  enabled: false;
+}
+
+element selected {
+  background-color: @selected-col;
+  border: 0.1em;
+  border-color: @border-col;
+}
+
+element-text {
+  vertical-align: 0.5;
+}
+
+element-text selected {
+  background-color: @selected-col;
+  text-color: @fg-col2;
+}
+
+mode-switcher {
+  margin: 0 5em 0 5em;
+  border: 0.1em;
+  border-color: @border-col;
+  padding: 0.4em;
+  border-radius: 0.5em;
+}
+
+button {
+  background-color: @bg-col;
+  text-color: @fg-col;
+  horizontal-align: center;
+  font: "Dosis,Iosevka Nerd Font 17";
+  padding: 0.5em 0.4em 0.5em 0.4em;
+  border-radius: 0.4em;
+}
+
+button selected {
+  font: "Dosis,Iosevka Nerd Font Bold 17";
+  background-color: @blue;
+  border: 0.1em;
+  border-color: @fg-col2;
+  text-color: @bg-col;
+}
+
+// vim:filetype=rasi

@@ -1,0 +1,10 @@
+[Desktop Entry]
+Type=Application
+Name=Disclose Logger
+Terminal=false
+Comment=Desktop notification logger.
+Icon=utilities-terminal
+Exec=/home/maker/.config/eww/src/shell/logger.py init
+Categories=System;
+Encoding=UTF-8
+Keywords=Process;Terminal;
