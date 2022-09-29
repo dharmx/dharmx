@@ -1,0 +1,20 @@
+#!/bin/sh
+# shellcheck disable=2015
+
+wallpaper="$(sed -n 2p ~/.fehbg | awk '{print $4}' | tr -d "'")"
+blurred="/tmp/$(echo "$wallpaper" | awk -F '/' '{print $NF}')"
+[ -f "$blurred" ] || convert -blur 0x8 "$wallpaper" "$blurred"
+
+revert() { $format "$wallpaper"; }
+trap revert 2
+
+format="feh --no-fehbg --bg-fill"
+{
+  echo
+  bspc subscribe node_add node_remove desktop_focus
+} | while read -r _; do
+  bspc query -N -n .focused.\!hidden.\!fullscreen \
+    && $format "$blurred" || $format "$wallpaper"
+done
+
+# vim:ft=sh

@@ -1,0 +1,17 @@
+#!/bin/sh
+# shellcheck disable=2086
+
+old_done="$(todo raw 'done' | wc --lines)"
+old_todo="$(todo raw todo | wc --lines)"
+notify-send -a todo -i custom-to-do Todo "$old_done tasks done and $((old_done + old_todo)) are remaining."
+while sleep 0.5; do
+  new_done="$(todo raw 'done' | wc --lines)"
+  new_todo="$(todo raw todo | wc --lines)"
+  [ $new_todo -eq $old_todo ] || old_todo=$new_todo
+  [ $new_done -eq $old_done ] || {
+    notify-send -a todo -i custom-to-do Todo "$new_done tasks done and $((new_done + new_todo)) are remaining."
+    old_done=$new_done
+  }
+done
+
+# vim:ft=sh

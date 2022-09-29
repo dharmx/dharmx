@@ -1,0 +1,27 @@
+#!/bin/sh
+
+INTERVAL='1.0'
+HIGH='custom-bright'
+MEDIUM='custom-brightness'
+LOW='custom-brightness'
+
+bk_notify() {
+  if [ "$1" -gt 79 ]; then
+    notify-send -i "$HIGH" -u critical -a brightness -h int:value:"$1" Xbacklight "Brightness has been changed to $1%"
+  elif [ "$1" -gt 24 ]; then
+    notify-send -i "$MEDIUM" -u normal -a brightness -h int:value:"$1" Xbacklight "Brightness has been changed to $1%"
+  else
+    notify-send -i "$LOW" -u critical -a brightness -h int:value:"$1" Xbacklight "Brightness has been changed to $1%"
+  fi
+}
+
+OLD="$(xbacklight -get)"
+while sleep "$INTERVAL"; do
+  NEW="$(xbacklight -get)"
+  if [ ! "$NEW" -eq "$OLD" ]; then
+    bk_notify "$NEW"
+    OLD="$NEW"
+  fi
+done
+
+# vim:ft=sh
