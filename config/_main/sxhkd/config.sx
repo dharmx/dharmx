@@ -1,4 +1,4 @@
-#
+# XF86RFKill
 # wm independent hotkeys
 #
 
@@ -156,6 +156,9 @@ XF86Audio{Play,Stop,Next,Prev}
 shift + XF86Audio{Raise,Lower}Volume
   mpc volume {+,-}5
 
+XF86PowerOff
+  eww open --toggle power
+
 # rofi app menu + run prompt
 super + d
   rofi -show drun
@@ -220,9 +223,6 @@ super + x ; m
 
 super + alt + {m,n}
   "$XDG_CONFIG_HOME"/sxhkd/script/skunk.bash --{hide-loop,unhide-all}
-
-super + w ; p
-  eww open --toggle power 
 
 super + w ; 1
   eww windows | grep '*vertigo' && eww close vertigo && bspc config left_padding 0 || eww open vertigo;\
