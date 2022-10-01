@@ -31,7 +31,7 @@ wm removal_adjustment true
 wm remove_unplugged_monitors true
 wm merge_overlapping_monitors true
 
-wm automatic_scheme alternate;
+wm automatic_scheme longest_side
 wm initial_polarity second_child
 wm directional_focus_tightness high
 

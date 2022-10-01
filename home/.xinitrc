@@ -5,7 +5,12 @@ function init_session() {
 
   # SEE: https://unix.stackexchange.com/a/295652/332452
   # shellcheck source=/dev/null
-  source "/etc/X11/xinit/xinitrc.d/50-systemd-user.sh"
+  if [ -d "$XDG_CONFIG_HOME"/xinitrc.d ] ; then
+    for file in "$XDG_CONFIG_HOME"/xinitrc.d/?*.sh ; do
+      [ -x "$file" ] && source "$file"
+    done
+    unset file
+  fi
 
   # see https://wiki.archlinux.org/title/GNOME/Keyring#xinitrc
   eval "$(/usr/bin/gnome-keyring-daemon --start)"
