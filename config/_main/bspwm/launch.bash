@@ -18,9 +18,9 @@ preboot stalonetray --config '$XDG_CONFIG_HOME/tray/config.conf'
 preboot parcellite --no-icon # clipboard manager
 preboot dunst -config '$XDG_CONFIG_HOME/dunst/config.ini'
 preboot playerctld daemon
-preboot mpd
 
 ## Disabled
+## preboot mpd
 ## preboot picom --config '$XDG_CONFIG_HOME/picom/config.ini' &
 ## preboot spotifyd &
 ## preboot plank --name bottom-dock

@@ -1,4 +1,4 @@
-YTFZF_CONFIG_DIR="$XDG_CONFIG_HOME/ytfzf"
+YTFZF_CONFIG_DIR="$HOME/.config/ytfzf"
 YTFZF_CONFIG_FILE="$YTFZF_CONFIG_DIR/conf.sh"
 
 umask 022
@@ -48,7 +48,7 @@ zstyle ':fzf-tab:complete:cd:*' fzf-preview 'exa -1 --color=always $realpath'
 # switch group using `,` and `.`
 zstyle ':fzf-tab:*' switch-group ',' '.'
 
-HISTFILE="$XDG_CACHE_HOME/zsh/.zhistory"
+HISTFILE="$HOME/.cache/zsh/.zhistory"
 HISTSIZE=10000
 SAVEHIST=10000
 

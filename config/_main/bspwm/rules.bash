@@ -47,7 +47,8 @@ rule discord center=on state=floating rectangle=1399x975+261+54
 rule Kvantum\ Manager center=on state=floating rectangle=932x660+494+211
 rule SimpleScreenRecorder center=on state=floating
 rule VirtualBox\ Manager center=on state=floating rectangle=926x634+497+224
-rule Anki center=om state=floating
+rule Anki center=on state=floating
+rule Nm-connection-editor center=on state=floating
 # rule eww-vertigo state=floating sticky=on rectangle=76x1080+0+0 border=off
 
 # vim:ft=sh

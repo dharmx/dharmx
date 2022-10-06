@@ -34,7 +34,7 @@ if [ $(command -v nvim) ]; then
     alias nv="nvim"
     alias nvconfig="fm ~/.config/nvim/"
     alias nvupd="nvim --headless -c 'autocmd User PackerComplete quitall' -c 'PackerSync'"
-    alias nvst="nvim --startuptime $XDG_DOCUMENTS_DIR/nvim-startuptime-'$(date)' +quitall"
+    alias nvst="nvim --startuptime $HOME/Documents/nvim-startuptime-'$(date)' +quitall"
 fi
 
 if [ $(command -v ranger) ]; then
@@ -44,9 +44,9 @@ fi
 alias cls="clear"
 alias la="ls -la"
 
-alias zedit="$EDITOR $XDG_CONFIG_HOME/zsh/.zshrc"
+alias zedit="$EDITOR $HOME/.config/zsh/.zshrc"
 alias bedit="$EDITOR $HOME/.bashrc"
-alias fedit="$EDITOR $XDG_CONFIG_HOME/fish/config.fish"
+alias fedit="$EDITOR $HOME/.config/fish/config.fish"
 alias kev="xev -event keyboard"
 
 alias cclock="watch -t -n1 'date +%T | figlet' | lolcat"
@@ -398,7 +398,7 @@ alias kittythemes="kitty +kitten themes"
 SILENT_JAVA_OPTIONS="$JDK_JAVA_OPTIONS"
 alias java='java "$SILENT_JAVA_OPTIONS"'
 alias nhist="dbus-monitor \"interface='org.freedesktop.Notifications'\" | grep --line-buffered \"member=Notify\|string\""
-alias strel="xrdb -I$XDG_CONFIG_HOME/Xresources $XDG_CONFIG_HOME/Xresources/config.x && kill -USR1 $(pidof st)"
+alias strel="xrdb -I$HOME/.config/Xresources $HOME/.config/Xresources/config.x && kill -USR1 $(pidof st)"
 
 function compress-pdf-gray() {
   [ $(command -v gs) ] \
@@ -525,7 +525,7 @@ function fcfzf() {
   fc-list : family | awk -F ',' '{print $1}' | sort | uniq | fzf | tr -d '\n' | xclip
 }
 
-alias spotifyd="spotifyd --config-path '$XDG_CONFIG_HOME/spotifyd/spotifyd.conf' --no-daemon"
+alias spotifyd="spotifyd --config-path '$HOME/.config/spotifyd/spotifyd.conf' --no-daemon"
 alias luamake="$HOME/.opt/lua-language-server/3rd/luamake/luamake"
 
 function p10kstate() {

@@ -1,5 +1,6 @@
 #!/usr/bin/env sh
 
-xwinwrap -fs -fdt -ni -b -nf -- mpv --keep-open=no --really-quiet --loop --no-audio --wid=%WID "$XDG_PICTURES_DIR/wallpapers/animated/city.gif"
+WALL_PATH="$(xdg-user-dir DOWNLOAD)/geom.gif"
+xwinwrap -fs -fdt -ni -b -nf -- mpv --keep-open=no --really-quiet --loop --no-audio --wid=%WID "$WALL_PATH"
 
 # vim:ft=sh
