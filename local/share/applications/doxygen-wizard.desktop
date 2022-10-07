@@ -1,0 +1,10 @@
+[Desktop Entry]
+Version=1.9.3
+Type=Application
+Name=Doxygen
+Comment=Doxygen visualizer wizard
+Icon=step_object_Graph
+Exec=doxywizard
+Terminal=false
+Categories=Development;Building;
+StartupNotify=true

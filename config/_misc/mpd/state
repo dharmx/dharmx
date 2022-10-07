@@ -1,9 +1,9 @@
 sw_volume: 65
 audio_device_state:1:Pulseaudio
 audio_device_state:1:Visualizer
-state: pause
-current: 8
-time: 144.598000
+state: play
+current: 2
+time: 120.143000
 random: 0
 repeat: 1
 single: 0
@@ -12,14 +12,11 @@ crossfade: 0
 mixrampdb: 0.000000
 mixrampdelay: -1.000000
 playlist_begin
-0:Fifth Dawn - Duality/Allure.mp3
-1:Fifth Dawn - Duality/Another Reason.mp3
-2:Fifth Dawn - Duality/Cities Are Lost.mp3
-3:Fifth Dawn - Duality/Defying Symmetry.mp3
-4:Fifth Dawn - Duality/Element.mp3
-5:Fifth Dawn - Duality/Finding Stars.mp3
-6:Fifth Dawn - Duality/High Towers.mp3
-7:Fifth Dawn - Duality/Instinct.mp3
-8:Fifth Dawn - Duality/It's Cold Outside.mp3
-9:Fifth Dawn - Duality/Pressure.mp3
+0:Tom Day - Going Home.mp3
+1:Tom Day - Who We Want To Be.mp3
+2:Black Hill & Silent Island - (Mixtape) Part II.mp3
+3:Black Hill & Silent Island - Tales of the night forest [Full Album].mp3
+4:Patrick Patrikios - Voices.mp3
+5:We Lost The Sea - Departure Songs [Full Album].mp3
+6:Doom Mix.mp3
 playlist_end
