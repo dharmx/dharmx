@@ -11,3 +11,6 @@
   url = https://github.com/dharmx/vile.git
 
 ; vim:filetype=gitconfig
+[submodule "config/_misc/mpv/MordenX"]
+	path = config/_misc/mpv/MordenX
+	url = https://github.com/cyl0/MordenX.git

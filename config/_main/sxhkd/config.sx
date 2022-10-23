@@ -14,7 +14,7 @@ super + shift + backslash
     state=floating              \
     layer=above                 \
     rectangle=1500x500+210+0    \
-	&& st # -e tmux new-session -A -s scratchpad -c $HOME
+    && st # -e tmux new-session -A -s scratchpad -c $HOME
 
 super + alt + Return
   bspc rule -a St -o state=floating rectangle=$(slop) && st
@@ -152,7 +152,7 @@ super + XF86Audio{Play,Stop,Next,Prev}
   mpc {toggle,stop,next,prev}
 
 XF86Search
-  rofi -show run
+  pgrep -x picom && rofi -show run || rofi -show run -theme-str 'window \{border-radius: 0;\}'
 
 # mpd audio configurations
 ## inc/dec volume
@@ -164,7 +164,7 @@ XF86PowerOff
 
 # rofi app menu + run prompt
 super + d
-  rofi -show drun
+  pgrep -x picom && rofi -show drun || rofi -show drun -theme-str 'window\{border-radius:0;\}'
 
 # bind some nice apps
 ## launch web browser
@@ -173,7 +173,7 @@ super + {shift + f,e}
 
 ## launch system monitor btop
 ctrl + shift + Escape
-  st -e btop
+  tym -e btop
 
 ## night mode
 super + n

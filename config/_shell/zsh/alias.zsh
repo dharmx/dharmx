@@ -571,4 +571,6 @@ function genscheme() {
   fi
 }
 
+# print -l ${(ok)functions[(I)[a-z]*]}
+
 # vim:ft=zsh

@@ -61,6 +61,7 @@ configuration {
 
   // SEE: config/sxhkd/config.sx -- super + d
   kb-cancel: "Super_L-d,Escape";
+  kb-screenshot: "Control-t";
 }
 
 @theme "dishonest"

@@ -1,4 +1,5 @@
 [ -f "$HOME/.cargo/env" ] && source "$HOME/.cargo/env"
+source "$HOME/.config/broot/launcher/bash/br"
 
 while read file
 do 

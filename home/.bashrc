@@ -9,3 +9,5 @@ greet_path="$HOME/.bin/eyecandy/$greet"
 [ -f "$greet_path" ] && eval "$greet_path" || _default_greeter
 greet_path=""
 greet=""
+
+source "$HOME/.config/broot/launcher/bash/br"

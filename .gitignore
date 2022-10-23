@@ -65,3 +65,4 @@ config/_misc/zim/accelmap
 
 home/.icons/custom/
 local/share/applications/mimeinfo.cache
+local/share/fonts/ParaType/
