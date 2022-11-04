@@ -1,4 +1,4 @@
-function _smooth_fzf() {
+function _____smooth_fzf() {
   local fname
   local current_dir="$PWD"
   cd "$HOME/.config"
@@ -7,7 +7,7 @@ function _smooth_fzf() {
   cd "$current_dir"
 }
 
-function _sudo_replace_buffer() {
+function _____sudo_replace_buffer() {
   local old=$1 new=$2 space=${2:+ }
 
   # if the cursor is positioned in the $old part of the text, make
@@ -21,7 +21,7 @@ function _sudo_replace_buffer() {
   fi
 }
 
-function _sudo_command_line() {
+function _____sudo_command_line() {
   # If line is empty, get the last run command from history
   [[ -z $BUFFER ]] && LBUFFER="$(fc -ln -1)"
 
@@ -40,8 +40,8 @@ function _sudo_command_line() {
     # If $EDITOR is not set, just toggle the sudo prefix on and off
     if [[ -z "$EDITOR" ]]; then
       case "$BUFFER" in
-        sudo\ -e\ *) _sudo_replace_buffer "sudo -e" "" ;;
-        sudo\ *) _sudo_replace_buffer "sudo" "" ;;
+        sudo\ -e\ *) _____sudo_replace_buffer "sudo -e" "" ;;
+        sudo\ *) _____sudo_replace_buffer "sudo" "" ;;
         *) LBUFFER="sudo $LBUFFER" ;;
       esac
       return
@@ -71,16 +71,16 @@ function _sudo_command_line() {
     if [[ "$realcmd" = (\$EDITOR|$editorcmd|${editorcmd:c}) \
       || "${realcmd:c}" = ($editorcmd|${editorcmd:c}) ]] \
       || builtin which -a "$realcmd" | command grep -Fx -q "$editorcmd"; then
-      _sudo_replace_buffer "$cmd" "sudo -e"
+      _____sudo_replace_buffer "$cmd" "sudo -e"
       return
     fi
 
     # Check for editor commands in the typed command and replace accordingly
     case "$BUFFER" in
-      $editorcmd\ *) _sudo_replace_buffer "$editorcmd" "sudo -e" ;;
-      \$EDITOR\ *) _sudo_replace_buffer '$EDITOR' "sudo -e" ;;
-      sudo\ -e\ *) _sudo_replace_buffer "sudo -e" "$EDITOR" ;;
-      sudo\ *) _sudo_replace_buffer "sudo" "" ;;
+      $editorcmd\ *) _____sudo_replace_buffer "$editorcmd" "sudo -e" ;;
+      \$EDITOR\ *) _____sudo_replace_buffer '$EDITOR' "sudo -e" ;;
+      sudo\ -e\ *) _____sudo_replace_buffer "sudo -e" "$EDITOR" ;;
+      sudo\ *) _____sudo_replace_buffer "sudo" "" ;;
       *) LBUFFER="sudo $LBUFFER" ;;
     esac
   } always {
@@ -92,12 +92,12 @@ function _sudo_command_line() {
   }
 }
 
-function _vi_search_fix() {
+function _____vi_search_fix() {
   zle vi-cmd-mode
   zle .vi-history-search-backward
 }
 
-function _default_greeter() {
+function _____default_greeter() {
   c1="\033[1;30m"
   c2="\033[1;31m"
   c3="\033[1;32m"
@@ -110,22 +110,22 @@ function _default_greeter() {
   printf "\n $c1▇▇ $c2▇▇ $c3▇▇ $c4▇▇ $c5▇▇ $c6▇▇ $c7▇▇ $c8▇▇ $reset\n\n"
 }
 
-function _toggle-prompt() {
+function _____toggle_prompt() {
   case "$1" in
     right) p10k display '*/right'=hide,show ;;
     left) p10k display '*/left'=hide,show ;;
   esac
 }
 
-function _toggle-right-prompt() {
-  _toggle-prompt right
+function _____toggle_right_prompt() {
+  _____toggle_prompt right
 }
 
-function _toggle-left-prompt() {
-  _toggle-prompt left
+function _____toggle_left_prompt() {
+  _____toggle_prompt left
 }
 
-function toppy() {
+function _____top_used_commands() {
   history \
     | awk '{
       CMD[$2]++;
@@ -139,6 +139,193 @@ function toppy() {
     | sort -nr \
     | nl \
     |  head -n 21
+}
+
+function _____color_list() {
+    for i in {0..255}; do print -Pn "%K{$i}  %k%F{$i}${(l:3::0:)i}%f " ${${(M)$((i%6)):#3}:+$'\n'}; done
+}
+
+function _____ccat() {
+  if $2
+  then
+      pygmentize -g $1 | cat
+  else
+      pygmentize -g $2 | cat $1
+  fi
+}
+
+function _____cless() {
+  pygmentize -g $1 | less
+}
+
+function _____cmore() {
+  pygmentize -g $1 | more
+}
+
+function _____pacopt() {
+  if [[ "$@" == "" ]]; then
+    echo "Enter at least one package name!"
+  else
+    sudo pacman -S --asdeps --needed $(pacman -Si $1 | sed -n '/^Opt/,/^Conf/p' | sed '$d' | sed 's/^Opt.*://g' | sed 's/^\s*//g' | tr '\n' ' ')
+  fi
+}
+
+function _____compress_pdf_gray() {
+  [ $(command -v gs) ] \
+    && gs -sDEVICE=pdfwrite -dCompatibilityLevel=1.4 -dPDFSETTINGS=/screen -dNOPAUSE -dQUIET -dBATCH -sOutputFile="$2.pdf" "$1.pdf" \
+    || echo 'Ghostscript - gs needs to be installed.'
+}
+
+function _____compress_pdf() {
+  local level="screen"
+  [[ "$3" != "" ]] && level="$3"
+  [ $(command -v gs) ] \
+    && gs -sDEVICE=pdfwrite -dCompatibilityLevel=1.4 -dPDFSETTINGS=/"$level" -dNOPAUSE -dQUIET -dBATCH -sOutputFile="$2.pdf" "$1.pdf" \
+    || echo 'Ghostscript - gs needs to be installed.'
+}
+
+function _____redditdw() {
+  local name="$(echo $1 | cut -d '/' -f 7)"
+  local plus="$(echo $1 | cut -d'/' -f 8)"
+  [ $(command -v ffmpeg) ] \
+    && ffmpeg -i "$(
+    wget -qO- "https://api.reddit.com/api/info/?id=t3_$name" \
+      | jq -r .data.children[0].data.secure_media.reddit_video.dash_url \
+    )" -c copy "$plus.mp4" \
+    || echo 'ffmpeg needs to be installed.'
+}
+
+function _____hncmp() {
+  pushd "$1"
+  for file in *; do
+    pushd "$file"
+    convert "*.jpg" "$file.pdf"
+    mv "$file.pdf" "../$file.pdf"
+    popd
+  done
+  popd
+}
+
+function _____dw_tarball() {
+    curl -Lk "https://api.github.com/repos/$1/$2/tarball" | tar zx
+}
+
+function _____stylua_fmt() {
+    local current="$PWD"
+    cd "$1"
+    [ $(command -v stylua) ] \
+      && stylua . \
+      || echo 'stylua is not installed'
+    cd "$current"
+}
+
+function _____webm_to_audio {
+  find . -type f -iname "*.webm" -exec bash -c 'FILE="$1"; ffmpeg -i "${FILE}" -vn -ab 128k -ar 44100 -y "${FILE%.webm}.mp3";' _ '{}' \;
+}
+
+function _____mkv_to_audio {
+  find . -type f -name "*.mkv" -exec bash -c 'FILE="$1"; ffmpeg -i "${FILE}" -vn $' \;
+}
+
+function _____mp4_to_audio() {
+  find . -type f -name "*.mp4" -exec bash -c 'FILE="$1"; ffmpeg -i "${FILE}" -b:a 192K -vn "${FILE%.mp4}.mp3";' _ '{}' \;
+}
+
+function _____rsysd() { systemctl $1 daemon-reload; }
+
+function _____base16img() {
+  convert "$1" -depth 6 +dither -colors 16 -format %c histogram:info: | awk '{print $3}' | cut -c -7
+}
+
+function _____reload_gtk_theme() {
+  theme=$(gsettings get org.gnome.desktop.interface gtk-theme)
+  gsettings set org.gnome.desktop.interface gtk-theme ''
+  sleep 1
+  gsettings set org.gnome.desktop.interface gtk-theme $theme
+}
+
+function _____montage_vert() {
+  montage -shadow -background '#4b6576' -geometry +50+50 -tile 1x *.png montage.png
+}
+
+function _____monv_noshade() {
+  montage -background '#4b6576' -geometry +50+50 -tile 1x *.png montage.png
+}
+
+function _____montage_shot() {
+  pngs=(*.png)
+  montage -shadow -background '#4b6576' -geometry +25+25 -tile ${#pngs}x *.png montage.png
+}
+
+function _____adbwifi() {
+  command -v adb &>/dev/null || return
+  adb devices
+  echo -n "SERIAL: "
+  read serial
+  adb -s $serial tcpip 5555
+  echo -n "IP: "
+  read ip
+  adb connect $ip:5555
+}
+
+function _____regen_theme() {
+  pushd "$HOME/.bin/regen" || return
+  [ "$1" ] || regen "radium" &>/dev/null && regen "$1" &>/dev/null
+  popd || return
+}
+
+function _____fcrofi() {
+  fc-list : family | awk -F ',' '{print $1}' | sort | uniq | rofi -dmenu -p Fonts | tr -d '\n' | xclip
+}
+
+function _____fcfzf() {
+  fc-list : family | awk -F ',' '{print $1}' | sort | uniq | fzf | tr -d '\n' | xclip
+}
+
+function _____p10kstate() {
+  local reply
+  p10k display -a '*'
+  printf '%-32s = %q\n' ${(@kv)reply} | sort
+}
+
+function _____ffmpeg_record() {
+  # display 0
+  echo -n "DISPLAY: "
+  read display
+  echo -n "FILE: "
+  read file
+  echo "${fg[blue]}Press CTRL+C to stop the recording.${reset_color}"
+  ffmpeg -loglevel -8   \
+    -f x11grab          \
+    -framerate 60       \
+    -probesize 42M      \
+    -s 1920x1080        \
+    -i :$display        \
+    -f lavfi            \
+    -i anullsrc=channel_layout=stereo:sample_rate=44100 \
+    -vf setpts=N/FR/TB  \
+    -c:v libx264rgb     \
+    -preset ultrafast   \
+    -q:v 1              \
+    -threads 4 "$file.mp4"
+}
+
+function _____ewwpkill() {
+  eww windows | grep '\*' || pgrep --full './src/shell/playerctl.py' | awk '{print $1}' | xargs kill
+}
+
+function _____genscheme() {
+  if [[ "$3" == "array" ]]; then
+    echo "[${$(convert "$1" -depth 6 +dither -colors $2 -format %c histogram:info: | awk '{printf("\"%s\",",$3)}')::-1}]"
+  else
+    echo "{${$(convert "$1" -depth 6 +dither -colors $2 -format %c histogram:info: | awk '{printf("\"base%02d\":\"%s\",",i++,$3)}')::-1}}"
+  fi
+}
+
+function _____falias() {
+  for fun in ${(ok)functions[(I)[_][_][_][_][_]*]}; do
+    type -f $fun
+  done
 }
 
 # vim:ft=sh

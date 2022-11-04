@@ -358,31 +358,6 @@ alias -s ace="unace l"
 
 alias visudo="nvim /etc/sudoers"
 
-function ccat() {
-  if $2
-  then
-      pygmentize -g $1 | cat
-  else
-      pygmentize -g $2 | cat $1
-  fi
-}
-
-function cless() {
-  pygmentize -g $1 | less
-}
-
-function cmore() {
-  pygmentize -g $1 | more
-}
-
-function pacopt() {
-  if [[ "$@" == "" ]]; then
-    echo "Enter at least one package name!"
-  else
-    sudo pacman -S --asdeps --needed $(pacman -Si $1 | sed -n '/^Opt/,/^Conf/p' | sed '$d' | sed 's/^Opt.*://g' | sed 's/^\s*//g' | tr '\n' ' ')
-  fi
-}
-
 alias reconnect="nmcli d c wlp0s20f3"
 alias tping="ping -c5 google.com"
 alias iping="gping google.com"
@@ -400,177 +375,17 @@ alias java='java "$SILENT_JAVA_OPTIONS"'
 alias nhist="dbus-monitor \"interface='org.freedesktop.Notifications'\" | grep --line-buffered \"member=Notify\|string\""
 alias strel="xrdb -I$HOME/.config/Xresources $HOME/.config/Xresources/config.x && kill -USR1 $(pidof st)"
 
-function compress-pdf-gray() {
-  [ $(command -v gs) ] \
-    && gs -sDEVICE=pdfwrite -dCompatibilityLevel=1.4 -dPDFSETTINGS=/screen -dNOPAUSE -dQUIET -dBATCH -sOutputFile="$2.pdf" "$1.pdf" \
-    || echo 'Ghostscript - gs needs to be installed.'
-}
-
-function compress-pdf() {
-  local level="screen"
-  [[ "$3" != "" ]] && level="$3"
-  [ $(command -v gs) ] \
-    && gs -sDEVICE=pdfwrite -dCompatibilityLevel=1.4 -dPDFSETTINGS=/"$level" -dNOPAUSE -dQUIET -dBATCH -sOutputFile="$2.pdf" "$1.pdf" \
-    || echo 'Ghostscript - gs needs to be installed.'
-}
-
-function redditdw() {
-  local name="$(echo $1 | cut -d '/' -f 7)"
-  local plus="$(echo $1 | cut -d'/' -f 8)"
-  [ $(command -v ffmpeg) ] \
-    && ffmpeg -i "$(
-    wget -qO- "https://api.reddit.com/api/info/?id=t3_$name" \
-      | jq -r .data.children[0].data.secure_media.reddit_video.dash_url \
-    )" -c copy "$plus.mp4" \
-    || echo 'ffmpeg needs to be installed.'
-}
-
-function hncmp() {
-  pushd "$1"
-  for file in *; do
-    pushd "$file"
-    convert "*.jpg" "$file.pdf"
-    mv "$file.pdf" "../$file.pdf"
-    popd
-  done
-  popd
-}
-
 alias fet.sh="$HOME/.bin/eyecandy/fet.sh"
-
-function color-list() {
-    for i in {0..255}; do print -Pn "%K{$i}  %k%F{$i}${(l:3::0:)i}%f " ${${(M)$((i%6)):#3}:+$'\n'}; done
-}
-
 alias resrc="source $ZDOTDIR/.zshrc"
-
-function dw-tarball() {
-    curl -Lk "https://api.github.com/repos/$1/$2/tarball" | tar zx
-}
-
-function stylua-fmt() {
-    local current="$PWD"
-    cd "$1"
-    [ $(command -v stylua) ] \
-      && stylua . \
-      || echo 'stylua is not installed'
-    cd "$current"
-}
-
-function webm-to-audio {
-  find . -type f -iname "*.webm" -exec bash -c 'FILE="$1"; ffmpeg -i "${FILE}" -vn -ab 128k -ar 44100 -y "${FILE%.webm}.mp3";' _ '{}' \;
-}
-
-function mkv-to-audio {
-  find . -type f -name "*.mkv" -exec bash -c 'FILE="$1"; ffmpeg -i "${FILE}" -vn $' \;
-}
-
-function mp4-to-audio() {
-  find . -type f -name "*.mp4" -exec bash -c 'FILE="$1"; ffmpeg -i "${FILE}" -b:a 192K -vn "${FILE%.mp4}.mp3";' _ '{}' \;
-}
-
-function rsysd() { systemctl $1 daemon-reload }
-
-function base16img() {
-  convert "$1" -depth 6 +dither -colors 16 -format %c histogram:info: | awk '{print $3}' | cut -c -7
-}
-
 alias rofi-shot='rofi -show drun -normal-window & disown'
-
-function reload_gtk_theme() {
-  theme=$(gsettings get org.gnome.desktop.interface gtk-theme)
-  gsettings set org.gnome.desktop.interface gtk-theme ''
-  sleep 1
-  gsettings set org.gnome.desktop.interface gtk-theme $theme
-}
 
 alias rel-xsettingsd="pkill -HUP xsettingsd"
 alias fontcfg="font-config-info"
 
-function montage-vert() {
-  montage -shadow -background '#4b6576' -geometry +50+50 -tile 1x *.png montage.png
-}
-
-function monv-noshade() {
-  montage -background '#4b6576' -geometry +50+50 -tile 1x *.png montage.png
-}
-
-function montage-shot() {
-  pngs=(*.png)
-  montage -shadow -background '#4b6576' -geometry +25+25 -tile ${#pngs}x *.png montage.png
-}
-
-function adbwifi() {
-  command -v adb &>/dev/null || return
-  adb devices
-  echo -n "SERIAL: "
-  read serial
-  adb -s $serial tcpip 5555
-  echo -n "IP: "
-  read ip
-  adb connect $ip:5555
-}
-
-function regen-theme() {
-  pushd "$HOME/.bin/regen" || return
-  [ "$1" ] || regen "radium" &>/dev/null && regen "$1" &>/dev/null
-  popd || return
-}
-
-function fcrofi() {
-  fc-list : family | awk -F ',' '{print $1}' | sort | uniq | rofi -dmenu -p Fonts | tr -d '\n' | xclip
-}
-
-function fcfzf() {
-  fc-list : family | awk -F ',' '{print $1}' | sort | uniq | fzf | tr -d '\n' | xclip
-}
-
 alias spotifyd="spotifyd --config-path '$HOME/.config/spotifyd/spotifyd.conf' --no-daemon"
 alias luamake="$HOME/.opt/lua-language-server/3rd/luamake/luamake"
 
-function p10kstate() {
-  local reply
-  p10k display -a '*'
-  printf '%-32s = %q\n' ${(@kv)reply} | sort
-}
-
-function ffmpeg-record() {
-  # display 0
-  echo -n "DISPLAY: "
-  read display
-  echo -n "FILE: "
-  read file
-  echo "${fg[blue]}Press CTRL+C to stop the recording.${reset_color}"
-  ffmpeg -loglevel -8   \
-    -f x11grab          \
-    -framerate 60       \
-    -probesize 42M      \
-    -s 1920x1080        \
-    -i :$display        \
-    -f lavfi            \
-    -i anullsrc=channel_layout=stereo:sample_rate=44100 \
-    -vf setpts=N/FR/TB  \
-    -c:v libx264rgb     \
-    -preset ultrafast   \
-    -q:v 1              \
-    -threads 4 "$file.mp4"
-}
-
-function ewwpkill() {
-  eww windows | grep '\*' || pgrep --full './src/shell/playerctl.py' | awk '{print $1}' | xargs kill
-}
-
 alias wttr='curl wttr.in'
 alias c='cd $(fd --type d . | fzf)'
-
-function genscheme() {
-  if [[ "$3" == "array" ]]; then
-    echo "[${$(convert "$1" -depth 6 +dither -colors $2 -format %c histogram:info: | awk '{printf("\"%s\",",$3)}')::-1}]"
-  else
-    echo "{${$(convert "$1" -depth 6 +dither -colors $2 -format %c histogram:info: | awk '{printf("\"base%02d\":\"%s\",",i++,$3)}')::-1}}"
-  fi
-}
-
-# print -l ${(ok)functions[(I)[a-z]*]}
 
 # vim:ft=zsh

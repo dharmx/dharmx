@@ -6,15 +6,15 @@ zmodload zsh/zle
 zmodload zsh/zpty
 zmodload zsh/complist
 
-autoload _vi_search_fix
+autoload _____vi_search_fix
 autoload -Uz colors
 autoload -U compinit
 colors
 
-zle -N _vi_search_fix
-zle -N _sudo_command_line
-zle -N _toggle-right-prompt
-zle -N _toggle-left-prompt
+zle -N _____vi_search_fix
+zle -N _____sudo_command_line
+zle -N _____toggle_right_prompt
+zle -N _____toggle_left_prompt
 
 # adapted from https://is.gd/RRNqsV
 # zstyle ':completion:*' list-colors ${(s.:.)LS_COLORS}

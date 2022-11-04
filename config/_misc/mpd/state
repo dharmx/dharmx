@@ -1,9 +1,9 @@
-sw_volume: 75
+sw_volume: 100
 audio_device_state:1:Pulseaudio
 audio_device_state:1:Visualizer
 state: pause
-current: 3
-time: 1258.401000
+current: 4
+time: 1242.284000
 random: 0
 repeat: 1
 single: 0
@@ -16,4 +16,5 @@ playlist_begin
 1:breakcore/alavien - breakcore mix. please listen to this autumn.mp3
 2:breakcore/alone - breakcore to heal you 1.mp3
 3:breakcore/alone - breakcore to heal you 2.mp3
+4:We Lost The Sea - Departure Songs [Full Album].mp3
 playlist_end
