@@ -8,6 +8,4 @@
   </a>
 </p>
 
-<p align=center>
-  <iframe width="560" height="315" src="https://www.youtube.com/embed/ADqLBc1vFwI?controls=0" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-</p>
+https://www.youtube.com/watch?v=ADqLBc1vFwI
