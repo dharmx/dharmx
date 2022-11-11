@@ -51,8 +51,14 @@ super + {m,y,g}
 #
 
 # set the window state
-super + {t,shift + t,s}
-  bspc node -t {tiled,pseudo_tiled,floating}
+super + t
+  bspc query -N -n .tiled && bspc node -t $(bspc query -T -n | jq -r .client.lastState) || bspc node -t tiled
+
+super + shift + t
+  bspc query -N -n .pseudo_tiled && bspc node -t tiled || bspc node -t pseudo_tiled
+
+super + s
+  bspc query -N -n .floating && bspc node -t tiled || bspc node -t floating
 
 super + f
   bspc query -N -n .fullscreen && bspc node -t tiled || bspc node -t fullscreen

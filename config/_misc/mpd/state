@@ -1,9 +1,9 @@
 sw_volume: 100
 audio_device_state:1:Pulseaudio
 audio_device_state:1:Visualizer
-state: pause
-current: 4
-time: 1242.284000
+state: play
+current: 2
+time: 3206.981000
 random: 0
 repeat: 1
 single: 0
@@ -12,9 +12,7 @@ crossfade: 0
 mixrampdb: 0.000000
 mixrampdelay: -1.000000
 playlist_begin
-0:breakcore/dj case - frail words.mp3
-1:breakcore/alavien - breakcore mix. please listen to this autumn.mp3
-2:breakcore/alone - breakcore to heal you 1.mp3
-3:breakcore/alone - breakcore to heal you 2.mp3
-4:We Lost The Sea - Departure Songs [Full Album].mp3
+0:3PM Coding Session.mp3
+1:Forgotten Words (忘れじの言の葉) ／DAZBEE cover.mp3
+2:Gris - Original Game Soundtrack.mp3
 playlist_end
