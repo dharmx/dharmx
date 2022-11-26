@@ -388,4 +388,6 @@ alias luamake="$HOME/.opt/lua-language-server/3rd/luamake/luamake"
 alias wttr='curl wttr.in'
 alias c='cd $(fd --type d . | fzf)'
 
+alias l1='exa -1'
+
 # vim:ft=zsh

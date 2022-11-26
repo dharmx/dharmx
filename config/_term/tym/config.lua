@@ -10,7 +10,7 @@ tym.set('font', 'Iosevka Nerd Font 14')
 
 -- set by table
 tym.set_config({
-    shell = '/usr/bin/hilbish',
+    shell = "/usr/bin/zsh", -- '/usr/bin/hilbish',
     cursor_shape = 'block',
     autohide = true,
     padding_horizontal = 25,

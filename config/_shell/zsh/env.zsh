@@ -53,6 +53,10 @@ if [ -d "$HOME/.bin/util" ]; then
   export PATH="$PATH:$HOME/.bin/util"
 fi
 
+if [ -d "$HOME/.local/share/yarn/global/node_modules/retypeapp/platforms/linux-x64" ]; then
+  export PATH="$PATH:$HOME/.local/share/yarn/global/node_modules/retypeapp/platforms/linux-x64"
+fi
+
 # FZF bases
 export FZF_DEFAULT_OPTS="
   --color fg:$base07
