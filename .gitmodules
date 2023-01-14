@@ -9,3 +9,6 @@
 [submodule "config/_misc/mpv/MordenX"]
 	path = config/_misc/mpv/MordenX
 	url = https://github.com/cyl0/MordenX.git
+[submodule "config/_term/nvim"]
+	path = config/_term/nvim
+	url = https://github.com/dharmx/nvim.git
