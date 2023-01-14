@@ -2,10 +2,10 @@
 TopRoundness = 10
 BottomRoundness = 0
 LineWidth = 3
-OuterStrokeColor = 36;;41;;46;;210
-FillStartColor = 23;;28;;33;;210
-FillEndColor = 31;;36;;41;;210
-InnerStrokeColor = 31;;36;;41;;210
+OuterStrokeColor = 31;;36;;41;;255
+FillStartColor = 36;;41;;46;;255
+FillEndColor = 36;;41;;46;;255 
+InnerStrokeColor = 31;;36;;41;;255
 
 [PlankDockTheme]
 HorizPadding = 1

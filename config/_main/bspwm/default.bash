@@ -8,6 +8,7 @@ bspc monitor primary --reset-desktops 1 2 3
 wm border_width 4
 wm window_gap 8
 wm top_padding 0
+wm bottom_padding 0
 
 source "$XDG_CONFIG_HOME/bspwm/theme.bash"
 wm normal_border_color "$shade"

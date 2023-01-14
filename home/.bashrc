@@ -10,4 +10,4 @@ greet_path="$HOME/.bin/eyecandy/$greet"
 greet_path=""
 greet=""
 
-source "$HOME/.config/broot/launcher/bash/br"
+# source "$HOME/.config/broot/launcher/bash/br"

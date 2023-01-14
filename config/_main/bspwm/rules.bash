@@ -50,6 +50,7 @@ rule VirtualBox\ Manager center=on state=floating rectangle=926x634+497+224
 rule Anki center=on state=floating
 rule Nm-connection-editor center=on state=floating
 rule doxywizard center=on state=floating
+rule Blueman-manager center=on state=floating rectangle=512x690+714+130
 # rule eww-vertigo state=floating sticky=on rectangle=76x1080+0+0 border=off
 
 # vim:ft=sh

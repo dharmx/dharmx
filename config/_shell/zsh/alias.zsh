@@ -41,6 +41,11 @@ if [ $(command -v ranger) ]; then
     alias fm="ranger"
 fi
 
+if [ $(command -v tym) ]; then
+    # disable padding in the config.
+    alias tym-bling='bspc rule -a Tym -o state=floating rectangle=1604x1025+154+25 && tym'
+fi
+
 alias cls="clear"
 alias la="ls -la"
 
@@ -53,7 +58,7 @@ alias cclock="watch -t -n1 'date +%T | figlet' | lolcat"
 alias tty-clock="tty-clock -S -c -C4 -D -s -n"
 alias ccbonsai="cbonsai -ilt 0.02 -c '  ,  ,  ,  ,  ' -L 5"
 alias fzi="$HOME/.fzfimg.sh"
-alias fzr="fzf --layout=reverse --prompt ' ' --pointer '=>' --preview='less {}' --bind shift-up:preview-page-up,shift-down:preview-page-down"
+alias fzr="fzf --layout=reverse --prompt ' ' --pointer '=>' --preview='less {}' --bind ctrl-v:execute($EDITOR {}),shift-up:preview-page-up,shift-down:preview-page-down"
 
 alias yts="ytfzf -t"
 alias startx='startx -- -keeptty >~/.xorg.log 2>&1'
@@ -330,8 +335,7 @@ alias -g P="2>&1| pygmentize -l pytb"
 
 alias dud='du -d 1 -h'
 alias duf='du -sh *'
-(( $+commands[fd] )) || alias fd='find . -type d -name'
-alias ff='find . -type f -name'
+alias ff='/usr/bin/find . -type f -name'
 
 alias h='history'
 alias hgrep="fc -El 0 | grep"
@@ -389,5 +393,6 @@ alias wttr='curl wttr.in'
 alias c='cd $(fd --type d . | fzf)'
 
 alias l1='exa -1'
+alias hdmitv="echo 'Xft.dpi:200\nst.font:Iosevka Nerd Font:pixelsize=38\nXcursor.size:32\n' | xrdb -merge"
 
 # vim:ft=zsh

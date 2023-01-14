@@ -1,10 +1,11 @@
 function _____smooth_fzf() {
   local fname
-  local current_dir="$PWD"
-  cd "$HOME/.config"
-  fname="$(fzf)" || return
-  $EDITOR "$fname"
-  cd "$current_dir"
+  pushd "$HOME/Dotfiles/dots.sh"
+  fname="$(fzf)"
+  if [[ "$fname" ]]; then
+    $EDITOR "$fname"
+  fi
+  popd
 }
 
 function _____sudo_replace_buffer() {
@@ -195,15 +196,17 @@ function _____redditdw() {
     || echo 'ffmpeg needs to be installed.'
 }
 
-function _____hncmp() {
-  pushd "$1"
-  for file in *; do
-    pushd "$file"
-    convert "*.jpg" "$file.pdf"
-    mv "$file.pdf" "../$file.pdf"
+function _____bulkhn() {
+  for i in *; do 
+    pushd "$i" 
+    for j in *; do 
+      [ "${j:3}" = png ] && convert "$j" "${j::2}".jpg
+    done
+    rm -rf *.png
+    convert *.jpg "$i".pdf
     popd
   done
-  popd
+  mv **/*.pdf .
 }
 
 function _____dw_tarball() {
@@ -244,17 +247,22 @@ function _____reload_gtk_theme() {
   gsettings set org.gnome.desktop.interface gtk-theme $theme
 }
 
-function _____montage_vert() {
-  montage -shadow -background '#4b6576' -geometry +50+50 -tile 1x *.png montage.png
+function _____monv() {
+  montage -shadow -background '#151A1F' -geometry +25+25 -tile 1x *.png montage.png
 }
 
-function _____monv_noshade() {
-  montage -background '#4b6576' -geometry +50+50 -tile 1x *.png montage.png
+function _____monvns() {
+  montage -background '#151A1F' -geometry +20+20 -tile 1x *.png montage.png
 }
 
-function _____montage_shot() {
+function _____monh() {
   pngs=(*.png)
-  montage -shadow -background '#4b6576' -geometry +25+25 -tile ${#pngs}x *.png montage.png
+  montage -shadow -background '#151A1F' -geometry +25+25 -tile ${#pngs}x *.png montage.png
+}
+
+function _____monhns() {
+  pngs=(*.png)
+  montage -background '#151A1F' -geometry +25+25 -tile ${#pngs}x *.png montage.png
 }
 
 function _____adbwifi() {

@@ -1,7 +1,3 @@
-[submodule "config/_term/nvim"]
-  path = config/_term/nvim
-  url = https://github.com/dharmx/KrakeNvim.git
-
 [submodule "home/.themes/phocus"]
   url = https://github.com/dharmx/phocus-phork.git
   path = home/.themes/phocus
@@ -10,7 +6,6 @@
   path = config/_secure/eww
   url = https://github.com/dharmx/vile.git
 
-; vim:filetype=gitconfig
 [submodule "config/_misc/mpv/MordenX"]
 	path = config/_misc/mpv/MordenX
 	url = https://github.com/cyl0/MordenX.git

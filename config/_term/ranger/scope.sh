@@ -39,80 +39,74 @@ FILE_EXTENSION="${FILE_PATH##*.}"
 FILE_EXTENSION_LOWER="$(printf "%s" "${FILE_EXTENSION}" | tr '[:upper:]' '[:lower:]')"
 
 ## Settings
-# HIGHLIGHT_STYLE themes
-# base16             clarity.theme              easter.theme             edit-vim.theme    molokai.theme       relaxedgreen.theme
-# acid.theme         dante.theme                edit-anjuta.theme        edit-xcode.theme  moria.theme         rootwater.theme
-# aiseered.theme     darkblue.theme             edit-bbedit.theme        ekvoli.theme      navajo-night.theme  seashell.theme
-# andes.theme        darkbone.theme             edit-eclipse.theme       fine_blue.theme   navy.theme          solarized-dark.theme
-# anotherdark.theme  darkness.theme             edit-emacs.theme         freya.theme       neon.theme          solarized-light.theme
-# autumn.theme       darkplus.theme             edit-fasm.theme          fruit.theme       night.theme         sourceforge.theme
-# baycomb.theme      darkslategray.theme        edit-flashdevelop.theme  github.theme      nightshimmer.theme  tabula.theme
-# bclear.theme       darkspectrum.theme         edit-gedit.theme         golden.theme      nuvola.theme        tcsoft.theme
-# biogoo.theme       denim.theme                edit-godot.theme         greenlcd.theme    olive.theme         the.theme
-# bipolar.theme      duotone-dark-earth.theme   edit-jedit.theme         kellys.theme      orion.theme         vampire.theme
-# blacknblue.theme   duotone-dark-forest.theme  edit-kwrite.theme        leo.theme         oxygenated.theme    whitengrey.theme
-# bluegreen.theme    duotone-dark-sea.theme     edit-matlab.theme        lucretia.theme    pablo.theme         xoria256.theme
-# breeze.theme       duotone-dark-sky.theme     edit-msvs2008.theme      manxome.theme     peaksea.theme       zellner.theme
-# bright.theme       duotone-dark-space.theme   edit-nedit.theme         maroloccio.theme  print.theme         zenburn.theme
-# camo.theme         dusk.theme                 edit-purebasic.theme     matrix.theme      rand01.theme        zmrok.theme
-# candy.theme        earendel.theme             edit-vim-dark.theme      moe.theme         rdark.theme
 HIGHLIGHT_SIZE_MAX=262143  # 256KiB
-HIGHLIGHT_TABWIDTH=${HIGHLIGHT_TABWIDTH:-2}
-HIGHLIGHT_STYLE=${HIGHLIGHT_STYLE:-dante}
+HIGHLIGHT_TABWIDTH="${HIGHLIGHT_TABWIDTH:-2}"
+HIGHLIGHT_STYLE="${HIGHLIGHT_STYLE:-pablo}"
 HIGHLIGHT_OPTIONS="--replace-tabs=${HIGHLIGHT_TABWIDTH} --style=${HIGHLIGHT_STYLE} ${HIGHLIGHT_OPTIONS:-}"
-PYGMENTIZE_STYLE=${PYGMENTIZE_STYLE:-github}
-OPENSCAD_IMGSIZE=${RNGR_OPENSCAD_IMGSIZE:-1000,1000}
-OPENSCAD_COLORSCHEME=${RNGR_OPENSCAD_COLORSCHEME:-Tomorrow Night}
+PYGMENTIZE_STYLE="${PYGMENTIZE_STYLE:-autumn}"
+OPENSCAD_IMGSIZE="${RNGR_OPENSCAD_IMGSIZE:-1000,1000}"
+OPENSCAD_COLORSCHEME="${RNGR_OPENSCAD_COLORSCHEME:-Tomorrow Night}"
 
 handle_extension() {
     case "${FILE_EXTENSION_LOWER}" in
         ## Archive
-        a|ace|alz|arc|arj|bz|bz2|cab|cpio|deb|gz|jar|lha|lz|lzh|lzma|lzo|\
-        rpm|rz|t7z|tar|tbz|tbz2|tgz|tlz|txz|tZ|tzo|war|xpi|xz|Z|zip)
+        a | ace | alz | arc | arj | bz | bz2 | cab | cpio | deb | gz | jar | lha | lz | lzh | lzma | lzo | rpm | rz | t7z | tar | tbz | tbz2 | tgz | tlz | txz | tZ | tzo | war | xpi | xz | Z | zip)
             atool --list -- "${FILE_PATH}" && exit 5
             bsdtar --list --file "${FILE_PATH}" && exit 5
-            exit 1;;
+            exit 1
+                  ;;
         rar)
             ## Avoid password prompt by providing empty password
             unrar lt -p- -- "${FILE_PATH}" && exit 5
-            exit 1;;
+            exit 1
+                  ;;
         7z)
             ## Avoid password prompt by providing empty password
             7z l -p -- "${FILE_PATH}" && exit 5
-            exit 1;;
+            exit 1
+                  ;;
 
         ## PDF
         pdf)
             ## Preview as text conversion
-            pdftotext -l 10 -nopgbrk -q -- "${FILE_PATH}" - | \
-              fmt -w "${PV_WIDTH}" && exit 5
-            mutool draw -F txt -i -- "${FILE_PATH}" 1-10 | \
-              fmt -w "${PV_WIDTH}" && exit 5
+            pdftotext -l 10 -nopgbrk -q -- "${FILE_PATH}" - \
+                                                            | fmt -w "${PV_WIDTH}" && exit 5
+            mutool draw -F txt -i -- "${FILE_PATH}" 1-10 \
+                                                         | fmt -w "${PV_WIDTH}" && exit 5
             exiftool "${FILE_PATH}" && exit 5
-            exit 1;;
+            exit 1
+                  ;;
 
         ## BitTorrent
         torrent)
             transmission-show -- "${FILE_PATH}" && exit 5
-            exit 1;;
+            exit 1
+                  ;;
 
         ## OpenDocument
-        odt|ods|odp|sxw)
+        odt | sxw)
             ## Preview as text conversion
             odt2txt "${FILE_PATH}" && exit 5
             ## Preview as markdown conversion
             pandoc -s -t markdown -- "${FILE_PATH}" && exit 5
-            exit 1;;
+            exit 1
+                  ;;
+        ods | odp)
+            ## Preview as text conversion (unsupported by pandoc for markdown)
+            odt2txt "${FILE_PATH}" && exit 5
+            exit 1
+                  ;;
 
         ## XLSX
         xlsx)
             ## Preview as csv conversion
             ## Uses: https://github.com/dilshod/xlsx2csv
             xlsx2csv -- "${FILE_PATH}" && exit 5
-            exit 1;;
+            exit 1
+                  ;;
 
         ## HTML
-        htm|html|xhtml)
+        htm | html | xhtml)
             ## Preview as text conversion
             w3m -dump "${FILE_PATH}" && exit 5
             lynx -dump -- "${FILE_PATH}" && exit 5
@@ -126,13 +120,21 @@ handle_extension() {
             python -m json.tool -- "${FILE_PATH}" && exit 5
             ;;
 
+        ## Jupyter Notebooks
+        ipynb)
+            jupyter nbconvert --to markdown "${FILE_PATH}" --stdout | env COLORTERM=8bit bat --color=always --style=plain --language=markdown && exit 5
+            jupyter nbconvert --to markdown "${FILE_PATH}" --stdout && exit 5
+            jq --color-output . "${FILE_PATH}" && exit 5
+            python -m json.tool -- "${FILE_PATH}" && exit 5
+            ;;
+
         ## Direct Stream Digital/Transfer (DSDIFF) and wavpack aren't detected
         ## by file(1).
-        dff|dsf|wv|wvc)
+        dff | dsf | wv | wvc)
             mediainfo "${FILE_PATH}" && exit 5
             exiftool "${FILE_PATH}" && exit 5
             ;; # Continue with next handler on failure
-    esac
+  esac
 }
 
 handle_image() {
@@ -145,9 +147,12 @@ handle_image() {
     local mimetype="${1}"
     case "${mimetype}" in
         ## SVG
-        image/svg+xml|image/svg)
-            convert "${FILE_PATH}" "${IMAGE_CACHE_PATH}" && exit 6
-            exit 1;;
+        image/svg+xml | image/svg)
+            rsvg-convert --keep-aspect-ratio --width "${DEFAULT_SIZE%x*}" "${FILE_PATH}" -o "${IMAGE_CACHE_PATH}.png" \
+                && mv "${IMAGE_CACHE_PATH}.png" "${IMAGE_CACHE_PATH}" \
+                && exit 6
+            exit 1
+                  ;;
 
         ## DjVu
         # image/vnd.djvu)
@@ -157,24 +162,32 @@ handle_image() {
 
         ## Image
         image/*)
-            local orientation
-            orientation="$( identify -format '%[EXIF:Orientation]\n' -- "${FILE_PATH}" )"
+            # local orientation
+            # orientation="$( identify -format '%[EXIF:Orientation]\n' -- "${FILE_PATH}")"
             ## If orientation data is present and the image actually
             ## needs rotating ("1" means no rotation)...
-            if [[ -n "$orientation" && "$orientation" != 1 ]]; then
+            # if [[ -n "$orientation" && "$orientation" != 1 ]]; then
                 ## ...auto-rotate the image according to the EXIF data.
-                convert -- "${FILE_PATH}" -auto-orient "${IMAGE_CACHE_PATH}" && exit 6
-            fi
+                convert -- "${FILE_PATH}[0]" -auto-orient "${IMAGE_CACHE_PATH}" && exit 6
+            # fi
 
-            ## `w3mimgdisplay` will be called for all images (unless overriden
+            ## `w3mimgdisplay` will be called for all images (unless overridden
             ## as above), but might fail for unsupported types.
-            exit 7;;
+            exit 7
+                  ;;
 
         ## Video
         video/*)
-            ## Thumbnail
+            # Get embedded thumbnail
+            ffmpeg -i "${FILE_PATH}" -map 0:v -map -0:V -c copy "${IMAGE_CACHE_PATH}" && exit 6
+            # Get frame 10% into video
             ffmpegthumbnailer -i "${FILE_PATH}" -o "${IMAGE_CACHE_PATH}" -s 0 && exit 6
             exit 1;;
+
+        ## Audio
+        audio/*)
+            # Get embedded thumbnail
+            ffmpeg -i "${FILE_PATH}" -map 0:v -map -0:V -c copy "${IMAGE_CACHE_PATH}" && exit 6;;
 
         ## PDF
         application/pdf)
@@ -186,19 +199,18 @@ handle_image() {
                      -- "${FILE_PATH}" "${IMAGE_CACHE_PATH%.*}" \
                 && exit 6 || exit 1;;
 
-
         ## ePub, MOBI, FB2 (using Calibre)
-        # application/epub+zip|application/x-mobipocket-ebook|\
-        # application/x-fictionbook+xml)
-        #     # ePub (using https://github.com/marianosimone/epub-thumbnailer)
-        #     epub-thumbnailer "${FILE_PATH}" "${IMAGE_CACHE_PATH}" \
-        #         "${DEFAULT_SIZE%x*}" && exit 6
-        #     ebook-meta --get-cover="${IMAGE_CACHE_PATH}" -- "${FILE_PATH}" \
-        #         >/dev/null && exit 6
-        #     exit 1;;
+        application/epub+zip|application/x-mobipocket-ebook|\
+        application/x-fictionbook+xml)
+            # ePub (using https://github.com/marianosimone/epub-thumbnailer)
+            epub-thumbnailer "${FILE_PATH}" "${IMAGE_CACHE_PATH}" \
+                "${DEFAULT_SIZE%x*}" && exit 6
+            ebook-meta --get-cover="${IMAGE_CACHE_PATH}" -- "${FILE_PATH}" \
+                >/dev/null && exit 6
+            exit 1;;
 
         ## Font
-        application/font*|application/*opentype)
+        application/font* | application/*opentype)
             preview_png="/tmp/$(basename "${IMAGE_CACHE_PATH%.*}").png"
             if fontimage -o "${preview_png}" \
                          --pixelsize "120" \
@@ -208,14 +220,13 @@ handle_image() {
                          --text "  abcdefghijklmnopqrstuvwxyz  " \
                          --text "  0123456789.:,;(*!?') ff fl fi ffi ffl  " \
                          --text "  The quick brown fox jumps over the lazy dog.  " \
-                         "${FILE_PATH}";
-            then
+                         "${FILE_PATH}"; then
                 convert -- "${preview_png}" "${IMAGE_CACHE_PATH}" \
                     && rm "${preview_png}" \
                     && exit 6
-            else
+      else
                 exit 1
-            fi
+      fi
             ;;
 
         ## Preview archives using the first image inside.
@@ -234,19 +245,20 @@ handle_image() {
             { fn=$(bsdtar --list --file "${FILE_PATH}") && bsd=1 && tar=""; } || \
             { [ "$rar" ] && fn=$(unrar lb -p- -- "${FILE_PATH}"); } || \
             { [ "$zip" ] && fn=$(zipinfo -1 -- "${FILE_PATH}"); } || return
-    
-            fn=$(echo "$fn" | python -c "import sys; import mimetypes as m; \
+
+            fn=$(echo "$fn" | python -c "from __future__ import print_function; \
+                    import sys; import mimetypes as m; \
                     [ print(l, end='') for l in sys.stdin if \
                       (m.guess_type(l[:-1])[0] or '').startswith('image/') ]" |\
                 sort -V | head -n 1)
             [ "$fn" = "" ] && return
             [ "$bsd" ] && fn=$(printf '%b' "$fn")
-      
+
             [ "$tar" ] && tar --extract --to-stdout \
                 --file "${FILE_PATH}" -- "$fn" > "${IMAGE_CACHE_PATH}" && exit 6
             fe=$(echo -n "$fn" | sed 's/[][*?\]/\\\0/g')
             [ "$bsd" ] && bsdtar --extract --to-stdout \
-               --file "${FILE_PATH}" -- "$fe" > "${IMAGE_CACHE_PATH}" && exit 6
+                --file "${FILE_PATH}" -- "$fe" > "${IMAGE_CACHE_PATH}" && exit 6
             [ "$bsd" ] || [ "$tar" ] && rm -- "${IMAGE_CACHE_PATH}"
             [ "$rar" ] && unrar p -p- -inul -- "${FILE_PATH}" "$fn" > \
                 "${IMAGE_CACHE_PATH}" && exit 6
@@ -254,7 +266,7 @@ handle_image() {
                 "${IMAGE_CACHE_PATH}" && exit 6
             [ "$rar" ] || [ "$zip" ] && rm -- "${IMAGE_CACHE_PATH}"
             ;;
-    esac
+  esac
 
     # openscad_image() {
     #     TMPPNG="$(mktemp -t XXXXXX.png)"
@@ -264,39 +276,53 @@ handle_image() {
     #     mv "${TMPPNG}" "${IMAGE_CACHE_PATH}"
     # }
 
-    # case "${FILE_EXTENSION_LOWER}" in
-    #     ## 3D models
-    #     ## OpenSCAD only supports png image output, and ${IMAGE_CACHE_PATH}
-    #     ## is hardcoded as jpeg. So we make a tempfile.png and just
-    #     ## move/rename it to jpg. This works because image libraries are
-    #     ## smart enough to handle it.
-    #     csg|scad)
-    #         openscad_image "${FILE_PATH}" && exit 6
-    #         ;;
-    #     3mf|amf|dxf|off|stl)
-    #         openscad_image <(echo "import(\"${FILE_PATH}\");") && exit 6
-    #         ;;
-    # esac
+    case "${FILE_EXTENSION_LOWER}" in
+       ## 3D models
+       ## OpenSCAD only supports png image output, and ${IMAGE_CACHE_PATH}
+       ## is hardcoded as jpeg. So we make a tempfile.png and just
+       ## move/rename it to jpg. This works because image libraries are
+       ## smart enough to handle it.
+       # csg|scad)
+       #     openscad_image "${FILE_PATH}" && exit 6
+       #     ;;
+       # 3mf|amf|dxf|off|stl)
+       #     openscad_image <(echo "import(\"${FILE_PATH}\");") && exit 6
+       #     ;;
+       drawio)
+           draw.io -x "${FILE_PATH}" -o "${IMAGE_CACHE_PATH}" \
+               --width "${DEFAULT_SIZE%x*}" && exit 6
+           exit 1
+                 ;;
+  esac
 }
 
 handle_mime() {
     local mimetype="${1}"
     case "${mimetype}" in
         ## RTF and DOC
-        text/rtf|*msword)
+        text/rtf | *msword)
             ## Preview as text conversion
             ## note: catdoc does not always work for .doc files
             ## catdoc: http://www.wagner.pp.ru/~vitus/software/catdoc/
             catdoc -- "${FILE_PATH}" && exit 5
-            exit 1;;
+            exit 1
+                  ;;
 
         ## DOCX, ePub, FB2 (using markdown)
         ## You might want to remove "|epub" and/or "|fb2" below if you have
         ## uncommented other methods to preview those formats
-        *wordprocessingml.document|*/epub+zip|*/x-fictionbook+xml)
+        *wordprocessingml.document | */epub+zip | */x-fictionbook+xml)
             ## Preview as markdown conversion
             pandoc -s -t markdown -- "${FILE_PATH}" && exit 5
-            exit 1;;
+            exit 1
+                  ;;
+
+        ## E-mails
+        message/rfc822)
+            ## Parsing performed by mu: https://github.com/djcb/mu
+            mu view -- "${FILE_PATH}" && exit 5
+            exit 1
+                  ;;
 
         ## XLS
         *ms-excel)
@@ -304,50 +330,61 @@ handle_mime() {
             ## xls2csv comes with catdoc:
             ##   http://www.wagner.pp.ru/~vitus/software/catdoc/
             xls2csv -- "${FILE_PATH}" && exit 5
-            exit 1;;
+            exit 1
+                  ;;
 
         ## Text
         text/* | */xml)
             ## Syntax highlight
-            if [[ "$( stat --printf='%s' -- "${FILE_PATH}" )" -gt "${HIGHLIGHT_SIZE_MAX}" ]]; then
+            if [[ "$( stat --printf='%s' -- "${FILE_PATH}")" -gt "${HIGHLIGHT_SIZE_MAX}"  ]]; then
                 exit 2
-            fi
-            if [[ "$( tput colors )" -ge 256 ]]; then
+      fi
+            if [[ "$( tput colors)" -ge 256  ]]; then
                 local pygmentize_format='terminal256'
                 local highlight_format='xterm256'
-            else
+      else
                 local pygmentize_format='terminal'
                 local highlight_format='ansi'
-            fi
+      fi
             env HIGHLIGHT_OPTIONS="${HIGHLIGHT_OPTIONS}" highlight \
                 --out-format="${highlight_format}" \
                 --force -- "${FILE_PATH}" && exit 5
             env COLORTERM=8bit bat --color=always --style="plain" \
                 -- "${FILE_PATH}" && exit 5
-            pygmentize -f "${pygmentize_format}" -O "style=${PYGMENTIZE_STYLE}"\
+            pygmentize -f "${pygmentize_format}" -O "style=${PYGMENTIZE_STYLE}" \
                 -- "${FILE_PATH}" && exit 5
-            exit 2;;
+            exit 2
+                  ;;
 
         ## DjVu
         image/vnd.djvu)
             ## Preview as text conversion (requires djvulibre)
             djvutxt "${FILE_PATH}" | fmt -w "${PV_WIDTH}" && exit 5
             exiftool "${FILE_PATH}" && exit 5
-            exit 1;;
+            exit 1
+                  ;;
 
         ## Image
         image/*)
             ## Preview as text conversion
             # img2txt --gamma=0.6 --width="${PV_WIDTH}" -- "${FILE_PATH}" && exit 4
             exiftool "${FILE_PATH}" && exit 5
-            exit 1;;
+            exit 1
+                  ;;
 
         ## Video and audio
         video/* | audio/*)
             mediainfo "${FILE_PATH}" && exit 5
             exiftool "${FILE_PATH}" && exit 5
-            exit 1;;
-    esac
+            exit 1
+                  ;;
+
+        ## ELF files (executables and shared objects)
+        application/x-executable | application/x-pie-executable | application/x-sharedlib)
+            readelf -WCa "${FILE_PATH}" && exit 5
+            exit 1
+                  ;;
+  esac
 }
 
 handle_fallback() {
@@ -355,12 +392,12 @@ handle_fallback() {
     exit 1
 }
 
-
-MIMETYPE="$( file --dereference --brief --mime-type -- "${FILE_PATH}" )"
+MIMETYPE="$( file --dereference --brief --mime-type -- "${FILE_PATH}")"
 if [[ "${PV_IMAGE_ENABLED}" == 'True' ]]; then
     handle_image "${MIMETYPE}"
 fi
 handle_extension
 handle_mime "${MIMETYPE}"
 handle_fallback
+
 exit 1

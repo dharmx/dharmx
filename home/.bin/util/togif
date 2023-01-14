@@ -1,12 +1,13 @@
 #!/bin/sh
 
+# config
 [ $(command -v ffmpeg) ] || exit 1
 vid=$1
 start_time=00:00:01
-duration=20
-height=ih/2      # input height halved , can replace with pixils . 
-width=-2         # keeps aspect ratio . can replace with pixils . 
-fps=25           # frames per a second .
+duration=60
+height=ih        # input height halved , can replace with pixils . 
+width=-5         # keeps aspect ratio . can replace with pixils . 
+fps=10           # frames per a second .
 
 filters="fps=$fps,scale=$width:$height:flags=lanczos"
 
