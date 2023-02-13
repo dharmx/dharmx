@@ -58,7 +58,6 @@ alias cclock="watch -t -n1 'date +%T | figlet' | lolcat"
 alias tty-clock="tty-clock -S -c -C4 -D -s -n"
 alias ccbonsai="cbonsai -ilt 0.02 -c '  ,  ,  ,  ,  ' -L 5"
 alias fzi="$HOME/.fzfimg.sh"
-alias fzr="fzf --layout=reverse --prompt ' ' --pointer '=>' --preview='less {}' --bind ctrl-v:execute($EDITOR {}),shift-up:preview-page-up,shift-down:preview-page-down"
 
 alias yts="ytfzf -t"
 alias startx='startx -- -keeptty >~/.xorg.log 2>&1'
@@ -111,23 +110,23 @@ alias pacown='pacman -Qo'
 alias pacupd="sudo pacman -Sy"
 alias upgrade='sudo pacman -Syu'
 
-alias yaconf='yay -Pg'
-alias yaupg='yay -Syu'
-alias yas='yay -Syu --noconfirm'
-alias yain='yay -S'
-alias yains='yay -U'
-alias yare='yay -R'
-alias yarem='yay -Rns'
-alias yarep='yay -Si'
-alias yareps='yay -Ss'
-alias yaloc='yay -Qi'
-alias yalocs='yay -Qs'
-alias yalst='yay -Qe'
-alias yaorph='yay -Qtd'
-alias yainsd='yay -S --asdeps'
-alias yamir='yay -Syy'
-alias yaupd="yay -Sy"
-alias upgrade='yay -Syu'
+alias prconf='paru -Pg'
+alias prupg='paru -Syu'
+alias prs='paru -Syu --noconfirm'
+alias prin='paru -S'
+alias prins='paru -U'
+alias prre='paru -R'
+alias prrem='paru -Rns'
+alias prrep='paru -Si'
+alias prreps='paru -Ss'
+alias prloc='paru -Qi'
+alias prlocs='paru -Qs'
+alias prlst='paru -Qe'
+alias prorph='paru -Qtd'
+alias prinsd='paru -S --asdeps'
+alias prmir='paru -Syy'
+alias prupd="paru -Sy"
+alias upgrade='paru -Syu'
 
 alias commit="git add . && git commit -m"
 alias push="git push"
@@ -376,6 +375,7 @@ alias kittythemes="kitty +kitten themes"
 
 SILENT_JAVA_OPTIONS="$JDK_JAVA_OPTIONS"
 alias java='java "$SILENT_JAVA_OPTIONS"'
+unset JDK_JAVA_OPTIONS
 alias nhist="dbus-monitor \"interface='org.freedesktop.Notifications'\" | grep --line-buffered \"member=Notify\|string\""
 alias strel="xrdb -I$HOME/.config/Xresources $HOME/.config/Xresources/config.x && kill -USR1 $(pidof st)"
 
@@ -394,5 +394,10 @@ alias c='cd $(fd --type d . | fzf)'
 
 alias l1='exa -1'
 alias hdmitv="echo 'Xft.dpi:200\nst.font:Iosevka Nerd Font:pixelsize=38\nXcursor.size:32\n' | xrdb -merge"
+
+alias rec='ffmpeg -f x11grab -framerate 60 -i $DISPLAY -pix_fmt yuv420p vid.mp4'
+alias high_res='ffmpeg -framerate 60 -f x11grab -i $DISPLAY -c:v libx264rgb -crf 0 -preset ultrafast -color_range 2 vid.mp4'
+
+alias pacmanallkeys='sudo pacman-key --refresh-keys'
 
 # vim:ft=zsh

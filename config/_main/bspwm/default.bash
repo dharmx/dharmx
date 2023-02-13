@@ -3,10 +3,10 @@
 
 function wm() { bspc config "$@"; }
 
-bspc monitor primary --reset-desktops 1 2 3
+bspc monitor primary --reset-desktops 1 2 3 4 5 6
 
-wm border_width 4
-wm window_gap 8
+wm border_width 0
+wm window_gap 0
 wm top_padding 0
 wm bottom_padding 0
 

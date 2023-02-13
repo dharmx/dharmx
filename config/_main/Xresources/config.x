@@ -15,10 +15,10 @@ Xft.dpi:                          96
 Xcursor.theme:                    phinger-cursors
 Xcursor.size:                     32
 
-st.chscale:                       1.2
+st.chscale:                       1.3
 st.borderpx:                      20
 st.cursorColor:                   #70c0ba
 st.url-select.launcher:           qutebrowser
 st.url-select.underline:          true
 st.alpha:                         1.0
-st.font:                          Iosevka Nerd Font:pixelsize=19
+st.font:                          Iosevka Nerd Font:pixelsize=18

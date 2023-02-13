@@ -10,9 +10,7 @@ function preboot() {
 }
 
 # launch some nice apps
-killall python bspc 2> /dev/null
-preboot sxhkd -s /tmp/sxhkd.fifo
-
+preboot sxhkd
 preboot ksuperkey -t 100 -e "'Super_L=Super_L|d'"
 preboot stalonetray --config '$XDG_CONFIG_HOME/tray/config.conf'
 preboot parcellite --no-icon # clipboard manager

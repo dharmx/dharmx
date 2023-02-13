@@ -36,4 +36,4 @@ shades.shade10: #0e1115
 shades.shade11: #0c0f13
 shades.shade12: #0a0d11
 
-! vim:filetype=config
+! vim:filetype=conf

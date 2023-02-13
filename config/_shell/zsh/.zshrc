@@ -1,11 +1,10 @@
 [ -f "$HOME/.cargo/env" ] && source "$HOME/.cargo/env"
-# source "$HOME/.config/broot/launcher/bash/br"
+[ -f "$HOME/.config/broot/launcher/bash/br" ] && source "$HOME/.config/broot/launcher/bash/br"
 
 while read file
 do 
   source "$ZDOTDIR/$file.zsh"
 done <<-EOF
-theme
 env
 alias
 utils

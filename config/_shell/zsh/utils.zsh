@@ -296,28 +296,6 @@ function _____p10kstate() {
   printf '%-32s = %q\n' ${(@kv)reply} | sort
 }
 
-function _____ffmpeg_record() {
-  # display 0
-  echo -n "DISPLAY: "
-  read display
-  echo -n "FILE: "
-  read file
-  echo "${fg[blue]}Press CTRL+C to stop the recording.${reset_color}"
-  ffmpeg -loglevel -8   \
-    -f x11grab          \
-    -framerate 60       \
-    -probesize 42M      \
-    -s 1920x1080        \
-    -i :$display        \
-    -f lavfi            \
-    -i anullsrc=channel_layout=stereo:sample_rate=44100 \
-    -vf setpts=N/FR/TB  \
-    -c:v libx264rgb     \
-    -preset ultrafast   \
-    -q:v 1              \
-    -threads 4 "$file.mp4"
-}
-
 function _____ewwpkill() {
   eww windows | grep '\*' || pgrep --full './src/shell/playerctl.py' | awk '{print $1}' | xargs kill
 }
@@ -336,4 +314,29 @@ function _____falias() {
   done
 }
 
-# vim:ft=sh
+function _____wall() {
+  convert "$3" -resize "$2" -gravity center -background "$1" -extent 1920x1080 "$4"
+}
+
+function _____nvim-backup() {
+  mv "$HOME/.local/share/nvim" "$HOME/.local/share/nvim.bak"
+  mv "$HOME/.local/state/nvim" "$HOME/.local/state/nvim.bak"
+  mv "$HOME/.config/nvim" "$HOME/.config/nvim.bak"
+  mv "$HOME/.cache/nvim" "$HOME/.cache/nvim.bak"
+}
+
+function _____nvim-restore() {
+  mv "$HOME/.local/share/nvim.bak" "$HOME/.local/share/nvim"
+  mv "$HOME/.local/state/nvim.bak" "$HOME/.local/state/nvim"
+  mv "$HOME/.config/nvim.bak" "$HOME/.config/nvim"
+  mv "$HOME/.cache/nvim.bak" "$HOME/.cache/nvim"
+}
+
+function _____nvim-clean() {
+  rm -rf "$HOME/.local/share/nvim"
+  rm -rf "$HOME/.local/state/nvim"
+  rm -rf "$HOME/.config/nvim"
+  rm -rf "$HOME/.cache/nvim"
+}
+
+# vim:ft=zsh

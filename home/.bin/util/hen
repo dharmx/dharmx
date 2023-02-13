@@ -24,10 +24,10 @@ fi
 if [ "$TERM" = "xterm-kitty" ]; then
     command -v convert > /dev/null 2>&1 && neofetch --kitty "$tmpfile$format" || kitty_imagemagick_warn=true
     if [ "$kitty_imagemagick_warn" = "true" ]; then
-        neofetch --jp2a "$tmpfile$format"
+        neofetch --kitty "$tmpfile$format"
   fi
 else
-    neofetch --jp2a "$tmpfile$format"
+    neofetch --kitty "$tmpfile$format"
 fi
 echo -e "[36m[1mNHentai tag: [0m#$id\n"
 
