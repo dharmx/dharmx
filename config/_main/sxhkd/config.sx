@@ -178,7 +178,7 @@ super + d
 # bind some nice apps
 ## launch web browser
 super + {shift + f,e}
-  {qutebrowser,st -e ranger}
+  {$BROWSER,st -e ranger}
 
 ## launch system monitor btop
 ctrl + shift + Escape

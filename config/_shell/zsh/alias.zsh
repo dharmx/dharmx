@@ -1,9 +1,9 @@
 alias xclip='xclip -selection clipboard'
 
 if [ $(command -v exa) ]; then
-    alias li="exa --long --all --group --icons"
-    alias ls="exa"
-    alias la="exa --long --all --group"
+  alias li="exa --long --all --group --icons"
+  alias ls="exa"
+  alias la="exa --long --all --group"
 fi
 
 if [ $(command -v logo-ls) ]; then
@@ -398,6 +398,7 @@ alias hdmitv="echo 'Xft.dpi:200\nst.font:Iosevka Nerd Font:pixelsize=38\nXcursor
 alias rec='ffmpeg -f x11grab -framerate 60 -i $DISPLAY -pix_fmt yuv420p vid.mp4'
 alias high_res='ffmpeg -framerate 60 -f x11grab -i $DISPLAY -c:v libx264rgb -crf 0 -preset ultrafast -color_range 2 vid.mp4'
 
+alias ytdn='yt-dlp --ignore-errors --format bestaudio --extract-audio --audio-format mp3 --audio-quality 320K --output "%(title)s.%(ext)s" --yes-playlist'
 alias pacmanallkeys='sudo pacman-key --refresh-keys'
 
 # vim:ft=zsh

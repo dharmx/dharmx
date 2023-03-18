@@ -7,7 +7,7 @@ function rule() { bspc rule --add "$@"; }
 
 # Program settings
 rule glava state=floating manage=off layer=below
-rule mpv state=floating center=on
+rule mpv state=floating center=on rectangle=592x391+764+522
 rule screenkey manage=off
 rule spotify state=pseudo_tiled
 rule zathura state=floating

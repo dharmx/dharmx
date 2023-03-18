@@ -16,7 +16,8 @@ alias load='zinit load'
 autoload compinit
 compinit
 
-use romkatv/powerlevel10k 
+use romkatv/powerlevel10k
+use romkatv/gitstatus
 use Aloxaf/fzf-tab
 use zdharma-continuum/fast-syntax-highlighting
 use zsh-users/zsh-autosuggestions

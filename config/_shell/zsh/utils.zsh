@@ -339,4 +339,11 @@ function _____nvim-clean() {
   rm -rf "$HOME/.cache/nvim"
 }
 
+function _____expire() {
+  echo -n 'EXP: '
+  curl --silent 'http://10.254.254.79/0/up/' | fq --decode html --raw-output '.html.body.div[1].div[0].table[1].tbody.tr.td[2].div.table.tbody.tr[4].td[1]["#text"]'
+  echo -n 'NOW: '
+  date +'%d.%m.%Y'
+}
+
 # vim:ft=zsh

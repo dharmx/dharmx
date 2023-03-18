@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 # shellcheck disable=2016
 
-function preboot() {
+function launch() {
   local running
   running="$(pgrep -x "$1")"
   [ "$running" ] && kill "$running" 2> /dev/null
@@ -10,19 +10,19 @@ function preboot() {
 }
 
 # launch some nice apps
-preboot sxhkd
-preboot ksuperkey -t 100 -e "'Super_L=Super_L|d'"
-preboot stalonetray --config '$XDG_CONFIG_HOME/tray/config.conf'
-preboot parcellite --no-icon # clipboard manager
-preboot dunst -config '$XDG_CONFIG_HOME/dunst/config.ini'
-preboot playerctld daemon
+launch sxhkd
+launch ksuperkey -t 100 -e "'Super_L=Super_L|d'"
+launch stalonetray --config '$XDG_CONFIG_HOME/tray/config.conf'
+launch parcellite --no-icon # clipboard manager
+launch dunst -config '$XDG_CONFIG_HOME/dunst/config.ini'
+launch playerctld daemon
 
 ## Disabled
-## preboot mpd
-## preboot picom --config '$XDG_CONFIG_HOME/picom/config.ini' &
-## preboot spotifyd &
-## preboot plank --name bottom-dock
-## preboot eww open vertigo
-## preboot '$XDG_CONFIG_HOME/eww/src/shell/logger.py' init
+## launch mpd
+## launch picom --config '$XDG_CONFIG_HOME/picom/config.ini' &
+## launch spotifyd &
+## launch plank --name bottom-dock
+## launch eww open vertigo
+## launch '$XDG_CONFIG_HOME/eww/src/shell/logger.py' init
 
 # vim:ft=sh
