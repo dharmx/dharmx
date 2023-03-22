@@ -7,4 +7,5 @@ fi
 
 config="$XDG_CONFIG_HOME/polybar/config.ini"
 polybar -q -c "$config" lower &
+polybar -q -c "$config" upper &
 disown

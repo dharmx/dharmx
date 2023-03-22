@@ -1,8 +1,6 @@
 #!/bin/sh
 
 USERNAME="$1"
-# shellcheck source=/home/maker/.config/zsh/theme.zsh
-. "/home/$USERNAME/.config/zsh/theme.zsh"
 
 LOCKSCREEN_WALL="/home/$USERNAME/Pictures/wallpapers/radium/output-1659958136.png"
 DEFAULT_DPMS=$(xset q | awk '/^[[:blank:]]*DPMS is/ {print $(NF)}')
@@ -39,6 +37,19 @@ prelock() {
   fi
 }
 
+foreground="$(xrdb -query | grep 'foreground:' | awk '{print $NF}')"
+background="$(xrdb -query | grep 'background:' | awk '{print $NF}')"
+black="$(xrdb -query | grep 'color0:' | awk '{print $NF}')"
+red="$(xrdb -query | grep 'color1:' | awk '{print $NF}')"
+green="$(xrdb -query | grep 'color2:' | awk '{print $NF}')"
+yellow="$(xrdb -query | grep 'color3:' | awk '{print $NF}')"
+blue="$(xrdb -query | grep 'color4:' | awk '{print $NF}')"
+magenta="$(xrdb -query | grep 'color5:' | awk '{print $NF}')"
+cyan="$(xrdb -query | grep 'color6:' | awk '{print $NF}')"
+white="$(xrdb -query | grep 'color7:' | awk '{print $NF}')"
+grey="$(xrdb -query | grep 'color8:' | awk '{print $NF}')"
+shade="$(xrdb -query | grep 'shade07:' | awk '{print $NF}')"
+
 lock() {
   i3lock                            \
     --nofork                        \
@@ -59,18 +70,18 @@ lock() {
     --insidewrong-color='#00000000' \
     --inside-color='#00000000'      \
     --insidever-color='#00000000'   \
-    --ring-color="$base11"          \
-    --ringver-color="$base14"       \
-    --ringwrong-color="$base09"     \
-    --keyhl-color="$base13"         \
-    --separator-color="$base13"     \
-    --verif-color="$base14"         \
-    --wrong-color="$base09"         \
-    --modif-color="$base04"         \
-    --time-color="$base04"          \
-    --date-color="$base02"          \
-    --greeter-color="$base05"       \
-    --timeoutline-color="$base04"   \
+    --ring-color="$red"             \
+    --ringver-color="$green"        \
+    --ringwrong-color="$red"        \
+    --keyhl-color="$cyan"           \
+    --separator-color="$yellow"     \
+    --verif-color="$green"          \
+    --wrong-color="$blue"           \
+    --modif-color="$magenta"        \
+    --time-color="$blue"            \
+    --date-color="$red"             \
+    --greeter-color="$cyan"         \
+    --timeoutline-color="$magenta"  \
     --time-str=%H:%M                \
     --date-str='%A, %e %B'          \
     --verif-text=''                 \
