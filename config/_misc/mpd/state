@@ -2,8 +2,8 @@ sw_volume: 100
 audio_device_state:1:Pulseaudio
 audio_device_state:1:Visualizer
 state: pause
-current: 6
-time: 1690.603000
+current: 5
+time: 917.513000
 random: 0
 repeat: 1
 single: 0
@@ -19,14 +19,4 @@ playlist_begin
 4:postrock/Black Hill & Silent Island - Tales of the night forest [Full Album].mp3
 5:postrock/Black Hill & Silent Island - (Mixtape) Part II.mp3
 6:postrock/Black Hill and heklAa - Rivers & Shores (Full Album).mp3
-7:Zack Hemsey/RONIN/Don't Get In My Way.mp3
-8:Zack Hemsey/RONIN/Fade Away.mp3
-9:Zack Hemsey/RONIN/Greeting The Menace.mp3
-10:Zack Hemsey/RONIN/I Can Get It Back.mp3
-11:Zack Hemsey/RONIN/Nice To Meet Me.mp3
-12:Zack Hemsey/RONIN/Silver Crimson Black.mp3
-13:Zack Hemsey/RONIN/Slave.mp3
-14:Zack Hemsey/RONIN/So Silent.mp3
-15:Zack Hemsey/RONIN/Teachings Of A Ronin.mp3
-16:Zack Hemsey/RONIN/The Zoo.mp3
 playlist_end
