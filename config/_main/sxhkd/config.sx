@@ -3,21 +3,20 @@
 #
 
 # terminal emulators
-# minimal zsh for st,fish urxvt,alacritty with bash
-super + {_,ctrl,shift} + Return
-  {st,tym,kitty}
+super + {_,ctrl} + Return
+  {tym,kitty}
 
 super + shift + backslash
-  bspc rule -a St -o            \
+  bspc rule -a Tym -o           \
     sticky=on                   \
     border=off                  \
     state=floating              \
     layer=above                 \
     rectangle=1500x500+210+0    \
-    && st # -e tmux new-session -A -s scratchpad -c $HOME
+    && tym # -e tmux new-session -A -s scratchpad -c $HOME
 
 super + alt + Return
-  bspc rule -a St -o state=floating rectangle=$(slop) && st
+  bspc rule -a Tym -o state=floating rectangle=$(slop) && tym
 
 # make sxhkd reload its configuration files
 super + {_,shift} + Escape
@@ -178,7 +177,7 @@ super + d
 # bind some nice apps
 ## launch web browser
 super + {shift + f,e}
-  {$BROWSER,st -e ranger}
+  {$BROWSER,tym -e ranger}
 
 ## launch system monitor btop
 ctrl + shift + Escape

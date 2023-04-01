@@ -58,6 +58,7 @@ alias cclock="watch -t -n1 'date +%T | figlet' | lolcat"
 alias tty-clock="tty-clock -S -c -C4 -D -s -n"
 alias ccbonsai="cbonsai -ilt 0.02 -c '  ,  ,  ,  ,  ' -L 5"
 alias fzi="$HOME/.fzfimg.sh"
+alias fzz="fzf --preview 'exa --long --icons --color=always {}'"
 
 alias yts="ytfzf -t"
 alias startx='startx -- -keeptty >~/.xorg.log 2>&1'

@@ -15,7 +15,7 @@ Xft.dpi:                          96
 Xcursor.theme:                    phinger-cursors
 Xcursor.size:                     32
 
-st.chscale:                       1.3
+st.chscale:                       1.415
 st.borderpx:                      20
 st.cursorColor:                   #70c0ba
 st.url-select.launcher:           qutebrowser
