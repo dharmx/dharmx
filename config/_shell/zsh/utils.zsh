@@ -276,20 +276,6 @@ function _____adbwifi() {
   adb connect $ip:5555
 }
 
-function _____regen_theme() {
-  pushd "$HOME/.bin/regen" || return
-  [ "$1" ] || regen "radium" &>/dev/null && regen "$1" &>/dev/null
-  popd || return
-}
-
-function _____fcrofi() {
-  fc-list : family | awk -F ',' '{print $1}' | sort | uniq | rofi -dmenu -p Fonts | tr -d '\n' | xclip
-}
-
-function _____fcfzf() {
-  fc-list : family | awk -F ',' '{print $1}' | sort | uniq | fzf | tr -d '\n' | xclip
-}
-
 function _____p10kstate() {
   local reply
   p10k display -a '*'
@@ -318,32 +304,9 @@ function _____wall() {
   convert "$3" -resize "$2" -gravity center -background "$1" -extent 1920x1080 "$4"
 }
 
-function _____nvim-backup() {
-  mv "$HOME/.local/share/nvim" "$HOME/.local/share/nvim.bak"
-  mv "$HOME/.local/state/nvim" "$HOME/.local/state/nvim.bak"
-  mv "$HOME/.config/nvim" "$HOME/.config/nvim.bak"
-  mv "$HOME/.cache/nvim" "$HOME/.cache/nvim.bak"
-}
-
-function _____nvim-restore() {
-  mv "$HOME/.local/share/nvim.bak" "$HOME/.local/share/nvim"
-  mv "$HOME/.local/state/nvim.bak" "$HOME/.local/state/nvim"
-  mv "$HOME/.config/nvim.bak" "$HOME/.config/nvim"
-  mv "$HOME/.cache/nvim.bak" "$HOME/.cache/nvim"
-}
-
-function _____nvim-clean() {
-  rm -rf "$HOME/.local/share/nvim"
-  rm -rf "$HOME/.local/state/nvim"
-  rm -rf "$HOME/.config/nvim"
-  rm -rf "$HOME/.cache/nvim"
-}
-
 function _____expire() {
   echo -n 'EXP: '
   curl --silent 'http://10.254.254.79/0/up/' | fq --decode html --raw-output '.html.body.div[1].div[0].table[1].tbody.tr.td[2].div.table.tbody.tr[4].td[1]["#text"]'
   echo -n 'NOW: '
   date +'%d.%m.%Y'
 }
-
-# vim:ft=zsh

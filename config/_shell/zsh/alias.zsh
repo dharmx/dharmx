@@ -7,43 +7,42 @@ if [ $(command -v exa) ]; then
 fi
 
 if [ $(command -v logo-ls) ]; then
-    alias lls="logo-ls"
-    alias lla="logo-ls -l --all"
+  alias lls="logo-ls"
+  alias lla="logo-ls -l --all"
 fi
 
 if [ $(command -v ripgrep) ]; then
-    alias grep="ripgrep"
+  alias grep="ripgrep"
 fi
 
 if [ $(command -v go-mtpfs) ]; then
-    alias mount-phone="go-mtpfs $HOME/Phone &>/dev/null & disown"
+  alias mount-phone="go-mtpfs $HOME/Phone &>/dev/null & disown"
 fi
 
 if [ $(command -v fusermount) ]; then
-    alias unmount-phone="fusermount -u $HOME/Phone"
+  alias unmount-phone="fusermount -u $HOME/Phone"
 fi
 
 if [ $(command -v udisksctl) ]; then
-    alias mount-iso="udisksctl loop-setup -r -f"
-    alias unmount-iso="udisksctl loop-delete -b"
-    alias mount-ssd="udisksctl mount -b /dev/nvme0n1p1"
-    alias unmount-ssd="udisksctl unmount -b /dev/nvme0n1p1"
+  alias mount-iso="udisksctl loop-setup -r -f"
+  alias unmount-iso="udisksctl loop-delete -b"
+  alias mount-ssd="udisksctl mount -b /dev/nvme0n1p1"
+  alias unmount-ssd="udisksctl unmount -b /dev/nvme0n1p1"
 fi
 
 if [ $(command -v nvim) ]; then
-    alias nv="nvim"
-    alias nvconfig="fm ~/.config/nvim/"
-    alias nvupd="nvim --headless -c 'autocmd User PackerComplete quitall' -c 'PackerSync'"
-    alias nvst="nvim --startuptime $HOME/Documents/nvim-startuptime-'$(date)' +quitall"
+  alias nv="nvim"
+  alias nvcfg="nv ~/.config/nvim/"
+  alias nvst="nvim --startuptime $HOME/Documents/nvim-startuptime-'$(date)' +quitall"
 fi
 
 if [ $(command -v ranger) ]; then
-    alias fm="ranger"
+  alias fm="ranger"
 fi
 
 if [ $(command -v tym) ]; then
-    # disable padding in the config.
-    alias tym-bling='bspc rule -a Tym -o state=floating rectangle=1604x1025+154+25 && tym'
+  # disable padding in the config.
+  alias tym-bling='bspc rule -a Tym -o state=floating rectangle=1604x1025+154+25 && tym'
 fi
 
 alias cls="clear"
@@ -58,7 +57,8 @@ alias cclock="watch -t -n1 'date +%T | figlet' | lolcat"
 alias tty-clock="tty-clock -S -c -C4 -D -s -n"
 alias ccbonsai="cbonsai -ilt 0.02 -c '  ,  ,  ,  ,  ' -L 5"
 alias fzi="$HOME/.fzfimg.sh"
-alias fzz="fzf --preview 'exa --long --icons --color=always {}'"
+alias fzz='nvim $(fd --type=file . | fzf --preview "bat --theme=base16 --color=always --paging=never --number --italic-text=never --tabs=2 --wrap=never {}")'
+alias fff='fc-list : family | awk -F"," "{print $1}" | sort | uniq | fzf | tr -d "\n" | xclip'
 
 alias yts="ytfzf -t"
 alias startx='startx -- -keeptty >~/.xorg.log 2>&1'
@@ -129,10 +129,7 @@ alias prmir='paru -Syy'
 alias prupd="paru -Sy"
 alias upgrade='paru -Syu'
 
-alias commit="git add . && git commit -m"
-alias push="git push"
-alias pull="git pull"
-
+alias gac="git add . && git commit -m"
 alias g=git
 alias ga='git add'
 alias gaa='git add --all'
@@ -377,6 +374,7 @@ alias kittythemes="kitty +kitten themes"
 SILENT_JAVA_OPTIONS="$JDK_JAVA_OPTIONS"
 alias java='java "$SILENT_JAVA_OPTIONS"'
 unset JDK_JAVA_OPTIONS
+
 alias nhist="dbus-monitor \"interface='org.freedesktop.Notifications'\" | grep --line-buffered \"member=Notify\|string\""
 alias strel="xrdb -I$HOME/.config/Xresources $HOME/.config/Xresources/config.x && kill -USR1 $(pidof st)"
 
@@ -391,7 +389,8 @@ alias spotifyd="spotifyd --config-path '$HOME/.config/spotifyd/spotifyd.conf' --
 alias luamake="$HOME/.opt/lua-language-server/3rd/luamake/luamake"
 
 alias wttr='curl wttr.in'
-alias c='cd $(fd --type d . | fzf)'
+alias c='cd $(fd --type d . | fzf --preview "exa --long --icons --color=always {}")'
+alias .c='cd $(fd --type d --hidden . | fzf --preview "exa --long --icons --color=always {}")'
 
 alias l1='exa -1'
 alias hdmitv="echo 'Xft.dpi:200\nst.font:Iosevka Nerd Font:pixelsize=38\nXcursor.size:32\n' | xrdb -merge"
