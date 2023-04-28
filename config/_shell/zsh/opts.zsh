@@ -37,17 +37,12 @@ zle -N _____toggle_left_prompt
 # zstyle ':autocomplete:*' fzf-completion no
 # zstyle ':autocomplete:*' add-space executables aliases functions builtins reserved-words commands
 
-# disable sort when completing `git checkout`
 zstyle ':completion:*:git-checkout:*' sort false
-# set descriptions format to enable group support
 zstyle ':completion:*:descriptions' format '[%d]'
-# set list-colors to enable filename colorizing
 zstyle ':completion:*' list-colors ${(s.:.)LS_COLORS}
-# preview directory's content with exa when completing cd
-zstyle ':fzf-tab:complete:cd:*' fzf-preview 'exa --long --icons --color=always $realpath'
-zstyle ':fzf-tab:complete:nvim:*' fzf-preview 'exa --long --icons --color=always $realpath'
-# switch group using `,` and `.`
+zstyle ':fzf-tab:complete:*:*' fzf-preview 'exa --long --icons --color=always $realpath'
 zstyle ':fzf-tab:*' switch-group ',' '.'
+zstyle ':fzf-tab:*' fzf-min-height 100
 
 HISTFILE="$HOME/.cache/zsh/.zhistory"
 HISTSIZE=10000

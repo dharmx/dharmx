@@ -5,7 +5,7 @@ export QT_FONT_DPI="116 Dosis"
 export SUDO_PROMPT='pass: '
 export SUDO_ASKPASS="$HOME/.bin/util/askpass.sh"
 
-export TERMINAL=st
+export TERMINAL=tym
 export BROWSER=firefox
 export WINDOW_MANAGER=bspwm
 export DESKTOP_SESSION=''

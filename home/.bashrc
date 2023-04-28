@@ -1,5 +1,3 @@
-[ -f "$HOME/.cargo/env" ] && source "$HOME/.cargo/env"
-
 files=("env" "theme" "alias" "utils" "opts" "prompt")
 for file in "${files[@]}"; do source "$HOME/.config/bash/$file.bash"; done
 files=""

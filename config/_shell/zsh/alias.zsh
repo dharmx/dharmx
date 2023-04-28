@@ -4,6 +4,7 @@ if [ $(command -v exa) ]; then
   alias li="exa --long --all --group --icons"
   alias ls="exa"
   alias la="exa --long --all --group"
+  alias tree="exa --color=always --icons --tree"
 fi
 
 if [ $(command -v logo-ls) ]; then

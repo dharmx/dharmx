@@ -13,3 +13,6 @@
 [submodule "config/_term/nvim"]
   path = config/_term/nvim
   url = https://github.com/dharmx/nvim.git
+[submodule "etc/qbittorrent-fluent-theme"]
+	path = etc/qbittorrent-fluent-theme
+	url = https://github.com/witalihirsch/qBitTorrent-fluent-theme
