@@ -40,7 +40,7 @@ zle -N _____toggle_left_prompt
 zstyle ':completion:*:git-checkout:*' sort false
 zstyle ':completion:*:descriptions' format '[%d]'
 zstyle ':completion:*' list-colors ${(s.:.)LS_COLORS}
-zstyle ':fzf-tab:complete:*:*' fzf-preview 'exa --long --icons --color=always $realpath'
+zstyle ':fzf-tab:complete:*:*' fzf-preview 'preview $realpath'
 zstyle ':fzf-tab:*' switch-group ',' '.'
 zstyle ':fzf-tab:*' fzf-min-height 100
 
@@ -59,6 +59,9 @@ do
 done <<-EOF
 AUTOCD
 AUTO_MENU
+PUSHDSILENT
+AUTOPUSHD
+PUSHDMINUS
 AUTO_PARAM_SLASH
 COMPLETE_IN_WORD
 NO_MENU_COMPLETE
