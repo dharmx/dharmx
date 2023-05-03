@@ -3,7 +3,7 @@ export QT_AUTO_SCREEN_SCALE_FACTOR=1
 export QT_FONT_DPI="116 Dosis"
 
 export SUDO_PROMPT='pass: '
-export SUDO_ASKPASS="$HOME/.bin/util/askpass.sh"
+export SUDO_ASKPASS="$HOME/.scripts/util/askpass.sh"
 
 export TERMINAL=tym
 export BROWSER=firefox
@@ -12,8 +12,7 @@ export DESKTOP_SESSION=''
 
 export VISUAL=nvim
 export EDITOR=nvim
-
-export PATH="$PATH:$HOME/.local/share/gem/ruby/3.0.0/bin:$:$HOME/.local/bin"
+export PATH="$PATH:$HOME/.local/share/gem/ruby/3.0.0/bin:$:$HOME/.local/bin:$HOME/.bin"
 
 ## Comment this out if you want normal manpages
 export MANPAGER='nvim +Man! +"set nocul" +"set noshowcmd" +"set noruler" +"set noshowmode" +"set laststatus=0" +"set showtabline=0" +"set nonumber"'
@@ -44,14 +43,6 @@ fi
 
 if [ -d "$HOME/.config/adb-fastboot/platform-tools" ]; then
  export PATH="$PATH:$HOME/.config/adb-fastboot/platform-tools"
-fi
-
-if [ -d "$HOME/.bin/regen/bin" ]; then
-  export PATH="$PATH:$HOME/.bin/regen/bin"
-fi
-
-if [ -d "$HOME/.bin/util" ]; then
-  export PATH="$PATH:$HOME/.bin/util"
 fi
 
 if [ -d "$HOME/.local/share/yarn/global/node_modules/retypeapp/platforms/linux-x64" ]; then

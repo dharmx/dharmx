@@ -65,17 +65,16 @@ alias yts="ytfzf -t"
 alias startx='startx -- -keeptty >~/.xorg.log 2>&1'
 
 alias cd..='cd ../'
-alias cd...='cd ../../'
-alias cd....='cd ../../../'
-alias cd.....='cd ../../../../'
-alias cd......='cd ../../../../../'
-alias ~='cd ~' 2> /dev/null
-alias -='cd -' 2> /dev/null
+alias cd....='cd ../../'
+alias cd......='cd ../../../'
+alias cd........='cd ../../../../'
+alias cd..........='cd ../../../../../'
+alias ~='cd ~'
 alias ..='cd ../'
-alias ...='cd ../../'
-alias ....='cd ../../../'
-alias .....='cd ../../../../'
-alias ......='cd ../../../../../'
+alias ....='cd ../../'
+alias ......='cd ../../../'
+alias ........='cd ../../../../'
+alias ..........='cd ../../../../../'
 alias 1='cd -1'
 alias 2='cd -2'
 alias 3='cd -3'
@@ -86,10 +85,6 @@ alias 7='cd -7'
 alias 8='cd -8'
 alias 9='cd -9'
 alias _='sudo'
-alias afind='ack -il'
-
-alias rd='rmdir'
-alias run-help='man'
 
 alias pac="sudo pacman"
 alias pacupg='sudo pacman -Syu'
@@ -112,23 +107,22 @@ alias pacown='pacman -Qo'
 alias pacupd="sudo pacman -Sy"
 alias upgrade='sudo pacman -Syu'
 
-alias prconf='paru -Pg'
-alias prupg='paru -Syu'
-alias prs='paru -Syu --noconfirm'
-alias prin='paru -S'
-alias prins='paru -U'
-alias prre='paru -R'
-alias prrem='paru -Rns'
-alias prrep='paru -Si'
-alias prreps='paru -Ss'
-alias prloc='paru -Qi'
-alias prlocs='paru -Qs'
-alias prlst='paru -Qe'
-alias prorph='paru -Qtd'
-alias prinsd='paru -S --asdeps'
-alias prmir='paru -Syy'
-alias prupd="paru -Sy"
-alias upgrade='paru -Syu'
+alias parconf='paru -Pg'
+alias parupg='paru -Syu'
+alias pars='paru -Syu --noconfirm'
+alias parin='paru -S'
+alias parins='paru -U'
+alias pare='paru -R'
+alias parem='paru -Rns'
+alias parep='paru -Si'
+alias pareps='paru -Ss'
+alias parloc='paru -Qi'
+alias parlocs='paru -Qs'
+alias parlst='paru -Qe'
+alias parorph='paru -Qtd'
+alias parinsd='paru -S --asdeps'
+alias parmir='paru -Syy'
+alias parupd="paru -Sy"
 
 alias gac="git add . && git commit -m"
 alias g=git
@@ -361,33 +355,30 @@ alias -s ace="unace l"
 alias visudo="nvim /etc/sudoers"
 
 alias reconnect="nmcli d c wlp0s20f3"
-alias tping="ping -c5 google.com"
-alias iping="gping google.com"
+alias _ping="ping -c5 google.com"
 
 alias yta-mp3="youtube-dl --extract-audio --audio-format mp3"
 alias ytv-best="youtube-dl -f bestvideo+bestaudio "
-alias killconk="killall conky"
 
 alias upgrub="sudo grub-mkconfig -o /boot/grub/grub.cfg"
-alias upfnt='sudo fc-cache -fv'
-alias kittythemes="kitty +kitten themes"
+alias upfnt='fc-cache -frv'
 
 SILENT_JAVA_OPTIONS="$JDK_JAVA_OPTIONS"
 alias java='java "$SILENT_JAVA_OPTIONS"'
 unset JDK_JAVA_OPTIONS
 
 alias nhist="dbus-monitor \"interface='org.freedesktop.Notifications'\" | grep --line-buffered \"member=Notify\|string\""
-alias strel="xrdb -I$HOME/.config/Xresources $HOME/.config/Xresources/config.x && kill -USR1 $(pidof st)"
-
-alias fet.sh="$HOME/.bin/eyecandy/fet.sh"
+alias fetch="$HOME/.scripts/bling/fetch"
 alias resrc="source $ZDOTDIR/.zshrc"
 alias rofi-shot='rofi -show drun -normal-window & disown'
 
-alias rel-xsettingsd="pkill -HUP xsettingsd"
-alias fontcfg="font-config-info"
+if [ $(command -v xsettingsd) ]; then
+  alias rxsettings="pkill -HUP xsettingsd"
+fi
 
-alias spotifyd="spotifyd --config-path '$HOME/.config/spotifyd/spotifyd.conf' --no-daemon"
-alias luamake="$HOME/.opt/lua-language-server/3rd/luamake/luamake"
+if [ $(command -v font-config-info) ]; then
+  alias fontcfg="font-config-info"
+fi
 
 alias wttr='curl wttr.in'
 alias c='cd $(fd --type d . | fzf --preview "exa --long --icons --color=always {}")'
@@ -401,5 +392,3 @@ alias high_res='ffmpeg -framerate 60 -f x11grab -i $DISPLAY -c:v libx264rgb -crf
 
 alias ytdn='yt-dlp --ignore-errors --format bestaudio --extract-audio --audio-format mp3 --audio-quality 320K --output "%(title)s.%(ext)s" --yes-playlist'
 alias pacmanallkeys='sudo pacman-key --refresh-keys'
-
-# vim:ft=zsh

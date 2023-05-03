@@ -2,7 +2,7 @@ bindkey '^[[H' beginning-of-line
 bindkey '^[[F' end-of-line
 bindkey -s '^K' 'ls^M'
 bindkey -s '^O' '_____smooth_fzf^M'
-bindkey -s '^A' 'br^M'
+bindkey -s '^A' 'fm^M'
 bindkey '^F' autosuggest-accept
 bindkey -a 'F' history-incremental-pattern-search-forward
 bindkey -a 'f' history-incremental-pattern-search-backward 

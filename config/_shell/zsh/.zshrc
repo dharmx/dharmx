@@ -19,7 +19,7 @@ for fun in ${(ok)functions[(I)[_][_][_][_][_]*]}; do
 done
 
 greet="xbl"
-greet_path="$HOME/.bin/eyecandy/$greet"
+greet_path="$HOME/.scripts/bling/$greet"
 [ -f "$greet_path" ] && eval "$greet_path" || _____default_greeter
 unset greet_path greet
 

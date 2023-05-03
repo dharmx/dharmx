@@ -236,10 +236,7 @@ super + alt + {m,n}
   "$XDG_CONFIG_HOME"/sxhkd/script/skunk.bash --{hide-loop,unhide-all}
 
 super + w ; 1
-  eww windows | grep '*vertigo' && eww close vertigo && bspc config left_padding 0 || eww open vertigo;\
-    eww windows | grep '*vertigo' \
-      && notify-send -a bar -i custom-sliders -u low EWW 'Opened eww-vertigo.' \
-      || notify-send -a bar -i custom-sliders -u critical EWW 'Closed eww-vertigo.'
+  eww windows | grep '*vertigo' && eww close vertigo && bspc config left_padding 0 || eww open vertigo
 
 super + w ; 2
   eww open --toggle disclose
