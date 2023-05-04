@@ -16,7 +16,7 @@ zle -N _____sudo_command_line
 zle -N _____toggle_right_prompt
 zle -N _____toggle_left_prompt
 
-# adapted from https://is.gd/RRNqsV
+# adapted from https://github.com/marlonrichert/zsh-autocomplete
 # zstyle ':completion:*' list-colors ${(s.:.)LS_COLORS}
 # zstyle ":completion:*" sort false
 # zstyle ':completion:*' matcher-list 'r:|=*' 'l:|=* r:|=*'
@@ -45,6 +45,7 @@ zstyle ':fzf-tab:*' switch-group ',' '.'
 zstyle ':fzf-tab:*' fzf-min-height 100
 
 HISTFILE="$HOME/.cache/zsh/.zhistory"
+HISTORY_IGNORE="(echo *|printf *|print *|ls|fm)"
 HISTSIZE=10000
 SAVEHIST=10000
 

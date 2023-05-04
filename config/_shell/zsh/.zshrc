@@ -1,5 +1,6 @@
 [ -f "$HOME/.cargo/env" ] && source "$HOME/.cargo/env"
 [ -f "$HOME/.config/broot/launcher/bash/br" ] && source "$HOME/.config/broot/launcher/bash/br"
+[ $(command -v fuck) ] && eval $(thefuck --alias)
 
 while read file
 do 

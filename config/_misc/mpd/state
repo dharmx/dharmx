@@ -1,22 +1,19 @@
-sw_volume: 80
+sw_volume: 55
 audio_device_state:1:Pulseaudio
 audio_device_state:1:Visualizer
 state: pause
-current: 1
-time: 156.024000
+current: 3
+time: 302.124000
 random: 0
 repeat: 1
-single: 0
+single: 1
 consume: 0
 crossfade: 0
 mixrampdb: 0.000000
 mixrampdelay: -1.000000
 playlist_begin
-0:Walkure Attack/GIRAFFE BLUES.mp3
-1:Walkure Attack/AXIA～Daisuki de Daikirai～.mp3
-2:Walkure Attack/Bokura no Senjou.mp3
-3:Walkure Attack/Fukakuteisei☆COSMIC MOVEMENT.mp3
-4:Walkure Attack/Ikenai Border Line ～Album Version～.mp3
-5:Walkure Attack/Rune ga Pikatto Hikattara ～Album Version～.mp3
-6:Walkure Attack/Walküre Attack!.mp3
+0:postrock/a post-rock playlist to help you focus & study.mp3
+1:postrock/Anoice - a perfect day for a funeral.mp3
+2:postrock/The Living Sleep - Always.mp3
+3:postrock/Dan Caine - Remnants.mp3
 playlist_end

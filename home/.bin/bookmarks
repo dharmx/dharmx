@@ -1,0 +1,164 @@
+#!/usr/bin/env python
+"""
+Script to browse though your firefox bookmarks. For FZFs.
+For getting started just call this script without any arguments.
+Additionally, for more options try passing --help.
+"""
+
+import json
+import sqlite3 as sql
+
+from argparse import ArgumentParser
+from datetime import datetime
+from os.path import expandvars as expand
+from pathlib import Path
+from posix import system
+from sys import argv
+from typing import Callable, Dict
+
+CACHE = Path(expand("$HOME/.cache/bookmarks.json"))
+QUERY = """
+SELECT DISTINCT
+  items.title, urls.url
+  FROM items, urls
+  WHERE(items.urlId=urls.id)
+"""
+
+
+def row_factory(curse: sql.Cursor, row: sql.Row) -> Dict[str, str]:
+    return {column[0]: row[index] for index, column in enumerate(curse.description)}
+
+
+def fetch_save(profile: str, row_factory: Callable[[sql.Cursor, sql.Row], Dict[str, str]] = row_factory):
+    """
+    Connects to the bookmarks db and executes a query then
+    gets converted into JSON and written to ~/.cache/bookmarks.json
+    """
+
+    # ls $HOME/.mozilla/firefox/profiles to find out what yours is.
+    string_path = expand(f"$HOME/.mozilla/firefox/profiles/{profile}/weave/bookmarks.sqlite")
+    db = Path(string_path)
+    if not db.exists():
+        raise FileNotFoundError(f"{db} does not exist!")
+
+    connection = sql.connect(db.absolute())
+    curse = connection.cursor()
+    curse.row_factory = row_factory
+    try:
+        curse.execute(QUERY)
+    except sql.OperationalError: # db might be locked i.e. firefox is currently open
+        current = datetime.strftime(datetime.now(), "%s")
+        db_copy = Path(f"/tmp/{profile}-bookmarks-{current}.sqlite")
+        db_copy.write_bytes(db.read_bytes())
+        connection = sql.connect(db_copy.absolute())
+        curse = connection.cursor()
+        curse.row_factory = row_factory
+        curse.execute(QUERY)
+        db_copy.unlink() # we do not need the copy
+
+    CACHE.unlink(missing_ok=True)
+    parsed = []
+    for entry in curse.fetchall():
+        if entry["url"][-1] == "/":
+            entry["url"] = entry["url"][:-1]
+        parsed.append(entry)
+    CACHE.write_text(json.dumps(parsed))
+    connection.close()
+
+
+def search_url(url: str):
+    if not CACHE.exists():
+        raise FileNotFoundError(f"{CACHE} file not found!")
+    for entry in json.loads(CACHE.read_text()):
+        if entry["url"] == url:
+            print(entry["title"] if entry["title"] != None else "[X] NO TITLE")
+
+
+def print_urls():
+    if not CACHE.exists():
+        raise FileNotFoundError(f"{CACHE} file not found!")
+    for entry in json.loads(CACHE.read_text()):
+        print(entry["url"])
+
+
+def dump_state(profile: str):
+    fetch_save(profile)
+    if not CACHE.exists():
+        raise FileNotFoundError(f"{CACHE} file not found!")
+    print(CACHE.read_text())
+
+
+def open_fuzzy(sort_urls: bool = False):
+    system(
+        "%(file)s --urls |%(sort)s fzf --preview '%(file)s --find {}'"
+        % {"file": __file__, "sort": " sort | uniq |" if sort_urls else ""}
+    )
+
+
+if __name__ == "__main__":
+    if len(argv) == 1:
+        open_fuzzy(sort_urls=True)
+        exit(0)
+
+    parser = ArgumentParser(
+        prog=Path(__file__).stem,
+        description="FZF wrapper over Firefox bookmarks.",
+        epilog="Source: https://github.com/dharmx/dots.sh/issues",
+    )
+    parser.add_argument(
+        "-u",
+        "--urls",
+        action="store_true",
+        help="Print out all URLs of rows.",
+    )
+    parser.add_argument(
+        "-z",
+        "--fzf",
+        action="store_true",
+        help="Run FZF command. Calls into itself for previews and entries.",
+    )
+    parser.add_argument(
+        "--fzf-sorted",
+        action="store_true",
+        help="Run FZF command. Calls into itself for previews and entries. Entries are sorted.",
+    )
+    parser.add_argument(
+        "-s",
+        "--save",
+        action="store",
+        help="Pull latest db additions then convert bookmarks.db to bookmarks.json.",
+        nargs=1,
+    )
+    parser.add_argument(
+        "-f",
+        "--find",
+        action="store",
+        help="Select the given row by URL and print its title.",
+        nargs=1,
+    )
+    parser.add_argument(
+        "-d",
+        "--dump",
+        action="store", 
+        help="Dump db JSON.", 
+        nargs=1
+    )
+
+    parser.format_help()
+    args = parser.parse_args()
+    fields = [field for field in dir(args) if not field.startswith("_")]
+    for field in fields:
+        if value := getattr(args, field):
+            match field:
+                case "save":
+                    fetch_save(value[0])
+                case "find":
+                    search_url(value[0])
+                case "urls":
+                    print_urls()
+                case "dump":
+                    dump_state(value[0])
+                case "fzf":
+                    open_fuzzy()
+                case "fzf_sorted":
+                    open_fuzzy(sort_urls=True)

@@ -144,7 +144,7 @@ XF86Audio{Raise,Lower}Volume
 
 ## mute voloume/mic
 XF86Audio{_,Mic}Mute
-  {pamixer --toggle-mute,$HOME/.bin/notify/microphone.bash}
+  {pamixer --toggle-mute,$HOME/.scripts/notify/microphone.bash}
 
 # backlight configurations
 ## inc/dec brightness
@@ -185,7 +185,7 @@ ctrl + shift + Escape
 
 ## night mode
 super + n
-  $HOME/.bin/notify/redshift.bash
+  $HOME/.scripts/notify/redshift.bash
 
 ## screenshot
 super + shift + d
@@ -249,7 +249,7 @@ super + w ; 4
 
 # lock screen
 super + shift + slash
-  $HOME/.bin/util/i3lock.sh maker
+  lock maker
 
 ~Escape
   eval "$XDG_CONFIG_HOME/sxhkd/script/close.bash"
