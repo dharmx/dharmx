@@ -1,0 +1,56 @@
+@import "theme.rasi"
+// echo 'Yes\nNo' | rofi -dmenu -i -no-fixed-num-lines -p 'Copy?' -theme /home/maker/.config/rofi/prompt.rasi
+
+* {
+  font: "Dosis,Iosevka Nerd Font Bold 15";
+  background-color: @bg-col;
+  text-color: @fg-col;
+}
+
+window {
+  width: 500;
+  height: 200;
+  padding: 1em;
+  location: center;
+}
+
+inputbar {
+  children: [ prompt ];
+}
+
+prompt {
+  font: "Dosis,Iosevka Nerd Font Bold 20";
+  text-color: @red;
+  padding: 0.2em;
+}
+
+listview {
+  lines: 1;
+  columns: 2;
+}
+
+entry {
+  enabled: false;
+}
+
+element {
+  orientation: horizontal;
+  children: [ element-text ];
+  spacing: 1em;
+  padding: 1em;
+  border-color: @fg-col2;
+  border-radius: 0.1em;
+}
+
+element selected {
+  background-color: @fg-col2;
+  border: 0.1em;
+  border-color: @grey;
+}
+
+element-text selected {
+  background-color: @fg-col2;
+  text-color: @bg-col;
+}
+
+// vim:filetype=rasi

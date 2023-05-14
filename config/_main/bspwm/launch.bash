@@ -11,18 +11,18 @@ function launch() {
 
 # launch some nice apps
 launch sxhkd
+launch dunst
 launch ksuperkey -t 100 -e "'Super_L=Super_L|d'"
 launch stalonetray --config '$XDG_CONFIG_HOME/tray/config.conf'
 launch parcellite --no-icon # clipboard manager
-launch dunst -config '$XDG_CONFIG_HOME/dunst/config.ini'
 launch playerctld daemon
+launch mpd
+launch eww open vertigo
+launch '$XDG_CONFIG_HOME/eww/src/shell/logger.py' init
+launch picom --config '$XDG_CONFIG_HOME/picom/config.ini'
 
 ## Disabled
-## launch mpd
-## launch picom --config '$XDG_CONFIG_HOME/picom/config.ini' &
 ## launch spotifyd &
 ## launch plank --name bottom-dock
-## launch eww open vertigo
-## launch '$XDG_CONFIG_HOME/eww/src/shell/logger.py' init
 
 # vim:ft=sh

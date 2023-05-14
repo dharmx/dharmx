@@ -300,6 +300,13 @@ function _____falias() {
   done
 }
 
+function _____ytframe() {
+  local screenshot_time="$1"
+  local youtube_url="$2"
+  local output_file="$3"
+  ffmpeg -ss "$screenshot_time" -i $(yt-dlp -f 22 --get-url "$youtube_url") -vframes 1 -q:v 2 "$output_file"
+}
+
 function _____wall() {
   convert "$3" -resize "$2" -gravity center -background "$1" -extent 1920x1080 "$4"
 }

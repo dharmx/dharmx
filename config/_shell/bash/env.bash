@@ -20,15 +20,14 @@ export XDG_MUSIC_DIR="$HOME/Music"
 export XDG_PICTURES_DIR="$HOME/Pictures"
 export XDG_VIDEOS_DIR="$HOME/Videos"
 
-export TERMINAL="st"
+export TERMINAL="tym"
 export BROWSER="qutebrowser"
 export VISUAL="nvim"
 export EDITOR="nvim"
 export SHELL="/usr/bin/bash"
 export PATH="$PATH"
 
-source "$HOME/.cargo/env"
-
+[ -f "$HOME/.cargo/env" ] && source "$HOME/.cargo/env"
 
 # FZF bases
 export FZF_DEFAULT_OPTS="

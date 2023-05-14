@@ -21,7 +21,6 @@ configuration {
 }
 
 window {
-  // border-radius: 1em;
   width: 900;
   height: 650;
   anchor: center;

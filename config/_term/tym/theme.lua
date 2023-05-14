@@ -1,9 +1,7 @@
 return {
   color_foreground = "#D4D4D5",
   color_background = "#101317",
-  -- color_background = "#0F0F0F",
   color_window_background = "#101317",
-  -- color_window_background = "#0F0F0F",
   color_bold = "#d4d4d5",
   color_cursor = "#7ab0df",
   color_cursor_foreground = "#101317",
