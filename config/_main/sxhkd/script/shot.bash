@@ -8,11 +8,11 @@ dir="$(xdg-user-dir PICTURES)"
 file="screenshot-$time-$geometry.png"
 
 # Buttons
-screen=""
-area=""
-window=""
-infive=""
-inten=""
+screen=""
+area=""
+window=""
+infive=""
+inten=""
 
 # notify and view screenshot
 function notify_view() {

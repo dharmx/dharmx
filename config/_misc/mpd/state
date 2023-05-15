@@ -1,9 +1,9 @@
 sw_volume: 100
 audio_device_state:1:Pulseaudio
 audio_device_state:1:Visualizer
-state: play
-current: 2
-time: 4014.160000
+state: pause
+current: 5
+time: 2.315000
 random: 0
 repeat: 1
 single: 0
@@ -17,4 +17,5 @@ playlist_begin
 2:postrock/a post-rock playlist to help you focus & study.mp3
 3:postrock/The Living Sleep - Always.mp3
 4:postrock/Whale Fall - The Madrean [Full Album].mp3
+5:lofi/3PM Coding Session.mp3
 playlist_end

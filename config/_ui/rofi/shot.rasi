@@ -1,11 +1,12 @@
-  @import"theme.rasi"
-  
+@theme "theme.rasi"
+
 window {
-  font: "Dosis,feather Bold 16";
+  font: "Dosis,Phosphor 16";
   transparency: "real";
   background-color: @bg-col;
   text-color: @fg-col;
   border-color: @selected-col;
+  border-radius: 0.3em;
   width: 4em;
   x-offset: 31.4em;
 }
@@ -30,13 +31,14 @@ mainbox {
 }
 
 element {
-  background-color: @bg-col;
+  background-color: @bg-col-light;
   text-color: @fg-col;
   orientation: horizontal;
   border-color: @selected-col;
-  padding: 1em;
+  border-radius: 0.3em;
+  padding: 1em 1em 0.9em 1.05em;
 }
-  
+
 element-icon {
   background-color: inherit;
   text-color: inherit;
@@ -46,12 +48,14 @@ element-icon {
 element-text {
   background-color: inherit;
   text-color: inherit;
-  font: "feather Bold 25";
+  font: "Phosphor 25";
   expand: true;
 }
 
 element selected {
-  background-color: @border-col;
+  background-color: @selected-col;
+  border-radius: 0.3em;
   text-color: @fg-col2;
 }
 
+// vim:filetype=rasi
