@@ -1,0 +1,60 @@
+#!/usr/bin/env bash
+
+# NOTE: This depends on https://command-not-found.com/zenity.
+
+if [[ $# -le 0 ]]; then
+  if [[ -t 0 && -n "$TERM" ]]; then
+    tmux
+  else
+    $TERMINAL -e tmux
+  fi
+  exit 0
+fi
+
+args=(tmux new-session)
+while [[ $# -gt 0 ]]; do
+  case "$1" in
+    --choose|-p)
+      if zenity --question --ok-label=Create --cancel-label=Attach --title=TMUX --icon-name=custom-question --text='Choose if you want to <span weight="bold">attach</span> to a tmux session or, <span weight="bold">create</span> a new one.'; then
+        tmux-new --attach --name --working
+      else
+        readarray sessions < <(tmux ls | awk -F':' '{print $1}')
+        if [[ ${#sessions[@]} -lt 1 ]]; then
+          zenity --error --text='No tmux sessions are active currently!'
+        else
+          # shellcheck disable=2048,2086
+          session="$(zenity --list --title=TMUX --column=0 --height=300 ${sessions[*]} --hide-header --text='Choose a tmux session.')"
+          [[ "$session" ]] && $TERMINAL -e "tmux attach-session -t $session"
+        fi
+      fi
+      exit 0
+      ;;
+    --name|-s)
+      args+=("-s")
+      name="$(zenity --entry --text='TMUX session name?' --entry-text='playground' --title=TMUX)"
+      args+=("$name")
+      ;;
+    --working|-c)
+      args+=("-c")
+      working="$(zenity --entry --text='TMUX working directory?' --entry-text='.' --title=TMUX)"
+      args+=("$working")
+      ;;
+    --help|-h)
+      echo 'USAGE: tmux-live --[choose|attach|working|name|help|run] cmd'
+      exit 0
+      ;;
+    --attach|-A)
+      args+=("-A")
+      ;;
+    --run|-e)
+      run="$(zenity --entry --text='TMUX command?' --entry-text=nvim --title=TMUX || $1)"
+      args+=("$run")
+      ;;
+    *)
+      args+=("$1")
+      ;;
+  esac
+  shift 1
+done
+
+$TERMINAL -e "${args[*]}"

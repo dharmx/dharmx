@@ -59,7 +59,7 @@ configuration {
   // append more using comma
   icon-theme: "custom";
 
-  // SEE: config/sxhkd/config.sx -- super + d
+  // SEE: config/sxhkd/sxhkdrc -- super + d
   kb-cancel: "Super_L-d,Escape";
   kb-screenshot: "Control-t";
 }

@@ -63,7 +63,7 @@ mkdir -p "$XDG_DATA_HOME/keyrings"
 
 function init_session() {
   export XDG_CURRENT_DESKTOP="bspwm"
-  exec bspwm
+  exec "$XDG_CURRENT_DESKTOP"
 }
 
 if [ ! "$PWD" = "$HOME" ]; then
@@ -73,5 +73,3 @@ if [ ! "$PWD" = "$HOME" ]; then
 else
   init_session
 fi
-
-# vim:ft=sh

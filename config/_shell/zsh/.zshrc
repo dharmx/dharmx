@@ -23,5 +23,3 @@ greet="xbl"
 greet_path="$HOME/.scripts/bling/$greet"
 [ -f "$greet_path" ] && eval "$greet_path" || _____default_greeter
 unset greet_path greet
-
-# vim:ft=zsh:nowrap
