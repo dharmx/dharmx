@@ -3,16 +3,17 @@
   path = home/.themes/phocus
 
 [submodule "config/_secure/eww"]
-  path = config/_secure/eww
   url = https://github.com/dharmx/vile.git
+  path = config/_secure/eww
 
 [submodule "config/_misc/mpv/MordenX"]
-  path = config/_misc/mpv/MordenX
   url = https://github.com/cyl0/MordenX.git
+  path = config/_misc/mpv/MordenX
 
 [submodule "config/_term/nvim"]
-	path = config/_term/nvim
-	url = https://github.com/dharmx/nvim.git
+  url = https://github.com/dharmx/nvim.git
+  path = config/_term/nvim
+
 [submodule "etc/qbittorrent-fluent-theme"]
-	path = etc/qbittorrent-fluent-theme
-	url = https://github.com/witalihirsch/qBitTorrent-fluent-theme
+  url = https://github.com/witalihirsch/qBitTorrent-fluent-theme
+  path = etc/qbittorrent-fluent-theme
