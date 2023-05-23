@@ -3,6 +3,7 @@
 **/.vscode/
 
 **/*.log
+**/*.log*
 **/.zcompdump*
 
 **/Acri/

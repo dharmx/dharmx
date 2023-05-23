@@ -41,11 +41,6 @@ if [ $(command -v ranger) ]; then
   alias fm="ranger"
 fi
 
-if [ $(command -v tym) ]; then
-  # disable padding in the config.
-  alias tym-bling='bspc rule -a Tym -o state=floating rectangle=1604x1025+154+25 && tym'
-fi
-
 alias cls="clear"
 alias la="ls -la"
 
@@ -368,12 +363,10 @@ alias java='java "$SILENT_JAVA_OPTIONS"'
 unset JDK_JAVA_OPTIONS
 
 alias nhist="dbus-monitor \"interface='org.freedesktop.Notifications'\" | grep --line-buffered \"member=Notify\|string\""
-alias fetch="$HOME/.scripts/bling/fetch"
 alias resrc="source $ZDOTDIR/.zshrc"
-alias rofi-shot='rofi -show drun -normal-window & disown'
 
 if [ $(command -v xsettingsd) ]; then
-  alias rxsettings="pkill -HUP xsettingsd"
+  alias reload-settings="pkill -HUP xsettingsd"
 fi
 
 if [ $(command -v font-config-info) ]; then

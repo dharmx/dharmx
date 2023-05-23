@@ -19,7 +19,8 @@ for fun in ${(ok)functions[(I)[_][_][_][_][_]*]}; do
   eval "alias ${${fun:5}//_/-}=\"${fun}\""
 done
 
-greet="xbl"
-greet_path="$HOME/.scripts/bling/$greet"
-[ -f "$greet_path" ] && eval "$greet_path" || _____default_greeter
-unset greet_path greet
+if command -v bling-xbl &>/dev/null; then
+  bling-xbl
+else
+  _____default_greeter
+fi

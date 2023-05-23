@@ -2,8 +2,8 @@ export QT_STYLE_OVERRIDE=kvantum
 export QT_AUTO_SCREEN_SCALE_FACTOR=1
 export QT_FONT_DPI="116 Dosis"
 
-export SUDO_PROMPT='pass: '
-export SUDO_ASKPASS="$HOME/.scripts/util/askpass.sh"
+export SUDO_PROMPT='password: '
+export SUDO_ASKPASS="askpass"
 
 export TERMINAL=tym
 export BROWSER=firefox
@@ -12,9 +12,8 @@ export DESKTOP_SESSION=''
 
 export VISUAL=nvim
 export EDITOR=nvim
-export PATH="$PATH:$HOME/.local/share/gem/ruby/3.0.0/bin:$:$HOME/.local/bin:$HOME/.bin"
+export PATH="$PATH:$HOME/.local/share/gem/ruby/3.0.0/bin:$:$HOME/.local/bin:$HOME/.bin:$HOME/.bling"
 
-## Comment this out if you want normal manpages
 export MANPAGER='nvim +Man! +"set nocul" +"set noshowcmd" +"set noruler" +"set noshowmode" +"set laststatus=0" +"set showtabline=0" +"set nonumber"'
 if [ ! $(echo $MANPAGER | awk '{print $1}') = nvim ]; then
   export MANPAGER="less -s +M +Gg"
