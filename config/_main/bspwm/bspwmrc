@@ -6,7 +6,7 @@ source "$XDG_CONFIG_HOME/bspwm/default.bash"
 source "$XDG_CONFIG_HOME/bspwm/launch.bash"
 
 # restore wallpaper and play a cringe login sound
-[ -x "$HOME/.fehbg" ] || feh --bg-fill "$XDG_PICTURES_DIR/wallpapers/centered/wp4047981-minimalism-wallpapers.jpg" && source "$HOME/.fehbg"
+[ -x "$HOME/.fehbg" ] || feh --bg-fill "$XDG_PICTURES_DIR/walls/centered/wp4047981-minimalism-wallpapers.jpg" && source "$HOME/.fehbg"
 # mpv --keep-open=no --really-quiet "/usr/share/sounds/Smooth/stereo/desktop-login.oga"
 
 # all floating in desktop 3

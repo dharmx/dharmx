@@ -1,9 +1,9 @@
 sw_volume: 100
 audio_device_state:1:Pulseaudio
 audio_device_state:1:Visualizer
-state: play
-current: 2
-time: 7479.237000
+state: pause
+current: 3
+time: 1268.586000
 random: 0
 repeat: 1
 single: 0
@@ -14,7 +14,7 @@ mixrampdelay: -1.000000
 playlist_begin
 0:postrock/Dan Caine - Remnants.mp3
 1:postrock/Anoice - a perfect day for a funeral.mp3
-2:postrock/a post-rock playlist to help you focus & study.mp3
-3:postrock/The Living Sleep - Always.mp3
-4:postrock/Whale Fall - The Madrean [Full Album].mp3
+2:postrock/The Living Sleep - Always.mp3
+3:postrock/Whale Fall - The Madrean [Full Album].mp3
+4:postrock/The Living Sleep - Untethered.mp3
 playlist_end
