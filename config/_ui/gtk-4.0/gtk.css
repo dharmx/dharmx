@@ -540,25 +540,25 @@ notebook stack:only-child {
 }
 
 overshoot.top {
-  background-image: -gtk-gradient(radial, center top, 0, center top, 0.6, from(rgba(28, 28, 28, 0.2)), to(rgba(28, 28, 28, 0)));
+  /* background-image: -gtk-gradient(radial, center top, 0, center top, 0.6, from(rgba(28, 28, 28, 0.2)), to(rgba(28, 28, 28, 0))); */
   background-size: 100% 60%;
   background-repeat: no-repeat;
   background-position: center top;
 }
 overshoot.bottom {
-  background-image: -gtk-gradient(radial, center bottom, 0, center bottom, 0.6, from(rgba(28, 28, 28, 0.2)), to(rgba(28, 28, 28, 0)));
+  /* background-image: -gtk-gradient(radial, center bottom, 0, center bottom, 0.6, from(rgba(28, 28, 28, 0.2)), to(rgba(28, 28, 28, 0))); */
   background-size: 100% 60%;
   background-repeat: no-repeat;
   background-position: center bottom;
 }
 overshoot.left {
-  background-image: -gtk-gradient(radial, left center, 0, left center, 0.6, from(rgba(28, 28, 28, 0.2)), to(rgba(28, 28, 28, 0)));
+  /* background-image: -gtk-gradient(radial, left center, 0, left center, 0.6, from(rgba(28, 28, 28, 0.2)), to(rgba(28, 28, 28, 0))); */
   background-size: 60% 100%;
   background-repeat: no-repeat;
   background-position: left center;
 }
 overshoot.right {
-  background-image: -gtk-gradient(radial, right center, 0, right center, 0.6, from(rgba(28, 28, 28, 0.2)), to(rgba(28, 28, 28, 0)));
+  /* background-image: -gtk-gradient(radial, right center, 0, right center, 0.6, from(rgba(28, 28, 28, 0.2)), to(rgba(28, 28, 28, 0))); */
   background-size: 60% 100%;
   background-repeat: no-repeat;
   background-position: right center;

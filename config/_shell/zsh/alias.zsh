@@ -41,6 +41,7 @@ if [ $(command -v ranger) ]; then
   alias fm="ranger"
 fi
 
+alias tx=tmux
 alias cls="clear"
 alias la="ls -la"
 

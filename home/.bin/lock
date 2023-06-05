@@ -2,7 +2,7 @@
 
 USERNAME="$1"
 
-LOCKSCREEN_WALL="/home/$USERNAME/Pictures/wallpapers/radium/output-1659958136.png"
+LOCKSCREEN_WALL="/home/$USERNAME/Pictures/walls/radium/output-1659958136.png"
 DEFAULT_DPMS=$(xset q | awk '/^[[:blank:]]*DPMS is/ {print $(NF)}')
 LOCK_TIMEOUT=5 ### In Seconds
 

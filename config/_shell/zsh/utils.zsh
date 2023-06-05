@@ -226,6 +226,10 @@ function _____webm_to_audio {
   find . -type f -iname "*.webm" -exec bash -c 'FILE="$1"; ffmpeg -i "${FILE}" -vn -ab 128k -ar 44100 -y "${FILE%.webm}.mp3";' _ '{}' \;
 }
 
+function _____mkv_to_mp4() {
+  ffmpeg -i $1 -c copy "${1%.mkv}.mp4"
+}
+
 function _____mkv_to_audio {
   find . -type f -name "*.mkv" -exec bash -c 'FILE="$1"; ffmpeg -i "${FILE}" -vn $' \;
 }
@@ -311,7 +315,7 @@ function _____wall() {
   convert "$3" -resize "$2" -gravity center -background "$1" -extent 1920x1080 "$4"
 }
 
-function _____expire() {
+function _____expire-network() {
   echo -n 'EXP: '
   curl --silent 'http://10.254.254.79/0/up/' | fq --decode html --raw-output '.html.body.div[1].div[0].table[1].tbody.tr.td[2].div.table.tbody.tr[4].td[1]["#text"]'
   echo -n 'NOW: '

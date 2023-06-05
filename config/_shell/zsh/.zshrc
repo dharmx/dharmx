@@ -15,7 +15,7 @@ keys
 prompt
 EOF
 
-for fun in ${(ok)functions[(I)[_][_][_][_][_]*]}; do 
+for fun in ${(ok)functions[(I)_____*]}; do 
   eval "alias ${${fun:5}//_/-}=\"${fun}\""
 done
 

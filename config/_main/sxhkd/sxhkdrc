@@ -171,10 +171,6 @@ super + {shift + f,e}
 ctrl + shift + Escape
   tym -e btop
 
-## night mode
-super + n
-  $XDG_CONFIG_HOME/sxhkd/.scripts/redshift.bash
-
 ## screenshot
 super + shift + d
   snip
