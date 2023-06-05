@@ -50,6 +50,14 @@ while [[ $# -gt 0 ]]; do
       run="$(zenity --entry --text='TMUX command?' --entry-text=nvim --title=TMUX || $1)"
       args+=("$run")
       ;;
+    --next|-n)
+      tmux switchc -t $(tmux lsw -F '#{window_id}') -n
+      exit 0
+      ;;
+    --previous|-p)
+      tmux switchc -t $(tmux lsw -F '#{window_id}') -p
+      exit 0
+      ;;
     *)
       args+=("$1")
       ;;

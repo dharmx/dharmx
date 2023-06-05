@@ -6,6 +6,10 @@
 super + {_,ctrl} + Return
   {tym,tmux-new --choose}
 
+# switch tmux active sessions
+# super + {v,u}
+#   tmux-new --{next,previous}
+
 # make sxhkd reload its configuration files
 super + {_,shift} + Escape
   {pkill -USR1 -x sxhkd;\
