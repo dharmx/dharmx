@@ -3,8 +3,8 @@
   path = home/.themes/phocus
 
 [submodule "config/_secure/eww"]
-  url = https://github.com/dharmx/vile.git
-  path = config/_secure/eww
+	url = https://github.com/dharmx/vile.git
+	path = config/_secure/eww
 
 [submodule "config/_misc/mpv/MordenX"]
   url = https://github.com/cyl0/MordenX.git
