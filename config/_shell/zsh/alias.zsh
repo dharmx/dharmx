@@ -50,9 +50,6 @@ alias bedit="$EDITOR $HOME/.bashrc"
 alias fedit="$EDITOR $HOME/.config/fish/config.fish"
 alias kev="xev -event keyboard"
 
-alias cclock="watch -t -n1 'date +%T | figlet' | lolcat"
-alias tty-clock="tty-clock -S -c -C4 -D -s -n"
-alias ccbonsai="cbonsai -ilt 0.02 -c '  ,  ,  ,  ,  ' -L 5"
 alias fzi="$HOME/.fzfimg.sh"
 alias fzz='nvim $(fd --type=file . | fzf --preview "bat --theme=base16 --color=always --paging=never --number --italic-text=never --tabs=2 --wrap=never {}")'
 alias fff='fc-list : family | awk -F"," "{print $1}" | sort | uniq | fzf | tr -d "\n" | xclip'

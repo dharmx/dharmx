@@ -4,7 +4,7 @@
 
 # terminal emulators
 super + {_,ctrl} + Return
-  {tym,tmux-new --choose}
+  {tym -e 'tmux new-session -A -s playground',tmux-new --choose}
 
 # switch tmux active sessions
 # super + {v,u}

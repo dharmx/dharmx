@@ -3,7 +3,7 @@ export QT_AUTO_SCREEN_SCALE_FACTOR=1
 export QT_FONT_DPI="116 Dosis"
 
 export SUDO_PROMPT='password: '
-export SUDO_ASKPASS="askpass"
+export SUDO_ASKPASS="$HOME/.bin/askpass"
 
 export TERMINAL=tym
 export BROWSER=firefox
