@@ -1,5 +1,3 @@
-#!/usr/bin/env bash
-
 _default_greeter() {
   c1="\033[1;30m"
   c2="\033[1;31m"

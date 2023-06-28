@@ -1,5 +1,3 @@
-#!/usr/bin/env bash
-
 alias xclip='xclip -selection clipboard'
 
 if [ -x "$(command -v exa)" ]; then
