@@ -2,8 +2,8 @@ sw_volume: 98
 audio_device_state:1:Pulseaudio
 audio_device_state:1:Visualizer
 state: pause
-current: 3
-time: 142.883000
+current: 8
+time: 676.692000
 random: 0
 repeat: 1
 single: 0
@@ -17,4 +17,8 @@ playlist_begin
 2:postrock/Whale Fall - The Madrean [Full Album].mp3
 3:postrock/The Living Sleep - Always.mp3
 4:postrock/Dan Caine - Remnants.mp3
+5:postrock/Best Of Melancholic Post-Rock Mix.mp3
+6:postrock/Kong.mp3
+7:postrock/Russian Circles - Afrika.mp3
+8:postrock/a post-rock playlist to help you focus & study.mp3
 playlist_end

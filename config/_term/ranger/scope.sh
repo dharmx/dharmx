@@ -368,14 +368,16 @@ handle_mime() {
         image/*)
             ## Preview as text conversion
             # img2txt --gamma=0.6 --width="${PV_WIDTH}" -- "${FILE_PATH}" && exit 4
-            exiftool "${FILE_PATH}" && exit 5
+            # exiftool "${FILE_PATH}" && exit 5
+            chafa --size="${PV_WIDTH}x${PV_HEIGHT}" --animate=on --colors=none -- "${IMAGE_CACHE_PATH}" && exit 4
             exit 1
                   ;;
 
         ## Video and audio
         video/* | audio/*)
-            mediainfo "${FILE_PATH}" && exit 5
-            exiftool "${FILE_PATH}" && exit 5
+            chafa --size="${PV_WIDTH}x${PV_HEIGHT}" --animate=on --colors=none -- "${IMAGE_CACHE_PATH}" && exit 4
+            # mediainfo "${FILE_PATH}" && exit 5
+            # exiftool "${FILE_PATH}" && exit 5
             exit 1
                   ;;
 
