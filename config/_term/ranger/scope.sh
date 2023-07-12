@@ -86,9 +86,9 @@ handle_extension() {
         ## OpenDocument
         odt | sxw)
             ## Preview as text conversion
-            odt2txt "${FILE_PATH}" && exit 5
+            # odt2txt "${FILE_PATH}" && exit 5
             ## Preview as markdown conversion
-            pandoc -s -t markdown -- "${FILE_PATH}" && exit 5
+            pandoc -s -t markdown -- "${FILE_PATH}" | glow && exit 5
             exit 1
                   ;;
         ods | odp)
@@ -337,15 +337,15 @@ handle_mime() {
         text/* | */xml)
             ## Syntax highlight
             if [[ "$( stat --printf='%s' -- "${FILE_PATH}")" -gt "${HIGHLIGHT_SIZE_MAX}"  ]]; then
-                exit 2
-      fi
+              exit 2
+            fi
             if [[ "$( tput colors)" -ge 256  ]]; then
-                local pygmentize_format='terminal256'
-                local highlight_format='xterm256'
-      else
-                local pygmentize_format='terminal'
-                local highlight_format='ansi'
-      fi
+              local pygmentize_format='terminal256'
+              local highlight_format='xterm256'
+            else
+              local pygmentize_format='terminal'
+              local highlight_format='ansi'
+            fi
             env HIGHLIGHT_OPTIONS="${HIGHLIGHT_OPTIONS}" highlight \
                 --out-format="${highlight_format}" \
                 --force -- "${FILE_PATH}" && exit 5
@@ -369,13 +369,13 @@ handle_mime() {
             ## Preview as text conversion
             # img2txt --gamma=0.6 --width="${PV_WIDTH}" -- "${FILE_PATH}" && exit 4
             # exiftool "${FILE_PATH}" && exit 5
-            chafa --size="${PV_WIDTH}x${PV_HEIGHT}" --animate=on --colors=none -- "${IMAGE_CACHE_PATH}" && exit 4
+            # chafa --colors=none -- "${IMAGE_CACHE_PATH}" && exit 4
             exit 1
                   ;;
 
         ## Video and audio
         video/* | audio/*)
-            chafa --size="${PV_WIDTH}x${PV_HEIGHT}" --animate=on --colors=none -- "${IMAGE_CACHE_PATH}" && exit 4
+            # chafa --colors=none -- "${IMAGE_CACHE_PATH}" && exit 4
             # mediainfo "${FILE_PATH}" && exit 5
             # exiftool "${FILE_PATH}" && exit 5
             exit 1

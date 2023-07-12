@@ -24,7 +24,7 @@ rule nm-connection-editor='^1' state=floating
 rule Dconf-editor state=floating center=on
 rule Git-gui state=floating center=on
 rule Org.gnome.Nautilus state=floating center=on
-rule Nemo state=floating center=on
+rule Nemo state=floating center=on rectangle=926x634+497+224
 rule Gimp-2.10:gimp-2.10 border=off
 rule Shotwell state=floating center=on
 rule firefox:Places state=floating center=on

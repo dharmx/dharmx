@@ -1,0 +1,4 @@
+root ALL=(ALL:ALL) ALL
+%wheel ALL=(ALL:ALL) ALL
+Defaults env_reset,pwfeedback,insults
+@includedir /etc/sudoers.d

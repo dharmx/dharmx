@@ -1,9 +1,9 @@
-sw_volume: 98
+sw_volume: 95
 audio_device_state:1:Pulseaudio
 audio_device_state:1:Visualizer
 state: pause
-current: 8
-time: 676.692000
+current: 3
+time: 212.622000
 random: 0
 repeat: 1
 single: 0
@@ -12,13 +12,10 @@ crossfade: 2
 mixrampdb: 0.000000
 mixrampdelay: -1.000000
 playlist_begin
-0:postrock/Anoice - a perfect day for a funeral.mp3
-1:postrock/The Living Sleep - Untethered.mp3
-2:postrock/Whale Fall - The Madrean [Full Album].mp3
-3:postrock/The Living Sleep - Always.mp3
-4:postrock/Dan Caine - Remnants.mp3
-5:postrock/Best Of Melancholic Post-Rock Mix.mp3
-6:postrock/Kong.mp3
-7:postrock/Russian Circles - Afrika.mp3
-8:postrock/a post-rock playlist to help you focus & study.mp3
+0:Japanese Indie/chilldspot - ネオンを消して(Official Music Video).mp3
+1:Japanese Indie/kiki vivi lily - 80denier (Official Audio).mp3
+2:Japanese Indie/memory - asmi (Official Lyric Video).mp3
+3:Japanese Indie/さとうもか - melt bitter　sato moka　Music Video.mp3
+4:Japanese Indie/心ここに在らず.mp3
+5:Japanese Indie/[MV]kojikoji_いつかのDays.mp3
 playlist_end

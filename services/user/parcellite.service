@@ -3,7 +3,7 @@ Description=Run clipboard manager as a daemon
 
 [Service]
 Type=simple
-ExecStart=/usr/bin/parcellite --no-icon
+ExecStart=/usr/bin/parcellite
 
 [Install]
 WantedBy=default.target
