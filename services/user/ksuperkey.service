@@ -1,0 +1,9 @@
+[Unit]
+Description=Run ksuperkey a daemon
+
+[Service]
+Type=forking
+ExecStart=/usr/bin/ksuperkey -t 100 -e 'Super_L=Super_L|d'
+
+[Install]
+WantedBy=default.target

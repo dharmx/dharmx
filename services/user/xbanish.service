@@ -1,0 +1,9 @@
+[Unit]
+Description=Run ksuperkey a daemon
+
+[Service]
+Type=simple
+ExecStart=/usr/bin/xbanish
+
+[Install]
+WantedBy=default.target

@@ -4,7 +4,7 @@ USERNAME="$1"
 LOCKSCREEN_WALL="/home/$USERNAME/Pictures/walls/radium/output-1659958136.png"
 RESOLUTION="$(xdpyinfo | grep dimensions | awk '{print $2}')"
 DEFAULT_DPMS=$(xset q | awk '/^[[:blank:]]*DPMS is/ {print $(NF)}')
-LOCK_TIMEOUT=5 ### In Seconds
+LOCK_TIMEOUT=0 ### In Seconds
 
 foreground="$(xrdb -query | grep 'foreground:' | awk '{print $NF}')"
 background="$(xrdb -query | grep 'background:' | awk '{print $NF}')"

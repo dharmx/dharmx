@@ -79,6 +79,14 @@ alias 8='cd -8'
 alias 9='cd -9'
 alias _='sudo'
 
+if [ $(command -v /usr/bin/zoxide) ]; then
+  alias z..='z ../'
+  alias z....='z ../../'
+  alias z......='z ../../../'
+  alias z........='z ../../../../'
+  alias z..........='z ../../../../../'
+fi
+
 alias pac="sudo pacman"
 alias pacupg='sudo pacman -Syu'
 alias pacin='sudo pacman -S'
@@ -383,5 +391,12 @@ alias high_res='ffmpeg -framerate 60 -f x11grab -i $DISPLAY -c:v libx264rgb -crf
 
 alias ytdn='yt-dlp --ignore-errors --format bestaudio --extract-audio --audio-format mp3 --audio-quality 320K --output "%(title)s.%(ext)s" --yes-playlist'
 alias pacmanallkeys='sudo pacman-key --refresh-keys'
-
 alias xwm='echo DISPLAY=:1; Xephyr -br -ac -noreset -screen 1600x900 :1'
+
+if [ $(command -v task) ]; then
+  alias apt-add="task add project:'Quantitative Aptitude' recur:1w due:mon,wed,fri"
+  alias tbl-add="task add project:'Memorize Tables' add recur:1w due:tue,thu,sat"
+  alias gi-add="task add project:'Logical Aptitude' add recur:1w due:tue,thu,sat"
+  alias blog-add="task add project:'Blog Articles' add recur:1w due:sun"
+  alias gk-add="task add project:'GK and Awareness' add recur:daily due:eod"
+fi

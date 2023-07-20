@@ -233,7 +233,7 @@ super + w ; 4
 
 # lock screen
 super + shift + slash
-  lock maker
+  lock $USER
 
 ~button3
   xqp 0 $(xdo id -N bspwm -n root) && jgmenu_run
