@@ -19,7 +19,7 @@ export XDG_MUSIC_DIR="$HOME/Music"
 export XDG_PICTURES_DIR="$HOME/Pictures"
 export XDG_VIDEOS_DIR="$HOME/Videos"
 
-export TERMINAL="tym"
+export TERMINAL="alacritty"
 export BROWSER="qutebrowser"
 export VISUAL="nvim"
 export EDITOR="nvim"

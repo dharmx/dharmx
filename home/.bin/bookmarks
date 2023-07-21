@@ -35,8 +35,8 @@ def fetch_save(profile: str, row_factory: Callable[[sql.Cursor, sql.Row], Dict[s
     gets converted into JSON and written to ~/.cache/bookmarks.json
     """
 
-    # ls $HOME/.mozilla/firefox/profiles to find out what yours is.
-    string_path = expand(f"$HOME/.mozilla/firefox/profiles/{profile}/weave/bookmarks.sqlite")
+    # ls $HOME/.mozilla/firefox to find out what yours is.
+    string_path = expand(f"$HOME/.mozilla/firefox/{profile}/weave/bookmarks.sqlite")
     db = Path(string_path)
     if not db.exists():
         raise FileNotFoundError(f"{db} does not exist!")

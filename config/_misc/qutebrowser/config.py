@@ -84,7 +84,7 @@ config.set("completion.scrollbar.width", 8)
 
 c.downloads.location.directory = f"{XDG_DOWNLOAD_DIR}"
 c.downloads.location.prompt = False
-c.editor.command = ["tym -e", "nvim '{}'"]
+c.editor.command = [getenv("TERMINAL", "alacritty"), "-e", "nvim '{}'"]
 
 c.hints.chars = "asdfghjklie"
 c.input.insert_mode.auto_leave = True

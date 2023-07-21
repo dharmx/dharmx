@@ -11,9 +11,9 @@ function launch() {
 
 # launch some nice apps
 launch sxhkd
-launch stalonetray --config '$XDG_CONFIG_HOME/tray/config.conf'
-launch '$XDG_CONFIG_HOME/eww/src/shell/logger.py' init
-launch picom --config '$XDG_CONFIG_HOME/picom/config.ini'
+launch stalonetray --config ~/.config/tray/config.conf
+launch ~/.config/eww/.venv/bin/python ~/.config/eww/src/shell/logger.py init
+launch picom --config ~/.config/picom/config.ini
 launch eww open vertigo
 
 ## Disabled

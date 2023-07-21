@@ -1,5 +1,5 @@
 [Unit]
-Description=Run ksuperkey a daemon
+Description=Run ksuperkey as a daemon
 
 [Service]
 Type=forking

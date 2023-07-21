@@ -62,14 +62,17 @@ export SSH_AUTH_SOCK
 mkdir -p "$XDG_DATA_HOME/keyrings"
 
 function init_session() {
-  export XDG_CURRENT_DESKTOP="bspwm"
+  export XDG_CURRENT_DESKTOP="$1"
   exec "$XDG_CURRENT_DESKTOP"
 }
 
+
 if [ ! "$PWD" = "$HOME" ]; then
   pushd "$HOME"
-  init_session
+  init_session "${1:-bspwm}"
   popd
 else
-  init_session
+  init_session "${1:-bspwm}"
 fi
+
+echo $@

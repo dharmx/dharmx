@@ -30,7 +30,7 @@ rule Shotwell state=floating center=on
 rule firefox:Places state=floating center=on
 rule stalonetray manage=off locked=on border=off layer=above focus=off state=floating
 rule Plank manage=off layer=above focus=off
-rule Seahorse state=floating center=on
+rule Seahorse state=floating center=on rectangle=1020x672+446+201
 rule Qalculate-gtk state=floating center=on
 rule aft-linux-qt state=floating center=on
 # rule qBittorrent state=floating center=on desktop=3

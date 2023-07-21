@@ -4,7 +4,7 @@
 
 # terminal emulators
 super + {_,ctrl} + Return
-  {tym -e 'tmux new-session -A -s playground',tmux-new --choose}
+  {$TERMINAL,$TERMINAL -e 'tmux new-session -A -s playground'}
 
 # switch tmux active sessions
 # super + {v,u}
@@ -169,11 +169,11 @@ super + d
 # bind some nice apps
 ## launch web browser
 super + {shift + f,e}
-  {$BROWSER,tym -e ranger}
+  {$BROWSER,$TERMINAL -e ranger}
 
 ## launch system monitor btop
 ctrl + shift + Escape
-  tym -e btop
+  $TERMINAL -e btop
 
 ## screenshot
 super + shift + d

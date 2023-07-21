@@ -15,7 +15,7 @@ source "$XDG_CONFIG_HOME/bspwm/launch.bash"
 # LG3D or compiz for Java
 # wmname LG3D &
 
-# TODO: open tym terminal in 1864x1033+28+25 when using neovim
+# TODO: open alacritty in 1864x1033+28+25 when using neovim
 for scrip in "$XDG_CONFIG_HOME/bspwm/hooks/"*; do
   [[ "$scrip" != *".skip" ]] && {
     pgrep --full "$scrip" | xargs kill -9 2> /dev/null

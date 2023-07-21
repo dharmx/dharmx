@@ -321,3 +321,12 @@ function _____expire-network() {
   echo -n 'NOW: '
   date +'%d.%m.%Y'
 }
+
+function _____tail-log() {
+  tail -f "$1" | awk '
+  /INFO/ {print "\033[32m" $0 "\033[39m"}
+  /ERROR/ {print "\033[31m" $0 "\033[39m"}
+  /DEBUG/ {print "\033[34m" $0 "\033[39m"}
+  /WARN/ {print "\033[36m" $0 "\033[39m"}
+  '
+}

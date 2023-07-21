@@ -55,7 +55,7 @@ alias fzz='nvim $(fd --type=file . | fzf --preview "bat --theme=base16 --color=a
 alias fff='fc-list : family | awk -F"," "{print $1}" | sort | uniq | fzf | tr -d "\n" | xclip'
 
 alias yts="ytfzf -t"
-alias startx='startx -- -keeptty >~/.xorg.log 2>&1'
+alias stx='startx -- -keeptty >~/.xorg.log 2>&1'
 
 alias cd..='cd ../'
 alias cd....='cd ../../'
@@ -125,7 +125,6 @@ alias parinsd='paru -S --asdeps'
 alias parmir='paru -Syy'
 alias parupd="paru -Sy"
 
-alias gac="git add . && git commit -m"
 alias g=git
 alias ga='git add'
 alias gaa='git add --all'
@@ -169,7 +168,7 @@ alias gcl='git clone'
 alias gcld='git clone --depth'
 alias gclean='git clean -id'
 alias gcm='git checkout $(git_main_branch)'
-alias gcmsg='git commit -m'
+alias gcmsg='git commit -S -m'
 alias 'gcn!'='git commit -v --no-edit --amend'
 alias gco='git checkout'
 alias gcor='git checkout --recurse-submodules'

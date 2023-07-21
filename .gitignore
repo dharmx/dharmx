@@ -64,6 +64,6 @@ config/_misc/spicetify/Extensions
 config/_misc/spicetify/CustomApps
 config/_misc/zim/accelmap
 
-home/.icons/custom/
+local/share/icons/custom/
 local/share/applications/mimeinfo.cache
 local/share/fonts/ParaType/
