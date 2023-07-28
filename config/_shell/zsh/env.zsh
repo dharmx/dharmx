@@ -2,9 +2,6 @@ export QT_STYLE_OVERRIDE=kvantum
 export QT_AUTO_SCREEN_SCALE_FACTOR=1
 export QT_FONT_DPI="116 Dosis"
 
-export SUDO_PROMPT='password: '
-export SUDO_ASKPASS="$HOME/.bin/askpass"
-
 export TERMINAL=alacritty
 export BROWSER=firefox
 export WINDOW_MANAGER=bspwm
@@ -13,6 +10,10 @@ export DESKTOP_SESSION=''
 export VISUAL=nvim
 export EDITOR=nvim
 export PATH="$PATH:$HOME/.local/share/gem/ruby/3.0.0/bin:$:$HOME/.local/bin:$HOME/.bin:$HOME/.bling"
+
+export SUDO_PROMPT='password: '
+export SUDO_ASKPASS="$HOME/.bin/askpass"
+export SUDO_EDITOR="$EDITOR"
 
 export MANPAGER='nvim +Man! +"set nocul" +"set noshowcmd" +"set noruler" +"set noshowmode" +"set laststatus=0" +"set showtabline=0" +"set nonumber"'
 if [ ! $(echo $MANPAGER | awk '{print $1}') = nvim ]; then

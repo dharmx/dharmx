@@ -7,30 +7,6 @@ if [ $(command -v exa) ]; then
   alias tree="exa --color=always --icons --tree"
 fi
 
-if [ $(command -v logo-ls) ]; then
-  alias lls="logo-ls"
-  alias lla="logo-ls -l --all"
-fi
-
-if [ $(command -v ripgrep) ]; then
-  alias grep="ripgrep"
-fi
-
-if [ $(command -v go-mtpfs) ]; then
-  alias mount-phone="go-mtpfs $HOME/Phone &>/dev/null & disown"
-fi
-
-if [ $(command -v fusermount) ]; then
-  alias unmount-phone="fusermount -u $HOME/Phone"
-fi
-
-if [ $(command -v udisksctl) ]; then
-  alias mount-iso="udisksctl loop-setup -r -f"
-  alias unmount-iso="udisksctl loop-delete -b"
-  alias mount-ssd="udisksctl mount -b /dev/nvme0n1p1"
-  alias unmount-ssd="udisksctl unmount -b /dev/nvme0n1p1"
-fi
-
 if [ $(command -v nvim) ]; then
   alias nv="nvim"
   alias nvcfg="nv ~/.config/nvim/"
@@ -41,14 +17,14 @@ if [ $(command -v ranger) ]; then
   alias fm="ranger"
 fi
 
+alias pd=popd
 alias tx=tmux
-alias cls="clear"
+alias cls=clear
 alias la="ls -la"
 
 alias zedit="$EDITOR $HOME/.config/zsh/.zshrc"
 alias bedit="$EDITOR $HOME/.bashrc"
 alias fedit="$EDITOR $HOME/.config/fish/config.fish"
-alias kev="xev -event keyboard"
 
 alias fzi="$HOME/.fzfimg.sh"
 alias fzz='nvim $(fd --type=file . | fzf --preview "bat --theme=base16 --color=always --paging=never --number --italic-text=never --tabs=2 --wrap=never {}")'

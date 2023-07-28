@@ -1,14 +1,17 @@
 function _____smooth_fzf() {
+  local old_pwd="$PWD"
   local fname
-  pushd "$HOME/Dotfiles/dots.sh"
+  cd "$HOME/Dotfiles/dots.sh"
   fname="$(fzf)"
   if [[ "$fname" ]]; then
     $EDITOR "$fname"
+  else
+    cd "$old_pwd"
   fi
-  popd
+  cd "$old_pwd"
 }
 
-function _____sudo_replace_buffer() {
+function _____replace_buffer() {
   local old=$1 new=$2 space=${2:+ }
 
   # if the cursor is positioned in the $old part of the text, make
@@ -21,6 +24,17 @@ function _____sudo_replace_buffer() {
     LBUFFER="${new}${space}${LBUFFER#$old }"
   fi
 }
+
+function _____zoxide_interactive_command_line() {
+  [[ -z $BUFFER ]] && BUFFER=zi && return
+  read -r cmd _ <<< "$BUFFER"
+  local starting=$((${#cmd} + 1))
+  local path="${BUFFER:$starting:${#BUFFER}}"
+  [[ "$BUFFER" =~ "(zi|z|cd|pushd) *" ]] && BUFFER="zi $path"
+  /usr/bin/xdotool key Enter
+}
+
+zle -N zoxide_cmdline _____zoxide_interactive_command_line
 
 function _____sudo_command_line() {
   # If line is empty, get the last run command from history
@@ -41,8 +55,8 @@ function _____sudo_command_line() {
     # If $EDITOR is not set, just toggle the sudo prefix on and off
     if [[ -z "$EDITOR" ]]; then
       case "$BUFFER" in
-        sudo\ -e\ *) _____sudo_replace_buffer "sudo -e" "" ;;
-        sudo\ *) _____sudo_replace_buffer "sudo" "" ;;
+        sudo\ -e\ *) _____replace_buffer "sudo -e" "" ;;
+        sudo\ *) _____replace_buffer "sudo" "" ;;
         *) LBUFFER="sudo $LBUFFER" ;;
       esac
       return
@@ -72,16 +86,16 @@ function _____sudo_command_line() {
     if [[ "$realcmd" = (\$EDITOR|$editorcmd|${editorcmd:c}) \
       || "${realcmd:c}" = ($editorcmd|${editorcmd:c}) ]] \
       || builtin which -a "$realcmd" | command grep -Fx -q "$editorcmd"; then
-      _____sudo_replace_buffer "$cmd" "sudo -e"
+      _____replace_buffer "$cmd" "sudo -e"
       return
     fi
 
     # Check for editor commands in the typed command and replace accordingly
     case "$BUFFER" in
-      $editorcmd\ *) _____sudo_replace_buffer "$editorcmd" "sudo -e" ;;
-      \$EDITOR\ *) _____sudo_replace_buffer '$EDITOR' "sudo -e" ;;
-      sudo\ -e\ *) _____sudo_replace_buffer "sudo -e" "$EDITOR" ;;
-      sudo\ *) _____sudo_replace_buffer "sudo" "" ;;
+      $editorcmd\ *) _____replace_buffer "$editorcmd" "sudo -e" ;;
+      \$EDITOR\ *) _____replace_buffer '$EDITOR' "sudo -e" ;;
+      sudo\ -e\ *) _____replace_buffer "sudo -e" "$EDITOR" ;;
+      sudo\ *) _____replace_buffer "sudo" "" ;;
       *) LBUFFER="sudo $LBUFFER" ;;
     esac
   } always {

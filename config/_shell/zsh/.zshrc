@@ -24,5 +24,4 @@ if command -v bling-xbl &>/dev/null; then
 else
   _____default_greeter
 fi
-
-eval "$(zoxide init zsh)"
+[[ $(command -v zoxide) ]] && eval "$(zoxide init zsh)"
