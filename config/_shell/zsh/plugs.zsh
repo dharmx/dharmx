@@ -17,12 +17,12 @@ autoload compinit
 compinit
 
 use romkatv/powerlevel10k
-use romkatv/gitstatus
 use Aloxaf/fzf-tab
 use zdharma-continuum/fast-syntax-highlighting
 use zsh-users/zsh-autosuggestions
-use hlissner/zsh-autopair 
 use MichaelAquilina/zsh-you-should-use 
+# use romkatv/gitstatus
+# use hlissner/zsh-autopair
 
 # FZF tab is better. Fight me.
 # use marlonrichert/zsh-autocomplete 

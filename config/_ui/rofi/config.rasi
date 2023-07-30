@@ -2,7 +2,6 @@ configuration {
   modes: [ run, drun, window ];
   combi-modes: [ window, drun, run ];
   dpi: 96;
-  terminal: "st";
   click-to-exit: true;
   disable-history: false;
   show-icons: true;

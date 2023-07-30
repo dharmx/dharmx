@@ -4,8 +4,9 @@ rofi_command="rofi -p Screenshot -dmenu -selected-row 0 -theme $XDG_CONFIG_HOME/
 
 time=$(date +%s)
 geometry=$(xrandr | head -n1 | cut -d',' -f2 | tr -d '[:blank:],current')
-dir="$(xdg-user-dir PICTURES)"
-file="screenshot-$time-$geometry.png"
+dir="$XDG_PICTURES_DIR/snips"
+[[ ! -d "$dir" ]] && mkdir -p "$dir"
+file="snip-$time-$geometry.png"
 
 # Buttons
 screen=""
@@ -93,5 +94,3 @@ case $chosen in
     shot10
     ;;
 esac
-
-# vim:ft=sh

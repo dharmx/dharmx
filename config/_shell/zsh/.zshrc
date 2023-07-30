@@ -1,6 +1,5 @@
 [ -f "$HOME/.cargo/env" ] && source "$HOME/.cargo/env"
 [ -f "$HOME/.config/broot/launcher/bash/br" ] && source "$HOME/.config/broot/launcher/bash/br"
-[ $(command -v fuck) ] && eval $(thefuck --alias)
 
 while read file
 do 
@@ -15,7 +14,7 @@ keys
 prompt
 EOF
 
-for fun in ${(ok)functions[(I)_____*]}; do 
+for fun in ${(ok)functions[(I)_____*]}; do
   eval "alias ${${fun:5}//_/-}=\"${fun}\""
 done
 
@@ -24,4 +23,6 @@ if command -v bling-xbl &>/dev/null; then
 else
   _____default_greeter
 fi
+
 [[ $(command -v zoxide) ]] && eval "$(zoxide init zsh)"
+[[ $(command -v fuck) ]] && eval "$(thefuck --alias)"
