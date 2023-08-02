@@ -11,7 +11,6 @@ function launch() {
 
 # launch some nice apps
 launch sxhkd
-launch stalonetray
 launch ~/.config/eww/.venv/bin/python ~/.config/eww/src/shell/logger.py init
 launch picom --config ~/.config/picom/config.ini
 launch eww open vertigo

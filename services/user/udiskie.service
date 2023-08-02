@@ -4,6 +4,7 @@ Description=Mounter service
 [Service]
 ExecStart=/usr/bin/udiskie --tray
 Restart=on-failure
+RestartSec=5s
 
 [Install]
-WantedBy=default.target
+WantedBy=graphical-session.target

@@ -4,6 +4,8 @@ Description=Keep track of media player activity
 [Service]
 Type=oneshot
 ExecStart=/usr/bin/playerctld daemon
+Restart=on-failure
+RestartSec=5s
 
 [Install]
 WantedBy=default.target

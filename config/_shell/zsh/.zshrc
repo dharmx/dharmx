@@ -25,4 +25,4 @@ else
 fi
 
 [[ $(command -v zoxide) ]] && eval "$(zoxide init zsh)"
-[[ $(command -v fuck) ]] && eval "$(thefuck --alias)"
+# [[ $(command -v fuck) ]] && eval "$(thefuck --alias)"

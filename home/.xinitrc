@@ -41,18 +41,12 @@ export SSH_AUTH_SOCK
 # SEE: https://github.com/NixOS/nixpkgs/issues/14966#issuecomment-520083836
 mkdir -p "$XDG_DATA_HOME/keyrings"
 
-function init_session() {
-  export XDG_CURRENT_DESKTOP="$1"
-  exec "$XDG_CURRENT_DESKTOP"
-}
-
-
 if [ ! "$PWD" = "$HOME" ]; then
   pushd "$HOME"
-  init_session "${1:-bspwm}"
+  export XDG_CURRENT_DESKTOP="${1:-bspwm}"
   popd
 else
-  init_session "${1:-bspwm}"
+  export XDG_CURRENT_DESKTOP="${1:-bspwm}"
 fi
 
-echo $@
+exec "$XDG_CURRENT_DESKTOP"

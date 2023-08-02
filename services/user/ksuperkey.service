@@ -4,6 +4,8 @@ Description=Run ksuperkey as a daemon
 [Service]
 Type=forking
 ExecStart=/usr/bin/ksuperkey -t 100 -e 'Super_L=Super_L|d'
+Restart=on-failure
+RestartSec=5s
 
 [Install]
 WantedBy=default.target

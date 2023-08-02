@@ -4,6 +4,8 @@ Description=Run ksuperkey a daemon
 [Service]
 Type=simple
 ExecStart=/usr/bin/xbanish
+Restart=on-failure
+RestartSec=5s
 
 [Install]
 WantedBy=default.target

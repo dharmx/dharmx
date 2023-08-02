@@ -366,7 +366,7 @@ alias high_res='ffmpeg -framerate 60 -f x11grab -i $DISPLAY -c:v libx264rgb -crf
 
 alias ytdn='yt-dlp --ignore-errors --format bestaudio --extract-audio --audio-format mp3 --audio-quality 320K --output "%(title)s.%(ext)s" --yes-playlist'
 alias pacmanallkeys='sudo pacman-key --refresh-keys'
-alias xwm='echo DISPLAY=:1; Xephyr -br -ac -noreset -screen 1600x900 :1'
+alias xwm='killall Xephyr &>/dev/null; Xephyr -br -ac -noreset -screen 1024x576 :1 & sleep 2 && DISPLAY=:1 awesome &'
 
 if [ $(command -v task) ]; then
   alias apt-add="task add project:'Quantitative Aptitude' recur:1w due:mon,wed,fri"

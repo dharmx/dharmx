@@ -1,0 +1,26 @@
+{
+  "lspconfig": {
+    "lua_ls": {
+      "Lua.diagnostics.enable": true,
+      "Lua.diagnostics.globals": [
+        "awesome",
+        "client",
+        "terminal",
+        "editor",
+        "editor_cmd",
+        "modkey",
+        "myawesomemenu",
+        "mymainmenu",
+        "mylauncher",
+        "mykeyboardlayout",
+        "mytextclock",
+        "tag"
+      ],
+      "Lua.workspace.library": [
+        "/usr/share/awesome/lib",
+        "$HOME/.local/share/awesome/docs",
+        "$HOME/.luarocks/share/lua/5.4"
+      ]
+    }
+  }
+}
