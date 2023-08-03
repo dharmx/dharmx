@@ -1,5 +1,7 @@
 local M = {}
 
+function M.mute() end
+
 function M.if_nil(a, b)
   if a == nil then return b end
   return a

@@ -1,36 +1,34 @@
 local M = {}
 
-function M.deepcopy(orig, copies)
-  copies = copies or {}
-  local orig_type = type(orig)
-  local copy
-  if orig_type == "table" then
-    if copies[orig] then
-      copy = copies[orig]
-    else
-      copy = {}
-      copies[orig] = copy
-      for orig_key, orig_value in next, orig, nil do
-        copy[M.deepcopy(orig_key, copies)] = M.deepcopy(orig_value, copies)
-      end
-      setmetatable(copy, M.deepcopy(getmetatable(orig), copies))
-    end
-  else -- number, string, boolean, etc
-    copy = orig
-  end
-  return copy
+local Gears = require("gears")
+
+function M.tbl_foreach(t, c)
+  for k, v in pairs(t) do c(k, v) end
 end
 
-function M.tbl_sum(t)
-  assert(M.tbl_islist(t), "Expected a array got a dict instead")
-  local s = 0
-  for _, n in ipairs(t) do s = s + n end
-  return s
+function M.tbl_foreachi(t, c)
+  for i, v in ipairs(t) do c(i, v) end
+end
+
+function M.tbl_zip(...)
+  local arrays, ans = { ... }, {}
+  local index = 0
+  return function()
+    index = index + 1
+    for i, t in ipairs(arrays) do
+      if type(t) == "function" then
+        ans[i] = t()
+      else
+        ans[i] = t[index]
+      end
+      if ans[i] == nil then return end
+    end
+    return table.unpack(ans)
+  end
 end
 
 function M.tbl_keys(t)
   assert(type(t) == "table", string.format("Expected table, got %s", type(t)))
-
   local keys = {}
   for k, _ in pairs(t) do
     table.insert(keys, k)
@@ -40,41 +38,11 @@ end
 
 function M.tbl_values(t)
   assert(type(t) == "table", string.format("Expected table, got %s", type(t)))
-
   local values = {}
   for _, v in pairs(t) do
     table.insert(values, v)
   end
   return values
-end
-
-function M.tbl_map(func, t)
-  M.validate({ func = { func, "c" }, t = { t, "t" } })
-
-  local rettab = {}
-  for k, v in pairs(t) do
-    rettab[k] = func(v)
-  end
-  return rettab
-end
-
-function M.tbl_filter(func, t)
-  M.validate({ func = { func, "c" }, t = { t, "t" } })
-
-  local rettab = {}
-  for _, entry in pairs(t) do
-    if func(entry) then table.insert(rettab, entry) end
-  end
-  return rettab
-end
-
-function M.tbl_contains(t, value)
-  M.validate({ t = { t, "t" } })
-
-  for _, v in ipairs(t) do
-    if v == value then return true end
-  end
-  return false
 end
 
 function M.tbl_isempty(t)
@@ -95,8 +63,6 @@ local function tbl_extend(behavior, deep_extend, ...)
   end
 
   local ret = {}
-  if M._empty_dict_mt ~= nil and getmetatable(select(1, ...)) == M._empty_dict_mt then ret = M.empty_dict() end
-
   for i = 1, select("#", ...) do
     local tbl = select(i, ...)
     M.validate({ ["after the second argument"] = { tbl, "t" } })
@@ -135,7 +101,7 @@ function M.deep_equal(a, b)
 end
 
 function M.tbl_add_reverse_lookup(o)
-  local keys = M.tbl_keys(o)
+  local keys = Gears.table.keys(o)
   for _, k in ipairs(keys) do
     local v = o[k]
     if o[v] then
@@ -210,7 +176,7 @@ function M.tbl_islist(t)
   end
 
   if count > 0 then return true end
-  return getmetatable(t) ~= M._empty_dict_mt
+  return false
 end
 
 function M.tbl_count(t)
@@ -234,16 +200,6 @@ end
 function M.trim(s)
   M.validate({ s = { s, "s" } })
   return s:match("^%s*(.*%S)") or ""
-end
-
-function M.startswith(s, prefix)
-  M.validate({ s = { s, "s" }, prefix = { prefix, "s" } })
-  return s:sub(1, #prefix) == prefix
-end
-
-function M.endswith(s, suffix)
-  M.validate({ s = { s, "s" }, suffix = { suffix, "s" } })
-  return #suffix == 0 or s:sub(-#suffix) == suffix
 end
 
 do
@@ -322,6 +278,72 @@ do
   end
 end
 
+function M.gsplit(s, sep, opts)
+  local plain
+  local trimempty = false
+  if type(opts) == "boolean" then
+    plain = opts -- For backwards compatibility.
+  else
+    M.validate({ s = { s, "s" }, sep = { sep, "s" }, opts = { opts, "t", true } })
+    opts = opts or {}
+    plain, trimempty = opts.plain, opts.trimempty
+  end
+
+  local start = 1
+  local done = false
+
+  -- For `trimempty`: queue of collected segments, to be emitted at next pass.
+  local segs = {}
+  local empty_start = true -- Only empty segments seen so far.
+
+  local function _pass(i, j, ...)
+    if i then
+      assert(j + 1 > start, "Infinite loop detected")
+      local seg = s:sub(start, i - 1)
+      start = j + 1
+      return seg, ...
+    else
+      done = true
+      return s:sub(start)
+    end
+  end
+
+  return function()
+    if trimempty and #segs > 0 then
+      -- trimempty: Pop the collected segments.
+      return table.remove(segs)
+    elseif done or (s == "" and sep == "") then
+      return nil
+    elseif sep == "" then
+      if start == #s then done = true end
+      return _pass(start + 1, start)
+    end
+
+    local seg = _pass(s:find(sep, start, plain))
+
+    -- Trim empty segments from start/end.
+    if trimempty and seg ~= "" then
+      empty_start = false
+    elseif trimempty and seg == "" then
+      while not done and seg == "" do
+        table.insert(segs, 1, "")
+        seg = _pass(s:find(sep, start, plain))
+      end
+      if done and seg == "" then
+        return nil
+      elseif empty_start then
+        empty_start = false
+        segs = {}
+        return seg
+      end
+      if seg ~= "" then table.insert(segs, 1, seg) end
+      return table.remove(segs)
+    end
+
+    return seg
+  end
+end
+
 function M.split(s, sep, opts)
   local t = {}
   for c in M.gsplit(s, sep, opts) do
@@ -329,6 +351,7 @@ function M.split(s, sep, opts)
   end
   return t
 end
+
 function M.is_callable(f)
   if type(f) == "function" then return true end
   local m = getmetatable(f)

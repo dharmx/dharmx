@@ -1,4 +1,7 @@
 local M = {}
+
+local Gears = require("gears")
+
 local functional = require("core.functional")
 local std = require("core.std")
 
@@ -13,11 +16,8 @@ M._defaults = {
   },
 }
 
-M._defaults.modules.variables.editor_cmd = functional.if_nil(
-  M._defaults.modules.variables.terminal .. " -e " .. M._defaults.modules.variables.editor,
-  "xterm -e nano"
-)
-M._current = std.deepcopy(M._defaults)
+M._defaults.modules.variables.editor_cmd = functional.if_nil(M._defaults.modules.variables.terminal .. " -e " .. M._defaults.modules.variables.editor, "xterm -e nano")
+M._current = Gears.table.clone(M._defaults, true)
 
 function M.merge(options)
   M._current = std.tbl_deep_extend("keep", functional.if_nil(options, {}), M._current)

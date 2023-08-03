@@ -1,5 +1,7 @@
 local Color = {}
 
+local Gears = require("gears")
+
 local std = require("core.std")
 local functional = require("core.functional")
 
@@ -234,7 +236,7 @@ end
 function Color:to_hex(prefix)
   local prefix_sym = prefix and "#" or ""
   local function callback(item) return item:len() == 1 and item:rep(2) or item end
-  local hex_tbl = std.tbl_map(callback, {
+  local hex_tbl = Gears.table.map(callback, {
     string.format("%02X", self.r),
     string.format("%02X", self.g),
     string.format("%02X", self.b),
