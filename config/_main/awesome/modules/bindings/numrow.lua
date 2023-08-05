@@ -8,7 +8,7 @@ local SHIFT = enum.modifiers.SHIFT
 local NUMROW = Awful.key.keygroup.NUMROW
 local NUMPAD = Awful.key.keygroup.NUMPAD
 
-local mappings = {
+return {
   tag = {
     {
       modifiers = MOD,
@@ -67,5 +67,3 @@ local mappings = {
     },
   }
 }
-
-return mappings

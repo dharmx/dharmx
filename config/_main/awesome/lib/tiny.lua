@@ -624,9 +624,9 @@ Color.__tostring = function(self, _) return self:to_hex(true) end
 
 Color.__eq = function(self, o) return self.r == o.r and self.g == o.g and self.b == o.b end
 
-Color.__lt = function(self, o) return std.tbl_sum(self:to_rgb()) > std.tbl_sum(o:RGB()) end
+Color.__lt = function(self, o) return std.table.sum(self:to_rgb()) > std.table.sum(o:RGB()) end
 
-Color.__gt = function(self, o) return std.tbl_sum(self:to_rgb()) < std.tbl_sum(o:RGB()) end
+Color.__gt = function(self, o) return std.table.sum(self:to_rgb()) < std.table.sum(o:RGB()) end
 
 Color.__add = function(self, o)
   self.r = self.r + o.r

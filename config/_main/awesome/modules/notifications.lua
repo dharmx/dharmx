@@ -1,8 +1,5 @@
--- Standard awesome library
 local awful = require("awful")
--- Notification library
 local naughty = require("naughty")
--- Declarative object management
 local ruled = require("ruled")
 
 -- Error handling

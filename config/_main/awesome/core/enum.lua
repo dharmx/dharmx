@@ -1,5 +1,9 @@
 local M = {}
+
 local Gears = require("gears")
+local PosixStdlib = require("posix.stdlib")
+
+local functional = require("core.functional")
 
 M.modifiers = {
   MOD = { modkey },
@@ -19,5 +23,17 @@ for _, key in pairs(M.modifiers) do
     end,
   })
 end
+
+M.environ = setmetatable({}, {
+  __index = function(self, key)
+    local value = functional.if_nil(rawget(self, key), os.getenv(key))
+    rawset(self, key, value)
+    return value
+  end,
+  __newindex = function(self, key, value)
+    rawset(self, key, value)
+    PosixStdlib.setenv(key, value, true)
+  end,
+})
 
 return M

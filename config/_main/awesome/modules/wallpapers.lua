@@ -1,28 +1,21 @@
--- Standard awesome library
-local awful = require("awful")
--- Theme handling library
-local beautiful = require("beautiful")
--- Widget and layout library
-local wibox = require("wibox")
+local Awful = require("awful")
+local Beautiful = require("beautiful")
+local Wibox = require("wibox")
 
--- Wallpaper
-screen.connect_signal(
-  "request::wallpaper",
-  function(s)
-    awful.wallpaper({
-      screen = s,
-      widget = {
-        {
-          image = beautiful.wallpaper,
-          upscale = true,
-          downscale = true,
-          widget = wibox.widget.imagebox,
-        },
-        valign = "center",
-        halign = "center",
-        tiled = false,
-        widget = wibox.container.tile,
+screen.connect_signal("request::wallpaper", function(local_screen)
+  Awful.wallpaper({
+    screen = local_screen,
+    widget = {
+      {
+        image = Beautiful.wallpaper,
+        upscale = true,
+        downscale = true,
+        widget = Wibox.widget.imagebox,
       },
-    })
-  end
-)
+      valign = "center",
+      halign = "center",
+      tiled = false,
+      widget = Wibox.container.tile,
+    },
+  })
+end)

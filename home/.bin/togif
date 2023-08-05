@@ -3,7 +3,7 @@
 # config
 [ $(command -v ffmpeg) ] || exit 1
 vid=$1
-start_time=00:00:01
+start_time=00:00:00
 duration=60
 height=ih        # input height halved , can replace with pixils . 
 width=-5         # keeps aspect ratio . can replace with pixils . 

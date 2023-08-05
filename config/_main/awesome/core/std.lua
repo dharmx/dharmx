@@ -1,16 +1,17 @@
 local M = {}
 
-local Gears = require("gears")
+M.string = {}
+M.table = {}
 
-function M.tbl_foreach(t, c)
+function M.table.foreach(t, c)
   for k, v in pairs(t) do c(k, v) end
 end
 
-function M.tbl_foreachi(t, c)
+function M.table.foreachi(t, c)
   for i, v in ipairs(t) do c(i, v) end
 end
 
-function M.tbl_zip(...)
+function M.table.zip(...)
   local arrays, ans = { ... }, {}
   local index = 0
   return function()
@@ -27,7 +28,7 @@ function M.tbl_zip(...)
   end
 end
 
-function M.tbl_keys(t)
+function M.table.keys(t)
   assert(type(t) == "table", string.format("Expected table, got %s", type(t)))
   local keys = {}
   for k, _ in pairs(t) do
@@ -36,7 +37,7 @@ function M.tbl_keys(t)
   return keys
 end
 
-function M.tbl_values(t)
+function M.table.values(t)
   assert(type(t) == "table", string.format("Expected table, got %s", type(t)))
   local values = {}
   for _, v in pairs(t) do
@@ -45,15 +46,15 @@ function M.tbl_values(t)
   return values
 end
 
-function M.tbl_isempty(t)
+function M.table.is_empty(t)
   assert(type(t) == "table", string.format("Expected table, got %s", type(t)))
   return next(t) == nil
 end
 
 ---@private
-local function can_merge(v) return type(v) == "table" and (M.tbl_isempty(v) or not M.tbl_islist(v)) end
+local function can_merge(v) return type(v) == "table" and (M.table.is_empty(v) or not M.table.is_list(v)) end
 
-local function tbl_extend(behavior, deep_extend, ...)
+local function table_extend(behavior, deep_extend, ...)
   if behavior ~= "error" and behavior ~= "keep" and behavior ~= "force" then
     error('invalid "behavior": ' .. tostring(behavior))
   end
@@ -64,12 +65,12 @@ local function tbl_extend(behavior, deep_extend, ...)
 
   local ret = {}
   for i = 1, select("#", ...) do
-    local tbl = select(i, ...)
-    M.validate({ ["after the second argument"] = { tbl, "t" } })
-    if tbl then
-      for k, v in pairs(tbl) do
+    local t = select(i, ...)
+    M.validate({ ["after the second argument"] = { t, "t" } })
+    if t then
+      for k, v in pairs(t) do
         if deep_extend and can_merge(v) and can_merge(ret[k]) then
-          ret[k] = tbl_extend(behavior, true, ret[k], v)
+          ret[k] = table_extend(behavior, true, ret[k], v)
         elseif behavior ~= "force" and ret[k] ~= nil then
           if behavior == "error" then error("key found in more than one map: " .. k) end -- Else behavior is "keep".
         else
@@ -81,16 +82,16 @@ local function tbl_extend(behavior, deep_extend, ...)
   return ret
 end
 
-function M.tbl_extend(behavior, ...) return tbl_extend(behavior, false, ...) end
+function M.table.extend(behavior, ...) return table_extend(behavior, false, ...) end
 
-function M.tbl_deep_extend(behavior, ...) return tbl_extend(behavior, true, ...) end
+function M.table.deep_extend(behavior, ...) return table_extend(behavior, true, ...) end
 
-function M.deep_equal(a, b)
+function M.table.deep_equal(a, b)
   if a == b then return true end
   if type(a) ~= type(b) then return false end
   if type(a) == "table" then
     for k, v in pairs(a) do
-      if not M.deep_equal(v, b[k]) then return false end
+      if not M.table.deep_equal(v, b[k]) then return false end
     end
     for k, _ in pairs(b) do
       if a[k] == nil then return false end
@@ -100,8 +101,8 @@ function M.deep_equal(a, b)
   return false
 end
 
-function M.tbl_add_reverse_lookup(o)
-  local keys = Gears.table.keys(o)
+function M.table.add_reverse_lookup(o)
+  local keys = M.table.keys(o)
   for _, k in ipairs(keys) do
     local v = o[k]
     if o[v] then
@@ -118,7 +119,7 @@ function M.tbl_add_reverse_lookup(o)
   return o
 end
 
-function M.tbl_get(o, ...)
+function M.table.get(o, ...)
   local keys = { ... }
   if #keys == 0 then return nil end
   for i, k in ipairs(keys) do
@@ -132,7 +133,7 @@ function M.tbl_get(o, ...)
   return o
 end
 
-function M.list_extend(dst, src, start, finish)
+function M.table.list_extend(dst, src, start, finish)
   M.validate({
     dst = { dst, "t" },
     src = { src, "t" },
@@ -145,24 +146,24 @@ function M.list_extend(dst, src, start, finish)
   return dst
 end
 
-function M.tbl_flatten(t)
+function M.table.flatten(t)
   local result = {}
-  local function _tbl_flatten(_t)
+  local function _table_flatten(_t)
     local n = #_t
     for i = 1, n do
       local v = _t[i]
       if type(v) == "table" then
-        _tbl_flatten(v)
+        _table_flatten(v)
       elseif v then
         table.insert(result, v)
       end
     end
   end
-  _tbl_flatten(t)
+  _table_flatten(t)
   return result
 end
 
-function M.tbl_islist(t)
+function M.table.is_list(t)
   if type(t) ~= "table" then return false end
 
   local count = 0
@@ -179,7 +180,7 @@ function M.tbl_islist(t)
   return false
 end
 
-function M.tbl_count(t)
+function M.table.count(t)
   M.validate({ t = { t, "t" } })
 
   local count = 0
@@ -189,7 +190,7 @@ function M.tbl_count(t)
   return count
 end
 
-function M.list_slice(list, start, finish)
+function M.table.slice(list, start, finish)
   local new_list = {}
   for i = start or 1, finish or #list do
     new_list[#new_list + 1] = list[i]
@@ -197,7 +198,7 @@ function M.list_slice(list, start, finish)
   return new_list
 end
 
-function M.trim(s)
+function M.string.trim(s)
   M.validate({ s = { s, "s" } })
   return s:match("^%s*(.*%S)") or ""
 end
@@ -221,7 +222,7 @@ do
     ["userdata"] = "userdata",
   }
 
-  local function _is_type(val, t) return type(val) == t or (t == "callable" and M.is_callable(val)) end
+  local function _is_type(val, t) return type(val) == t or (t == "callable" and M.table.is_callable(val)) end
 
   ---@private
   local function is_valid(opt)
@@ -238,7 +239,7 @@ do
 
       if type(types) == "string" then types = { types } end
 
-      if M.is_callable(types) then
+      if M.table.is_callable(types) then
         -- Check user-provided validation function
         local valid, optional_message = types(val)
         if not valid then
@@ -278,7 +279,7 @@ do
   end
 end
 
-function M.gsplit(s, sep, opts)
+function M.string.gsplit(s, sep, opts)
   local plain
   local trimempty = false
   if type(opts) == "boolean" then
@@ -344,27 +345,27 @@ function M.gsplit(s, sep, opts)
   end
 end
 
-function M.split(s, sep, opts)
+function M.string.split(s, sep, opts)
   local t = {}
-  for c in M.gsplit(s, sep, opts) do
+  for c in M.string.gsplit(s, sep, opts) do
     table.insert(t, c)
   end
   return t
 end
 
-function M.is_callable(f)
+function M.table.is_callable(f)
   if type(f) == "function" then return true end
   local m = getmetatable(f)
   if m == nil then return false end
   return type(m.__call) == "function"
 end
 
-function M.defaulttable(create)
-  create = create or function(_) return M.defaulttable() end
+function M.table.default_table(create)
+  create = create or function(_) return M.table.default_table() end
   return setmetatable({}, {
-    __index = function(tbl, key)
-      rawset(tbl, key, create(key))
-      return rawget(tbl, key)
+    __index = function(t, k)
+      rawset(t, k, create(k))
+      return rawget(t, k)
     end,
   })
 end

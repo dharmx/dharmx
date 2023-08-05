@@ -1,10 +1,11 @@
-local assets = require("beautiful.theme_assets")
+local Assets = require("beautiful.theme_assets")
 local Xresources = require("beautiful.xresources")
-local notification = require("ruled").notification
+local Ruled = require("ruled")
 local Tiny = require("lib.tiny")
 
+local environ = require("core.enum").environ
 local theme = { name = "mountain" }
-local themes_path = os.getenv("XDG_CONFIG_HOME") .. "/awesome/themes/" .. theme.name
+local themes_path = environ.XDG_CONFIG_HOME .. "/awesome/themes/" .. theme.name
 
 theme.font = "Dosis 10"
 theme.bg_normal = Tiny:new({ hex = "#0F0F0F" }):to_hex(true)
@@ -24,42 +25,14 @@ theme.border_color_normal = Tiny:new({ hex = "#8AAC8B" }):to_hex(true)
 theme.border_color_active = Tiny:new({ hex = "#8F8AAC" }):to_hex(true)
 theme.border_color_marked = Tiny:new({ hex = "#AC8A8C" }):brighten(5):to_hex(true)
 
--- There are other variable sets
--- overriding the default one when
--- defined, the sets are:
--- taglist_[bg|fg]_[focus|urgent|occupied|empty|volatile]
--- tasklist_[bg|fg]_[focus|urgent]
--- titlebar_[bg|fg]_[normal|focus]
--- tooltip_[font|opacity|fg_color|bg_color|border_width|border_color]
--- prompt_[fg|bg|fg_cursor|bg_cursor|font]
--- hotkeys_[bg|fg|border_width|border_color|shape|opacity|modifiers_fg|label_bg|label_fg|group_margin|font|description_font]
--- Example:
---theme.taglist_bg_focus = "#ff0000"
-
--- Generate taglist squares:
 local taglist_square_size = Xresources.apply_dpi(4)
-theme.taglist_squares_sel = assets.taglist_squares_sel(taglist_square_size, theme.fg_normal)
-theme.taglist_squares_unsel = assets.taglist_squares_unsel(taglist_square_size, theme.fg_normal)
+theme.taglist_squares_sel = Assets.taglist_squares_sel(taglist_square_size, theme.fg_normal)
+theme.taglist_squares_unsel = Assets.taglist_squares_unsel(taglist_square_size, theme.fg_normal)
 
--- Variables set for theming notifications:
--- notification_font
--- notification_[bg|fg]
--- notification_[width|height|margin]
--- notification_[border_color|border_width|shape|opacity]
-
--- Variables set for theming the menu:
--- menu_[bg|fg]_[normal|focus]
--- menu_[border_color|border_width]
 theme.menu_submenu_icon = string.format("%s/submenu.png", themes_path)
 theme.menu_height = Xresources.apply_dpi(15)
 theme.menu_width = Xresources.apply_dpi(100)
 
--- You can add as many variables as
--- you wish and access them by using
--- beautiful.variable in your rc.lua
---theme.bg_widget = "#cc0000"
-
--- Define the image to load
 theme.titlebar_close_button_normal = string.format("%s/titlebar/close_normal.png", themes_path)
 theme.titlebar_close_button_focus = string.format("%s/titlebar/close_focus.png", themes_path)
 
@@ -88,7 +61,6 @@ theme.titlebar_maximized_button_focus_active = string.format("%s/titlebar/maximi
 
 theme.wallpaper = string.format("%s/background.jpg", themes_path)
 
--- You can use your own layout icons like this:
 theme.layout_fairh = string.format("%s/layouts/fairhw.png", themes_path)
 theme.layout_fairv = string.format("%s/layouts/fairvw.png", themes_path)
 theme.layout_floating = string.format("%s/layouts/floatingw.png", themes_path)
@@ -106,21 +78,16 @@ theme.layout_cornerne = string.format("%s/layouts/cornernew.png", themes_path)
 theme.layout_cornersw = string.format("%s/layouts/cornersww.png", themes_path)
 theme.layout_cornerse = string.format("%s/layouts/cornersew.png", themes_path)
 
--- Generate Awesome icon:
-theme.awesome_icon = assets.awesome_icon(theme.menu_height, theme.bg_focus, theme.fg_focus)
-theme.icon_theme = os.getenv("XDG_DATA_HOME") .. "/icons/custom"
+theme.awesome_icon = Assets.awesome_icon(theme.menu_height, theme.bg_focus, theme.fg_focus)
+theme.icon_theme = environ.XDG_DATA_HOME .. "/icons/custom"
 
--- Set different colors for urgent notifications.
-notification.connect_signal(
-  "request::rules",
-  function()
-    notification.append_rule({
-      rule = { urgency = "critical" },
-      properties = {
-        bg = Tiny:new({ hex = "#AC8A8C" }):to_hex(true),
-        fg = Tiny:new({ hex = "#F0F0F0" }):to_hex(true),
-      },
-    })
-  end
-)
+Ruled.notification.connect_signal("request::rules", function()
+  Ruled.notification.append_rule({
+    rule = { urgency = "critical" },
+    properties = {
+      bg = Tiny:new({ hex = "#AC8A8C" }):to_hex(true),
+      fg = Tiny:new({ hex = "#F0F0F0" }):to_hex(true),
+    },
+  })
+end)
 return theme
