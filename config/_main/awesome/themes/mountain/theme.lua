@@ -8,22 +8,22 @@ local theme = { name = "mountain" }
 local themes_path = environ.XDG_CONFIG_HOME .. "/awesome/themes/" .. theme.name
 
 theme.font = "Dosis 10"
-theme.bg_normal = Tiny:new({ hex = "#0F0F0F" }):to_hex(true)
-theme.bg_focus = Tiny:new({ hex = "#191919" }):to_hex(true)
-theme.bg_urgent = Tiny:new({ hex = "#AC8A8C" }):to_hex(true)
+theme.bg_normal = Tiny("#0F0F0F"):to_hex(true)
+theme.bg_focus = Tiny("#191919"):to_hex(true)
+theme.bg_urgent = Tiny("#AC8A8C"):to_hex(true)
 theme.bg_minimize = "#444444"
 theme.bg_systray = theme.bg_normal
 
-theme.fg_normal = Tiny:new({ hex = "#F0F0F0" }):to_hex(true)
-theme.fg_focus = Tiny:new({ hex = "#F0F0F0" }):to_hex(true)
-theme.fg_urgent = Tiny:new({ hex = "#F0F0F0" }):to_hex(true)
-theme.fg_minimize = Tiny:new({ hex = "#E7E7E7" }):to_hex(true)
+theme.fg_normal = Tiny("#F0F0F0"):to_hex(true)
+theme.fg_focus = Tiny("#F0F0F0"):to_hex(true)
+theme.fg_urgent = Tiny("#F0F0F0"):to_hex(true)
+theme.fg_minimize = Tiny("#E7E7E7"):to_hex(true)
 
 theme.useless_gap = Xresources.apply_dpi(0)
 theme.border_width = Xresources.apply_dpi(1)
-theme.border_color_normal = Tiny:new({ hex = "#8AAC8B" }):to_hex(true)
-theme.border_color_active = Tiny:new({ hex = "#8F8AAC" }):to_hex(true)
-theme.border_color_marked = Tiny:new({ hex = "#AC8A8C" }):brighten(5):to_hex(true)
+theme.border_color_normal = Tiny("#8AAC8B"):to_hex(true)
+theme.border_color_active = Tiny("#8F8AAC"):to_hex(true)
+theme.border_color_marked = Tiny("#AC8A8C"):brighten(5):to_hex(true)
 
 local taglist_square_size = Xresources.apply_dpi(4)
 theme.taglist_squares_sel = Assets.taglist_squares_sel(taglist_square_size, theme.fg_normal)
@@ -85,8 +85,8 @@ Ruled.notification.connect_signal("request::rules", function()
   Ruled.notification.append_rule({
     rule = { urgency = "critical" },
     properties = {
-      bg = Tiny:new({ hex = "#AC8A8C" }):to_hex(true),
-      fg = Tiny:new({ hex = "#F0F0F0" }):to_hex(true),
+      bg = Tiny("#AC8A8C"):to_hex(true),
+      fg = Tiny("#F0F0F0"):to_hex(true),
     },
   })
 end)

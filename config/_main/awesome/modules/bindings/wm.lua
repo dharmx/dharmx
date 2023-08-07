@@ -1,17 +1,17 @@
 local enum = require("core.enum")
-local MOD = enum.modifiers.MOD
+local SUPER = enum.modifiers.SUPER
 local ALT = enum.modifiers.ALT
 
 return {
   wm = {
     {
-      modifiers = MOD + ALT,
+      modifiers = SUPER + ALT,
       key = "r",
       description = "Reload awesome.",
       on_press = awesome.restart,
     },
     {
-      modifiers = MOD + ALT,
+      modifiers = SUPER + ALT,
       key = "q",
       description = "Quit awesome.",
       on_press = awesome.quit,

@@ -5,7 +5,7 @@ local enum = require("core.enum")
 local environ = enum.environ
 
 local EMPTY = enum.modifiers.EMPTY
-local MOD = enum.modifiers.MOD
+local SUPER = enum.modifiers.SUPER
 local video_process = nil
 
 return {
@@ -70,37 +70,37 @@ return {
     on_press = "playerctl previous",
   },
   {
-    modifiers = MOD,
+    modifiers = SUPER,
     key = "XF86AudioPlay",
     description = "Play and pause MPD audio.",
     on_press = "mpc toggle",
   },
   {
-    modifiers = MOD,
+    modifiers = SUPER,
     key = "XF86AudioStop",
     description = "Stop MPD audio.",
     on_press = "mpc stop",
   },
   {
-    modifiers = MOD,
+    modifiers = SUPER,
     key = "XF86AudioNext",
     description = "Move to next MPD track.",
     on_press = "mpc next",
   },
   {
-    modifiers = MOD,
+    modifiers = SUPER,
     key = "XF86AudioPrev",
     description = "Move to previous MPD track.",
     on_press = "mpc prev",
   },
   {
-    modifiers = MOD,
+    modifiers = SUPER,
     key = "XF86AudioLowerVolume",
     description = "Lower MPD volume.",
     on_press = "mpc -5",
   },
   {
-    modifiers = MOD,
+    modifiers = SUPER,
     key = "XF86AudioRaiseVolume",
     description = "Raise MPD volume.",
     on_press = "mpc +5",

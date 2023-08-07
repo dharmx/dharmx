@@ -1,5 +1,15 @@
-local Color = {}
+local Tiny = {}
+Tiny.__index = Tiny
 
+setmetatable(Tiny, {
+  __call = function (class, ...)
+    local self = setmetatable({}, class)
+    self:_new(...)
+    return self
+  end,
+})
+
+-- Named colors and utils. {{{
 local Gears = require("gears")
 
 local std = require("core.std")
@@ -179,31 +189,33 @@ local function in_range(number, finish)
   assert(temp >= 0 and temp <= finish, "number should be between 0-255/0-1/0-100")
   return temp
 end
+-- }}}
 
-function Color:new(params)
-  local colors = functional.if_nil(params, { r = 0, g = 0, b = 0 })
-  if colors.name then
-    local c = named_colors[colors.name]
-    assert(c, colors.name .. " is not a named color")
-    colors = Color.hex2rgb(c)
-  elseif colors.hex then
-    colors = Color.hex2rgb(colors.hex)
-  elseif colors.int then
-    colors = Color.hex2rgb(string.format("#%06X", colors.int))
-  elseif colors.h and colors.s and colors.l then
-    colors = Color.hsl2rgb(colors.h, colors.s, colors.l)
+function Tiny:_new(new)
+  assert(new, "new param cannot be nil.")
+  if type(new) == "string" then new = new:sub(1, 1) == "#" and { hex = new } or { name = new } end
+  local rgb = new
+  if rgb.name then
+    local c = named_colors[rgb.name]
+    assert(c, rgb.name .. " is not a named color")
+    rgb = Tiny.hex2rgb(c)
+  elseif rgb.hex then
+    rgb = Tiny.hex2rgb(rgb.hex)
+  elseif rgb.int then
+    rgb = Tiny.hex2rgb(string.format("#%06X", rgb.int))
+  elseif rgb.h and rgb.s and rgb.l then
+    rgb = Tiny.hsl2rgb(rgb.h, rgb.s, rgb.l)
   else
-    colors.r = math.floor(in_range(colors.r, 255))
-    colors.g = math.floor(in_range(colors.g, 255))
-    colors.b = math.floor(in_range(colors.b, 255))
+    rgb.r = math.floor(in_range(rgb.r, 255))
+    rgb.g = math.floor(in_range(rgb.g, 255))
+    rgb.b = math.floor(in_range(rgb.b, 255))
   end
-
-  self.__index = self
-  setmetatable(colors, self)
-  return colors
+  self.r = rgb.r
+  self.g = rgb.g
+  self.b = rgb.b
 end
 
-function Color:get_named()
+function Tiny:get_named()
   for name, c in pairs(named_colors) do
     ---@diagnostic disable-next-line: undefined-field
     if c == self:to_hex():upper() then return name end
@@ -211,7 +223,7 @@ function Color:get_named()
   return nil
 end
 
-function Color:to_perc(number)
+function Tiny:to_perc(number)
   local c = {
     r = (self.r / 255) * 100,
     g = (self.g / 255) * 100,
@@ -224,7 +236,7 @@ function Color:to_perc(number)
   return c
 end
 
-function Color:to_float()
+function Tiny:to_float()
   local floating = {}
   for key, value in pairs(self:to_perc()) do
     local float_done = tonumber(value:sub(1, #value - 1)) / 100
@@ -233,7 +245,7 @@ function Color:to_float()
   return floating
 end
 
-function Color:to_hex(prefix)
+function Tiny:to_hex(prefix)
   local prefix_sym = prefix and "#" or ""
   local function callback(item) return item:len() == 1 and item:rep(2) or item end
   local hex_tbl = Gears.table.map(callback, {
@@ -244,9 +256,9 @@ function Color:to_hex(prefix)
   return prefix_sym .. table.concat(hex_tbl)
 end
 
-function Color:to_int() return self.r .. self.g .. self.b end
+function Tiny:to_int() return self.r .. self.g .. self.b end
 
-function Color:to_hsl(unit)
+function Tiny:to_hsl(unit)
   local c = self:to_float()
   local r = tonumber(c.r)
   local g = tonumber(c.g)
@@ -283,54 +295,54 @@ function Color:to_hsl(unit)
     or { h = h, s = s, l = l }
 end
 
-function Color:inc_red(a)
+function Tiny:inc_red(a)
   local c = self:to_perc(true)
-  return Color:new({
+  return Tiny({
     r = limit(c.r, a, "i") .. "%",
     g = c.g .. "%",
     b = c.b .. "%",
   })
 end
 
-function Color:inc_green(a)
+function Tiny:inc_green(a)
   local c = self:to_perc(true)
-  return Color:new({
+  return Tiny({
     r = c.r .. "%",
     g = limit(c.g, a, "i") .. "%",
     b = c.b .. "%",
   })
 end
 
-function Color:inc_blue(a)
+function Tiny:inc_blue(a)
   local c = self:to_perc(true)
-  return Color:new({
+  return Tiny({
     r = c.r .. "%",
     g = c.g .. "%",
     b = limit(c.b, a, "i") .. "%",
   })
 end
 
-function Color:dec_red(a)
+function Tiny:dec_red(a)
   local c = self:to_perc(true)
-  return Color:new({
+  return Tiny({
     r = limit(c.r, a, "d") .. "%",
     g = c.g .. "%",
     b = c.b .. "%",
   })
 end
 
-function Color:dec_green(a)
+function Tiny:dec_green(a)
   local c = self:to_perc(true)
-  return Color:new({
+  return Tiny({
     r = c.r .. "%",
     g = limit(c.g, a, "d") .. "%",
     b = c.b .. "%",
   })
 end
 
-function Color:dec_blue(a)
+function Tiny:dec_blue(a)
   local c = self:to_perc(true)
-  return Color:new({
+  return Tiny({
     r = c.r .. "%",
     g = c.g .. "%",
     b = limit(c.b, a, "d") .. "%",
@@ -339,37 +351,37 @@ end
 
 local function clamp(value) return math.min(1, math.max(0, value)) end
 
-function Color:brighten(a)
+function Tiny:brighten(a)
   a = a == 0 and 0 or (a or 10)
-  return Color:new({
+  return Tiny({
     r = math.max(0, math.min(255, self.r - math.floor(255 * -(a / 100)))),
     g = math.max(0, math.min(255, self.g - math.floor(255 * -(a / 100)))),
     b = math.max(0, math.min(255, self.b - math.floor(255 * -(a / 100)))),
   })
 end
 
-function Color:lighten(a)
+function Tiny:lighten(a)
   a = a == 0 and 0 or (a or 10)
   local hsl = self:to_hsl()
   hsl.l = hsl.l + a / 100
   hsl.l = clamp(hsl.l)
 
-  local rgb = Color.hsl2rgb(hsl.h, hsl.s, hsl.l)
-  return Color:new({
+  local rgb = Tiny.hsl2rgb(hsl.h, hsl.s, hsl.l)
+  return Tiny({
     r = rgb.r,
     g = rgb.g,
     b = rgb.b,
   })
 end
 
-function Color:darken(a)
+function Tiny:darken(a)
   a = a == 0 and 0 or (a or 10)
   local hsl = self:to_hsl()
   hsl.l = hsl.l - a / 100
   hsl.l = clamp(hsl.l)
 
-  local rgb = Color.hsl2rgb(hsl.h, hsl.s, hsl.l)
-  return Color:new({
+  local rgb = Tiny.hsl2rgb(hsl.h, hsl.s, hsl.l)
+  return Tiny({
     r = rgb.r,
     g = rgb.g,
     b = rgb.b,
@@ -378,7 +390,7 @@ end
 
 local function alter(attr, per) return math.floor(attr * (100 + per) / 100) end
 
-function Color:shade_altered(a)
+function Tiny:shade_altered(a)
   a = a == 0 and 0 or (a or 5)
   self.r = alter(self.r, a)
   self.g = alter(self.g, a)
@@ -390,101 +402,101 @@ function Color:shade_altered(a)
   return self
 end
 
-function Color:shade(a)
+function Tiny:shade(a)
   a = a == 0 and 0 or (a or 10)
-  return self:mix(Color:new({ name = "black" }), a)
+  return self:mix(Tiny("black"), a)
 end
 
-function Color:tint(a)
+function Tiny:tint(a)
   a = a == 0 and 0 or (a or 10)
-  return self:mix(Color:new({ name = "white" }), a)
+  return self:mix(Tiny("white"), a)
 end
 
-function Color:saturate(a)
+function Tiny:saturate(a)
   a = a == 0 and 0 or (a or 10)
   local hsl = self:to_hsl()
   hsl.s = hsl.s + a / 100
   hsl.s = clamp(hsl.s)
 
-  local rgb = Color.hsl2rgb(hsl.h, hsl.s, hsl.l)
-  return Color:new({
+  local rgb = Tiny.hsl2rgb(hsl.h, hsl.s, hsl.l)
+  return Tiny({
     r = rgb.r,
     g = rgb.g,
     b = rgb.b,
   })
 end
 
-function Color:desaturate(a)
+function Tiny:desaturate(a)
   a = a == 0 and 0 or (a or 10)
   local hsl = self:to_hsl()
   hsl.s = hsl.s - a / 100
   hsl.s = clamp(hsl.s)
 
-  local rgb = Color.hsl2rgb(hsl.h, hsl.s, hsl.l)
-  return Color:new({
+  local rgb = Tiny.hsl2rgb(hsl.h, hsl.s, hsl.l)
+  return Tiny({
     r = rgb.r,
     g = rgb.g,
     b = rgb.b,
   })
 end
 
-function Color:spin(a)
+function Tiny:spin(a)
   a = a == 0 and 0 or (a or 10)
   local hsl = self:to_hsl()
   local h = (hsl.h + a) % 360
   hsl.h = h < 0 and 360 + h or h
 
-  local rgb = Color.hsl2rgb(hsl.h, hsl.s, hsl.l)
-  return Color:new({
+  local rgb = Tiny.hsl2rgb(hsl.h, hsl.s, hsl.l)
+  return Tiny({
     r = rgb.r,
     g = rgb.g,
     b = rgb.b,
   })
 end
 
-function Color:get_complement()
-  local HSL = self:to_hsl()
-  return Color:new({ h = (HSL.h + 180) % 360, s = HSL.s, l = HSL.l })
+function Tiny:get_complement()
+  local hsl = self:to_hsl()
+  return Tiny({ h = (hsl.h + 180) % 360, s = hsl.s, l = hsl.l })
 end
 
-function Color:get_triad()
-  local HSL = self:to_hsl()
-  local h = HSL.h
+function Tiny:get_triad()
+  local hsl = self:to_hsl()
+  local h = hsl.h
   return {
     self,
-    Color:new({ h = (h + 120) % 360, s = HSL.s, l = HSL.l }),
-    Color:new({ h = (h + 240) % 360, s = HSL.s, l = HSL.l }),
+    Tiny({ h = (h + 120) % 360, s = hsl.s, l = hsl.l }),
+    Tiny({ h = (h + 240) % 360, s = hsl.s, l = hsl.l }),
   }
 end
 
-function Color:get_tetrad()
-  local HSL = self:to_hsl()
-  local h = HSL.h
+function Tiny:get_tetrad()
+  local hsl = self:to_hsl()
+  local h = hsl.h
   return {
     self,
-    Color:new({ h = (h + 90) % 360, s = HSL.s, l = HSL.l }),
-    Color:new({ h = (h + 180) % 360, s = HSL.s, l = HSL.l }),
-    Color:new({ h = (h + 270) % 360, s = HSL.s, l = HSL.l }),
+    Tiny({ h = (h + 90) % 360, s = hsl.s, l = hsl.l }),
+    Tiny({ h = (h + 180) % 360, s = hsl.s, l = hsl.l }),
+    Tiny({ h = (h + 270) % 360, s = hsl.s, l = hsl.l }),
   }
 end
 
-function Color:split_complement()
-  local HSL = self:to_hsl()
-  local h = HSL.h
+function Tiny:split_complement()
+  local hsl = self:to_hsl()
+  local h = hsl.h
   return {
     self,
-    Color:new({ h = (h + 72) % 360, s = HSL.s, l = HSL.l }),
-    Color:new({ h = (h + 216) % 360, s = HSL.s, l = HSL.l }),
+    Tiny({ h = (h + 72) % 360, s = hsl.s, l = hsl.l }),
+    Tiny({ h = (h + 216) % 360, s = hsl.s, l = hsl.l }),
   }
 end
 
-function Color:get_brightness() return (self.r * 299 + self.g * 587 + self.b * 114) / 1000 end
+function Tiny:get_brightness() return (self.r * 299 + self.g * 587 + self.b * 114) / 1000 end
 
-function Color:is_light() return not self:is_dark() end
+function Tiny:is_light() return not self:is_dark() end
 
-function Color:is_dark() return self:get_brightness() < 128 end
+function Tiny:is_dark() return self:get_brightness() < 128 end
 
-function Color:get_luminance()
+function Tiny:get_luminance()
   local RsRGB, GsRGB, BsRGB, R, G, B
   RsRGB = self.r / 255
   GsRGB = self.g / 255
@@ -508,9 +520,9 @@ function Color:get_luminance()
   return (0.2126 * R) + (0.7152 * G) + (0.0722 * B)
 end
 
-function Color:greyscale() self:desaturate(100) end
+function Tiny:greyscale() self:desaturate(100) end
 
-function Color:get_readability(c)
+function Tiny:get_readability(c)
   local sl = self:get_luminance()
   local cl = c:luminance()
   return (math.max(sl, cl) + 0.05) / (math.min(sl, cl) + 0.05)
@@ -527,7 +539,7 @@ local function validateWCAG2Parms(parms)
   return { level = level, size = size }
 end
 
-function Color:is_readable(c, wcag2)
+function Tiny:is_readable(c, wcag2)
   local readability = self:get_readability(c)
   local output = false
   local wcag2Parms = validateWCAG2Parms(wcag2)
@@ -543,19 +555,19 @@ function Color:is_readable(c, wcag2)
   return output
 end
 
-function Color:mix(c, a)
+function Tiny:mix(c, a)
   a = a == 0 and 0 or (a or 50)
   local value = a / 100
-  return Color:new({
+  return Tiny({
     r = ((c.r - self.r) * value) + self.r,
     g = ((c.g - self.g) * value) + self.g,
     b = ((c.b - self.b) * value) + self.b,
   })
 end
 
-function Color:invert() return Color:new({ name = "white" }) - self end
+function Tiny:invert() return Tiny("white") - self end
 
-function Color:to_rgb()
+function Tiny:to_rgb()
   return {
     r = self.r,
     g = self.g,
@@ -563,7 +575,7 @@ function Color:to_rgb()
   }
 end
 
-function Color.hex2rgb(hex)
+function Tiny.hex2rgb(hex)
   hex = hex:sub(1, 1) == "#" and hex:sub(2) or hex
   if hex:len() == 3 then hex = hex:sub(1, 1):rep(2) .. hex:sub(2, 2):rep(2) .. hex:sub(3, 3):rep(2) end
 
@@ -574,7 +586,7 @@ function Color.hex2rgb(hex)
   }
 end
 
-function Color.get_named_colors(prefix)
+function Tiny.get_named_colors(prefix)
   if prefix then
     local colors = {}
     for name, value in pairs(named_colors) do
@@ -585,15 +597,15 @@ function Color.get_named_colors(prefix)
   return named_colors
 end
 
-function Color.rand_color()
-  return Color:new({
+function Tiny.rand_color()
+  return Tiny({
     r = math.random(0, 255),
     g = math.random(0, 255),
     b = math.random(0, 255),
   })
 end
 
-function Color.hsl2rgb(h, s, l)
+function Tiny.hsl2rgb(h, s, l)
   local rgb = {}
 
   local function hue2rgb(p, q, t)
@@ -620,26 +632,26 @@ function Color.hsl2rgb(h, s, l)
   return { r = math.ceil(rgb.r * 255), g = math.ceil(rgb.g * 255), b = math.ceil(rgb.b * 255) }
 end
 
-Color.__tostring = function(self, _) return self:to_hex(true) end
+Tiny.__tostring = function(self, _) return self:to_hex(true) end
 
-Color.__eq = function(self, o) return self.r == o.r and self.g == o.g and self.b == o.b end
+Tiny.__eq = function(self, o) return self.r == o.r and self.g == o.g and self.b == o.b end
 
-Color.__lt = function(self, o) return std.table.sum(self:to_rgb()) > std.table.sum(o:RGB()) end
+Tiny.__lt = function(self, o) return std.table.sum(self:to_rgb()) > std.table.sum(o:to_rgb()) end
 
-Color.__gt = function(self, o) return std.table.sum(self:to_rgb()) < std.table.sum(o:RGB()) end
+Tiny.__gt = function(self, o) return std.table.sum(self:to_rgb()) < std.table.sum(o:to_rgb()) end
 
-Color.__add = function(self, o)
+Tiny.__add = function(self, o)
   self.r = self.r + o.r
   self.g = self.g + o.g
   self.b = self.b + o.b
   return self
 end
 
-Color.__sub = function(self, o)
+Tiny.__sub = function(self, o)
   self.r = self.r - o.r
   self.g = self.g - o.g
   self.b = self.b - o.b
   return self
 end
 
-return Color
+return Tiny

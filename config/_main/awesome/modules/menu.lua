@@ -5,6 +5,8 @@ local HotkeysPopup = require("awful.hotkeys_popup")
 
 myawesomemenu = {
   { "Hotkeys", function() HotkeysPopup.show_help() end },
+  { "Restart", awesome.restart },
+  { "Quit", function() awesome.quit(0) end },
 }
 
 mymainmenu = Awful.menu({

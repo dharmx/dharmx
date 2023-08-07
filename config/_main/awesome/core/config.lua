@@ -4,7 +4,7 @@ local Gears = require("gears")
 
 local functional = require("core.functional")
 local std = require("core.std")
-local environ = require("core.enum")
+local environ = require("core.enum").environ
 
 M._defaults = {
   modules = {
@@ -17,7 +17,7 @@ M._defaults = {
   },
 }
 
-M._defaults.modules.variables.editor_cmd = functional.if_nil(M._defaults.modules.variables.terminal .. " -e " .. M._defaults.modules.variables.editor, "xterm -e nano")
+M._defaults.modules.variables.editor_cmd = M._defaults.modules.variables.terminal .. " -e " .. M._defaults.modules.variables.editor
 M._current = Gears.table.clone(M._defaults, true)
 
 function M.merge(options)

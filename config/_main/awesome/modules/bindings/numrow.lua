@@ -1,7 +1,7 @@
 local Awful = require("awful")
 
 local enum = require("core.enum")
-local MOD = enum.modifiers.MOD
+local SUPER = enum.modifiers.SUPER
 local CTRL = enum.modifiers.CTRL
 local SHIFT = enum.modifiers.SHIFT
 
@@ -11,7 +11,7 @@ local NUMPAD = Awful.key.keygroup.NUMPAD
 return {
   tag = {
     {
-      modifiers = MOD,
+      modifiers = SUPER,
       keygroup = NUMROW,
       description = "Only view tag.",
       on_press = function(index)
@@ -22,7 +22,7 @@ return {
       end,
     },
     {
-      modifiers = MOD + CTRL,
+      modifiers = SUPER + CTRL,
       keygroup = NUMROW,
       description = "Toggle tag.",
       on_press = function(index)
@@ -33,7 +33,7 @@ return {
       end,
     },
     {
-      modifiers = MOD + SHIFT,
+      modifiers = SUPER + SHIFT,
       keygroup = NUMROW,
       description = "Move focused client to tag.",
       on_press = function(index)
@@ -44,7 +44,7 @@ return {
       end,
     },
     {
-      modifiers = MOD + CTRL + SHIFT,
+      modifiers = SUPER + CTRL + SHIFT,
       keygroup = NUMROW,
       description = "Toggle focused client on tag.",
       on_press = function(index)
@@ -57,7 +57,7 @@ return {
   },
   layout = {
     {
-      modifiers = MOD,
+      modifiers = SUPER,
       keygroup = NUMPAD,
       description = "Select layout directly.",
       on_press = function(index)

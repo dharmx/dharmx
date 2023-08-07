@@ -1,17 +1,17 @@
 local Awful = require("awful")
 
 local enum = require("core.enum")
-local MOD = enum.modifiers.MOD
+local SUPER = enum.modifiers.SUPER
 
 return {
   {
-    modifiers = MOD,
+    modifiers = SUPER,
     key = "[",
     description = "View previous.",
     on_press = Awful.tag.viewprev,
   },
   {
-    modifiers = MOD,
+    modifiers = SUPER,
     key = "]",
     description = "View next.",
     on_press = Awful.tag.viewnext,

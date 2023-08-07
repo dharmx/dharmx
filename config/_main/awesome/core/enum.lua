@@ -6,7 +6,6 @@ local PosixStdlib = require("posix.stdlib")
 local functional = require("core.functional")
 
 M.modifiers = {
-  MOD = { modkey },
   ALT = { "Mod1" },
   CTRL = { "Control" },
   SHIFT = { "Shift" },
