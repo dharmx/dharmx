@@ -2,7 +2,32 @@
 Name=custom
 Comment=Extension icons for use with scripts
 Inherits=Reversal-green,Numix-Circle-Light,ubuntu-mono-dark,Zafiro,Adwaita,hicolor
-Directories=stock/52,stock/64,stock/96,stock/104,stock/128,stock/240,stock/256,stock/512,
+Directories=stock/16,stock/22,stock/24,stock/32,stock/48,stock/52,stock/64,stock/96,stock/104,stock/128,stock/240,stock/256,stock/512,
+
+[stock/16]
+Size=16
+Context=Stock
+Type=Fixed
+
+[stock/22]
+Size=22
+Context=Stock
+Type=Fixed
+
+[stock/24]
+Size=24
+Context=Stock
+Type=Fixed
+
+[stock/32]
+Size=32
+Context=Stock
+Type=Fixed
+
+[stock/48]
+Size=48
+Context=Stock
+Type=Fixed
 
 [stock/52]
 Size=52

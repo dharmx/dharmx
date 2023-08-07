@@ -5,6 +5,7 @@ local Gears = require("gears")
 local Awful = require("awful")
 local Path = require("path")
 
+local IconTheme = require("bling.helpers.icon_theme")
 local Gio = require("lgi").Gio
 
 local functional = require("core.functional")
@@ -34,9 +35,14 @@ function M.apply_bindings(grouped_bindings, mouse, callback)
   end)
 end
 
-function M.get_icon_theme(icon_theme)
-  local IconTheme = require("bling.helpers.icon_theme")
-  return IconTheme(icon_theme)
+function M.icon_factory(icon_theme)
+  local NewIconTheme = IconTheme(icon_theme)
+  return setmetatable({}, {
+    __index = function(_, icon_label)
+      local kebabed, _ = icon_label:gsub("_", "-")
+      return NewIconTheme:get_icon_path(kebabed)
+    end,
+  })
 end
 
 function M.get_current_icon_theme_name()

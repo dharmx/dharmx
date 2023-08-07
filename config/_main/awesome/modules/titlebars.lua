@@ -27,7 +27,7 @@ client.connect_signal("request::titlebars", function(node)
     {
       {
         Awful.titlebar.widget.iconwidget(node),
-        margins = { top = DPI(7), bottom = DPI(7), left = DPI(5), right = DPI(3) },
+        margins = { top = DPI(10), bottom = DPI(10), left = DPI(10), right = DPI(0) },
         widget = Wibox.container.margin,
       },
       buttons = buttons,
@@ -44,17 +44,17 @@ client.connect_signal("request::titlebars", function(node)
     {
       {
         Awful.titlebar.widget.minimizebutton(node),
-        margins = { top = DPI(7), bottom = DPI(7), left = DPI(3), right = DPI(3) },
+        margins = { top = DPI(10), bottom = DPI(10), left = DPI(1), right = DPI(2) },
         widget = Wibox.container.margin,
       },
       {
         Awful.titlebar.widget.maximizedbutton(node),
-        margins = { top = DPI(7), bottom = DPI(7), left = DPI(3), right = DPI(3) },
+        margins = { top = DPI(10), bottom = DPI(10), left = DPI(1), right = DPI(2) },
         widget = Wibox.container.margin,
       },
       {
         Awful.titlebar.widget.closebutton(node),
-        margins = { top = DPI(7), bottom = DPI(7), left = DPI(3), right = DPI(5) },
+        margins = { top = DPI(9), bottom = DPI(9), left = DPI(0), right = DPI(5) },
         widget = Wibox.container.margin,
       },
       layout = Wibox.layout.fixed.horizontal(),

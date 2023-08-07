@@ -1,7 +1,7 @@
 local util = require("core.util")
 local config = require("core.config").get().modules.variables
 
-local IconTheme = util.get_icon_theme(config.icon_theme)
+local IconFactory = util.icon_factory(config.icon_theme)
 local Assets = require("beautiful.theme_assets")
 local Xresources = require("beautiful.xresources")
 local Ruled = require("ruled")
@@ -32,7 +32,7 @@ theme.font = "Dosis 10"
 -- cyan:    "#70C0BA"
 -- white:   "#D4D4D5"
 
-theme.titlebar_height = Xresources.apply_dpi(40)
+theme.titlebar_height = Xresources.apply_dpi(50)
 
 theme.bg_focus = Tiny("#101419"):lighten(2):to_hex(true)
 theme.bg_normal = Tiny("#171C21"):darken(2):to_hex(true)
@@ -59,17 +59,19 @@ theme.menu_submenu_icon = string.format("%s/submenu.png", path)
 theme.menu_height = Xresources.apply_dpi(15)
 theme.menu_width = Xresources.apply_dpi(100)
 
-theme.titlebar_close_button_normal = IconTheme:get_icon_path("custom-close-window")
-theme.titlebar_close_button_focus = IconTheme:get_icon_path("custom-close-window")
+theme.titlebar_close_button_normal = IconFactory.custom_close_window
+theme.titlebar_close_button_focus = IconFactory.custom_close_window
 
-theme.titlebar_maximized_button_normal_active = IconTheme:get_icon_path("custom-maximize-window")
-theme.titlebar_maximized_button_normal_inactive = IconTheme:get_icon_path("custom-maximize-window")
-theme.titlebar_maximized_button_focus_inactive = IconTheme:get_icon_path("custom-maximize-window")
+theme.titlebar_maximized_button_normal_active = IconFactory.custom_maximize_window
+theme.titlebar_maximized_button_normal_inactive = IconFactory.custom_maximize_window
+theme.titlebar_maximized_button_focus_active = IconFactory.custom_maximize_window
+theme.titlebar_maximized_button_focus_inactive = IconFactory.custom_maximize_window
+theme.titlebar_maximized_button_focus_active = IconFactory.custom_unmaximize_window
 
-theme.titlebar_minimize_button_normal = IconTheme:get_icon_path("custom-minimize-window")
-theme.titlebar_minimize_button_focus = IconTheme:get_icon_path("custom-minimize-window")
+theme.titlebar_minimize_button_normal = IconFactory.custom_minimize_window
+theme.titlebar_minimize_button_focus = IconFactory.custom_minimize_window
 
-theme.wallpaper = string.format("%s/background.png", path)
+theme.wallpaper = path .. "/background"
 
 -- {{{
 theme.titlebar_ontop_button_normal_inactive = string.format("%s/titlebar/ontop_normal_inactive.png", path)
@@ -86,7 +88,6 @@ theme.titlebar_floating_button_normal_inactive = string.format("%s/titlebar/floa
 theme.titlebar_floating_button_focus_inactive = string.format("%s/titlebar/floating_focus_inactive.png", path)
 theme.titlebar_floating_button_normal_active = string.format("%s/titlebar/floating_normal_active.png", path)
 theme.titlebar_floating_button_focus_active = string.format("%s/titlebar/floating_focus_active.png", path)
-theme.titlebar_maximized_button_focus_active = IconTheme:get_icon_path("custom-minimize-window")
 
 theme.layout_fairh = string.format("%s/layouts/fairhw.png", path)
 theme.layout_fairv = string.format("%s/layouts/fairvw.png", path)
