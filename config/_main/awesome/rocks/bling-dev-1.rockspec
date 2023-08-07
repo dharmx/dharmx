@@ -29,6 +29,7 @@ build = {
        ["bling.helpers.client"] = "helpers/client.lua",
        ["bling.helpers.color"] = "helpers/color.lua",
        ["bling.helpers.filesystem"] = "helpers/filesystem.lua",
+       ["bling.helpers.icon_theme"] = "helpers/icon_theme.lua",
        ["bling.helpers.shape"] = "helpers/shape.lua",
        ["bling.helpers.time"] = "helpers/time.lua",
        ["bling.layout"] = "layout/init.lua",

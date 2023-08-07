@@ -3,6 +3,12 @@ local M = {}
 M.string = {}
 M.table = {}
 
+function M.table.map(f, t)
+  local a = {}
+  for _, v in ipairs(t) do table.insert(a, f(v)) end
+  return a
+end
+
 function M.table.foreach(t, c)
   for k, v in pairs(t) do c(k, v) end
 end

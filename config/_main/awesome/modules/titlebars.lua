@@ -1,40 +1,67 @@
--- Standard awesome library
-local awful = require("awful")
+local std = require("core.std")
+local enum = require("core.enum")
+local EMPTY = enum.modifiers.EMPTY
+
+local Awful = require("awful")
+local Wibox = require("wibox")
+local Beautiful = require("beautiful")
+
+local DPI = Beautiful.xresources.apply_dpi
 require("awful.autofocus")
--- Widget and layout library
-local wibox = require("wibox")
 
--- Titlebars
--- Add a titlebar if titlebars_enabled is set to true in the rules.
-client.connect_signal("request::titlebars", function(c)
-  -- buttons for the titlebar
-  local buttons = {
-    awful.button({}, 1, function() c:activate({ context = "titlebar", action = "mouse_move" }) end),
-    awful.button({}, 3, function() c:activate({ context = "titlebar", action = "mouse_resize" }) end),
-  }
+client.connect_signal("request::titlebars", function(node)
+  local buttons = std.table.map(Awful.button, {
+    {
+      modifiers = EMPTY,
+      button = 1,
+      on_press = function() node:activate({ context = "titlebar", action = "mouse_move" }) end,
+    },
+    {
+      modifiers = EMPTY,
+      button = 3,
+      on_press = function() node:activate({ context = "titlebar", action = "mouse_resize" }) end,
+    },
+  })
 
-  awful.titlebar(c).widget = {
-    { -- Left
-      awful.titlebar.widget.iconwidget(c),
+  Awful.titlebar(node, { position = "top", size = Beautiful.titlebar_height }).widget = {
+    {
+      {
+        Awful.titlebar.widget.iconwidget(node),
+        margins = { top = DPI(7), bottom = DPI(7), left = DPI(5), right = DPI(3) },
+        widget = Wibox.container.margin,
+      },
       buttons = buttons,
-      layout = wibox.layout.fixed.horizontal,
+      layout = Wibox.layout.fixed.horizontal,
     },
     { -- Middle
       { -- Title
         halign = "center",
-        widget = awful.titlebar.widget.titlewidget(c),
+        widget = Awful.titlebar.widget.titlewidget(node),
       },
       buttons = buttons,
-      layout = wibox.layout.flex.horizontal,
+      layout = Wibox.layout.flex.horizontal,
     },
-    { -- Right
-      awful.titlebar.widget.floatingbutton(c),
-      awful.titlebar.widget.maximizedbutton(c),
-      awful.titlebar.widget.stickybutton(c),
-      awful.titlebar.widget.ontopbutton(c),
-      awful.titlebar.widget.closebutton(c),
-      layout = wibox.layout.fixed.horizontal(),
+    {
+      {
+        Awful.titlebar.widget.minimizebutton(node),
+        margins = { top = DPI(7), bottom = DPI(7), left = DPI(3), right = DPI(3) },
+        widget = Wibox.container.margin,
+      },
+      {
+        Awful.titlebar.widget.maximizedbutton(node),
+        margins = { top = DPI(7), bottom = DPI(7), left = DPI(3), right = DPI(3) },
+        widget = Wibox.container.margin,
+      },
+      {
+        Awful.titlebar.widget.closebutton(node),
+        margins = { top = DPI(7), bottom = DPI(7), left = DPI(3), right = DPI(5) },
+        widget = Wibox.container.margin,
+      },
+      layout = Wibox.layout.fixed.horizontal(),
+      top = DPI(2),
+      bottom = DPI(2),
+      left = DPI(8),
     },
-    layout = wibox.layout.align.horizontal,
+    layout = Wibox.layout.align.horizontal,
   }
 end)

@@ -4,15 +4,20 @@ local Gears = require("gears")
 
 local functional = require("core.functional")
 local std = require("core.std")
+local util = require("core.util")
 local environ = require("core.enum").environ
 
 M._defaults = {
   modules = {
     variables = {
-      theme = "mountain",
+      theme = "radium",
+      icon_theme = util.get_current_icon_theme_name(),
       terminal = functional.if_nil(environ.TERMINAL, "xterm"),
       editor = functional.if_nil(environ.EDITOR, "nano"),
       modkey = "Mod4",
+    },
+    wibars = {
+      tag = { "1", "2", "3", "4", "5", "6", "7", "8", "9" },
     },
   },
 }

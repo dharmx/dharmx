@@ -1,8 +1,11 @@
+---@diagnostic disable: undefined-field
 local M = {}
 
 local Gears = require("gears")
 local Awful = require("awful")
 local Path = require("path")
+
+local Gio = require("lgi").Gio
 
 local functional = require("core.functional")
 local std = require("core.std")
@@ -29,6 +32,16 @@ function M.apply_bindings(grouped_bindings, mouse, callback)
       end
     end)
   end)
+end
+
+function M.get_icon_theme(icon_theme)
+  local IconTheme = require("bling.helpers.icon_theme")
+  return IconTheme(icon_theme)
+end
+
+function M.get_current_icon_theme_name()
+  local settings = Gio.Settings.new("org.gnome.desktop.interface")
+  return settings:get_string("icon-theme")
 end
 
 return M

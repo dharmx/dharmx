@@ -240,7 +240,7 @@ function Tiny:to_float()
   local floating = {}
   for key, value in pairs(self:to_perc()) do
     local float_done = tonumber(value:sub(1, #value - 1)) / 100
-    floating[key] = float_done == 1 and "1.0" or string.format("%.2F", float_done)
+    floating[key] = float_done == 1 and "1.0" or string.format("%.2f", float_done)
   end
   return floating
 end
@@ -263,7 +263,7 @@ function Tiny:to_hsl(unit)
   local r = tonumber(c.r)
   local g = tonumber(c.g)
   local b = tonumber(c.b)
-  assert(type(r) == "number" and type(g) == "number" and type(c) == "number")
+  assert(type(r) == "number" and type(g) == "number" and type(b) == "number")
 
   local max = math.max(r, g, b)
   local min = math.min(r, g, b)

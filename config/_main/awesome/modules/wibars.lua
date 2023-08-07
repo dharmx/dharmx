@@ -1,85 +1,128 @@
--- Standard awesome library
-local awful = require("awful")
+local Awful = require("awful")
+local Wibox = require("wibox")
+
+local std = require("core.std")
+local config = require("core.config").get().modules.wibars
+local enum = require("core.enum")
+local EMPTY = enum.modifiers.EMPTY
+local SUPER = enum.modifiers.SUPER
+
 require("awful.autofocus")
--- Widget and layout library
-local wibox = require("wibox")
+mykeyboardlayout = Awful.widget.keyboardlayout()
+mytextclock = Wibox.widget.textclock()
 
--- Wibar
+screen.connect_signal("request::desktop_decoration", function(local_screen)
+  Awful.tag(config.tag, local_screen, Awful.layout.layouts[1])
+  local_screen.mypromptbox = Awful.widget.prompt()
 
--- Keyboard map indicator and switcher
-mykeyboardlayout = awful.widget.keyboardlayout()
-
--- Create a textclock widget
-mytextclock = wibox.widget.textclock()
-
-screen.connect_signal("request::desktop_decoration", function(s)
-  -- Each screen has its own tag table.
-  awful.tag({ "1", "2", "3", "4", "5", "6", "7", "8", "9" }, s, awful.layout.layouts[1])
-
-  -- Create a promptbox for each screen
-  s.mypromptbox = awful.widget.prompt()
-
-  -- Create an imagebox widget which will contain an icon indicating which layout we're using.
-  -- We need one layoutbox per screen.
-  s.mylayoutbox = awful.widget.layoutbox({
-    screen = s,
-    buttons = {
-      awful.button({}, 1, function() awful.layout.inc(1) end),
-      awful.button({}, 3, function() awful.layout.inc(-1) end),
-      awful.button({}, 4, function() awful.layout.inc(-1) end),
-      awful.button({}, 5, function() awful.layout.inc(1) end),
-    },
-  })
-
-  -- Create a taglist widget
-  s.mytaglist = awful.widget.taglist({
-    screen = s,
-    filter = awful.widget.taglist.filter.all,
-    buttons = {
-      awful.button({}, 1, function(t) t:view_only() end),
-      awful.button({ modkey }, 1, function(t)
-        if client.focus then client.focus:move_to_tag(t) end
-      end),
-      awful.button({}, 3, awful.tag.viewtoggle),
-      awful.button({ modkey }, 3, function(t)
-        if client.focus then client.focus:toggle_tag(t) end
-      end),
-      awful.button({}, 4, function(t) awful.tag.viewprev(t.screen) end),
-      awful.button({}, 5, function(t) awful.tag.viewnext(t.screen) end),
-    },
-  })
-
-  -- Create a tasklist widget
-  s.mytasklist = awful.widget.tasklist({
-    screen = s,
-    filter = awful.widget.tasklist.filter.currenttags,
-    buttons = {
-      awful.button({}, 1, function(c) c:activate({ context = "tasklist", action = "toggle_minimization" }) end),
-      awful.button({}, 3, function() awful.menu.client_list({ theme = { width = 250 } }) end),
-      awful.button({}, 4, function() awful.client.focus.byidx(-1) end),
-      awful.button({}, 5, function() awful.client.focus.byidx(1) end),
-    },
-  })
-
-  -- Create the wibox
-  s.mywibox = awful.wibar({
-    position = "top",
-    screen = s,
-    widget = {
-      layout = wibox.layout.align.horizontal,
-      { -- Left widgets
-        layout = wibox.layout.fixed.horizontal,
-        mylauncher,
-        s.mytaglist,
-        s.mypromptbox,
+  local_screen.mylayoutbox = Awful.widget.layoutbox({
+    screen = local_screen,
+    buttons = std.table.map(Awful.button, {
+      {
+        modifiers = EMPTY,
+        button = 1,
+        on_press = function() Awful.layout.inc(1) end,
       },
-      s.mytasklist, -- Middle widget
+      {
+        modifiers = EMPTY,
+        button = 3,
+        on_press = function() Awful.layout.inc(-1) end,
+      },
+      {
+        modifiers = EMPTY,
+        button = 4,
+        on_press = function() Awful.layout.inc(-1) end,
+      },
+      {
+        modifiers = EMPTY,
+        button = 5,
+        on_press = function() Awful.layout.inc(1) end,
+      },
+    }),
+  })
+
+  local_screen.mytaglist = Awful.widget.taglist({
+    screen = local_screen,
+    filter = Awful.widget.taglist.filter.all,
+    buttons = std.table.map(Awful.button, {
+      {
+        modifiers = EMPTY,
+        button = 1,
+        on_press = function(local_tag) local_tag:view_only() end,
+      },
+      {
+        modifiers = SUPER,
+        button = 1,
+        on_press = function(local_tag) if client.focus then client.focus:move_to_tag(local_tag) end end,
+      },
+      {
+        modifiers = EMPTY,
+        button = 3,
+        on_press = Awful.tag.viewtoggle,
+      },
+      {
+        modifiers = SUPER,
+        button = 3,
+        on_press = function(local_tag) if client.focus then client.focus:toggle_tag(local_tag) end end,
+      },
+      {
+        modifiers = EMPTY,
+        button = 4,
+        on_press = function(local_tag) Awful.tag.viewprev(local_tag.screen) end,
+      },
+      {
+        modifiers = EMPTY,
+        button = 5,
+        on_press = function(local_tag) Awful.tag.viewnext(local_tag.screen) end,
+      },
+    }),
+  })
+
+  local_screen.mytasklist = Awful.widget.tasklist({
+    screen = local_screen,
+    filter = Awful.widget.tasklist.filter.currenttags,
+    buttons = std.table.map(Awful.button, {
+      {
+        modifiers = EMPTY,
+        button = 1,
+        on_press = function(node) node:activate({ context = "tasklist", action = "toggle_minimization" }) end,
+      },
+      {
+        modifiers = EMPTY,
+        button = 3,
+        on_press = function() Awful.menu.client_list({ theme = { width = 250 } }) end,
+      },
+      {
+        modifiers = EMPTY,
+        button = 4,
+        on_press = function() Awful.client.focus.byidx(-1) end,
+      },
+      {
+        modifiers = EMPTY,
+        button = 5,
+        on_press = function() Awful.client.focus.byidx(1) end,
+      },
+    }),
+  })
+
+  local_screen.mywibox = Awful.wibar({
+    position = "top",
+    screen = local_screen,
+    widget = {
+      layout = Wibox.layout.align.horizontal,
+      { -- Left widgets
+        layout = Wibox.layout.fixed.horizontal,
+        mylauncher,
+        local_screen.mytaglist,
+        local_screen.mypromptbox,
+      },
+      local_screen.mytasklist, -- Middle widget
       { -- Right widgets
-        layout = wibox.layout.fixed.horizontal,
+        layout = Wibox.layout.fixed.horizontal,
         mykeyboardlayout,
-        wibox.widget.systray(),
+        Wibox.widget.systray(),
         mytextclock,
-        s.mylayoutbox,
+        local_screen.mylayoutbox,
       },
     },
   })

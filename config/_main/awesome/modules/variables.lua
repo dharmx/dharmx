@@ -1,8 +1,8 @@
-local gears = require("gears")
-local beautiful = require("beautiful")
-local config = require("core.config")._current.modules.variables
+local Beautiful = require("beautiful")
+local config = require("core.config").get().modules.variables
+local theme = require("themes." .. config.theme .. ".theme")
 
-beautiful.init(string.format("%sthemes/%s/theme.lua", gears.filesystem.get_configuration_dir(), config.theme))
+Beautiful.init(theme)
 terminal = config.terminal
 editor = config.editor
 editor_cmd = config.editor_cmd
