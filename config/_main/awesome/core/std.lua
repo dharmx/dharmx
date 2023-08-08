@@ -366,8 +366,8 @@ function M.table.is_callable(f)
   return type(m.__call) == "function"
 end
 
-function M.table.default_table(create)
-  create = create or function(_) return M.table.default_table() end
+function M.table.default(create)
+  create = create or function(_) return M.table.default() end
   return setmetatable({}, {
     __index = function(t, k)
       rawset(t, k, create(k))

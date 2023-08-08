@@ -1,4 +1,3 @@
----@diagnostic disable: undefined-field
 local M = {}
 
 local Gears = require("gears")
@@ -46,6 +45,7 @@ function M.icon_factory(icon_theme)
 end
 
 function M.get_current_icon_theme_name()
+  ---@diagnostic disable: undefined-field
   local settings = Gio.Settings.new("org.gnome.desktop.interface")
   return settings:get_string("icon-theme")
 end

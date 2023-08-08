@@ -1,18 +1,18 @@
 local util = require("core.util")
 local config = require("core.config").get().modules.variables
 
+local helpers = require("core.helpers")
 local IconFactory = util.icon_factory(config.icon_theme)
 local Assets = require("beautiful.theme_assets")
-local Xresources = require("beautiful.xresources")
+local DPI = require("beautiful.xresources").apply_dpi
 local Ruled = require("ruled")
 local Tiny = require("lib.tiny")
+local Gears = require("gears")
 
-local environ = require("core.enum").environ
 local theme = { name = "radium" }
-local path = environ.XDG_CONFIG_HOME .. "/awesome/themes/" .. theme.name
+local path = Gears.filesystem.get_themes_dir() .. theme.name
 
 theme.icon_theme = config.icon_theme
-
 theme.font = "Dosis 10"
 
 -- black:   "#171C21"
@@ -32,7 +32,7 @@ theme.font = "Dosis 10"
 -- cyan:    "#70C0BA"
 -- white:   "#D4D4D5"
 
-theme.titlebar_height = Xresources.apply_dpi(50)
+theme.titlebar_height = DPI(50)
 
 theme.bg_focus = Tiny("#101419"):lighten(2):to_hex(true)
 theme.bg_normal = Tiny("#171C21"):darken(2):to_hex(true)
@@ -45,22 +45,49 @@ theme.fg_focus = Tiny("#D4D4D5"):to_hex(true)
 theme.fg_urgent = Tiny("#D4D4D5"):to_hex(true)
 theme.fg_minimize = Tiny("#FFFFFF"):to_hex(true)
 
-theme.useless_gap = Xresources.apply_dpi(10)
-theme.border_width = Xresources.apply_dpi(0)
+theme.useless_gap = DPI(10)
+theme.border_width = DPI(0)
 theme.border_color_normal = Tiny("#79DCAA"):to_hex(true)
 theme.border_color_active = Tiny("#C397D8"):to_hex(true)
 theme.border_color_marked = Tiny("#F87070"):brighten(5):to_hex(true)
 
-local taglist_square_size = Xresources.apply_dpi(4)
+local taglist_square_size = DPI(4)
 theme.taglist_squares_sel = Assets.taglist_squares_sel(taglist_square_size, theme.fg_normal)
 theme.taglist_squares_unsel = Assets.taglist_squares_unsel(taglist_square_size, theme.fg_normal)
 
 theme.menu_submenu_icon = string.format("%s/submenu.png", path)
-theme.menu_height = Xresources.apply_dpi(15)
-theme.menu_width = Xresources.apply_dpi(100)
+theme.menu_height = DPI(15)
+theme.menu_width = DPI(100)
 
-theme.titlebar_close_button_normal = IconFactory.custom_close_window
-theme.titlebar_close_button_focus = IconFactory.custom_close_window
+theme.titlebar_close_button_normal = helpers.shapes.partial_squircle({
+  shape_pattern = Tiny("red"),
+  background = Tiny("red"),
+  width = 15,
+  height = 15,
+  corners = {
+    top_left = true,
+    top_right = false,
+    bottom_right = true,
+    bottom_left = false,
+  },
+  rate = 15,
+  delta = 0.05
+})
+
+theme.titlebar_close_button_focus = helpers.shapes.partial_squircle({
+  shape_pattern = Tiny("blue"),
+  background = Tiny("blue"),
+  width = 10,
+  height = 10,
+  corners = {
+    top_left = true,
+    top_right = false,
+    bottom_right = true,
+    bottom_left = false,
+  },
+  rate = 20,
+  delta = 0.01
+})
 
 theme.titlebar_maximized_button_normal_active = IconFactory.custom_maximize_window
 theme.titlebar_maximized_button_normal_inactive = IconFactory.custom_maximize_window

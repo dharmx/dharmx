@@ -1,5 +1,6 @@
 local Awful = require("awful")
 
+local helpers = require("core.helpers")
 local enum = require("core.enum")
 local SUPER = enum.modifiers.SUPER
 local SHIFT = enum.modifiers.SHIFT
@@ -60,5 +61,29 @@ return {
       node.maximized = not node.maximized
       node:raise()
     end,
+  },
+  {
+    modifiers = SUPER,
+    key = "Print",
+    description = "Take client screenshot.",
+    on_press = function(node) helpers.screenshot.saved({ auto_save_delay = 0, client = node }) end,
+  },
+  {
+    modifiers = SUPER + SHIFT,
+    key = "Print",
+    on_press = function(node) helpers.screenshot.saved({ auto_save_delay = 0, interactive = true, client = node }) end,
+    description = "Take interactive client screenshot.",
+  },
+  {
+    modifiers = SUPER + CTRL,
+    key = "Print",
+    on_press = function(node) helpers.screenshot.delayed({ auto_save_delay = 5, client = node }) end,
+    description = "Take screenshot in 5 seconds.",
+  },
+  {
+    modifiers = SUPER + SHIFT + CTRL,
+    key = "Print",
+    on_press = function(node) helpers.screenshot.delayed({ auto_save_delay = 5, interactive = true, client = node }) end,
+    description = "Take interactive screenshot in 5 seconds.",
   },
 }

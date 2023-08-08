@@ -7,6 +7,7 @@ local std = require("core.std")
 local util = require("core.util")
 local environ = require("core.enum").environ
 
+environ.AWESOME_THEMES_PATH = environ.XDG_CONFIG_HOME .. "/awesome/themes"
 M._defaults = {
   modules = {
     variables = {
