@@ -9,16 +9,22 @@ local environ = require("core.enum").environ
 
 environ.AWESOME_THEMES_PATH = environ.XDG_CONFIG_HOME .. "/awesome/themes"
 M._defaults = {
+  theme = "stain",
+  colors = "radium",
+  background = "dark",
+  wallpaper = environ.XDG_PICTURES_DIR .. "/concepts/radium.jpg",
   modules = {
     variables = {
-      theme = "radium",
-      background = "dark",
       icon_theme = util.get_current_icon_theme_name(),
       terminal = functional.if_nil(environ.TERMINAL, "xterm"),
       editor = functional.if_nil(environ.EDITOR, "nano"),
       modkey = "Mod4",
     },
+    titlebars = {
+      style = "cumstain",
+    },
     wibars = {
+      style = "shitstain",
       tag = { "1", "2", "3", "4", "5", "6", "7", "8", "9" },
     },
   },

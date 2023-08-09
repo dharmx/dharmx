@@ -1,9 +1,8 @@
 local Beautiful = require("beautiful")
-local config = require("core.config").get().modules.variables
-local theme = require("themes." .. config.theme .. ".theme")
+local config = require("core.config").get()
 
-Beautiful.init(theme)
-terminal = config.terminal
-editor = config.editor
-editor_cmd = config.editor_cmd
-modkey = config.modkey
+Beautiful.init(require("themes." .. config.theme .. ".theme"))
+terminal = config.modules.variables.terminal
+editor = config.modules.variables.editor
+editor_cmd = config.modules.variables.editor_cmd
+modkey = config.modules.variables.modkey

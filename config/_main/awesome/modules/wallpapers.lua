@@ -6,16 +6,12 @@ screen.connect_signal("request::wallpaper", function(local_screen)
   Awful.wallpaper({
     screen = local_screen,
     widget = {
-      {
-        image = Beautiful.wallpaper,
-        upscale = true,
-        downscale = true,
-        widget = Wibox.widget.imagebox,
-      },
-      valign = "center",
-      halign = "center",
-      tiled = false,
-      widget = Wibox.container.tile,
+      upscale = false,
+      downscale = true,
+      horizontal_fit_policy = "fit",
+      vertical_fit_policy   = "fit",
+      image = Beautiful.wallpaper,
+      widget = Wibox.widget.imagebox,
     },
   })
 end)

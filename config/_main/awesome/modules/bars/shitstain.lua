@@ -1,22 +1,20 @@
+local M = {}
+
 local Awful = require("awful")
 local Wibox = require("wibox")
 local DPI = require("beautiful.xresources").apply_dpi
 
 local std = require("core.std")
-local config = require("core.config").get().modules.wibars
 local enum = require("core.enum")
 local EMPTY = enum.modifiers.EMPTY
 local SUPER = enum.modifiers.SUPER
 
-require("awful.autofocus")
-mykeyboardlayout = Awful.widget.keyboardlayout()
-mytextclock = Wibox.widget.textclock()
+M.keyboardlayout = Awful.widget.keyboardlayout()
+M.textclock = Wibox.widget.textclock()
+M.promptbox = Awful.widget.prompt()
 
-screen.connect_signal("request::desktop_decoration", function(local_screen)
-  Awful.tag(config.tag, local_screen, Awful.layout.layouts[1])
-  local_screen.mypromptbox = Awful.widget.prompt()
-
-  local_screen.mylayoutbox = Awful.widget.layoutbox({
+function M.layoutbox(local_screen)
+  return Awful.widget.layoutbox({
     screen = local_screen,
     buttons = std.table.map(Awful.button, {
       {
@@ -41,8 +39,10 @@ screen.connect_signal("request::desktop_decoration", function(local_screen)
       },
     }),
   })
+end
 
-  local_screen.mytaglist = Awful.widget.taglist({
+function M.taglist(local_screen)
+  return Awful.widget.taglist({
     screen = local_screen,
     filter = Awful.widget.taglist.filter.all,
     buttons = std.table.map(Awful.button, {
@@ -78,8 +78,10 @@ screen.connect_signal("request::desktop_decoration", function(local_screen)
       },
     }),
   })
+end
 
-  local_screen.mytasklist = Awful.widget.tasklist({
+function M.tasklist(local_screen)
+  return Awful.widget.tasklist({
     screen = local_screen,
     filter = Awful.widget.tasklist.filter.currenttags,
     buttons = std.table.map(Awful.button, {
@@ -105,8 +107,10 @@ screen.connect_signal("request::desktop_decoration", function(local_screen)
       },
     }),
   })
+end
 
-  local_screen.mywibox = Awful.wibar({
+function M.wibox(local_screen)
+  return Awful.wibar({
     height = DPI(55),
     position = "top",
     screen = local_screen,
@@ -128,4 +132,6 @@ screen.connect_signal("request::desktop_decoration", function(local_screen)
       },
     },
   })
-end)
+end
+
+return M

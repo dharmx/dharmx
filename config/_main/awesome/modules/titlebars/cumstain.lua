@@ -1,32 +1,29 @@
-local std = require("core.std")
-local enum = require("core.enum")
-local EMPTY = enum.modifiers.EMPTY
+local M = {}
 
 local Awful = require("awful")
 local Wibox = require("wibox")
 local Beautiful = require("beautiful")
-
 local DPI = Beautiful.xresources.apply_dpi
-require("awful.autofocus")
 
-client.connect_signal("request::titlebars", function(node)
-  local buttons = std.table.map(Awful.button, {
-    {
-      modifiers = EMPTY,
-      button = 1,
-      on_press = function() node:activate({ context = "titlebar", action = "mouse_move" }) end,
-    },
-    {
-      modifiers = EMPTY,
-      button = 3,
-      on_press = function() node:activate({ context = "titlebar", action = "mouse_resize" }) end,
-    },
-  })
+local std = require("core.std")
+local enum = require("core.enum")
+local EMPTY = enum.modifiers.EMPTY
 
-  Awful.titlebar(node, {
-    position = "top",
-    size = Beautiful.titlebar_height
-  }).widget = {
+M.buttons = std.table.map(Awful.button, {
+  {
+    modifiers = EMPTY,
+    button = 1,
+    on_press = function(node) node:activate({ context = "titlebar", action = "mouse_move" }) end,
+  },
+  {
+    modifiers = EMPTY,
+    button = 3,
+    on_press = function(node) node:activate({ context = "titlebar", action = "mouse_resize" }) end,
+  },
+})
+
+function M.initialize(node)
+  return {
     {
       {
         Awful.titlebar.widget.iconwidget(node),
@@ -38,11 +35,11 @@ client.connect_signal("request::titlebars", function(node)
         margins = { top = DPI(10), bottom = DPI(10), left = DPI(5), right = DPI(0) },
         widget = Wibox.container.margin,
       },
-      buttons = buttons,
+      buttons = M.buttons,
       layout = Wibox.layout.fixed.horizontal,
     },
     {
-      buttons = buttons,
+      buttons = M.buttons,
       layout = Wibox.layout.flex.horizontal,
     },
     {
@@ -65,4 +62,6 @@ client.connect_signal("request::titlebars", function(node)
     },
     layout = Wibox.layout.align.horizontal,
   }
-end)
+end
+
+return M
