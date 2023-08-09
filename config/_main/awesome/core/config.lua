@@ -12,6 +12,7 @@ M._defaults = {
   modules = {
     variables = {
       theme = "radium",
+      background = "dark",
       icon_theme = util.get_current_icon_theme_name(),
       terminal = functional.if_nil(environ.TERMINAL, "xterm"),
       editor = functional.if_nil(environ.EDITOR, "nano"),

@@ -1,5 +1,6 @@
 local Awful = require("awful")
 local Wibox = require("wibox")
+local DPI = require("beautiful.xresources").apply_dpi
 
 local std = require("core.std")
 local config = require("core.config").get().modules.wibars
@@ -106,6 +107,7 @@ screen.connect_signal("request::desktop_decoration", function(local_screen)
   })
 
   local_screen.mywibox = Awful.wibar({
+    height = DPI(55),
     position = "top",
     screen = local_screen,
     widget = {

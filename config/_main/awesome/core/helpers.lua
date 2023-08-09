@@ -1,26 +1,8 @@
 local M = {}
 M.screenshot = {}
-M.shapes = {}
 
 local Awful = require("awful")
 local Naughty = require("naughty")
-local Gears = require("gears")
-local DPI = require("beautiful.xresources").apply_dpi
-
-function M.shapes.partial_squircle(options)
-  return Gears.surface.load_from_shape(options.width, options.height, function(context, width, height)
-    return Gears.shape.partial_squircle(
-      context,
-      DPI(width),
-      DPI(height),
-      options.corners.top_left,
-      options.corners.top_right,
-      options.corners.bottom_right,
-      options.corners.bottom_left,
-      DPI(options.rate),
-      options.delta)
-  end, options.shape_pattern:to_hex(true), options.background:to_hex(true))
-end
 
 function M.screenshot.saved(args)
   local screenshot = Awful.screenshot(args)
@@ -54,6 +36,5 @@ function M.screenshot.delayed(args)
   end)
   return screenshot
 end
-
 
 return M
