@@ -1,13 +1,15 @@
 local M = {}
 
 local Gears = require("gears")
+local Beautiful = require("beautiful")
 local Filesystem = require("lfs")
+local Bling = require("bling")
 
 local config = require("core.config")
 local util = require("core.util")
+local functional = require("core.functional")
 
 function M.setup(options)
-  -- Enable hotkeys help widget for VIM and other apps when client with a matching name is opened:
   require("awful.hotkeys_popup.keys")
   require("awful.autofocus")
 
@@ -19,6 +21,12 @@ function M.setup(options)
       require("modules." .. util.stem(file))
     end
   end
+  Bling.module.flash_focus.enable()
+  local wallpapers = Gears.table.clone(config.get().wallpapers, true)
+  wallpapers.wallpaper = functional.if_nil(wallpapers.wallpaper, type(Beautiful.wallpaper) == "table"
+    and Beautiful.wallpaper
+    or { Beautiful.wallpaper })
+  Bling.module.wallpaper.setup(wallpapers)
 end
 
 return M

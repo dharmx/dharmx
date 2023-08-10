@@ -1,6 +1,8 @@
 local M = {}
 
 local Gears = require("gears")
+local Beautiful = require("beautiful")
+local Bling = require("bling")
 
 local functional = require("core.functional")
 local std = require("core.std")
@@ -12,7 +14,16 @@ M._defaults = {
   theme = "stain",
   colors = "radium",
   background = "dark",
-  wallpaper = environ.XDG_PICTURES_DIR .. "/concepts/radium.jpg",
+  wallpapers = {
+    position = "maximized",
+    offset = { x = -130, y = 0 },
+    set_function = Bling.module.wallpaper.setters.simple,
+    wallpaper = { environ.XDG_PICTURES_DIR .. "/concepts/radium.jpg" },
+    image_formats = { "jpg", "jpeg", "png", "bmp", "webp", "jiff" },
+    recursive = true,
+    background = Beautiful.bg_normal,
+    ignore_aspect = false,
+  },
   modules = {
     variables = {
       icon_theme = util.get_current_icon_theme_name(),

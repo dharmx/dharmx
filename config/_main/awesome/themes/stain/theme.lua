@@ -1,4 +1,5 @@
 local config = require("core.config").get()
+local environ = require("core.enum").environ
 local shapes = require("core.shapes")
 -- load theme colors and its variant: raidum.[dark|light|black]
 local colors = require("colors." .. config.colors).background[config.background]
@@ -16,7 +17,7 @@ local theme_path = Gears.filesystem.get_themes_dir() .. "stain"
 theme.icon_theme = config.icon_theme
 theme.font = "Nunito 10"
 theme.titlebar_height = DPI(50)
-theme.wallpaper = config.wallpaper
+theme.wallpaper = theme_path .. "/background.png"
 
 theme.bg_focus = colors.black:lighten(2):to_hex(true)
 theme.bg_normal = colors.bblack:darken(2):to_hex(true)
@@ -96,5 +97,8 @@ Ruled.notification.connect_signal("request::rules", function()
   })
 end)
 -- }}}
+
+theme.flash_focus_start_opacity = 0.6
+theme.flash_focus_step = 0.01
 
 return theme

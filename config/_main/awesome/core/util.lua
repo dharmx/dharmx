@@ -4,7 +4,7 @@ local Gears = require("gears")
 local Awful = require("awful")
 local Path = require("path")
 
-local IconTheme = require("bling.helpers.icon_theme")
+local IconTheme = require("bling").helpers.icon_theme
 local Gio = require("lgi").Gio
 
 local functional = require("core.functional")
