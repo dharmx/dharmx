@@ -17,3 +17,6 @@
 [submodule "etc/qbittorrent-fluent-theme"]
   url = https://github.com/witalihirsch/qBitTorrent-fluent-theme
   path = etc/qbittorrent-fluent-theme
+[submodule "config/_main/awesome"]
+	path = config/_main/awesome
+	url = https://github.com/dharmx/awesome.git
