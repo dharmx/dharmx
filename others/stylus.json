@@ -4,7 +4,7 @@
       "openEditInWindow": false,
       "openEditInWindow.popup": false,
       "windowPosition": {},
-      "show-badge": false,
+      "show-badge": true,
       "disableAll": false,
       "exposeIframes": false,
       "exposeStyleName": false,
@@ -22,7 +22,7 @@
       "popup.stylesFirst": true,
       "popup.autoResort": false,
       "popup.borders": false,
-      "popup.findSort": "t",
+      "popup.findSort": "u",
       "manage.onlyEnabled": false,
       "manage.onlyLocal": false,
       "manage.onlyUsercss": false,
@@ -31,7 +31,7 @@
       "manage.onlyUsercss.invert": false,
       "manage.actions.expanded": true,
       "manage.backup.expanded": true,
-      "manage.filters.expanded": false,
+      "manage.filters.expanded": true,
       "manage.minColumnWidth": 750,
       "manage.newUI": true,
       "manage.newUI.favicons": false,
@@ -58,7 +58,10 @@
         "newline_between_rules": false,
         "preserve_newlines": true,
         "end_with_newline": false,
-        "indent_conditional": true
+        "indent_conditional": true,
+        "indent_mozdoc": true,
+        "space_around_combinator": true,
+        "space_around_cmp": false
       },
       "editor.beautify.hotkey": "",
       "editor.lintDelay": 300,
@@ -82,7 +85,7 @@
       "hotkey.openManage": "",
       "hotkey.styleDisableAll": "",
       "sync.enabled": "none",
-      "iconset": 0,
+      "iconset": -1,
       "badgeDisabled": "#8B0000",
       "badgeNormal": "#006666",
       "headerWidth.edit": 280,
@@ -110,25 +113,8 @@
     ],
     "updateDate": 1688927005421,
     "_id": "862a9d74-ec55-499f-94e0-7b87c2dff9c0",
-    "_rev": 1688927005421,
+    "_rev": 1692120728351,
     "id": 5,
     "updatable": false
-  },
-  {
-    "enabled": true,
-    "installDate": 1689185616743,
-    "name": "GitHub Code Font",
-    "sections": [
-      {
-        "code": "pre, pre *, p code, [class*=\"code\"], code, code * {\n\tfont-size: 14px !important;\n\tline-height: 1.5 !important;\n\tfont-family: monospace !important;\n}",
-        "urlPrefixes": [
-          "https://github.com"
-        ]
-      }
-    ],
-    "updateDate": 1689185616743,
-    "_id": "4e1e30d5-f892-46a4-aae7-deff9bb64399",
-    "_rev": 1689185616744,
-    "id": 9
   }
 ]

@@ -5,7 +5,7 @@ export QT_FONT_DPI="116 Dosis"
 export TERMINAL=alacritty
 export BROWSER=firefox
 export WINDOW_MANAGER=bspwm
-export DESKTOP_SESSION=''
+export DESKTOP_SESSION=""
 
 export VISUAL=nvim
 export EDITOR=nvim

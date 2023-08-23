@@ -98,6 +98,6 @@ EOF
 command -v zoxide &>/dev/null && eval "$(zoxide init zsh)"
 
 ## comment this out if you do not want vi-mode
-## bindkey -e # revert to emacs binds
+bindkey -e # revert to emacs binds
 
 # vim:filetype=zsh:nowrap

@@ -1,5 +1,0 @@
-feeds:
-  - url: https://dharmx.is-a.dev/index.xml
-    name: dharmx.is-a.dev
-  - url: https://dotfyle.com/this-week-in-neovim/rss.xml
-    name: TWiN

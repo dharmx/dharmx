@@ -1,0 +1,3 @@
+#!/usr/bin/env sh
+
+xwinwrap -fs -fdt -ni -b -nf -- mpv --keep-open=no --really-quiet --loop --no-audio --wid=%WID "$1"

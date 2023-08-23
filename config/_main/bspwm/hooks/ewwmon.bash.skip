@@ -1,7 +1,0 @@
-#!/usr/bin/env bash
-
-while sleep 10.0; do
-  eww windows | grep '\*' || pgrep --full './src/shell/playerctl.py' | awk '{print $1}' | xargs kill
-done
-
-# vim:filetype=sh

@@ -1,4 +1,4 @@
-#!/usr/bin/env bash
+#!/usr/bin/env sh
 
 userresources=$XDG_CONFIG_HOME/Xresources/config.x
 usermodmap=$XDG_CONFIG_HOME/xmodmap/config
@@ -28,10 +28,9 @@ xset mouse 0 0
 # SEE: https://unix.stackexchange.com/a/295652/332452
 # shellcheck source=/dev/null
 if [ -d "$XDG_CONFIG_HOME"/xinitrc.d ]; then
-  for file in "$XDG_CONFIG_HOME"/xinitrc.d/?*.sh ; do
-    [ -x "$file" ] && source "$file"
+  for file in "$HOME"/.xinitrc.d/?*.sh ; do
+    [ -x "$file" ] && . "$file"
   done
-  unset file
 fi
 
 # SEE: https://wiki.archlinux.org/title/GNOME/Keyring#xinitrc
@@ -42,9 +41,8 @@ export SSH_AUTH_SOCK
 mkdir -p "$XDG_DATA_HOME/keyrings"
 
 if [ ! "$PWD" = "$HOME" ]; then
-  pushd "$HOME"
+  cd "$HOME" || return
   export XDG_CURRENT_DESKTOP="${1:-bspwm}"
-  popd
 else
   export XDG_CURRENT_DESKTOP="${1:-bspwm}"
 fi
