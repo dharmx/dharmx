@@ -1,0 +1,12 @@
+#!/bin/sh
+
+image="$XDG_PICTURES_DIR/saves/$1"
+IFS='x' read -r w h < <(ffprobe -v error -select_streams v:0 -show_entries stream=width,height -of csv=s=x:p=0 "$image")
+read -r reduced < <(echo "$h * .3" | bc)
+font="$XDG_DATA_HOME/fonts/Futura Condensed/Futura Condensed Bold.otf"
+convert -size $w"x"$(echo -n ${reduced%.*}) xc:white -gravity center -pointsize 60 -font "$font" -fill black -annotate 0 "$2" output_image.png
+ffmpeg -i "$image" -i output_image.png -filter_complex "[0:v]scale=iw:ih+100[bg];[bg][1:v]overlay=0:0[v]" -map "[v]" -c:a copy output_video.mp4
+
+wait
+togif output_video.mp4
+rm -rf output_image.png output_video.mp4

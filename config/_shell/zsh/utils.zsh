@@ -31,7 +31,7 @@ function _____zoxide_interactive_command_line() {
   local starting=$((${#cmd} + 1))
   local path="${BUFFER:$starting:${#BUFFER}}"
   [[ "$BUFFER" =~ "(zi|z|cd|pushd) *" ]] && BUFFER="zi $path"
-  /usr/bin/xdotool key Enter
+  /usr/bin/xdotool key Enter # feed
 }
 
 zle -N zoxide_cmdline _____zoxide_interactive_command_line
@@ -201,7 +201,8 @@ function _____compress_pdf() {
 
 function _____redditdw() {
   local name="$(echo $1 | cut -d '/' -f 7)"
-  local plus="$(echo $1 | cut -d'/' -f 8)"
+  local plus="$(echo $1 | cut -d '/' -f 8)"
+  set -x
   [ $(command -v ffmpeg) ] \
     && ffmpeg -i "$(
     wget -qO- "https://api.reddit.com/api/info/?id=t3_$name" \

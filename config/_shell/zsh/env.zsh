@@ -9,7 +9,7 @@ export DESKTOP_SESSION=""
 
 export VISUAL=nvim
 export EDITOR=nvim
-export PATH="$PATH:$HOME/.local/share/gem/ruby/3.0.0/bin:$:$HOME/.local/bin:$HOME/.bin:$HOME/.bling"
+export PATH="$PATH:$HOME/.local/share/gem/ruby/3.0.0/bin:$:$HOME/.local/bin:$HOME/.bin:$HOME/.bling:$HOME/.cargo/bin"
 
 export SUDO_PROMPT='password: '
 export SUDO_ASKPASS="$HOME/.bin/askpass"
@@ -29,7 +29,7 @@ if [ ! $(echo $MANPAGER | awk '{print $1}') = nvim ]; then
   export LESS_TERMCAP_us=$'\e[1;4;31m'
 fi
 
-export JAVA_HOME="/usr/lib/jvm/java-20-openjdk"
+export JAVA_HOME="/usr/lib/jvm/default"
 export AWT_TOOLKIT="MToolkit"
 export _JAVA_AWT_WM_NONREPARENTING=1
 export JDK_JAVA_OPTIONS='-Dawt.useSystemAAFontSettings=on -Dswing.aatext=true -Dswing.defaultlaf=com.sun.java.swing.plaf.gtk.GTKLookAndFeel -Djdk.gtk.version=2.2 -Dsun.java2d.opengl=true'
@@ -51,8 +51,8 @@ fi
 
 export FZF_DEFAULT_OPTS="
   $FZF_DEFAULT_OPTS
-  --color='border:#161B20,preview-bg:#161B20'
-  --color='scrollbar:#24292E,gutter:#161B20'
+  --color='border:#14171d,preview-bg:#14171d'
+  --color='scrollbar:#24292E,gutter:#14171d'
   --color='bg+:#24292E,fg+:#D4D4D5,spinner:#79DCAA'
   --color='pointer:#C397D8,marker:#F87070'
   --color='info:#70C0BA,bg:#11161B'

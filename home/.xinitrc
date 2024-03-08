@@ -42,9 +42,9 @@ mkdir -p "$XDG_DATA_HOME/keyrings"
 
 if [ ! "$PWD" = "$HOME" ]; then
   cd "$HOME" || return
-  export XDG_CURRENT_DESKTOP="${1:-bspwm}"
+  export XDG_CURRENT_DESKTOP="${1:-awesome}"
 else
-  export XDG_CURRENT_DESKTOP="${1:-bspwm}"
+  export XDG_CURRENT_DESKTOP="${1:-awesome}"
 fi
 
 exec "$XDG_CURRENT_DESKTOP"

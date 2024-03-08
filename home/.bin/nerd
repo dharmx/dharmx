@@ -1,0 +1,10 @@
+#!/usr/bin/env bash
+
+([ -f /tmp/nerd ] || (curl -s https://raw.githubusercontent.com/ryanoasis/nerd-fonts/gh-pages/_posts/2017-01-04-icon-cheat-sheet.md \
+  | sed -n "/<script>/,/<\/script>/p" \
+  | tail -n+3 \
+  | head -n -2 \
+  | sed 's/[",:]//g' \
+  | awk '{print $2" "$1}' \
+  | xargs -I{} printf '\u{}\n' \
+  > /tmp/nerd)) && fzf < /tmp/nerd

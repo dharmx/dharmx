@@ -312,6 +312,11 @@ alias p='ps -f'
 alias sorter='sort -n -r'
 alias unexport='unset'
 
+
+if [ $(command -v trash) ]; then
+  alias tm="trash"
+fi
+
 alias rm='rm -i'
 alias cp='cp -i'
 alias mv='mv -i'

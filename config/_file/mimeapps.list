@@ -1,11 +1,12 @@
 [Added Associations]
 text/css=nvim.desktop;
-image/png=shotwell.desktop;
+image/png=org.gnome.Shotwell.desktop;
 
 [Default Applications]
 x-scheme-handler/msteams=teams.desktop
-image/png=shotwell.desktop
-image/jpg=shotwell.desktop
+image/png=org.gnome.Shotwell.desktop
+image/jpg=org.gnome.Shotwell.desktop
+image/jpeg=org.gnome.Shotwell.desktop
 application/xml=org.qutebrowser.qutebrowser.desktop
 application/xhtml+xml=org.qutebrowser.qutebrowser.desktop
 text/csv=nvim.desktop

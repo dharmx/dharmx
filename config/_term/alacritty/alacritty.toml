@@ -1,0 +1,76 @@
+live_config_reload = true
+
+[colors]
+draw_bold_text_with_bright_colors = true
+
+[colors.bright]
+black = "#2B353F"
+blue = "#7AB0DF"
+cyan = "#54CED6"
+green = "#36C692"
+magenta = "#B77EE0"
+red = "#fa6969"
+white = "#D4D4D5"
+yellow = "#FFCE66"
+
+[colors.cursor]
+cursor = "#7AB0DF"
+text = "CellForeground"
+
+[colors.normal]
+black = "#171C21"
+blue = "#7AB0DF"
+cyan = "#70C0BA"
+green = "#79DCAA"
+magenta = "#C397D8"
+red = "#F87070"
+white = "#FFFFFF"
+yellow = "#FFE59E"
+
+[colors.primary]
+background = "#101317"
+foreground = "#D4D4D5"
+
+[font]
+builtin_box_drawing = true
+size = 14
+
+[font.bold]
+family = "Iosevka Nerd Font"
+style = "Bold"
+
+[font.bold_italic]
+family = "Iosevka Nerd Font"
+style = "Bold Italic"
+
+[font.glyph_offset]
+x = 0
+y = 3
+
+[font.italic]
+family = "Iosevka Nerd Font"
+style = "Italic"
+
+[font.normal]
+family = "Iosevka Nerd Font"
+style = "Regular"
+
+[font.offset]
+x = 0
+y = 5
+
+[scrolling]
+history = 10000
+multiplier = 3
+
+[shell]
+program = "/usr/bin/zsh"
+
+[window]
+decorations = "none"
+dynamic_padding = true
+opacity = 1.0
+
+[window.padding]
+x = 15
+y = 10

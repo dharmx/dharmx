@@ -1,0 +1,14 @@
+#!/usr/bin/env bash
+
+mkdir -p frames/{before,after}
+ffmpeg -i demo.gif -vsync 0 frames/temp%d.png
+for file in frames/*
+do
+  montage -background '#151A1F' -geometry +40+40 -tile 1x "$file" frames-mod/"$(basename "$file")"
+done
+for file in frames/*
+do
+  montage -background '#151A1F' -geometry +40+40 -tile 1x "$file" $1 frames-mod/"$(basename "$file")"
+done
+ffmpeg -f image2 -framerate 12 -i temp%d.png -pix_fmt yuv420p -shortest "$(basename "$1")".mp4
+rm -r frames
