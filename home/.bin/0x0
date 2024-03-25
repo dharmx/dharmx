@@ -1,0 +1,43 @@
+#!/usr/bin/env bash
+
+dump="/tmp/dump"
+
+function help_message() {
+  echo 'usage: paste [[--upload|-u]|[--delete|-d]|[--clean|-c]|[--help|-h]]'
+  echo
+  echo 'script to upload files to a pastebin website'
+  echo
+  echo 'options:'
+  echo '  -h, --help                                    show this help message and exit'
+  echo '  -c, --clean                                   remove db'
+  echo '  -u <FILE>, --upload <FILE>                    upload a file to 0x0.st'
+  echo '  -d <TOKEN> <LINK>, --delete <TOKEN> <LINK>    delete an uploaded file'
+  echo 
+  echo 'Source: https://github.com/dharmx'
+}
+
+function _upload() {
+  [[ "$1" == "" ]] && echo Needs '<FILE>' && help_message && return 1
+  curl                      \
+    --silent                \
+    --show-error            \
+    --location              \
+    --dump-header "$dump"   \
+    --compressed            \
+    --request POST          \
+    --form file=@"$1"       \
+      https://0x0.st
+}
+
+function _delete() {
+  [[ "$1" == "" || "$2" == "" ]] && echo Needs '<TOKEN> <LINK>' && help_message && return 1
+  curl --form token="$1" --form delete= "$2"
+}
+
+case "$1" in
+  --upload|-u) _upload "$2" ;;
+  --delete|-d) _delete "$2" "$3" ;;
+  --clean|-c) rm -rf "$dump" ;;
+  --help|-h) help_message ;;
+  *) echo -e Needs arguments! "\n" && help_message && exit 1 ;;
+esac

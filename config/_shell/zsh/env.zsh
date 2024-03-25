@@ -10,6 +10,7 @@ export DESKTOP_SESSION=""
 export VISUAL=nvim
 export EDITOR=nvim
 export PATH="$PATH:$HOME/.local/share/gem/ruby/3.0.0/bin:$:$HOME/.local/bin:$HOME/.bin:$HOME/.bling:$HOME/.cargo/bin"
+export FPATH="$FPATH:$HOME/.local/share/zsh/completions"
 
 export SUDO_PROMPT='password: '
 export SUDO_ASKPASS="$HOME/.bin/askpass"
