@@ -12,7 +12,7 @@ set default-bg                  "#101317"
 set default-fg                  "#d4d4d5"
 
 set statusbar-fg                "#d4d4d5"
-set statusbar-bg                "#79dcaa"
+set statusbar-bg                "#151a1f"
 
 set inputbar-bg                 "#101317" 
 set inputbar-fg                 "#f87070"
@@ -47,5 +47,8 @@ set statusbar-basename          "true"
 
 set window-height               "980"
 set window-width                "850"
+
+map D set "first-page-column 1:1"
+map <C-d> set "first-page-column 1:2"
 
 # vim:fileencoding=utf-8:ft=conf

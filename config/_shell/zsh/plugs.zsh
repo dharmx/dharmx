@@ -21,20 +21,6 @@ use Aloxaf/fzf-tab
 use zdharma-continuum/fast-syntax-highlighting
 use zsh-users/zsh-autosuggestions
 use MichaelAquilina/zsh-you-should-use 
-# use romkatv/gitstatus
-# use hlissner/zsh-autopair
-
-# FZF tab is better. Fight me.
-# use marlonrichert/zsh-autocomplete 
-
-# ice wait'3' lucid
-# load zsh-users/zsh-history-substring-search 
-
-# ice wait'2' lucid
-# load zdharma-continuum/history-search-multi-word
-
-# ice wait'5' lucid
-# snip https://gist.githubusercontent.com/hightemp/5071909/raw/
 unalias use snip ice load
 
 # vim:ft=zsh

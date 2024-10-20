@@ -9,8 +9,8 @@ fi
 
 if [ $(command -v nvim) ]; then
   alias nv="nvim"
-  alias nvcfg="nv ~/.config/nvim/"
-  alias nvst="nvim --startuptime $HOME/Documents/nvim-startuptime-'$(date)' +quitall"
+  alias nvcfg="nv ~/.config/nvim/init.lua"
+  alias nvim-startuptime="nvim --startuptime $HOME/Documents/nvim-startuptime-'$(date)' +quitall"
 fi
 
 if [ $(command -v ranger) ]; then
@@ -368,9 +368,6 @@ alias hdmitv="echo 'Xft.dpi:200\nst.font:Iosevka Nerd Font:pixelsize=38\nXcursor
 
 alias rec='ffmpeg -f x11grab -framerate 60 -i $DISPLAY -pix_fmt yuv420p vid.mp4'
 alias high_res='ffmpeg -framerate 60 -f x11grab -i $DISPLAY -c:v libx264rgb -crf 0 -preset ultrafast -color_range 2 vid.mp4'
-function mkv2mp4() {
-  ffmpeg -i $1 -codec copy $2
-}
 
 alias ytdn='yt-dlp --ignore-errors --format bestaudio --extract-audio --audio-format mp3 --audio-quality 320K --output "%(title)s.%(ext)s" --yes-playlist'
 alias pacmanallkeys='sudo pacman-key --refresh-keys'

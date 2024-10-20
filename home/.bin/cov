@@ -1,0 +1,12 @@
+#!/bin/sh
+
+if [ ! -f $2 ]; then
+  if [ "$3" = 'new' ]; then
+    curl -A 'Mozilla/5.0 (compatible;  MSIE 7.01; Windows NT 5.0)' -sSL $1 | htmlq '#player_cover_img' -a src | uniq | xargs -I{} curl {} -o $2
+  elif [ "$3" = 'han' ]; then
+    curl -sSL $1 | htmlq div img -a src | xargs -I{} curl -sSL {} -o $2
+  else
+    curl -sSL $1 | htmlq '#cover' .lazyload -a 'data-src' | xargs -I{} curl {} -o $2
+  fi
+fi
+echo $2

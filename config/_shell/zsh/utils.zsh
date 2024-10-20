@@ -30,7 +30,7 @@ function _____zoxide_interactive_command_line() {
   read -r cmd _ <<< "$BUFFER"
   local starting=$((${#cmd} + 1))
   local path="${BUFFER:$starting:${#BUFFER}}"
-  [[ "$BUFFER" =~ "(zi|z|cd|pushd) *" ]] && BUFFER="zi $path"
+  [[ "$BUFFER" =~ "(zi|z|cd|pushd) *" ]] && BUFFER="__zoxide_zi $path"
   /usr/bin/xdotool key Enter # feed
 }
 
@@ -235,6 +235,14 @@ function _____stylua_fmt() {
       && stylua . \
       || echo 'stylua is not installed'
     cd "$current"
+}
+
+function _____low720() {
+  ffmpeg -i "$1" -vf scale=-1:720 -c:v libx264 -crf 0 -preset veryslow -c:a copy "720_$1"
+}
+
+function _____low480() {
+  ffmpeg -i "$1" -s hd480 -c:v libx264 -crf 23 -c:a aac -strict -2 "480_$1"
 }
 
 function _____webm_to_audio {

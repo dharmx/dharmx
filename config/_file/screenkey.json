@@ -10,7 +10,7 @@
     "font_size": "small",
     "font_color": "#c0c0bfbfbcbc",
     "bg_color": "#191e23",
-    "opacity": 0.0,
+    "opacity": 0.5,
     "key_mode": "translated",
     "bak_mode": "full",
     "mods_mode": "tux",
