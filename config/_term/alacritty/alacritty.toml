@@ -1,3 +1,4 @@
+[general]
 live_config_reload = true
 
 [colors]
@@ -63,8 +64,8 @@ y = 5
 history = 10000
 multiplier = 3
 
-[shell]
-program = "/usr/bin/zsh"
+[terminal]
+shell = "/usr/bin/zsh"
 
 [window]
 decorations = "none"

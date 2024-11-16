@@ -1,4 +1,5 @@
 alias xclip='xclip -selection clipboard'
+alias xxx='cat ~/Scratch/.xxx | fzf-preview.sh'
 
 if [ $(command -v exa) ]; then
   alias li="exa --long --all --group --icons"
@@ -380,3 +381,5 @@ if [ $(command -v task) ]; then
   alias blog-add="task add project:'Blog Articles' add recur:1w due:sun"
   alias gk-add="task add project:'GK and Awareness' add recur:daily due:eod"
 fi
+
+alias unhideall="awesome-client 'for _, c in ipairs(client.get()) do c.minimized = false; c:raise(); client.focus = c; end'"
